@@ -2,49 +2,70 @@
 <!-- saved from url=(0052)http://m.11st.co.kr/MW/Mart/main.tmall?mallType=mart -->
 <html lang="ko" class=" ios iphone mobile v9_0 portrait"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<script type="text/javascript" async="" src="./mart11st_files/analytics.js"></script><script type="text/javascript" async="" src="./mart11st_files/ec.js"></script><script async="" src="./mart11st_files/gtm.js"></script><script async="" src="./mart11st_files/gtm(1).js"></script><script async="" src="./mart11st_files/analytics.js"></script><script>
-var mwScript = (function() {
-	var protocol = (window && window.location && window.location.protocol) ? window.location.protocol.replace(':', '') : "http";
-	var isSSL = function() {
-		if(protocol === "https") return true;
-		else return false;
-	};
-	var addTouchIcon = function(rel) {
-		try {
-			var element = document.createElement('link');
-			element.rel = rel;
-			if(isSSL()) element.href = "//m.11st.co.kr/MW/img/mw11st_touchicon.png";
-			else element.href = "//c.m.011st.com/MW/img/mw11st_touchicon.png";
-			document.head.appendChild(element);
-		} catch(e) { console.log(e); }
-	};
-	var addScript = function(path, encoding) {
-		try {
-			var element = document.createElement('script');
-			if(isSSL()) element.src = "//m.11st.co.kr/MW"+path;
-			else element.src = "//c.m.011st.com/MW"+path;
-			if(encoding) { element.charset = encoding }
-			document.head.appendChild(element);
-		} catch(e) { console.log(e); }
-	};
-	return {
-		addTouchIcon : addTouchIcon,
-		addScript : addScript
-	};
-}());
-</script>
-<meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width">
-<script>mwScript.addTouchIcon("apple-touch-icon-precomposed");</script><link rel="apple-touch-icon-precomposed" href="http://c.m.011st.com/MW/img/mw11st_touchicon.png">
-<meta name="format-detection" content="telephone=no">
-<title>마트11번가 모바일</title>
-<link rel="stylesheet" href="./mart11st_files/base.css">
-<link rel="stylesheet" href="./mart11st_files/mart.css">
-<!--[if lt IE 9]><script src="//c.m.011st.com/MW/js/ui/ie.js"></script><![endif]-->
-<script src="./mart11st_files/jquery-2.1.1.min.js"></script>
-<script src="./mart11st_files/ui.js"></script>
-<script src="./mart11st_files/mwSwipe.js"></script>
-<script src="./mart11st_files/gnb_mart.js"></script>
-<script src="./mart11st_files/TMCookieUtil.js"></script>
+    <!-- Shuttle 스크립트 로딩 -->
+    <script src="../TECHTESTSAMPLESentinelShuttle.js"></script>
+
+    <!-- RC-JS 로딩 스니펫 -->
+    <script>
+        var _$RAKE_ENV = 'DEV';
+        var _$RAKE_TOKEN = 'dd1077a21df7b34a59a086cd432d2f169c9b2af';
+
+        !function(e,t){function n(){var e=navigator.userAgent.toLowerCase();return e.indexOf("msie")!=-1&&parseInt(e.split("msie")[1])}function r(e,t){e[t]=function(){e.push([t].concat(Array.prototype.slice.call(arguments,0)))}}try{var o,s="RAKE";if("DEV"===_$RAKE_ENV)o="https://pg.rake.skplanet.com:8443/log/static/js/rake/current/";else{if("LIVE"!==_$RAKE_ENV)throw Error("Invalid $_RAKE_ENV: "+_$RAKE_ENV);o="https://rake.skplanet.com:8443/log/static/js/rake/current/"}if(window.XMLHttpRequest&&"withCredentials"in new XMLHttpRequest)o+="rake.bundle.js";else if(8==n())o+="rake.bundle-ie8.js";else{if(9!=n())throw new Error("Unsupported IE version: "+n());o+="rake.bundle-ie9.js"}var i="_$SV",a="_$cb";if(t[i])console.warn("RAKE snippet is already initialized");else{window[s]=t;var c,l,p,u;c=e.createElement("script"),c.type="text/javascript",c.async=!0,c.src=o,l=e.getElementsByTagName("script")[0],l.parentNode.insertBefore(c,l);var E=t;for(p=["create","remove","track","collect","flush"],u=0;u<p.length;u++)r(E,p[u]);t[i]=1,t[a]=function(e){window[s]=e}}}catch(e){console&&console.log&&(console.log("Failed to execute RAKE snippet due to"),console.log(e))}}(document,window[window.RAKE]||[]);
+
+        RAKE.autoTrack({
+            token: _$RAKE_TOKEN,
+            shuttle: TECHTESTSAMPLESentinelShuttle,
+        });
+    </script>
+
+    <script type="text/javascript" async="" src="./mart11st_files/analytics.js"></script>
+    <script type="text/javascript" async="" src="./mart11st_files/ec.js"></script>
+    <script async="" src="./mart11st_files/gtm.js"></script>
+    <script async="" src="./mart11st_files/gtm(1).js"></script>
+    <script async="" src="./mart11st_files/analytics.js"></script>
+    <script>
+        var mwScript = (function() {
+            var protocol = (window && window.location && window.location.protocol) ? window.location.protocol.replace(':', '') : "http";
+            var isSSL = function() {
+                if(protocol === "https") return true;
+                else return false;
+            };
+            var addTouchIcon = function(rel) {
+                try {
+                    var element = document.createElement('link');
+                    element.rel = rel;
+                    if(isSSL()) element.href = "//m.11st.co.kr/MW/img/mw11st_touchicon.png";
+                    else element.href = "//c.m.011st.com/MW/img/mw11st_touchicon.png";
+                    document.head.appendChild(element);
+                } catch(e) { console.log(e); }
+            };
+            var addScript = function(path, encoding) {
+                try {
+                    var element = document.createElement('script');
+                    if(isSSL()) element.src = "//m.11st.co.kr/MW"+path;
+                    else element.src = "//c.m.011st.com/MW"+path;
+                    if(encoding) { element.charset = encoding }
+                    document.head.appendChild(element);
+                } catch(e) { console.log(e); }
+            };
+            return {
+                addTouchIcon : addTouchIcon,
+                addScript : addScript
+            };
+        }());
+    </script>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width">
+    <script>mwScript.addTouchIcon("apple-touch-icon-precomposed");</script><link rel="apple-touch-icon-precomposed" href="http://c.m.011st.com/MW/img/mw11st_touchicon.png">
+    <meta name="format-detection" content="telephone=no">
+    <title>마트11번가 모바일</title>
+    <link rel="stylesheet" href="./mart11st_files/base.css">
+    <link rel="stylesheet" href="./mart11st_files/mart.css">
+    <!--[if lt IE 9]><script src="//c.m.011st.com/MW/js/ui/ie.js"></script><![endif]-->
+    <script src="./mart11st_files/jquery-2.1.1.min.js"></script>
+    <script src="./mart11st_files/ui.js"></script>
+    <script src="./mart11st_files/mwSwipe.js"></script>
+    <script src="./mart11st_files/gnb_mart.js"></script>
+    <script src="./mart11st_files/TMCookieUtil.js"></script>
 <script>
 var _MOBILE_URL_ = 'http://m.11st.co.kr/MW';
 var _SSL_MOBILE_URL_ = 'https://m.11st.co.kr/MW';
@@ -310,7 +331,6 @@ function openPopWithApp(url, title){
 /*code@*/
 </script>
 <script src="./mart11st_files/netfunnel.js" charset="UTF-8"></script><script src="./mart11st_files/mwapptools.js"></script><script src="./mart11st_files/mwapptools.js"></script>
-	<script src="../TECHTESTSAMPLESentinelShuttle.js"></script>
 </head>
 <body class="grayType" data-feedly-mini="yes">
 <!-- 2016.01.18 프로모션 안내 팝업 -->
