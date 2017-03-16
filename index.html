@@ -19,31 +19,33 @@
         var _$RAKE_ENV = 'DEV';
         var _$RAKE_TOKEN = 'dd1077a21df7b34a59a086cd432d2f169c9b2af';
         function _$RAKE_CALLBACK() {
-//            var shuttle = TECHTESTSAMPLESentinelShuttle();
-//
-//            shuttle.setSession_id(getUrlVars()["sessionid"]).setPc_id(TMCookieUtil.getCookie("PCID")).setSex(getUrlVars()["sex"]).setBirthyear(getUrlVars()["birthyear"]).setPoc(getUrlVars()["poc"]);
-//            shuttle.setBodyOf_main__();
-//
-//            var myPayload = shuttle.getImmutableJSONObject();
-//
-//            RAKE.track({
-//                payload: myPayload,
-//                timeoutAsMillis: 15000
-//                //successCallback: function() { console.log('USER SUCCESS CALLBACK') },
-//                //failureCallback: function() { console.log('USER FAILURE CALLBACK') }
-//            })
+            var shuttle = TECHTESTSAMPLESentinelShuttle();
 
-            RAKE.autoTrack({
-                token: _$RAKE_TOKEN,
-                shuttle: TECHTESTSAMPLESentinelShuttle,
-                converters: [
-                    { type: 'URL_QUERY_TO_PAYLOAD', from: 'sessionid', to: 'session_id' },
-                    { type: 'COOKIE_TO_PAYLOAD', from: 'PCID', to: 'pc_id' },
-                    { type: 'URL_QUERY_TO_PAYLOAD', from: 'sex', to: 'sex' },
-                    { type: 'URL_QUERY_TO_PAYLOAD', from: 'birthyear', to: 'birthyear' },
-                    { type: 'URL_QUERY_TO_PAYLOAD', from: 'poc', to: 'poc' }
-                ]
-            });
+            shuttle.getDefaultPayload();
+            shuttle.setSession_id(getUrlVars()["sessionid"]).setPc_id(TMCookieUtil.getCookie("PCID")).setSex(getUrlVars()["sex"]).setBirthyear(getUrlVars()["birthyear"]).setPoc(getUrlVars()["poc"]);
+            shuttle.setBodyOf_main__();
+
+            var myPayload = shuttle.getImmutableJSONObject();
+
+            RAKE.track({
+                payload: myPayload,
+                timeoutAsMillis: 15000
+                //successCallback: function() { console.log('USER SUCCESS CALLBACK') },
+                //failureCallback: function() { console.log('USER FAILURE CALLBACK') }
+            })
+
+
+//            RAKE.autoTrack({
+//                token: _$RAKE_TOKEN,
+//                shuttle: TECHTESTSAMPLESentinelShuttle,
+//                converters: [
+//                    { type: 'URL_QUERY_TO_PAYLOAD', from: 'sessionid', to: 'session_id' },
+//                    { type: 'COOKIE_TO_PAYLOAD', from: 'PCID', to: 'pc_id' },
+//                    { type: 'URL_QUERY_TO_PAYLOAD', from: 'sex', to: 'sex' },
+//                    { type: 'URL_QUERY_TO_PAYLOAD', from: 'birthyear', to: 'birthyear' },
+//                    { type: 'URL_QUERY_TO_PAYLOAD', from: 'poc', to: 'poc' }
+//                ]
+//            });
 		}
 
         !function(e,t){function n(){var e=navigator.userAgent.toLowerCase();return e.indexOf("msie")!=-1&&parseInt(e.split("msie")[1])}function r(e,t){e[t]=function(){e.push([t].concat(Array.prototype.slice.call(arguments,0)))}}try{var o,s="RAKE";if("DEV"===_$RAKE_ENV)o="https://pg.rake.skplanet.com:8443/log/static/js/rake/current/";else{if("LIVE"!==_$RAKE_ENV)throw Error("Invalid $_RAKE_ENV: "+_$RAKE_ENV);o="https://rake.skplanet.com:8443/log/static/js/rake/current/"}if(window.XMLHttpRequest&&"withCredentials"in new XMLHttpRequest)o+="rake.bundle.js";else if(8==n())o+="rake.bundle-ie8.js";else{if(9!=n())throw new Error("Unsupported IE version: "+n());o+="rake.bundle-ie9.js"}var i="_$SV",a="_$cb";if(t[i])console.warn("RAKE snippet is already initialized");else{window[s]=t;var c,l,p,u;c=e.createElement("script"),c.type="text/javascript",c.onload=_$RAKE_CALLBACK,c.async=!0,c.src=o,l=e.getElementsByTagName("script")[0],l.parentNode.insertBefore(c,l);var E=t;for(p=["create","remove","track","collect","flush"],u=0;u<p.length;u++)r(E,p[u]);t[i]=1,t[a]=function(e){window[s]=e}}}catch(e){console&&console.log&&(console.log("Failed to execute RAKE snippet due to"),console.log(e))}}(document,window[window.RAKE]||[]);
