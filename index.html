@@ -24,7 +24,7 @@
             shuttle.setSession_id(getUrlVars()["sessionid"]).setPc_id(TMCookieUtil.getCookie("PCID")).setSex(getUrlVars()["sex"]).setBirthyear(getUrlVars()["birthyear"]).setPoc(getUrlVars()["poc"]);
             shuttle.setBodyOf_main__();
 
-            const myPayload = shuttle.getImmutableJSONObject();
+            var myPayload = shuttle.getImmutableJSONObject();
 
             RAKE.track({
                 payload: myPayload,
