@@ -67,7 +67,7 @@ function fncSearchList(work)
 	index = document.cookie.indexOf("R_KWD" + "=");
 	if (index == -1)
 	{
-		strAutoComplete = '<p class="none">ÃÖ±Ù °Ë»ö³»¿ªÀÌ ¾ø½À´Ï´Ù.</p>';
+		strAutoComplete = '<p class="none">ï¿½Ö±ï¿½ ï¿½Ë»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.</p>';
 		$("#schword01").html(strAutoComplete);
 		setBodyClass(true);
 		vLayer('kwd', false);
@@ -96,15 +96,15 @@ function fncSearchList(work)
 			if (strSearchNameArray[i].indexOf("#") > -1) {
 				chkSearchName = chkValidText(strSearchNameArray[i].split("#")[0]);
 				if (chkSearchName.trim() != '')
-				strAutoComplete += "<li><a href=\"#\" onclick=\"autoSearch('" + strSearchNameArray[i].split("#")[0] + "');callStatAjax('WSRC03','WSRC03');return false;\" class=\"ico_x\" >" + chkSearchName + "</a><button type=\"button\" onclick=\"callStatAjax('WSRC04','WSRC04');fncSearchDelete('"+strSearchNameArray[i].split('#')[0]+"')\">»èÁ¦</button></li>";
+				strAutoComplete += "<li><a href=\"#\" onclick=\"autoSearch('" + strSearchNameArray[i].split("#")[0] + "');callStatAjax('WSRC03','WSRC03');return false;\" class=\"ico_x\" >" + chkSearchName + "</a><button type=\"button\" onclick=\"callStatAjax('WSRC04','WSRC04');fncSearchDelete('"+strSearchNameArray[i].split('#')[0]+"')\">ï¿½ï¿½ï¿½ï¿½</button></li>";
 			}
 			else{
 				chkSearchName = chkValidText(strSearchNameArray[i]);
 				if (chkSearchName.trim() != '')
-				strAutoComplete += "<li><a href=\"#\" onclick=\"autoSearch('" + strSearchNameArray[i] + "');callStatAjax('WSRC03','WSRC03');return false;\" class=\"ico_x\" >" + chkSearchName + "</a><button type=\"button\" onclick=\"callStatAjax('WSRC04','WSRC04');fncSearchDelete('"+strSearchNameArray[i]+"')\">»èÁ¦</button></li>";
+				strAutoComplete += "<li><a href=\"#\" onclick=\"autoSearch('" + strSearchNameArray[i] + "');callStatAjax('WSRC03','WSRC03');return false;\" class=\"ico_x\" >" + chkSearchName + "</a><button type=\"button\" onclick=\"callStatAjax('WSRC04','WSRC04');fncSearchDelete('"+strSearchNameArray[i]+"')\">ï¿½ï¿½ï¿½ï¿½</button></li>";
 			}
 		}
-		strAutoComplete += "</ul><button type='button' class='del_all' onclick=\"callStatAjax('WSRC05','WSRC05');fncSearchAllDelete()\">ÀüÃ¼»èÁ¦</button>";
+		strAutoComplete += "</ul><button type='button' class='del_all' onclick=\"callStatAjax('WSRC05','WSRC05');fncSearchAllDelete()\">ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½</button>";
 	}
 	
 	$("#schword01").html(strAutoComplete);
@@ -146,7 +146,7 @@ function autoComplete()
 	var searchKeywordVal = document.querySelector('#searchKeyword').value;
 	var schdelbtn = document.querySelector('#schdelbtn');
 	
-	if ((descSearchKeywordVal == searchKeywordVal) && (tempDecSearchKeyword != searchKeywordVal))
+/*	if ((descSearchKeywordVal == searchKeywordVal) && (tempDecSearchKeyword != searchKeywordVal))
 	{
 		if (descSearchKeywordVal == ""){
 			schdelbtn.style.display='none';
@@ -182,7 +182,7 @@ function autoComplete()
 			catch (err) { }
 		}
 	}
-	else document.querySelector('#searchKeyword').value = descSearchKeywordVal;
+	else document.querySelector('#searchKeyword').value = descSearchKeywordVal;*/
 	
 	if (window.navigator.appName.indexOf('Explorer') < 0) {
 		clearTimeout(timer);
@@ -224,7 +224,7 @@ function showAutoComplete(obj1, obj2)
 		else
 			objListCountMax = obj2ListCount;
 
-		// ¾Õ °Ë»ö Å°¿öµå
+		// ï¿½ï¿½ ï¿½Ë»ï¿½ Å°ï¿½ï¿½ï¿½ï¿½
 		for (var i = 0; i < objListCountMax; i++)
 		{
 			if (obj1[i])
@@ -235,7 +235,7 @@ function showAutoComplete(obj1, obj2)
 			else
 				htmlStr += "<li> </li>";
 		}
-		// µÚ °Ë»ö Å°¿öµå
+		// ï¿½ï¿½ ï¿½Ë»ï¿½ Å°ï¿½ï¿½ï¿½ï¿½
 		for (var i = 0; i < objListCountMax; i++)
 		{
 			if (obj2[i])
@@ -314,7 +314,7 @@ function keywordDelete(keyword)
 }
 function fncSearchAllDelete()
 {
-	if (confirm('ÃÖ±Ù°Ë»ö¾î¸¦ ¸ðµÎ\n»èÁ¦ÇÏ½Ã°Ú½À´Ï±î?')) {
+	if (confirm('ï¿½Ö±Ù°Ë»ï¿½ï¿½î¸¦ ï¿½ï¿½ï¿½\nï¿½ï¿½ï¿½ï¿½ï¿½Ï½Ã°Ú½ï¿½ï¿½Ï±ï¿½?')) {
 		keywordAllDelete();	
 		fncSearchList("D");
 	}
@@ -350,9 +350,9 @@ var isSubTabWiseCall = false;
 function searchSubmit()
 {
 	if ((document.searchForm.decSearchKeyword.value).replace(/\s*$/,"") == "") {
-    	alert("°Ë»ö¾î¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä");
+    	alert("ï¿½Ë»ï¿½ï¿½î¸¦ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½");
 	} else if (document.searchForm.decSearchKeyword.value == defaultSearchKeyword) {
-		alert("°Ë»ö¾î¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä");
+		alert("ï¿½Ë»ï¿½ï¿½î¸¦ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½");
 		document.searchForm.decSearchKeyword.value = '';
 	} else {
 		var txtBnr = $("#dispObjLnkUrl").val();
