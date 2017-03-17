@@ -2,25 +2,6 @@
 <!-- saved from url=(0052)http://m.11st.co.kr/MW/Mart/main.tmall?mallType=mart -->
 <html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <!-- Shuttle 스크립트 로딩 -->
-    <script src="js/common/TECHTESTSAMPLESentinelShuttle.js"></script>
-	<script>
-        function getUrlVars() {
-            var vars = {};
-            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
-                function(m,key,value) {
-                    vars[key] = value;
-                });
-            return vars;
-        }
-
-        var _$SHUTTLE = TECHTESTSAMPLESentinelShuttle();
-        _$SHUTTLE.setSession_id(getUrlVars()["sessionid"]).setPc_id(TMCookieUtil.getCookie("PCID")).setSex(getUrlVars()["sex"]).setBirthyear(getUrlVars()["birthyear"]).setPoc(getUrlVars()["poc"]);
-        _$SHUTTLE.setBodyOf_main__();
-	</script>
-	<script src="js/common/Log.js"></script>
-
-
     <script async="" src="./mart11st_files/gtm.js"></script>
     <script>
         var mwScript = (function() {
@@ -65,6 +46,24 @@
     <script src="./mart11st_files/mwSwipe.js"></script>
     <script src="./mart11st_files/gnb_mart.js"></script>
     <script src="./mart11st_files/TMCookieUtil.js"></script>
+
+	<!-- Shuttle 스크립트 로딩 -->
+	<script src="js/common/TECHTESTSAMPLESentinelShuttle.js"></script>
+	<script>
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+                function(m,key,value) {
+                    vars[key] = value;
+                });
+            return vars;
+        }
+
+        var _$SHUTTLE = TECHTESTSAMPLESentinelShuttle();
+        _$SHUTTLE.setSession_id(getUrlVars()["sessionid"]).setPc_id(TMCookieUtil.getCookie("PCID")).setSex(getUrlVars()["sex"]).setBirthyear(getUrlVars()["birthyear"]).setPoc(getUrlVars()["poc"]);
+        _$SHUTTLE.setBodyOf_main__();
+	</script>
+	<script src="js/common/Log.js"></script>
 <script>
 var _MOBILE_URL_ = 'http://m.11st.co.kr/MW';
 var _SSL_MOBILE_URL_ = 'https://m.11st.co.kr/MW';

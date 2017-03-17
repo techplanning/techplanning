@@ -1,12 +1,3 @@
-function getUrlVars() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
-        function(m,key,value) {
-            vars[key] = value;
-        });
-    return vars;
-}
-
 var _$RAKE_ENV = 'DEV';
 var _$RAKE_TOKEN = 'dd1077a21df7b34a59a086cd432d2f169c9b2af';
 
