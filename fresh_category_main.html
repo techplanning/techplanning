@@ -1177,9 +1177,9 @@ window.addEventListener("load",  function(){
 	} else {
 		//if(offerCookie) return;
 		
-	    $.ajax({
+/*	    $.ajax({
 	        url: '/MW/Offer/Banner/getBanners.tmall',
-	        cache : false,		
+	        cache : false,
 	        success: function(msg) {
 	        	setOfferCookie('offerBanners', true);
 	            var json = JSON.parse(msg);
@@ -1187,7 +1187,7 @@ window.addEventListener("load",  function(){
 	            	if(json.response.cnt && json.response.cnt > 0) {
 	            		var bannerStore = {};
 	            		var banners = json.response.banners;
-	            		
+
 	            		var firstIdx = null;
 	            		for(var idx in banners) {
 	            			var viewYn = getOfferCookie(banners[idx].cpCode, 'VIEW');
@@ -1196,7 +1196,7 @@ window.addEventListener("load",  function(){
 	            			var denyYn = getOfferCookie(banners[idx].cpCode, 'DENY');
 
 	            			if(denyYn == 'Y') banners[idx].denyYn = 'Y';
-	            			
+
 	            			if(denyYn != 'Y' && clickYn != 'Y') {
 	            				firstIdx = banners[idx].cpCode;
 	            			}
@@ -1204,16 +1204,16 @@ window.addEventListener("load",  function(){
 	            		}
 	            		bannerStore[firstIdx].viewYn = 'Y';
 	            		setBannerInfo(bannerStore);
-	            		
+
 						if(!nativeView && bannerStore[firstIdx].type == '00') {
 							showOfferFloatBanner(bannerStore[firstIdx]);
 						} else if(!nativeView && bannerStore[firstIdx].type == '01') {
 							showOfferAllPopup(bannerStore[firstIdx]);
-						}		            		
+						}
 	            	}
 	            }
 	        }
-	    });
+	    });*/
 	}	
 }, false);
 </script>
@@ -1597,7 +1597,6 @@ function getXsiteBannerCookie(cName) {
 
 <script>mwScript.addScript('/js/lib/netfunnel.js', "UTF-8");</script>
 <iframe width="0" height="0" id="appAdTextInterface" style="display:none;" src="fresh_category_main_files/saved_resource.html"></iframe>
-<script src="fresh_category_main_files/inc_floatingEvent.js"></script>
 <noscript><iframe width="0" height="0" src="fresh_category_main_files/ns.html" style="display: none; visibility: hidden;"></iframe></noscript><noscript><iframe width="0" height="0" src="fresh_category_main_files/ns(1).html" style="display: none; visibility: hidden;"></iframe></noscript></footer>
 
 

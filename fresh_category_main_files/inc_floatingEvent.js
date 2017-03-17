@@ -79,7 +79,7 @@
                         if(obj.message.rcode == '201') {
                             linkUrl = "javascript:void(0);";
                         }
-                        alertHtml += '<a href="' + linkUrl + '"><img src="http://i.011st.com/ui_img/cm_display/2016/12/PM/698-12/p_btn_01.png" alt="È®ÀÎ" width="100%;" id="floatAlertCloseBtn"></a>';
+                        alertHtml += '<a href="' + linkUrl + '"><img src="http://i.011st.com/ui_img/cm_display/2016/12/PM/698-12/p_btn_01.png" alt="È®ï¿½ï¿½" width="100%;" id="floatAlertCloseBtn"></a>';
                         alertHtml += '</div>';
                         alertHtml += '<div class="gift-txt" style="text-align: center;position: absolute;top: 40%;width: 100%;font-size: 1.0em;letter-spacing: -2px;"><span>'+message+'</span></div>';
                         alertHtml += '<img src="http://i.011st.com/ui_img/cm_display/2016/12/PM/698-12/p_03_1.png" alt="" width="100%;">';
