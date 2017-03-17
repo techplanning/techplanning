@@ -160,7 +160,7 @@ mwScript.addScript('/js/lib/device.js');
 			
 		<a href="http://m.11st.co.kr/MW/Mart/getCategoryTab.tmall?mallType=mart" class="mu cate" data-clickurl="MWMART00" data-clickkey="MWMART0001">카테고리</a>
 	
-		<form id="search" name="searchForm" action="http://m.11st.co.kr/MW/Mart/searchMartPrdList.tmall?" method="get" onsubmit="searchSubmit();return false;">
+		<form id="search" name="searchForm" action="#" method="get" onsubmit="searchSubmit();return false;">
 			<fieldset>
 				<legend>통합검색</legend>
 				<div class="srch">
@@ -475,36 +475,11 @@ $(document).ready(function() {
 	}
 
 	function callStatAjax(url, key, item) {
-		if (url && url != '') {
-			var statUrl = '/a.st?url='+url+'&ts='+Date.now();
-			if (key && key != '') statUrl += '&key='+key;
-			if (item && item != '') statUrl += '&item='+item;
-			var xhr = window.ActiveXObject ? new window.ActiveXObject('Microsoft.XMLHTTP') : new window.XMLHttpRequest();
-		    try {
-		        xhr.open('get', statUrl, true);
-		        xhr.send(null);
-		    } catch (e){ console.log(e); }
-		}
+
 	}
 
 	function callStat(url, key, item) {
-		if (url && url != '') {
-			var statUrl = '/a.st?url='+url+'&ts='+Date.now();
-			if (key && key != '') statUrl += '&key='+key;
-			if (item && item != '') statUrl += '&item='+item;
-			var clickIfrm;
-			if (document.getElementById('ifrmClickAnaly')) {
-				clickIfrm = document.getElementById('ifrmClickAnaly');
-			} else {
-				clickIfrm = document.createElement('IFRAME');
-				clickIfrm.id = 'ifrmClickAnaly';
-				clickIfrm.width = 0;
-				clickIfrm.height = 0;
-				clickIfrm.style.display = 'none';
-				document.body.appendChild(clickIfrm);
-			}
-			clickIfrm.src = statUrl;
-		}
+
 	}
 
 	function catchItemClickEvent(e) {
