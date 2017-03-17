@@ -75,8 +75,8 @@
     <script>mwScript.addTouchIcon("apple-touch-icon-precomposed");</script><link rel="apple-touch-icon-precomposed" href="http://c.m.011st.com/MW/img/mw11st_touchicon.png">
     <meta name="format-detection" content="telephone=no">
     <title>마트11번가 모바일</title>
-    <link rel="stylesheet" href="./mart11st_files/base.css">
-    <link rel="stylesheet" href="./mart11st_files/mart.css">
+    <link rel="stylesheet" href="css/common/base.css">
+    <link rel="stylesheet" href="css/mart/mart.css">
     <!--[if lt IE 9]><script src="//c.m.011st.com/MW/js/ui/ie.js"></script><![endif]-->
     <script src="./mart11st_files/jquery-2.1.1.min.js"></script>
     <script src="./mart11st_files/ui.js"></script>
@@ -194,7 +194,7 @@ var martMain = {
 				jQuery("#promotionPrdList").html(markup);
 			}
 		}
-}
+};
 
 function setLoginStatus() {
 	var loginWraps = document.querySelectorAll('#loginBottom');	                                   
@@ -279,8 +279,7 @@ function goDealApp() {
 
 function getSktMemberYn() {
 	return isSktMem;
-};
-
+}
 function playMovieForMW(movieUrl) {
 	if(!isSktMem) {
 		if(!TMCookieUtil.getSubCookie(1, "nonSktMemDataUseYn")) {
@@ -357,7 +356,7 @@ function openPopWithApp(url, title){
 			<img src="./mart11st_files/pop_promo_20160118.png" alt="11번가 마트 생필품 빠른 장보기 코디 내추럴소프트 3겹 30롤 7,900원 롤당 264원 1월 18일부터 1월 24일까지  단, 일주일!">
 		</a>
 		<button type="button" class="nomore" id="martPromoPopNoMore">다시 보지 않기</button>
-		<button type="button" class="close" onclick="mwUI.layerPopClose(&#39;popBuyQuick&#39;)">닫기</button>
+		<button type="button" class="close" onclick="mwUI.layerPopClose(&;#39;popBuyQuick&;#39;)">닫기</button>
 	</div>
 </div>
 <!--// 2016.01.18 프로모션 안내 팝업 -->
@@ -378,9 +377,9 @@ function openPopWithApp(url, title){
 	    			}
 	    			element.src = domainPrefix + "/js/lib/mwapptools.js";
 	    			document.head.appendChild(element);
-				} catch(e) {};
-				
-		    	gnbAppDownBnr();
+                } catch (e) {
+                }
+                gnbAppDownBnr();
 		    }, false);
 		    
 			function gnbAppDownBnr(){
@@ -434,8 +433,14 @@ function openPopWithApp(url, title){
 			<fieldset>
 				<legend>통합검색</legend>
 				<div class="srch">
-					<input type="search" id="decSearchKeyword" name="decSearchKeyword" value="마트 상품을  검색해보세요!" title="검색어" onfocus="getInput();" onblur="releaseInput();" autocomplete="off" autocorrect="off" autocapitalize="off" onclick="clearInputValue(&#39;decSearchKeyword&#39;);fncStop();return false;" data-clickurl="WSRC00" data-clickkey="WSRC00" data-calltype="ajax">
-					<button class="del" type="button" id="schdelbtn" style="display:none;" onclick="clearInputValue(&#39;decSearchKeyword&#39;);">검색어 삭제</button>
+					<input type="search" id="decSearchKeyword" name="decSearchKeyword" value="마트 상품을  검색해보세요!"
+						   title="검색어" onfocus="getInput();" onblur="releaseInput();" autocomplete="off"
+						   autocorrect="off" autocapitalize="off"
+						   onclick="clearInputValue(&;#39;decSearchKeyword&;#39;)fncStop();return false;"
+						   data-clickurl="WSRC00" data-clickkey="WSRC00" data-calltype="ajax">
+					<button class="del" type="button" id="schdelbtn" style="display:none;"
+							onclick="clearInputValue(&;#39;decSearchKeyword&;#39;)">검색어 삭제
+					</button>
 					<input type="submit" id="search_submit" value="검색" data-clickurl="MWMART01" data-clickkey="MWMART0101">
 					<input type="hidden" id="searchType" name="searchType" value="mart">
 					<input type="hidden" id="dispObjLnkUrl">
@@ -525,8 +530,8 @@ function openPopWithApp(url, title){
 			    }
 			} catch(e) {
 				console.log(e);
-			};
-		}());
+            }
+        }());
 		var totalSch = {
 				bodyclass : 'totalSearchType',
 				open : function(){
@@ -541,7 +546,7 @@ function openPopWithApp(url, title){
 					document.getElementById('kwd').style.display = 'none';
 					document.getElementById('schdelbtn').style.display = 'none';
 				}
-			}
+			};
 		
 		var defaultSearchKeyword = "마트 상품을  검색해보세요!";
 
@@ -575,11 +580,26 @@ function openPopWithApp(url, title){
 			<div class="mrt_bill">
 				<ul class="mwContainer" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px); transition-timing-function: ease-out; height: 287.5px;" data-status="done" data-didx="" data-direct=""><!-- swipe -->
 
-					<li style="display: block; transform: translate3d(0%, 0px, 0px); transition-duration: 0ms; transition-timing-function: ease-out; z-index: 10;" data-viewidx="1" class="mwView"><a href="http://m.11st.co.kr/MW/Product/productPlanningDetail.tmall?plnDispNo=921571&amp;mallType=mart" onclick="callStatAjax(&#39;MWMART04&#39;, &#39;MWMART0403&#39;);"><img src="./mart11st_files/2016121616211614907_9759721_1.jpg" alt="반가워버섯"></a></li>
 
-					<li style="display: block; transform: translate3d(100%, 0px, 0px); transition-duration: 0ms; transition-timing-function: ease-out; z-index: 1;" data-viewidx="2" class="mwView"><a href="http://m.11st.co.kr/MW/Product/productPlanningDetail.tmall?plnDispNo=920858&amp;mallType=mart" onclick="callStatAjax(&#39;MWMART04&#39;, &#39;MWMART0404&#39;);"><img src="./mart11st_files/2016122317572320251_9762376_1.jpg" alt="임업멘토"></a></li>
+					<li style="display: block; transform: translate3d(0%, 0px, 0px); transition-duration: 0ms; transition-timing-function: ease-out; z-index: 10;"
+						data-viewidx="1" class="mwView"><a
+							href="http://m.11st.co.kr/MW/Product/productPlanningDetail.tmall?plnDispNo=921571&amp;mallType=mart"
+							onclick="callStatAjax(&;#39;MWMART04&;#39;, &#39;MWMART0403&;#39;)"><img
+							src="./mart11st_files/2016121616211614907_9759721_1.jpg" alt="반가워버섯"></a></li>
 
-					<li style="display: block; transform: translate3d(-100%, 0px, 0px); transition-duration: 0ms; transition-timing-function: ease-out; z-index: 1;" data-viewidx="0" class="mwView"><a href="http://m.11st.co.kr/MW/Product/productPlanningDetail.tmall?plnDispNo=920000&amp;mallType=mart" onclick="callStatAjax(&#39;MWMART04&#39;, &#39;MWMART0402&#39;);"><img src="./mart11st_files/2017021719211738107_9806298_1.jpg" alt="청춘프로포즈"></a></li>
+
+					<li style="display: block; transform: translate3d(100%, 0px, 0px); transition-duration: 0ms; transition-timing-function: ease-out; z-index: 1;"
+						data-viewidx="2" class="mwView"><a
+							href="http://m.11st.co.kr/MW/Product/productPlanningDetail.tmall?plnDispNo=920858&amp;mallType=mart"
+							onclick="callStatAjax(&;#39;MWMART04&;#39;, &#39;MWMART0404&;#39;)"><img
+							src="./mart11st_files/2016122317572320251_9762376_1.jpg" alt="임업멘토"></a></li>
+
+
+					<li style="display: block; transform: translate3d(-100%, 0px, 0px); transition-duration: 0ms; transition-timing-function: ease-out; z-index: 1;"
+						data-viewidx="0" class="mwView"><a
+							href="http://m.11st.co.kr/MW/Product/productPlanningDetail.tmall?plnDispNo=920000&amp;mallType=mart"
+							onclick="callStatAjax(&;#39;MWMART04&;#39;, &#39;MWMART0402&;#39;)"><img
+							src="./mart11st_files/2017021719211738107_9806298_1.jpg" alt="청춘프로포즈"></a></li>
 
 				</ul>
 				<div class="page">
@@ -625,7 +645,7 @@ function openPopWithApp(url, title){
 					</li>
 
 				</ul>
-				<button type="button" class="more" onclick="mwUI.moreToggle(&#39;martGo&#39;, &#39;open&#39;, this, &#39;더보기&#39;, &#39;닫기&#39;)">더보기</button>
+				<button type="button" class="more" onclick="mwUI.moreToggle(&;#39;martGo&;#39;, &#39;open&;#39;, this,; &#39;더보기&;#39;, &#39;닫기&;#39;)">더보기</button>
 			</div>
 
 		</div>
@@ -676,7 +696,7 @@ function openPopWithApp(url, title){
 					
 						<span class="thumb">
 						
-							<img class="lazy" src="./mart11st_files/2017030608340642831.jpg" data-original="http://i.011st.com/browsing/seller/2017/03/06/2017030608340642831.jpg" alt="페레로 로쉐 T3x16입/T5x12입/24T/T8하트/초콜릿/과자" onerror="this.src=&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;" style="display: block;">
+							<img class="lazy" src="./mart11st_files/2017030608340642831.jpg" data-original="http://i.011st.com/browsing/seller/2017/03/06/2017030608340642831.jpg" alt="페레로 로쉐 T3x16입/T5x12입/24T/T8하트/초콜릿/과자" onerror="this.src=;&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;" style="display: block;">
 							
 						</span>
 						<span class="name">
@@ -709,7 +729,7 @@ function openPopWithApp(url, title){
 					
 						<span class="thumb">
 						
-							<img class="lazy" src="./mart11st_files/2017030608340651606.jpg" data-original="http://i.011st.com/browsing/seller/2017/03/06/2017030608340651606.jpg" alt="무료배송 / 후룻바이더풋 버라이어티팩 60롤" onerror="this.src=&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;" style="display: block;">
+							<img class="lazy" src="./mart11st_files/2017030608340651606.jpg" data-original="http://i.011st.com/browsing/seller/2017/03/06/2017030608340651606.jpg" alt="무료배송 / 후룻바이더풋 버라이어티팩 60롤" onerror="this.src=;&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;" style="display: block;">
 							
 						</span>
 						<span class="name">
@@ -742,7 +762,7 @@ function openPopWithApp(url, title){
 					
 						<span class="thumb">
 						
-							<img class="lazy" src="./mart11st_files/2017030608370622725.jpg" data-original="http://i.011st.com/browsing/seller/2017/03/06/2017030608370622725.jpg" alt="퍼펙트/파베초콜릿만들기세트/생초콜릿만들기세트" onerror="this.src=&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;" style="display: block;">
+							<img class="lazy" src="./mart11st_files/2017030608370622725.jpg" data-original="http://i.011st.com/browsing/seller/2017/03/06/2017030608370622725.jpg" alt="퍼펙트/파베초콜릿만들기세트/생초콜릿만들기세트" onerror="this.src=;&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;" style="display: block;">
 							
 						</span>
 						<span class="name">
@@ -775,7 +795,7 @@ function openPopWithApp(url, title){
 					
 						<span class="thumb">
 						
-							<img class="lazy" src="./mart11st_files/2017030608350612191.jpg" data-original="http://i.011st.com/browsing/seller/2017/03/06/2017030608350612191.jpg" alt="코코아랜드 LOT100 구미망고젤리 1000g 어쏘티드" onerror="this.src=&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;" style="display: block;">
+							<img class="lazy" src="./mart11st_files/2017030608350612191.jpg" data-original="http://i.011st.com/browsing/seller/2017/03/06/2017030608350612191.jpg" alt="코코아랜드 LOT100 구미망고젤리 1000g 어쏘티드" onerror="this.src=;&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;" style="display: block;">
 							
 						</span>
 						<span class="name">
@@ -808,7 +828,7 @@ function openPopWithApp(url, title){
 					
 						<span class="thumb">
 						
-							<img class="lazy" src="./mart11st_files/2017030608350624352.jpg" data-original="http://i.011st.com/browsing/seller/2017/03/06/2017030608350624352.jpg" alt="투시팝 미니어처 350개/챰스240 화이트데이/막대 사탕" onerror="this.src=&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;" style="display: block;">
+							<img class="lazy" src="./mart11st_files/2017030608350624352.jpg" data-original="http://i.011st.com/browsing/seller/2017/03/06/2017030608350624352.jpg" alt="투시팝 미니어처 350개/챰스240 화이트데이/막대 사탕" onerror="this.src=;&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;" style="display: block;">
 							
 						</span>
 						<span class="name">
@@ -841,7 +861,7 @@ function openPopWithApp(url, title){
 					
 						<span class="thumb">
 						
-							<img class="lazy" src="./mart11st_files/2017030608350635428.jpg" data-original="http://i.011st.com/browsing/seller/2017/03/06/2017030608350635428.jpg" alt="킨더 초콜릿 미니 T22 3+3봉 기획전/킨더조이/초콜릿" onerror="this.src=&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;" style="display: block;">
+							<img class="lazy" src="./mart11st_files/2017030608350635428.jpg" data-original="http://i.011st.com/browsing/seller/2017/03/06/2017030608350635428.jpg" alt="킨더 초콜릿 미니 T22 3+3봉 기획전/킨더조이/초콜릿" onerror="this.src=;&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;" style="display: block;">
 							
 						</span>
 						<span class="name">
@@ -876,7 +896,7 @@ function openPopWithApp(url, title){
 					
 						<span class="thumb">
 						
-							<img class="lazy" src="./mart11st_files/2017030608350643416.jpg" data-original="http://i.011st.com/browsing/seller/2017/03/06/2017030608350643416.jpg" alt="천연과즙 크레용신짱 젤리스틱 900gx2통/젤리스트로우" onerror="this.src=&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;" style="display: block;">
+							<img class="lazy" src="./mart11st_files/2017030608350643416.jpg" data-original="http://i.011st.com/browsing/seller/2017/03/06/2017030608350643416.jpg" alt="천연과즙 크레용신짱 젤리스틱 900gx2통/젤리스트로우" onerror="this.src=;&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;" style="display: block;">
 							
 						</span>
 						<span class="name">
@@ -910,7 +930,7 @@ function openPopWithApp(url, title){
 					
 						<span class="thumb">
 						
-							<img class="lazy" src="./mart11st_files/2017030608350652316.jpg" data-original="http://i.011st.com/browsing/seller/2017/03/06/2017030608350652316.jpg" alt="사은품/초콜릿만들기/화이트데이/초콜렛" onerror="this.src=&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;" style="display: block;">
+							<img class="lazy" src="./mart11st_files/2017030608350652316.jpg" data-original="http://i.011st.com/browsing/seller/2017/03/06/2017030608350652316.jpg" alt="사은품/초콜릿만들기/화이트데이/초콜렛" onerror="this.src=;&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;" style="display: block;">
 							
 						</span>
 						<span class="name">
@@ -941,7 +961,7 @@ function openPopWithApp(url, title){
 					
 						<span class="thumb">
 						
-							<img class="lazy" src="./mart11st_files/2017030608360612655.jpg" data-original="http://i.011st.com/browsing/seller/2017/03/06/2017030608360612655.jpg" alt="킨더초콜릿 킨더미니 22개입 1+1" onerror="this.src=&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;" style="display: block;">
+							<img class="lazy" src="./mart11st_files/2017030608360612655.jpg" data-original="http://i.011st.com/browsing/seller/2017/03/06/2017030608360612655.jpg" alt="킨더초콜릿 킨더미니 22개입 1+1" onerror="this.src=;&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;" style="display: block;">
 							
 						</span>
 						<span class="name">
@@ -974,7 +994,7 @@ function openPopWithApp(url, title){
 					
 						<span class="thumb">
 						
-							<img class="lazy" src="./mart11st_files/2017030608360629378.jpg" data-original="http://i.011st.com/browsing/seller/2017/03/06/2017030608360629378.jpg" alt="화이트데이 파베 초콜릿만들기세트/초콜렛" onerror="this.src=&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;" style="display: block;">
+							<img class="lazy" src="./mart11st_files/2017030608360629378.jpg" data-original="http://i.011st.com/browsing/seller/2017/03/06/2017030608360629378.jpg" alt="화이트데이 파베 초콜릿만들기세트/초콜렛" onerror="this.src=;&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;" style="display: block;">
 							
 						</span>
 						<span class="name">
@@ -1023,7 +1043,7 @@ function openPopWithApp(url, title){
 						<a href="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo=45460620&amp;mallType=mart" data-clickurl="MWMART04" data-clickkey="MWMART0491">
 							<span class="thumb">
 								<span class="rank">1</span>
-								<img src="./mart11st_files/45460620_L300.jpg" alt="2016년농협햅쌀/섬진강메뚜기쌀20kg/쌀20kg/현미/잡곡" onerror="this.src=&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;">
+								<img src="./mart11st_files/45460620_L300.jpg" alt="2016년농협햅쌀/섬진강메뚜기쌀20kg/쌀20kg/현미/잡곡" onerror="this.src=;&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;">
 							</span>
 							<span class="name">2016년농협햅쌀/섬진강메뚜기쌀20kg/쌀20kg/현미/잡곡</span>
 							<span class="price"><b>31,900</b>원</span>
@@ -1034,7 +1054,7 @@ function openPopWithApp(url, title){
 						<a href="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo=935166489&amp;mallType=mart" data-clickurl="MWMART04" data-clickkey="MWMART0491">
 							<span class="thumb">
 								<span class="rank">2</span>
-								<img src="./mart11st_files/935166489_B_V1.jpg" alt="[종가집]실속형 포기김치10kg(소백)/이벤트 중" onerror="this.src=&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;">
+								<img src="./mart11st_files/935166489_B_V1.jpg" alt="[종가집]실속형 포기김치10kg(소백)/이벤트 중" onerror="this.src=;&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;">
 							</span>
 							<span class="name">[종가집]실속형 포기김치10kg(소백)/이벤트 중</span>
 							<span class="price"><b>39,900</b>원</span>
@@ -1045,7 +1065,7 @@ function openPopWithApp(url, title){
 						<a href="http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?mallType=mart&amp;catalogNo=22997" data-clickurl="MWMART04" data-clickkey="MWMART0491">
 							<span class="thumb">
 								<span class="rank">3</span>
-								<img src="./mart11st_files/22997_1.jpg" alt="프리미엄 키스 스페셜 22m 30롤 x 2팩" onerror="this.src=&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;">
+								<img src="./mart11st_files/22997_1.jpg" alt="프리미엄 키스 스페셜 22m 30롤 x 2팩" onerror="this.src=;&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;">
 							</span>
 							<span class="name">프리미엄 키스 스페셜 22m 30롤 x 2팩</span>
 							<span class="price"><b>13,900</b>원</span>
@@ -1056,7 +1076,7 @@ function openPopWithApp(url, title){
 						<a href="http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?mallType=mart&amp;catalogNo=22992" data-clickurl="MWMART04" data-clickkey="MWMART0491">
 							<span class="thumb">
 								<span class="rank">4</span>
-								<img src="./mart11st_files/22992_1.jpg" alt="프리미엄키스 순수 22m 30롤 x 2팩" onerror="this.src=&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;">
+								<img src="./mart11st_files/22992_1.jpg" alt="프리미엄키스 순수 22m 30롤 x 2팩" onerror="this.src=;&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;">
 							</span>
 							<span class="name">프리미엄키스 순수 22m 30롤 x 2팩</span>
 							<span class="price"><b>19,500</b>원</span>
@@ -1067,7 +1087,7 @@ function openPopWithApp(url, title){
 						<a href="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo=1399916115&amp;mallType=mart" data-clickurl="MWMART04" data-clickkey="MWMART0491">
 							<span class="thumb">
 								<span class="rank">5</span>
-								<img src="./mart11st_files/1399916115_B.jpg" alt="[감동란]간이베어 있는 촉촉한 반숙계란 30개입" onerror="this.src=&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;">
+								<img src="./mart11st_files/1399916115_B.jpg" alt="[감동란]간이베어 있는 촉촉한 반숙계란 30개입" onerror="this.src=;&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;">
 							</span>
 							<span class="name">[감동란]간이베어 있는 촉촉한 반숙계란 30개입</span>
 							<span class="price"><b>17,350</b>원</span>
@@ -1078,7 +1098,7 @@ function openPopWithApp(url, title){
 						<a href="http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?mallType=mart&amp;catalogNo=30731" data-clickurl="MWMART04" data-clickkey="MWMART0491">
 							<span class="thumb">
 								<span class="rank">6</span>
-								<img src="./mart11st_files/30731_1.jpg" alt="고급 위생 종이컵 2000개입" onerror="this.src=&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;">
+								<img src="./mart11st_files/30731_1.jpg" alt="고급 위생 종이컵 2000개입" onerror="this.src=;&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;">
 							</span>
 							<span class="name">고급 위생 종이컵 2000개입</span>
 							<span class="price"><b>14,400</b>원</span>
@@ -1089,7 +1109,7 @@ function openPopWithApp(url, title){
 						<a href="http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?mallType=mart&amp;catalogNo=4977" data-clickurl="MWMART04" data-clickkey="MWMART0491">
 							<span class="thumb">
 								<span class="rank">7</span>
-								<img src="./mart11st_files/4977_1.jpg" alt="맥심 모카골드 마일드 12g 100T x 1개" onerror="this.src=&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;">
+								<img src="./mart11st_files/4977_1.jpg" alt="맥심 모카골드 마일드 12g 100T x 1개" onerror="this.src=;&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;">
 							</span>
 							<span class="name">맥심 모카골드 마일드 12g 100T x 1개</span>
 							<span class="price"><b>10,430</b>원</span>
@@ -1100,7 +1120,7 @@ function openPopWithApp(url, title){
 						<a href="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo=1046727098&amp;mallType=mart" data-clickurl="MWMART04" data-clickkey="MWMART0491">
 							<span class="thumb">
 								<span class="rank">8</span>
-								<img src="./mart11st_files/1046727098_B_V6.jpg" alt="10kg 11900원 꿀고구마/호박고구마 특가!!" onerror="this.src=&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;">
+								<img src="./mart11st_files/1046727098_B_V6.jpg" alt="10kg 11900원 꿀고구마/호박고구마 특가!!" onerror="this.src=;&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;">
 							</span>
 							<span class="name">10kg 11900원 꿀고구마/호박고구마 특가!!</span>
 							<span class="price"><b>7,900</b>원</span>
@@ -1111,7 +1131,7 @@ function openPopWithApp(url, title){
 						<a href="http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?mallType=mart&amp;catalogNo=5969" data-clickurl="MWMART04" data-clickkey="MWMART0491">
 							<span class="thumb">
 								<span class="rank">9</span>
-								<img src="./mart11st_files/5969_1.jpg" alt="비타민C 1000 480정 x 1개" onerror="this.src=&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;">
+								<img src="./mart11st_files/5969_1.jpg" alt="비타민C 1000 480정 x 1개" onerror="this.src=;&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;">
 							</span>
 							<span class="name">비타민C 1000 480정 x 1개</span>
 							<span class="price"><b>31,500</b>원</span>
@@ -1122,7 +1142,7 @@ function openPopWithApp(url, title){
 						<a href="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo=1635946314&amp;mallType=mart" data-clickurl="MWMART04" data-clickkey="MWMART0491">
 							<span class="thumb">
 								<span class="rank">10</span>
-								<img src="./mart11st_files/1635946314_B.jpg" alt="[함평군 농협] 2016년 햅쌀 신동진쌀 20kg / 당일도정 / 산지직송" onerror="this.src=&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;">
+								<img src="./mart11st_files/1635946314_B.jpg" alt="[함평군 농협] 2016년 햅쌀 신동진쌀 20kg / 당일도정 / 산지직송" onerror="this.src=;&#39;http://m.11st.co.kr/MW/img/product/no_image_100.gif&#39;">
 							</span>
 							<span class="name">[함평군 농협] 2016년 햅쌀 신동진쌀 20kg / 당일도정 / 산지직송</span>
 							<span class="price"><b>32,900</b>원</span>
@@ -1422,9 +1442,8 @@ function openPopWithApp(url, title){
 				img.src = baseURL + trcUrl;
 			}
 		} catch(e) {}
-	};
-
-	function callHotClickPairing(pin) {
+    }
+    function callHotClickPairing(pin) {
 		try {
 			var getHotClickCookie = function(cName) {
 			    cName = cName + '=';
@@ -1564,8 +1583,8 @@ function openPopWithApp(url, title){
 			    }
 			} catch(e) {
 				console.log(e);
-			};
-		};
+            }
+        };
 		
 		try {
 			if(typeof url != 'undefined' && url !=''){
@@ -1575,8 +1594,8 @@ function openPopWithApp(url, title){
 			}
 		}catch(e) {
 			console.log(e);
-		};
-		gaSend(ctg, action, label, dimension);
+        }
+        gaSend(ctg, action, label, dimension);
 	}
 
 
@@ -1719,7 +1738,7 @@ var RecoPickInfo = function(pin) {
 		
 		return resultStr;
 	}
-}
+};
 
 var RecoPickPrdInfo = function(pin){
 	this.id	= pin.id;
@@ -1746,7 +1765,7 @@ var RecoPickPrdInfo = function(pin){
 
 		return resultStr;
 	}
-}
+};
 
 function callRecopickPrdStat(recoPickInfo, recopickServer) {
 	if(recopickServer == null || typeof recopickServer == "undefined" || recopickServer == "") {
@@ -1792,7 +1811,7 @@ function callRecopickPrdStat(recoPickInfo, recopickServer) {
 			<a href="http://m.11st.co.kr/MW/Mart/main.tmall?mallType=mart#"></a>
 			<button type="button" class="stop">그만보기</button>
 		</div>
-		<button type="button" class="close" onclick="mwUI.moreToggle(&#39;cpFloating&#39;, &#39;on&#39;, this, &#39;보기&#39;, &#39;닫기&#39;)">캠페인 보기</button>
+		<button type="button" class="close" onclick="mwUI.moreToggle(&;#39;cpFloating&;#39;, &#39;on&;#39;, this,; &#39;보기&;#39;, &#39;닫기&;#39;)">캠페인 보기</button>
 	</div>
 </section>
 <script id="mwDev_offerTemplate" type="text/x-elevenst-template">
@@ -1962,7 +1981,7 @@ var cpOfferAllPopup = {
 			document.body.className = document.body.className.replace(' allpopup', '');
 		}, false);
 	}
-}
+};
 
 window.addEventListener("load",  function(){
 	if(location.href.indexOf('/Login') > -1 || location.href.indexOf('/Order') > -1) return;
@@ -2180,8 +2199,8 @@ function keyOneShow()
 		$("#dispObjLnkUrl").val(keyLinkArray[num]);
 }
 
-var keyArray = new Array();
-var keyLinkArray = new Array();
+var keyArray = [];
+var keyLinkArray = [];
 var domainUrl = document.URL;
 var sslType = domainUrl.split("://");
 
@@ -2278,7 +2297,8 @@ window.addEventListener("load",  function() {
 		}
 		element.src = domainPrefix + "/js/lib/mwapptools.js";
 		document.head.appendChild(element);
-	} catch(e) {};
+    } catch (e) {
+    }
 }, false);
 
 function call11stAppFooter(scheme, url) {
@@ -2299,7 +2319,7 @@ function goDealAppFooter(){
 
 <div class="f_down">
 	<ul>
-		<li><a href="http://m.11st.co.kr/MW/Mart/main.tmall?mallType=mart#" onclick="call11stAppFooter(&#39;://loadurl?domain=m.11st.co.kr&amp;url=&#39;,document.location.href); return false;" class="app11st" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1402">11번가 앱다운로드</a></li>
+		<li><a href="http://m.11st.co.kr/MW/Mart/main.tmall?mallType=mart#" onclick="call11stAppFooter(&;#39;://loadurl?domain=m.11st.co.kr&amp;url=&#39;,document.location.href); return false;" class="app11st" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1402">11번가 앱다운로드</a></li>
 		<li><a href="http://m.11st.co.kr/MW/Mart/main.tmall?mallType=mart#" onclick="goDealAppFooter(); return false;" class="shocking" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1403">쇼킹딜 앱다운로드</a></li>
 	</ul>
 </div>
@@ -2402,8 +2422,9 @@ function footerSetLogin() {
 <script type="text/javascript">
 window.addEventListener("load",  function() {
 	try {
-		
-	} catch(e) {};
+
+} catch (e) {
+    }
 }, false);
 
 function getXsiteBannerCookie(cName) {
