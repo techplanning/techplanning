@@ -167,10 +167,10 @@ mwScript.addScript('/js/lib/device.js');
 					<input type="search" id="decSearchKeyword" name="decSearchKeyword" value="마트 상품을  검색해보세요!"
 						   title="검색어" onfocus="getInput();" onblur="releaseInput();" autocomplete="off"
 						   autocorrect="off" autocapitalize="off"
-						   onclick="clearInputValue(&;#39;decSearchKeyword&;#39;);fncStop();return false;"
+						   onclick="clearInputValue('decSearchKeyword');fncStop();return false;"
 						   data-clickurl="WSRC00" data-clickkey="WSRC00" data-calltype="ajax">
 					<button class="del" type="button" id="schdelbtn" style="display:none;"
-							onclick="clearInputValue(&;#39;decSearchKeyword&;#39;)">검색어 삭제
+							onclick="clearInputValue('decSearchKeyword')">검색어 삭제
 					</button>
 					<input type="submit" id="search_submit" value="검색" data-clickurl="MWMART01" data-clickkey="MWMART0101">
 					<input type="hidden" id="searchType" name="searchType" value="mart">
