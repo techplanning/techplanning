@@ -5,6 +5,15 @@
     <!-- Shuttle 스크립트 로딩 -->
     <script src="js/common/TECHTESTSAMPLESentinelShuttle.js"></script>
 	<script>
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+                function(m,key,value) {
+                    vars[key] = value;
+                });
+            return vars;
+        }
+
         var _$SHUTTLE = TECHTESTSAMPLESentinelShuttle();
         _$SHUTTLE.setSession_id(getUrlVars()["sessionid"]).setPc_id(TMCookieUtil.getCookie("PCID")).setSex(getUrlVars()["sex"]).setBirthyear(getUrlVars()["birthyear"]).setPoc(getUrlVars()["poc"]);
         _$SHUTTLE.setBodyOf_main__();
