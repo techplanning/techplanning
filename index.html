@@ -1327,36 +1327,11 @@ function openPopWithApp(url, title){
 	}
 
 	function callStatAjax(url, key, item) {
-		if (url && url != '') {
-			var statUrl = '/a.st?url='+url+'&ts='+Date.now();
-			if (key && key != '') statUrl += '&key='+key;
-			if (item && item != '') statUrl += '&item='+item;
-			var xhr = window.ActiveXObject ? new window.ActiveXObject('Microsoft.XMLHTTP') : new window.XMLHttpRequest();
-		    try {
-		        xhr.open('get', statUrl, true);
-		        xhr.send(null);
-		    } catch (e){ console.log(e); }
-		}
+
 	}
 
 	function callStat(url, key, item) {
-		if (url && url != '') {
-			var statUrl = '/a.st?url='+url+'&ts='+Date.now();
-			if (key && key != '') statUrl += '&key='+key;
-			if (item && item != '') statUrl += '&item='+item;
-			var clickIfrm;
-			if (document.getElementById('ifrmClickAnaly')) {
-				clickIfrm = document.getElementById('ifrmClickAnaly');
-			} else {
-				clickIfrm = document.createElement('IFRAME');
-				clickIfrm.id = 'ifrmClickAnaly';
-				clickIfrm.width = 0;
-				clickIfrm.height = 0;
-				clickIfrm.style.display = 'none';
-				document.body.appendChild(clickIfrm);
-			}
-			clickIfrm.src = statUrl;
-		}
+
 	}
 
 	function catchItemClickEvent(e) {
