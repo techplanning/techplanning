@@ -3,31 +3,23 @@
  *
  */
 var _$gShuttleBodyLayout_TECHTESTSAMPLESentinelShuttle = {
-  		"/main:":[],
-		"/main:topcategory":["category_name"],
-		"/main:search":[],
-		"/main:botcategory":["category_name"],
-		"/ad01:":[],
-		"/ad01:swipe":["next_page_id"],
-		"/ad02:":[],
-		"/ad02:swipe":["next_page_id"],
-		"/ad03:":[],
-		"/ad03:swipe":["next_page_id"],
-		"/search:":[],
-		"/search:inputfield":["search_type"],
-		"/category:":[],
-		"/category:selectcategory":["category_name"],
-		"/category:selectitem":["category_name"],
-		"/itemlist:":[],
-		"/itemlist:item":["item_name"],
-		"/itemlist:viewall":[],
-		"/menulist:":[],
-		"/menulist:sale":[],
-		"/menulist:plusone":[],
-		"/menulist:gift":[],
-		"/bestlist:":[],
-		"/bestlist:list":[],
-		"/bestlist:viewall":[]
+  		"/mart/main:":[],
+		":category.fresh":["action_event_id"],
+		"/mart/category/main:":[],
+		":gnb.search":[],
+		"/mart/search:":[],
+		":search.go":["search_keyword"],
+		"/mart/search_mart_prd_list:":[],
+		":search_result.prd_list":["list_no","prd_no"],
+		"/product/product_basic_info:":["prd_no"],
+		":requirement.add_to_cart":["prd_no","prd_amount"],
+		"/cart/cart_list:":[],
+		":cart_prd_list.order":["list_no","cart_no","prd_no"],
+		"/order/order_basic_first_step:":[],
+		":order_confirm.pay":["cart_no","prd_no"],
+		"/order/view_order_detail_info:":[],
+		":pay_confirm.pay":["bank_code","cart_no","prd_no"],
+		"/order/view_order_pay_info:":["order_no"]
 }
 
 /**
@@ -92,7 +84,7 @@ function TECHTESTSAMPLESentinelShuttle(userSpecifiedKeys) {
   /** constructor start */
   var log = {
       sentinel_meta: {
-          _$schemaId: "58c7aa3c520000f2331b6fa0",
+          _$schemaId: "58cf9c3152000046552a893b",
           _$projectId: "",
           _$fieldOrder: {},
           _$encryptionFields: [
@@ -179,10 +171,14 @@ function TECHTESTSAMPLESentinelShuttle(userSpecifiedKeys) {
   ];
 
   var bodies = [
-  		"category_name",
-		"next_page_id",
-		"search_type",
-		"item_name"
+  		"action_event_id",
+		"search_keyword",
+		"list_no",
+		"prd_no",
+		"prd_amount",
+		"cart_no",
+		"bank_code",
+		"order_no"
   ];
 
   var action_key_fields = [
@@ -201,7 +197,7 @@ function TECHTESTSAMPLESentinelShuttle(userSpecifiedKeys) {
 
     log.sentinel_meta._$fieldOrder[headers[i]] = i;
     if(headers[i] === "log_version"){
-      log[headers[i]] = "17.03.14:1.6.4:3";
+      log[headers[i]] = "17.03.14:1.6.4:4";
     }else{
       log[headers[i]] = "";
       shuttle['set' + capitalize(headers[i])] = (function (header) {
@@ -288,7 +284,7 @@ function TECHTESTSAMPLESentinelShuttle(userSpecifiedKeys) {
       }
     }
 
-    log["log_version"] = "17.03.14:1.6.4:3";
+    log["log_version"] = "17.03.14:1.6.4:4";
 
     for (var i = 0, bodiesLength = bodies.length; i < bodiesLength; i++) {
       if(data.hasOwnProperty(bodies[i])) {
