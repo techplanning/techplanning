@@ -4,7 +4,7 @@
         return e.indexOf("msie") != -1 && parseInt(e.split("msie")[1])
     }
 
-    function r(e, t) {
+    function r(e, t) {/**/
         e[t] = function () {
             e.push([t].concat(Array.prototype.slice.call(arguments, 0)))
         }
