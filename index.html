@@ -70,6 +70,9 @@
             shuttle.setAction_id('category.fresh');
             shuttle.setAction_event_id('click');
             shuttle.get()._$body.meta_disp_ctgr_no = meta_disp_ctgr_no;
+
+            _$RAKE_collect(shuttle);
+            _$RAKE_flush();
 		}
 	</script>
 <script>
