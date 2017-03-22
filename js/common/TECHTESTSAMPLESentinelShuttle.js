@@ -4,21 +4,21 @@
  */
 var _$gShuttleBodyLayout_TECHTESTSAMPLESentinelShuttle = {
   		"/mart/main:":[],
-		":category.fresh":["action_event_id"],
-		"/mart/category/main:":[],
-		":gnb.search":[],
+		":meta_category_home.fresh":["action_event_id"],
+		"/mart/meta_category/main:":["meta_disp_ctgr_no"],
+		":gnb.search":["action_event_id"],
 		"/mart/search:":[],
-		":search.go":["search_keyword"],
+		":search.go":["action_event_id","search_keyword"],
 		"/mart/search_mart_prd_list:":[],
-		":search_result.prd_list":["list_no","prd_no"],
+		":search_result.prd_list":["action_event_id","list_no","prd_no"],
 		"/product/product_basic_info:":["prd_no"],
-		":requirement.add_to_cart":["prd_no","prd_amount"],
+		":requirement.add_to_cart":["action_event_id","prd_no","prd_amount"],
 		"/cart/cart_list:":[],
-		":cart_prd_list.order":["list_no","cart_no","prd_no"],
+		":cart_prd_list.order":["action_event_id","list_no","cart_no","prd_no"],
 		"/order/order_basic_first_step:":[],
-		":order_confirm.pay":["cart_no","prd_no"],
+		":order_confirm.pay":["action_event_id","cart_no","prd_no"],
 		"/order/view_order_detail_info:":[],
-		":pay_confirm.pay":["bank_code","cart_no","prd_no"],
+		":pay_confirm.pay":["action_event_id","bank_code","cart_no","prd_no"],
 		"/order/view_order_pay_info:":["order_no"]
 }
 
@@ -84,7 +84,7 @@ function TECHTESTSAMPLESentinelShuttle(userSpecifiedKeys) {
   /** constructor start */
   var log = {
       sentinel_meta: {
-          _$schemaId: "58cf9c3152000046552a893b",
+          _$schemaId: "58d1d7f652000005aa2a89ec",
           _$projectId: "",
           _$fieldOrder: {},
           _$encryptionFields: [
@@ -178,7 +178,8 @@ function TECHTESTSAMPLESentinelShuttle(userSpecifiedKeys) {
 		"prd_amount",
 		"cart_no",
 		"bank_code",
-		"order_no"
+		"order_no",
+		"meta_disp_ctgr_no"
   ];
 
   var action_key_fields = [
@@ -197,7 +198,7 @@ function TECHTESTSAMPLESentinelShuttle(userSpecifiedKeys) {
 
     log.sentinel_meta._$fieldOrder[headers[i]] = i;
     if(headers[i] === "log_version"){
-      log[headers[i]] = "17.03.14:1.6.4:4";
+      log[headers[i]] = "17.03.14:1.6.4:6";
     }else{
       log[headers[i]] = "";
       shuttle['set' + capitalize(headers[i])] = (function (header) {
@@ -284,7 +285,7 @@ function TECHTESTSAMPLESentinelShuttle(userSpecifiedKeys) {
       }
     }
 
-    log["log_version"] = "17.03.14:1.6.4:4";
+    log["log_version"] = "17.03.14:1.6.4:6";
 
     for (var i = 0, bodiesLength = bodies.length; i < bodiesLength; i++) {
       if(data.hasOwnProperty(bodies[i])) {
