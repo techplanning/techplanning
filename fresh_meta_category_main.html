@@ -855,6 +855,17 @@ window.addEventListener("DOMContentLoaded",  function(){
 					
 					recoPick('sendLog', 'search', reco_searhword);
 			} catch ( err ) {console.log("recopick : " + err);}
+
+			try {
+                shuttle = TECHTESTSAMPLESentinelShuttle();
+                shuttle.setPage_id("/mart/search").setPc_id(TMCookieUtil.getCookie("PCID"));
+                shuttle.setAction_id('search.go');
+                shuttle.get()._$body.search_keyword = 'reco_searhword';
+                shuttle.setAction_event_id('click');
+
+                _$RAKE_collect(shuttle);
+                _$RAKE_flush();
+			} catch (err) {console.log("RAKE : " + err);}
 		} 
 	});
 });
