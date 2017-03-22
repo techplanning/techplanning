@@ -860,7 +860,7 @@ window.addEventListener("DOMContentLoaded",  function(){
                 shuttle = TECHTESTSAMPLESentinelShuttle();
                 shuttle.setPage_id("/mart/search").setPc_id(TMCookieUtil.getCookie("PCID"));
                 shuttle.setAction_id('search.go');
-                shuttle.get()._$body.search_keyword = 'reco_searhword';
+                shuttle.get()._$body.search_keyword = reco_searhword;
                 shuttle.setAction_event_id('click');
 
                 _$RAKE_collect(shuttle);
