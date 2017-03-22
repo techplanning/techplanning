@@ -59,11 +59,22 @@ var mwScript = (function() {
     }
 
     var _$SHUTTLE = TECHTESTSAMPLESentinelShuttle();
-    _$SHUTTLE.setPage_id("/mart/meta_category/main").setSession_id(getUrlVars()["sessionid"]).setPc_id(TMCookieUtil.getCookie("PCID")).setSex(getUrlVars()["sex"]).setBirthyear(getUrlVars()["birthyear"]).setPoc(getUrlVars()["poc"]);
-    _$SHUTTLE.get()._$body.meta_disp_ctgr_no = '956975';
+    _$SHUTTLE.setPage_id("/mart/meta_category/main").setPc_id(TMCookieUtil.getCookie("PCID"));
+    _$SHUTTLE.get()._$body.meta_disp_ctgr_no = 956975;
 </script>
 <script src="js/common/Log.js"></script>
+<script>
+	function goSearch() {
+        shuttle = TECHTESTSAMPLESentinelShuttle();
+        shuttle.setPage_id("/mart/meta_category/main").setPc_id(TMCookieUtil.getCookie("PCID"));
+        shuttle.get()._$body.meta_disp_ctgr_no = 956975;
+        shuttle.setAction_id('gnb.search');
+        shuttle.setAction_event_id('click');
 
+        _$RAKE_collect(shuttle);
+        _$RAKE_flush();
+	}
+</script>
 <script>
 var _MOBILE_URL_ = 'http://m.11st.co.kr/MW';
 var _SSL_MOBILE_URL_ = 'https://m.11st.co.kr/MW';
@@ -167,7 +178,7 @@ mwScript.addScript('/js/lib/device.js');
 					<input type="search" id="decSearchKeyword" name="decSearchKeyword" value="마트 상품을  검색해보세요!"
 						   title="검색어" onfocus="getInput();" onblur="releaseInput();" autocomplete="off"
 						   autocorrect="off" autocapitalize="off"
-						   onclick="clearInputValue('decSearchKeyword');fncStop();return false;"
+						   onclick="clearInputValue('decSearchKeyword');fncStop();goSearch();return false;"
 						   data-clickurl="WSRC00" data-clickkey="WSRC00" data-calltype="ajax">
 					<button class="del" type="button" id="schdelbtn" style="display:none;"
 							onclick="clearInputValue('decSearchKeyword')">검색어 삭제
