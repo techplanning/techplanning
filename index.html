@@ -60,13 +60,13 @@
         }
 
         var _$SHUTTLE = TECHTESTSAMPLESentinelShuttle();
-        _$SHUTTLE.setPage_id("/mart/main").setSession_id(getUrlVars()["sessionid"]).setPc_id(TMCookieUtil.getCookie("PCID")).setSex(getUrlVars()["sex"]).setBirthyear(getUrlVars()["birthyear"]).setPoc(getUrlVars()["poc"]);
+        _$SHUTTLE.setPage_id("/mart/main").setSession_id(getUrlVars()["session_id"]).setPc_id(TMCookieUtil.getCookie("PCID")).setSex(getUrlVars()["sex"]).setBirthyear(getUrlVars()["birthyear"]).setPoc(getUrlVars()["poc"]);
 	</script>
 	<script src="js/common/Log.js"></script>
 	<script>
 		function goFresh(meta_disp_ctgr_no) {
             shuttle = TECHTESTSAMPLESentinelShuttle();
-            shuttle.setPage_id("/mart/main").setSession_id(getUrlVars()["sessionid"]).setPc_id(TMCookieUtil.getCookie("PCID")).setSex(getUrlVars()["sex"]).setBirthyear(getUrlVars()["birthyear"]).setPoc(getUrlVars()["poc"]);
+            shuttle.setPage_id("/mart/main").setSession_id(getUrlVars()["session_id"]).setPc_id(TMCookieUtil.getCookie("PCID")).setSex(getUrlVars()["sex"]).setBirthyear(getUrlVars()["birthyear"]).setPoc(getUrlVars()["poc"]);
             shuttle.setAction_id('meta_category_home.fresh');
             shuttle.setAction_event_id('click');
             shuttle.get()._$body.meta_disp_ctgr_no = meta_disp_ctgr_no;
