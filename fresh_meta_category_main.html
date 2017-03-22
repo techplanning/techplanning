@@ -65,14 +65,18 @@ var mwScript = (function() {
 <script src="js/common/Log.js"></script>
 <script>
 	function goSearch() {
-        shuttle = TECHTESTSAMPLESentinelShuttle();
-        shuttle.setPage_id("/mart/meta_category/main").setPc_id(TMCookieUtil.getCookie("PCID"));
-        shuttle.get()._$body.meta_disp_ctgr_no = 956975;
-        shuttle.setAction_id('gnb.search');
-        shuttle.setAction_event_id('click');
+	    if(schdelbtn.style.display == 'block') {
 
-        _$RAKE_collect(shuttle);
-        _$RAKE_flush();
+		} else {
+            shuttle = TECHTESTSAMPLESentinelShuttle();
+            shuttle.setPage_id("/mart/meta_category/main").setPc_id(TMCookieUtil.getCookie("PCID"));
+            shuttle.get()._$body.meta_disp_ctgr_no = 956975;
+            shuttle.setAction_id('gnb.search');
+            shuttle.setAction_event_id('click');
+
+            _$RAKE_collect(shuttle);
+            _$RAKE_flush();
+		}
 	}
 </script>
 <script>
