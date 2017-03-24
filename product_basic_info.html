@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- saved from url=(0081)http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?mallType=mart&catalogNo=11943 -->
-<html lang="ko" class=" ios iphone mobile v9_0 portrait"><head><meta http-equiv="Content-Type" content="text/html; charset=EUC-KR"><script async="" src="./product_basic_info_files/gtm.js"></script><script async="" src="./product_basic_info_files/gtm(1).js"></script><script async="" src="./product_basic_info_files/analytics.js"></script><script type="text/javascript" async="" src="./product_basic_info_files/analytics.js"></script><script type="text/javascript" async="" src="./product_basic_info_files/ec.js"></script><script type="text/javascript" async="" src="./product_basic_info_files/rake-skp-1.5.min.js"></script><script async="" src="./product_basic_info_files/gtm.js"></script><script async="" src="./product_basic_info_files/gtm(1).js"></script><script async="" src="./product_basic_info_files/analytics.js"></script><script src="./product_basic_info_files/ga.js"></script>
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script async="" src="./product_basic_info_files/gtm.js"></script><script async="" src="./product_basic_info_files/gtm(1).js"></script><script async="" src="./product_basic_info_files/analytics.js"></script><script type="text/javascript" async="" src="./product_basic_info_files/analytics.js"></script><script type="text/javascript" async="" src="./product_basic_info_files/ec.js"></script><script type="text/javascript" async="" src="./product_basic_info_files/rake-skp-1.5.min.js"></script><script async="" src="./product_basic_info_files/gtm.js"></script><script async="" src="./product_basic_info_files/gtm(1).js"></script><script async="" src="./product_basic_info_files/analytics.js"></script><script src="./product_basic_info_files/ga.js"></script>
 
 
 
@@ -39,14 +39,14 @@ var mwScript = (function() {
 <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width">
 <script>mwScript.addTouchIcon("apple-touch-icon-precomposed");</script><link rel="apple-touch-icon-precomposed" href="http://c.m.011st.com/MW/img/mw11st_touchicon.png">
 <meta name="format-detection" content="telephone=no">
-<title>¸¶Æ®11¹ø°¡ ¸ğ¹ÙÀÏ</title>
-<link rel="stylesheet" href="./product_basic_info_files/base.css">
-<link rel="stylesheet" href="./product_basic_info_files/mart.css">
+<title>ë§ˆíŠ¸11ë²ˆê°€ ëª¨ë°”ì¼</title>
+	<link rel="stylesheet" href="css/common/base.css">
+	<link rel="stylesheet" href="css/mart/mart.css">
 <!--[if lt IE 9]><script src="//c.m.011st.com/MW/js/ui/ie.js"></script><![endif]-->
 <script src="./product_basic_info_files/jquery-2.1.1.min.js"></script>
 <script src="./product_basic_info_files/ui.js"></script>
 <script src="./product_basic_info_files/mwSwipe.js"></script>
-<script src="./product_basic_info_files/gnb_mart.js"></script>
+	<script src="js/common/gnb_mart.js"></script>
 <script src="./product_basic_info_files/TMCookieUtil.js"></script>
 <script>
 var _MOBILE_URL_ = 'http://m.11st.co.kr/MW';
@@ -110,12 +110,12 @@ var _selLimitPrdBuyCnt      = 0;
 var _selMinLimitTypCd		= '';
 var _selMinLimitQty			= 0;
 var tempData = '';
-var targetMartStrNo = 0;			// º¯°æÇÒ ¸¶Æ® ÁöÁ¡¹øÈ£
+var targetMartStrNo = 0;			// ë³€ê²½í•  ë§ˆíŠ¸ ì§€ì ë²ˆí˜¸
 var targetMartNo = 0;
 var targetMartAddrSeq =0;
 var checkStockInfoByOptQty = 0;
 
-//2015-10-16 [P1508010] ¸¶Æ®11¹ø°¡ Å½»ö ¹× ±¸¸Å°³¼±
+//2015-10-16 [P1508010] ë§ˆíŠ¸11ë²ˆê°€ íƒìƒ‰ ë° êµ¬ë§¤ê°œì„ 
 function martGoToOrder(buttonType, prdNo, ctlgStockNo, dispNm){
 	if(!funcCheckIsLogin()){
 		document.location.href = "https://m.11st.co.kr/MW/Login/login.tmall?returnURL=" + encodeURIComponent(encodeURIComponent(document.location.href));
@@ -149,14 +149,14 @@ function orderForDuplicationMartPrdNo(buttonType, prdNo, ctlgStockNo, dispNm) {
 						martPrdDetailInfo(data.newPrdNo, buttonType, ctlgStockNo, dispNm);
 						return;
 					} else {
-						console.log("Áßº¹»óÇ°¹øÈ£ Á¤º¸ Á¶È¸ ½ÇÆĞ!! - »óÇ°¹øÈ£ ¹ÌÁ¸Àç");
+						console.log("ì¤‘ë³µìƒí’ˆë²ˆí˜¸ ì •ë³´ ì¡°íšŒ ì‹¤íŒ¨!! - ìƒí’ˆë²ˆí˜¸ ë¯¸ì¡´ì¬");
 					}
 				}
 				martPrdDetailInfo(prdNo, buttonType, ctlgStockNo, dispNm);
 			},
 			error : function(data){
 				martPrdDetailInfo(prdNo, buttonType, ctlgStockNo, dispNm);
-				console.log("Áßº¹»óÇ°¹øÈ£ Á¤º¸ Á¶È¸ ½ÇÆĞ!!"); 
+				console.log("ì¤‘ë³µìƒí’ˆë²ˆí˜¸ ì •ë³´ ì¡°íšŒ ì‹¤íŒ¨!!"); 
 			}
 		});
 
@@ -166,7 +166,7 @@ function orderForDuplicationMartPrdNo(buttonType, prdNo, ctlgStockNo, dispNm) {
 
 }
 
-// »óÇ° Á¤º¸
+// ìƒí’ˆ ì •ë³´
 function martPrdDetailInfo(prdNo, buttonType, ctlgStockNo, dispNm){
 	var getPrdDetailUrl = "/MW/api/app/elevenst/product/getProductDetail.tmall?prdNo="+prdNo+"&by="+Date.now();
 	jQuery.ajax({
@@ -174,33 +174,33 @@ function martPrdDetailInfo(prdNo, buttonType, ctlgStockNo, dispNm){
 		cache : false,
 		dataType : "json",
 		success : function(data){
-			if(data.status.code == "200"){ // ¼º°ø
-				if((data.appDetail.selOptCnt == "0" && data.appDetail.insOptCnt == "0") && typeof(data.appDetail.prdPromotion) == "undefined"){  // ¿É¼ÇÀÌ ¾øÀ»¶§ ¹«Á¶°Ç ÁÖ¹® ¼ö·® 1°³¸¸ ´ã¾Æ¼­ Àü´Ş
+			if(data.status.code == "200"){ // ì„±ê³µ
+				if((data.appDetail.selOptCnt == "0" && data.appDetail.insOptCnt == "0") && typeof(data.appDetail.prdPromotion) == "undefined"){  // ì˜µì…˜ì´ ì—†ì„ë•Œ ë¬´ì¡°ê±´ ì£¼ë¬¸ ìˆ˜ëŸ‰ 1ê°œë§Œ ë‹´ì•„ì„œ ì „ë‹¬
 					getMartPrdNoOption(data, prdNo, buttonType, ctlgStockNo, dispNm);
 				}else if((data.appDetail.selOptCnt == "0" && data.appDetail.insOptCnt == "0") && (typeof(data.appDetail.prdPromotion) != "undefined" && typeof(data.appDetail.prdPromotion) != null)){
 					getMartOptionInfo(data, prdNo, buttonType, ctlgStockNo, dispNm);
-				}else{   //¿É¼Ç Á¸Àç
+				}else{   //ì˜µì…˜ ì¡´ì¬
 					getMartOptionInfo(data, prdNo, buttonType, ctlgStockNo, dispNm);
 				}
 			}else if(data.status.code == "405"){
-				alert("ÁË¼ÛÇÕ´Ï´Ù. Á¸ÀçÇÏÁö ¾Ê´Â »óÇ°ÀÔ´Ï´Ù.");
+				alert("ì£„ì†¡í•©ë‹ˆë‹¤. ì¡´ì¬í•˜ì§€ ì•ŠëŠ” ìƒí’ˆì…ë‹ˆë‹¤.");
 			}else if(data.status.code == "901"){
-				alert("¿Ã¹Ù¸¥ ¿äÃ»ÀÌ ¾Æ´Õ´Ï´Ù.");
+				alert("ì˜¬ë°”ë¥¸ ìš”ì²­ì´ ì•„ë‹™ë‹ˆë‹¤.");
 			}else{
-				alert("Àá½ÃÈÄ ´Ù½Ã ½Ãµµ ÇØÁÖ¼¼¿ä.");
+				alert("ì ì‹œí›„ ë‹¤ì‹œ ì‹œë„ í•´ì£¼ì„¸ìš”.");
 			}
 		},
 		error : function(data){
-			alert("Àá½ÃÈÄ ´Ù½Ã ½Ãµµ ÇØÁÖ¼¼¿ä.");
-			console.log("»óÇ° Á¤º¸ Á¶È¸ ½ÇÆĞ!!");
+			alert("ì ì‹œí›„ ë‹¤ì‹œ ì‹œë„ í•´ì£¼ì„¸ìš”.");
+			console.log("ìƒí’ˆ ì •ë³´ ì¡°íšŒ ì‹¤íŒ¨!!");
 		}
 	});
 }
 
-//»óÇ° ¿É¼ÇÀÌ ¾øÀ» °æ¿ì
+//ìƒí’ˆ ì˜µì…˜ì´ ì—†ì„ ê²½ìš°
 function getMartPrdNoOption(data, prdNo, buttonType, ctlgStockNo, dispNm){
-	if(data.appDetail.martInfo.isMart == "Y"){  //ÁöÁ¡¹è¼Û »óÇ°
-		var setMartYn = 'N'; // ¼³Á¤µÈ ¹è¼ÛÁö°¡ ¾ø´Â°æ¿ì
+	if(data.appDetail.martInfo.isMart == "Y"){  //ì§€ì ë°°ì†¡ ìƒí’ˆ
+		var setMartYn = 'N'; // ì„¤ì •ëœ ë°°ì†¡ì§€ê°€ ì—†ëŠ”ê²½ìš°
 		if(typeof(data.appDetail.prdDelivery.dlvAddrList) != 'undefined' && data.appDetail.prdDelivery.dlvAddrList.length > 0){
 			for(var n =0; n < data.appDetail.prdDelivery.dlvAddrList.length; n++){
 				if(data.appDetail.prdDelivery.dlvAddrList[n].martAddrYn == "Y"){
@@ -209,16 +209,16 @@ function getMartPrdNoOption(data, prdNo, buttonType, ctlgStockNo, dispNm){
 				}
 			}
 		}
-		if(data.appDetail.prdDelivery.settedMartYn == "Y" && setMartYn == "Y"){ // ±âÁ¸ ¹è¼ÛÁö ¼³Á¤ O
-			if( typeof(data.appDetail.selStatStmt) != 'undefined' || data.appDetail.selStatCd != "103"){ //ÇØ´ç ÁöÁ¡¿¡¼­ ÆÇ¸ÅÁßÀÌ ¾Æ´Ñ °æ¿ì,
+		if(data.appDetail.prdDelivery.settedMartYn == "Y" && setMartYn == "Y"){ // ê¸°ì¡´ ë°°ì†¡ì§€ ì„¤ì • O
+			if( typeof(data.appDetail.selStatStmt) != 'undefined' || data.appDetail.selStatCd != "103"){ //í•´ë‹¹ ì§€ì ì—ì„œ íŒë§¤ì¤‘ì´ ì•„ë‹Œ ê²½ìš°,
 				soldOutInfo(data, prdNo, dispNm);
-			}else{ //ÇØ´ç ÁöÁ¡ ¹× »óÇ°¿¡ ¸Â´Â °¡°İ Á¶È¸
+			}else{ //í•´ë‹¹ ì§€ì  ë° ìƒí’ˆì— ë§ëŠ” ê°€ê²© ì¡°íšŒ
 				resetDirectInputCart(data, "", prdNo, buttonType, ctlgStockNo, dispNm);
 			}
-		}else{	// ¹è¼ÛÁö ¼³Á¤ X
+		}else{	// ë°°ì†¡ì§€ ì„¤ì • X
 			makeDeliveryTemplate(data, prdNo, buttonType, ctlgStockNo, dispNm);
 		}
-	}else{  //ÀÏ¹İ¼¿·¯ »óÇ°
+	}else{  //ì¼ë°˜ì…€ëŸ¬ ìƒí’ˆ
 	 	directInputCart(data, "", prdNo, buttonType, ctlgStockNo, dispNm);
 	}
 }
@@ -228,7 +228,7 @@ function getMartStrNm(data) {
 	
 		if(data.appDetail.prdDelivery.dlvHelp.length > 1){
 			for(var j=0; j < data.appDetail.prdDelivery.dlvHelp.length ; j++){
-				if(data.appDetail.prdDelivery.dlvHelp[j].helpTitle == "¹è¼Û¾È³»"){
+				if(data.appDetail.prdDelivery.dlvHelp[j].helpTitle == "ë°°ì†¡ì•ˆë‚´"){
 					martNm = data.appDetail.prdDelivery.dlvHelp[j].text;
 					break;
 				}
@@ -242,11 +242,11 @@ function getMartStrNm(data) {
 function soldOutInfo(data, prdNo, dispNm){
 	var martNm = getMartStrNm(data);
 	var content = 	'<div class="p_mart_note">';
-	content += 			'<p>'+martNm+'¿¡¼­´Â ¹ÌÆÇ¸Å ¶Ç´Â Àç°íºÎÁ· µîÀÇ »çÀ¯·Î  ±¸¸ÅÇÏ½Ç ¼ö ¾ø½À´Ï´Ù</p>';
-	content += 			'<p class="pt">°í°´´ÔÀÇ ¾çÇØ ºÎÅ¹ µå¸³´Ï´Ù.</p>';
+	content += 			'<p>'+martNm+'ì—ì„œëŠ” ë¯¸íŒë§¤ ë˜ëŠ” ì¬ê³ ë¶€ì¡± ë“±ì˜ ì‚¬ìœ ë¡œ  êµ¬ë§¤í•˜ì‹¤ ìˆ˜ ì—†ìŠµë‹ˆë‹¤</p>';
+	content += 			'<p class="pt">ê³ ê°ë‹˜ì˜ ì–‘í•´ ë¶€íƒ ë“œë¦½ë‹ˆë‹¤.</p>';
 	content += 		'</div>';
 	content += 		'<div class="btn_w">';
-	content += 			'<button type="button" class="bbtn frd" onclick="mwUI.layerPopClose(\'popCart04\')">È®ÀÎ</button>';
+	content += 			'<button type="button" class="bbtn frd" onclick="mwUI.layerPopClose(\'popCart04\')">í™•ì¸</button>';
 	content += 		'</div>';
 
 	jQuery("#popCart04").html(content);
@@ -257,34 +257,34 @@ function resetDirectInputCart(data, dataOpt, prdNo, buttonType, ctlgStockNo, dis
 	tempData = data;
 	var martNm = "";
 	if(data.appDetail.martInfo.martNo == "6" || data.appDetail.martInfo.martNo == "5"){
-		martNm = "È¨ÇÃ·¯½º";
+		martNm = "í™ˆí”ŒëŸ¬ìŠ¤";
 	}else if(data.appDetail.martInfo.martNo == "3"){
-		martNm = "GS½´ÆÛ";
+		martNm = "GSìŠˆí¼";
 	}
 	
 	var martStrTitle = getMartStrNm(data);
 	var content = 		'<div class="p_mart_note">';
-	content += 			'<p>'+martStrTitle+'¿¡¼­ ¹è¼ÛµÇ¸ç °¡°İÀº <span class="w">'+getCommaValue(data.appDetail.prdPrice.finalDscPrc)+'¿ø</span> ÀÔ´Ï´Ù.</p>';
+	content += 			'<p>'+martStrTitle+'ì—ì„œ ë°°ì†¡ë˜ë©° ê°€ê²©ì€ <span class="w">'+getCommaValue(data.appDetail.prdPrice.finalDscPrc)+'ì›</span> ì…ë‹ˆë‹¤.</p>';
 	if(buttonType == "catalogDirectOrder" || buttonType=="directOrder"){
-		content += 			'<p class="pt">Áö±İ ±¸¸ÅÇÏ½Ã°Ú½À´Ï±î?</p>';
+		content += 			'<p class="pt">ì§€ê¸ˆ êµ¬ë§¤í•˜ì‹œê² ìŠµë‹ˆê¹Œ?</p>';
 	}else{
-		content += 			'<p class="pt">Àå¹Ù±¸´Ï¿¡ ´ãÀ¸½Ã°Ú½À´Ï±î?</p>';
+		content += 			'<p class="pt">ì¥ë°”êµ¬ë‹ˆì— ë‹´ìœ¼ì‹œê² ìŠµë‹ˆê¹Œ?</p>';
 	}
-	content += 			'<p>('+martNm+' »óÇ°Àº ´ëÇ¥ÁöÁ¡ °¡°İ°ú °í°´´Ô ¹è¼Û°¡´ÉÁöÁ¡ÀÇ °¡°İÀÌ ´Ù¸¦ ¼ö ÀÖ½À´Ï´Ù.) </p>';
+	content += 			'<p>('+martNm+' ìƒí’ˆì€ ëŒ€í‘œì§€ì  ê°€ê²©ê³¼ ê³ ê°ë‹˜ ë°°ì†¡ê°€ëŠ¥ì§€ì ì˜ ê°€ê²©ì´ ë‹¤ë¥¼ ìˆ˜ ìˆìŠµë‹ˆë‹¤.) </p>';
 	content += 		'</div>';
 	content += 		'<div class="btn_w">';
-	content += 			'<div><button type="button" class="bbtn" onclick="mwUI.layerPopClose(\'popCart02\');">Ãë¼Ò</button></div>';
-	content += 			'<div><button type="button" class="bbtn frd" onclick="directInputCart(\''+data+'\', \''+dataOpt +'\', \''+prdNo+'\', \''+ buttonType+'\', \''+ctlgStockNo+'\', \''+dispNm+'\');mwUI.layerPopClose(\'popCart02\');">È®ÀÎ</button></div>';
+	content += 			'<div><button type="button" class="bbtn" onclick="mwUI.layerPopClose(\'popCart02\');">ì·¨ì†Œ</button></div>';
+	content += 			'<div><button type="button" class="bbtn frd" onclick="directInputCart(\''+data+'\', \''+dataOpt +'\', \''+prdNo+'\', \''+ buttonType+'\', \''+ctlgStockNo+'\', \''+dispNm+'\');mwUI.layerPopClose(\'popCart02\');">í™•ì¸</button></div>';
 	content += 		'</div>';
 
 	jQuery("#popCart02").html(content);
 	mwUI.layerPop('popCart02');
 }
 
-//»óÇ° ¿É¼Ç Á¶È¸
+//ìƒí’ˆ ì˜µì…˜ ì¡°íšŒ
 function getMartOptionInfo(data, prdNo, buttonType, ctlgStockNo, dispNm){
 	if(data.appDetail.martInfo.isMart == 'Y'){
-		var setMartYn = 'N'; // ¼³Á¤µÈ ¹è¼ÛÁö°¡ ¾ø´Â°æ¿ì
+		var setMartYn = 'N'; // ì„¤ì •ëœ ë°°ì†¡ì§€ê°€ ì—†ëŠ”ê²½ìš°
 		if(typeof(data.appDetail.prdDelivery.dlvAddrList) != 'undefined' && data.appDetail.prdDelivery.dlvAddrList.length > 0){
 			for(var n =0; n < data.appDetail.prdDelivery.dlvAddrList.length; n++){
 				if(data.appDetail.prdDelivery.dlvAddrList[n].martAddrYn == "Y"){
@@ -293,7 +293,7 @@ function getMartOptionInfo(data, prdNo, buttonType, ctlgStockNo, dispNm){
 				}
 			}
 		}
-		if(data.appDetail.prdDelivery.settedMartYn == "Y" && setMartYn == "Y"){ // ±âÁ¸ ¹è¼ÛÁö ¼³Á¤ O
+		if(data.appDetail.prdDelivery.settedMartYn == "Y" && setMartYn == "Y"){ // ê¸°ì¡´ ë°°ì†¡ì§€ ì„¤ì • O
 		}else{
 			makeDeliveryTemplate(data, prdNo, buttonType, ctlgStockNo, dispNm);
 			return;
@@ -305,7 +305,7 @@ function getMartOptionInfo(data, prdNo, buttonType, ctlgStockNo, dispNm){
 		cache : false,
 		dataType : "json",
 		success : function(dataOpt){
-			if(dataOpt.status.code == "200" || dataOpt.status.code == "785"){ // ¼º°ø or ¿É¼ÇÀÌ ¾ø´Â »óÇ°
+			if(dataOpt.status.code == "200" || dataOpt.status.code == "785"){ // ì„±ê³µ or ì˜µì…˜ì´ ì—†ëŠ” ìƒí’ˆ
 				if(buttonType == "catalogInsertCart" || buttonType == "catalogDirectOrder"){
 					directInputCart(data, dataOpt, prdNo, buttonType, ctlgStockNo, dispNm);
 				}else{
@@ -313,21 +313,21 @@ function getMartOptionInfo(data, prdNo, buttonType, ctlgStockNo, dispNm){
 				}
 
 			}else if(data.status.code == "405"){
-				alert("ÁË¼ÛÇÕ´Ï´Ù. Á¸ÀçÇÏÁö ¾Ê´Â »óÇ°ÀÔ´Ï´Ù.");
+				alert("ì£„ì†¡í•©ë‹ˆë‹¤. ì¡´ì¬í•˜ì§€ ì•ŠëŠ” ìƒí’ˆì…ë‹ˆë‹¤.");
 			}else if(data.status.code == "901"){
-				alert("¿Ã¹Ù¸¥ ¿äÃ»ÀÌ ¾Æ´Õ´Ï´Ù.");
+				alert("ì˜¬ë°”ë¥¸ ìš”ì²­ì´ ì•„ë‹™ë‹ˆë‹¤.");
 			}else{
-				alert("Àá½ÃÈÄ ´Ù½Ã ½Ãµµ ÇØÁÖ¼¼¿ä.");
+				alert("ì ì‹œí›„ ë‹¤ì‹œ ì‹œë„ í•´ì£¼ì„¸ìš”.");
 			}
 		},
 		error : function(data){
-			alert("Àá½ÃÈÄ ´Ù½Ã ½Ãµµ ÇØÁÖ¼¼¿ä.");
-			console.log("¿É¼Ç Á¶È¸ ½ÇÆĞ!!");
+			alert("ì ì‹œí›„ ë‹¤ì‹œ ì‹œë„ í•´ì£¼ì„¸ìš”.");
+			console.log("ì˜µì…˜ ì¡°íšŒ ì‹¤íŒ¨!!");
 		}
 	});
 }
 
-//¹«Á¶°Ç 1°³ ¼±ÅÃ, ¿É¼ÇÀÌ ¾øÀ» °æ¿ì or Ä«´Ş·Î±× ¸ÊÇÎµÈ »óÇ°
+//ë¬´ì¡°ê±´ 1ê°œ ì„ íƒ, ì˜µì…˜ì´ ì—†ì„ ê²½ìš° or ì¹´ë‹¬ë¡œê·¸ ë§µí•‘ëœ ìƒí’ˆ
 function directInputCart(data, dataOpt, prdNo, buttonType, ctlgStockNo, dispNm){
 	if(typeof(data.appDetail) == 'undefined'){
 		data = tempData;
@@ -336,8 +336,8 @@ function directInputCart(data, dataOpt, prdNo, buttonType, ctlgStockNo, dispNm){
 	var optGubunFir = "!=!";
 	var optGugunSec = "_ @=@";
 	var optQtyString = "1"+gubun;
-	var insOptCnt = data.appDetail.insOptCnt; // select ¿É¼Ç °³¼ö (¿É¼ÇÀÌ ¾øÀ»¶§´Â 0)
-	var selOptCnt =  data.appDetail.selOptCnt; // select ¿É¼Ç °³¼ö (¿É¼ÇÀÌ ¾øÀ»¶§´Â 0)
+	var insOptCnt = data.appDetail.insOptCnt; // select ì˜µì…˜ ê°œìˆ˜ (ì˜µì…˜ì´ ì—†ì„ë•ŒëŠ” 0)
+	var selOptCnt =  data.appDetail.selOptCnt; // select ì˜µì…˜ ê°œìˆ˜ (ì˜µì…˜ì´ ì—†ì„ë•ŒëŠ” 0)
 	var iscpn = "N";
 	var optPrcString = "";
 	var optPrc = 0;
@@ -349,10 +349,10 @@ function directInputCart(data, dataOpt, prdNo, buttonType, ctlgStockNo, dispNm){
 	var optionStockHid  = data.appDetail.totStock;
 	var optionStock  = "1";
 	var optionStckNo  = data.appDetail.totPrdStckNo;
-	var incommingCode  = "01"; // 01 »óÇ°»ó¼¼
+	var incommingCode  = "01"; // 01 ìƒí’ˆìƒì„¸
 	var isMart = data.appDetail.martInfo.isMart;
 	if(isMart == "Y"){
-		incommingCode  = "06"; // 06 ¸¶Æ®»óÇ°
+		incommingCode  = "06"; // 06 ë§ˆíŠ¸ìƒí’ˆ
 	}
 	var strNo  = data.appDetail.martInfo.strNo;
 	var mailNo  = data.appDetail.martInfo.mailNo;
@@ -386,19 +386,19 @@ function directInputCart(data, dataOpt, prdNo, buttonType, ctlgStockNo, dispNm){
 		optPrcString = optPrc+gubun;
 	}
 
-	// Àç°í È®ÀÎ
+	// ì¬ê³  í™•ì¸
 	var tmpStock = "";
 	if(dataOpt != ""){
 		if(dataOpt.status.code == "785"){
 			if (data.appDetail.totStock == "" || data.appDetail.totStock == "0") {
-				alert("Àç°í°¡ ¾ø´Â »óÇ°ÀÔ´Ï´Ù.");
+				alert("ì¬ê³ ê°€ ì—†ëŠ” ìƒí’ˆì…ë‹ˆë‹¤.");
 				return false;
 			}
 
 			tmpStock = Number(data.appDetail.totStock);
-			// Àç°í¼ö·® ºñ±³
+			// ì¬ê³ ìˆ˜ëŸ‰ ë¹„êµ
 			if (1 > tmpStock) {
-				alert("Àç°í¼ö·®ÀÌ ºÎÁ· ÇÕ´Ï´Ù.");
+				alert("ì¬ê³ ìˆ˜ëŸ‰ì´ ë¶€ì¡± í•©ë‹ˆë‹¤.");
 				return false;
 			}
 		}else if(dataOpt.status.code == "200"){
@@ -411,14 +411,14 @@ function directInputCart(data, dataOpt, prdNo, buttonType, ctlgStockNo, dispNm){
 		}
 	}else{
 		if (data.appDetail.totStock == "" || data.appDetail.totStock == "0") {
-			alert("Àç°í°¡ ¾ø´Â »óÇ°ÀÔ´Ï´Ù.");
+			alert("ì¬ê³ ê°€ ì—†ëŠ” ìƒí’ˆì…ë‹ˆë‹¤.");
 			return false;
 		}
 
 		tmpStock = Number(data.appDetail.totStock);
-		// Àç°í¼ö·® ºñ±³
+		// ì¬ê³ ìˆ˜ëŸ‰ ë¹„êµ
 		if (1 > tmpStock) {
-			alert("Àç°í¼ö·®ÀÌ ºÎÁ· ÇÕ´Ï´Ù.");
+			alert("ì¬ê³ ìˆ˜ëŸ‰ì´ ë¶€ì¡± í•©ë‹ˆë‹¤.");
 			return false;
 		}
 	}
@@ -448,7 +448,7 @@ function directInputCart(data, dataOpt, prdNo, buttonType, ctlgStockNo, dispNm){
 
 }
 
-//Àå¹Ù±¸´Ï ´ã±â
+//ì¥ë°”êµ¬ë‹ˆ ë‹´ê¸°
 function inputCartAjax(martPrdInputCartUrl, params, dtlOptNm){
 	martPrdInputCartUrl = martPrdInputCartUrl+params;
 	jQuery.ajax({
@@ -457,7 +457,7 @@ function inputCartAjax(martPrdInputCartUrl, params, dtlOptNm){
 		type: "post",
 		dataType : "json",
 		success : function(dataResult){
-			if(dataResult.status.code == "200"){ // ¼º°ø
+			if(dataResult.status.code == "200"){ // ì„±ê³µ
 				if(false){
 					callAppScheme("app://showAnimation/addBasket");
 				}else{
@@ -467,17 +467,17 @@ function inputCartAjax(martPrdInputCartUrl, params, dtlOptNm){
 			}else if(dataResult.status.code != "200" && dataResult.status.message !=""){
 				alert(dataResult.status.message);
 			}else{
-				alert("Àá½ÃÈÄ ´Ù½Ã ½Ãµµ ÇØÁÖ¼¼¿ä.");
+				alert("ì ì‹œí›„ ë‹¤ì‹œ ì‹œë„ í•´ì£¼ì„¸ìš”.");
 			}
 		},
 		error : function(data){
-			alert("Àá½ÃÈÄ ´Ù½Ã ½Ãµµ ¶Ç´Â »óÇ° »ó¼¼¿¡¼­ ½Ãµµ ÇØÁÖ¼¼¿ä.");
-			console.log("Àå¹Ù±¸´Ï ´ã±â ½ÇÆĞ!!");
+			alert("ì ì‹œí›„ ë‹¤ì‹œ ì‹œë„ ë˜ëŠ” ìƒí’ˆ ìƒì„¸ì—ì„œ ì‹œë„ í•´ì£¼ì„¸ìš”.");
+			console.log("ì¥ë°”êµ¬ë‹ˆ ë‹´ê¸° ì‹¤íŒ¨!!");
 		}
 	});
 }
 
-//±¸¸ÅÇÏ±â
+//êµ¬ë§¤í•˜ê¸°
 function martDirectOrderCheckAjax(martPrdCheckBuyUrl, prdNo, params){
 	var goOrder = "/Order/orderBasicFirstStep.tmall?prdNo="+prdNo;
 	martPrdCheckBuyUrl = martPrdCheckBuyUrl+params;
@@ -487,62 +487,62 @@ function martDirectOrderCheckAjax(martPrdCheckBuyUrl, prdNo, params){
 		type: "post",
 		dataType : "json",
 		success : function(data){
-			if(data.status.code == "200"){ // ¼º°ø
+			if(data.status.code == "200"){ // ì„±ê³µ
 				location.href = "https://buy.m.11st.co.kr/MW"+goOrder+params+"&by="+Date.now();
 			}else if(data.status.code == "784"){
-				alert(data.status.d_message + "»óÇ°»ó¼¼¸¦ È®ÀÎ ÈÄ ±¸¸ÅÁøÇàÇØÁÖ¼¼¿ä.");
+				alert(data.status.d_message + "ìƒí’ˆìƒì„¸ë¥¼ í™•ì¸ í›„ êµ¬ë§¤ì§„í–‰í•´ì£¼ì„¸ìš”.");
 				location.href ="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo="+prdNo;
 			}else{
-				alert("Àá½ÃÈÄ ´Ù½Ã ½Ãµµ ÇØÁÖ¼¼¿ä.");
+				alert("ì ì‹œí›„ ë‹¤ì‹œ ì‹œë„ í•´ì£¼ì„¸ìš”.");
 			}
 		},
 		error : function(data){
-			alert("Àá½ÃÈÄ ´Ù½Ã ½Ãµµ ÇØÁÖ¼¼¿ä.");
-			console.log("»óÇ° Á¤º¸ Á¶È¸ ½ÇÆĞ!!");
+			alert("ì ì‹œí›„ ë‹¤ì‹œ ì‹œë„ í•´ì£¼ì„¸ìš”.");
+			console.log("ìƒí’ˆ ì •ë³´ ì¡°íšŒ ì‹¤íŒ¨!!");
 		}
 	});
 
 }
 
-//Àå¹Ù±¸´Ï ´ãÀº ÈÄ, alert
+//ì¥ë°”êµ¬ë‹ˆ ë‹´ì€ í›„, alert
 function inputCartAlert(prdNm){
 	var content = 		'<div class="p_mart_note">';
-	content += 			'<p>»óÇ°ÀÌ Àå¹Ù±¸´Ï¿¡ ´ã°å½À´Ï´Ù.</p>';
-	content += 			'<p class="pt">Àå¹Ù±¸´Ï·Î ÀÌµ¿ ÇÏ½Ã°Ú½À´Ï±î?</p>';
+	content += 			'<p>ìƒí’ˆì´ ì¥ë°”êµ¬ë‹ˆì— ë‹´ê²¼ìŠµë‹ˆë‹¤.</p>';
+	content += 			'<p class="pt">ì¥ë°”êµ¬ë‹ˆë¡œ ì´ë™ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?</p>';
 	content += 		'</div>';
 	content += 		'<div class="btn_w">';
-	content += 			'<div><button type="button" class="bbtn" onclick="mwUI.layerPopClose(\'popCart01\');">Ãë¼Ò</button></div>';
-	content += 			'<div><button type="button" class="bbtn frd" onclick="goCart(\'popCart01\');">È®ÀÎ</button></div>';
+	content += 			'<div><button type="button" class="bbtn" onclick="mwUI.layerPopClose(\'popCart01\');">ì·¨ì†Œ</button></div>';
+	content += 			'<div><button type="button" class="bbtn frd" onclick="goCart(\'popCart01\');">í™•ì¸</button></div>';
 	content += 		'</div>';
 
 	jQuery("#popCart01").html(content);
 	mwUI.layerPop('popCart01');
 }
 
-//Àå¹Ù±¸´Ï·Î ÀÌµ¿
+//ì¥ë°”êµ¬ë‹ˆë¡œ ì´ë™
 function goCart(divName){
 	document.location.href = "http://buy.m.11st.co.kr/MW/Cart/cartList.tmall";
 	mwUI.layerPopClose(divName);
 }
 
-//¹è¼ÛÁö ¼³Á¤
+//ë°°ì†¡ì§€ ì„¤ì •
 function makeDeliveryTemplate(data, prdNo, buttonType, ctlgStockNo, dispNm){
 	var prdDelivery = data.appDetail.prdDelivery;
 	var martInfo = data.appDetail.martInfo;
 	var martNm = "";
 	if(data.appDetail.martInfo.martNo == "6" || data.appDetail.martInfo.martNo == "5"){
-		martNm = "È¨ÇÃ·¯½º";
+		martNm = "í™ˆí”ŒëŸ¬ìŠ¤";
 	}else if(data.appDetail.martInfo.martNo == "3"){
-		martNm = "GS½´ÆÛ";
+		martNm = "GSìŠˆí¼";
 	}
 	var content ='';
-	content += 		'<h1>¹è¼ÛÁö ¼³Á¤</h1>';
+	content += 		'<h1>ë°°ì†¡ì§€ ì„¤ì •</h1>';
 	content += 			'<div class="p_mart_dly">';
 	content += 				'<p class="noti">';
-	content += 					'¼±ÅÃÇÏ½Å »óÇ°Àº '+martNm+' »óÇ°ÀÔ´Ï´Ù.<br/>¹è¼Û¹ŞÀ¸½Ç ÁÖ¼Ò¸¦ ¼³Á¤ÇÏ½Å ÈÄ ¼­ºñ½º ÀÌ¿ëÀÌ °¡´ÉÇÕ´Ï´Ù.<br/>'+martNm+' »óÇ°Àº ¼³Á¤µÈ ÁöÁ¡¿¡ µû¶ó Àç°í ¹× °¡°İÀÌ ´Ù¸¦ ¼ö ÀÖ½À´Ï´Ù.';
+	content += 					'ì„ íƒí•˜ì‹  ìƒí’ˆì€ '+martNm+' ìƒí’ˆì…ë‹ˆë‹¤.<br/>ë°°ì†¡ë°›ìœ¼ì‹¤ ì£¼ì†Œë¥¼ ì„¤ì •í•˜ì‹  í›„ ì„œë¹„ìŠ¤ ì´ìš©ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤.<br/>'+martNm+' ìƒí’ˆì€ ì„¤ì •ëœ ì§€ì ì— ë”°ë¼ ì¬ê³  ë° ê°€ê²©ì´ ë‹¤ë¥¼ ìˆ˜ ìˆìŠµë‹ˆë‹¤.';
 	content += 				'</p>';
 	content += 				'<div class="addr_slct">';
-	content += 					'<h2 class="tit_dly">¹è¼ÛÁö ¼±ÅÃ</h2>';
+	content += 					'<h2 class="tit_dly">ë°°ì†¡ì§€ ì„ íƒ</h2>';
 	content += 					'<div class="addr_list" id="addrList">';
 	content += 						'<ul>';
 	if(typeof(prdDelivery.dlvAddrList) != 'undefined'  && prdDelivery.dlvAddrList.length >0 ){
@@ -564,7 +564,7 @@ function makeDeliveryTemplate(data, prdNo, buttonType, ctlgStockNo, dispNm){
 	}else{
 		content += 							'<li>';
 		content += 								'<a href="#">';
-		content += 									'<span class="name">¹è¼ÛÁö ¼³Á¤ ÈÄ ÁÖ¹®ÀÌ °¡´ÉÇÕ´Ï´Ù.</span>';
+		content += 									'<span class="name">ë°°ì†¡ì§€ ì„¤ì • í›„ ì£¼ë¬¸ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤.</span>';
 		content += 									'<span class="addr"></span>';
 		content += 								'</a>';
 		content += 							'</li>';
@@ -572,26 +572,26 @@ function makeDeliveryTemplate(data, prdNo, buttonType, ctlgStockNo, dispNm){
 
 	content += 						'</ul>';
 	content += 					'</div>';
-	content += 					'<a href="javascript:insertMartAddress();" class="sbtn btn_add">¹è¼ÛÁö Ãß°¡</a>';
+	content += 					'<a href="javascript:insertMartAddress();" class="sbtn btn_add">ë°°ì†¡ì§€ ì¶”ê°€</a>';
 	content += 				'</div>';
 	content += 				'<div class="addr_set" id="martDlvInfoMany" style="display:none">';
-	content += 					'<h2 class="tit_dly">¹è¼ÛÁö ¼±ÅÃ</h2>';
+	content += 					'<h2 class="tit_dly">ë°°ì†¡ì§€ ì„ íƒ</h2>';
 	content += 					'<ul>';
-	content += 						'<li class="on"><a href="javascript:selectMartDlv(this.value);">È¨ÇÃ·¯½º <b>±İÃµÁ¡</b>¿¡¼­ ¹è¼ÛµË´Ï´Ù.</a></li>';
-	content += 						'<li><a href="javascript:selectMartDlv(this.value);">È¨ÇÃ·¯½º <b>±İÃµ±İÃµ±İÃµ±İÃµ±İÃµ±İÃµÁ¡</b>¿¡¼­ ¹è¼ÛµË´Ï´Ù.</a></li>';
+	content += 						'<li class="on"><a href="javascript:selectMartDlv(this.value);">í™ˆí”ŒëŸ¬ìŠ¤ <b>ê¸ˆì²œì </b>ì—ì„œ ë°°ì†¡ë©ë‹ˆë‹¤.</a></li>';
+	content += 						'<li><a href="javascript:selectMartDlv(this.value);">í™ˆí”ŒëŸ¬ìŠ¤ <b>ê¸ˆì²œê¸ˆì²œê¸ˆì²œê¸ˆì²œê¸ˆì²œê¸ˆì²œì </b>ì—ì„œ ë°°ì†¡ë©ë‹ˆë‹¤.</a></li>';
 	content += 					'</ul>';
 	content += 				'</div>';
 	content += 				'<div class="addr_set" id="martDlvInfoOne" style="display:none">';
-	content += 					'<h2 class="tit_dly">¹è¼ÛÁö ¼±ÅÃ</h2>';
+	content += 					'<h2 class="tit_dly">ë°°ì†¡ì§€ ì„ íƒ</h2>';
 	content += 					'<ul>';
-	content += 						'<li class="on">È¨ÇÃ·¯½º <b>±İÃµÁ¡</b>¿¡¼­ ¹è¼ÛµË´Ï´Ù.</a></li>';
+	content += 						'<li class="on">í™ˆí”ŒëŸ¬ìŠ¤ <b>ê¸ˆì²œì </b>ì—ì„œ ë°°ì†¡ë©ë‹ˆë‹¤.</a></li>';
 	content += 					'</ul>';
 	content += 				'</div>';
 	content += 			'</div>';
 	content += 			'<div class="btn_w">';
-	content += 				'<button type="button" class="bbtn frd" onclick="changeMartStrNo();">È®ÀÎ</button>';
+	content += 				'<button type="button" class="bbtn frd" onclick="changeMartStrNo();">í™•ì¸</button>';
 	content += 			'</div>';
-	content += 			'<button type="button" class="close" onclick="popupdelivery.close(\'popDelivery\');">ÆË¾÷´İ±â</button>';
+	content += 			'<button type="button" class="close" onclick="popupdelivery.close(\'popDelivery\');">íŒì—…ë‹«ê¸°</button>';
 
 	jQuery("#popDelivery").html(content);
 	if(typeof(prdDelivery.dlvAddrList) != 'undefined'  && prdDelivery.dlvAddrList.length >0){
@@ -601,7 +601,7 @@ function makeDeliveryTemplate(data, prdNo, buttonType, ctlgStockNo, dispNm){
 }
 
 
-//¹è¼Û°¡´É ÁöÁ¡¸ñ·Ï Á¶È¸
+//ë°°ì†¡ê°€ëŠ¥ ì§€ì ëª©ë¡ ì¡°íšŒ
 var searchMartStoreListWithAddr = function(martNo, addrSeq, multiMartYn, i) {
 	targetMartNo = martNo;
 	targetMartAddrSeq = addrSeq;
@@ -631,7 +631,7 @@ var searchMartStoreListWithAddr = function(martNo, addrSeq, multiMartYn, i) {
 };
 
 
-//¹è¼Û°¡´É ÁöÁ¡¸ñ·Ï È­¸é Ç¥½Ã
+//ë°°ì†¡ê°€ëŠ¥ ì§€ì ëª©ë¡ í™”ë©´ í‘œì‹œ
 function displayMartStoreInfo(json) {
 	var mdaList = json.mdaList;
 	var strInfoDiv = document.getElementById("martDlvInfoOne");
@@ -653,32 +653,32 @@ function displayMartStoreInfo(json) {
 	if(!storeChangePossibleYn) {
 		targetMartStrNo = 0;
 		strInfoDiv.style.display = "none";
-		strInfoDiv.innerHTML = "<p>ÇØ´ç ¹è¼ÛÁö ÁÖ¼Ò·Î ÀÌ¿ë °¡´ÉÇÑ ÁöÁ¡ÀÌ ¾ø½À´Ï´Ù. ¹è¼ÛÁö¸¦ º¯°æÇÏ¿© ÁÖ¼¼¿ä.</p>";
+		strInfoDiv.innerHTML = "<p>í•´ë‹¹ ë°°ì†¡ì§€ ì£¼ì†Œë¡œ ì´ìš© ê°€ëŠ¥í•œ ì§€ì ì´ ì—†ìŠµë‹ˆë‹¤. ë°°ì†¡ì§€ë¥¼ ë³€ê²½í•˜ì—¬ ì£¼ì„¸ìš”.</p>";
 		strInfoDiv.style.display = "block";
 		return false;
 	}
 	if(mdaList.length == 1) {
 		document.getElementById("martDlvInfoMany").style.display = "none";
 		targetMartStrNo = mdaList[0].strNo;
-		strInfoDiv.innerHTML = "<h2 class=\"tit_dly\">¹è¼ÛÁö ¼±ÅÃ</h2>";
-		strInfoDiv.innerHTML += "<ul><li class=\"on\" id=\"madList_0\">" + mdaList[0].martNm + " <b>" + mdaList[0].strNm + "</b>¿¡¼­ ¹è¼ÛµË´Ï´Ù.</li>";
+		strInfoDiv.innerHTML = "<h2 class=\"tit_dly\">ë°°ì†¡ì§€ ì„ íƒ</h2>";
+		strInfoDiv.innerHTML += "<ul><li class=\"on\" id=\"madList_0\">" + mdaList[0].martNm + " <b>" + mdaList[0].strNm + "</b>ì—ì„œ ë°°ì†¡ë©ë‹ˆë‹¤.</li>";
 		strInfoDiv.innerHTML += "<input type='hidden' value='"+mdaList[0].strNo+"' id='mdaList_0' /></ul>";
 	} else {
 		document.getElementById("martDlvInfoOne").style.display = "none";
 		var martStrNoObj = document.getElementById("martDlvInfoMany");
 		var inner = "";
-		inner += "<h2 class=\"tit_dly\">¹è¼ÛÁö ¼±ÅÃ</h2><ul>";
+		inner += "<h2 class=\"tit_dly\">ë°°ì†¡ì§€ ì„ íƒ</h2><ul>";
 		for(var a = 0; a < mdaList.length; a++) {
 			if(a == 0){
-				inner += "<li class='on' page='mdaList_"+a+"'><a href=\"javascript:selectMartDlv(\'"+mdaList[a].addrSeq+"\', \'"+a+"\',\'"+mdaList[a].strNo+"\');\">" + mdaList[a].martNm + " <b>" + mdaList[a].strNm + "</b>¿¡¼­ ¹è¼ÛµË´Ï´Ù.</a></li>";
+				inner += "<li class='on' page='mdaList_"+a+"'><a href=\"javascript:selectMartDlv(\'"+mdaList[a].addrSeq+"\', \'"+a+"\',\'"+mdaList[a].strNo+"\');\">" + mdaList[a].martNm + " <b>" + mdaList[a].strNm + "</b>ì—ì„œ ë°°ì†¡ë©ë‹ˆë‹¤.</a></li>";
 			}else{
-				inner += "<li page='mdaList_"+a+"'><a href=\"javascript:selectMartDlv(\'"+mdaList[a].addrSeq+"\', \'"+a+"\',\'"+mdaList[a].strNo+"\');\">" + mdaList[a].martNm + " <b>" + mdaList[a].strNm + "</b>¿¡¼­ ¹è¼ÛµË´Ï´Ù.</a></li>";
+				inner += "<li page='mdaList_"+a+"'><a href=\"javascript:selectMartDlv(\'"+mdaList[a].addrSeq+"\', \'"+a+"\',\'"+mdaList[a].strNo+"\');\">" + mdaList[a].martNm + " <b>" + mdaList[a].strNm + "</b>ì—ì„œ ë°°ì†¡ë©ë‹ˆë‹¤.</a></li>";
 			}
 		}
 		inner += "</ul>";
 		martStrNoObj.innerHTML = inner;
 	}
-	targetMartStrNo = mdaList[0].strNo;	// Ã¹¹øÂ° ÁöÁ¡À» ±âº» ¹è¼Û ÁöÁ¡À¸·Î ÀÓ½Ã ¼³Á¤
+	targetMartStrNo = mdaList[0].strNo;	// ì²«ë²ˆì§¸ ì§€ì ì„ ê¸°ë³¸ ë°°ì†¡ ì§€ì ìœ¼ë¡œ ì„ì‹œ ì„¤ì •
 	targetMartAddrSeq = mdaList[0].addrSeq;
 	strInfoDiv.style.display = "block";
 }
@@ -694,10 +694,10 @@ function selectMartDlv(addrSeq, a, strNo){
 }
 
 
-// ¸¶Æ® ¹è¼ÛÁöÁ¡ º¯°æ Ã³¸®
+// ë§ˆíŠ¸ ë°°ì†¡ì§€ì  ë³€ê²½ ì²˜ë¦¬
 function changeMartStrNo() {
 	if( "0" ==targetMartStrNo){
-		alert("ÇØ´ç ¹è¼ÛÁö ÁÖ¼Ò·Î ÀÌ¿ë °¡´ÉÇÑ ÁöÁ¡ÀÌ ¾ø½À´Ï´Ù. ¹è¼ÛÁö¸¦ ´Ù½Ã º¯°æÇÏ¿© ÁÖ¼¼¿ä. ");
+		alert("í•´ë‹¹ ë°°ì†¡ì§€ ì£¼ì†Œë¡œ ì´ìš© ê°€ëŠ¥í•œ ì§€ì ì´ ì—†ìŠµë‹ˆë‹¤. ë°°ì†¡ì§€ë¥¼ ë‹¤ì‹œ ë³€ê²½í•˜ì—¬ ì£¼ì„¸ìš”. ");
 		return;
 	}
 	var addrSeq		= targetMartAddrSeq;
@@ -730,7 +730,7 @@ function changeMartStrNo() {
 
 
 
-//¿É¼Ç
+//ì˜µì…˜
 var optNms = "";
 var selOptIdx = 0;
 var selOptSchIdx = 0;
@@ -788,14 +788,14 @@ var makeMartOptionTemplate = function(data, dataOpt, buttonType, prdNo, ctlgStoc
 	var tempOptClfCd = '';
 	var content ='';
 	content += createFrm(data, prdNo);
-	content += '<h1>»ó¼¼ ¿É¼Ç ¼±ÅÃ </h1>';
+	content += '<h1>ìƒì„¸ ì˜µì…˜ ì„ íƒ </h1>';
 	content += '<div class="p_mart_opt">';
 	if(typeof(prdDetail.prdPromotion) != "undefined"){
 		content += 		'<div class="" style="display:none">';
 		if(prdDetail.martInfo.martPrmtCd != "" && prdDetail.martInfo.martPrmtCd == "01"){
-			content +=			'<label for="plus01">´ı</label>';
+			content +=			'<label for="plus01">ë¤</label>';
 		}else if(prdDetail.martInfo.martPrmtCd != "" && prdDetail.martInfo.martPrmtCd == "02"){
-			content +=			'<label for="plus02">Ãß°¡ÁõÁ¤</label>';
+			content +=			'<label for="plus02">ì¶”ê°€ì¦ì •</label>';
 		}else if(prdDetail.martInfo.martPrmtCd != "" && prdDetail.martInfo.martPrmtCd == "03") {
 			content +=			'<label for="plus03">1+1</label>';
 		}
@@ -808,10 +808,10 @@ var makeMartOptionTemplate = function(data, dataOpt, buttonType, prdNo, ctlgStoc
 		content +=		'</div>';
 		
 		content += 		'<dl class="opt_plus">';
-		content += 			'<dt>Çà»çÁ¤º¸</dt>';
+		content += 			'<dt>í–‰ì‚¬ì •ë³´</dt>';
 		content += 			'<dd>';
 		if(prdDetail.martInfo.martPrmtCd != "" && prdDetail.martInfo.martPrmtCd == "01"){
-			content +=			'<b>[´ı]</b>';
+			content +=			'<b>[ë¤]</b>';
 		}else if(prdDetail.martInfo.martPrmtCd != "" && prdDetail.martInfo.martPrmtCd == "02"){
 			content +=			'<b>['+ prdDetail.prdPromotion.label +']</b>';
 		}else if(prdDetail.martInfo.martPrmtCd != "") {
@@ -823,10 +823,10 @@ var makeMartOptionTemplate = function(data, dataOpt, buttonType, prdNo, ctlgStoc
 	}
 
 	if(prdDetail.selOptCnt == 0 ){
-		// ¿É¼ÇÀÌ ¾øÀ»¶§
+		// ì˜µì…˜ì´ ì—†ì„ë•Œ
 		content +=		'<div class="opt_num">';
 		content += 			'<input type="hidden" name="optNmList" id="optNmList" value="" />';
-		content +=			'<label for="qty"><span>¼ö·®</span></label>';
+		content +=			'<label for="qty"><span>ìˆ˜ëŸ‰</span></label>';
 		content +=			'<div class="num_set">';
 		content +=				'<input type="hidden" name="optionStckNo" id="optionStckNo0" value="'+prdDetail.totPrdStckNo+'" />';
 		content +=				'<input type="hidden" name="optionPrc" id="optionPrc0" value="'+prdDetail.totPrdPrc+'" />';
@@ -844,7 +844,7 @@ var makeMartOptionTemplate = function(data, dataOpt, buttonType, prdNo, ctlgStoc
 			if(typeof(prdDetail.selLimitQty) != "undefined" && prdDetail.selLimitQty != ""){
 				_isSelLimitYN = 'Y';
 				_selLimitQty =  prdDetail.selLimitQty;
-				content += prdDetail.selLimitStr+'ÃÖ´ë±¸¸Å¼ö·® : '+ prdDetail.selLimitQty+'°³';
+				content += prdDetail.selLimitStr+'ìµœëŒ€êµ¬ë§¤ìˆ˜ëŸ‰ : '+ prdDetail.selLimitQty+'ê°œ';
 			}
 			if(typeof(prdDetail.selLimitQty) != "undefined" && prdDetail.selLimitQty != "" && typeof(prdDetail.selMinLimitQty) != "undefined" && prdDetail.selMinLimitQty != "" ){
 				content +=			'/';
@@ -852,7 +852,7 @@ var makeMartOptionTemplate = function(data, dataOpt, buttonType, prdNo, ctlgStoc
 			if(typeof(prdDetail.selMinLimitQty) != "undefined" && prdDetail.selMinLimitQty != ""){
 				 _isSelMinLimitYN = 'Y';
 				 _selMinLimitQty =  prdDetail.selMinLimitQty;
-				content +=			'ÃÖ¼Ò±¸¸Å¼ö·®  : '+ prdDetail.selMinLimitQty+'°³';
+				content +=			'ìµœì†Œêµ¬ë§¤ìˆ˜ëŸ‰  : '+ prdDetail.selMinLimitQty+'ê°œ';
 			}
 			content +=			')</span>';
 		}
@@ -867,9 +867,9 @@ var makeMartOptionTemplate = function(data, dataOpt, buttonType, prdNo, ctlgStoc
 		}
 		_selOptTypCd = '';
 		var isDateType = 'N';
-		// ¿É¼ÇÀÌ ÀÖÀ»¶§
+		// ì˜µì…˜ì´ ìˆì„ë•Œ
 		content +=		'<div class="opt">';
-		content +=			'<h2>¿É¼Ç</h2>';
+		content +=			'<h2>ì˜µì…˜</h2>';
 		content +=			'<ul id ="ul_productOpt">';
 		selOptIdx = 0;
 		selOptSchIdx = 0;
@@ -879,7 +879,7 @@ var makeMartOptionTemplate = function(data, dataOpt, buttonType, prdNo, ctlgStoc
 		tempFlag = false;
 		dailyUseFlag = false;
 		content +=				'<li class="opt_slt" id="opt_selectList">';
-		content += 					'<button type="button" class="slt_btn" onclick="mwUI.viewToggle(\'selectOption\',this,\'on\') ; initOptLayer();">¿É¼ÇÀ» ¼±ÅÃÇØ ÁÖ¼¼¿ä.<span></span></button>';
+		content += 					'<button type="button" class="slt_btn" onclick="mwUI.viewToggle(\'selectOption\',this,\'on\') ; initOptLayer();">ì˜µì…˜ì„ ì„ íƒí•´ ì£¼ì„¸ìš”.<span></span></button>';
 		content +=					'<div class="slt_wrp" id="selectOption">';
 		for(var j=0; j <dataOpt.optList.length; j++){
 			var prdOpt = dataOpt.optList[j];
@@ -889,7 +889,7 @@ var makeMartOptionTemplate = function(data, dataOpt, buttonType, prdNo, ctlgStoc
 				tempFlag = true;
 			}
 
-			if(prdOpt.optClfCd == "01"){ // ¼±ÅÃÇü ¿É¼Ç
+			if(prdOpt.optClfCd == "01"){ // ì„ íƒí˜• ì˜µì…˜
 				if(prdDetail.selOptCnt == "1" || prdDetail.selOptCnt == (selOptIdx+1)){
 					chngFuncNm = "_fnOptGetStock";
 				}
@@ -904,7 +904,7 @@ var makeMartOptionTemplate = function(data, dataOpt, buttonType, prdNo, ctlgStoc
 									var optItemList = prdOpt.optItemList[k];
 									content +=							'<li><a href="#" data-optnm="'+optItemList.dtlOptNm+'" data-stockno="'+optItemList.stckNo+'" data-opt_value="'+optItemList.optNo+'"> '+optItemList.dtlOptNm;
 									if(optItemList.addPrc != "0"){
-										content +=							'('+getCommaValue(optItemList.addPrc)+'¿ø)';
+										content +=							'('+getCommaValue(optItemList.addPrc)+'ì›)';
 									}
 									content +=		'</a></li>';
 								}
@@ -915,7 +915,7 @@ var makeMartOptionTemplate = function(data, dataOpt, buttonType, prdNo, ctlgStoc
 					content +=							'</ul>';
 					content +=						'</div>';
 				content +=					'</div>';
-			}else if(prdOpt.optClfCd == "02"){  //µ¶¸³Çü ¿É¼Ç
+			}else if(prdOpt.optClfCd == "02"){  //ë…ë¦½í˜• ì˜µì…˜
 				chngFuncNm = "_fnOptGetStock2";
 				content +=					'<div class="slt_op"> ';
 				content +=						'<div class="name"><a href="#optSelect'+selOptIdx+'" onclick="optionLayerToggle(\'optSelect'+selOptIdx+'\');return false;"><b>'+prdOpt.optItemNm+'</b>:&nbsp<span id="optSelectedNm'+selOptIdx+'" ></span></a></div>';
@@ -928,7 +928,7 @@ var makeMartOptionTemplate = function(data, dataOpt, buttonType, prdNo, ctlgStoc
 									var optItemList = prdOpt.optItemList[k];
 									content +=							'<li><a href="#" data-optnm="'+optItemList.dtlOptNm+'" data-stockno="'+optItemList.stckNo+'" data-opt_value="'+optItemList.optNo+'"> '+optItemList.dtlOptNm;
 									if(optItemList.addPrc != "0"){
-										content +=							'('+getCommaValue(optItemList.addPrc)+'¿ø)';
+										content +=							'('+getCommaValue(optItemList.addPrc)+'ì›)';
 									}
 									content +=		'</a></li>';
 								}
@@ -954,7 +954,7 @@ var makeMartOptionTemplate = function(data, dataOpt, buttonType, prdNo, ctlgStoc
 			}
 
 		} //end for(var j=0; j <prdOpt.optList.length; j++)
-		content +=					'<div class="load_op" id="opt_loading" style="display:none"><p>¼±ÅÃÁ¤º¸¸¦ ·ÎµùÁßÀÔ´Ï´Ù.</p></div>';
+		content +=					'<div class="load_op" id="opt_loading" style="display:none"><p>ì„ íƒì •ë³´ë¥¼ ë¡œë”©ì¤‘ì…ë‹ˆë‹¤.</p></div>';
 		content +=			'</li>';
 		content +=		'</ul>';
 		if(typeof(prdDetail.selLimitQty) != "undefined" || typeof(prdDetail.selMinLimitQty) != "undefined" ){
@@ -962,7 +962,7 @@ var makeMartOptionTemplate = function(data, dataOpt, buttonType, prdNo, ctlgStoc
 			if(typeof(prdDetail.selLimitQty) != "undefined" && prdDetail.selLimitQty != ""){
 				_isSelLimitYN = 'Y';
 				_selLimitQty =  prdDetail.selLimitQty;
-				content += prdDetail.selLimitStr+'ÃÖ´ë±¸¸Å¼ö·® : '+ prdDetail.selLimitQty+'°³';
+				content += prdDetail.selLimitStr+'ìµœëŒ€êµ¬ë§¤ìˆ˜ëŸ‰ : '+ prdDetail.selLimitQty+'ê°œ';
 			}
 			if(typeof(prdDetail.selLimitQty) != "undefined" && prdDetail.selLimitQty != "" && typeof(prdDetail.selMinLimitQty) != "undefined" && prdDetail.selMinLimitQty != "" ){
 				content +=			'/';
@@ -970,7 +970,7 @@ var makeMartOptionTemplate = function(data, dataOpt, buttonType, prdNo, ctlgStoc
 			if(typeof(prdDetail.selMinLimitQty) != "undefined" && prdDetail.selMinLimitQty != ""){
 				 _isSelMinLimitYN = 'Y';
 				 _selMinLimitQty =  prdDetail.selMinLimitQty;
-				content +=			'ÃÖ¼Ò±¸¸Å¼ö·®  : '+ prdDetail.selMinLimitQty+'°³';
+				content +=			'ìµœì†Œêµ¬ë§¤ìˆ˜ëŸ‰  : '+ prdDetail.selMinLimitQty+'ê°œ';
 			}
 			content +=			')</span>';
 		}
@@ -983,11 +983,11 @@ var makeMartOptionTemplate = function(data, dataOpt, buttonType, prdNo, ctlgStoc
 		content +=				'<ul id="divSelectedAddPrd"></ul>';
 		content +=			'</div>';
 		content +=			'<div class="sum_set" id="totalAmountText">';
-		content +=			'<em><span id="mwDev_totalCnt" style="display:none;">0°³</span>ÃÑ ÇÕ°è±İ¾×</em>';
+		content +=			'<em><span id="mwDev_totalCnt" style="display:none;">0ê°œ</span>ì´ í•©ê³„ê¸ˆì•¡</em>';
 		//if(prdOpt.optClfCd == "03"){
-			content +=			'<strong id="totalPrc"><span>'+getCommaValue(prdDetail.prdPrice.finalDscPrc)+'</span>¿ø</strong>';
+			content +=			'<strong id="totalPrc"><span>'+getCommaValue(prdDetail.prdPrice.finalDscPrc)+'</span>ì›</strong>';
 		//}else{
-		//	content +=			'<strong id="totalPrc"><span>0</span>¿ø</strong>';
+		//	content +=			'<strong id="totalPrc"><span>0</span>ì›</strong>';
 		//}
 		content +=			'</div>';
 		content +=		'</div>';
@@ -995,10 +995,10 @@ var makeMartOptionTemplate = function(data, dataOpt, buttonType, prdNo, ctlgStoc
 
 
 	content +=		'<div class="btn_w">';
-	content +=			'<div><button type="button" class="bbtn gb" onclick="martDirectGoToOrder(\'inputCart\');return false; mwUI.layerPopClose(\'popOpt\');">Àå¹Ù±¸´Ï</button></div>';
-	content +=			'<div><button type="button" class="bbtn rd" onclick="martDirectGoToOrder(\'directOrder\');return false; mwUI.layerPopClose(\'popOpt\');">±¸¸ÅÇÏ±â</button></div>';
+	content +=			'<div><button type="button" class="bbtn gb" onclick="martDirectGoToOrder(\'inputCart\');return false; mwUI.layerPopClose(\'popOpt\');">ì¥ë°”êµ¬ë‹ˆ</button></div>';
+	content +=			'<div><button type="button" class="bbtn rd" onclick="martDirectGoToOrder(\'directOrder\');return false; mwUI.layerPopClose(\'popOpt\');">êµ¬ë§¤í•˜ê¸°</button></div>';
 	content +=		'</div>';
-	content +=		'<button type="button" class="close" onclick="mwUI.layerPopClose(\'popOpt\')">ÆË¾÷´İ±â</button>';
+	content +=		'<button type="button" class="close" onclick="mwUI.layerPopClose(\'popOpt\')">íŒì—…ë‹«ê¸°</button>';
 	content +=	'</form>';
 
 	jQuery("#popOpt").html(content);
@@ -1086,7 +1086,7 @@ function createFrm(data, prdNo){
 	frmContent += '<input type="hidden" name="insOptCnt"           value="'+data.appDetail.insOptCnt+'" />';
 	frmContent += '<input type="hidden" name="iscpn"               value="N" />';
 	frmContent += '<input type="hidden" name="selStatCd"           value="'+data.appDetail.selStatCd+'" />';
-	frmContent += '<input type="hidden" name="optString"           value="" />'; //¿É¼Ç¹è¿­
+	frmContent += '<input type="hidden" name="optString"           value="" />'; //ì˜µì…˜ë°°ì—´
 	frmContent += '<input type="hidden" name="optQtyString"        value="" /> ';
 	frmContent += '<input type="hidden" name="optPrcString"        value="" /> ';
 	frmContent += '<input type="hidden" name ="selPrc" value="'+data.appDetail.prdPrice.finalDscPrc+'" />';
@@ -1132,18 +1132,18 @@ function martDirectGoToOrder(buttonType){
     }
 
     if(isNotSetPrdNo ){
-    	alert("¿É¼ÇÀ» ¼±ÅÃÇØ ÁÖ¼¼¿ä.");
+    	alert("ì˜µì…˜ì„ ì„ íƒí•´ ì£¼ì„¸ìš”.");
         return false;
     }
 
-	// ±¸¸Å¼ö·® ¹× ¹è¼Ûºñ°áÁ¦ Ã¼Å©
+	// êµ¬ë§¤ìˆ˜ëŸ‰ ë° ë°°ì†¡ë¹„ê²°ì œ ì²´í¬
 	if (!_fnChkOrderInfo()) return;
 
 	if (_fnChkOrderStock()) {
 		var obj = document.frmMain;
 		var optStckAr = _setPrdOrderParam(obj);
 		if (optStckAr == "") {
-			alert("¿É¼ÇÀÌ³ª ¼ö·®À» ¼±ÅÃÈÄ " +  ( ("inputCart" == buttonType || "catalogInputCart" == buttonType) ? "Àå¹Ù±¸´Ï" : "±¸¸ÅÇÏ±â" ) + "¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä.");
+			alert("ì˜µì…˜ì´ë‚˜ ìˆ˜ëŸ‰ì„ ì„ íƒí›„ " +  ( ("inputCart" == buttonType || "catalogInputCart" == buttonType) ? "ì¥ë°”êµ¬ë‹ˆ" : "êµ¬ë§¤í•˜ê¸°" ) + "ë¥¼ ì„ íƒí•´ì£¼ì„¸ìš”.");
 			return;
 		}
 
@@ -1183,7 +1183,7 @@ function catalogDetailAboutCart(buttonType){
 		_selMinLimitTypCd		= '';
 		_selMinLimitQty			= 0;
 		tempData = '';
-		targetMartStrNo = 0;			// º¯°æÇÒ ¸¶Æ® ÁöÁ¡¹øÈ£
+		targetMartStrNo = 0;			// ë³€ê²½í•  ë§ˆíŠ¸ ì§€ì ë²ˆí˜¸
 		targetMartNo = 0;
 		targetMartAddrSeq =0;
 		optNms = "";
@@ -1217,7 +1217,7 @@ function catalogDetailAboutCart(buttonType){
 		catalogDetailGotoOrder(obj, buttonType);
 	}
 }
-// Ä«´Ş·Î±× »ó¼¼ Àå¹Ù±¸´Ï ´ã±â (¼ö·® Á¶Àı °¡´É)
+// ì¹´ë‹¬ë¡œê·¸ ìƒì„¸ ì¥ë°”êµ¬ë‹ˆ ë‹´ê¸° (ìˆ˜ëŸ‰ ì¡°ì ˆ ê°€ëŠ¥)
 function catalogDetailGotoOrder(obj, buttonType){
 	var prdNo = document.frmMain.prdNo.value;
 	var ctlgStockNo = document.frmMain.tempCtlgStockNo.value;
@@ -1227,9 +1227,9 @@ function catalogDetailGotoOrder(obj, buttonType){
 		cache : false,
 		dataType : "json",
 		success : function(data){
-			if(data.status.code == "200"){ // ¼º°ø
-				if(data.appDetail.martInfo.isMart == "Y"){  //ÁöÁ¡¹è¼Û »óÇ°
-					var setMartYn = 'N'; // ¼³Á¤µÈ ¹è¼ÛÁö°¡ ¾ø´Â°æ¿ì
+			if(data.status.code == "200"){ // ì„±ê³µ
+				if(data.appDetail.martInfo.isMart == "Y"){  //ì§€ì ë°°ì†¡ ìƒí’ˆ
+					var setMartYn = 'N'; // ì„¤ì •ëœ ë°°ì†¡ì§€ê°€ ì—†ëŠ”ê²½ìš°
 					if(typeof(data.appDetail.prdDelivery.dlvAddrList) != 'undefined' && data.appDetail.prdDelivery.dlvAddrList.length > 0){
 						for(var n =0; n < data.appDetail.prdDelivery.dlvAddrList.length; n++){
 							if(data.appDetail.prdDelivery.dlvAddrList[n].martAddrYn == "Y"){
@@ -1238,34 +1238,34 @@ function catalogDetailGotoOrder(obj, buttonType){
 							}
 						}
 					}
-					if(data.appDetail.prdDelivery.settedMartYn == "Y" && setMartYn == "Y"){ // ±âÁ¸ ¹è¼ÛÁö ¼³Á¤ O
-						if( typeof(data.appDetail.selStatStmt) != 'undefined' || data.appDetail.selStatCd != "103"){ //ÇØ´ç ÁöÁ¡¿¡¼­ ÆÇ¸ÅÁßÀÌ ¾Æ´Ñ °æ¿ì,
+					if(data.appDetail.prdDelivery.settedMartYn == "Y" && setMartYn == "Y"){ // ê¸°ì¡´ ë°°ì†¡ì§€ ì„¤ì • O
+						if( typeof(data.appDetail.selStatStmt) != 'undefined' || data.appDetail.selStatCd != "103"){ //í•´ë‹¹ ì§€ì ì—ì„œ íŒë§¤ì¤‘ì´ ì•„ë‹Œ ê²½ìš°,
 							soldOutInfo(data, prdNo, "");
-						}else{ //ÇØ´ç ÁöÁ¡ ¹× »óÇ°¿¡ ¸Â´Â °¡°İ Á¶È¸
+						}else{ //í•´ë‹¹ ì§€ì  ë° ìƒí’ˆì— ë§ëŠ” ê°€ê²© ì¡°íšŒ
 							catalogGetMartOptionInfo(data, obj, buttonType);
 						}
-					}else{	// ¹è¼ÛÁö ¼³Á¤ X
+					}else{	// ë°°ì†¡ì§€ ì„¤ì • X
 						makeDeliveryTemplate(data, prdNo, buttonType, ctlgStockNo, "");
 					}
-				}else{  //ÀÏ¹İ¼¿·¯ »óÇ°
+				}else{  //ì¼ë°˜ì…€ëŸ¬ ìƒí’ˆ
 					catalogGetMartOptionInfo(data, obj, buttonType);
 				}
 			}else if(data.status.code == "405"){
-				alert("ÁË¼ÛÇÕ´Ï´Ù. Á¸ÀçÇÏÁö ¾Ê´Â »óÇ°ÀÔ´Ï´Ù.");
+				alert("ì£„ì†¡í•©ë‹ˆë‹¤. ì¡´ì¬í•˜ì§€ ì•ŠëŠ” ìƒí’ˆì…ë‹ˆë‹¤.");
 			}else if(data.status.code == "901"){
-				alert("¿Ã¹Ù¸¥ ¿äÃ»ÀÌ ¾Æ´Õ´Ï´Ù.");
+				alert("ì˜¬ë°”ë¥¸ ìš”ì²­ì´ ì•„ë‹™ë‹ˆë‹¤.");
 			}else{
-				alert("Àá½ÃÈÄ ´Ù½Ã ½Ãµµ ÇØÁÖ¼¼¿ä.");
+				alert("ì ì‹œí›„ ë‹¤ì‹œ ì‹œë„ í•´ì£¼ì„¸ìš”.");
 			}
 		},
 		error : function(data){
-			alert("Àá½ÃÈÄ ´Ù½Ã ½Ãµµ ÇØÁÖ¼¼¿ä.");
-			console.log("»óÇ° Á¤º¸ Á¶È¸ ½ÇÆĞ!!");
+			alert("ì ì‹œí›„ ë‹¤ì‹œ ì‹œë„ í•´ì£¼ì„¸ìš”.");
+			console.log("ìƒí’ˆ ì •ë³´ ì¡°íšŒ ì‹¤íŒ¨!!");
 		}
 	});
 }
 
-//Ä«´Ş·Î±× ¿É¼Ç Á¶È¸
+//ì¹´ë‹¬ë¡œê·¸ ì˜µì…˜ ì¡°íšŒ
 function catalogGetMartOptionInfo(data, obj, buttonType){
 	var prdNo = document.frmMain.prdNo.value;
 	var ctlgStockNo = document.frmMain.tempCtlgStockNo.value;
@@ -1275,24 +1275,24 @@ function catalogGetMartOptionInfo(data, obj, buttonType){
 		cache : false,
 		dataType : "json",
 		success : function(dataOpt){
-			if(dataOpt.status.code == "200" || dataOpt.status.code == "785"){ // ¼º°ø or ¿É¼ÇÀÌ ¾ø´Â »óÇ°
+			if(dataOpt.status.code == "200" || dataOpt.status.code == "785"){ // ì„±ê³µ or ì˜µì…˜ì´ ì—†ëŠ” ìƒí’ˆ
 				catalogDirectInputCart(data, dataOpt, obj, buttonType);
 			}else if(data.status.code == "405"){
-				alert("ÁË¼ÛÇÕ´Ï´Ù. Á¸ÀçÇÏÁö ¾Ê´Â »óÇ°ÀÔ´Ï´Ù.");
+				alert("ì£„ì†¡í•©ë‹ˆë‹¤. ì¡´ì¬í•˜ì§€ ì•ŠëŠ” ìƒí’ˆì…ë‹ˆë‹¤.");
 			}else if(data.status.code == "901"){
-				alert("¿Ã¹Ù¸¥ ¿äÃ»ÀÌ ¾Æ´Õ´Ï´Ù.");
+				alert("ì˜¬ë°”ë¥¸ ìš”ì²­ì´ ì•„ë‹™ë‹ˆë‹¤.");
 			}else{
-				alert("Àá½ÃÈÄ ´Ù½Ã ½Ãµµ ÇØÁÖ¼¼¿ä.");
+				alert("ì ì‹œí›„ ë‹¤ì‹œ ì‹œë„ í•´ì£¼ì„¸ìš”.");
 			}
 		},
 		error : function(data){
-			alert("Àá½ÃÈÄ ´Ù½Ã ½Ãµµ ÇØÁÖ¼¼¿ä.");
-			console.log("¿É¼Ç Á¶È¸ ½ÇÆĞ!!");
+			alert("ì ì‹œí›„ ë‹¤ì‹œ ì‹œë„ í•´ì£¼ì„¸ìš”.");
+			console.log("ì˜µì…˜ ì¡°íšŒ ì‹¤íŒ¨!!");
 		}
 	});
 }
 
-//Ä«´Ş·Î±× »ó¼¼ : ¿É¼ÇÀÌ ¾øÀ» °æ¿ì or Ä«´Ş·Î±× ¸ÊÇÎµÈ »óÇ°
+//ì¹´ë‹¬ë¡œê·¸ ìƒì„¸ : ì˜µì…˜ì´ ì—†ì„ ê²½ìš° or ì¹´ë‹¬ë¡œê·¸ ë§µí•‘ëœ ìƒí’ˆ
 function catalogDirectInputCart(data, dataOpt, obj, buttonType){
 	if(typeof(data.appDetail) == 'undefined'){
 		data = tempData;
@@ -1302,13 +1302,13 @@ function catalogDirectInputCart(data, dataOpt, obj, buttonType){
 	var cnt = (document.frmMain.optionStock0.value != '') ? document.frmMain.optionStock0.value: '1' ;
 	if(typeof(document.frmMain.selLimitQty) != 'undefined' && document.frmMain.selLimitQty.value  != ''){
 		if( Number(cnt) > Number(document.frmMain.selLimitQty.value)){
-			alert("ÃÖ´ë ±¸¸Å¼ö·®À» ÃÊ°ú ÇÏ¿´½À´Ï´Ù.");
+			alert("ìµœëŒ€ êµ¬ë§¤ìˆ˜ëŸ‰ì„ ì´ˆê³¼ í•˜ì˜€ìŠµë‹ˆë‹¤.");
 			return;
 		}
 	}
 	if(typeof(document.frmMain.selMinLimitQty) != 'undefined' && document.frmMain.selMinLimitQty.value  != ''){
 		if( Number(cnt) < Number(document.frmMain.selMinLimitQty.value)){
-			alert("ÃÖ¼Ò ±¸¸Å¼ö·®Àº "+ document.frmMain.selMinLimitQty.value + "ÀÔ´Ï´Ù.");
+			alert("ìµœì†Œ êµ¬ë§¤ìˆ˜ëŸ‰ì€ "+ document.frmMain.selMinLimitQty.value + "ì…ë‹ˆë‹¤.");
 			return;
 		}
 	}
@@ -1318,8 +1318,8 @@ function catalogDirectInputCart(data, dataOpt, obj, buttonType){
 	var optGugunSec = "_ @=@";
 
 	var optQtyString = cnt+gubun;
-	var insOptCnt = data.appDetail.insOptCnt; // select ¿É¼Ç °³¼ö (¿É¼ÇÀÌ ¾øÀ»¶§´Â 0)
-	var selOptCnt =  data.appDetail.selOptCnt; // select ¿É¼Ç °³¼ö (¿É¼ÇÀÌ ¾øÀ»¶§´Â 0)
+	var insOptCnt = data.appDetail.insOptCnt; // select ì˜µì…˜ ê°œìˆ˜ (ì˜µì…˜ì´ ì—†ì„ë•ŒëŠ” 0)
+	var selOptCnt =  data.appDetail.selOptCnt; // select ì˜µì…˜ ê°œìˆ˜ (ì˜µì…˜ì´ ì—†ì„ë•ŒëŠ” 0)
 	var iscpn = "N";
 	var optPrcString = "";
 	var optPrc = 0;
@@ -1332,9 +1332,9 @@ function catalogDirectInputCart(data, dataOpt, obj, buttonType){
 	var optionStock  = "1";
 	var optionStckNo  = data.appDetail.totPrdStckNo;
 	var isMart = data.appDetail.martInfo.isMart;
-	var incommingCode  = "01"; // 01 »óÇ°»ó¼¼
+	var incommingCode  = "01"; // 01 ìƒí’ˆìƒì„¸
 	if(isMart == "Y"){
-		incommingCode  = "06"; // 06 ¸¶Æ®ÁöÁ¡»óÇ°
+		incommingCode  = "06"; // 06 ë§ˆíŠ¸ì§€ì ìƒí’ˆ
 	}
 	var strNo  = data.appDetail.martInfo.strNo;
 	var mailNo  = data.appDetail.martInfo.mailNo;
@@ -1376,19 +1376,19 @@ function catalogDirectInputCart(data, dataOpt, obj, buttonType){
 		optPrcString = optPrc+gubun;
 	}
 
-	// Àç°í È®ÀÎ
+	// ì¬ê³  í™•ì¸
 	var tmpStock = "";
 	if(dataOpt != ""){
 		if(dataOpt.status.code == "785"){
 			if (data.appDetail.totStock == "" || data.appDetail.totStock == "0") {
-				alert("Àç°í°¡ ¾ø´Â »óÇ°ÀÔ´Ï´Ù.");
+				alert("ì¬ê³ ê°€ ì—†ëŠ” ìƒí’ˆì…ë‹ˆë‹¤.");
 				return false;
 			}
 
 			tmpStock = Number(data.appDetail.totStock);
-			// Àç°í¼ö·® ºñ±³
+			// ì¬ê³ ìˆ˜ëŸ‰ ë¹„êµ
 			if (cnt > tmpStock) {
-				alert("Àç°í¼ö·®ÀÌ ºÎÁ· ÇÕ´Ï´Ù.");
+				alert("ì¬ê³ ìˆ˜ëŸ‰ì´ ë¶€ì¡± í•©ë‹ˆë‹¤.");
 				return false;
 			}
 		}else if(dataOpt.status.code == "200"){
@@ -1400,14 +1400,14 @@ function catalogDirectInputCart(data, dataOpt, obj, buttonType){
 		}
 	}else{
 		if (data.appDetail.totStock == "" || data.appDetail.totStock == "0") {
-			alert("Àç°í°¡ ¾ø´Â »óÇ°ÀÔ´Ï´Ù.");
+			alert("ì¬ê³ ê°€ ì—†ëŠ” ìƒí’ˆì…ë‹ˆë‹¤.");
 			return false;
 		}
 
 		tmpStock = Number(data.appDetail.totStock);
-		// Àç°í¼ö·® ºñ±³
+		// ì¬ê³ ìˆ˜ëŸ‰ ë¹„êµ
 		if (cnt > tmpStock) {
-			alert("Àç°í¼ö·®ÀÌ ºÎÁ· ÇÕ´Ï´Ù.");
+			alert("ì¬ê³ ìˆ˜ëŸ‰ì´ ë¶€ì¡± í•©ë‹ˆë‹¤.");
 			return false;
 		}
 	}
@@ -1439,7 +1439,7 @@ function catalogDirectInputCart(data, dataOpt, obj, buttonType){
 
 }
 
-// ¿É¼Ç Àå¹Ù±¸´Ï ´ã±â
+// ì˜µì…˜ ì¥ë°”êµ¬ë‹ˆ ë‹´ê¸°
 function callPrdInputBasketAjax(frm){
 	try {
 		var inBsktUrl = "http://m.11st.co.kr/MW"+"/Product/productInputBasketAjax.tmall?by="+Date.now();
@@ -1457,18 +1457,18 @@ function callPrdInputBasketAjax(frm){
 					}else{
 						mwUI.layerPopClose('popOpt');
 				    	var msg = 		'<div class="p_mart_note">';
-				    	msg += 			'<p>»óÇ°ÀÌ Àå¹Ù±¸´Ï¿¡ ´ã°å½À´Ï´Ù.</p>';
-				    	msg += 			'<p class="pt">Àå¹Ù±¸´Ï·Î ÀÌµ¿ ÇÏ½Ã°Ú½À´Ï±î?</p>';
+				    	msg += 			'<p>ìƒí’ˆì´ ì¥ë°”êµ¬ë‹ˆì— ë‹´ê²¼ìŠµë‹ˆë‹¤.</p>';
+				    	msg += 			'<p class="pt">ì¥ë°”êµ¬ë‹ˆë¡œ ì´ë™ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?</p>';
 				    	msg += 		'</div>';
 				    	msg += 		'<div class="btn_w">';
-				    	msg += 			'<div><button type="button" class="bbtn" onclick="mwUI.layerPopClose(\'popCart01\');">Ãë¼Ò</button></div>';
-				    	msg += 			'<div><button type="button" class="bbtn frd" onclick="goCart(\'popCart01\');">È®ÀÎ</button></div>';
+				    	msg += 			'<div><button type="button" class="bbtn" onclick="mwUI.layerPopClose(\'popCart01\');">ì·¨ì†Œ</button></div>';
+				    	msg += 			'<div><button type="button" class="bbtn frd" onclick="goCart(\'popCart01\');">í™•ì¸</button></div>';
 				    	msg += 		'</div>';
 				    	jQuery("#popCart01").html(msg);
 				    	mwUI.layerPop('popCart01');
 					}
 	   			} else if(jsonData.result == "SOLDOUT") {
-	   				// Ç°Àı
+	   				// í’ˆì ˆ
 	   				alert(jsonData.msg);
 	   				if(document.frmMain.catalogYn == "N"){
 	   					mwUI.layerPopClose('popOpt');
@@ -1481,7 +1481,7 @@ function callPrdInputBasketAjax(frm){
    				}
 	    	},
 	    	error:function(data){
-	    		alert('Àå¹Ù±¸´Ï ´ã±â¿¡ ½ÇÆĞÇß½À´Ï´Ù.\nÀá½Ã ÈÄ ´Ù½Ã ½ÃµµÇØÁÖ¼¼¿ä.');
+	    		alert('ì¥ë°”êµ¬ë‹ˆ ë‹´ê¸°ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.\nì ì‹œ í›„ ë‹¤ì‹œ ì‹œë„í•´ì£¼ì„¸ìš”.');
 	    		if(document.frmMain.catalogYn == "N"){
 					mwUI.layerPopClose('popOpt');
 				}
@@ -1502,7 +1502,7 @@ function clearValue(){
 	_selMinLimitTypCd		= '';
 	_selMinLimitQty			= 0;
 	tempData = '';
-	targetMartStrNo = 0;			// º¯°æÇÒ ¸¶Æ® ÁöÁ¡¹øÈ£
+	targetMartStrNo = 0;			// ë³€ê²½í•  ë§ˆíŠ¸ ì§€ì ë²ˆí˜¸
 	targetMartNo = 0;
 	targetMartAddrSeq =0;
 	optNms = "";
@@ -1547,15 +1547,15 @@ var checkStockInfoByOptNos = function(prdNo, mixOptNo, selOptCnt, selOptTyp, opt
 	   		if(jsonData.status.code == "200") {
 	   			if (jsonData.optInfo.stckQty == "" || jsonData.optInfo.stckQty == "0") {
 	   				checkStockInfoByOptQty = 0;
-					alert("Àç°í°¡ ¾ø´Â »óÇ°ÀÔ´Ï´Ù.");
+					alert("ì¬ê³ ê°€ ì—†ëŠ” ìƒí’ˆì…ë‹ˆë‹¤.");
 					return false;
 				}
 
 				var tmpStock = Number(jsonData.optInfo.stckQty);
-				// Àç°í¼ö·® ºñ±³
+				// ì¬ê³ ìˆ˜ëŸ‰ ë¹„êµ
 				if (cnt > tmpStock) {
 					checkStockInfoByOptQty = 0;
-					alert("Àç°í¼ö·®ÀÌ ºÎÁ·ÇÕ´Ï´Ù.");
+					alert("ì¬ê³ ìˆ˜ëŸ‰ì´ ë¶€ì¡±í•©ë‹ˆë‹¤.");
 					return false;
 
 				}
@@ -1564,24 +1564,24 @@ var checkStockInfoByOptNos = function(prdNo, mixOptNo, selOptCnt, selOptTyp, opt
  			}
     	},
     	error:function(jsonData){
-    		alert('Àç°í Á¶È¸¿¡ ½ÇÆĞÇß½À´Ï´Ù.\nÀá½Ã ÈÄ ´Ù½Ã ½ÃµµÇØÁÖ¼¼¿ä.');
+    		alert('ì¬ê³  ì¡°íšŒì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.\nì ì‹œ í›„ ë‹¤ì‹œ ì‹œë„í•´ì£¼ì„¸ìš”.');
     	}
     });
 };
 
 
-// ¹è¼ÛÁö ¼³Á¤ ´çÀÏ¹è¼Û
+// ë°°ì†¡ì§€ ì„¤ì • ë‹¹ì¼ë°°ì†¡
 function martDeliveryInfoTemplate(data, martType, prdNo, setMartInfo){
 	var prdDelivery = data.appDetail.prdDelivery;
 	var martInfo = data.appDetail.martInfo;
 	var content ='';
-	content += 		'<h1>¹è¼ÛÁö ¼³Á¤</h1>';
+	content += 		'<h1>ë°°ì†¡ì§€ ì„¤ì •</h1>';
 	content += 			'<div class="p_mart_dly">';
 	content += 				'<p class="noti">';
-	content += 					'¹è¼Û¹ŞÀ¸½Ç ÁÖ¼Ò¸¦ ¼³Á¤ÇÏ½Å ÈÄ ¼­ºñ½º ÀÌ¿ëÀÌ °¡´ÉÇÕ´Ï´Ù.<br/>¹è¼ÛÁö ¼³Á¤ ÈÄ, ¸ÅÀåº° ¹è¼Û °¡´É ½Ã°£À» È®ÀÎÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù.';
+	content += 					'ë°°ì†¡ë°›ìœ¼ì‹¤ ì£¼ì†Œë¥¼ ì„¤ì •í•˜ì‹  í›„ ì„œë¹„ìŠ¤ ì´ìš©ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤.<br/>ë°°ì†¡ì§€ ì„¤ì • í›„, ë§¤ì¥ë³„ ë°°ì†¡ ê°€ëŠ¥ ì‹œê°„ì„ í™•ì¸í•˜ì‹¤ ìˆ˜ ìˆìŠµë‹ˆë‹¤.';
 	content += 				'</p>';
 	content += 				'<div class="addr_slct">';
-	content += 					'<h2 class="tit_dly">¹è¼ÛÁö ¼±ÅÃ</h2>';
+	content += 					'<h2 class="tit_dly">ë°°ì†¡ì§€ ì„ íƒ</h2>';
 	content += 					'<div class="addr_list" id="addrList">';
 	content += 						'<ul>';
 	if(typeof(prdDelivery.dlvAddrList) != 'undefined' && prdDelivery.dlvAddrList.length > 0 ){
@@ -1603,7 +1603,7 @@ function martDeliveryInfoTemplate(data, martType, prdNo, setMartInfo){
 	}else{
 		content += 							'<li>';
 		content += 								'<a href="#">';
-		content += 									'<span class="name">¹è¼ÛÁö ¼³Á¤ ÈÄ ÁÖ¹®ÀÌ °¡´ÉÇÕ´Ï´Ù.</span>';
+		content += 									'<span class="name">ë°°ì†¡ì§€ ì„¤ì • í›„ ì£¼ë¬¸ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤.</span>';
 		content += 									'<span class="addr"></span>';
 		content += 								'</a>';
 		content += 							'</li>';
@@ -1611,26 +1611,26 @@ function martDeliveryInfoTemplate(data, martType, prdNo, setMartInfo){
 
 	content += 						'</ul>';
 	content += 					'</div>';
-	content += 					'<a href="javascript:insertMartAddress();" class="sbtn btn_add">¹è¼ÛÁö Ãß°¡</a>';
+	content += 					'<a href="javascript:insertMartAddress();" class="sbtn btn_add">ë°°ì†¡ì§€ ì¶”ê°€</a>';
 	content += 				'</div>';
 	content += 				'<div class="addr_set" id="martDlvInfoMany" style="display:none">';
-	content += 					'<h2 class="tit_dly">¹è¼ÛÁö ¼±ÅÃ</h2>';
+	content += 					'<h2 class="tit_dly">ë°°ì†¡ì§€ ì„ íƒ</h2>';
 	content += 					'<ul>';
-	content += 						'<li class="on"><a href="javascript:selectMartDlv(this.value);">È¨ÇÃ·¯½º <b>±İÃµÁ¡</b>¿¡¼­ ¹è¼ÛµË´Ï´Ù.</a></li>';
-	content += 						'<li><a href="javascript:selectMartDlv(this.value);">È¨ÇÃ·¯½º <b>±İÃµ±İÃµ±İÃµ±İÃµ±İÃµ±İÃµÁ¡</b>¿¡¼­ ¹è¼ÛµË´Ï´Ù.</a></li>';
+	content += 						'<li class="on"><a href="javascript:selectMartDlv(this.value);">í™ˆí”ŒëŸ¬ìŠ¤ <b>ê¸ˆì²œì </b>ì—ì„œ ë°°ì†¡ë©ë‹ˆë‹¤.</a></li>';
+	content += 						'<li><a href="javascript:selectMartDlv(this.value);">í™ˆí”ŒëŸ¬ìŠ¤ <b>ê¸ˆì²œê¸ˆì²œê¸ˆì²œê¸ˆì²œê¸ˆì²œê¸ˆì²œì </b>ì—ì„œ ë°°ì†¡ë©ë‹ˆë‹¤.</a></li>';
 	content += 					'</ul>';
 	content += 				'</div>';
 	content += 				'<div class="addr_set" id="martDlvInfoOne" style="display:none">';
-	content += 					'<h2 class="tit_dly">¹è¼ÛÁö ¼±ÅÃ</h2>';
+	content += 					'<h2 class="tit_dly">ë°°ì†¡ì§€ ì„ íƒ</h2>';
 	content += 					'<ul>';
-	content += 						'<li class="on">È¨ÇÃ·¯½º <b>±İÃµÁ¡</b>¿¡¼­ ¹è¼ÛµË´Ï´Ù.</a></li>';
+	content += 						'<li class="on">í™ˆí”ŒëŸ¬ìŠ¤ <b>ê¸ˆì²œì </b>ì—ì„œ ë°°ì†¡ë©ë‹ˆë‹¤.</a></li>';
 	content += 					'</ul>';
 	content += 				'</div>';
 	content += 			'</div>';
 	content += 			'<div class="btn_w">';
-	content += 				'<button type="button" class="bbtn frd" onclick="changeMartStrNo();">È®ÀÎ</button>';
+	content += 				'<button type="button" class="bbtn frd" onclick="changeMartStrNo();">í™•ì¸</button>';
 	content += 			'</div>';
-	content += 			'<button type="button" class="close" onclick="popupdelivery.close(\'popDelivery\');">ÆË¾÷´İ±â</button>';
+	content += 			'<button type="button" class="close" onclick="popupdelivery.close(\'popDelivery\');">íŒì—…ë‹«ê¸°</button>';
 
 	jQuery("#popDelivery").html(content);
 	if(typeof(prdDelivery.dlvAddrList) != 'undefined' && prdDelivery.dlvAddrList.length > 0){
@@ -1654,15 +1654,15 @@ function martDeliveryInfo(martType, prdNo, martNm, setMartInfo){
 		ansyc : false,
 		dataType : "json",
 		success : function(data){
-			if(data.status.code == "200"){ // ¼º°ø
-				var setMartYn = 'N'; // ¼³Á¤µÈ ¹è¼ÛÁö°¡ ¾ø´Â°æ¿ì
+			if(data.status.code == "200"){ // ì„±ê³µ
+				var setMartYn = 'N'; // ì„¤ì •ëœ ë°°ì†¡ì§€ê°€ ì—†ëŠ”ê²½ìš°
 				if("homeplusChange" == martType || "gssuperChange" == martType){
 					if("homeplusChange" == martType){
 						martType = "homeplus";
 					}else{
 						martType = "gssuper";
 					}
-					martDeliveryInfoTemplate(data, martType, prdNo, setMartInfo); // ¹è¼ÛÁö ¼³Á¤
+					martDeliveryInfoTemplate(data, martType, prdNo, setMartInfo); // ë°°ì†¡ì§€ ì„¤ì •
 				}else{
 					if(typeof(data.appDetail.prdDelivery.dlvAddrList) != 'undefined' && data.appDetail.prdDelivery.dlvAddrList.length > 0){
 						for(var n =0; n < data.appDetail.prdDelivery.dlvAddrList.length; n++){
@@ -1672,26 +1672,26 @@ function martDeliveryInfo(martType, prdNo, martNm, setMartInfo){
 							}
 						}
 					}
-					if(data.appDetail.prdDelivery.settedMartYn == "Y" && setMartYn == "Y"){ // ±âÁ¸ ¹è¼ÛÁö ¼³Á¤ O
+					if(data.appDetail.prdDelivery.settedMartYn == "Y" && setMartYn == "Y"){ // ê¸°ì¡´ ë°°ì†¡ì§€ ì„¤ì • O
 						if("gssuper" == martType && "info" == setMartInfo){
-							checkGsDeliveryTime(martType, prdNo, martNm, setMartInfo);  //GS¼öÆÛ ¹è¼Û½Ã°£ È®ÀÎ
+							checkGsDeliveryTime(martType, prdNo, martNm, setMartInfo);  //GSìˆ˜í¼ ë°°ì†¡ì‹œê°„ í™•ì¸
 						}else{
-							checkHomeplusDeliveryTime(data, martType, prdNo, setMartInfo);  //È¨ÇÃ·¯½º ¹è¼Û½Ã°£È®ÀÎ
+							checkHomeplusDeliveryTime(data, martType, prdNo, setMartInfo);  //í™ˆí”ŒëŸ¬ìŠ¤ ë°°ì†¡ì‹œê°„í™•ì¸
 						}
 					}else{
-						martDeliveryInfoTemplate(data, martType, prdNo, setMartInfo); // ¹è¼ÛÁö ¼³Á¤
+						martDeliveryInfoTemplate(data, martType, prdNo, setMartInfo); // ë°°ì†¡ì§€ ì„¤ì •
 					}
 				}
 
 			}else if(data.status.code == "901"){
-				alert("¿Ã¹Ù¸¥ ¿äÃ»ÀÌ ¾Æ´Õ´Ï´Ù.");
+				alert("ì˜¬ë°”ë¥¸ ìš”ì²­ì´ ì•„ë‹™ë‹ˆë‹¤.");
 			}else{
-				alert("Àá½ÃÈÄ ´Ù½Ã ½Ãµµ ÇØÁÖ¼¼¿ä.");
+				alert("ì ì‹œí›„ ë‹¤ì‹œ ì‹œë„ í•´ì£¼ì„¸ìš”.");
 			}
 		},
 		error : function(data){
-			alert("Àá½ÃÈÄ ´Ù½Ã ½Ãµµ ÇØÁÖ¼¼¿ä.");
-			console.log("»óÇ° Á¤º¸ Á¶È¸ ½ÇÆĞ!!");
+			alert("ì ì‹œí›„ ë‹¤ì‹œ ì‹œë„ í•´ì£¼ì„¸ìš”.");
+			console.log("ìƒí’ˆ ì •ë³´ ì¡°íšŒ ì‹¤íŒ¨!!");
 		}
 	});
 
@@ -1728,8 +1728,8 @@ function checkHomeplusDeliveryTime(data, martType, prdNo, setMartInfo){
 			mwUI.layerPop('popDeliveryTime1');
 		},
 		error : function(jsonData){
-			alert("Àá½ÃÈÄ ´Ù½Ã ½Ãµµ ÇØÁÖ¼¼¿ä.");
-			console.log("¹è¼Û½Ã°£ Á¤º¸ ¿¬µ¿ ½ÇÆĞ!!" );
+			alert("ì ì‹œí›„ ë‹¤ì‹œ ì‹œë„ í•´ì£¼ì„¸ìš”.");
+			console.log("ë°°ì†¡ì‹œê°„ ì •ë³´ ì—°ë™ ì‹¤íŒ¨!!" );
 		}
 	});
 }
@@ -1737,12 +1737,12 @@ function checkHomeplusDeliveryTime(data, martType, prdNo, setMartInfo){
 var firstGsPrdNo = '';
 var gsStrNm ='';
 function checkGsDeliveryTime(martType, prdNo, martNm, setMartInfo){
-	var content = '<h1>¹è¼Û °¡´É ½Ã°£</h1>';
-	content += '<div class="p_mart_dly"><div class="dly_guide"><h2 class="tit_dly">¹è¼Û¸ÅÀå : GS¼öÆÛ¸¶ÄÏ <span class="local">'+martNm;
+	var content = '<h1>ë°°ì†¡ ê°€ëŠ¥ ì‹œê°„</h1>';
+	content += '<div class="p_mart_dly"><div class="dly_guide"><h2 class="tit_dly">ë°°ì†¡ë§¤ì¥ : GSìˆ˜í¼ë§ˆì¼“ <span class="local">'+martNm;
 	content += '</span></h2>';
-	content += '<p class="noti">ÁÖ¹® °áÁ¦ ÈÄ ´çÀÏ 3½Ã°£ ÀÌ³» ¹è¼ÛµË´Ï´Ù.<br />´Ü, ÁöÁ¡º° ÁÖ¹® ¸¶°¨ ÀÌÈÄ ÁÖ¹®Àº ÀÍÀÏ ÀÏ°ı ¹è¼ÛµË´Ï´Ù.<br />(ÁöÁ¡º° ÁÖ¹® ¸¶°¨ ½Ã°£ »óÀÌÇÔ)</p>';
-	content += '<a href="javascript:martDeliveryInfo(\'gssuperChange\', \''+firstGsPrdNo+'\', \''+ gsStrNm+'\', \'set\');mwUI.layerPopClose(\'popDeliveryTime1\');" class="sbtn btn_add">¹è¼ÛÁö º¯°æ</a></div></div>';
-	content += '<button type="button" class="close" onclick="mwUI.layerPopClose(\'popDeliveryTime1\');">ÆË¾÷´İ±â</button>';
+	content += '<p class="noti">ì£¼ë¬¸ ê²°ì œ í›„ ë‹¹ì¼ 3ì‹œê°„ ì´ë‚´ ë°°ì†¡ë©ë‹ˆë‹¤.<br />ë‹¨, ì§€ì ë³„ ì£¼ë¬¸ ë§ˆê° ì´í›„ ì£¼ë¬¸ì€ ìµì¼ ì¼ê´„ ë°°ì†¡ë©ë‹ˆë‹¤.<br />(ì§€ì ë³„ ì£¼ë¬¸ ë§ˆê° ì‹œê°„ ìƒì´í•¨)</p>';
+	content += '<a href="javascript:martDeliveryInfo(\'gssuperChange\', \''+firstGsPrdNo+'\', \''+ gsStrNm+'\', \'set\');mwUI.layerPopClose(\'popDeliveryTime1\');" class="sbtn btn_add">ë°°ì†¡ì§€ ë³€ê²½</a></div></div>';
+	content += '<button type="button" class="close" onclick="mwUI.layerPopClose(\'popDeliveryTime1\');">íŒì—…ë‹«ê¸°</button>';
 
 	jQuery("#popDeliveryTime1").html(content);
 	if(showFlag){
@@ -1760,7 +1760,7 @@ function checkGsDeliveryTime(martType, prdNo, martNm, setMartInfo){
 
 <script>
 window.addEventListener("load", function(){
-	mwUI.jsTab('tabRev'); //»óÇ°¸®ºä ÅÇ
+	mwUI.jsTab('tabRev'); //ìƒí’ˆë¦¬ë·° íƒ­
 }, false);
 
 var toggleClass = function(self){
@@ -1786,13 +1786,13 @@ var goCtgrSearch = function(depth, dispCtgrNo, dispCtgrNm){
 
 var imgPopYn	= "N";
 $(document).ready(function(){
-	// Æ÷Åä ¸®ºä ´õº¸±â
+	// í¬í†  ë¦¬ë·° ë”ë³´ê¸°
 	$('.photoPop').on('click', function (){
 		if(imgPopYn == "N") {
 			imgPopYn = "Y";
 			var url = $(this).attr("img_lnk");
     		window.open(url, "_blank");
-    		setTimeout(function() {	// Ã¢ÀÌ Áßº¹À¸·Î »ı¼ºµÇ´Â Çö»óÀ¸·Î Ãß°¡
+    		setTimeout(function() {	// ì°½ì´ ì¤‘ë³µìœ¼ë¡œ ìƒì„±ë˜ëŠ” í˜„ìƒìœ¼ë¡œ ì¶”ê°€
     			imgPopYn	= "N";
     		}, 1000);
 		}
@@ -1819,7 +1819,7 @@ function callGoogleAnalyticsTrc(ctg, action, label, url){
 				label=' ';
 			}
 		    var appType = getCookie('appType');
-			var exposerLabel = label.indexOf('³ëÃâ');
+			var exposerLabel = label.indexOf('ë…¸ì¶œ');
 			if(exposerLabel>0){
 				if(appType === '') {
 			    	ga("send", "event", ctg, action, label, { nonInteraction: true });
@@ -1924,18 +1924,18 @@ function callGoogleAnalyticsTrc(ctg, action, label, url){
     	</script>
 	
 	<div class="gnb_mw gnb_mart">
-		<h1><a href="http://m.11st.co.kr/MW" title="È¨À¸·Î ÀÌµ¿" data-clickurl="MWMART00" data-clickkey="MWMART0002">11¹ø°¡</a></h1>
-		<h2><a href="http://m.11st.co.kr/MW/Mart/main.tmall?mallType=mart" data-clickurl="MWMART00" data-clickkey="MWMART0003">¸¶Æ®11¹ø°¡</a></h2>
+		<h1><a href="http://m.11st.co.kr/MW" title="í™ˆìœ¼ë¡œ ì´ë™" data-clickurl="MWMART00" data-clickkey="MWMART0002">11ë²ˆê°€</a></h1>
+		<h2><a href="http://m.11st.co.kr/MW/Mart/main.tmall?mallType=mart" data-clickurl="MWMART00" data-clickkey="MWMART0003">ë§ˆíŠ¸11ë²ˆê°€</a></h2>
 			
-		<a href="http://m.11st.co.kr/MW/Mart/getCategoryTab.tmall?mallType=mart" class="mu cate" data-clickurl="MWMART00" data-clickkey="MWMART0001">Ä«Å×°í¸®</a>
+		<a href="http://m.11st.co.kr/MW/Mart/getCategoryTab.tmall?mallType=mart" class="mu cate" data-clickurl="MWMART00" data-clickkey="MWMART0001">ì¹´í…Œê³ ë¦¬</a>
 	
 		<form id="search" name="searchForm" action="http://m.11st.co.kr/MW/Mart/searchMartPrdList.tmall?" method="get" onsubmit="searchSubmit();return false;">
 			<fieldset>
-				<legend>ÅëÇÕ°Ë»ö</legend>
+				<legend>í†µí•©ê²€ìƒ‰</legend>
 				<div class="srch">
-					<input type="search" id="decSearchKeyword" name="decSearchKeyword" value="¸¶Æ® »óÇ°À»  °Ë»öÇØº¸¼¼¿ä!" title="°Ë»ö¾î" onfocus="getInput();" onblur="releaseInput();" autocomplete="off" autocorrect="off" autocapitalize="off" onclick="clearInputValue(&#39;decSearchKeyword&#39;);fncStop();return false;" data-clickurl="WSRC00" data-clickkey="WSRC00" data-calltype="ajax">
-					<button class="del" type="button" id="schdelbtn" style="display:none;" onclick="clearInputValue(&#39;decSearchKeyword&#39;);">°Ë»ö¾î »èÁ¦</button>
-					<input type="submit" id="search_submit" value="°Ë»ö" data-clickurl="MWMART01" data-clickkey="MWMART0101">
+					<input type="search" id="decSearchKeyword" name="decSearchKeyword" value="ë§ˆíŠ¸ ìƒí’ˆì„  ê²€ìƒ‰í•´ë³´ì„¸ìš”!" title="ê²€ìƒ‰ì–´" onfocus="getInput();" onblur="releaseInput();" autocomplete="off" autocorrect="off" autocapitalize="off" onclick="clearInputValue(&#39;decSearchKeyword&#39;);fncStop();return false;" data-clickurl="WSRC00" data-clickkey="WSRC00" data-calltype="ajax">
+					<button class="del" type="button" id="schdelbtn" style="display:none;" onclick="clearInputValue(&#39;decSearchKeyword&#39;);">ê²€ìƒ‰ì–´ ì‚­ì œ</button>
+					<input type="submit" id="search_submit" value="ê²€ìƒ‰" data-clickurl="MWMART01" data-clickkey="MWMART0101">
 					<input type="hidden" id="searchType" name="searchType" value="mart">
 					<input type="hidden" id="dispObjLnkUrl">
 					<input type="hidden" id="searchKeyword" name="searchKeyword" value="">
@@ -1979,11 +1979,11 @@ function callGoogleAnalyticsTrc(ctg, action, label, url){
 		            <input type="hidden" name="dCtgrNo" value="">
 					
 				</div>
-				<button type="button" class="prev" onclick="totalSch.close();">ÀÌÀü</button>
+				<button type="button" class="prev" onclick="totalSch.close();">ì´ì „</button>
 			</fieldset>
 		</form>
 	
-		<a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall" class="mu cart" data-clickurl="MWMART00" data-clickkey="MWMART0005">Àå¹Ù±¸´Ï</a>
+		<a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall" class="mu cart" data-clickurl="MWMART00" data-clickkey="MWMART0005">ì¥ë°”êµ¬ë‹ˆ</a>
 	
 	</div>	
 	<div id="kwd" class="kwd">
@@ -2042,7 +2042,7 @@ function callGoogleAnalyticsTrc(ctg, action, label, url){
 				}
 			}
 		
-		var defaultSearchKeyword = "¸¶Æ® »óÇ°À»  °Ë»öÇØº¸¼¼¿ä!";
+		var defaultSearchKeyword = "ë§ˆíŠ¸ ìƒí’ˆì„  ê²€ìƒ‰í•´ë³´ì„¸ìš”!";
 
 	</script>
 </header>
@@ -2054,10 +2054,10 @@ function callGoogleAnalyticsTrc(ctg, action, label, url){
 	<!-- contents -->
 	<section id="cts">
 		<div class="location">
-			<a href="javascript:goCtgrSearch(1, &#39;948075&#39;, &#39;&#39;);" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1010">¸¶Æ®11¹ø°¡ È¨</a>
-			<a href="javascript:goCtgrSearch(2, &#39;948080&#39;, &#39;°¡°ø½ÄÇ°&#39;);" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1010">°¡°ø½ÄÇ°</a>
+			<a href="javascript:goCtgrSearch(1, &#39;948075&#39;, &#39;&#39;);" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1010">ë§ˆíŠ¸11ë²ˆê°€ í™ˆ</a>
+			<a href="javascript:goCtgrSearch(2, &#39;948080&#39;, &#39;ê°€ê³µì‹í’ˆ&#39;);" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1010">ê°€ê³µì‹í’ˆ</a>
 			
-				<a href="javascript:goCtgrSearch(3, &#39;948602&#39;, &#39;&#39;);" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1010"><strong>»çÅÁ/¼±¹°¿ëÄµµğ</strong></a>
+				<a href="javascript:goCtgrSearch(3, &#39;948602&#39;, &#39;&#39;);" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1010"><strong>ì‚¬íƒ•/ì„ ë¬¼ìš©ìº”ë””</strong></a>
 			
 		</div>
 		<div class="catalog_wrap">
@@ -2066,23 +2066,23 @@ function callGoogleAnalyticsTrc(ctg, action, label, url){
 
 	<section class="prc_detail">
 		
-		<div class="thumb"><img src="product_basic_info_files/11943_1.jpg" alt=""></div><!-- ÀÌ¹ÌÁö »çÀÌÁî 300X300(x1.5) -->
+		<div class="thumb"><img src="product_basic_info_files/11943_1.jpg" alt=""></div><!-- ì´ë¯¸ì§€ ì‚¬ì´ì¦ˆ 300X300(x1.5) -->
 		<div class="dtl_inf">
 			<div class="dtl_tit">
 			
 				<div class="icon">
 				
 				</div>
-				<h1 class="name">ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ® Äµµğ 1050g x 1Åë</h1>
+				<h1 class="name">í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ ìº”ë”” 1050g x 1í†µ</h1>
 			</div>
 			<div class="dtl_prc">
 					
-					<div class="seller">ÀÌ¿ä¿Í¸£</div>
+					<div class="seller">ì´ìš”ì™€ë¥´</div>
 					
 				<div class="price">
-					<div class="prc"><b>10,500</b>¿ø</div>
+					<div class="prc"><b>10,500</b>ì›</div>
 					
-					<div class="unit">(10g´ç 100¿ø)</div>
+					<div class="unit">(10gë‹¹ 100ì›)</div>
 					
 				</div>
 			</div>
@@ -2107,7 +2107,7 @@ function callGoogleAnalyticsTrc(ctg, action, label, url){
 									<input type="hidden" name="optionStckNo" id="optionStckNo0" value="3555325821">
 									<input type="hidden" name="optionPrc" id="optionPrc0" value="0">
 									<input type="hidden" name="optionStockHid" id="optionStockHid0" value="99999933">
-									<input type="hidden" name="optionNm" id="optionNm0" value=" ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ® 1050g / ÄÚ½ºÆ®ÄÚ ¸Á°í¸À ¶óÁîº£¸®¸À ºí·çº£¸®¸À">
+									<input type="hidden" name="optionNm" id="optionNm0" value=" í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ 1050g / ì½”ìŠ¤íŠ¸ì½” ë§ê³ ë§› ë¼ì¦ˆë² ë¦¬ë§› ë¸”ë£¨ë² ë¦¬ë§›">
 									<input type="hidden" name="isMart" id="isMart" value="N">
 									<input type="hidden" name="martNo" id="martNo" value="">
 									<input type="hidden" name="strNo" id="strNo" value="">
@@ -2133,14 +2133,14 @@ function callGoogleAnalyticsTrc(ctg, action, label, url){
 									<div id="limitQty"></div>
 								</div>
 								<div class="sum" id="totalAmountText">
-								<span id="mwDev_totalCnt" style="display:none;">0°³</span><span>ÃÑ ÇÕ°è±İ¾×</span>
-								<span class="prc" id="totalPrc"><b>10,500</b>¿ø</span>
+								<span id="mwDev_totalCnt" style="display:none;">0ê°œ</span><span>ì´ í•©ê³„ê¸ˆì•¡</span>
+								<span class="prc" id="totalPrc"><b>10,500</b>ì›</span>
 								</div>
 								</div>
 								<div class="btn_w">
-								<div><input type="button" class="bbtn gb" value="Àå¹Ù±¸´Ï" onclick="catalogDetailAboutCart(&#39;catalogDetailInputCart&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1000&#39;); callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;ÃÖÀú°¡»óÇ° ¹Ù·Î Àå¹Ù±¸´Ï ´ã±â&#39;);return false;"></div>
+								<div><input type="button" class="bbtn gb" value="ì¥ë°”êµ¬ë‹ˆ" onclick="catalogDetailAboutCart(&#39;catalogDetailInputCart&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1000&#39;); callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ìµœì €ê°€ìƒí’ˆ ë°”ë¡œ ì¥ë°”êµ¬ë‹ˆ ë‹´ê¸°&#39;);return false;"></div>
 								<div>
-									<input type="button" id="btnBuyLowestPrcPrd" class="bbtn rd" value="ÃÖÀú°¡ ±¸¸Å" onclick="catalogDetailAboutCart(&#39;catalogDetailDirectOrder&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1001&#39;); callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;ÃÖÀú°¡»óÇ° ¹Ù·Î ±¸¸ÅÇÏ±â&#39;);return false;" data-rake-area-id="lowest_buy" data-rake-event-id="PRODUCT" data-prd-no="958114815" data-ctlg-no="11943">									
+									<input type="button" id="btnBuyLowestPrcPrd" class="bbtn rd" value="ìµœì €ê°€ êµ¬ë§¤" onclick="catalogDetailAboutCart(&#39;catalogDetailDirectOrder&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1001&#39;); callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ìµœì €ê°€ìƒí’ˆ ë°”ë¡œ êµ¬ë§¤í•˜ê¸°&#39;);return false;" data-rake-area-id="lowest_buy" data-rake-event-id="PRODUCT" data-prd-no="958114815" data-ctlg-no="11943">									
 								</div>
 								</div>
 								</form>
@@ -2149,25 +2149,25 @@ function callGoogleAnalyticsTrc(ctg, action, label, url){
 	</div></section>
 	
 	<section id="prdInfo" class="dtl_area pinfo">
-		<h1>»óÇ°Á¤º¸</h1>
-			<button type="button" class="btn" onclick="mwUI.moreToggle(&#39;prdInfo&#39;, &#39;on&#39;, this, &#39;´õº¸±â&#39;, &#39;´İ±â&#39;); callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;¸ğµ¨Á¤º¸ ´õº¸±â&#39;);return false">»óÇ°Á¤º¸ ´õº¸±â</button>
+		<h1>ìƒí’ˆì •ë³´</h1>
+			<button type="button" class="btn" onclick="mwUI.moreToggle(&#39;prdInfo&#39;, &#39;on&#39;, this, &#39;ë”ë³´ê¸°&#39;, &#39;ë‹«ê¸°&#39;); callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ëª¨ë¸ì •ë³´ ë”ë³´ê¸°&#39;);return false">ìƒí’ˆì •ë³´ ë”ë³´ê¸°</button>
 			<div class="prd_info">
 				<div>
 				
 				
 					
-						Á¦Á¶»ç: Perfetti van melle
+						ì œì¡°ì‚¬: Perfetti van melle
 						
 							/
 						
 					
 					
-						ºê·£µå: PerfettiVanMelle
+						ë¸Œëœë“œ: PerfettiVanMelle
 					
 				
 				</div>
 				<div class="hg">
-					Á¦Á¶±¹:ÀÎµµ³×½Ã¾Æ | ÆÇ¸Å»ç:¢ßÀ¯³ªÀÌÆ¼µå½ÄÇ° | º¸°ü¹æ½Ä:»ó¿Â | ¼·Ãë¹æ½Ä:¿ÏÁ¦Ç° | 1È¸Á¦°ø·®´ç ¿­·®:39 | 1È¸Á¦°ø·®´ÜÀ§:g | ¿­·®´ÜÀ§:kcal | ¿ø»êÁö:¼öÀÔ»ê | 1È¸Á¦°ø·®:8 | ³ª¶óº°:ÀÌÅ»¸®¾Æ
+					ì œì¡°êµ­:ì¸ë„ë„¤ì‹œì•„ | íŒë§¤ì‚¬:ãˆœìœ ë‚˜ì´í‹°ë“œì‹í’ˆ | ë³´ê´€ë°©ì‹:ìƒì˜¨ | ì„­ì·¨ë°©ì‹:ì™„ì œí’ˆ | 1íšŒì œê³µëŸ‰ë‹¹ ì—´ëŸ‰:39 | 1íšŒì œê³µëŸ‰ë‹¨ìœ„:g | ì—´ëŸ‰ë‹¨ìœ„:kcal | ì›ì‚°ì§€:ìˆ˜ì…ì‚° | 1íšŒì œê³µëŸ‰:8 | ë‚˜ë¼ë³„:ì´íƒˆë¦¬ì•„
 				</div>
 			</div>
 	</section>
@@ -2180,7 +2180,7 @@ function callGoogleAnalyticsTrc(ctg, action, label, url){
 			cache : false,
 			dataType : "json",
 			success : function(data){
-				if(data.status.code == "200"){ // ¼º°ø
+				if(data.status.code == "200"){ // ì„±ê³µ
 					var prdDetail = data.appDetail;
 					document.getElementById("prdNo").value = prdDetail.prdNo;
 					document.getElementById("selStatCd").value = prdDetail.selStatCd;
@@ -2208,28 +2208,28 @@ function callGoogleAnalyticsTrc(ctg, action, label, url){
 					if(typeof(prdDetail.selLimitQty) != "undefined" || typeof(prdDetail.selMinLimitQty) != "undefined" ){
 						content +=			'<span class="num_max">(';
 						if(typeof(prdDetail.selLimitQty) != "undefined" && prdDetail.selLimitQty != ""){
-							content += prdDetail.selLimitStr+'ÃÖ´ë±¸¸Å¼ö·® : '+ prdDetail.selLimitQty+'°³';
+							content += prdDetail.selLimitStr+'ìµœëŒ€êµ¬ë§¤ìˆ˜ëŸ‰ : '+ prdDetail.selLimitQty+'ê°œ';
 						}
 						if(typeof(prdDetail.selLimitQty) != "undefined" && prdDetail.selLimitQty != "" && typeof(prdDetail.selMinLimitQty) != "undefined" && prdDetail.selMinLimitQty != "" ){
 							content +=			'<br/>/';
 						}
 						if(typeof(prdDetail.selMinLimitQty) != "undefined" && prdDetail.selMinLimitQty != ""){
-							content +=			'ÃÖ¼Ò±¸¸Å¼ö·®  : '+ prdDetail.selMinLimitQty+'°³';
+							content +=			'ìµœì†Œêµ¬ë§¤ìˆ˜ëŸ‰  : '+ prdDetail.selMinLimitQty+'ê°œ';
 						}
 						content +=			')</span>';
 					}
 					jQuery("#limitQty").html(content);
 				}else if(data.status.code == "405"){
-					alert("ÁË¼ÛÇÕ´Ï´Ù. Á¸ÀçÇÏÁö ¾Ê´Â »óÇ°ÀÔ´Ï´Ù.");
+					alert("ì£„ì†¡í•©ë‹ˆë‹¤. ì¡´ì¬í•˜ì§€ ì•ŠëŠ” ìƒí’ˆì…ë‹ˆë‹¤.");
 				}else if(data.status.code == "901"){
-					alert("¿Ã¹Ù¸¥ ¿äÃ»ÀÌ ¾Æ´Õ´Ï´Ù.");
+					alert("ì˜¬ë°”ë¥¸ ìš”ì²­ì´ ì•„ë‹™ë‹ˆë‹¤.");
 				}else{
-					alert("Àá½ÃÈÄ ´Ù½Ã ½Ãµµ ÇØÁÖ¼¼¿ä.");
+					alert("ì ì‹œí›„ ë‹¤ì‹œ ì‹œë„ í•´ì£¼ì„¸ìš”.");
 				}
 			},
 			error : function(data){
-				alert("Àá½ÃÈÄ ´Ù½Ã ½Ãµµ ÇØÁÖ¼¼¿ä.");
-				console.log("»óÇ° Á¤º¸ Á¶È¸ ½ÇÆĞ!!");
+				alert("ì ì‹œí›„ ë‹¤ì‹œ ì‹œë„ í•´ì£¼ì„¸ìš”.");
+				console.log("ìƒí’ˆ ì •ë³´ ì¡°íšŒ ì‹¤íŒ¨!!");
 			}
 		});
 	});
@@ -2238,61 +2238,61 @@ function callGoogleAnalyticsTrc(ctg, action, label, url){
 
 			
 			<section class="dtl_area comprc">
-				<h1>µ¿ÀÏ »óÇ° <em><b>9</b>°³</em></h1>
-				<p class="msg_fee">ÃÖÀú°¡ ±¸¸Å ¹× ¹Ù·Î±¸¸Å ½Ã, ÁÖ¹®¼­/Àå¹Ù±¸´Ï¿¡¼­ »óÇ°Á¤º¸¸¦ ¹İµå½Ã È®ÀÎÇÏ½Å ÈÄ ÁÖ¹®ÇÏ½Ã±â ¹Ù¶ø´Ï´Ù.</p>
-				<!-- Á¤·Ä ÇÊÅÍ -->
+				<h1>ë™ì¼ ìƒí’ˆ <em><b>9</b>ê°œ</em></h1>
+				<p class="msg_fee">ìµœì €ê°€ êµ¬ë§¤ ë° ë°”ë¡œêµ¬ë§¤ ì‹œ, ì£¼ë¬¸ì„œ/ì¥ë°”êµ¬ë‹ˆì—ì„œ ìƒí’ˆì •ë³´ë¥¼ ë°˜ë“œì‹œ í™•ì¸í•˜ì‹  í›„ ì£¼ë¬¸í•˜ì‹œê¸° ë°”ëë‹ˆë‹¤.</p>
+				<!-- ì •ë ¬ í•„í„° -->
 				<div class="sh_so">
-					<button type="button" class="btn_free" onclick="toggleClass(this);freeDlv(this);callStatAjax(&#39;MWMART10&#39;,&#39;MWMART1002&#39;); callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ° ÇÊÅÍ/Á¤·Ä&#39;,&#39;¹«·á¹è¼Û ÇÊÅÍ&#39;);return false;">¹«·á¹è¼Û¸¸ º¸±â</button>
+					<button type="button" class="btn_free" onclick="toggleClass(this);freeDlv(this);callStatAjax(&#39;MWMART10&#39;,&#39;MWMART1002&#39;); callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ í•„í„°/ì •ë ¬&#39;,&#39;ë¬´ë£Œë°°ì†¡ í•„í„°&#39;);return false;">ë¬´ë£Œë°°ì†¡ë§Œ ë³´ê¸°</button>
 					<div class="sort">
-						<a href="http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?mallType=mart&amp;catalogNo=11943#laySort" class="btn_choice" onclick="mwUI.viewToggle(&#39;laySort&#39;);callStatAjax(&#39;MWMART10&#39;,&#39;MWMART1003&#39;); callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ° ÇÊÅÍ/Á¤·Ä&#39;,&#39;ÃßÃµ¼ø Á¤·Ä&#39;); return false;">ÃßÃµ¼ø</a>
+						<a href="http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?mallType=mart&amp;catalogNo=11943#laySort" class="btn_choice" onclick="mwUI.viewToggle(&#39;laySort&#39;);callStatAjax(&#39;MWMART10&#39;,&#39;MWMART1003&#39;); callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ í•„í„°/ì •ë ¬&#39;,&#39;ì¶”ì²œìˆœ ì •ë ¬&#39;); return false;">ì¶”ì²œìˆœ</a>
 
-						<!-- ·¹ÀÌ¾î -->
+						<!-- ë ˆì´ì–´ -->
 						<div id="laySort" class="lay_shso">
-							<span class="choice" onclick="mwUI.viewToggle(&#39;laySort&#39;)">ÃßÃµ¼ø</span>
+							<span class="choice" onclick="mwUI.viewToggle(&#39;laySort&#39;)">ì¶”ì²œìˆœ</span>
 							<ul>
-								<li class="on"><a href="http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?mallType=mart&amp;catalogNo=11943#" onclick="mwUI.viewToggle(&#39;laySort&#39;);changelaySort(this,&#39;R&#39;);callStatAjax(&#39;MWMART10&#39;,&#39;MWMART1003&#39;); callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ° ÇÊÅÍ/Á¤·Ä&#39;,&#39;ÃßÃµ¼ø Á¤·Ä&#39;); return false;">ÃßÃµ¼ø</a></li>
-								<li><a href="http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?mallType=mart&amp;catalogNo=11943#" onclick="mwUI.viewToggle(&#39;laySort&#39;);changelaySort(this,&#39;L&#39;);callStatAjax(&#39;MWMART10&#39;,&#39;MWMART1003&#39;); callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ° ÇÊÅÍ/Á¤·Ä&#39;,&#39;³·Àº°¡°İ¼ø Á¤·Ä&#39;); return false;">³·Àº°¡°İ¼ø</a></li>
-								<li><a href="http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?mallType=mart&amp;catalogNo=11943#" onclick="mwUI.viewToggle(&#39;laySort&#39;);changelaySort(this,&#39;NP&#39;);callStatAjax(&#39;MWMART10&#39;,&#39;MWMART1003&#39;); callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ° ÇÊÅÍ/Á¤·Ä&#39;,&#39;ÆÇ¸ÅÀÎ±â¼ø Á¤·Ä&#39;); return false;">ÆÇ¸ÅÀÎ±â¼ø</a></li>
+								<li class="on"><a href="http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?mallType=mart&amp;catalogNo=11943#" onclick="mwUI.viewToggle(&#39;laySort&#39;);changelaySort(this,&#39;R&#39;);callStatAjax(&#39;MWMART10&#39;,&#39;MWMART1003&#39;); callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ í•„í„°/ì •ë ¬&#39;,&#39;ì¶”ì²œìˆœ ì •ë ¬&#39;); return false;">ì¶”ì²œìˆœ</a></li>
+								<li><a href="http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?mallType=mart&amp;catalogNo=11943#" onclick="mwUI.viewToggle(&#39;laySort&#39;);changelaySort(this,&#39;L&#39;);callStatAjax(&#39;MWMART10&#39;,&#39;MWMART1003&#39;); callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ í•„í„°/ì •ë ¬&#39;,&#39;ë‚®ì€ê°€ê²©ìˆœ ì •ë ¬&#39;); return false;">ë‚®ì€ê°€ê²©ìˆœ</a></li>
+								<li><a href="http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?mallType=mart&amp;catalogNo=11943#" onclick="mwUI.viewToggle(&#39;laySort&#39;);changelaySort(this,&#39;NP&#39;);callStatAjax(&#39;MWMART10&#39;,&#39;MWMART1003&#39;); callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ í•„í„°/ì •ë ¬&#39;,&#39;íŒë§¤ì¸ê¸°ìˆœ ì •ë ¬&#39;); return false;">íŒë§¤ì¸ê¸°ìˆœ</a></li>
 							</ul>
 						</div>
-						<!-- //·¹ÀÌ¾î -->
+						<!-- //ë ˆì´ì–´ -->
 					</div>
 				</div>
 
 					<div id="content-martPremiumList"></div>
 					
 					<script id="martPremiumList" type="text/x-handlebars-template">
-						<h2>ÇÁ¸®¹Ì¾ö</h2>
+						<h2>í”„ë¦¬ë¯¸ì—„</h2>
 						<ul class="list_pc">
 							{{#martlist}}
 								<li>
 									<a href="{{PRDDETAILLINK}}&catalog_no=11943&lowest_yn={{#ifCond MARTFINALSELPRC 10500}}Y{{else}}N{{/ifCond}}" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1004" 
-										data-rake-area-id="premium_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="{{PRDNO}}" data-ctlg-no="11943" data-disp-ord="{{@index}}" onclick="callGoogleAnalyticsTrc('MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼','µ¿ÀÏ»óÇ°','µ¿ÀÏ»óÇ°(ÇÁ¸®¹Ì¾ö) Å¬¸¯_{{PRDNO}}');">
+										data-rake-area-id="premium_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="{{PRDNO}}" data-ctlg-no="11943" data-disp-ord="{{@index}}" onclick="callGoogleAnalyticsTrc('MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸','ë™ì¼ìƒí’ˆ','ë™ì¼ìƒí’ˆ(í”„ë¦¬ë¯¸ì—„) í´ë¦­_{{PRDNO}}');">
 										<div>
 											<span class="name"><img src="{{SELLERIMG}}" alt=""/></span>
 											<span class="txt">{{STORENAME}}</span>
 										</div>
 										<div>
 											{{#if TEXTDLV}}
-												<span class="ship"><b>¹è¼Ûºñ</b>{{TEXTDLV}}</span>
+												<span class="ship"><b>ë°°ì†¡ë¹„</b>{{TEXTDLV}}</span>
 											{{/if}}
 											<span class="txt">{{TEXTBNFT}}</span>
 										</div>
 										<div>
-											<span class="price"><b>{{MARTFINALSELPRC}}</b>¿ø</span>
+											<span class="price"><b>{{MARTFINALSELPRC}}</b>ì›</span>
 											{{#if UNITNAME}}
 												{{#if UNITPRICE}}
-													<span class="txt">({{UNITNAME}} {{UNITPRICE}}¿ø)</span>
+													<span class="txt">({{UNITNAME}} {{UNITPRICE}}ì›)</span>
 												{{/if}}
 											{{/if}}
 										</div>
 									</a>
 
 									<div class="btn_set">
-										<button type="button" class="cart" onclick="martGoToOrder('catalogInsertCart','{{PRDNO}}','{{CTLGSTOCKNO}}','{{DISPMODELNM}}');callStatAjax('MWMART','MWMART10','MWMART1011'); callGoogleAnalyticsTrc('MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼','µ¿ÀÏ»óÇ°','µ¿ÀÏ»óÇ°(ÇÁ¸®¹Ì¾ö) ¹Ù·Î Àå¹Ù±¸´Ï'); return false;">´ã±â</button>
-										<button type="button" class="buy" onclick="martGoToOrder('catalogDirectOrder','{{PRDNO}}','{{CTLGSTOCKNO}}','{{DISPMODELNM}}');callStatAjax('MWMART','MWMART10','MWMART1012'); callGoogleAnalyticsTrc('MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼','µ¿ÀÏ»óÇ°','µ¿ÀÏ»óÇ°(ÇÁ¸®¹Ì¾ö) ¹Ù·Î ±¸¸Å'); return false;"
+										<button type="button" class="cart" onclick="martGoToOrder('catalogInsertCart','{{PRDNO}}','{{CTLGSTOCKNO}}','{{DISPMODELNM}}');callStatAjax('MWMART','MWMART10','MWMART1011'); callGoogleAnalyticsTrc('MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸','ë™ì¼ìƒí’ˆ','ë™ì¼ìƒí’ˆ(í”„ë¦¬ë¯¸ì—„) ë°”ë¡œ ì¥ë°”êµ¬ë‹ˆ'); return false;">ë‹´ê¸°</button>
+										<button type="button" class="buy" onclick="martGoToOrder('catalogDirectOrder','{{PRDNO}}','{{CTLGSTOCKNO}}','{{DISPMODELNM}}');callStatAjax('MWMART','MWMART10','MWMART1012'); callGoogleAnalyticsTrc('MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸','ë™ì¼ìƒí’ˆ','ë™ì¼ìƒí’ˆ(í”„ë¦¬ë¯¸ì—„) ë°”ë¡œ êµ¬ë§¤'); return false;"
 											data-rake-area-id="premium_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="{{PRDNO}}" data-ctlg-no="11943" data-disp-ord="{{@index}}" >
-											±¸¸Å
+											êµ¬ë§¤
 										</button>
 										<input type="hidden" id="lowestYn_{{PRDNO}}" value="{{#ifCond MARTFINALSELPRC 10500}}Y{{else}}N{{/ifCond}}">
 									</div>
@@ -2303,247 +2303,247 @@ function callGoogleAnalyticsTrc(ctg, action, label, url){
 
 					<div id="content-martNormalList">
 						
-						<h2>ÀÏ¹İ</h2>
+						<h2>ì¼ë°˜</h2>
 						<ul class="list_pc">
 							
 								<li>
-									<a href="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo=958114815&amp;catalogNo=11943&amp;mallType=mart&amp;ctlgStockNo=3555325821&amp;catalog_no=11943&amp;lowest_yn=Y" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1004" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="958114815" data-ctlg-no="11943" data-disp-ord="0" onclick="callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ°&#39;,&#39;µ¿ÀÏ»óÇ°(ÀÏ¹İ) Å¬¸¯_958114815&#39;);">
+									<a href="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo=958114815&amp;catalogNo=11943&amp;mallType=mart&amp;ctlgStockNo=3555325821&amp;catalog_no=11943&amp;lowest_yn=Y" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1004" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="958114815" data-ctlg-no="11943" data-disp-ord="0" onclick="callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ&#39;,&#39;ë™ì¼ìƒí’ˆ(ì¼ë°˜) í´ë¦­_958114815&#39;);">
 										<div>
-											<span class="name">ÀÌ¿ä¿Í¸£</span>
+											<span class="name">ì´ìš”ì™€ë¥´</span>
 										</div>
 										<div>
 											
 											<span class="txt"></span>
 										</div>
 										<div>
-											<span class="price"><b>10,500</b>¿ø</span>
+											<span class="price"><b>10,500</b>ì›</span>
 											
 												
-													<span class="txt">(10g´ç 100¿ø)</span>
+													<span class="txt">(10gë‹¹ 100ì›)</span>
 												
 											
 										</div>
 									</a>
 									<div class="btn_set">
-										<button type="button" class="cart" onclick="martGoToOrder(&#39;catalogInsertCart&#39;,&#39;958114815&#39;,&#39;3555325821&#39;,&#39;ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ® Äµµğ 1050g x 1Åë&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1011&#39;); callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ°&#39;,&#39;µ¿ÀÏ»óÇ°(ÀÏ¹İ) ¹Ù·Î Àå¹Ù±¸´Ï&#39;);return false;">´ã±â</button>
-										<button type="button" class="buy" onclick="martGoToOrder(&#39;catalogDirectOrder&#39;,&#39;958114815&#39;,&#39;3555325821&#39;,&#39;ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ® Äµµğ 1050g x 1Åë&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1012&#39;); callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ°&#39;,&#39;µ¿ÀÏ»óÇ°(ÀÏ¹İ) ¹Ù·Î ±¸¸Å&#39;);return false;" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="958114815" data-ctlg-no="11943" data-disp-ord="0">
-											±¸¸Å
+										<button type="button" class="cart" onclick="martGoToOrder(&#39;catalogInsertCart&#39;,&#39;958114815&#39;,&#39;3555325821&#39;,&#39;í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ ìº”ë”” 1050g x 1í†µ&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1011&#39;); callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ&#39;,&#39;ë™ì¼ìƒí’ˆ(ì¼ë°˜) ë°”ë¡œ ì¥ë°”êµ¬ë‹ˆ&#39;);return false;">ë‹´ê¸°</button>
+										<button type="button" class="buy" onclick="martGoToOrder(&#39;catalogDirectOrder&#39;,&#39;958114815&#39;,&#39;3555325821&#39;,&#39;í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ ìº”ë”” 1050g x 1í†µ&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1012&#39;); callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ&#39;,&#39;ë™ì¼ìƒí’ˆ(ì¼ë°˜) ë°”ë¡œ êµ¬ë§¤&#39;);return false;" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="958114815" data-ctlg-no="11943" data-disp-ord="0">
+											êµ¬ë§¤
 										</button>
 										<input type="hidden" id="lowestYn_958114815" value="Y">
 									</div>
 								</li>
 							
 								<li>
-									<a href="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo=46112740&amp;catalogNo=11943&amp;mallType=mart&amp;ctlgStockNo=3227611517&amp;catalog_no=11943&amp;lowest_yn=N" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1004" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="46112740" data-ctlg-no="11943" data-disp-ord="1" onclick="callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ°&#39;,&#39;µ¿ÀÏ»óÇ°(ÀÏ¹İ) Å¬¸¯_46112740&#39;);">
+									<a href="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo=46112740&amp;catalogNo=11943&amp;mallType=mart&amp;ctlgStockNo=3227611517&amp;catalog_no=11943&amp;lowest_yn=N" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1004" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="46112740" data-ctlg-no="11943" data-disp-ord="1" onclick="callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ&#39;,&#39;ë™ì¼ìƒí’ˆ(ì¼ë°˜) í´ë¦­_46112740&#39;);">
 										<div>
-											<span class="name">¿ÀÈÄÀÇÆ¼Å¸ÀÓ</span>
+											<span class="name">ì˜¤í›„ì˜í‹°íƒ€ì„</span>
 										</div>
 										<div>
 											
 											<span class="txt"></span>
 										</div>
 										<div>
-											<span class="price"><b>12,490</b>¿ø</span>
+											<span class="price"><b>12,490</b>ì›</span>
 											
 												
-													<span class="txt">(10g´ç 119¿ø)</span>
+													<span class="txt">(10gë‹¹ 119ì›)</span>
 												
 											
 										</div>
 									</a>
 									<div class="btn_set">
-										<button type="button" class="cart" onclick="martGoToOrder(&#39;catalogInsertCart&#39;,&#39;46112740&#39;,&#39;3227611517&#39;,&#39;ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ® Äµµğ 1050g x 1Åë&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1011&#39;); callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ°&#39;,&#39;µ¿ÀÏ»óÇ°(ÀÏ¹İ) ¹Ù·Î Àå¹Ù±¸´Ï&#39;);return false;">´ã±â</button>
-										<button type="button" class="buy" onclick="martGoToOrder(&#39;catalogDirectOrder&#39;,&#39;46112740&#39;,&#39;3227611517&#39;,&#39;ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ® Äµµğ 1050g x 1Åë&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1012&#39;); callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ°&#39;,&#39;µ¿ÀÏ»óÇ°(ÀÏ¹İ) ¹Ù·Î ±¸¸Å&#39;);return false;" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="46112740" data-ctlg-no="11943" data-disp-ord="1">
-											±¸¸Å
+										<button type="button" class="cart" onclick="martGoToOrder(&#39;catalogInsertCart&#39;,&#39;46112740&#39;,&#39;3227611517&#39;,&#39;í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ ìº”ë”” 1050g x 1í†µ&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1011&#39;); callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ&#39;,&#39;ë™ì¼ìƒí’ˆ(ì¼ë°˜) ë°”ë¡œ ì¥ë°”êµ¬ë‹ˆ&#39;);return false;">ë‹´ê¸°</button>
+										<button type="button" class="buy" onclick="martGoToOrder(&#39;catalogDirectOrder&#39;,&#39;46112740&#39;,&#39;3227611517&#39;,&#39;í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ ìº”ë”” 1050g x 1í†µ&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1012&#39;); callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ&#39;,&#39;ë™ì¼ìƒí’ˆ(ì¼ë°˜) ë°”ë¡œ êµ¬ë§¤&#39;);return false;" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="46112740" data-ctlg-no="11943" data-disp-ord="1">
+											êµ¬ë§¤
 										</button>
 										<input type="hidden" id="lowestYn_46112740" value="N">
 									</div>
 								</li>
 							
 								<li>
-									<a href="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo=29788943&amp;catalogNo=11943&amp;mallType=mart&amp;ctlgStockNo=3386812978&amp;catalog_no=11943&amp;lowest_yn=N" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1004" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="29788943" data-ctlg-no="11943" data-disp-ord="2" onclick="callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ°&#39;,&#39;µ¿ÀÏ»óÇ°(ÀÏ¹İ) Å¬¸¯_29788943&#39;);">
+									<a href="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo=29788943&amp;catalogNo=11943&amp;mallType=mart&amp;ctlgStockNo=3386812978&amp;catalog_no=11943&amp;lowest_yn=N" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1004" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="29788943" data-ctlg-no="11943" data-disp-ord="2" onclick="callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ&#39;,&#39;ë™ì¼ìƒí’ˆ(ì¼ë°˜) í´ë¦­_29788943&#39;);">
 										<div>
-											<span class="name">¹Ì´Ï¸ô</span>
+											<span class="name">ë¯¸ë‹ˆëª°</span>
 										</div>
 										<div>
 											
 											<span class="txt"></span>
 										</div>
 										<div>
-											<span class="price"><b>12,490</b>¿ø</span>
+											<span class="price"><b>12,490</b>ì›</span>
 											
 												
-													<span class="txt">(10g´ç 119¿ø)</span>
+													<span class="txt">(10gë‹¹ 119ì›)</span>
 												
 											
 										</div>
 									</a>
 									<div class="btn_set">
-										<button type="button" class="cart" onclick="martGoToOrder(&#39;catalogInsertCart&#39;,&#39;29788943&#39;,&#39;3386812978&#39;,&#39;ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ® Äµµğ 1050g x 1Åë&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1011&#39;); callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ°&#39;,&#39;µ¿ÀÏ»óÇ°(ÀÏ¹İ) ¹Ù·Î Àå¹Ù±¸´Ï&#39;);return false;">´ã±â</button>
-										<button type="button" class="buy" onclick="martGoToOrder(&#39;catalogDirectOrder&#39;,&#39;29788943&#39;,&#39;3386812978&#39;,&#39;ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ® Äµµğ 1050g x 1Åë&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1012&#39;); callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ°&#39;,&#39;µ¿ÀÏ»óÇ°(ÀÏ¹İ) ¹Ù·Î ±¸¸Å&#39;);return false;" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="29788943" data-ctlg-no="11943" data-disp-ord="2">
-											±¸¸Å
+										<button type="button" class="cart" onclick="martGoToOrder(&#39;catalogInsertCart&#39;,&#39;29788943&#39;,&#39;3386812978&#39;,&#39;í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ ìº”ë”” 1050g x 1í†µ&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1011&#39;); callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ&#39;,&#39;ë™ì¼ìƒí’ˆ(ì¼ë°˜) ë°”ë¡œ ì¥ë°”êµ¬ë‹ˆ&#39;);return false;">ë‹´ê¸°</button>
+										<button type="button" class="buy" onclick="martGoToOrder(&#39;catalogDirectOrder&#39;,&#39;29788943&#39;,&#39;3386812978&#39;,&#39;í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ ìº”ë”” 1050g x 1í†µ&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1012&#39;); callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ&#39;,&#39;ë™ì¼ìƒí’ˆ(ì¼ë°˜) ë°”ë¡œ êµ¬ë§¤&#39;);return false;" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="29788943" data-ctlg-no="11943" data-disp-ord="2">
+											êµ¬ë§¤
 										</button>
 										<input type="hidden" id="lowestYn_29788943" value="N">
 									</div>
 								</li>
 							
 								<li>
-									<a href="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo=904501221&amp;catalogNo=11943&amp;mallType=mart&amp;ctlgStockNo=3389458796&amp;catalog_no=11943&amp;lowest_yn=N" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1004" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="904501221" data-ctlg-no="11943" data-disp-ord="3" onclick="callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ°&#39;,&#39;µ¿ÀÏ»óÇ°(ÀÏ¹İ) Å¬¸¯_904501221&#39;);">
+									<a href="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo=904501221&amp;catalogNo=11943&amp;mallType=mart&amp;ctlgStockNo=3389458796&amp;catalog_no=11943&amp;lowest_yn=N" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1004" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="904501221" data-ctlg-no="11943" data-disp-ord="3" onclick="callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ&#39;,&#39;ë™ì¼ìƒí’ˆ(ì¼ë°˜) í´ë¦­_904501221&#39;);">
 										<div>
-											<span class="name">ÇÃ·¯½ºÈ¨23</span>
+											<span class="name">í”ŒëŸ¬ìŠ¤í™ˆ23</span>
 										</div>
 										<div>
 											
 											<span class="txt"></span>
 										</div>
 										<div>
-											<span class="price"><b>12,990</b>¿ø</span>
+											<span class="price"><b>12,990</b>ì›</span>
 											
 												
-													<span class="txt">(10g´ç 124¿ø)</span>
+													<span class="txt">(10gë‹¹ 124ì›)</span>
 												
 											
 										</div>
 									</a>
 									<div class="btn_set">
-										<button type="button" class="cart" onclick="martGoToOrder(&#39;catalogInsertCart&#39;,&#39;904501221&#39;,&#39;3389458796&#39;,&#39;ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ® Äµµğ 1050g x 1Åë&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1011&#39;); callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ°&#39;,&#39;µ¿ÀÏ»óÇ°(ÀÏ¹İ) ¹Ù·Î Àå¹Ù±¸´Ï&#39;);return false;">´ã±â</button>
-										<button type="button" class="buy" onclick="martGoToOrder(&#39;catalogDirectOrder&#39;,&#39;904501221&#39;,&#39;3389458796&#39;,&#39;ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ® Äµµğ 1050g x 1Åë&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1012&#39;); callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ°&#39;,&#39;µ¿ÀÏ»óÇ°(ÀÏ¹İ) ¹Ù·Î ±¸¸Å&#39;);return false;" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="904501221" data-ctlg-no="11943" data-disp-ord="3">
-											±¸¸Å
+										<button type="button" class="cart" onclick="martGoToOrder(&#39;catalogInsertCart&#39;,&#39;904501221&#39;,&#39;3389458796&#39;,&#39;í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ ìº”ë”” 1050g x 1í†µ&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1011&#39;); callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ&#39;,&#39;ë™ì¼ìƒí’ˆ(ì¼ë°˜) ë°”ë¡œ ì¥ë°”êµ¬ë‹ˆ&#39;);return false;">ë‹´ê¸°</button>
+										<button type="button" class="buy" onclick="martGoToOrder(&#39;catalogDirectOrder&#39;,&#39;904501221&#39;,&#39;3389458796&#39;,&#39;í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ ìº”ë”” 1050g x 1í†µ&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1012&#39;); callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ&#39;,&#39;ë™ì¼ìƒí’ˆ(ì¼ë°˜) ë°”ë¡œ êµ¬ë§¤&#39;);return false;" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="904501221" data-ctlg-no="11943" data-disp-ord="3">
+											êµ¬ë§¤
 										</button>
 										<input type="hidden" id="lowestYn_904501221" value="N">
 									</div>
 								</li>
 							
 								<li>
-									<a href="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo=15084367&amp;catalogNo=11943&amp;mallType=mart&amp;ctlgStockNo=153513270&amp;catalog_no=11943&amp;lowest_yn=N" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1004" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="15084367" data-ctlg-no="11943" data-disp-ord="4" onclick="callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ°&#39;,&#39;µ¿ÀÏ»óÇ°(ÀÏ¹İ) Å¬¸¯_15084367&#39;);">
+									<a href="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo=15084367&amp;catalogNo=11943&amp;mallType=mart&amp;ctlgStockNo=153513270&amp;catalog_no=11943&amp;lowest_yn=N" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1004" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="15084367" data-ctlg-no="11943" data-disp-ord="4" onclick="callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ&#39;,&#39;ë™ì¼ìƒí’ˆ(ì¼ë°˜) í´ë¦­_15084367&#39;);">
 										<div>
-											<span class="name">·ÎÁî¸¶Æ®</span>
+											<span class="name">ë¡œì¦ˆë§ˆíŠ¸</span>
 										</div>
 										<div>
 											
 											<span class="txt"></span>
 										</div>
 										<div>
-											<span class="price"><b>13,400</b>¿ø</span>
+											<span class="price"><b>13,400</b>ì›</span>
 											
 												
-													<span class="txt">(10g´ç 128¿ø)</span>
+													<span class="txt">(10gë‹¹ 128ì›)</span>
 												
 											
 										</div>
 									</a>
 									<div class="btn_set">
-										<button type="button" class="cart" onclick="martGoToOrder(&#39;catalogInsertCart&#39;,&#39;15084367&#39;,&#39;153513270&#39;,&#39;ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ® Äµµğ 1050g x 1Åë&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1011&#39;); callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ°&#39;,&#39;µ¿ÀÏ»óÇ°(ÀÏ¹İ) ¹Ù·Î Àå¹Ù±¸´Ï&#39;);return false;">´ã±â</button>
-										<button type="button" class="buy" onclick="martGoToOrder(&#39;catalogDirectOrder&#39;,&#39;15084367&#39;,&#39;153513270&#39;,&#39;ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ® Äµµğ 1050g x 1Åë&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1012&#39;); callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ°&#39;,&#39;µ¿ÀÏ»óÇ°(ÀÏ¹İ) ¹Ù·Î ±¸¸Å&#39;);return false;" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="15084367" data-ctlg-no="11943" data-disp-ord="4">
-											±¸¸Å
+										<button type="button" class="cart" onclick="martGoToOrder(&#39;catalogInsertCart&#39;,&#39;15084367&#39;,&#39;153513270&#39;,&#39;í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ ìº”ë”” 1050g x 1í†µ&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1011&#39;); callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ&#39;,&#39;ë™ì¼ìƒí’ˆ(ì¼ë°˜) ë°”ë¡œ ì¥ë°”êµ¬ë‹ˆ&#39;);return false;">ë‹´ê¸°</button>
+										<button type="button" class="buy" onclick="martGoToOrder(&#39;catalogDirectOrder&#39;,&#39;15084367&#39;,&#39;153513270&#39;,&#39;í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ ìº”ë”” 1050g x 1í†µ&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1012&#39;); callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ&#39;,&#39;ë™ì¼ìƒí’ˆ(ì¼ë°˜) ë°”ë¡œ êµ¬ë§¤&#39;);return false;" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="15084367" data-ctlg-no="11943" data-disp-ord="4">
+											êµ¬ë§¤
 										</button>
 										<input type="hidden" id="lowestYn_15084367" value="N">
 									</div>
 								</li>
 							
 								<li>
-									<a href="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo=118456902&amp;catalogNo=11943&amp;mallType=mart&amp;ctlgStockNo=1033266768&amp;catalog_no=11943&amp;lowest_yn=N" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1004" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="118456902" data-ctlg-no="11943" data-disp-ord="5" onclick="callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ°&#39;,&#39;µ¿ÀÏ»óÇ°(ÀÏ¹İ) Å¬¸¯_118456902&#39;);">
+									<a href="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo=118456902&amp;catalogNo=11943&amp;mallType=mart&amp;ctlgStockNo=1033266768&amp;catalog_no=11943&amp;lowest_yn=N" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1004" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="118456902" data-ctlg-no="11943" data-disp-ord="5" onclick="callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ&#39;,&#39;ë™ì¼ìƒí’ˆ(ì¼ë°˜) í´ë¦­_118456902&#39;);">
 										<div>
-											<span class="name">ÄÚÄÚ½ºÅä¾î</span>
+											<span class="name">ì½”ì½”ìŠ¤í† ì–´</span>
 										</div>
 										<div>
 											
 											<span class="txt"></span>
 										</div>
 										<div>
-											<span class="price"><b>13,500</b>¿ø</span>
+											<span class="price"><b>13,500</b>ì›</span>
 											
 												
-													<span class="txt">(10g´ç 129¿ø)</span>
+													<span class="txt">(10gë‹¹ 129ì›)</span>
 												
 											
 										</div>
 									</a>
 									<div class="btn_set">
-										<button type="button" class="cart" onclick="martGoToOrder(&#39;catalogInsertCart&#39;,&#39;118456902&#39;,&#39;1033266768&#39;,&#39;ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ® Äµµğ 1050g x 1Åë&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1011&#39;); callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ°&#39;,&#39;µ¿ÀÏ»óÇ°(ÀÏ¹İ) ¹Ù·Î Àå¹Ù±¸´Ï&#39;);return false;">´ã±â</button>
-										<button type="button" class="buy" onclick="martGoToOrder(&#39;catalogDirectOrder&#39;,&#39;118456902&#39;,&#39;1033266768&#39;,&#39;ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ® Äµµğ 1050g x 1Åë&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1012&#39;); callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ°&#39;,&#39;µ¿ÀÏ»óÇ°(ÀÏ¹İ) ¹Ù·Î ±¸¸Å&#39;);return false;" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="118456902" data-ctlg-no="11943" data-disp-ord="5">
-											±¸¸Å
+										<button type="button" class="cart" onclick="martGoToOrder(&#39;catalogInsertCart&#39;,&#39;118456902&#39;,&#39;1033266768&#39;,&#39;í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ ìº”ë”” 1050g x 1í†µ&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1011&#39;); callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ&#39;,&#39;ë™ì¼ìƒí’ˆ(ì¼ë°˜) ë°”ë¡œ ì¥ë°”êµ¬ë‹ˆ&#39;);return false;">ë‹´ê¸°</button>
+										<button type="button" class="buy" onclick="martGoToOrder(&#39;catalogDirectOrder&#39;,&#39;118456902&#39;,&#39;1033266768&#39;,&#39;í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ ìº”ë”” 1050g x 1í†µ&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1012&#39;); callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ&#39;,&#39;ë™ì¼ìƒí’ˆ(ì¼ë°˜) ë°”ë¡œ êµ¬ë§¤&#39;);return false;" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="118456902" data-ctlg-no="11943" data-disp-ord="5">
+											êµ¬ë§¤
 										</button>
 										<input type="hidden" id="lowestYn_118456902" value="N">
 									</div>
 								</li>
 							
 								<li>
-									<a href="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo=325257951&amp;catalogNo=11943&amp;mallType=mart&amp;ctlgStockNo=1919044284&amp;catalog_no=11943&amp;lowest_yn=N" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1004" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="325257951" data-ctlg-no="11943" data-disp-ord="6" onclick="callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ°&#39;,&#39;µ¿ÀÏ»óÇ°(ÀÏ¹İ) Å¬¸¯_325257951&#39;);">
+									<a href="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo=325257951&amp;catalogNo=11943&amp;mallType=mart&amp;ctlgStockNo=1919044284&amp;catalog_no=11943&amp;lowest_yn=N" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1004" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="325257951" data-ctlg-no="11943" data-disp-ord="6" onclick="callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ&#39;,&#39;ë™ì¼ìƒí’ˆ(ì¼ë°˜) í´ë¦­_325257951&#39;);">
 										<div>
-											<span class="name">º£½ºÆ®¼îÇÎ¸ô</span>
+											<span class="name">ë² ìŠ¤íŠ¸ì‡¼í•‘ëª°</span>
 										</div>
 										<div>
 											
 											<span class="txt"></span>
 										</div>
 										<div>
-											<span class="price"><b>13,690</b>¿ø</span>
+											<span class="price"><b>13,690</b>ì›</span>
 											
 												
-													<span class="txt">(10g´ç 130¿ø)</span>
+													<span class="txt">(10gë‹¹ 130ì›)</span>
 												
 											
 										</div>
 									</a>
 									<div class="btn_set">
-										<button type="button" class="cart" onclick="martGoToOrder(&#39;catalogInsertCart&#39;,&#39;325257951&#39;,&#39;1919044284&#39;,&#39;ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ® Äµµğ 1050g x 1Åë&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1011&#39;); callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ°&#39;,&#39;µ¿ÀÏ»óÇ°(ÀÏ¹İ) ¹Ù·Î Àå¹Ù±¸´Ï&#39;);return false;">´ã±â</button>
-										<button type="button" class="buy" onclick="martGoToOrder(&#39;catalogDirectOrder&#39;,&#39;325257951&#39;,&#39;1919044284&#39;,&#39;ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ® Äµµğ 1050g x 1Åë&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1012&#39;); callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ°&#39;,&#39;µ¿ÀÏ»óÇ°(ÀÏ¹İ) ¹Ù·Î ±¸¸Å&#39;);return false;" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="325257951" data-ctlg-no="11943" data-disp-ord="6">
-											±¸¸Å
+										<button type="button" class="cart" onclick="martGoToOrder(&#39;catalogInsertCart&#39;,&#39;325257951&#39;,&#39;1919044284&#39;,&#39;í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ ìº”ë”” 1050g x 1í†µ&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1011&#39;); callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ&#39;,&#39;ë™ì¼ìƒí’ˆ(ì¼ë°˜) ë°”ë¡œ ì¥ë°”êµ¬ë‹ˆ&#39;);return false;">ë‹´ê¸°</button>
+										<button type="button" class="buy" onclick="martGoToOrder(&#39;catalogDirectOrder&#39;,&#39;325257951&#39;,&#39;1919044284&#39;,&#39;í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ ìº”ë”” 1050g x 1í†µ&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1012&#39;); callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ&#39;,&#39;ë™ì¼ìƒí’ˆ(ì¼ë°˜) ë°”ë¡œ êµ¬ë§¤&#39;);return false;" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="325257951" data-ctlg-no="11943" data-disp-ord="6">
+											êµ¬ë§¤
 										</button>
 										<input type="hidden" id="lowestYn_325257951" value="N">
 									</div>
 								</li>
 							
 								<li>
-									<a href="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo=1111825922&amp;catalogNo=11943&amp;mallType=mart&amp;ctlgStockNo=4084361702&amp;catalog_no=11943&amp;lowest_yn=N" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1004" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="1111825922" data-ctlg-no="11943" data-disp-ord="7" onclick="callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ°&#39;,&#39;µ¿ÀÏ»óÇ°(ÀÏ¹İ) Å¬¸¯_1111825922&#39;);">
+									<a href="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo=1111825922&amp;catalogNo=11943&amp;mallType=mart&amp;ctlgStockNo=4084361702&amp;catalog_no=11943&amp;lowest_yn=N" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1004" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="1111825922" data-ctlg-no="11943" data-disp-ord="7" onclick="callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ&#39;,&#39;ë™ì¼ìƒí’ˆ(ì¼ë°˜) í´ë¦­_1111825922&#39;);">
 										<div>
-											<span class="name">ÄÚ½ºÆ®¾Ø¸ô</span>
+											<span class="name">ì½”ìŠ¤íŠ¸ì•¤ëª°</span>
 										</div>
 										<div>
 											
 											<span class="txt"></span>
 										</div>
 										<div>
-											<span class="price"><b>13,700</b>¿ø</span>
+											<span class="price"><b>13,700</b>ì›</span>
 											
 												
-													<span class="txt">(10g´ç 130¿ø)</span>
+													<span class="txt">(10gë‹¹ 130ì›)</span>
 												
 											
 										</div>
 									</a>
 									<div class="btn_set">
-										<button type="button" class="cart" onclick="martGoToOrder(&#39;catalogInsertCart&#39;,&#39;1111825922&#39;,&#39;4084361702&#39;,&#39;ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ® Äµµğ 1050g x 1Åë&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1011&#39;); callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ°&#39;,&#39;µ¿ÀÏ»óÇ°(ÀÏ¹İ) ¹Ù·Î Àå¹Ù±¸´Ï&#39;);return false;">´ã±â</button>
-										<button type="button" class="buy" onclick="martGoToOrder(&#39;catalogDirectOrder&#39;,&#39;1111825922&#39;,&#39;4084361702&#39;,&#39;ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ® Äµµğ 1050g x 1Åë&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1012&#39;); callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ°&#39;,&#39;µ¿ÀÏ»óÇ°(ÀÏ¹İ) ¹Ù·Î ±¸¸Å&#39;);return false;" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="1111825922" data-ctlg-no="11943" data-disp-ord="7">
-											±¸¸Å
+										<button type="button" class="cart" onclick="martGoToOrder(&#39;catalogInsertCart&#39;,&#39;1111825922&#39;,&#39;4084361702&#39;,&#39;í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ ìº”ë”” 1050g x 1í†µ&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1011&#39;); callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ&#39;,&#39;ë™ì¼ìƒí’ˆ(ì¼ë°˜) ë°”ë¡œ ì¥ë°”êµ¬ë‹ˆ&#39;);return false;">ë‹´ê¸°</button>
+										<button type="button" class="buy" onclick="martGoToOrder(&#39;catalogDirectOrder&#39;,&#39;1111825922&#39;,&#39;4084361702&#39;,&#39;í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ ìº”ë”” 1050g x 1í†µ&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1012&#39;); callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ&#39;,&#39;ë™ì¼ìƒí’ˆ(ì¼ë°˜) ë°”ë¡œ êµ¬ë§¤&#39;);return false;" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="1111825922" data-ctlg-no="11943" data-disp-ord="7">
+											êµ¬ë§¤
 										</button>
 										<input type="hidden" id="lowestYn_1111825922" value="N">
 									</div>
 								</li>
 							
 								<li>
-									<a href="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo=836734114&amp;catalogNo=11943&amp;mallType=mart&amp;ctlgStockNo=3209755465&amp;catalog_no=11943&amp;lowest_yn=N" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1004" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="836734114" data-ctlg-no="11943" data-disp-ord="8" onclick="callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ°&#39;,&#39;µ¿ÀÏ»óÇ°(ÀÏ¹İ) Å¬¸¯_836734114&#39;);">
+									<a href="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo=836734114&amp;catalogNo=11943&amp;mallType=mart&amp;ctlgStockNo=3209755465&amp;catalog_no=11943&amp;lowest_yn=N" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1004" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="836734114" data-ctlg-no="11943" data-disp-ord="8" onclick="callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ&#39;,&#39;ë™ì¼ìƒí’ˆ(ì¼ë°˜) í´ë¦­_836734114&#39;);">
 										<div>
-											<span class="name">¿ì³ëÇªµå</span>
+											<span class="name">ìš°ë…¸í‘¸ë“œ</span>
 										</div>
 										<div>
 											
 											<span class="txt"></span>
 										</div>
 										<div>
-											<span class="price"><b>13,900</b>¿ø</span>
+											<span class="price"><b>13,900</b>ì›</span>
 											
 												
-													<span class="txt">(10g´ç 132¿ø)</span>
+													<span class="txt">(10gë‹¹ 132ì›)</span>
 												
 											
 										</div>
 									</a>
 									<div class="btn_set">
-										<button type="button" class="cart" onclick="martGoToOrder(&#39;catalogInsertCart&#39;,&#39;836734114&#39;,&#39;3209755465&#39;,&#39;ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ® Äµµğ 1050g x 1Åë&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1011&#39;); callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ°&#39;,&#39;µ¿ÀÏ»óÇ°(ÀÏ¹İ) ¹Ù·Î Àå¹Ù±¸´Ï&#39;);return false;">´ã±â</button>
-										<button type="button" class="buy" onclick="martGoToOrder(&#39;catalogDirectOrder&#39;,&#39;836734114&#39;,&#39;3209755465&#39;,&#39;ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ® Äµµğ 1050g x 1Åë&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1012&#39;); callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;µ¿ÀÏ»óÇ°&#39;,&#39;µ¿ÀÏ»óÇ°(ÀÏ¹İ) ¹Ù·Î ±¸¸Å&#39;);return false;" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="836734114" data-ctlg-no="11943" data-disp-ord="8">
-											±¸¸Å
+										<button type="button" class="cart" onclick="martGoToOrder(&#39;catalogInsertCart&#39;,&#39;836734114&#39;,&#39;3209755465&#39;,&#39;í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ ìº”ë”” 1050g x 1í†µ&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1011&#39;); callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ&#39;,&#39;ë™ì¼ìƒí’ˆ(ì¼ë°˜) ë°”ë¡œ ì¥ë°”êµ¬ë‹ˆ&#39;);return false;">ë‹´ê¸°</button>
+										<button type="button" class="buy" onclick="martGoToOrder(&#39;catalogDirectOrder&#39;,&#39;836734114&#39;,&#39;3209755465&#39;,&#39;í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ ìº”ë”” 1050g x 1í†µ&#39;);callStatAjax(&#39;MWMART&#39;,&#39;MWMART10&#39;,&#39;MWMART1012&#39;); callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ë™ì¼ìƒí’ˆ&#39;,&#39;ë™ì¼ìƒí’ˆ(ì¼ë°˜) ë°”ë¡œ êµ¬ë§¤&#39;);return false;" data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="836734114" data-ctlg-no="11943" data-disp-ord="8">
+											êµ¬ë§¤
 										</button>
 										<input type="hidden" id="lowestYn_836734114" value="N">
 									</div>
@@ -2554,35 +2554,35 @@ function callGoogleAnalyticsTrc(ctg, action, label, url){
 					
 					<script id="martNormalList" type="text/x-handlebars-template">
 						
-						<h2>ÀÏ¹İ</h2>
+						<h2>ì¼ë°˜</h2>
 						<ul class="list_pc">
 							{{#martlist}}
 								<li>
 									<a href="{{PRDDETAILLINK}}&catalog_no=11943&lowest_yn={{#ifCond MARTFINALSELPRC 10500}}Y{{else}}N{{/ifCond}}" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1004" 
-										data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="{{PRDNO}}" data-ctlg-no="11943" data-disp-ord="{{@index}}" onclick="callGoogleAnalyticsTrc('MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼','µ¿ÀÏ»óÇ°','µ¿ÀÏ»óÇ°(ÀÏ¹İ) Å¬¸¯_{{PRDNO}}');">
+										data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="{{PRDNO}}" data-ctlg-no="11943" data-disp-ord="{{@index}}" onclick="callGoogleAnalyticsTrc('MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸','ë™ì¼ìƒí’ˆ','ë™ì¼ìƒí’ˆ(ì¼ë°˜) í´ë¦­_{{PRDNO}}');">
 										<div>
 											<span class="name">{{NICKNAME}}</span>
 										</div>
 										<div>
 											{{#if TEXTDLV}}
-												<span class="ship"><b>¹è¼Ûºñ</b>{{TEXTDLV}}</span>
+												<span class="ship"><b>ë°°ì†¡ë¹„</b>{{TEXTDLV}}</span>
 											{{/if}}
 											<span class="txt">{{TEXTBNFT}}</span>
 										</div>
 										<div>
-											<span class="price"><b>{{MARTFINALSELPRC}}</b>¿ø</span>
+											<span class="price"><b>{{MARTFINALSELPRC}}</b>ì›</span>
 											{{#if UNITNAME}}
 												{{#if UNITPRICE}}
-													<span class="txt">({{UNITNAME}} {{UNITPRICE}}¿ø)</span>
+													<span class="txt">({{UNITNAME}} {{UNITPRICE}}ì›)</span>
 												{{/if}}
 											{{/if}}
 										</div>
 									</a>
 									<div class="btn_set">
-										<button type="button" class="cart" onclick="martGoToOrder('catalogInsertCart','{{PRDNO}}','{{CTLGSTOCKNO}}','{{DISPMODELNM}}');callStatAjax('MWMART','MWMART10','MWMART1011'); callGoogleAnalyticsTrc('MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼','µ¿ÀÏ»óÇ°','µ¿ÀÏ»óÇ°(ÀÏ¹İ) ¹Ù·Î Àå¹Ù±¸´Ï');return false;">´ã±â</button>
-										<button type="button" class="buy" onclick="martGoToOrder('catalogDirectOrder','{{PRDNO}}','{{CTLGSTOCKNO}}','{{DISPMODELNM}}');callStatAjax('MWMART','MWMART10','MWMART1012'); callGoogleAnalyticsTrc('MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼','µ¿ÀÏ»óÇ°','µ¿ÀÏ»óÇ°(ÀÏ¹İ) ¹Ù·Î ±¸¸Å');return false;"
+										<button type="button" class="cart" onclick="martGoToOrder('catalogInsertCart','{{PRDNO}}','{{CTLGSTOCKNO}}','{{DISPMODELNM}}');callStatAjax('MWMART','MWMART10','MWMART1011'); callGoogleAnalyticsTrc('MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸','ë™ì¼ìƒí’ˆ','ë™ì¼ìƒí’ˆ(ì¼ë°˜) ë°”ë¡œ ì¥ë°”êµ¬ë‹ˆ');return false;">ë‹´ê¸°</button>
+										<button type="button" class="buy" onclick="martGoToOrder('catalogDirectOrder','{{PRDNO}}','{{CTLGSTOCKNO}}','{{DISPMODELNM}}');callStatAjax('MWMART','MWMART10','MWMART1012'); callGoogleAnalyticsTrc('MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸','ë™ì¼ìƒí’ˆ','ë™ì¼ìƒí’ˆ(ì¼ë°˜) ë°”ë¡œ êµ¬ë§¤');return false;"
 											data-rake-area-id="general_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="{{PRDNO}}" data-ctlg-no="11943" data-disp-ord="{{@index}}" >
-											±¸¸Å
+											êµ¬ë§¤
 										</button>
 										<input type="hidden" id="lowestYn_{{PRDNO}}" value="{{#ifCond MARTFINALSELPRC 10500}}Y{{else}}N{{/ifCond}}">
 									</div>
@@ -2612,24 +2612,24 @@ function callGoogleAnalyticsTrc(ctg, action, label, url){
 										{{/if}}
 										<div>
 											{{#if TEXTDLV}}
-												<span class="ship"><b>¹è¼Ûºñ</b>{{TEXTDLV}}</span>
+												<span class="ship"><b>ë°°ì†¡ë¹„</b>{{TEXTDLV}}</span>
 											{{/if}}
 											<span class="txt">{{TEXTBNFT}}</span>
 										</div>
 										<div>
-											<span class="price"><b>{{MARTFINALSELPRC}}</b>¿ø</span>
+											<span class="price"><b>{{MARTFINALSELPRC}}</b>ì›</span>
 											{{#if UNITNAME}}
 												{{#if UNITPRICE}}
-													<span class="txt">({{UNITNAME}} {{UNITPRICE}}¿ø)</span>
+													<span class="txt">({{UNITNAME}} {{UNITPRICE}}ì›)</span>
 												{{/if}}
 											{{/if}}
 										</div>
 									</a>
 									<div class="btn_set">
-										<button type="button" class="cart" onclick="martGoToOrder('catalogInsertCart','{{PRDNO}}','{{CTLGSTOCKNO}}','{{DISPMODELNM}}');callStatAjax('MWMART','MWMART10','MWMART1011');return false;">´ã±â</button>
+										<button type="button" class="cart" onclick="martGoToOrder('catalogInsertCart','{{PRDNO}}','{{CTLGSTOCKNO}}','{{DISPMODELNM}}');callStatAjax('MWMART','MWMART10','MWMART1011');return false;">ë‹´ê¸°</button>
 										<button type="button" class="buy" onclick="martGoToOrder('catalogDirectOrder','{{PRDNO}}','{{CTLGSTOCKNO}}','{{DISPMODELNM}}');callStatAjax('MWMART','MWMART10','MWMART1012');return false;"
 											data-rake-area-id="free_dlv_pcs_listing" data-rake-event-id="PRODUCT" data-prd-no="{{PRDNO}}" data-ctlg-no="11943" data-disp-ord="{{@index}}" >
-											±¸¸Å
+											êµ¬ë§¤
 										</button>
 										<input type="hidden" id="lowestYn_{{PRDNO}}" value="{{#ifCond MARTFINALSELPRC 10500}}Y{{else}}N{{/ifCond}}">
 									</div>
@@ -2639,14 +2639,14 @@ function callGoogleAnalyticsTrc(ctg, action, label, url){
 					</script>
 
 					<script>
-							// °¡°İºñ±³ ´õº¸±â
+							// ê°€ê²©ë¹„êµ ë”ë³´ê¸°
 							var moreViewYN = "N";
-							// ÇöÀç Á¤·ÄÁ¶°Ç
+							// í˜„ì¬ ì •ë ¬ì¡°ê±´
 							var curSortCd = "R";
 
 							function changeMoreView(){
 								moreViewYN = "Y";
-								//¹«·á¹è¼Û ¿©ºÎ
+								//ë¬´ë£Œë°°ì†¡ ì—¬ë¶€
 								var freeDlvYN = "N";
 								var freeTag = document.querySelector('section.dtl_area div.sh_so button');
 
@@ -2669,7 +2669,7 @@ function callGoogleAnalyticsTrc(ctg, action, label, url){
 								sortName.querySelector('.choice').innerHTML = ele.firstChild.nodeValue;
 								sortName.parentNode.querySelector('a').innerHTML = ele.firstChild.nodeValue;
 
-								//¹«·á¹è¼Û ¿©ºÎ
+								//ë¬´ë£Œë°°ì†¡ ì—¬ë¶€
 								var freeDlvYN = "N";
 								var freeTag = document.querySelector('section.dtl_area div.sh_so button');
 
@@ -2680,7 +2680,7 @@ function callGoogleAnalyticsTrc(ctg, action, label, url){
 								sortListAjax(sortCd, freeDlvYN, moreViewYN);
 							}
 
-					  		// ¹«·á¹è¼Û
+					  		// ë¬´ë£Œë°°ì†¡
 						  function freeDlv(self){
  							  if(self.className.lastIndexOf('on') > 0) {
 								  $("#content-martPremiumList").html("");
@@ -2697,7 +2697,7 @@ function callGoogleAnalyticsTrc(ctg, action, label, url){
    						  	 sortListAjax('R', 'N', 'N');
 						  });
 
-						 // Á¤·Ä
+						 // ì •ë ¬
 						function sortListAjax(sortCd, freeDlvYN, moreViewYN) {
 							var url = _MOBILE_URL_ + "/Mart/getCatalogMartSortListAjax.tmall?catalogNo="+11943+"&sortCd=" +sortCd+"&freeDlvYN="+freeDlvYN+"&moreViewYN="+moreViewYN;
 
@@ -2725,13 +2725,13 @@ function callGoogleAnalyticsTrc(ctg, action, label, url){
 													}
 												});
 												
-												if(sortCd=="R"){ // ÃßÃµ¼ø
+												if(sortCd=="R"){ // ì¶”ì²œìˆœ
 													var source   = $("#martPremiumList").html();
 													var template = Handlebars.compile(source);
 													var data = { martlist: jsonData.sortPremiumList};
 													if(data.martlist.length > 0){
 														  $("#content-martPremiumList").html(template(data));
-														 callGoogleAnalyticsTrc('MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼','µ¿ÀÏ»óÇ°','µ¿ÀÏ»óÇ°(ÇÁ¸®¹Ì¾ö) ³ëÃâ');
+														 callGoogleAnalyticsTrc('MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸','ë™ì¼ìƒí’ˆ','ë™ì¼ìƒí’ˆ(í”„ë¦¬ë¯¸ì—„) ë…¸ì¶œ');
 													}
 
 													source   = $("#martNormalList").html();
@@ -2739,13 +2739,13 @@ function callGoogleAnalyticsTrc(ctg, action, label, url){
 													data = { martlist: jsonData.sortNormalList};
 													if(data.martlist.length > 0){
 														$("#content-martNormalList").html(template(data));
-														 callGoogleAnalyticsTrc('MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼','µ¿ÀÏ»óÇ°','µ¿ÀÏ»óÇ°(ÀÏ¹İ) ³ëÃâ');
+														 callGoogleAnalyticsTrc('MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸','ë™ì¼ìƒí’ˆ','ë™ì¼ìƒí’ˆ(ì¼ë°˜) ë…¸ì¶œ');
 													}
 													
 													if(moreViewYN == 'N'){
 														Mart.rake.trackView();
 													}
-												}else{  // ÀÎ±â¼ø, ³·Àº°¡°İ¼ø
+												}else{  // ì¸ê¸°ìˆœ, ë‚®ì€ê°€ê²©ìˆœ
 													var source   = $("#martFreeDlvList").html();
 													var template = Handlebars.compile(source);
 													var data = { martlist: jsonData.sortList};
@@ -2766,7 +2766,7 @@ function callGoogleAnalyticsTrc(ctg, action, label, url){
 
 				
 				
-				<button type="button" class="report" id="ctlgDeclareBtn">½Å°íÇÏ±â</button>
+				<button type="button" class="report" id="ctlgDeclareBtn">ì‹ ê³ í•˜ê¸°</button>
 			</section>
 			
 			
@@ -2780,29 +2780,29 @@ function callGoogleAnalyticsTrc(ctg, action, label, url){
 
 
 			<section class="dtl_area"><!-- class -->
-				<h1 class="tit_bx">ÀüÃ¼ ¸®ºä<span class="num">344°Ç</span></h1>
+				<h1 class="tit_bx">ì „ì²´ ë¦¬ë·°<span class="num">344ê±´</span></h1>
 				<ul class="revlist" id="prdReviewList">
-				<script>callGoogleAnalyticsTrc('MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼','»óÇ°¸®ºä','»óÇ°¸®ºä ³ëÃâ');</script>
+				<script>callGoogleAnalyticsTrc('MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸','ìƒí’ˆë¦¬ë·°','ìƒí’ˆë¦¬ë·° ë…¸ì¶œ');</script>
 					
-					<li li="" class="hidden" data-load="Y" onclick="callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;»óÇ°¸®ºä&#39;,&#39;»óÇ°¸®ºä Å¬¸¯&#39;);">
+					<li li="" class="hidden" data-load="Y" onclick="callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ìƒí’ˆë¦¬ë·°&#39;,&#39;ìƒí’ˆë¦¬ë·° í´ë¦­&#39;);">
 						<div class="inf">
-							<span class="b_satisfy per100"><span>¸¸Á·µµ</span>5</span>
+							<span class="b_satisfy per100"><span>ë§Œì¡±ë„</span>5</span>
 							<span class="id">sap****</span><span class="date">2016.04.14</span>
 						</div>
-						<div class="opt">[¿É¼Ç]ÇÊ¼ö¼±ÅÃ:ÈÄ¸£Ã÷ÅÚ¶ó 1050g</div>
+						<div class="opt">[ì˜µì…˜]í•„ìˆ˜ì„ íƒ:í›„ë¥´ì¸ í…”ë¼ 1050g</div>
 						
-						<div class="rev"><div><span class="p_size">°¡°İ ½Î°Ô »ò¾î¿ä</span><span class="p_color">¹è¼Û »¡¶ó¿ä</span></div></div>
+						<div class="rev"><div><span class="p_size">ê°€ê²© ì‹¸ê²Œ ìƒ€ì–´ìš”</span><span class="p_color">ë°°ì†¡ ë¹¨ë¼ìš”</span></div></div>
 						<div class="con_wrp">
 							<div class="con row5">
-							¿ÜÃâÇÒ¶§ µé°í´Ù´Ï¸ç ¸ÔÀÌ±â ÁÁ¾Æ¿ä. 
-³¹°³ Æ÷ÀåÀÌ°í ¿©·¯°³¶ó ³ª´²¸Ô±âµµ ÁÁ±¸¿ä. 
-¾î¸¥ÀÔ¸À¿£ ¸¹ÀÌ ´Ş´øµ¥^^;;; 
-¾ÆÀÌµéÀº ÇÑ¹ø¿¡ 5°³¾¿ Àßµµ ¸Ô³×¿ä. 
-¾ÆÀÌ °£½Ä°Å¸®¸ç Ä¿ÇÇµµ ÇÔ²² ÁÖ¹®Çß´Âµ¥ 
-¿ÏÃæÆ÷ÀåÀ¸·Î ½Å¼Ó ¹è¼ÛµÇ¾ú¾î¿ä. 
-¶Ç ÀÌ¿ëÇÒ°Ô¿ä.
+							ì™¸ì¶œí• ë•Œ ë“¤ê³ ë‹¤ë‹ˆë©° ë¨¹ì´ê¸° ì¢‹ì•„ìš”. 
+ë‚±ê°œ í¬ì¥ì´ê³  ì—¬ëŸ¬ê°œë¼ ë‚˜ëˆ ë¨¹ê¸°ë„ ì¢‹êµ¬ìš”. 
+ì–´ë¥¸ì…ë§›ì—” ë§ì´ ë‹¬ë˜ë°^^;;; 
+ì•„ì´ë“¤ì€ í•œë²ˆì— 5ê°œì”© ì˜ë„ ë¨¹ë„¤ìš”. 
+ì•„ì´ ê°„ì‹ê±°ë¦¬ë©° ì»¤í”¼ë„ í•¨ê»˜ ì£¼ë¬¸í–ˆëŠ”ë° 
+ì™„ì¶©í¬ì¥ìœ¼ë¡œ ì‹ ì† ë°°ì†¡ë˜ì—ˆì–´ìš”. 
+ë˜ ì´ìš©í• ê²Œìš”.
 							</div>
-							<button type="button" class="mr">°è¼Óº¸±â</button>
+							<button type="button" class="mr">ê³„ì†ë³´ê¸°</button>
 						</div>
 						
 						<div class="lst_horizon isc_0" "="" id="revlistPhoto1">
@@ -2814,41 +2814,41 @@ function callGoogleAnalyticsTrc(ctg, action, label, url){
 						</div>
 							
 						<div class="seller">
-						ÆÇ¸ÅÀÚ : ¿ÀÈÄÀÇÆ¼Å¸ÀÓ				
+						íŒë§¤ì : ì˜¤í›„ì˜í‹°íƒ€ì„				
 						</div>
 					</li>
 					
-					<li li="" class="open" data-load="Y" onclick="callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;»óÇ°¸®ºä&#39;,&#39;»óÇ°¸®ºä Å¬¸¯&#39;);">
+					<li li="" class="open" data-load="Y" onclick="callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ìƒí’ˆë¦¬ë·°&#39;,&#39;ìƒí’ˆë¦¬ë·° í´ë¦­&#39;);">
 						<div class="inf">
-							<span class="b_satisfy per100"><span>¸¸Á·µµ</span>5</span>
+							<span class="b_satisfy per100"><span>ë§Œì¡±ë„</span>5</span>
 							<span class="id">jas*******</span><span class="date">2014.12.31</span>
 						</div>
-						<div class="opt">[¿É¼Ç]Á¾·ù:[ÃÊÆ¯°¡]ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ®¸À 1050g</div>
+						<div class="opt">[ì˜µì…˜]ì¢…ë¥˜:[ì´ˆíŠ¹ê°€]í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ë§› 1050g</div>
 						
 						<div class="rev"></div>
 						<div class="con_wrp">
 							<div class="con row5">
-							¾î¸¥ÀÌ³ª ¾ÆÀÌ³ª ¸ÀÀÌ ¼¼Áö ¾Ê¾Æ¼­ ¸Ô±â ºÎ´ã¾ø´Â°Å °°¾Æ¿ä. 
-°¡°İµµ ÁÁ¾Æ¿ä. ¸¶Æ®º¸´Ü ½Î°Ô »ò¾î¿ä. 
+							ì–´ë¥¸ì´ë‚˜ ì•„ì´ë‚˜ ë§›ì´ ì„¸ì§€ ì•Šì•„ì„œ ë¨¹ê¸° ë¶€ë‹´ì—†ëŠ”ê±° ê°™ì•„ìš”. 
+ê°€ê²©ë„ ì¢‹ì•„ìš”. ë§ˆíŠ¸ë³´ë‹¨ ì‹¸ê²Œ ìƒ€ì–´ìš”. 
 
 							</div>
 							
 						</div>
 							
 						<div class="seller">
-						ÆÇ¸ÅÀÚ : ¹Ì´Ï¸ô				
+						íŒë§¤ì : ë¯¸ë‹ˆëª°				
 						</div>
 					</li>
 					
 				</ul>
-				<button type="button" class="dbtn_more go viewMorePrdReview" onclick="callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;»óÇ°¸®ºä&#39;,&#39;»óÇ°¸®ºä ´õº¸±â(ÇÏ´Ü)&#39;);">´õº¸±â</button>
-				<a href="http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?mallType=mart&amp;catalogNo=11943#" class="rbtn_more viewMorePrdReview" onclick="callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;»óÇ°¸®ºä&#39;,&#39;»óÇ°¸®ºä ´õº¸±â(»ó´Ü)&#39;);">´õº¸±â</a>
+				<button type="button" class="dbtn_more go viewMorePrdReview" onclick="callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ìƒí’ˆë¦¬ë·°&#39;,&#39;ìƒí’ˆë¦¬ë·° ë”ë³´ê¸°(í•˜ë‹¨)&#39;);">ë”ë³´ê¸°</button>
+				<a href="http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?mallType=mart&amp;catalogNo=11943#" class="rbtn_more viewMorePrdReview" onclick="callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ìƒí’ˆë¦¬ë·°&#39;,&#39;ìƒí’ˆë¦¬ë·° ë”ë³´ê¸°(ìƒë‹¨)&#39;);">ë”ë³´ê¸°</a>
 			</section>
 
 
 <script>
 $(document).ready(function() {
-	//¸®ºä ´õº¸±â toggle
+	//ë¦¬ë·° ë”ë³´ê¸° toggle
 	$('#prdReviewList').find("li[data-load='N']").each(function() {
 		var $li = $(this);                		
 		var conHeight = $li.find('.con').height();
@@ -2866,7 +2866,7 @@ $(document).ready(function() {
 		$li.show();
 	});
 	
-	//Æ÷Åä¸®ºä IScroll
+	//í¬í† ë¦¬ë·° IScroll
 	if($('#reviewPhoto').length > 0) {
 		try {
 			var photoScroll1 = new IScroll('#reviewPhoto', {
@@ -2876,7 +2876,7 @@ $(document).ready(function() {
 		} catch (e){console.log(e);}
 	}
 	
-	//»óÇ°¸®ºä IScroll
+	//ìƒí’ˆë¦¬ë·° IScroll
 	$('#prdReviewList').find('>li').each(function(idx) {
 		try {
 			var $this = $(this);
@@ -2890,7 +2890,7 @@ $(document).ready(function() {
 		} catch (e){console.log(e);}
 	});
 	
-	//»óÇ°¸®ºä ´õº¸±â
+	//ìƒí’ˆë¦¬ë·° ë”ë³´ê¸°
 	$('.viewMorePrdReview').on('click', function() {
 		document.location.href = '/MW/Mart/martCatalogReviewDetail.tmall?catalogNo=' + 11943;
 	});
@@ -2903,16 +2903,16 @@ $(document).ready(function() {
 
 			
 			<section class="perfe" id="sectionSRank" style="">
-				<h1>¸¸Á·µµ/¼±È£µµ <span>´ÜÀ§ : %</span></h1>
+				<h1>ë§Œì¡±ë„/ì„ í˜¸ë„ <span>ë‹¨ìœ„ : %</span></h1>
 
 				<div id="content-martSatisfactionRank">
 					
 							<div class="graph_wrap">
-								<h2>»óÇ°¸¸Á·µµ</h2>
+								<h2>ìƒí’ˆë§Œì¡±ë„</h2>
 								<div class="graph1">
-									<span class="t1">¸¸Á·</span>
-									<em class="bar bar1" style="width:100%;"><b>100</b></em><!-- ¹Ù´Â %·Î ³ĞÀÌ°ª ³Ö¾îÁÜ -->
-									<span class="t2">ºÒ¸¸</span>
+									<span class="t1">ë§Œì¡±</span>
+									<em class="bar bar1" style="width:100%;"><b>100</b></em><!-- ë°”ëŠ” %ë¡œ ë„“ì´ê°’ ë„£ì–´ì¤Œ -->
+									<span class="t2">ë¶ˆë§Œ</span>
 
 									<em class="bar bar2" style="width:0%;"><b class="trs">0</b></em>
 
@@ -2924,11 +2924,11 @@ $(document).ready(function() {
 				<div id="content-martGenderRank">
 					
 							<div class="graph_wrap">
-								<h2>¼ºº°¼±È£µµ</h2>
+								<h2>ì„±ë³„ì„ í˜¸ë„</h2>
 								<div class="graph1">
-									<span class="t1">¿©¼º</span>
+									<span class="t1">ì—¬ì„±</span>
 									<em class="bar bar3" style="width:78%;"><b>78</b></em>
-									<span class="t2">³²¼º</span>
+									<span class="t2">ë‚¨ì„±</span>
 									<em class="bar bar4" style="width:22%;"><b>22</b></em>
 								</div>
 							</div>
@@ -2938,17 +2938,17 @@ $(document).ready(function() {
 				<div id="content-martAgeRank">
 					
 					<div class="graph_wrap">
-						<h2>¿¬·É´ëº°¼±È£µµ</h2>
+						<h2>ì—°ë ¹ëŒ€ë³„ì„ í˜¸ë„</h2>
 						<div class="grp">
 							<span class="lv lv1">20</span>
 							<span class="lv lv2">60</span>
 							<span class="lv lv3">100</span>
 							<div class="graph2">
 								<ul>
-									<li><div><span class="tt">10´ë</span><em class="bar bar1" style="height:2%;"><b>2</b></em></div></li><!-- ¹Ù´Â %·Î ³ôÀÌ°ª ³Ö¾îÁÜ -->
-									<li><div><span class="tt">20´ë</span><em class="bar bar2" style="height:13%;"><b>13</b></em></div></li>
-									<li><div><span class="tt">30´ë</span><em class="bar bar3" style="height:57%;"><b>57</b></em></div></li>
-									<li><div><span class="tt">40´ë</span><em class="bar bar4" style="height:28%;"><b>28</b></em></div></li>
+									<li><div><span class="tt">10ëŒ€</span><em class="bar bar1" style="height:2%;"><b>2</b></em></div></li><!-- ë°”ëŠ” %ë¡œ ë†’ì´ê°’ ë„£ì–´ì¤Œ -->
+									<li><div><span class="tt">20ëŒ€</span><em class="bar bar2" style="height:13%;"><b>13</b></em></div></li>
+									<li><div><span class="tt">30ëŒ€</span><em class="bar bar3" style="height:57%;"><b>57</b></em></div></li>
+									<li><div><span class="tt">40ëŒ€</span><em class="bar bar4" style="height:28%;"><b>28</b></em></div></li>
 								</ul>
 							</div>
 						</div>
@@ -2959,11 +2959,11 @@ $(document).ready(function() {
 				<script id="martSatisfactionRank" type="text/x-handlebars-template">
 					{{#martlist}}
 							<div class="graph_wrap">
-								<h2>»óÇ°¸¸Á·µµ</h2>
+								<h2>ìƒí’ˆë§Œì¡±ë„</h2>
 								<div class="graph1">
-									<span class="t1">¸¸Á·</span>
-									<em class="bar bar1" style="width:{{sat}}%;"><b>{{sat}}</b></em><!-- ¹Ù´Â %·Î ³ĞÀÌ°ª ³Ö¾îÁÜ -->
-									<span class="t2">ºÒ¸¸</span>
+									<span class="t1">ë§Œì¡±</span>
+									<em class="bar bar1" style="width:{{sat}}%;"><b>{{sat}}</b></em><!-- ë°”ëŠ” %ë¡œ ë„“ì´ê°’ ë„£ì–´ì¤Œ -->
+									<span class="t2">ë¶ˆë§Œ</span>
 
 									<em class="bar bar2" style="width:{{unsat}}%;"><b class="trs">{{unsat}}</b></em>
 
@@ -2975,11 +2975,11 @@ $(document).ready(function() {
 				<script id="martGenderRank" type="text/x-handlebars-template">
 					{{#martlist}}
 							<div class="graph_wrap">
-								<h2>¼ºº°¼±È£µµ</h2>
+								<h2>ì„±ë³„ì„ í˜¸ë„</h2>
 								<div class="graph1">
-									<span class="t1">¿©¼º</span>
+									<span class="t1">ì—¬ì„±</span>
 									<em class="bar bar3" style="width:{{female}}%;"><b>{{female}}</b></em>
-									<span class="t2">³²¼º</span>
+									<span class="t2">ë‚¨ì„±</span>
 									<em class="bar bar4" style="width:{{male}}%;"><b>{{male}}</b></em>
 								</div>
 							</div>
@@ -2989,17 +2989,17 @@ $(document).ready(function() {
 				<script id="martAgeRank" type="text/x-handlebars-template">
 					{{#martlist}}
 					<div class="graph_wrap">
-						<h2>¿¬·É´ëº°¼±È£µµ</h2>
+						<h2>ì—°ë ¹ëŒ€ë³„ì„ í˜¸ë„</h2>
 						<div class="grp">
 							<span class="lv lv1">20</span>
 							<span class="lv lv2">60</span>
 							<span class="lv lv3">100</span>
 							<div class="graph2">
 								<ul>
-									<li><div><span class="tt">10´ë</span><em class="bar bar1" style="height:{{age10}}%;"><b>{{age10}}</b></em></div></li><!-- ¹Ù´Â %·Î ³ôÀÌ°ª ³Ö¾îÁÜ -->
-									<li><div><span class="tt">20´ë</span><em class="bar bar2" style="height:{{age20}}%;"><b>{{age20}}</b></em></div></li>
-									<li><div><span class="tt">30´ë</span><em class="bar bar3" style="height:{{age30}}%;"><b>{{age30}}</b></em></div></li>
-									<li><div><span class="tt">40´ë</span><em class="bar bar4" style="height:{{age40}}%;"><b>{{age40}}</b></em></div></li>
+									<li><div><span class="tt">10ëŒ€</span><em class="bar bar1" style="height:{{age10}}%;"><b>{{age10}}</b></em></div></li><!-- ë°”ëŠ” %ë¡œ ë†’ì´ê°’ ë„£ì–´ì¤Œ -->
+									<li><div><span class="tt">20ëŒ€</span><em class="bar bar2" style="height:{{age20}}%;"><b>{{age20}}</b></em></div></li>
+									<li><div><span class="tt">30ëŒ€</span><em class="bar bar3" style="height:{{age30}}%;"><b>{{age30}}</b></em></div></li>
+									<li><div><span class="tt">40ëŒ€</span><em class="bar bar4" style="height:{{age40}}%;"><b>{{age40}}</b></em></div></li>
 								</ul>
 							</div>
 						</div>
@@ -3009,7 +3009,7 @@ $(document).ready(function() {
 			</section>
 			
 				<script>
-					// »óÇ°¸¸Á·µµ
+					// ìƒí’ˆë§Œì¡±ë„
 					var source   = $("#martSatisfactionRank").html();
 					var template = Handlebars.compile(source);
 					var data = { martlist: [{sat:100,unsat:0}]};
@@ -3020,7 +3020,7 @@ $(document).ready(function() {
 						}
 					}
 
-					// ¼ºº°¸¸Á·µµ				
+					// ì„±ë³„ë§Œì¡±ë„				
 					var source2   = $("#martGenderRank").html();
 					var template2 = Handlebars.compile(source2);
 					var data2 = { martlist: [{male:22,female:78}]};
@@ -3031,7 +3031,7 @@ $(document).ready(function() {
 						}
 					}
 
-					// ¿¬·Éº° ¸¸Á·µµ
+					// ì—°ë ¹ë³„ ë§Œì¡±ë„
 					var source3   = $("#martAgeRank").html();
 					var template3 = Handlebars.compile(source3);
 					var data3 = { martlist: [{age10:2,age20:13,age30:57,age40:28}]};
@@ -3058,40 +3058,40 @@ $(document).ready(function() {
 			
 			
 			<section class="dtl_area sctgr">
-				<h1>µ¿ÀÏ Ä«Å×°í¸® ÀÎ±â»óÇ°</h1>
+				<h1>ë™ì¼ ì¹´í…Œê³ ë¦¬ ì¸ê¸°ìƒí’ˆ</h1>
 				<ul class="list_pp">
-				<script>callGoogleAnalyticsTrc('MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼','ÃßÃµ¸ğµ¨','µ¿ÀÏ Ä«Å×°í¸® ÀÎ±â¸ğµ¨');</script>
+				<script>callGoogleAnalyticsTrc('MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸','ì¶”ì²œëª¨ë¸','ë™ì¼ ì¹´í…Œê³ ë¦¬ ì¸ê¸°ëª¨ë¸');</script>
 					
 					<li>
-						<a href="http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?catalogNo=11943&amp;mallType=mart" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1008" data-rake-area-id="ctgr_best_prd" data-rake-event-id="CATALOG" data-ctlg-no="11943" data-disp-ord="0" onclick="callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;ÃßÃµ¸ğµ¨&#39;);">
+						<a href="http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?catalogNo=11943&amp;mallType=mart" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1008" data-rake-area-id="ctgr_best_prd" data-rake-event-id="CATALOG" data-ctlg-no="11943" data-disp-ord="0" onclick="callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ì¶”ì²œëª¨ë¸&#39;);">
 							
 								<span class="thumb"><img src="product_basic_info_files/11943_1(1).jpg" alt=""></span>
 							
-							<span class="name">ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ® Äµµğ 1050g x 1Åë</span>
-							<span class="price"><b>10,500</b>¿ø~</span>
-							<span class="comp" onclick="callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;ÃßÃµ¸ğµ¨&#39;);">µ¿ÀÏ »óÇ° <b>8</b></span>
+							<span class="name">í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ ìº”ë”” 1050g x 1í†µ</span>
+							<span class="price"><b>10,500</b>ì›~</span>
+							<span class="comp" onclick="callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ì¶”ì²œëª¨ë¸&#39;);">ë™ì¼ ìƒí’ˆ <b>8</b></span>
 						</a>
 					</li>
 					
 					<li>
-						<a href="http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?catalogNo=11937&amp;mallType=mart" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1008" data-rake-area-id="ctgr_best_prd" data-rake-event-id="CATALOG" data-ctlg-no="11937" data-disp-ord="1" onclick="callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;ÃßÃµ¸ğµ¨&#39;);">
+						<a href="http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?catalogNo=11937&amp;mallType=mart" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1008" data-rake-area-id="ctgr_best_prd" data-rake-event-id="CATALOG" data-ctlg-no="11937" data-disp-ord="1" onclick="callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ì¶”ì²œëª¨ë¸&#39;);">
 							
 								<span class="thumb"><img src="product_basic_info_files/11937_1.jpg" alt=""></span>
 							
-							<span class="name">¹ĞÅ©¸´ 400g x 1ºÀ</span>
-							<span class="price"><b>10,870</b>¿ø~</span>
-							<span class="comp" onclick="callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;ÃßÃµ¸ğµ¨&#39;);">µ¿ÀÏ »óÇ° <b>2</b></span>
+							<span class="name">ë°€í¬ë¦¿ 400g x 1ë´‰</span>
+							<span class="price"><b>10,870</b>ì›~</span>
+							<span class="comp" onclick="callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ì¶”ì²œëª¨ë¸&#39;);">ë™ì¼ ìƒí’ˆ <b>2</b></span>
 						</a>
 					</li>
 					
 					<li>
-						<a href="http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?catalogNo=4786&amp;mallType=mart" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1008" data-rake-area-id="ctgr_best_prd" data-rake-event-id="CATALOG" data-ctlg-no="4786" data-disp-ord="2" onclick="callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;ÃßÃµ¸ğµ¨&#39;);">
+						<a href="http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?catalogNo=4786&amp;mallType=mart" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1008" data-rake-area-id="ctgr_best_prd" data-rake-event-id="CATALOG" data-ctlg-no="4786" data-disp-ord="2" onclick="callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ì¶”ì²œëª¨ë¸&#39;);">
 							
 								<span class="thumb"><img src="product_basic_info_files/4786_1.jpg" alt=""></span>
 							
-							<span class="name">Ãò¿§ 1.36kg x 1°³</span>
-							<span class="price"><b>14,460</b>¿ø~</span>
-							<span class="comp" onclick="callGoogleAnalyticsTrc(&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;ÃßÃµ¸ğµ¨&#39;);">µ¿ÀÏ »óÇ° <b>2</b></span>
+							<span class="name">ì¸„ì—£ 1.36kg x 1ê°œ</span>
+							<span class="price"><b>14,460</b>ì›~</span>
+							<span class="comp" onclick="callGoogleAnalyticsTrc(&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ì¶”ì²œëª¨ë¸&#39;);">ë™ì¼ ìƒí’ˆ <b>2</b></span>
 						</a>
 					</li>
 	
@@ -3102,17 +3102,17 @@ $(document).ready(function() {
 
 
 			
-				<a href="javascript:goCtgrSearch(3, &#39;948602&#39;, &#39;&#39;);" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1013" class="catalog_more" onclick="ga(&#39;send&#39;,&#39;event&#39;,&#39;MW_¸¶Æ®11 Ä«Å»·Î±× »ó¼¼&#39;,&#39;Ä«Å×°í¸® ÀüÃ¼ »óÇ°&#39;,&#39;Ä«Å×°í¸® »óÇ° ÀüÃ¼º¸±â&#39;);">»çÅÁ/¼±¹°¿ëÄµµğ Ä«Å×°í¸® »óÇ° ÀüÃ¼º¸±â</a>
+				<a href="javascript:goCtgrSearch(3, &#39;948602&#39;, &#39;&#39;);" data-clickurl="MWMART" data-clickkey="MWMART10" data-clickitem="MWMART1013" class="catalog_more" onclick="ga(&#39;send&#39;,&#39;event&#39;,&#39;MW_ë§ˆíŠ¸11 ì¹´íƒˆë¡œê·¸ ìƒì„¸&#39;,&#39;ì¹´í…Œê³ ë¦¬ ì „ì²´ ìƒí’ˆ&#39;,&#39;ì¹´í…Œê³ ë¦¬ ìƒí’ˆ ì „ì²´ë³´ê¸°&#39;);">ì‚¬íƒ•/ì„ ë¬¼ìš©ìº”ë”” ì¹´í…Œê³ ë¦¬ ìƒí’ˆ ì „ì²´ë³´ê¸°</a>
 			
 		</div>
-		<!-- Àå¹Ù±¸´Ï ´ã±â -->
+		<!-- ì¥ë°”êµ¬ë‹ˆ ë‹´ê¸° -->
 		<div id="popCart" class="pop_atype"></div>
 		<div id="popCart01" class="pop_atype"></div>
 		<div id="popCart02" class="pop_atype"></div>
 		<div id="popCart03" class="pop_atype"></div>
 		<div id="popCart04" class="pop_atype"></div>
 		<div id="popDelivery" class="pop_opt_type"></div>
-		<!-- //Àå¹Ù±¸´Ï ´ã±â -->
+		<!-- //ì¥ë°”êµ¬ë‹ˆ ë‹´ê¸° -->
 	</section>
 	<!-- //contents -->
 </div>
@@ -3154,7 +3154,7 @@ Mart.rake = {
 				
 			})
 			
-			// ÃÖÀú°¡±¸¸Å ¹öÆ°
+			// ìµœì €ê°€êµ¬ë§¤ ë²„íŠ¼
 			$('#btnBuyLowestPrcPrd').off("click");
 			$('#btnBuyLowestPrcPrd').click(function(){
 				var areaId = $(this).data('rake-area-id');
@@ -3165,7 +3165,7 @@ Mart.rake = {
 				}
 			})
 			
-			// °¡°İºñ±³ ¿µ¿ª ±¸¸Å ¹öÆ°
+			// ê°€ê²©ë¹„êµ ì˜ì—­ êµ¬ë§¤ ë²„íŠ¼
 			$('.btn_set button.buy').off("click");
 			$('.btn_set button.buy').click(function(){
 				
@@ -3272,36 +3272,11 @@ Mart.rake.init();
 	}
 
 	function callStatAjax(url, key, item) {
-		if (url && url != '') {
-			var statUrl = '/a.st?url='+url+'&ts='+Date.now();
-			if (key && key != '') statUrl += '&key='+key;
-			if (item && item != '') statUrl += '&item='+item;
-			var xhr = window.ActiveXObject ? new window.ActiveXObject('Microsoft.XMLHTTP') : new window.XMLHttpRequest();
-		    try {
-		        xhr.open('get', statUrl, true);
-		        xhr.send(null);
-		    } catch (e){ console.log(e); }
-		}
+
 	}
 
 	function callStat(url, key, item) {
-		if (url && url != '') {
-			var statUrl = '/a.st?url='+url+'&ts='+Date.now();
-			if (key && key != '') statUrl += '&key='+key;
-			if (item && item != '') statUrl += '&item='+item;
-			var clickIfrm;
-			if (document.getElementById('ifrmClickAnaly')) {
-				clickIfrm = document.getElementById('ifrmClickAnaly');
-			} else {
-				clickIfrm = document.createElement('IFRAME');
-				clickIfrm.id = 'ifrmClickAnaly';
-				clickIfrm.width = 0;
-				clickIfrm.height = 0;
-				clickIfrm.style.display = 'none';
-				document.body.appendChild(clickIfrm);
-			}
-			clickIfrm.src = statUrl;
-		}
+
 	}
 
 	function catchItemClickEvent(e) {
@@ -3586,7 +3561,7 @@ Mart.rake.init();
                 } else if (key == "galabel") {
                     label = value;
                 } else if (key.indexOf("gaDimension") > -1) {
-                    //PC ¿Í ¸ÂÃß±â À§ÇØ data-ga-dimension{{¼ıÀÚ}} °ªÀ¸·Î Àü´Ş¹Ş±â·Î ÇÔ.
+                    //PC ì™€ ë§ì¶”ê¸° ìœ„í•´ data-ga-dimension{{ìˆ«ì}} ê°’ìœ¼ë¡œ ì „ë‹¬ë°›ê¸°ë¡œ í•¨.
                     if (dimension == null) {
                         dimension = {};
                     }
@@ -3601,9 +3576,9 @@ Mart.rake.init();
 
     }
 
-    // ¿ÜºÎ¿¡¼­ ÀúÀåÇÏ´Â HTMLÀÇ Æ¯Á¤ Attribute ¼ø¼­ º°·Î °ªÀ» ¼ÂÆÃÇÑ´Ù
-    // a ÅÂ±× Áß data-ga-dimension-12' ÀÇ ¼Ó¼º °ªÀÌ '' ÀÎ °ª ¼ÂÆÃÇÏ´Â °æ¿ì : reorderAttrValue('data-ga-dimension-12', '')
-    // a ÅÂ±× Áß data-ga-dimension-12' ÀÇ ¼Ó¼º °ªÀ» ¹«½ÃÇÏ°í Àç ¼ÂÆÃÇÏ´Â °æ¿ì : reorderAttrValue('data-ga-dimension-12')
+    // ì™¸ë¶€ì—ì„œ ì €ì¥í•˜ëŠ” HTMLì˜ íŠ¹ì • Attribute ìˆœì„œ ë³„ë¡œ ê°’ì„ ì…‹íŒ…í•œë‹¤
+    // a íƒœê·¸ ì¤‘ data-ga-dimension-12' ì˜ ì†ì„± ê°’ì´ '' ì¸ ê°’ ì…‹íŒ…í•˜ëŠ” ê²½ìš° : reorderAttrValue('data-ga-dimension-12', '')
+    // a íƒœê·¸ ì¤‘ data-ga-dimension-12' ì˜ ì†ì„± ê°’ì„ ë¬´ì‹œí•˜ê³  ì¬ ì…‹íŒ…í•˜ëŠ” ê²½ìš° : reorderAttrValue('data-ga-dimension-12')
     function reorderAttrValue(attrName, isAttrValue) {
         jQuery(function(){
             var selectStr = 'a[' + attrName ;
@@ -3620,7 +3595,7 @@ Mart.rake.init();
 
 
 <script>
-// ·¹ÄÚÇÈ ·Î±× µ¥ÀÌÅÍ ÀûÀç½Ã »ç¿ëµÇ´Â »ç¿ëÀÚ Á¤º¸ ÇÔ¼ö
+// ë ˆì½”í”½ ë¡œê·¸ ë°ì´í„° ì ì¬ì‹œ ì‚¬ìš©ë˜ëŠ” ì‚¬ìš©ì ì •ë³´ í•¨ìˆ˜
 function getBase64UserInfo(){
 	try{
 		var changeStr	= '';
@@ -3774,22 +3749,22 @@ function callRecopickPrdStat(recoPickInfo, recopickServer) {
 	<div class="cp_wrap">
 		<div class="cp_banner">
 			<a href="http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?mallType=mart&amp;catalogNo=11943#"></a>
-			<button type="button" class="stop">±×¸¸º¸±â</button>
+			<button type="button" class="stop">ê·¸ë§Œë³´ê¸°</button>
 		</div>
-		<button type="button" class="close" onclick="mwUI.moreToggle(&#39;cpFloating&#39;, &#39;on&#39;, this, &#39;º¸±â&#39;, &#39;´İ±â&#39;)">Ä·ÆäÀÎ º¸±â</button>
+		<button type="button" class="close" onclick="mwUI.moreToggle(&#39;cpFloating&#39;, &#39;on&#39;, this, &#39;ë³´ê¸°&#39;, &#39;ë‹«ê¸°&#39;)">ìº í˜ì¸ ë³´ê¸°</button>
 	</div>
 </section>
 <script id="mwDev_offerTemplate" type="text/x-elevenst-template">
 	<div class="cp_wrap">
 		{{html}}
-		<button type="button" class="close" onclick="cpOfferAllPopup.close('cpAllpopup')">Ä·ÆäÀÎ ´İ±â</button>
+		<button type="button" class="close" onclick="cpOfferAllPopup.close('cpAllpopup')">ìº í˜ì¸ ë‹«ê¸°</button>
 	</div>
 </script>
 
 <script>
 function toEndDateFormat(endDate) { //parseTime(time)
     var year = endDate.substr(0,4);
-    var month = endDate.substr(4,2) - 1; // 1¿ù=0,12¿ù=11
+    var month = endDate.substr(4,2) - 1; // 1ì›”=0,12ì›”=11
     var day = endDate.substr(6,2);
     var hour = endDate.substr(8,2);
     var min = endDate.substr(10,2);
@@ -3898,7 +3873,7 @@ function showOfferFloatBanner(banner) {
 	document.getElementById('cpFloating').style.display = 'block';
 	var cpFloatingBtn = document.getElementById('cpFloating').getElementsByClassName('close')[0];
 	setTimeout(function() { 
-		mwUI.moreToggle('cpFloating', 'on', cpFloatingBtn, 'º¸±â', '´İ±â');
+		mwUI.moreToggle('cpFloating', 'on', cpFloatingBtn, 'ë³´ê¸°', 'ë‹«ê¸°');
 		cpFloatingTO = setTimeout(function() {
 			document.getElementById('cpFloating').className = 'cp_floating';
         }, 5000);
@@ -3994,7 +3969,7 @@ window.addEventListener("load",  function(){
 	} else {
 		//if(offerCookie) return;
 		
-	    $.ajax({
+	   /* $.ajax({
 	        url: '/MW/Offer/Banner/getBanners.tmall',
 	        cache : false,		
 	        success: function(msg) {
@@ -4008,7 +3983,7 @@ window.addEventListener("load",  function(){
 	            		var firstIdx = null;
 	            		for(var idx in banners) {
 	            			var viewYn = getOfferCookie(banners[idx].cpCode, 'VIEW');
-	            			var nativeView = (!offerBanners && viewYn == 'Y'); //Native ³ëÃâ ¿©ºÎ(LocalStorage ¿¡ Á¸ÀçÇÏÁö ¾Ê°í ÄíÅ°¿¡ ÀÖÀ»°æ¿ì)
+	            			var nativeView = (!offerBanners && viewYn == 'Y'); //Native ë…¸ì¶œ ì—¬ë¶€(LocalStorage ì— ì¡´ì¬í•˜ì§€ ì•Šê³  ì¿ í‚¤ì— ìˆì„ê²½ìš°)
 	            			var clickYn = banners[idx].clickYn;
 	            			var denyYn = getOfferCookie(banners[idx].cpCode, 'DENY');
 
@@ -4031,7 +4006,7 @@ window.addEventListener("load",  function(){
 	            }
 	        }
 	    });
-	}	
+	}	*/
 }, false);
 </script>
 
@@ -4288,17 +4263,17 @@ function goDealAppFooter(){
 
 <div class="f_down">
 	<ul>
-		<li><a href="http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?mallType=mart&amp;catalogNo=11943#" onclick="call11stAppFooter(&#39;://loadurl?domain=m.11st.co.kr&amp;url=&#39;,document.location.href); return false;" class="app11st" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1402">11¹ø°¡ ¾Û´Ù¿î·Îµå</a></li>
-		<li><a href="http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?mallType=mart&amp;catalogNo=11943#" onclick="goDealAppFooter(); return false;" class="shocking" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1403">¼îÅ·µô ¾Û´Ù¿î·Îµå</a></li>
+		<li><a href="http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?mallType=mart&amp;catalogNo=11943#" onclick="call11stAppFooter(&#39;://loadurl?domain=m.11st.co.kr&amp;url=&#39;,document.location.href); return false;" class="app11st" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1402">11ë²ˆê°€ ì•±ë‹¤ìš´ë¡œë“œ</a></li>
+		<li><a href="http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?mallType=mart&amp;catalogNo=11943#" onclick="goDealAppFooter(); return false;" class="shocking" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1403">ì‡¼í‚¹ë”œ ì•±ë‹¤ìš´ë¡œë“œ</a></li>
 	</ul>
 </div>
 
 <div class="f_menu">
 	<ul>
-		<li id="loginBottom"><a href="https://m.11st.co.kr/MW/Login/login.tmall" class="f1" data-clickurl="WGF01" data-clickkey="01">·Î±×ÀÎ</a></li>
-		<li id="pcVersionLink"><a href="http://www.11st.co.kr/html/main.html" data-clickurl="WGF01" data-clickkey="02">PC¹öÀü</a></li>
-		<li><a href="http://m.11st.co.kr/MW/Customer/customerMain.tmall" data-clickurl="WGF01" data-clickkey="03">°í°´¼¾ÅÍ</a></li>
-		<li><a href="http://m.11st.co.kr/MW/Product/productMainConner.tmall" data-clickurl="WGF01" data-clickkey="04">ÀüÃ¼¼­ºñ½º</a></li>
+		<li id="loginBottom"><a href="https://m.11st.co.kr/MW/Login/login.tmall" class="f1" data-clickurl="WGF01" data-clickkey="01">ë¡œê·¸ì¸</a></li>
+		<li id="pcVersionLink"><a href="http://www.11st.co.kr/html/main.html" data-clickurl="WGF01" data-clickkey="02">PCë²„ì „</a></li>
+		<li><a href="http://m.11st.co.kr/MW/Customer/customerMain.tmall" data-clickurl="WGF01" data-clickkey="03">ê³ ê°ì„¼í„°</a></li>
+		<li><a href="http://m.11st.co.kr/MW/Product/productMainConner.tmall" data-clickurl="WGF01" data-clickkey="04">ì „ì²´ì„œë¹„ìŠ¤</a></li>
 	</ul>
 </div>
 <script type="text/javascript">
@@ -4310,9 +4285,9 @@ window.addEventListener("load",  function(){
 }, false);
 function footerSetLogin() {
 	if(funcCheckIsLogin()) {
-	    login.innerHTML = '<a href="/MW/Login/logout.tmall?type='+type+'" class="f5" data-clickurl="WGF01" data-clickkey="01">·Î±×¾Æ¿ô</a>';
+	    login.innerHTML = '<a href="/MW/Login/logout.tmall?type='+type+'" class="f5" data-clickurl="WGF01" data-clickkey="01">ë¡œê·¸ì•„ì›ƒ</a>';
 	} else {
-	    login.innerHTML = '<a href="https://m.11st.co.kr/MW/Login/login.tmall" class="f1" data-clickurl="WGF01" data-clickkey="01">·Î±×ÀÎ</a>';
+	    login.innerHTML = '<a href="https://m.11st.co.kr/MW/Login/login.tmall" class="f1" data-clickurl="WGF01" data-clickkey="01">ë¡œê·¸ì¸</a>';
 	}
 }
 (function() {
@@ -4340,9 +4315,9 @@ function footerSetLogin() {
 			var appType = getType();
 			var pcVersionWraps = document.getElementById('pcVersionLink');
             if(appType == "appmw_book" || appType == "appmwi_book") {
-            	pcVersionWraps.innerHTML = '<a href="http://www.11st.co.kr/booksmall/BooksAction.tmall?ID=BOOKS&ctgrNo=63516">PC¹öÀü</a>';
+            	pcVersionWraps.innerHTML = '<a href="http://www.11st.co.kr/booksmall/BooksAction.tmall?ID=BOOKS&ctgrNo=63516">PCë²„ì „</a>';
             } else {
-            	pcVersionWraps.innerHTML = '<a href="http://www.11st.co.kr/html/main.html"  data-clickurl="WGF01" data-clickkey="02">PC¹öÀü</a>';
+            	pcVersionWraps.innerHTML = '<a href="http://www.11st.co.kr/html/main.html"  data-clickurl="WGF01" data-clickkey="02">PCë²„ì „</a>';
             }
             if(appType == 'appmw' || appType == 'appmwi') {
 		    	document.querySelector('.f_down').style.display = 'none';
@@ -4355,18 +4330,18 @@ function footerSetLogin() {
 
 	<div class="f_foot">
 		<address>
-			<span class="p"><strong>SKÇÃ·¡´Ö(ÁÖ)</strong><em>´ëÇ¥ÀÌ»ç</em> : ¼­¼º¿ø</span>
-			<span class="p"><em>ÁÖ¼Ò</em> : (13487) °æ±âµµ ¼º³²½Ã ºĞ´ç±¸ ÆÇ±³·Î 264 (»ïÆòµ¿)</span>
-			<span class="p"><em>»ç¾÷ÀÚµî·Ï¹øÈ£</em> : 104-86-36968</span>
-			<span class="p"><em>Åë½ÅÆÇ¸Å¾÷½Å°í</em> : Á¦2014-°æ±â¼º³²-0036È£</span>
-			<span class="p"><em>°í°´¼¾ÅÍ</em> : <a href="tel:1599-0110" data-clickurl="WGF01" data-clickkey="08">1599 - 0110</a><span class="e"><a href="mailto:customerservice@11st.co.kr">customerservice@11st.co.kr</a></span></span>
+			<span class="p"><strong>SKí”Œë˜ë‹›(ì£¼)</strong><em>ëŒ€í‘œì´ì‚¬</em> : ì„œì„±ì›</span>
+			<span class="p"><em>ì£¼ì†Œ</em> : (13487) ê²½ê¸°ë„ ì„±ë‚¨ì‹œ ë¶„ë‹¹êµ¬ íŒêµë¡œ 264 (ì‚¼í‰ë™)</span>
+			<span class="p"><em>ì‚¬ì—…ìë“±ë¡ë²ˆí˜¸</em> : 104-86-36968</span>
+			<span class="p"><em>í†µì‹ íŒë§¤ì—…ì‹ ê³ </em> : ì œ2014-ê²½ê¸°ì„±ë‚¨-0036í˜¸</span>
+			<span class="p"><em>ê³ ê°ì„¼í„°</em> : <a href="tel:1599-0110" data-clickurl="WGF01" data-clickkey="08">1599 - 0110</a><span class="e"><a href="mailto:customerservice@11st.co.kr">customerservice@11st.co.kr</a></span></span>
 		</address>
 		<div class="link">
-			<a href="http://www.ftc.go.kr/info/bizinfo/communicationView.jsp?apv_perm_no=2011301010030201333&amp;area1=&amp;area2=&amp;currpage=1&amp;searchKey=04&amp;searchVal=1048636968&amp;stdate=&amp;enddate=" data-clickurl="WGF01" data-clickkey="05">»ç¾÷ÀÚÁ¤º¸È®ÀÎ</a>
-			<a href="http://www.11st.co.kr/annc/AnncMainPreview.tmall?method=getProvision&amp;anncCd=01" class="law" data-clickurl="WGF01" data-clickkey="06">ÀÌ¿ë¾à°ü</a>
-			<a href="http://www.11st.co.kr/annc/AnncMainPreview.tmall?method=getProvision&amp;anncCd=03" class="law" data-clickurl="WGF01" data-clickkey="07">°³ÀÎÁ¤º¸Ã³¸®¹æÄ§</a>
+			<a href="http://www.ftc.go.kr/info/bizinfo/communicationView.jsp?apv_perm_no=2011301010030201333&amp;area1=&amp;area2=&amp;currpage=1&amp;searchKey=04&amp;searchVal=1048636968&amp;stdate=&amp;enddate=" data-clickurl="WGF01" data-clickkey="05">ì‚¬ì—…ìì •ë³´í™•ì¸</a>
+			<a href="http://www.11st.co.kr/annc/AnncMainPreview.tmall?method=getProvision&amp;anncCd=01" class="law" data-clickurl="WGF01" data-clickkey="06">ì´ìš©ì•½ê´€</a>
+			<a href="http://www.11st.co.kr/annc/AnncMainPreview.tmall?method=getProvision&amp;anncCd=03" class="law" data-clickurl="WGF01" data-clickkey="07">ê°œì¸ì •ë³´ì²˜ë¦¬ë°©ì¹¨</a>
 		</div>
-		<p class="noti">SKÇÃ·¡´Ö(ÁÖ)´Â Åë½ÅÆÇ¸ÅÁß°³ÀÚ·Î¼­ ¿ÀÇÂ¸¶ÄÏ 11¹ø°¡ÀÇ °Å·¡´ç»çÀÚ°¡ ¾Æ´Ï¸ç, ÀÔÁ¡ÆÇ¸ÅÀÚ°¡ µî·ÏÇÑ »óÇ°Á¤º¸ ¹× °Å·¡¿¡ ´ëÇØ SKÇÃ·¡´Ö(ÁÖ)´Â ÀÏÃ¼ÀÇ Ã¥ÀÓÀ» ÁöÁö ¾Ê½À´Ï´Ù.</p>
+		<p class="noti">SKí”Œë˜ë‹›(ì£¼)ëŠ” í†µì‹ íŒë§¤ì¤‘ê°œìë¡œì„œ ì˜¤í”ˆë§ˆì¼“ 11ë²ˆê°€ì˜ ê±°ë˜ë‹¹ì‚¬ìê°€ ì•„ë‹ˆë©°, ì…ì íŒë§¤ìê°€ ë“±ë¡í•œ ìƒí’ˆì •ë³´ ë° ê±°ë˜ì— ëŒ€í•´ SKí”Œë˜ë‹›(ì£¼)ëŠ” ì¼ì²´ì˜ ì±…ì„ì„ ì§€ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
 		<p class="copy">COPYRIGHT &#169;SK planet. All RIGHTS RESERVED.</p>
 	</div>
 	<a href="http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?mallType=mart&amp;catalogNo=11943#" onclick="fn_goTop();return false;" class="f_top" style="display: none;">TOP</a>
@@ -4376,9 +4351,9 @@ function footerSetLogin() {
 
 
 
-<!-- Á¦ÈŞÃ¤³Î »óÇ°»ó¼¼ ¾ÛÈ£Ãâ -->
+<!-- ì œíœ´ì±„ë„ ìƒí’ˆìƒì„¸ ì•±í˜¸ì¶œ -->
 
-<!-- //Á¦ÈŞÃ¤³Î »óÇ°»ó¼¼ ¾ÛÈ£Ãâ -->
+<!-- //ì œíœ´ì±„ë„ ìƒí’ˆìƒì„¸ ì•±í˜¸ì¶œ -->
 <script type="text/javascript">
 window.addEventListener("load",  function() {
 	try {
@@ -4403,7 +4378,6 @@ function getXsiteBannerCookie(cName) {
 
 <script>mwScript.addScript('/js/lib/netfunnel.js', "UTF-8");</script>
 <iframe width="0" height="0" id="appAdTextInterface" style="display:none;" src="product_basic_info_files/saved_resource.html"></iframe>
-<script src="./product_basic_info_files/inc_floatingEvent.js"></script>
 <noscript><iframe width="0" height="0" src="product_basic_info_files/ns.html" style="display: none; visibility: hidden;"></iframe></noscript><noscript><iframe width="0" height="0" src="product_basic_info_files/ns(1).html" style="display: none; visibility: hidden;"></iframe></noscript><noscript><iframe width="0" height="0" src="product_basic_info_files/ns(2).html" style="display: none; visibility: hidden;"></iframe></noscript><noscript><iframe width="0" height="0" src="product_basic_info_files/ns(3).html" style="display: none; visibility: hidden;"></iframe></noscript></footer>
 
 

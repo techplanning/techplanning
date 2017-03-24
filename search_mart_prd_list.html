@@ -3002,7 +3002,7 @@ function checkGsDeliveryTime(martType, prdNo, martNm, setMartInfo){
 	}
 
 	function callStatAjax(url, key, item) {
-		if (url && url != '') {
+/*		if (url && url != '') {
 			var statUrl = '/a.st?url='+url+'&ts='+Date.now();
 			if (key && key != '') statUrl += '&key='+key;
 			if (item && item != '') statUrl += '&item='+item;
@@ -3011,27 +3011,27 @@ function checkGsDeliveryTime(martType, prdNo, martNm, setMartInfo){
 		        xhr.open('get', statUrl, true);
 		        xhr.send(null);
 		    } catch (e){ console.log(e); }
-		}
+		}*/
 	}
 
 	function callStat(url, key, item) {
-		if (url && url != '') {
-			var statUrl = '/a.st?url='+url+'&ts='+Date.now();
-			if (key && key != '') statUrl += '&key='+key;
-			if (item && item != '') statUrl += '&item='+item;
-			var clickIfrm;
-			if (document.getElementById('ifrmClickAnaly')) {
-				clickIfrm = document.getElementById('ifrmClickAnaly');
-			} else {
-				clickIfrm = document.createElement('IFRAME');
-				clickIfrm.id = 'ifrmClickAnaly';
-				clickIfrm.width = 0;
-				clickIfrm.height = 0;
-				clickIfrm.style.display = 'none';
-				document.body.appendChild(clickIfrm);
-			}
-			clickIfrm.src = statUrl;
-		}
+//		if (url && url != '') {
+//			var statUrl = '/a.st?url='+url+'&ts='+Date.now();
+//			if (key && key != '') statUrl += '&key='+key;
+//			if (item && item != '') statUrl += '&item='+item;
+//			var clickIfrm;
+//			if (document.getElementById('ifrmClickAnaly')) {
+//				clickIfrm = document.getElementById('ifrmClickAnaly');
+//			} else {
+//				clickIfrm = document.createElement('IFRAME');
+//				clickIfrm.id = 'ifrmClickAnaly';
+//				clickIfrm.width = 0;
+//				clickIfrm.height = 0;
+//				clickIfrm.style.display = 'none';
+//				document.body.appendChild(clickIfrm);
+//			}
+//			clickIfrm.src = statUrl;
+//		}
 	}
 
 	function catchItemClickEvent(e) {
