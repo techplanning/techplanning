@@ -2,7 +2,7 @@
 <!-- saved from url=(0205)https://buy.m.11st.co.kr/MW/Order/viewOrderPayInfo.tmall?incommingCode=02&ordNo=201703243661027&prdNo=958114815&rakePrdNo=958114815&dispSpceId=&dispSpceRank=&rakeTrTypeCd=&demandDscStr=&OCBcheck=N#complete -->
 <html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	
-<script async="" charset="utf-8" src="./view_order_pay_info_files/production.min.js"></script><script type="text/javascript" async="" src="./view_order_pay_info_files/analytics.js"></script><script type="text/javascript" async="" src="./view_order_pay_info_files/ec.js"></script><script async="" src="./view_order_pay_info_files/gtm.js"></script><script async="" src="./view_order_pay_info_files/analytics.js"></script><script>
+<script type="text/javascript" async="" src="./view_order_pay_info_files/analytics.js"></script><script type="text/javascript" async="" src="./view_order_pay_info_files/ec.js"></script><script async="" src="./view_order_pay_info_files/gtm.js"></script><script async="" src="./view_order_pay_info_files/analytics.js"></script><script>
 var mwScript = (function() {
 	var protocol = (window && window.location && window.location.protocol) ? window.location.protocol.replace(':', '') : "http";
 	var isSSL = function() {
@@ -109,31 +109,31 @@ var _MOBILE_COOKIE_DOMAIN_ = 'm.11st.co.kr';
         };
 
         function sendRecoPickData(callCnt) {
-            try{
-                if(_uid == "") {
-                    if(callCnt <= 10) {
-                        setTimeout(function() {
-                            sendRecoPickData(callCnt+1);
-                        }, 100);
-                        return false;
-                    } else {
-                        _uid = TMCookieUtil.getCookie("PCID");
-                    }
-                }
-
-                (function(w,d,n,s,e,o) {
-                    w[n]=w[n]||function(){(w[n].q=w[n].q||[]).push(arguments)};
-                    e=d.createElement(s);e.async=1;e.charset='utf-8';e.src='//static.recopick.com/dist/production.min.js';
-                    o=d.getElementsByTagName(s)[0];o.parentNode.insertBefore(e,o);
-                })(window, document, 'recoPick', 'script');
-                recoPick('service', 'm.11st.co.kr');
-                if(getBase64UserInfo() != null && getBase64UserInfo() != ""){
-                    try{recoPick('b', getBase64UserInfo());} catch(errb){console.log("recouserset err : " + errb);}
-                }
-                recoPick('setUID', _uid);
-                recoPick('setMID', '6150708229371694165');
-                recoPick('sendLog', 'order', {id: 958114815, count: 1, total_sales:10500, c1:"과자/간식", c2:"캔디류", c3:"사탕/캔디", c4:"", bc1:"", brand:"" });
-            } catch(e) {}
+//            try{
+//                if(_uid == "") {
+//                    if(callCnt <= 10) {
+//                        setTimeout(function() {
+//                            sendRecoPickData(callCnt+1);
+//                        }, 100);
+//                        return false;
+//                    } else {
+//                        _uid = TMCookieUtil.getCookie("PCID");
+//                    }
+//                }
+//
+//                (function(w,d,n,s,e,o) {
+//                    w[n]=w[n]||function(){(w[n].q=w[n].q||[]).push(arguments)};
+//                    e=d.createElement(s);e.async=1;e.charset='utf-8';e.src='//static.recopick.com/dist/production.min.js';
+//                    o=d.getElementsByTagName(s)[0];o.parentNode.insertBefore(e,o);
+//                })(window, document, 'recoPick', 'script');
+//                recoPick('service', 'm.11st.co.kr');
+//                if(getBase64UserInfo() != null && getBase64UserInfo() != ""){
+//                    try{recoPick('b', getBase64UserInfo());} catch(errb){console.log("recouserset err : " + errb);}
+//                }
+//                recoPick('setUID', _uid);
+//                recoPick('setMID', '6150708229371694165');
+//                recoPick('sendLog', 'order', {id: 958114815, count: 1, total_sales:10500, c1:"과자/간식", c2:"캔디류", c3:"사탕/캔디", c4:"", bc1:"", brand:"" });
+//            } catch(e) {}
         }
 
         window.addEventListener('hashchange', function(e) {
