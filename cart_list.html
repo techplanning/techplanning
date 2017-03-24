@@ -1110,7 +1110,8 @@ var popCupon = {
             if(document.querySelector('[name="agreeOrderMakePrdYN_'+bcktSeq+'"]').value == "N"){
                 mwUI.layerPop('guideLayer','no');
             }else{
-                orderSubmit();
+//                orderSubmit();
+                location.href = "/techplanning/order_basic_first_step";
             }
         }
 
