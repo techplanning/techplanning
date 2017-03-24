@@ -38,7 +38,7 @@ input[type='text'] + .btns > *, input[type='password'] + .btns > *, input[type='
 body#order #cts{margin-bottom:0;padding:0 10px 25px;background:#e3e3e8;}
 .title.pay, .title.cart{overflow:hidden;height:44px;padding:0;background-color:#f4f4f4;border:none;color:#333;font-size:17px;font-weight:normal;text-align:center;line-height:44px;border-bottom:1px solid #d1d1d6;}
 body#order .title.pay:before,
-body#order .title.cart:before{content:'';display:inline-block;position:static;height:17px;margin:0 7px 0 0;background:url('/MW/img/order/pay_icon.png') no-repeat 0 -25px;background-size:135px 100px;vertical-align:-3px;}
+body#order .title.cart:before{content:'';display:inline-block;position:static;height:17px;margin:0 7px 0 0;background:url('/techplanning/img/order/pay_icon.png') no-repeat 0 -25px;background-size:135px 100px;vertical-align:-3px;}
 body#order .title.pay:before{display:none;}
 body#order .title.cart:before{display:none;}
 
@@ -57,7 +57,7 @@ table + .stit_gry{margin-top:10px;}
 .tit_odr .event{overflow:hidden;display:inline-block;max-width:140px;color:#e51918;vertical-align:0;white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis;}
 .tit_odr .help{vertical-align:-3px;}
 .txt_note{margin-top:9px;padding-left:20px;color:#8c7458;font-size:0.8em;line-height:1.38em;}
-.txt_note:before{content:'';position:absolute;margin:-1px 0 0 -20px;width:16px;height:16px;background:url('/MW/img/order/pay_icon.png') no-repeat -68px -43px;background-size:135px 100px;}
+.txt_note:before{content:'';position:absolute;margin:-1px 0 0 -20px;width:16px;height:16px;background:url('/techplanning/img/order/pay_icon.png') no-repeat -68px -43px;background-size:135px 100px;}
 .nt_lst {margin:10px 0 0;padding:7px 10px 9px;border:1px solid #cfcfcf;background:#fff;}
 .nt_lst li{padding-left:8px;margin-top:2px;color:#8c7458 !important;font-size:0.75em;line-height:1.25em;}
 .nt_lst li:before{content:'';position:absolute;width:4px;height:1px;margin:6px 0 0 -8px;background:#8c7458;}
@@ -108,7 +108,7 @@ input:disabled{color:#888;background:#f8f8f8;border-color:#b1b1b1;}
 .dlry_inf .type li.on a{background:#516bcc;color:#fff}
 .dlry_inf .type .more{position:absolute;top:4px;right:0;width:25%;padding:0 2px;-webkit-box-sizing:border-box;box-sizing:border-box;}
 .dlry_inf .type .more button{display:block;width:100%;border:1px solid #afb0c1;-webkit-border-radius:2px;border-radius:2px;background:#fafafa;font-size:14px;line-height:30px;}
-.dlry_inf .type .more button:after{content:'';display:inline-block;width:10px;height:10px;margin-left:5px;background:url('/MW/img/order/pay_icon.png') no-repeat -84px -60px;background-size:135px 100px;}
+.dlry_inf .type .more button:after{content:'';display:inline-block;width:10px;height:10px;margin-left:5px;background:url('/techplanning/img/order/pay_icon.png') no-repeat -84px -60px;background-size:135px 100px;}
 .dlry_inf .type li{display:none;}
 .dlry_inf .type ul li:nth-child(1),
 .dlry_inf .type ul li:nth-child(2),
@@ -314,7 +314,7 @@ input:disabled{color:#888;background:#f8f8f8;border-color:#b1b1b1;}
 .gift_tel .gu{margin-left:80px;}
 .gift_tel .gu p{font-size:0.75em;line-height:1.34em;}
 .gift_tel .gu button{margin-top:13px;padding:0 10px;border:1px solid #909090;background:#fafafa;-webkit-border-radius:1px;border-radius:1px;color:#555;font-size:.75em;font-weight:bold;line-height:30px;text-align:center;}
-.gift_tel .gu button:before{content:'';display:inline-block;width:9px;height:9px;margin-right:5px;background:url('/MW/img/order/pay_icon.png') no-repeat -85px -50px;background-size:135px 100px;}
+.gift_tel .gu button:before{content:'';display:inline-block;width:9px;height:9px;margin-right:5px;background:url('/techplanning/img/order/pay_icon.png') no-repeat -85px -50px;background-size:135px 100px;}
 .gift_tel .tel{clear:both;margin-top:10px;padding:10px 5px 10px 10px;background:#f1f1f1;}
 .gift_tel .tel .rw{margin-top:10px;}
 .gift_tel .tel .rw:first-child{margin-top:0;}
@@ -330,9 +330,9 @@ input:disabled{color:#888;background:#f8f8f8;border-color:#b1b1b1;}
 .gift_send{overflow:hidden;position:relative;margin:10px 0;background:#fff;border-bottom:1px solid #d1d1d6;}
 .gift_send h3{overflow:hidden;height:3.08em;padding:0 47px 0 10px;color:#111;font-size:0.8em;line-height:3.08em;}
 .gift_send .btn_add{overflow:hidden;position:absolute;top:0;right:0;width:47px;height:3.08em;padding:0;background:#f7fbfe;border-left:1px solid #dee1e4;font-size:0.8em;color:transparent;}
-.gift_send .btn_add:after{content:'';position:absolute;top:8px;right:12px;width:23px;height:23px;background:url('/MW/img/order/pay_icon.png') no-repeat -94px -28px;background-size:135px 100px;}
+.gift_send .btn_add:after{content:'';position:absolute;top:8px;right:12px;width:23px;height:23px;background:url('/techplanning/img/order/pay_icon.png') no-repeat -94px -28px;background-size:135px 100px;}
 .gift_send .btn_scale{overflow:hidden;position:absolute;top:7px;right:10px;height:23px;padding:0 8px;background:#fafafa;border:1px solid #909090;color:#555;font-size:0.75em;line-height:23px;}
-.gift_send .btn_scale:before{content:'';display:inline-block;width:12px;height:12px;margin-right:3px;background:url('/MW/img/order/pay_icon.png') no-repeat -68px -76px;background-size:135px 100px;vertical-align:-0.2em;}
+.gift_send .btn_scale:before{content:'';display:inline-block;width:12px;height:12px;margin-right:3px;background:url('/techplanning/img/order/pay_icon.png') no-repeat -68px -76px;background-size:135px 100px;vertical-align:-0.2em;}
 .gift_send .image{overflow:hidden;position:relative;padding:15px 0 7px;border-top:1px solid #d9d9d9;}
 .gift_send .image ul{overflow:hidden;width:232px;margin:auto;}
 .gift_send .image li{float:left;margin-right:-1px;}
@@ -449,7 +449,7 @@ input:disabled{color:#888;background:#f8f8f8;border-color:#b1b1b1;}
 .odr_mob .gift .byte strong{color:#111;}
 .odr_mob .notic{position:relative;padding-bottom:9px;margin:10px -10px 0;border-top:1px solid #d8d8d8;}
 .odr_mob .notic h4{height:38px;padding:0 80px 0 38px;background:#f8f8f8;border-bottom:1px solid #d8d8d8;color:#8c6239;font-size:0.8em;font-weight:bold;line-height:38px;}
-.odr_mob .notic h4:before{content:'';position:absolute;margin:7px 0 0 -29px;width:24px;height:24px;background:url('/MW/img/order/pay_icon.png') no-repeat -23px 0;background-size:135px 100px;}
+.odr_mob .notic h4:before{content:'';position:absolute;margin:7px 0 0 -29px;width:24px;height:24px;background:url('/techplanning/img/order/pay_icon.png') no-repeat -23px 0;background-size:135px 100px;}
 .odr_mob .notic .btn_mr{position:absolute;top:0;right:0;width:auto;min-width:38px;height:38px;padding:0 31px 0 10px;border-left:1px solid #dee1e4;background:#f7fbfe;font-size:0.8em;font-weight:bold;line-height:38px;}
 .odr_mob .notic .btn_mr:before{content:'';position:absolute;top:50%;right:13px;width:0;height:0;margin-top:-5px;border-top:9px solid #666;border-left:6px solid transparent;border-right:6px solid transparent;background:none;-webkit-transition:0.5s;transition:0.5s;}
 .odr_mob .notic.open .btn_mr:before{-webkit-transform:rotate(180deg);transform:rotate(180deg);}
@@ -733,7 +733,7 @@ fieldset{display:block;min-width:0;max-width:100%;width:100%;-webkit-text-overfl
 .dc_inp .poi_qry .btns button{font-size:1em;}
 .dc_inp .poi_qry.ok{position:relative;min-height:22px;/*padding-right:50px;*/}
 .dc_inp .poi_qry.ok .btns{margin-left:10px;vertical-align:middle;}
-.dc_inp .poi_qry .btn_refresh{overflow:hidden;display:inline-block;width:27px;height:27px;margin-left:10px;border:none;background:url('/MW/img/order/pay_icon.png') no-repeat -90px 0;background-size:135px 100px;text-indent:-1000px;}
+.dc_inp .poi_qry .btn_refresh{overflow:hidden;display:inline-block;width:27px;height:27px;margin-left:10px;border:none;background:url('/techplanning/img/order/pay_icon.png') no-repeat -90px 0;background-size:135px 100px;text-indent:-1000px;}
 .dc_inp .poi{float:left;margin-top:10px;font-size:0.8em;line-height:1.25em;}
 .dc_inp .poi input{width:100px;}
 .dc_inp .poi label{display:inline-block;min-width:78px;}
@@ -818,7 +818,7 @@ fieldset{display:block;min-width:0;max-width:100%;width:100%;-webkit-text-overfl
 .subpay_txt{margin-top:12px;color:#333;font-size:13px;line-height:1.2;}
 .subpay_txt .value{font-size:14px;}
 .subpay_txt .value strong{font-size:15px;}
-.subpay_txt .btn_query{overflow:hidden;width:18px;height:18px;margin-left:4px;border:1px solid #8a8ca3;border-radius:2px;background:url('/MW/img/order/pay_icon.png') no-repeat -84px -71px;background-size:135px 100px;color:transparent;vertical-align:3px;}
+.subpay_txt .btn_query{overflow:hidden;width:18px;height:18px;margin-left:4px;border:1px solid #8a8ca3;border-radius:2px;background:url('/techplanning/img/order/pay_icon.png') no-repeat -84px -71px;background-size:135px 100px;color:transparent;vertical-align:3px;}
 .subpay_input{margin-top:8px;display:-webkit-box;display:-webkit-flex;display:flex;}
 .subpay_input > *{-webkit-box-flex:1;webkit-flex:1;flex:1;}
 .subpay_input input{display:block;width:100%;}
@@ -1020,9 +1020,9 @@ background:#2c2f36;background:-webkit-gradient(linear, 0 0, 0 bottom, from(#3d40
 .odr_s_price .sl,
 .odr_s_price .tt{display:inline-block;height:3.27em;vertical-align:top;}
 .odr_s_price .sl{padding-left:20px;}
-.odr_s_price .sl:before{content:'';display:block;position:absolute;width:17px;height:16px;margin:11px 0 0 -21px;background:url('/MW/img/order/pay_icon.png') no-repeat -118px 0;background-size:135px 100px;}
+.odr_s_price .sl:before{content:'';display:block;position:absolute;width:17px;height:16px;margin:11px 0 0 -21px;background:url('/techplanning/img/order/pay_icon.png') no-repeat -118px 0;background-size:135px 100px;}
 .odr_s_price .tt{padding-left:20px;}
-.odr_s_price .tt:before{content:'';display:block;position:absolute;width:17px;height:36px;margin:0 0 0 -21px;background:url('/MW/img/order/pay_icon.png') no-repeat -118px -17px;background-size:135px 100px;}
+.odr_s_price .tt:before{content:'';display:block;position:absolute;width:17px;height:36px;margin:0 0 0 -21px;background:url('/techplanning/img/order/pay_icon.png') no-repeat -118px -17px;background-size:135px 100px;}
 .odr_s_price .od strong,
 .odr_s_price .sl strong {margin-left:2px;font-size:1.09em;vertical-align:0px;letter-spacing:0px;}
 .odr_s_price .tt strong {display:inline-block;margin-top:-1px;margin-left:3px;color:#e51918;font-size:1.36em;}
@@ -1222,7 +1222,7 @@ background:#f2f2f2;background:-webkit-gradient(linear, 0 0, 0 bottom, from(#fff)
 
 /* [삭제] 20160225 NDH 해외배송상품 관련 주문서 반영 후 삭제 (.osi) */
 .osi h3{padding-left:20px;margin-top:15px;color:#d52452;font-size:0.85em;line-height:1.2em;}
-.osi h3:before{content:'';position:absolute;width:15px;height:16px;margin:0 0 0 -20px;background:url('/MW/img/order/pay_icon.png') no-repeat -68px -60px;background-size:135px 100px;}
+.osi h3:before{content:'';position:absolute;width:15px;height:16px;margin:0 0 0 -20px;background:url('/techplanning/img/order/pay_icon.png') no-repeat -68px -60px;background-size:135px 100px;}
 .osi .txt{margin-top:7px;font-size:0.8em;line-height:1.36em;}
 .osi_box{margin-top:7px;padding:10px 0;border:1px solid #ababab;background:#fff;}
 .osi_box .chk{padding:10px 10px 0;margin-top:10px;border-top:1px solid #d5d4d9;}
@@ -1239,7 +1239,7 @@ background:#f2f2f2;background:-webkit-gradient(linear, 0 0, 0 bottom, from(#fff)
 
 .osi .osn{overflow:hidden;margin-top:10px;padding:0 10px 10px;border-bottom:1px solid #d1d1d6;background:#fff;}
 .osi .osn .bbtit{margin:0 -10px;padding-left:38px;color:#d52452;border-bottom:1px solid #d8d8d8;}
-.osi .osn .bbtit:before{content:'';position:absolute;margin:-4px 0 0 -29px;width:24px;height:24px;background:url('/MW/img/order/pay_icon.png') no-repeat -23px 0;background-size:135px 100px;}
+.osi .osn .bbtit:before{content:'';position:absolute;margin:-4px 0 0 -29px;width:24px;height:24px;background:url('/techplanning/img/order/pay_icon.png') no-repeat -23px 0;background-size:135px 100px;}
 .osi .osn p{margin-top:9px;font-size:0.75em;line-height:1.3em;}
 .osi .osn p strong{color:#111;font-weight:normal;}
 .osi h4.tit{margin-top:10px;color:#111;font-size:0.8em;line-height:1.2em;}
@@ -1390,7 +1390,7 @@ box-shadow:0px 1px 0px #fff;-webkit-box-shadow:0px 1px 0px #fff;}
 .cart_prd .btn_area button.fbl{border-color:#5d5e97;color:#5b5c96;}
 .cart_prd .btn_area button.frd{border-color:#f30904;color:#f4241f;}
 .cart_prd .btn_area button.onec{border-color:#e9594b;color:#e9594b;}
-.cart_prd .btn_area button.onec:before{display:inline-block;width:16px;height:15px;margin:0 2px 2px 0;background:url('/MW/img/order/pay_icon.png') no-repeat -95px -52px;background-size:135px 100px;vertical-align:middle;content:'';}
+.cart_prd .btn_area button.onec:before{display:inline-block;width:16px;height:15px;margin:0 2px 2px 0;background:url('/techplanning/img/order/pay_icon.png') no-repeat -95px -52px;background-size:135px 100px;vertical-align:middle;content:'';}
 .cart_prd .btn_area .ag_left{float:left;}
 .cart_prd .btn_area .btn_soldout{display:inline-block;width:65px;height:1.9em;color:#f30904;font-size:.75em;font-weight:bold;line-height:1.9em;text-align:center;vertical-align:top;}
 .cart_prd .btn_area .mt_txt{display:block;margin-top:5px;color:#f62e3d;font-size:.8em;}
@@ -1428,7 +1428,7 @@ box-shadow:0px 1px 0px #fff;-webkit-box-shadow:0px 1px 0px #fff;}
 .cart_type .numb strong{color:#f62e3d;font-weight:normal;}
 .cart_type .type{position:absolute;right:10px;top:6px;padding-left:5px;}
 .cart_type .type li{float:left;}
-.cart_type .type li a{display:block;overflow:hidden;width:33px;height:28px;border:1px solid #d0d0d0;background:url('/MW/img/order/pay_icon.png') no-repeat 0 -72px;background-size:135px 100px;color:transparent;font-size:5px;line-height:2em;}
+.cart_type .type li a{display:block;overflow:hidden;width:33px;height:28px;border:1px solid #d0d0d0;background:url('/techplanning/img/order/pay_icon.png') no-repeat 0 -72px;background-size:135px 100px;color:transparent;font-size:5px;line-height:2em;}
 .cart_type .type li.type1 a{border-right-width:0;}
 .cart_type .type li.type1.on a{background-position:0 -43px;border-color:#90929b;border-right-width:1px;}
 .cart_type .type li.type2 a{background-position:-34px -72px;border-left-width:0;}
@@ -1464,9 +1464,9 @@ html.android.v2_0 .order_total .total li:before{display:none;}
 .order_total .total li:first-child em{padding:8px 0;}
 .order_total .total li .cn{position:relative;height:50px;padding:17px 0 0;color:#111;font-size:.8em;line-height:1.2em;-webkit-box-sizing:border-box;box-sizing:border-box;}
 .order_total .total li .cn strong{font-size:1.23em;}
-.order_total .total li:nth-child(2) .cn:before{content:'';position:absolute;left:-10px;top:15px;width:20px;height:20px;background:url('/MW/img/order/pay_icon.png') no-repeat -48px 0;background-size:135px 100px;}
+.order_total .total li:nth-child(2) .cn:before{content:'';position:absolute;left:-10px;top:15px;width:20px;height:20px;background:url('/techplanning/img/order/pay_icon.png') no-repeat -48px 0;background-size:135px 100px;}
 .order_total .total li:last-child .cn {color:#e51a19;}
-.order_total .total li:last-child .cn:before{content:'';position:absolute;left:-10px;top:15px;width:20px;height:20px;background:url('/MW/img/order/pay_icon.png') no-repeat -48px -21px;background-size:135px 100px;}
+.order_total .total li:last-child .cn:before{content:'';position:absolute;left:-10px;top:15px;width:20px;height:20px;background:url('/techplanning/img/order/pay_icon.png') no-repeat -48px -21px;background-size:135px 100px;}
 .order_total .bft{padding:15px 8px 10px;border-top:1px solid #898989;background:#f7fbfe;}
 .order_total .bft h2{margin-bottom:10px;color:#333;font-size:.8em;line-height:1.25em}
 .order_total .bft ul{margin-top:2px;color:#666;font-size:.8em;line-height:1.25em}
@@ -1487,7 +1487,7 @@ html.android.v2_0 .order_total .total li:before{display:none;}
 
 .cart_note{margin:10px 0 0;border:1px solid #ababab;background:#fff;}
 .cart_note .tit_note{padding:9px 0 9px 28px;margin:0;background:#f8f8f8;}
-.cart_note .tit_note:before{content:'';position:absolute;margin:1px 0 0 -19px;width:16px;height:16px;background:url('/MW/img/order/pay_icon.png') no-repeat -68px -43px;background-size:135px 100px;}
+.cart_note .tit_note:before{content:'';position:absolute;margin:1px 0 0 -19px;width:16px;height:16px;background:url('/techplanning/img/order/pay_icon.png') no-repeat -68px -43px;background-size:135px 100px;}
 .cart_note .ntc_lst{margin:0;padding:7px 9px 10px;border-top:1px solid #d8d8d8;}
 /* ---------- pay ---------- */
 .msg_odr{padding:20px 0;margin:10px 0 0;border-bottom:1px solid #d1d1d6;background:#fff;text-align:center;}
@@ -1556,7 +1556,7 @@ html.android.v2_0 .order_total .total li:before{display:none;}
 
 .note_box{position:relative;padding-bottom:9px;margin:20px 0 0;border:1px solid #ababab;background:#fff;}
 .note_box h2{height:27x;padding:0 80px 0 29px;background:#f8f8f8;border-bottom:1px solid #d8d8d8;color:#8c7458;font-size:0.75em;font-weight:bold;line-height:2.25em;}
-.note_box h2:before{content:'';position:absolute;margin:6px 0 0 -21px;width:16px;height:16px;background:url('/MW/img/order/pay_icon.png') no-repeat -68px -43px;background-size:135px 100px;}
+.note_box h2:before{content:'';position:absolute;margin:6px 0 0 -21px;width:16px;height:16px;background:url('/techplanning/img/order/pay_icon.png') no-repeat -68px -43px;background-size:135px 100px;}
 .note_box .btn_mr{position:absolute;top:0;right:0;width:72px;height:27px;padding-left:8px;border-left:1px solid #d8d8d8;font-size:0.75em;font-weight:bold;line-height:2.25em;}
 .note_box .btn_mr:before{content:'';position:absolute;top:6px;right:12px;width:7px;height:7px;border:1px solid #666;border-width:0 2px 2px 0;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);-webkit-transform-origin:70% 70%;transform-origin:70% 70%;-webkit-transition:0.5s;transition:0.5s;}
 .note_box.open .btn_mr:before{-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(225deg);}
