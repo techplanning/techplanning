@@ -1098,7 +1098,7 @@ background:#2c2f36;background:-webkit-gradient(linear, 0 0, 0 bottom, from(#3d40
 .pay_way li button{display:block;width:100%;height:68px;border:1px solid #909090;-webkit-border-radius:2px;border-radius:2px;color:#666;font-size:0.7em;letter-spacing:-1px;line-height:1.2em;
 background:#f2f2f2;background:-webkit-gradient(linear, 0 0, 0 bottom, from(#fff), to(#f3f3f3));background: -webkit-linear-gradient(#fff, #f3f3f3);background:-ms-linear-gradient(#fff, #f3f3f3);background:linear-gradient(#fff, #f3f3f3);}
 .pay_way li.on button{background:#516bcc;border-color:#2e4598;color:#fff;}
-.pay_way li button:before{content:'';display:block;width:38px;height:30px;margin:0 auto 8px;background:url('/MW/img/order/order_pay.png') no-repeat 0 0;background-size:76px 240px;}
+.pay_way li button:before{content:'';display:block;width:38px;height:30px;margin:0 auto 8px;background:url('/techplanning/img/order/order_pay.png') no-repeat 0 0;background-size:76px 240px;}
 .pay_way li button:after{content:'';display:block;width:100%;height:5px;}
 .pay_way li button span{display:inline-block;}
 .pay_way li button.w_phone:before{background-position:0 0;} /*ÈÞ´ëÆù°áÁ¦*/
@@ -1120,7 +1120,7 @@ background:#f2f2f2;background:-webkit-gradient(linear, 0 0, 0 bottom, from(#fff)
 
 .pop_atype .ch_txt {margin:15px 0;text-align:center;font-size:15px;}
 
-.pay_way li button.w_syruppay:before{width:54px;background:url('/MW/img/order/ico_syrup_pay.png') no-repeat 0 0;background-size:54px 62px;}
+.pay_way li button.w_syruppay:before{width:54px;background:url('/techplanning/img/order/ico_syrup_pay.png') no-repeat 0 0;background-size:54px 62px;}
 .pay_way li.on button.w_syruppay:before{background-position:0 -32px;}
 .pay_way li .t_syrup{position:absolute;top:-7px;left:50%;padding:1px 5px;background:#f66f5b;color:#fff;font-size:11px;line-height:1.45em;white-space:nowrap;-webkit-transform:translateX(-50%);-moz-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);}
 .pay_way li .t_syrup:after{content:'';position:absolute;bottom:-4px;left:50%;width:0;height:0;margin-left:-2px;border-top:4px solid #f66f5b;border-left:4px solid transparent;border-right:4px solid transparent}
