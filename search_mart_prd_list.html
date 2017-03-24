@@ -1782,10 +1782,10 @@ function checkGsDeliveryTime(martType, prdNo, martNm, setMartInfo){
 
 		if(prdData.ctlgYn == "Y"){
 			dispNm = prdData.dispModelNm;
-			linkUrl = "http://m.11st.co.kr/MW/Mart/martCatalogDetail.tmall?mallType=mart&catalogNo=" + prdData.ctlgNo;
+			linkUrl = "/techplanning/product_basic_info.html?mallType=mart&catalogNo=" + prdData.ctlgNo;
 		}else{
 			dispNm = prdData.prdnm;
-			linkUrl = "http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?mallType=mart&prdNo=" + prdData.prdNo;
+			linkUrl = "/techplanning/product_basic_info.html?mallType=mart&prdNo=" + prdData.prdNo;
 		}
 
 		var template 	 = '<li>';
