@@ -350,9 +350,9 @@ var isSubTabWiseCall = false;
 function searchSubmit()
 {
 	if ((document.searchForm.decSearchKeyword.value).replace(/\s*$/,"") == "") {
-    	alert("�˻�� �Է��� �ּ���");
+    	alert("검색어를 입력해 주세요");
 	} else if (document.searchForm.decSearchKeyword.value == defaultSearchKeyword) {
-		alert("�˻�� �Է��� �ּ���");
+		alert("검색어를 입력해 주세요");
 		document.searchForm.decSearchKeyword.value = '';
 	} else {
 		var txtBnr = $("#dispObjLnkUrl").val();
