@@ -2699,68 +2699,68 @@ function callGoogleAnalyticsTrc(ctg, action, label, url){
 
 						 // 정렬
 						function sortListAjax(sortCd, freeDlvYN, moreViewYN) {
-							var url = _MOBILE_URL_ + "/Mart/getCatalogMartSortListAjax.tmall?catalogNo="+11943+"&sortCd=" +sortCd+"&freeDlvYN="+freeDlvYN+"&moreViewYN="+moreViewYN;
-
-								try {
-									$.ajax({
-										type: "post"
-										,async: false
-										,url: url
-										,cache: false
-										,dataType : 'json'
-										,success: function(jsonData)
-										{
-											try {
-												var sortList = jsonData.sortList;
-												$("#content-martPremiumList").html("");
-												$("#content-martNormalList").html("");
-												$("#content-martFreeDlvList").html("");
-
-												Handlebars.registerHelper('ifCond', function(v1, v2, options) {
-													v1 = Number(String(v1).replace(/[,]/g, ""))
-													if(v1 == v2) {
-														return options.fn(this);
-													}else{
-														return options.inverse(this);
-													}
-												});
-												
-												if(sortCd=="R"){ // 추천순
-													var source   = $("#martPremiumList").html();
-													var template = Handlebars.compile(source);
-													var data = { martlist: jsonData.sortPremiumList};
-													if(data.martlist.length > 0){
-														  $("#content-martPremiumList").html(template(data));
-														 callGoogleAnalyticsTrc('MW_마트11 카탈로그 상세','동일상품','동일상품(프리미엄) 노출');
-													}
-
-													source   = $("#martNormalList").html();
-													template = Handlebars.compile(source);
-													data = { martlist: jsonData.sortNormalList};
-													if(data.martlist.length > 0){
-														$("#content-martNormalList").html(template(data));
-														 callGoogleAnalyticsTrc('MW_마트11 카탈로그 상세','동일상품','동일상품(일반) 노출');
-													}
-													
-													if(moreViewYN == 'N'){
-														Mart.rake.trackView();
-													}
-												}else{  // 인기순, 낮은가격순
-													var source   = $("#martFreeDlvList").html();
-													var template = Handlebars.compile(source);
-													var data = { martlist: jsonData.sortList};
-													if(data.martlist.length > 0){
-													  	$("#content-martFreeDlvList").html(template(data));
-													}
-												}
-												
-												Mart.rake.setEvent();
-												
-											} catch (err) { console.log(err); }
-										}
-										,error: function(e) {}
-									});
-								}catch (err) {}
+//							var url = _MOBILE_URL_ + "/Mart/getCatalogMartSortListAjax.tmall?catalogNo="+11943+"&sortCd=" +sortCd+"&freeDlvYN="+freeDlvYN+"&moreViewYN="+moreViewYN;
+//
+//								try {
+//									$.ajax({
+//										type: "post"
+//										,async: false
+//										,url: url
+//										,cache: false
+//										,dataType : 'json'
+//										,success: function(jsonData)
+//										{
+//											try {
+//												var sortList = jsonData.sortList;
+//												$("#content-martPremiumList").html("");
+//												$("#content-martNormalList").html("");
+//												$("#content-martFreeDlvList").html("");
+//
+//												Handlebars.registerHelper('ifCond', function(v1, v2, options) {
+//													v1 = Number(String(v1).replace(/[,]/g, ""))
+//													if(v1 == v2) {
+//														return options.fn(this);
+//													}else{
+//														return options.inverse(this);
+//													}
+//												});
+//
+//												if(sortCd=="R"){ // 추천순
+//													var source   = $("#martPremiumList").html();
+//													var template = Handlebars.compile(source);
+//													var data = { martlist: jsonData.sortPremiumList};
+//													if(data.martlist.length > 0){
+//														  $("#content-martPremiumList").html(template(data));
+//														 callGoogleAnalyticsTrc('MW_마트11 카탈로그 상세','동일상품','동일상품(프리미엄) 노출');
+//													}
+//
+//													source   = $("#martNormalList").html();
+//													template = Handlebars.compile(source);
+//													data = { martlist: jsonData.sortNormalList};
+//													if(data.martlist.length > 0){
+//														$("#content-martNormalList").html(template(data));
+//														 callGoogleAnalyticsTrc('MW_마트11 카탈로그 상세','동일상품','동일상품(일반) 노출');
+//													}
+//
+//													if(moreViewYN == 'N'){
+//														Mart.rake.trackView();
+//													}
+//												}else{  // 인기순, 낮은가격순
+//													var source   = $("#martFreeDlvList").html();
+//													var template = Handlebars.compile(source);
+//													var data = { martlist: jsonData.sortList};
+//													if(data.martlist.length > 0){
+//													  	$("#content-martFreeDlvList").html(template(data));
+//													}
+//												}
+//
+//												Mart.rake.setEvent();
+//
+//											} catch (err) { console.log(err); }
+//										}
+//										,error: function(e) {}
+//									});
+//								}catch (err) {}
 							}
 					</script>
 
@@ -2877,18 +2877,18 @@ $(document).ready(function() {
 	}
 	
 	//상품리뷰 IScroll
-	$('#prdReviewList').find('>li').each(function(idx) {
-		try {
-			var $this = $(this);
-			if($this.find('.lst_horizon').length > 0) {
-				var wrap = '.isc_' + $this.index();
-				var photoScroll2 = new IScroll(wrap, {
-					scrollX: true,
-					click : true
-				});
-			}	
-		} catch (e){console.log(e);}
-	});
+//	$('#prdReviewList').find('>li').each(function(idx) {
+//		try {
+//			var $this = $(this);
+//			if($this.find('.lst_horizon').length > 0) {
+//				var wrap = '.isc_' + $this.index();
+//				var photoScroll2 = new IScroll(wrap, {
+//					scrollX: true,
+//					click : true
+//				});
+//			}
+//		} catch (e){console.log(e);}
+//	});
 	
 	//상품리뷰 더보기
 	$('.viewMorePrdReview').on('click', function() {
