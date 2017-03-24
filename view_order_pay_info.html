@@ -1454,9 +1454,9 @@ if (!isApp()) {
 			scrollHeight = de.scrollTop;
 		}
 		if (scrollHeight > 1) {
-			document.querySelector('.f_top').style.display = 'block';
+		    if(document.querySelector('.f_top')) document.querySelector('.f_top').style.display = 'block';
 		} else {
-			document.querySelector('.f_top').style.display = 'none';
+            if(document.querySelector('.f_top')) document.querySelector('.f_top').style.display = 'none';
 		}
 		
 	}, false);
