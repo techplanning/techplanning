@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- saved from url=(0046)http://buy.m.11st.co.kr/MW/Cart/cartList.tmall -->
-<html lang="ko" class=" ios iphone mobile v9_0 portrait"><head><meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	
 <script type="text/javascript" async="" src="./cart_list_files/analytics.js"></script><script type="text/javascript" async="" src="./cart_list_files/ec.js"></script><script async="" src="./cart_list_files/gtm.js"></script><script async="" src="./cart_list_files/analytics.js"></script><script>
 var mwScript = (function() {
@@ -36,9 +36,9 @@ var mwScript = (function() {
 <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width">
 <script>mwScript.addTouchIcon("apple-touch-icon-precomposed");</script><link rel="apple-touch-icon-precomposed" href="http://c.m.011st.com/MW/img/mw11st_touchicon.png">
 <meta name="format-detection" content="telephone=no">
-	<title>Àå¹Ù±¸´Ï - 11¹ø°¡ ¸ğ¹ÙÀÏ</title>
-	<link rel="stylesheet" href="./cart_list_files/base.css">
-	<link rel="stylesheet" href="./cart_list_files/pay.css">
+	<title>ì¥ë°”êµ¬ë‹ˆ - 11ë²ˆê°€ ëª¨ë°”ì¼</title>
+	<link rel="stylesheet" href="css/common/base.css">
+	<link rel="stylesheet" href="css/mart/mart.css">
 	<!--[if lt IE 9]><script src="//c.m.011st.com/MW/js/ui/ie.js"></script><![endif]-->
 <script src="./cart_list_files/jquery-2.1.1.min.js"></script>
 <script src="./cart_list_files/ui.js"></script>
@@ -107,32 +107,32 @@ if(typeof toLocaleNum === 'undefined') {
 }
 
 CouponParam = function() {
-		// Á¶È¸¿äÃ» º¯¼ö
-		this.prdNo; // »óÇ°¹øÈ£
-		this.optStckNo; // ¿É¼Ç¹øÈ£
-		this.ordQty; // ¼ö·®
-		this.dlvCstStlTyp; // ¹è¼Ûºñ°áÁ¦¹æ¹ı
-		this.optionNm; // ¿É¼Ç¸í
-		this.visitDlvYN; // ¹æ¹®¼ö·É¿©ºÎ
-		this.cupnIssNo1; // ¼±ÅÃÇÒÀÎÄíÆù
-		this.cupnIssNo2; // º¸³Ê½ºÄíÆù
-		this.dlvCupnIssNo; // ¹è¼ÛºñÄíÆù
-		this.strNo; // ¸¶Æ® ÁöÁ¡¹øÈ£
-		this.bcktSeq; // Àå¹Ù±¸´Ï¹øÈ£(Àå¹Ù±¸´ÏÁ¶È¸ ½Ã)
-		this.martBcktSeq; // ¸¶Æ®Àå¹Ù±¸´Ï¹øÈ£(Àå¹Ù±¸´ÏÁ¶È¸ ½Ã)
-		this.addPrdAmtSum; // Ãß°¡±¸¼º»óÇ° ÇÕ»ê±İ¾×
-		this.slctPrdCalcOptNm;	//°è»êÇü¿É¼Ç¸í
-		this.calcOptItemList;	//°è»êÇü¿É¼Ç°ª
+		// ì¡°íšŒìš”ì²­ ë³€ìˆ˜
+		this.prdNo; // ìƒí’ˆë²ˆí˜¸
+		this.optStckNo; // ì˜µì…˜ë²ˆí˜¸
+		this.ordQty; // ìˆ˜ëŸ‰
+		this.dlvCstStlTyp; // ë°°ì†¡ë¹„ê²°ì œë°©ë²•
+		this.optionNm; // ì˜µì…˜ëª…
+		this.visitDlvYN; // ë°©ë¬¸ìˆ˜ë ¹ì—¬ë¶€
+		this.cupnIssNo1; // ì„ íƒí• ì¸ì¿ í°
+		this.cupnIssNo2; // ë³´ë„ˆìŠ¤ì¿ í°
+		this.dlvCupnIssNo; // ë°°ì†¡ë¹„ì¿ í°
+		this.strNo; // ë§ˆíŠ¸ ì§€ì ë²ˆí˜¸
+		this.bcktSeq; // ì¥ë°”êµ¬ë‹ˆë²ˆí˜¸(ì¥ë°”êµ¬ë‹ˆì¡°íšŒ ì‹œ)
+		this.martBcktSeq; // ë§ˆíŠ¸ì¥ë°”êµ¬ë‹ˆë²ˆí˜¸(ì¥ë°”êµ¬ë‹ˆì¡°íšŒ ì‹œ)
+		this.addPrdAmtSum; // ì¶”ê°€êµ¬ì„±ìƒí’ˆ í•©ì‚°ê¸ˆì•¡
+		this.slctPrdCalcOptNm;	//ê³„ì‚°í˜•ì˜µì…˜ëª…
+		this.calcOptItemList;	//ê³„ì‚°í˜•ì˜µì…˜ê°’
 		
-		// Á¶È¸°á°ú º¯¼ö
-		this.SubmitCupnIssNo1; // ¼±ÅÃÇÒÀÎÄíÆù
-		this.SubmitCupnIssNo2; // º¸³Ê½ºÄíÆù
-		this.SubmitDlvCupnIssNo; // ¹è¼Ûºñ ÄíÆù
-		this.cupnDscPrice0; // ±âº»ÇÒÀÎ±İ¾×
-		this.cupnDscPrice1; // Ãß°¡ÇÒÀÎ±İ¾×
-		this.cupnDscPrice2; // º¸³Ê½ºÇÒÀÎ±İ¾×
-		this.dlvCupnDscPrice; // ¹è¼Ûºñ ÇÒÀÎ±İ¾×
-		this.isSyrup; // ½Ã·´ °áÁ¦¼ö´Ü »ç¿ë °¡´É ¿©ºÎ
+		// ì¡°íšŒê²°ê³¼ ë³€ìˆ˜
+		this.SubmitCupnIssNo1; // ì„ íƒí• ì¸ì¿ í°
+		this.SubmitCupnIssNo2; // ë³´ë„ˆìŠ¤ì¿ í°
+		this.SubmitDlvCupnIssNo; // ë°°ì†¡ë¹„ ì¿ í°
+		this.cupnDscPrice0; // ê¸°ë³¸í• ì¸ê¸ˆì•¡
+		this.cupnDscPrice1; // ì¶”ê°€í• ì¸ê¸ˆì•¡
+		this.cupnDscPrice2; // ë³´ë„ˆìŠ¤í• ì¸ê¸ˆì•¡
+		this.dlvCupnDscPrice; // ë°°ì†¡ë¹„ í• ì¸ê¸ˆì•¡
+		this.isSyrup; // ì‹œëŸ½ ê²°ì œìˆ˜ë‹¨ ì‚¬ìš© ê°€ëŠ¥ ì—¬ë¶€
 	};
 
 var mwCupnPop = {
@@ -150,7 +150,7 @@ var mwCupnPop = {
 		openCouponPop : function(callBack) {
 			try {
 				this.setCallBack(callBack);
-				if(mwUI) mwUI.loadingFull({text : 'ÄíÆùÁ¤º¸ Á¶È¸ Áß ÀÔ´Ï´Ù.'});
+				if(mwUI) mwUI.loadingFull({text : 'ì¿ í°ì •ë³´ ì¡°íšŒ ì¤‘ ì…ë‹ˆë‹¤.'});
 				
 				this.initModel();
 				this.viewBackup = popCupnLayer.innerHTML;
@@ -195,7 +195,7 @@ var mwCupnPop = {
 			
 			
 			
-			if(mwUI) mwUI.loadingFull({text : 'ÄíÆùÁ¤º¸ Á¶È¸ Áß ÀÔ´Ï´Ù.'});
+			if(mwUI) mwUI.loadingFull({text : 'ì¿ í°ì •ë³´ ì¡°íšŒ ì¤‘ ì…ë‹ˆë‹¤.'});
 			this.setCallBack(callBack);
 			if(couponparamArray) this.paramArray = couponparamArray;
 			
@@ -212,7 +212,7 @@ var mwCupnPop = {
 					dataType: "json",
 					success: function(jsonData) {
 						try {
-							if(jsonData.FAIL) throw "ÄíÆùÆË¾÷ µ¥ÀÌÅÍ Á¶È¸ ½ÇÆĞ";
+							if(jsonData.FAIL) throw "ì¿ í°íŒì—… ë°ì´í„° ì¡°íšŒ ì‹¤íŒ¨";
 							
 							
 							mwCupnPop.setModel(JSON.parse(jsonData.model));
@@ -222,13 +222,13 @@ var mwCupnPop = {
 							
 							mwCupnPop.initModel();
 							mwCupnPop.initView();
-							//ÇöÀç ¼±ÅÃµÈ ÄíÆùÀÌ °áÁ¦¼ö´ÜÁ¦ÇÑÄíÆùÀÏ¶§¸¸ ÃÊ±âÈ­µÇ´Â ·ÎÁ÷ Ãß°¡ ÇÊ¿ä
+							//í˜„ì¬ ì„ íƒëœ ì¿ í°ì´ ê²°ì œìˆ˜ë‹¨ì œí•œì¿ í°ì¼ë•Œë§Œ ì´ˆê¸°í™”ë˜ëŠ” ë¡œì§ ì¶”ê°€ í•„ìš”
 							mwCupnPop.setCurPayRestrictCupn();
 							if(mwCupnPop.curPayRestrictInfo){
 								mwCupnPop.setPayRestrictCupnDisplay();
 							}
 							popCupon.open('cuponChange');
-							if(mwCupnPop.couponModel.isInvalidCupn) alert("±âÁ¸¿¡ ¼±ÅÃÇÏ½Å ÄíÆùÀ» Àû¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.\n´Ù¸¥ ÄíÆùÀ» Àû¿ëÇØÁÖ¼¼¿ä.");
+							if(mwCupnPop.couponModel.isInvalidCupn) alert("ê¸°ì¡´ì— ì„ íƒí•˜ì‹  ì¿ í°ì„ ì ìš©í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\në‹¤ë¥¸ ì¿ í°ì„ ì ìš©í•´ì£¼ì„¸ìš”.");
 						} finally {
 							if(mwUI) mwUI.loadingFullClose();
 						}
@@ -236,7 +236,7 @@ var mwCupnPop = {
 			        error: function(xhr, textStatus, e) {
 			        	if(mwCupnPop.couponCallBack) mwCupnPop.couponCallBack(null, "ERR_0002");
 			        	if(mwUI) mwUI.loadingFullClose();
-			        	throw "ERR_0002 ÄíÆùÆË¾÷ Ajax Call ¿À·ù";
+			        	throw "ERR_0002 ì¿ í°íŒì—… Ajax Call ì˜¤ë¥˜";
 			      	}
 				});
 			} catch(e) {
@@ -350,7 +350,7 @@ var mwCupnPop = {
 									if(type == "add") prdBO.cupnAdd = curCupnBO;
 									else if(type == "bonus") prdBO.cupnBonus = curCupnBO;
 									if(type == "add") this.reCalcBonusCupns(selPrdId, prdId, prdBO);
-									alert("ÇÒÀÎÀû¿ë ÈÄ ±İ¾×ÀÌ 0¿øÀÌ µÉ ¼ö´Â ¾ø½À´Ï´Ù.");
+									alert("í• ì¸ì ìš© í›„ ê¸ˆì•¡ì´ 0ì›ì´ ë  ìˆ˜ëŠ” ì—†ìŠµë‹ˆë‹¤.");
 									return false;
 								}								
 								prdBO.finalOrdPrice = prdFinalOrdPrice;
@@ -473,7 +473,7 @@ var mwCupnPop = {
 		},
 		updateViewBonusCupnDsc : function(prdId, cupnBO) {
 			prdDomObj = document.getElementById(prdId);
-			prdDomObj.querySelector("button[name='"+cupnBO.cupnId+"'] > .dc_pr").innerText = toLocaleNum(cupnBO.cupnDscAmt) + "¿ø";
+			prdDomObj.querySelector("button[name='"+cupnBO.cupnId+"'] > .dc_pr").innerText = toLocaleNum(cupnBO.cupnDscAmt) + "ì›";
 		},
 		submitCouponPop : function() {
 			var isCallProdDetail = false;
@@ -555,8 +555,8 @@ var mwCupnPop = {
 					var cupnDomObj = payRestirctCupnDomObjArr[key];
 					var issueNo = cupnDomObj.getAttribute('data-issueno');
 					
-					//µ¿ÀÏÄíÆùÀº µ¿ÀÏÄíÆù È°¼ºÈ­/ºñÈ°¼ºÈ­ ·ÎÁ÷¿¡¼­ Ã³¸®
-					//ÇöÀç ¼±ÅÃµÈ °áÁ¦¼ö´ÜÄíÆù°ú °°Àº ÄíÆù ¿¹¿ÜÃ³¸®
+					//ë™ì¼ì¿ í°ì€ ë™ì¼ì¿ í° í™œì„±í™”/ë¹„í™œì„±í™” ë¡œì§ì—ì„œ ì²˜ë¦¬
+					//í˜„ì¬ ì„ íƒëœ ê²°ì œìˆ˜ë‹¨ì¿ í°ê³¼ ê°™ì€ ì¿ í° ì˜ˆì™¸ì²˜ë¦¬
 					if((!cupnBO || cupnBO && issueNo != cupnBO.issueNo) && issueNoList.indexOf(issueNo+",")<0){	
 						if(this.checkPossibleUsePayRestrictCupn(cupnDomObj)){
 							cupnDomObj.disabled = false;
@@ -629,16 +629,16 @@ var mwCupnPop = {
 		setCurCupnPayRestrictInfoForSyrup : function(payRestrictInfo, curPayRestrictInfo){
 			var resultPayRestrictInfo = payRestrictInfo;			
 			if(curPayRestrictInfo && payRestrictInfo){
-				if(curPayRestrictInfo.cardDtlCd && curPayRestrictInfo.cardDtlCd == "02" && payRestrictInfo.cardDtlCd && payRestrictInfo.cardDtlCd == "00"){  //½Ã·´-Ä«µåÄíÆù
+				if(curPayRestrictInfo.cardDtlCd && curPayRestrictInfo.cardDtlCd == "02" && payRestrictInfo.cardDtlCd && payRestrictInfo.cardDtlCd == "00"){  //ì‹œëŸ½-ì¹´ë“œì¿ í°
 					resultPayRestrictInfo = curPayRestrictInfo;
 					resultPayRestrictInfo.cardCd = payRestrictInfo.cardCd;					
-				}else if(curPayRestrictInfo.cardDtlCd && curPayRestrictInfo.cardDtlCd == "00" && payRestrictInfo.cardDtlCd && payRestrictInfo.cardDtlCd == "02"){ //Ä«µå-½Ã·´ÄíÆù
+				}else if(curPayRestrictInfo.cardDtlCd && curPayRestrictInfo.cardDtlCd == "00" && payRestrictInfo.cardDtlCd && payRestrictInfo.cardDtlCd == "02"){ //ì¹´ë“œ-ì‹œëŸ½ì¿ í°
 					resultPayRestrictInfo = payRestrictInfo;
 					resultPayRestrictInfo.cardCd = curPayRestrictInfo.cardCd;					
-				}else if(curPayRestrictInfo.cardDtlCd && curPayRestrictInfo.cardDtlCd == "02" && curPayRestrictInfo.cardCd != "00" && payRestrictInfo.cardDtlCd && payRestrictInfo.cardDtlCd == "02" && payRestrictInfo.cardCd == "00"){ // ½Ã·´Ä«µå -½Ã·´ÀüÃ¼ 
+				}else if(curPayRestrictInfo.cardDtlCd && curPayRestrictInfo.cardDtlCd == "02" && curPayRestrictInfo.cardCd != "00" && payRestrictInfo.cardDtlCd && payRestrictInfo.cardDtlCd == "02" && payRestrictInfo.cardCd == "00"){ // ì‹œëŸ½ì¹´ë“œ -ì‹œëŸ½ì „ì²´ 
 					resultPayRestrictInfo = payRestrictInfo;
 					resultPayRestrictInfo.cardCd = curPayRestrictInfo.cardCd;
-				}else if(curPayRestrictInfo.cardDtlCd && curPayRestrictInfo.cardDtlCd == "02" && curPayRestrictInfo.cardCd == "00" && payRestrictInfo.cardDtlCd && payRestrictInfo.cardDtlCd == "02" && payRestrictInfo.cardCd != "00"){ // ½Ã·´ÀüÃ¼ -½Ã·´Ä«
+				}else if(curPayRestrictInfo.cardDtlCd && curPayRestrictInfo.cardDtlCd == "02" && curPayRestrictInfo.cardCd == "00" && payRestrictInfo.cardDtlCd && payRestrictInfo.cardDtlCd == "02" && payRestrictInfo.cardCd != "00"){ // ì‹œëŸ½ì „ì²´ -ì‹œëŸ½ì¹´
 					resultPayRestrictInfo = curPayRestrictInfo;
 					resultPayRestrictInfo.cardCd = payRestrictInfo.cardCd;
 				}
@@ -683,10 +683,10 @@ var mwCupnPop = {
 			return resultPayRestrictInfo;
 		},
 		payRestrictCupnAlert : function(payTypeNm){
-			alert(payTypeNm+"·Î °áÁ¦¼ö´ÜÀÌ Á¦ÇÑµÇ´Â ÄíÆùÀÔ´Ï´Ù.");
+			alert(payTypeNm+"ë¡œ ê²°ì œìˆ˜ë‹¨ì´ ì œí•œë˜ëŠ” ì¿ í°ì…ë‹ˆë‹¤.");
 		},
 		usedCupnAlert : function(){
-			return confirm("ÇØ´ç ÄíÆùÀº ´Ù¸¥»óÇ°¿¡ Àû¿ëÁßÀÔ´Ï´Ù.\nÄíÆùÀ» º» »óÇ°¿¡ Àû¿ëÇÏ½Ã°Ú½À´Ï±î?");
+			return confirm("í•´ë‹¹ ì¿ í°ì€ ë‹¤ë¥¸ìƒí’ˆì— ì ìš©ì¤‘ì…ë‹ˆë‹¤.\nì¿ í°ì„ ë³¸ ìƒí’ˆì— ì ìš©í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
 		},
 		isDisabled : function() {
 			if(mwCupnPop.couponModel.cupnMasterList.length == 0) return true;
@@ -768,19 +768,19 @@ var popCupon = {
             }
         };
 
-        // 2016.12.15 mjs : ¼¿·¯ÀÇ ÃÖ¼Ò±¸¸Å°¡´É±İ¾× ¼³Á¤¿©ºÎ, ±İ¾× Á¶È¸
-        // java Map -> script Map º¯È¯
+        // 2016.12.15 mjs : ì…€ëŸ¬ì˜ ìµœì†Œêµ¬ë§¤ê°€ëŠ¥ê¸ˆì•¡ ì„¤ì •ì—¬ë¶€, ê¸ˆì•¡ ì¡°íšŒ
+        // java Map -> script Map ë³€í™˜
         var mapMinBuyAmtInfBySeller = new HashMap();
         
         var _ocbAddEvlLimitAmt = '5000';
         var _isFreeGift = false;
         var _totalPrdCount = 1;
         if("true"=="false" && "null"=="http://buy.m.11st.co.kr/MW/Cart/deleteCartProduct.tmall")
-            window.location.reload(); //¾ÆÀÌÆù¾Û¿¡¼­´Â referer°¡ ÀÖ¾î¾ß À¥ÆäÀÌÁö È÷½ºÅä¸®¹é µ¿ÀÛ
+            window.location.reload(); //ì•„ì´í°ì•±ì—ì„œëŠ” refererê°€ ìˆì–´ì•¼ ì›¹í˜ì´ì§€ íˆìŠ¤í† ë¦¬ë°± ë™ì‘
 
         
 
-        //ÀüÃ¼¼±ÅÃ
+        //ì „ì²´ì„ íƒ
         var curSelectAll = false;
         function selectAllChk(key) {
             synchSelectAllChk();
@@ -799,12 +799,12 @@ var popCupon = {
             if(curSelectAll) curSelectAll = false;
             else curSelectAll = true;
 
-            if(key!='load'){	//ÃÖÃÊ ·Îµù½Ã¿¡´Â Àç°è»ê ¾ÈÇÔ
+            if(key!='load'){	//ìµœì´ˆ ë¡œë”©ì‹œì—ëŠ” ì¬ê³„ì‚° ì•ˆí•¨
                 calSelectedPrds();
             }
         }
 
-        //¹­À½¹è¼Û ÀüÃ¼¼±ÅÃ
+        //ë¬¶ìŒë°°ì†¡ ì „ì²´ì„ íƒ
         function bunchCheckAll(seq){
             var isCheck = false;
             if(document.querySelector('[name="bunchCheckAll_'+seq+'"]').checked == true){
@@ -812,7 +812,7 @@ var popCupon = {
             }
 
             if(!martBunchAddrChk(seq)){
-                alert("È¨ÇÃ·¯½º¿Í GS½´ÆÛ »óÇ°À» ÁÖ¹®ÇÒ °æ¿ì, ´ÜÀÏ ¹è¼ÛÁö ±âÁØÀ¸·Î¸¸ ÁÖ¹®ÀÌ °¡´ÉÇÕ´Ï´Ù.");
+                alert("í™ˆí”ŒëŸ¬ìŠ¤ì™€ GSìŠˆí¼ ìƒí’ˆì„ ì£¼ë¬¸í•  ê²½ìš°, ë‹¨ì¼ ë°°ì†¡ì§€ ê¸°ì¤€ìœ¼ë¡œë§Œ ì£¼ë¬¸ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤.");
                 document.querySelector('[name="bunchCheckAll_'+seq+'"]').checked = !isCheck;
                 return;
             }
@@ -827,7 +827,7 @@ var popCupon = {
                 }
             }
 
-            //¼±ÅÃ»óÇ° °è»ê
+            //ì„ íƒìƒí’ˆ ê³„ì‚°
             calSelectedPrds();
         }
 
@@ -836,11 +836,11 @@ var popCupon = {
             document.getElementById("allselectBelow").checked=!curSelectAll;
         }
 
-        //»óÇ°»èÁ¦
+        //ìƒí’ˆì‚­ì œ
         function doDelete(bcktSeq, martBcktSeq) {
             var tempBcktSeq = bcktSeq;
 
-            if ( confirm("»óÇ°À» Àå¹Ù±¸´Ï¿¡¼­ »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?") ) {// Àå¹Ù±¸´Ï »èÁ¦ ½Ã º» »óÇ° ¹× Ãß°¡±¸¼º»óÇ° ÀÇ Àå¹Ù±¸´Ï Á¤º¸¸¦ ','·Î ±¸ºĞÇÏ¿© ³Ñ±è
+            if ( confirm("ìƒí’ˆì„ ì¥ë°”êµ¬ë‹ˆì—ì„œ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?") ) {// ì¥ë°”êµ¬ë‹ˆ ì‚­ì œ ì‹œ ë³¸ ìƒí’ˆ ë° ì¶”ê°€êµ¬ì„±ìƒí’ˆ ì˜ ì¥ë°”êµ¬ë‹ˆ ì •ë³´ë¥¼ ','ë¡œ êµ¬ë¶„í•˜ì—¬ ë„˜ê¹€
                 document.actionForm.bcktSeq.value = tempBcktSeq;
                 if(martBcktSeq && martBcktSeq != "") document.actionForm.martBcktSeq.value = martBcktSeq;
                 document.actionForm.action = "http://buy.m.11st.co.kr/MW/Cart/deleteCartProduct.tmall";
@@ -848,11 +848,11 @@ var popCupon = {
             }
         }
 
-        //Ãß°¡»óÇ° »èÁ¦ 2015.05.06
+        //ì¶”ê°€ìƒí’ˆ ì‚­ì œ 2015.05.06
         function doDeleteAddPrd(bcktSeq, addPrdYn) {
             var tempBcktSeq = bcktSeq;
 
-            if(confirm("ÇØ´ç »óÇ°À» Àå¹Ù±¸´Ï¿¡¼­ »èÁ¦ ÇÏ½Ã°Ú½À´Ï±î?")){
+            if(confirm("í•´ë‹¹ ìƒí’ˆì„ ì¥ë°”êµ¬ë‹ˆì—ì„œ ì‚­ì œ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?")){
                 document.actionForm.bcktSeq.value = tempBcktSeq;
                 document.actionForm.addPrdFlag.value = addPrdYn;
                 document.actionForm.action = "http://buy.m.11st.co.kr/MW/Cart/deleteCartProduct.tmall";
@@ -860,10 +860,10 @@ var popCupon = {
             }
         }
 
-        //¿É¼Ç»óÇ° »èÁ¦ 2015.05.06
+        //ì˜µì…˜ìƒí’ˆ ì‚­ì œ 2015.05.06
         function doDeleteOpt(bcktSeq, slctPrdOptSeq, martYn){
 
-            if(confirm("ÇØ´ç ¿É¼ÇÀ» Àå¹Ù±¸´Ï¿¡¼­ »èÁ¦ ÇÏ½Ã°Ú½À´Ï±î?")){
+            if(confirm("í•´ë‹¹ ì˜µì…˜ì„ ì¥ë°”êµ¬ë‹ˆì—ì„œ ì‚­ì œ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?")){
                 document.actionForm.bcktSeq.value = bcktSeq;
                 document.actionForm.slctPrdOptSeq.value = slctPrdOptSeq;
                 document.actionForm.isMart.value=martYn;
@@ -873,7 +873,7 @@ var popCupon = {
         }
 
 
-        //¼±ÅÃ»èÁ¦
+        //ì„ íƒì‚­ì œ
         function doMultiDelete(sellerCheckKey) {
             var bcktSeqStr="";
             var martBcktSeqStr="";
@@ -892,7 +892,7 @@ var popCupon = {
             }
 
             if(bcktSeqStr=="" && martBcktSeqStr=="") {
-                alert("»óÇ°À» ¼±ÅÃÇØ ÁÖ½Ã±â ¹Ù¶ø´Ï´Ù.");
+                alert("ìƒí’ˆì„ ì„ íƒí•´ ì£¼ì‹œê¸° ë°”ëë‹ˆë‹¤.");
                 return;
             }
 
@@ -901,29 +901,29 @@ var popCupon = {
             doDelete(bcktSeqStr, martBcktSeqStr);
         }
 
-        //¼ö·®º¯°æ-¿É¼Ç»óÇ°
+        //ìˆ˜ëŸ‰ë³€ê²½-ì˜µì…˜ìƒí’ˆ
         function doModifyOpt(slctPrdOptSeq, bcktSeq, addPrdFlag, selMinQty, selLimitQty, prdTypCd, beforeCnt, yes24Yn) {
             var frm = document.querySelector('[name="qty_'+slctPrdOptSeq+'"]');
             var qty = frm.value;
 
             if (qty == "") {
-                alert("¼ö·®ÀÌ ÀÔ·ÂµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+                alert("ìˆ˜ëŸ‰ì´ ì…ë ¥ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
                 return;
             }
 
             if ( isNaN(qty) ) {
-                alert("¼ö·®Àº ¼ıÀÚ·Î ÀÔ·ÂÇÏ¼Å¾ßÇÕ´Ï´Ù.");
+                alert("ìˆ˜ëŸ‰ì€ ìˆ«ìë¡œ ì…ë ¥í•˜ì…”ì•¼í•©ë‹ˆë‹¤.");
                 return;
             }
 
             if ( parseInt(qty) <= 0 ) {
-                alert("¼ö·®Àº 0º¸´Ù Å©°Ô ÀÔ·ÂÇÏ¼Å¾ßÇÕ´Ï´Ù.");
+                alert("ìˆ˜ëŸ‰ì€ 0ë³´ë‹¤ í¬ê²Œ ì…ë ¥í•˜ì…”ì•¼í•©ë‹ˆë‹¤.");
                 return;
             }
 
             if(  selLimitQty != undefined){
                 if(selLimitQty!=-10000 && (selLimitQty-qty < 0)){
-                    alert("ÇØ´ç»óÇ°ÀÇ ÃÖ´ë±¸¸Å °¡´É ¼ö·®À»\n"+"ÃÊ°úÇÏ¿´½À´Ï´Ù.");
+                    alert("í•´ë‹¹ìƒí’ˆì˜ ìµœëŒ€êµ¬ë§¤ ê°€ëŠ¥ ìˆ˜ëŸ‰ì„\n"+"ì´ˆê³¼í•˜ì˜€ìŠµë‹ˆë‹¤.");
                     frm.value=beforeCnt;
                     return;
                 }
@@ -931,7 +931,7 @@ var popCupon = {
 
             if(prdTypCd != "" && prdTypCd != undefined){
                 if(prdTypCd == "19" && qty > 10){
-                    alert("ÇØ´ç»óÇ°ÀÇ ÃÖ´ë ±¸¸Å ¼ö·®Àº 10°³ ÀÔ´Ï´Ù.");
+                    alert("í•´ë‹¹ìƒí’ˆì˜ ìµœëŒ€ êµ¬ë§¤ ìˆ˜ëŸ‰ì€ 10ê°œ ì…ë‹ˆë‹¤.");
                     frm.value=beforeCnt;
                     return;
                 }
@@ -947,29 +947,29 @@ var popCupon = {
             document.actionForm.submit();
         }
 
-        //¼ö·®º¯°æ-¹«¿É¼Ç»óÇ°
+        //ìˆ˜ëŸ‰ë³€ê²½-ë¬´ì˜µì…˜ìƒí’ˆ
         function doModify(bcktSeq, addPrdFlag, selMinQty, selLimitQty, prdTypCd, beforeCnt, yes24Yn, isMart) {
             var frm = document.querySelector('[name="qty_'+bcktSeq+'"]');
             var qty = frm.value;
 
             if (qty == "") {
-                alert("¼ö·®ÀÌ ÀÔ·ÂµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+                alert("ìˆ˜ëŸ‰ì´ ì…ë ¥ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
                 return;
             }
 
             if ( isNaN(qty) ) {
-                alert("¼ö·®Àº ¼ıÀÚ·Î ÀÔ·ÂÇÏ¼Å¾ßÇÕ´Ï´Ù.");
+                alert("ìˆ˜ëŸ‰ì€ ìˆ«ìë¡œ ì…ë ¥í•˜ì…”ì•¼í•©ë‹ˆë‹¤.");
                 return;
             }
 
             if ( parseInt(qty) <= 0 ) {
-                alert("¼ö·®Àº 0º¸´Ù Å©°Ô ÀÔ·ÂÇÏ¼Å¾ßÇÕ´Ï´Ù.");
+                alert("ìˆ˜ëŸ‰ì€ 0ë³´ë‹¤ í¬ê²Œ ì…ë ¥í•˜ì…”ì•¼í•©ë‹ˆë‹¤.");
                 return;
             }
 
             if(  selLimitQty != undefined){
                 if(selLimitQty!=-10000 && (selLimitQty-qty < 0)){
-                    alert("ÇØ´ç»óÇ°ÀÇ ÃÖ´ë±¸¸Å °¡´É ¼ö·®À»\n"+"ÃÊ°úÇÏ¿´½À´Ï´Ù.");
+                    alert("í•´ë‹¹ìƒí’ˆì˜ ìµœëŒ€êµ¬ë§¤ ê°€ëŠ¥ ìˆ˜ëŸ‰ì„\n"+"ì´ˆê³¼í•˜ì˜€ìŠµë‹ˆë‹¤.");
                     frm.value=beforeCnt;
                     return;
                 }
@@ -977,7 +977,7 @@ var popCupon = {
 
             if(prdTypCd != "" && prdTypCd != undefined){
                 if(prdTypCd == "19" && qty > 10){
-                    alert("ÇØ´ç»óÇ°ÀÇ ÃÖ´ë ±¸¸Å ¼ö·®Àº 10°³ ÀÔ´Ï´Ù.");
+                    alert("í•´ë‹¹ìƒí’ˆì˜ ìµœëŒ€ êµ¬ë§¤ ìˆ˜ëŸ‰ì€ 10ê°œ ì…ë‹ˆë‹¤.");
                     frm.value=beforeCnt;
                     return;
                 }
@@ -993,7 +993,7 @@ var popCupon = {
             document.actionForm.submit();
         }
 
-        //¼ö·®¹öÆ°
+        //ìˆ˜ëŸ‰ë²„íŠ¼
         function setQtyNumValue(objId, sbmBtnId, orgValue, chgValue) {
 
             if(typeof(document.getElementsByTagName('footer')[0]) !='undefined'){
@@ -1027,7 +1027,7 @@ var popCupon = {
             }
             
         }
-        function reservationOrderSubmit(prdNo, shopBranchNo, bcktSeq){//»ıÈ°+ ¿¹¾à
+        function reservationOrderSubmit(prdNo, shopBranchNo, bcktSeq){//ìƒí™œ+ ì˜ˆì•½
             var reservationForm = document.reservationForm;
             reservationForm.action = "https://m.11st.co.kr/MW/lifeplus/Order/reservation/lifePlusRsrvForm.tmall";
             var reservationStckNo = "";
@@ -1069,7 +1069,7 @@ var popCupon = {
             $("#reservationOptionNo").val(reservationOptionNo);
             $("#reservationOptionText").val(reservationOptionText);
 
-            // 2016.12.15 mjs : ¼¿·¯ÀÇ ÃÖ¼Ò±¸¸Å°¡´É±İ¾× ¼³Á¤¿©ºÎ, ±İ¾× Á¶È¸
+            // 2016.12.15 mjs : ì…€ëŸ¬ì˜ ìµœì†Œêµ¬ë§¤ê°€ëŠ¥ê¸ˆì•¡ ì„¤ì •ì—¬ë¶€, ê¸ˆì•¡ ì¡°íšŒ
             if(!checkMinBuyAmtInfBySeller(bcktSeq)) {
                 return;
             }
@@ -1077,16 +1077,16 @@ var popCupon = {
             reservationForm.submit();
         }
 
-        //ÇÑ°³ÀÇ »óÇ° ÁÖ¹®ÇÏ±â
+        //í•œê°œì˜ ìƒí’ˆ ì£¼ë¬¸í•˜ê¸°
         function orderOneProduct(bcktSeq, addPrdFlag, selMinQty, qty, isMart ,isOneClickPrd,prdNo ,isDlvCupnNo){
 
             if (qty < 0) {
-                alert("ÇØ´ç »óÇ°ÀÇ ¿É¼ÇÀÌ  Á¸ÀçÇÕ´Ï´Ù. \n ¿É¼ÇÁ¤º¸ ¼³Á¤ ÈÄ ÁÖ¹®ÇÏ¼¼¿ä");
+                alert("í•´ë‹¹ ìƒí’ˆì˜ ì˜µì…˜ì´  ì¡´ì¬í•©ë‹ˆë‹¤. \n ì˜µì…˜ì •ë³´ ì„¤ì • í›„ ì£¼ë¬¸í•˜ì„¸ìš”");
                 return;
             }
 
             if(document.querySelector('[name="snoOptionYN_'+bcktSeq+'"]')) {
-                alert("¼±ÅÃ »óÇ°ÀÇ ÀÔ·Â ¿É¼Ç¿¡ °³ÀÎÁ¤º¸°¡ Æ÷ÇÔµÇ¾î ÀÖ¾î ÁÖ¹®ÀÌ ºÒ°¡ÇÕ´Ï´Ù.\nÀÔ·ÂÇÑ ¿É¼ÇÀÌ °³ÀÎÁ¤º¸°¡ ¾Æ´Ñ °æ¿ì °í°´¼¾ÅÍ 1599-0110À¸·Î ¹®ÀÇÁÖ¼¼¿ä.");
+                alert("ì„ íƒ ìƒí’ˆì˜ ì…ë ¥ ì˜µì…˜ì— ê°œì¸ì •ë³´ê°€ í¬í•¨ë˜ì–´ ìˆì–´ ì£¼ë¬¸ì´ ë¶ˆê°€í•©ë‹ˆë‹¤.\nì…ë ¥í•œ ì˜µì…˜ì´ ê°œì¸ì •ë³´ê°€ ì•„ë‹Œ ê²½ìš° ê³ ê°ì„¼í„° 1599-0110ìœ¼ë¡œ ë¬¸ì˜ì£¼ì„¸ìš”.");
                 return;
             }
 
@@ -1100,8 +1100,8 @@ var popCupon = {
 
             if(isOneClickPrd == "true"){
                 obj.prdNo.value = prdNo;
-                obj.oneClickFrom.value = "sc1";		//   ¸ÅÃâ
-                obj.changeCupnYN.value = isDlvCupnNo;		//  Àå¹Ù±¸´Ï ÄíÆù
+                obj.oneClickFrom.value = "sc1";		//   ë§¤ì¶œ
+                obj.changeCupnYN.value = isDlvCupnNo;		//  ì¥ë°”êµ¬ë‹ˆ ì¿ í°
                 obj.action="https://buy.m.11st.co.kr/MW/Order/syrupPayOneClickOrder.tmall";
             } else {
                 obj.action = "https://buy.m.11st.co.kr/MW/Order/orderBasicFirstStep.tmall";
@@ -1114,43 +1114,43 @@ var popCupon = {
             }
         }
 
-        //°¢ ¹­À½¹è¼Û ÁÖ¹®¹öÆ° Å¬¸¯½Ã
+        //ê° ë¬¶ìŒë°°ì†¡ ì£¼ë¬¸ë²„íŠ¼ í´ë¦­ì‹œ
         function goToOrderBasicForBunch(seq, isMart){
             var obj = document.actionForm;
-            var tempBcktSeq = ""; //ÁÖ¹®ÇÒ BcktSeq
+            var tempBcktSeq = ""; //ì£¼ë¬¸í•  BcktSeq
             var tempBcktSeqPipe = "";
-            var agreeOrderMakePrd = 0;	//ÁÖ¹®Á¦ÀÛ»óÇ° ¼ö
-            var soldOutCnt = 0; //Ç°Àı»óÇ° ¼ö
+            var agreeOrderMakePrd = 0;	//ì£¼ë¬¸ì œì‘ìƒí’ˆ ìˆ˜
+            var soldOutCnt = 0; //í’ˆì ˆìƒí’ˆ ìˆ˜
             var soldOutPrdObj ="";
-            var deliveryNCnt = 0; // ¸¶Æ® ¹è¼ÛºÒ°¡ »óÇ° ¼ö
+            var deliveryNCnt = 0; // ë§ˆíŠ¸ ë°°ì†¡ë¶ˆê°€ ìƒí’ˆ ìˆ˜
             var deliveryNPrdObj ="";
             var isExceptSoldoutOrd = false;
-            var snoOptionCnt = 0; // ÁÖ¹Î¹øÈ£ Á÷¾÷ÀÔ·Â ¿É¼Ç »óÇ°
+            var snoOptionCnt = 0; // ì£¼ë¯¼ë²ˆí˜¸ ì§ì—…ì…ë ¥ ì˜µì…˜ ìƒí’ˆ
             var snoOptionPrdObj = "";
             var isOnlyMartPrmtPrd = true;
             var martPrmtMap = new HashMap();
             var tmpPrdno = "";
-            var isValidCalcOptItemCnt = 0;  //°è»êÇü¿É¼Ç ¿É¼Ç¿À·ù°Ç
+            var isValidCalcOptItemCnt = 0;  //ê³„ì‚°í˜•ì˜µì…˜ ì˜µì…˜ì˜¤ë¥˜ê±´
             var isValidCalcOptItemPrdObj ="";
             var isLifePlusPrd = false;
 
-            //¹­À½»óÇ° Ã¼Å©
+            //ë¬¶ìŒìƒí’ˆ ì²´í¬
             document.querySelector('[name="bunchCheckAll_'+seq+'"]').checked = true;
             bunchCheckAll(seq);
 
             var tempBcktSeqChk = document.querySelectorAll('[name="bcktSeqChk'+seq+'"]');
-            var ordPrdCnt = tempBcktSeqChk.length; //ÁÖ¹®»óÇ° ¼ö
+            var ordPrdCnt = tempBcktSeqChk.length; //ì£¼ë¬¸ìƒí’ˆ ìˆ˜
 
             for(var i = 0; i<tempBcktSeqChk.length; i++){
                 if(tempBcktSeqChk[i].checked){
-                    //ÁÖ¹®Á¦ÀÛ»óÇ°
+                    //ì£¼ë¬¸ì œì‘ìƒí’ˆ
                     if(document.querySelector('[name="agreeOrderMakePrdYN_'+tempBcktSeqChk[i].value+'"]').value == "N"){
                         agreeOrderMakePrd++;
                     }
 
-                    //¸¶Æ®»óÇ° ÁÖ¹® Á¦ÇÑ
+                    //ë§ˆíŠ¸ìƒí’ˆ ì£¼ë¬¸ ì œí•œ
                     if(tempBcktSeqChk[i].getAttribute('data-ismart') && tempBcktSeqChk[i].getAttribute('data-ismart') == "Y"){
-                        //ÇÁ·Î¸ğ¼Ç »óÇ°
+                        //í”„ë¡œëª¨ì…˜ ìƒí’ˆ
                         tmpPrdno=tempBcktSeqChk[i].getAttribute('data-prdno');
                         if(martPrmtMap.get(tmpPrdno) ==undefined){
                             martPrmtMap.put(tmpPrdno,tempBcktSeqChk[i].getAttribute('data-martprmtseq') );
@@ -1161,7 +1161,7 @@ var popCupon = {
                         }
                     }
 
-                    //Ç°Àı»óÇ° Ã¼Å©
+                    //í’ˆì ˆìƒí’ˆ ì²´í¬
                     if(document.querySelector('[name="soldOut_'+tempBcktSeqChk[i].value+'"]').value == "T"){
                         if(soldOutCnt==0) soldOutPrdObj=tempBcktSeqChk[i];
                         soldOutCnt++;
@@ -1247,28 +1247,28 @@ var popCupon = {
             }
 
             if(ordPrdCnt>20){
-                alert("ÃÖ´ë 20°³±îÁö ÁÖ¹® °¡´ÉÇÕ´Ï´Ù.");
+                alert("ìµœëŒ€ 20ê°œê¹Œì§€ ì£¼ë¬¸ ê°€ëŠ¥í•©ë‹ˆë‹¤.");
                 return;
             }
 
             if(!isOnlyMartPrmtPrd){
-                alert("È¨ÇÃ·¯½º »óÇ° ÁÖ¹®½Ã µ¿ÀÏÇÑ »óÇ°¿¡ ´Ù¸¥ Ãß°¡±¸¼º »óÇ°À» ÇÔ²² ÁÖ¹®ÇÒ ¼ö ¾ø½À´Ï´Ù. °³º°»óÇ°À¸·Î ÁÖ¹®ÇØ ÁÖ½Ã±â ¹Ù¶ø´Ï´Ù.");
+                alert("í™ˆí”ŒëŸ¬ìŠ¤ ìƒí’ˆ ì£¼ë¬¸ì‹œ ë™ì¼í•œ ìƒí’ˆì— ë‹¤ë¥¸ ì¶”ê°€êµ¬ì„± ìƒí’ˆì„ í•¨ê»˜ ì£¼ë¬¸í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ê°œë³„ìƒí’ˆìœ¼ë¡œ ì£¼ë¬¸í•´ ì£¼ì‹œê¸° ë°”ëë‹ˆë‹¤.");
                 return;
             }
 
             if(deliveryNCnt > 0) {
-                alert("»óÇ°Á¤º¸°¡ º¯°æµÈ »óÇ°ÀÌ ÀÖ½À´Ï´Ù. ´Ù½Ã Àå¹Ù±¸´Ï¿¡ ´ã¾Æ ÁÖ¼¼¿ä.");
+                alert("ìƒí’ˆì •ë³´ê°€ ë³€ê²½ëœ ìƒí’ˆì´ ìˆìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì¥ë°”êµ¬ë‹ˆì— ë‹´ì•„ ì£¼ì„¸ìš”.");
                 deliveryNPrdObj.focus();
                 return;
             }
 
             if(soldOutCnt>0){
-                if(soldOutCnt==ordPrdCnt){	//Ç°Àı»óÇ°¸¸ ÀÖ´Â°æ¿ì
-                    alert("¼±ÅÃÇÏ½Å »óÇ°Àº Ç°Àı »óÇ°ÀÔ´Ï´Ù.");
+                if(soldOutCnt==ordPrdCnt){	//í’ˆì ˆìƒí’ˆë§Œ ìˆëŠ”ê²½ìš°
+                    alert("ì„ íƒí•˜ì‹  ìƒí’ˆì€ í’ˆì ˆ ìƒí’ˆì…ë‹ˆë‹¤.");
                     soldOutPrdObj.focus();
                     return;
                 }else{
-                    if(confirm("Ç°Àı »óÇ°"+soldOutCnt+"°³°¡ Æ÷ÇÔµÇ¾î ÀÖ½À´Ï´Ù. Ç°Àı »óÇ°À» Á¦¿ÜÇÏ°í ÁÖ¹®ÇÏ½Ã°Ú½À´Ï±î?")){
+                    if(confirm("í’ˆì ˆ ìƒí’ˆ"+soldOutCnt+"ê°œê°€ í¬í•¨ë˜ì–´ ìˆìŠµë‹ˆë‹¤. í’ˆì ˆ ìƒí’ˆì„ ì œì™¸í•˜ê³  ì£¼ë¬¸í•˜ì‹œê² ìŠµë‹ˆê¹Œ?")){
                         isExceptSoldoutOrd = true;
                     }else{
                         soldOutPrdObj.focus();
@@ -1278,20 +1278,20 @@ var popCupon = {
             }
 
             if(snoOptionCnt>0){
-                alert("¼±ÅÃ »óÇ° "+snoOptionCnt+"°³ÀÇ ÀÔ·Â ¿É¼Ç¿¡ °³ÀÎÁ¤º¸°¡ Æ÷ÇÔµÇ¾î ÀÖ¾î ÁÖ¹®ÀÌ ºÒ°¡ÇÕ´Ï´Ù.\nÀÔ·ÂÇÑ ¿É¼ÇÀÌ °³ÀÎÁ¤º¸°¡ ¾Æ´Ñ °æ¿ì °í°´¼¾ÅÍ 1599-0110À¸·Î ¹®ÀÇÁÖ¼¼¿ä.");
+                alert("ì„ íƒ ìƒí’ˆ "+snoOptionCnt+"ê°œì˜ ì…ë ¥ ì˜µì…˜ì— ê°œì¸ì •ë³´ê°€ í¬í•¨ë˜ì–´ ìˆì–´ ì£¼ë¬¸ì´ ë¶ˆê°€í•©ë‹ˆë‹¤.\nì…ë ¥í•œ ì˜µì…˜ì´ ê°œì¸ì •ë³´ê°€ ì•„ë‹Œ ê²½ìš° ê³ ê°ì„¼í„° 1599-0110ìœ¼ë¡œ ë¬¸ì˜ì£¼ì„¸ìš”.");
                 snoOptionPrdObj.focus();
                 return;
             }
 
             if(isValidCalcOptItemCnt>0){
-                alert("¿É¼ÇÀ» ´Ù½Ã ¼±ÅÃÇØÁÖ¼¼¿ä.");
+                alert("ì˜µì…˜ì„ ë‹¤ì‹œ ì„ íƒí•´ì£¼ì„¸ìš”.");
                 isValidCalcOptItemPrdObj.focus();
                 return;
             }
 
             for(var j = 0; j<tempBcktSeqChk.length; j++){
 
-                if(isExceptSoldoutOrd){	//Ç°Àı»óÇ° Ã¼Å©ÇØÁ¦
+                if(isExceptSoldoutOrd){	//í’ˆì ˆìƒí’ˆ ì²´í¬í•´ì œ
                     if(document.querySelector('[name="soldOut_'+tempBcktSeqChk[j].value+'"]').value == "T"){
                         tempBcktSeqChk[j].checked = false;
                     }
@@ -1305,12 +1305,12 @@ var popCupon = {
 
             if(isLifePlusPrd){
 
-                // 2016.12.15 mjs : ¼¿·¯ÀÇ ÃÖ¼Ò±¸¸Å°¡´É±İ¾× ¼³Á¤¿©ºÎ, ±İ¾× Á¶È¸
+                // 2016.12.15 mjs : ì…€ëŸ¬ì˜ ìµœì†Œêµ¬ë§¤ê°€ëŠ¥ê¸ˆì•¡ ì„¤ì •ì—¬ë¶€, ê¸ˆì•¡ ì¡°íšŒ
                 if(!checkMinBuyAmtInfBySeller(tempBcktSeqPipe)) {
                     return;
                 }
 
-                //»ıÈ°+ ¿¹¾àÀ¸·Î ÀÌµ¿
+                //ìƒí™œ+ ì˜ˆì•½ìœ¼ë¡œ ì´ë™
                 var reservationForm = document.reservationForm;
                 reservationForm.action = "https://m.11st.co.kr/MW/lifeplus/Order/reservation/lifePlusRsrvForm.tmall";
                 reservationForm.submit();
@@ -1330,23 +1330,23 @@ var popCupon = {
         }
 
 
-        //ÀüÃ¼»óÇ° ÁÖ¹®ÇÏ±â, ¼±ÅÃ»óÇ° ÁÖ¹®ÇÏ±â.
+        //ì „ì²´ìƒí’ˆ ì£¼ë¬¸í•˜ê¸°, ì„ íƒìƒí’ˆ ì£¼ë¬¸í•˜ê¸°.
         function goToOrderBasic(type, sellerCheckKeyCnt){
 
             var obj = document.actionForm;
-            var tempBcktSeq = ""; //Àå¹Ù±¸´Ï ¹øÈ£ ÄÄ¸¶ ±¸ºĞÀÚ·Î ºÙÇô¼­ ´ã´Â º¯¼ö
-            var tempBcktSeqPipe = ""; // Àå¹Ù±¸´Ï ¹øÈ£ ÆÄÀÌÇÁ ±¸ºĞÀÚ·Î ºÙÇô¼­ ´ã´Â º¯¼ö
-            var tempMartBcktSeq = ""; //Àå¹Ù±¸´Ï ¹øÈ£ ÄÄ¸¶ ±¸ºĞÀÚ·Î ºÙÇô¼­ ´ã´Â º¯¼ö
+            var tempBcktSeq = ""; //ì¥ë°”êµ¬ë‹ˆ ë²ˆí˜¸ ì»´ë§ˆ êµ¬ë¶„ìë¡œ ë¶™í˜€ì„œ ë‹´ëŠ” ë³€ìˆ˜
+            var tempBcktSeqPipe = ""; // ì¥ë°”êµ¬ë‹ˆ ë²ˆí˜¸ íŒŒì´í”„ êµ¬ë¶„ìë¡œ ë¶™í˜€ì„œ ë‹´ëŠ” ë³€ìˆ˜
+            var tempMartBcktSeq = ""; //ì¥ë°”êµ¬ë‹ˆ ë²ˆí˜¸ ì»´ë§ˆ êµ¬ë¶„ìë¡œ ë¶™í˜€ì„œ ë‹´ëŠ” ë³€ìˆ˜
             var tempBcktSeqChk ="";
 
-            var checkCnt = 0;	//Ã¼Å©»óÇ°¼ö
-            var soldOutCnt = 0; //Ç°Àı»óÇ°
-            var agreeOrderMakePrd = 0;	//ÁÖ¹®Á¦ÀÛ»óÇ°
+            var checkCnt = 0;	//ì²´í¬ìƒí’ˆìˆ˜
+            var soldOutCnt = 0; //í’ˆì ˆìƒí’ˆ
+            var agreeOrderMakePrd = 0;	//ì£¼ë¬¸ì œì‘ìƒí’ˆ
             var soldOutPrdObj = "";
-            var isExceptSoldoutOrd = false;	//Ç°ÀıÁ¦¿Ü ÁÖ¹®¿©ºÎ
-            var deliveryNCnt = 0; // ¸¶Æ® ÁÖ¹®ºÒ°¡»óÇ°
+            var isExceptSoldoutOrd = false;	//í’ˆì ˆì œì™¸ ì£¼ë¬¸ì—¬ë¶€
+            var deliveryNCnt = 0; // ë§ˆíŠ¸ ì£¼ë¬¸ë¶ˆê°€ìƒí’ˆ
             var deliveryNPrdObj = "";
-            var snoOptionCnt = 0; // ÁÖ¹Î¹øÈ£ Á÷¾÷ÀÔ·Â ¿É¼Ç »óÇ°
+            var snoOptionCnt = 0; // ì£¼ë¯¼ë²ˆí˜¸ ì§ì—…ì…ë ¥ ì˜µì…˜ ìƒí’ˆ
             var snoOptionPrdObj = "";
 
             var firstMartAddrNo = "";
@@ -1356,7 +1356,7 @@ var popCupon = {
             var martPrmtMap = new HashMap();
             var tmpPrdno = "";
 
-            var isValidCalcOptItemCnt = 0;  //°è»êÇü¿É¼Ç ¿É¼Ç¿À·ù°Ç
+            var isValidCalcOptItemCnt = 0;  //ê³„ì‚°í˜•ì˜µì…˜ ì˜µì…˜ì˜¤ë¥˜ê±´
             var isValidCalcOptItemPrdObj ="";
 
             var lifePlusPrdCnt =  0;
@@ -1364,22 +1364,22 @@ var popCupon = {
             var isLifePlusPrd = false;
             for(var i = 0; i<sellerCheckKeyCnt; i++){
                 tempBcktSeqChk =document.querySelectorAll('[name="bcktSeqChk'+i+'"]');
-                for(var j=0; j<tempBcktSeqChk.length; j++){ //¹­À½¹è¼Û ÇÏ³ª¿¡ ´ëÇÑ ÇÏÀ§ Ã¼Å©¹Ú½º Ã¼Å©¿©ºÎ Ã¼Å©.
+                for(var j=0; j<tempBcktSeqChk.length; j++){ //ë¬¶ìŒë°°ì†¡ í•˜ë‚˜ì— ëŒ€í•œ í•˜ìœ„ ì²´í¬ë°•ìŠ¤ ì²´í¬ì—¬ë¶€ ì²´í¬.
                     if((type=="Checked" && tempBcktSeqChk[j].checked) || type=="All"){
                         checkCnt++;
-                        //ÁÖ¹®Á¦ÀÛ»óÇ°
+                        //ì£¼ë¬¸ì œì‘ìƒí’ˆ
                         if(document.querySelector('[name="agreeOrderMakePrdYN_'+tempBcktSeqChk[j].value+'"]').value == "N"){
                             agreeOrderMakePrd++;
                         }
 
-                        //Ä«Å×°í¸® »óÇ° ÁÖ¹® Á¦ÇÑ
+                        //ì¹´í…Œê³ ë¦¬ ìƒí’ˆ ì£¼ë¬¸ ì œí•œ
                         if(tempBcktSeqChk[j].getAttribute('data-prdtypcd') &&tempBcktSeqChk[j].getAttribute('data-prdtypcd')=="19" ){
                             isExcCatePrd = true;
                         }
 
-                        //¸¶Æ®»óÇ° ÁÖ¹® Á¦ÇÑ
+                        //ë§ˆíŠ¸ìƒí’ˆ ì£¼ë¬¸ ì œí•œ
                         if(tempBcktSeqChk[j].getAttribute('data-ismart') && tempBcktSeqChk[j].getAttribute('data-ismart') == "Y"){
-                            //ÇÁ·Î¸ğ¼Ç »óÇ°
+                            //í”„ë¡œëª¨ì…˜ ìƒí’ˆ
                             tmpPrdno=tempBcktSeqChk[j].getAttribute('data-prdno');
                             if(martPrmtMap.get(tmpPrdno) ==undefined){
                                 martPrmtMap.put(tmpPrdno,tempBcktSeqChk[j].getAttribute('data-martprmtseq') );
@@ -1389,7 +1389,7 @@ var popCupon = {
                                 }
                             }
 
-                            //´Ù¸¥ ¹è¼ÛÁö ÁÖ¹® Á¦ÇÑ
+                            //ë‹¤ë¥¸ ë°°ì†¡ì§€ ì£¼ë¬¸ ì œí•œ
                             if(firstMartAddrNo==""){
                                 firstMartAddrNo = tempBcktSeqChk[j].getAttribute('data-martaddrno');
                             }else{
@@ -1399,7 +1399,7 @@ var popCupon = {
                             }
                         }
 
-                        //¹­À½»óÇ° Ç°Àı Ã¼Å©
+                        //ë¬¶ìŒìƒí’ˆ í’ˆì ˆ ì²´í¬
                         if(document.querySelector('[name="soldOut_'+tempBcktSeqChk[j].value+'"]').value == "T"){
                             if(soldOutCnt==0) soldOutPrdObj = tempBcktSeqChk[j];
                             soldOutCnt++;
@@ -1472,43 +1472,43 @@ var popCupon = {
             }
 
             if(checkCnt == 0){
-                alert("»óÇ°ÀÌ ¼±ÅÃµÇÁö ¾Ê¾Ò½À´Ï´Ù. \n »óÇ° ¼±ÅÃ ÈÄ ÁÖ¹®ÇÏ¼¼¿ä.");
+                alert("ìƒí’ˆì´ ì„ íƒë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤. \n ìƒí’ˆ ì„ íƒ í›„ ì£¼ë¬¸í•˜ì„¸ìš”.");
                 return;
             }
 
             if(checkCnt > 20){
-                alert("ÃÖ´ë 20°³±îÁö ÁÖ¹® °¡´ÉÇÕ´Ï´Ù.");
+                alert("ìµœëŒ€ 20ê°œê¹Œì§€ ì£¼ë¬¸ ê°€ëŠ¥í•©ë‹ˆë‹¤.");
                 return;
             }
 
             if(!isOnlyMartPrmtPrd){
-                alert("È¨ÇÃ·¯½º »óÇ° ÁÖ¹®½Ã µ¿ÀÏÇÑ »óÇ°¿¡ ´Ù¸¥ Ãß°¡±¸¼º »óÇ°À» ÇÔ²² ÁÖ¹®ÇÒ ¼ö ¾ø½À´Ï´Ù. °³º°»óÇ°À¸·Î ÁÖ¹®ÇØ ÁÖ½Ã±â ¹Ù¶ø´Ï´Ù.");
+                alert("í™ˆí”ŒëŸ¬ìŠ¤ ìƒí’ˆ ì£¼ë¬¸ì‹œ ë™ì¼í•œ ìƒí’ˆì— ë‹¤ë¥¸ ì¶”ê°€êµ¬ì„± ìƒí’ˆì„ í•¨ê»˜ ì£¼ë¬¸í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ê°œë³„ìƒí’ˆìœ¼ë¡œ ì£¼ë¬¸í•´ ì£¼ì‹œê¸° ë°”ëë‹ˆë‹¤.");
                 return;
             }
 
             if(!isOnlyMartAddrNo){
-                alert("ÁöÁ¡ ¹è¼Û»óÇ°Àº ÇÏ³ªÀÇ ¹è¼ÛÁö·Î¸¸ ÁÖ¹®ÀÌ °¡´ÉÇÕ´Ï´Ù. µ¿ÀÏÇÑ ÁöÁ¡ »óÇ°¸¸ ¼±ÅÃÇÏ¿© ÁÖ¹®ÇØ ÁÖ¼¼¿ä.");
+                alert("ì§€ì  ë°°ì†¡ìƒí’ˆì€ í•˜ë‚˜ì˜ ë°°ì†¡ì§€ë¡œë§Œ ì£¼ë¬¸ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤. ë™ì¼í•œ ì§€ì  ìƒí’ˆë§Œ ì„ íƒí•˜ì—¬ ì£¼ë¬¸í•´ ì£¼ì„¸ìš”.");
                 return;
             }
 
             if(firstMartAddrNo!="" && isExcCatePrd){
-                alert("È¨ÇÃ·¯½º¿Í GS½´ÆÛ»óÇ°Àº ¹«Çü »óÇ°°ú ÇÔ²² ÁÖ¹®ÇÒ ¼ö ¾ø½À´Ï´Ù.");
+                alert("í™ˆí”ŒëŸ¬ìŠ¤ì™€ GSìŠˆí¼ìƒí’ˆì€ ë¬´í˜• ìƒí’ˆê³¼ í•¨ê»˜ ì£¼ë¬¸í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
                 return;
             }
 
             if(deliveryNCnt > 0){
-                alert("»óÇ°Á¤º¸°¡ º¯°æµÇ¾ú½À´Ï´Ù. ´Ù½Ã Àå¹Ù±¸´Ï¿¡ ´ã¾ÆÁÖ¼¼¿ä.");
+                alert("ìƒí’ˆì •ë³´ê°€ ë³€ê²½ë˜ì—ˆìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì¥ë°”êµ¬ë‹ˆì— ë‹´ì•„ì£¼ì„¸ìš”.");
                 deliveryNPrdObj.focus();
                 return;
             }
 
             if(soldOutCnt>0){
                 if(soldOutCnt==checkCnt){
-                    alert("¼±ÅÃÇÏ½Å »óÇ°Àº Ç°Àı »óÇ°ÀÔ´Ï´Ù.");
+                    alert("ì„ íƒí•˜ì‹  ìƒí’ˆì€ í’ˆì ˆ ìƒí’ˆì…ë‹ˆë‹¤.");
                     soldOutPrdObj.focus();
                     return;
                 }else{
-                    if(confirm("Ç°Àı »óÇ°"+soldOutCnt+"°³°¡ Æ÷ÇÔµÇ¾î ÀÖ½À´Ï´Ù. Ç°Àı »óÇ°À» Á¦¿ÜÇÏ°í ÁÖ¹®ÇÏ½Ã°Ú½À´Ï±î?")){
+                    if(confirm("í’ˆì ˆ ìƒí’ˆ"+soldOutCnt+"ê°œê°€ í¬í•¨ë˜ì–´ ìˆìŠµë‹ˆë‹¤. í’ˆì ˆ ìƒí’ˆì„ ì œì™¸í•˜ê³  ì£¼ë¬¸í•˜ì‹œê² ìŠµë‹ˆê¹Œ?")){
                         isExceptSoldoutOrd = true;
                     }else{
                         soldOutPrdObj.focus();
@@ -1518,23 +1518,23 @@ var popCupon = {
             }
 
             if(snoOptionCnt>0){
-                alert("¼±ÅÃ »óÇ° "+snoOptionCnt+"°³ÀÇ ÀÔ·Â ¿É¼Ç¿¡ °³ÀÎÁ¤º¸°¡ Æ÷ÇÔµÇ¾î ÀÖ¾î ÁÖ¹®ÀÌ ºÒ°¡ÇÕ´Ï´Ù.\nÀÔ·ÂÇÑ ¿É¼ÇÀÌ °³ÀÎÁ¤º¸°¡ ¾Æ´Ñ °æ¿ì °í°´¼¾ÅÍ 1599-0110À¸·Î ¹®ÀÇÁÖ¼¼¿ä.");
+                alert("ì„ íƒ ìƒí’ˆ "+snoOptionCnt+"ê°œì˜ ì…ë ¥ ì˜µì…˜ì— ê°œì¸ì •ë³´ê°€ í¬í•¨ë˜ì–´ ìˆì–´ ì£¼ë¬¸ì´ ë¶ˆê°€í•©ë‹ˆë‹¤.\nì…ë ¥í•œ ì˜µì…˜ì´ ê°œì¸ì •ë³´ê°€ ì•„ë‹Œ ê²½ìš° ê³ ê°ì„¼í„° 1599-0110ìœ¼ë¡œ ë¬¸ì˜ì£¼ì„¸ìš”.");
                 snoOptionPrdObj.focus();
                 return;
             }
 
             if(isValidCalcOptItemCnt>0){
-                alert("¿É¼ÇÀ» ´Ù½Ã ¼±ÅÃÇØÁÖ¼¼¿ä.");
+                alert("ì˜µì…˜ì„ ë‹¤ì‹œ ì„ íƒí•´ì£¼ì„¸ìš”.");
                 isValidCalcOptItemPrdObj.focus();
                 return;
             }
 
             if(checkCnt != lifePlusPrdCnt && lifePlusPrdCnt > 0){
-                alert("»ıÈ°ÇÃ·¯½º »óÇ°°ú ¹è¼Û»óÇ°Àº µ¿½Ã ±¸¸ÅÇÏ½Ç ¼ö ¾ø½À´Ï´Ù.")
+                alert("ìƒí™œí”ŒëŸ¬ìŠ¤ ìƒí’ˆê³¼ ë°°ì†¡ìƒí’ˆì€ ë™ì‹œ êµ¬ë§¤í•˜ì‹¤ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.")
                 return;
             }
             if(isLifePlusPrd){
-                alert("´Ù¸¥ ÆÇ¸ÅÀÚ, ´Ù¸¥ ¼­ºñ½º À¯Çü »óÇ°Àº µ¿½Ã ±¸¸ÅÇÒ ¼ö ¾ø½À´Ï´Ù.")
+                alert("ë‹¤ë¥¸ íŒë§¤ì, ë‹¤ë¥¸ ì„œë¹„ìŠ¤ ìœ í˜• ìƒí’ˆì€ ë™ì‹œ êµ¬ë§¤í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.")
                 return;
             }
             obj.bcktSeq.value = tempBcktSeq;
@@ -1543,12 +1543,12 @@ var popCupon = {
             
 
             if(lifePlusPrdCnt > 0){
-                // 2016.12.15 mjs : ¼¿·¯ÀÇ ÃÖ¼Ò±¸¸Å°¡´É±İ¾× ¼³Á¤¿©ºÎ, ±İ¾× Á¶È¸
+                // 2016.12.15 mjs : ì…€ëŸ¬ì˜ ìµœì†Œêµ¬ë§¤ê°€ëŠ¥ê¸ˆì•¡ ì„¤ì •ì—¬ë¶€, ê¸ˆì•¡ ì¡°íšŒ
                 if(!checkMinBuyAmtInfBySeller(tempBcktSeqPipe)) {
                     return;
                 }
 
-                //»ıÈ°+ ¿¹¾àÀ¸·Î ÀÌµ¿
+                //ìƒí™œ+ ì˜ˆì•½ìœ¼ë¡œ ì´ë™
                 var reservationForm = document.reservationForm;
                 reservationForm.action = "https://m.11st.co.kr/MW/lifeplus/Order/reservation/lifePlusRsrvForm.tmall";
                 reservationForm.submit();
@@ -1562,34 +1562,34 @@ var popCupon = {
         }
 
         var _isBookGiftPlus = false;
-        //¼±ÅÃ»óÇ° °è»ê
+        //ì„ íƒìƒí’ˆ ê³„ì‚°
         function calSelectedPrds(){
             var frm = document.actionForm;
-            var bcktDlvType = ""; 	//B: ¹­À½, E:°³º°
+            var bcktDlvType = ""; 	//B: ë¬¶ìŒ, E:ê°œë³„
             var bcktSeqArr = "";
             var sellerKey = -1;
 
-            var totOrdAmt = 0; 		//ÁÖ¹®±İ¾×k
-            var totPrdAmt = 0; 			//»óÇ°±İ¾×
-            var totPreStlDlvAmt = 0; 	//¼±°áÁ¦¹è¼Ûºñ
-            var totDscAmt = 0; 			//ÇÒÀÎ±İ¾×
-            var totDlvCupnDscAmt = 0; 	//¹è¼ÛºñÄíÆùÇÒÀÎ±İ¾×
-            var abrdDlvAmt = 0; //ÇØ¿Ü¹è¼Ûºñ
-            var sumAbrdDlvAmt = 0;	//ÇØ¿Ü¹è¼Ûºñ ÇÕ°è
-            var abrdDlvChecked = false; 	//ÇØ¿Ü¹è¼Ûºñ Àç°è»ê¿©ºÎ
+            var totOrdAmt = 0; 		//ì£¼ë¬¸ê¸ˆì•¡k
+            var totPrdAmt = 0; 			//ìƒí’ˆê¸ˆì•¡
+            var totPreStlDlvAmt = 0; 	//ì„ ê²°ì œë°°ì†¡ë¹„
+            var totDscAmt = 0; 			//í• ì¸ê¸ˆì•¡
+            var totDlvCupnDscAmt = 0; 	//ë°°ì†¡ë¹„ì¿ í°í• ì¸ê¸ˆì•¡
+            var abrdDlvAmt = 0; //í•´ì™¸ë°°ì†¡ë¹„
+            var sumAbrdDlvAmt = 0;	//í•´ì™¸ë°°ì†¡ë¹„ í•©ê³„
+            var abrdDlvChecked = false; 	//í•´ì™¸ë°°ì†¡ë¹„ ì¬ê³„ì‚°ì—¬ë¶€
 
-            var sumSellerOcb = 0;			// ¼¿·¯Àû¸³ OCB
-            var sumOcbAddEvlSaveAmt = 0; //OCb Ãß°¡Àû¸³
-            var opntSaveRt = 0; 		//Oh point Àû¸³À²
-            var sumMallPntAmt = 0;			// ¸ô Æ÷ÀÎÆ®
-            var sumBonusPntSaveAmt = 0;	// º¸³Ê½ºÆ÷ÀÎÆ®
-            var sumMileSaveAmt = 0;		// ¸¶ÀÏ¸®Áö
-            var sumMileageSellerAmt = 0;	//¼¿·¯Àû¸³ ¸¶ÀÏ¸®Áö
-            var sumShockingEvlOcbSaveAmt =0;		//¼îÅ·µô OCBÃß°¡Àû¸³(±¸¸ÅÈÄ±â ÀÛ¼º½Ã)
+            var sumSellerOcb = 0;			// ì…€ëŸ¬ì ë¦½ OCB
+            var sumOcbAddEvlSaveAmt = 0; //OCb ì¶”ê°€ì ë¦½
+            var opntSaveRt = 0; 		//Oh point ì ë¦½ìœ¨
+            var sumMallPntAmt = 0;			// ëª° í¬ì¸íŠ¸
+            var sumBonusPntSaveAmt = 0;	// ë³´ë„ˆìŠ¤í¬ì¸íŠ¸
+            var sumMileSaveAmt = 0;		// ë§ˆì¼ë¦¬ì§€
+            var sumMileageSellerAmt = 0;	//ì…€ëŸ¬ì ë¦½ ë§ˆì¼ë¦¬ì§€
+            var sumShockingEvlOcbSaveAmt =0;		//ì‡¼í‚¹ë”œ OCBì¶”ê°€ì ë¦½(êµ¬ë§¤í›„ê¸° ì‘ì„±ì‹œ)
             var isZeroDlvAmt = false;
-            var sumEmergencyPointSaveAmt = 0;	// Ãß°¡º¸³Ê½ºÆ÷ÀÎÆ®
-            var checkPreStlDlvAmtTmp = 0;  // ÀÌÀü ¹è¼Ûºñ
-            var checkDlvSellerKeyTmp = ""; // ÀÌÀü ¼¿·¯Å°
+            var sumEmergencyPointSaveAmt = 0;	// ì¶”ê°€ë³´ë„ˆìŠ¤í¬ì¸íŠ¸
+            var checkPreStlDlvAmtTmp = 0;  // ì´ì „ ë°°ì†¡ë¹„
+            var checkDlvSellerKeyTmp = ""; // ì´ì „ ì…€ëŸ¬í‚¤
 
             for(var i=0; i<_totalPrdCount; i++){
                 if(document.getElementById("bcktUniqueId"+i).checked){
@@ -1600,7 +1600,7 @@ var popCupon = {
                     totDscAmt += parseInt(document.getElementById("checkDscAmt_"+i).value);
                     totDlvCupnDscAmt += parseInt(document.getElementById("checkDlvCupnDscAmt_"+i).value);
 
-                    //Àû¸³ÇıÅÃ
+                    //ì ë¦½í˜œíƒ
                     sumSellerOcb += parseInt(document.getElementById("checkOcbSellerAmt_"+i).value);
                     sumOcbAddEvlSaveAmt += parseInt(document.getElementById("checkOcbAddEvlSaveAmt_"+i).value);
 
@@ -1616,9 +1616,9 @@ var popCupon = {
                     sumShockingEvlOcbSaveAmt += parseInt(document.getElementById("checkShockingEvlOcbSaveAmt_"+i).value);
                     sumEmergencyPointSaveAmt += parseInt(document.getElementById("checkEmergencyPointSaveAmt_"+i).value);
 
-                    if(document.getElementById("checkDlvCstInstBasiCd_"+i).value == "10"){	//ÇØ¿ÜÅëÇÕ¹è¼Ûºñ
+                    if(document.getElementById("checkDlvCstInstBasiCd_"+i).value == "10"){	//í•´ì™¸í†µí•©ë°°ì†¡ë¹„
                         abrdDlvChecked = true;
-                        if(sellerKey == document.getElementById("checkDlvSellerKey_"+i).value){	//¹­À½¹è¼Ûºñ °è»ê
+                        if(sellerKey == document.getElementById("checkDlvSellerKey_"+i).value){	//ë¬¶ìŒë°°ì†¡ë¹„ ê³„ì‚°
                             if(!isZeroDlvAmt && abrdDlvAmt<document.getElementById("checkPreStlDlvAmt_"+i).value){
                                 if(document.getElementById("checkDlvWay_"+i).value =="01"){
                                     abrdDlvAmt = document.getElementById("checkPreStlDlvAmt_"+i).value;
@@ -1644,8 +1644,8 @@ var popCupon = {
                             }
                         }
                         sumAbrdDlvAmt +=parseInt(abrdDlvAmt);
-                    }else{	//¼±°áÁ¦ ¹è¼Ûºñ
-                        if(sellerKey == document.getElementById("checkDlvSellerKey_"+i).value){	//¹­À½¹è¼Ûºñ °è»ê
+                    }else{	//ì„ ê²°ì œ ë°°ì†¡ë¹„
+                        if(sellerKey == document.getElementById("checkDlvSellerKey_"+i).value){	//ë¬¶ìŒë°°ì†¡ë¹„ ê³„ì‚°
                             if(document.getElementById("checkDlvWay_"+i).value == "02"){
                                 dlvAmt = 0;
                             }else{
@@ -1689,7 +1689,7 @@ var popCupon = {
                 }
             }
 
-            //ÇØ¿Ü¹è¼Ûºñ Àç°è»ê
+            //í•´ì™¸ë°°ì†¡ë¹„ ì¬ê³„ì‚°
             try {
                 if(abrdDlvChecked){
                     var url = "http://buy.m.11st.co.kr/MW/Cart/getCalcDlvCstAjax.tmall";
@@ -1716,8 +1716,8 @@ var popCupon = {
             totalDscAmount.innerText = formatToCommaNum(totDscAmt+totDlvCupnDscAmt);
             finalOrderExpectAmount.innerText= formatToCommaNum(totOrdAmt - totDscAmt - totDlvCupnDscAmt);
 
-            //Àû¸³ÇıÅÃ
-            //OCBÀû¸³
+            //ì ë¦½í˜œíƒ
+            //OCBì ë¦½
             _isBookGiftPlus = false;
             if(document.getElementById("displayOcbSellerSaveAmt")){
                 var tempStr = "<b>"+formatToCommaNum(sumSellerOcb+sumShockingEvlOcbSaveAmt)+"P</b>";
@@ -1732,7 +1732,7 @@ var popCupon = {
                     document.getElementById("displayOcbSellerSaveAmt").style.display = "none";
                 }
             }
-            //OCBÃß°¡Àû¸³
+            //OCBì¶”ê°€ì ë¦½
             if(document.getElementById("displayOcbAddEvlSaveAmt")){
                 if(sumOcbAddEvlSaveAmt>parseInt(_ocbAddEvlLimitAmt)){
                     sumOcbAddEvlSaveAmt = _ocbAddEvlLimitAmt;
@@ -1766,7 +1766,7 @@ var popCupon = {
                     document.getElementById("displayOpntAmt").style.display = "none";
                 }
             }
-            //¸ôÆ÷ÀÎÆ®
+            //ëª°í¬ì¸íŠ¸
             if(document.getElementById("displayMallPntAmt")){
                 var tempStr = "<b>"+formatToCommaNum(sumMallPntAmt)+"P</b>";
                 if(sumBonusPntSaveAmt>0 || sumMileSaveAmt>0 || sumMileageSellerAmt>0 || sumEmergencyPointSaveAmt>0){
@@ -1780,7 +1780,7 @@ var popCupon = {
                     document.getElementById("displayMallPntAmt").style.display = "none";
                 }
             }
-            //º¸³Ê½ºÆ÷ÀÎÆ®
+            //ë³´ë„ˆìŠ¤í¬ì¸íŠ¸
             if(document.getElementById("displayBonusPntSaveAmt")){
                 var tempStr = "<b>"+formatToCommaNum(sumBonusPntSaveAmt)+"P</b>";
                 if(sumMileSaveAmt>0 || sumMileageSellerAmt>0 || sumEmergencyPointSaveAmt>0){
@@ -1794,7 +1794,7 @@ var popCupon = {
                     document.getElementById("displayBonusPntSaveAmt").style.display = "none";
                 }
             }
-            //Ãß°¡º¸³Ê½ºÆ÷ÀÎÆ®
+            //ì¶”ê°€ë³´ë„ˆìŠ¤í¬ì¸íŠ¸
             if(document.getElementById("displayEmergencyPointSaveAmt")){
                 var tempStr = "<b>"+formatToCommaNum(sumEmergencyPointSaveAmt)+"P</b>";
                 if(sumMileSaveAmt>0 || sumMileageSellerAmt>0){
@@ -1808,9 +1808,9 @@ var popCupon = {
                     document.getElementById("displayEmergencyPointSaveAmt").style.display = "none";
                 }
             }
-            //¸¶ÀÏ¸®Áö
+            //ë§ˆì¼ë¦¬ì§€
             if(document.getElementById("displayMileSaveAmt")){
-                var tempStr = "<b>"+formatToCommaNum(sumMileSaveAmt+sumMileageSellerAmt)+"¸¶ÀÏ</b>";
+                var tempStr = "<b>"+formatToCommaNum(sumMileSaveAmt+sumMileageSellerAmt)+"ë§ˆì¼</b>";
                 document.getElementById("sumMileSaveAmt").innerHTML = tempStr;
                 if(sumMileSaveAmt+sumMileageSellerAmt>0){
                     document.getElementById("displayMileSaveAmt").style.display = "";
@@ -1824,12 +1824,12 @@ var popCupon = {
         }
 
 
-        //¼ıÀÚ¿¡ , ³Ö±â.
+        //ìˆ«ìì— , ë„£ê¸°.
         function formatToCommaNum(x){
 
             var txtNumber = '' + x;
             if (isNaN(txtNumber) || txtNumber == "") {
-                alert("¼ıÀÚ¸¸ ÀÔ·Â ÇÏ¼¼¿ä");
+                alert("ìˆ«ìë§Œ ì…ë ¥ í•˜ì„¸ìš”");
                 fieldName.select();
                 fieldName.focus();
             }
@@ -1874,14 +1874,14 @@ var popCupon = {
             //<input type="text" onKeyPress="return numbersOnly(event, false)"/>
         }
 
-        //¼ıÀÚ Æ÷Ä¿½º¸¦ ¸Ç ³¡À¸·Î ÀÌµ¿
+        //ìˆ«ì í¬ì»¤ìŠ¤ë¥¼ ë§¨ ëìœ¼ë¡œ ì´ë™
         function _setNumFocus(obj){
             var _name = obj.name;
             var id_value=obj.value.replace(/[^(\d)]/gi,"");
             eval("document.actionForm."+_name).value = id_value;
 
-            // 0°ªÀº ¿ìÃø ³¡, 1°ªÀº ¿ìÃø ³¡¿¡¼­ ÇÑÄ­ ÁÂÃøÀ¸·Î ÀÌµ¿µÈ Æ÷Ä¿½º À§Ä¡¸¦ ¸»ÇÕ´Ï´Ù.
-            setRightFocus(eval("document.actionForm."+_name), 0); // ¿ìÃø³¡À¸·Î Æ÷Ä¿½º¸¦ À§Ä¡½ÃÅµ´Ï´Ù.
+            // 0ê°’ì€ ìš°ì¸¡ ë, 1ê°’ì€ ìš°ì¸¡ ëì—ì„œ í•œì¹¸ ì¢Œì¸¡ìœ¼ë¡œ ì´ë™ëœ í¬ì»¤ìŠ¤ ìœ„ì¹˜ë¥¼ ë§í•©ë‹ˆë‹¤.
+            setRightFocus(eval("document.actionForm."+_name), 0); // ìš°ì¸¡ëìœ¼ë¡œ í¬ì»¤ìŠ¤ë¥¼ ìœ„ì¹˜ì‹œí‚µë‹ˆë‹¤.
         }
 
         function setRightFocus(pThis, pPos) {
@@ -1897,10 +1897,10 @@ var popCupon = {
             }
         }
 
-        //¸®½ºÆ® º¸¿©ÁÖ±â
+        //ë¦¬ìŠ¤íŠ¸ ë³´ì—¬ì£¼ê¸°
         function responseHtml(data, objId) {
-            document.getElementById(objId).innerHTML = data;// ¸®½ºÆ® º¸¿©ÁÖ±â
-        }// ÀÀ´ä
+            document.getElementById(objId).innerHTML = data;// ë¦¬ìŠ¤íŠ¸ ë³´ì—¬ì£¼ê¸°
+        }// ì‘ë‹µ
 
         function callYes24DlvExpct(objId, param, btnObj){
             lyrObj = document.getElementById(objId);
@@ -1927,7 +1927,7 @@ var popCupon = {
             }
         }
 
-        //div¿­±â
+        //divì—´ê¸°
         function helpClose(self){
             self.parentNode.style.display='none';
         }
@@ -1941,7 +1941,7 @@ var popCupon = {
                     document.getElementById("allselect").disabled = true;
                 }else{
                     document.getElementById("allselect").disabled = false;
-                    selectAllChk('load'); //ÀüÃ¼¼±ÅÃ
+                    selectAllChk('load'); //ì „ì²´ì„ íƒ
                 }
                 setTimeout(function() {
                     window.scrollTo(0, 1)
@@ -1949,7 +1949,7 @@ var popCupon = {
             }
         }
         
-        window.addEventListener("load", fixBtnLayer, false); // ¹öÆ°·¹ÀÌ¾î
+        window.addEventListener("load", fixBtnLayer, false); // ë²„íŠ¼ë ˆì´ì–´
         
         window.addEventListener("load", function(){mwUI.tabs('typeChange')}, false); // tab
 
@@ -1964,7 +1964,7 @@ var popCupon = {
 
         }
 
-        //¿É¼Çº¯°æ·¹ÀÌ¾î °ü·Ã ½ºÅ©¸³Æ®
+        //ì˜µì…˜ë³€ê²½ë ˆì´ì–´ ê´€ë ¨ ìŠ¤í¬ë¦½íŠ¸
         var popLayerUserAgent = navigator.userAgent.toLowerCase();
         window.addEventListener("load", function(){
             if ((popLayerUserAgent.indexOf("android 1") > -1)
@@ -2136,18 +2136,18 @@ var popCupon = {
             }
         }
 
-        if("onhashchange" in window) { //´ÙÅ¥¸ÕÆ® ÇØ½Ã°¡ º¯°æµÉ ¶§ ÀÌº¥Æ®
+        if("onhashchange" in window) { //ë‹¤íë¨¼íŠ¸ í•´ì‹œê°€ ë³€ê²½ë  ë•Œ ì´ë²¤íŠ¸
             window.addEventListener('hashchange', function(e) {
-                if(document.location.hash!=null && document.location.hash!="") { //¿É¼Çº¯°æ ÈÄ ÇØ´ç Àå¹Ù±¸´Ï »óÇ° À§Ä¡·Î ÀÌµ¿ÇÏ°Ô ÇßÀ¸¹Ç·Î ÇØ½Ã °ª Á¸Àç
-                    if(optPopOpen && (document.location.hash).indexOf("prdUniqueImg")>-1){ //È÷½ºÅä¸®¹é ½Ã ¿É¼Çº¯°æ ÆË¾÷ Å¬·ÎÁî
+                if(document.location.hash!=null && document.location.hash!="") { //ì˜µì…˜ë³€ê²½ í›„ í•´ë‹¹ ì¥ë°”êµ¬ë‹ˆ ìƒí’ˆ ìœ„ì¹˜ë¡œ ì´ë™í•˜ê²Œ í–ˆìœ¼ë¯€ë¡œ í•´ì‹œ ê°’ ì¡´ì¬
+                    if(optPopOpen && (document.location.hash).indexOf("prdUniqueImg")>-1){ //íˆìŠ¤í† ë¦¬ë°± ì‹œ ì˜µì…˜ë³€ê²½ íŒì—… í´ë¡œì¦ˆ
                         optPopOpen = false;
                         popLayer.close();
-                    } else if (!optPopOpen && (document.location.hash).indexOf("dummyArea")>-1){ //È÷½ºÅä¸®Æ÷¿öµå ½Ã ´Ù½Ã ¿É¼Çº¯°æ ÆË¾÷ ¶ç¿ò
+                    } else if (!optPopOpen && (document.location.hash).indexOf("dummyArea")>-1){ //íˆìŠ¤í† ë¦¬í¬ì›Œë“œ ì‹œ ë‹¤ì‹œ ì˜µì…˜ë³€ê²½ íŒì—… ë„ì›€
                         optPopOpen = true;
                         popLayer.open();
                     }
-                } else { //¿É¼Çº¯°æ Àü¿¡´Â ÇØ½Ã °ª Á¸Àç ¾ÈÇÔ
-                    if(optPopOpen){  //È÷½ºÅä¸®¹é ½Ã ¿É¼Çº¯°æ ÆË¾÷ Å¬·ÎÁî
+                } else { //ì˜µì…˜ë³€ê²½ ì „ì—ëŠ” í•´ì‹œ ê°’ ì¡´ì¬ ì•ˆí•¨
+                    if(optPopOpen){  //íˆìŠ¤í† ë¦¬ë°± ì‹œ ì˜µì…˜ë³€ê²½ íŒì—… í´ë¡œì¦ˆ
                         optPopOpen = false;
                         popLayer.close();
                     }
@@ -2162,14 +2162,14 @@ var popCupon = {
             callOptionHtmlSucc = callOptionHtml('optionChange', prdNo, index, bcktSeq);
 
             if(callOptionHtmlSucc) {
-                //¹öÆ°·¹ÀÌ¾î
+                //ë²„íŠ¼ë ˆì´ì–´
                 mwUI.fixLayer.hide();
                 mwUI.fixLayer.enabled = false;
                 //set
                 popLayer.layer = document.getElementById('optionChange');
                 popLayer.diff = 40;
 
-                var tmpPrcElem = "<span id='optionChangeCnt'>"+ curCnt +"°³</span>";
+                var tmpPrcElem = "<span id='optionChangeCnt'>"+ curCnt +"ê°œ</span>";
                 document.getElementById("dtlOptNm").innerHTML = optTitl +" / "+ tmpPrcElem;
                 document.getElementById('slctPrdOptSeq').value = slctPrdOptSeq;
 
@@ -2177,14 +2177,14 @@ var popCupon = {
                 document.location.hash = "dummyArea";
                 optPopOpen = true;
             } else {
-                alert('¿É¼Çº¯°æÀ» À§ÇÑ µ¥ÀÌÅÍ ·Îµù Áß ÀÏ½ÃÀûÀÎ Àå¾Ö°¡ ¹ß»ıÇß½À´Ï´Ù.');
+                alert('ì˜µì…˜ë³€ê²½ì„ ìœ„í•œ ë°ì´í„° ë¡œë”© ì¤‘ ì¼ì‹œì ì¸ ì¥ì• ê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤.');
             }
         }
 
         var layerOptClose = function() {
             optPopOpen = false;
             popLayer.close();
-            //¹öÆ°·¹ÀÌ¾î
+            //ë²„íŠ¼ë ˆì´ì–´
             setTimeout(function() {
                 mwUI.fixLayer.enabled = true;
                 mwUI.fixLayer.show();
@@ -2208,7 +2208,7 @@ var popCupon = {
                     "",
                     false,
                     function(data){
-                        if(data.indexOf("¿É¼Çº¯°æÁ¶È¸")>-1){
+                        if(data.indexOf("ì˜µì…˜ë³€ê²½ì¡°íšŒ")>-1){
                             responseHtml(data, objId);
                             if(document.getElementById("_optTextIdx") && document.getElementById("_selOptCnt") && document.getElementById("_entOptCnt")){
                                 rtnBool = true;
@@ -2221,14 +2221,14 @@ var popCupon = {
                     "text");
             } catch ( err ) {
                 _optTextIdx=0; _selOptCnt=0; _entOptCnt=0;
-                alert('µ¥ÀÌÅÍ ·Îµù¿¡ ½ÇÆĞÇß½À´Ï´Ù.');
+                alert('ë°ì´í„° ë¡œë”©ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.');
                 return false;
             }
             return rtnBool;
         }
 
         var curSlctdOptStr = "";
-        function _fnOptGetStock (obj,seq,optElemIndex){ //function optionStockSearch(obj,prdNo,seq) //ÃÖÇÏÀ§´Ü ¿É¼Ç ¼±ÅÃ ½Ã
+        function _fnOptGetStock (obj,seq,optElemIndex){ //function optionStockSearch(obj,prdNo,seq) //ìµœí•˜ìœ„ë‹¨ ì˜µì…˜ ì„ íƒ ì‹œ
 
             if (obj == null) return;
 
@@ -2243,7 +2243,7 @@ var popCupon = {
             curSlctdOptStr = "";
             for(var k=0; k < _entOptCnt; k++){
                 if(document.getElementById("optionText" + k).value==""){
-                    alert("¿É¼ÇÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+                    alert("ì˜µì…˜ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.");
                     return;
                 }
                 curSlctdOptStr  = curSlctdOptStr + document.getElementById("optionText"+ k).value + "/";
@@ -2256,7 +2256,7 @@ var popCupon = {
                     trgtObj = document.getElementById("optionData"+ i);
 
                     if (i < _selOptCnt - 1 && trgtObj.value == "") {
-                        alert("»óÀ§ ¿É¼ÇÀ» ¸ÕÀú ¼±ÅÃÇØÁÖ¼¼¿ä.");
+                        alert("ìƒìœ„ ì˜µì…˜ì„ ë¨¼ì € ì„ íƒí•´ì£¼ì„¸ìš”.");
                         optArr = "";
                         optArrNm = "";
                         break;
@@ -2268,14 +2268,14 @@ var popCupon = {
                 curSlctdOptStr  = curSlctdOptStr + document.getElementById("optionData0").options[document.getElementById("optionData0").selectedIndex].text + "/";
             }
 
-            if(obj.value == ''){ // select div·Î ÀÎÇØ ''Ã¼Å©°¡ ÀÌº¥Æ®·Î ¿Â´Ù ±×·¡¼­ °ø¹éÀÎ °æ¿ì ¸®ÅÏ
+            if(obj.value == ''){ // select divë¡œ ì¸í•´ ''ì²´í¬ê°€ ì´ë²¤íŠ¸ë¡œ ì˜¨ë‹¤ ê·¸ë˜ì„œ ê³µë°±ì¸ ê²½ìš° ë¦¬í„´
                 //resetAllOptionInit(obj);
                 return;
             }
 
-            if(obj.value!=''){ // ¼±ÅÃµÈ Ç×¸ñÀÌ Á¸ÀçÇÒ°æ¿ì Àç°í ÆÄ¾Ç
-                if(obj.options[obj.selectedIndex].text.indexOf("Ç°Àı") > -1){
-                    alert('ÇØ´ç ¿É¼Ç¿¡ Àç°í°¡ ¾ø½À´Ï´Ù.');
+            if(obj.value!=''){ // ì„ íƒëœ í•­ëª©ì´ ì¡´ì¬í• ê²½ìš° ì¬ê³  íŒŒì•…
+                if(obj.options[obj.selectedIndex].text.indexOf("í’ˆì ˆ") > -1){
+                    alert('í•´ë‹¹ ì˜µì…˜ì— ì¬ê³ ê°€ ì—†ìŠµë‹ˆë‹¤.');
                     return;
                 }
             }
@@ -2296,37 +2296,37 @@ var popCupon = {
             var optString = "";
             var optQtyString = "";
             var optPrcString = "";
-            var selLength = document.getElementById("_selOptCnt").innerHTML; 	//¼±ÅÃÇü¿É¼Ç °³¼ö
-            var insLength = document.getElementById("_optTextIdx").innerHTML; //ÀÔ·ÂÇü¿É¼Ç °³¼ö
+            var selLength = document.getElementById("_selOptCnt").innerHTML; 	//ì„ íƒí˜•ì˜µì…˜ ê°œìˆ˜
+            var insLength = document.getElementById("_optTextIdx").innerHTML; //ì…ë ¥í˜•ì˜µì…˜ ê°œìˆ˜
             var optIdx = 0;
             var dtlIdx = 0;
 
-            //¼±ÅÃÇü ¿É¼Ç
+            //ì„ íƒí˜• ì˜µì…˜
             if(selLength>0){
                 var lastSltObjForPrc = null;
                 for(var j=0;j<selLength;j++) {
                     var tmpObjMul = document.getElementById("optionData"+j);
                     if( ""==tmpObjMul.value ){
-                        alert("»óÇ°¿É¼ÇÀº ÇÊ¼ö Ç×¸ñÀÔ´Ï´Ù.");
+                        alert("ìƒí’ˆì˜µì…˜ì€ í•„ìˆ˜ í•­ëª©ì…ë‹ˆë‹¤.");
                         tmpObjMul.focus();
                         return;
-                    } else if(tmpObjMul.options[tmpObjMul.selectedIndex].text.indexOf("Ç°Àı") > -1 ){
-                        alert("Ç°Àı »óÇ°ÀÔ´Ï´Ù.");
+                    } else if(tmpObjMul.options[tmpObjMul.selectedIndex].text.indexOf("í’ˆì ˆ") > -1 ){
+                        alert("í’ˆì ˆ ìƒí’ˆì…ë‹ˆë‹¤.");
                         return;
                     }
-                    optString = optString + "0¢Ó" + document.getElementById("optionData"+j).value.replace(":","¢Ò") + "¢Ó ¢Ô";
+                    optString = optString + "0â€ " + document.getElementById("optionData"+j).value.replace(":","Â¶") + "â€  â€¡";
                     if(j==selLength-1)
                         lastSltObjForPrc = document.getElementById("optionData"+j);
                 }
                 var tmpTxt = lastSltObjForPrc.options[lastSltObjForPrc.selectedIndex].text;
                 if((tmpTxt.indexOf("(+")>-1)
-                    &&  !isNaN( tmpTxt.substring(tmpTxt.indexOf("(+")+2, tmpTxt.indexOf("¿ø)")) ) ) {
-                    optPrcString = tmpTxt.substring(tmpTxt.indexOf("(+")+2, tmpTxt.indexOf("¿ø)")) + "¢³";
+                    &&  !isNaN( tmpTxt.substring(tmpTxt.indexOf("(+")+2, tmpTxt.indexOf("ì›)")) ) ) {
+                    optPrcString = tmpTxt.substring(tmpTxt.indexOf("(+")+2, tmpTxt.indexOf("ì›)")) + "âˆ";
                 } else if((tmpTxt.indexOf("(-")>-1)
-                    &&  !isNaN( tmpTxt.substring(tmpTxt.indexOf("(-")+2, tmpTxt.indexOf("¿ø)")) ) ) {
-                    optPrcString = tmpTxt.substring(tmpTxt.indexOf("(-")+2, tmpTxt.indexOf("¿ø)")) + "¢³";
+                    &&  !isNaN( tmpTxt.substring(tmpTxt.indexOf("(-")+2, tmpTxt.indexOf("ì›)")) ) ) {
+                    optPrcString = tmpTxt.substring(tmpTxt.indexOf("(-")+2, tmpTxt.indexOf("ì›)")) + "âˆ";
                 } else {
-                    optPrcString = "0" + "¢³";
+                    optPrcString = "0" + "âˆ";
                 }
             }
 
@@ -2335,27 +2335,27 @@ var popCupon = {
                 for(var j=0;j<insLength;j++) {
                     tmpObjs = document.getElementById('optionText'+j);
                     if(tmpObjs.value=="") {
-                        alert("»óÇ°¿É¼ÇÀº ÇÊ¼ö Ç×¸ñÀÔ´Ï´Ù.");
+                        alert("ìƒí’ˆì˜µì…˜ì€ í•„ìˆ˜ í•­ëª©ì…ë‹ˆë‹¤.");
                         tmpObjs.focus();
                         return;
                     }
                     if(!_checkTagKeyUp(tmpObjs)){
                         return;
                     }
-                    optString = optString + "1¢Ó" + document.getElementById("optNoDtl"+index+"_"+j).value + "¢Ó" + tmpObjs.value + "¢Ô";
+                    optString = optString + "1â€ " + document.getElementById("optNoDtl"+index+"_"+j).value + "â€ " + tmpObjs.value + "â€¡";
                 }
             }
 
-            optString = optString + "¢³";
+            optString = optString + "âˆ";
 
             if(checkSNOString(optString)) {
-                alert("ÀÔ·ÂÇÑ ¿É¼Ç¿¡ °³ÀÎÁ¤º¸°¡ Æ÷ÇÔµÇ¾î ÀÖ¾î ¿É¼Çº¯°æÀÌ ºÒ°¡ÇÕ´Ï´Ù.\nÀÔ·ÂÇÑ ¿É¼ÇÀÌ °³ÀÎÁ¤º¸°¡ ¾Æ´Ñ °æ¿ì °í°´¼¾ÅÍ 1599-0110À¸·Î ¹®ÀÇÁÖ¼¼¿ä.");
+                alert("ì…ë ¥í•œ ì˜µì…˜ì— ê°œì¸ì •ë³´ê°€ í¬í•¨ë˜ì–´ ìˆì–´ ì˜µì…˜ë³€ê²½ì´ ë¶ˆê°€í•©ë‹ˆë‹¤.\nì…ë ¥í•œ ì˜µì…˜ì´ ê°œì¸ì •ë³´ê°€ ì•„ë‹Œ ê²½ìš° ê³ ê°ì„¼í„° 1599-0110ìœ¼ë¡œ ë¬¸ì˜ì£¼ì„¸ìš”.");
                 return;
             }
 
             formObj.optString.value = optString;
             formObj.prdNo.value = prdNo;
-            formObj.optQtyString.value = document.getElementById("optionChangeCnt").innerText.replace("°³","");
+            formObj.optQtyString.value = document.getElementById("optionChangeCnt").innerText.replace("ê°œ","");
             formObj.bcktSeq.value = bcktSeq;
             formObj.optPrcString.value = optPrcString;
 
@@ -2368,12 +2368,12 @@ var popCupon = {
                         var data = eval('(' + jsonData + ')');
                         if("fail"==data.success) {
                             if("999"==data.failmsg)
-                                alert("µ¿ÀÏÇÑ ¿É¼ÇÀ» ¼±ÅÃÇÏ¼Ì½À´Ï´Ù.");
+                                alert("ë™ì¼í•œ ì˜µì…˜ì„ ì„ íƒí•˜ì…¨ìŠµë‹ˆë‹¤.");
                             else
-                                alert('¿É¼Ç º¯°æ¿¡ ½ÇÆĞÇß½À´Ï´Ù.');
+                                alert('ì˜µì…˜ ë³€ê²½ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.');
                             return false;
                         }
-                        alert('¿É¼ÇÀ» º¯°æÇß½À´Ï´Ù.');
+                        alert('ì˜µì…˜ì„ ë³€ê²½í–ˆìŠµë‹ˆë‹¤.');
                         document.location.hash = "";
                         optPopOpen = false;
                         document.location.reload();
@@ -2381,7 +2381,7 @@ var popCupon = {
                     },
                     "text");
             } catch ( err ) {
-                alert('¿É¼Ç º¯°æ¿¡ ½ÇÆĞÇß½À´Ï´Ù.');
+                alert('ì˜µì…˜ ë³€ê²½ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.');
                 return false;
             }
         }
@@ -2398,7 +2398,7 @@ var popCupon = {
             objStrip = /[<>\\/]/gi;
             repStr2 = obj.value.replace(objStrip, "");
             if (obj.value != repStr2){
-                alert("<, >, / Æ¯¼ö¹®ÀÚ´Â ÀÔ·ÂÇÒ ¼ö ¾ø½À´Ï´Ù.");
+                alert("<, >, / íŠ¹ìˆ˜ë¬¸ìëŠ” ì…ë ¥í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
                 obj.value = repStr2;
                 return false;
             }
@@ -2415,13 +2415,13 @@ var popCupon = {
             var contSeq = _fnOptGetContSeq(contNm);
 
             if (contSeq < 0) {
-                alert('ÀÔ·ÂÇÏ½Å ¿É¼Ç¸íÀ¸·Î º¯°æÇÒ ¼ö ¾ø½À´Ï´Ù.'); //ÀÔ·ÂÇü ¿É¼Ç input box È¤Àº input boxÀÇ µ¥ÀÌÅÍ ½ÃÄö½º°¡ ÄÁÆ®·Ñ·¯¿¡¼­ Àß¸ø »ı¼ºµÈ °æ¿ì
+                alert('ì…ë ¥í•˜ì‹  ì˜µì…˜ëª…ìœ¼ë¡œ ë³€ê²½í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.'); //ì…ë ¥í˜• ì˜µì…˜ input box í˜¹ì€ input boxì˜ ë°ì´í„° ì‹œí€€ìŠ¤ê°€ ì»¨íŠ¸ë¡¤ëŸ¬ì—ì„œ ì˜ëª» ìƒì„±ëœ ê²½ìš°
                 return;
             }
 
-            if( 	"0" == document.getElementById("_selOptCnt").innerHTML	//¼±ÅÃÇü ¿É¼ÇÀÌ ¾ø°í,
+            if( 	"0" == document.getElementById("_selOptCnt").innerHTML	//ì„ íƒí˜• ì˜µì…˜ì´ ì—†ê³ ,
                 && obj.value != ""
-                && ((contSeq+1)+"") == document.getElementById("_optTextIdx").innerHTML ) //ÃÑ ÀÔ·ÂÇü ¿É¼ÇÀÇ °³¼ö·Î È®ÀÎ ÈÄ ÇöÀç ÀÔ·Â¹Ú½º°¡ ¸¶Áö¸·ÀÌ¸é.
+                && ((contSeq+1)+"") == document.getElementById("_optTextIdx").innerHTML ) //ì´ ì…ë ¥í˜• ì˜µì…˜ì˜ ê°œìˆ˜ë¡œ í™•ì¸ í›„ í˜„ì¬ ì…ë ¥ë°•ìŠ¤ê°€ ë§ˆì§€ë§‰ì´ë©´.
             {
                 var curSlctdOptStrForEnt = "";
                 for(var e=0; e<(contSeq+1); e++){
@@ -2434,7 +2434,7 @@ var popCupon = {
             }
         }
 
-        //contNm¿¡¼­ ¼ıÀÚ¿µ¿ª ÃßÃâ
+        //contNmì—ì„œ ìˆ«ìì˜ì—­ ì¶”ì¶œ
         function _fnOptGetContSeq(contNm)
         {
             var seq = contNm.replace(/[^0-9]?/g,'');
@@ -2446,7 +2446,7 @@ var popCupon = {
         }
 
         /**
-         * ¼±ÅÃÇü ¿É¼Ç º¯°æ½Ã ÇÏÀ§ ¿É¼Ç ¸®½ºÆ® Àç ¼³Á¤
+         * ì„ íƒí˜• ì˜µì…˜ ë³€ê²½ì‹œ í•˜ìœ„ ì˜µì…˜ ë¦¬ìŠ¤íŠ¸ ì¬ ì„¤ì •
          */
         function _fnOptGetSubOpt(obj, seq, optElemIndex, prdNo, dftOptNo)
         {
@@ -2462,11 +2462,11 @@ var popCupon = {
 
             if (_selOptCnt > 1)
             {
-                // ÇÏÀ§ ¿É¼ÇÀÌ ¼±ÅÃµÈ »óÅÂ¿¡¼­ »óÀ§ ¿É¼Ç ¼öÁ¤½Ã;
+                // í•˜ìœ„ ì˜µì…˜ì´ ì„ íƒëœ ìƒíƒœì—ì„œ ìƒìœ„ ì˜µì…˜ ìˆ˜ì •ì‹œ;
                 if (document.getElementById("optionData"+ contSeq).value != ""  && obj.value == "") {
                     return;
                 } else if (optIex >= 1 && document.getElementById("optionData"+ contSeq).value == "") {
-                    alert("¼±ÅÃµÈ »óÀ§ ¿É¼ÇÀÌ ¾ø½À´Ï´Ù. ¿É¼ÇÀ» Àç ¼±ÅÃ ÇØÁÖ¼¼¿ä");
+                    alert("ì„ íƒëœ ìƒìœ„ ì˜µì…˜ì´ ì—†ìŠµë‹ˆë‹¤. ì˜µì…˜ì„ ì¬ ì„ íƒ í•´ì£¼ì„¸ìš”");
                     return;
                 } else {
                     if (optIex == (_selOptCnt - 2)) {
@@ -2492,7 +2492,7 @@ var popCupon = {
                         _fnOptGetSubOptAjaxCall(contSeq + 1, prdNo, optArr, optIex+2, dftOptNo, optElemIndex);
                     }
                     var textName = obj.options[obj.selectedIndex].text;
-                    textName = textName.replace(/[<>]/gi,"").replace(/[\']/gi,"\'").replace(/\\n/gi, "").replace(/\\r/gi, ""); // ¿É¼Ç¸í
+                    textName = textName.replace(/[<>]/gi,"").replace(/[\']/gi,"\'").replace(/\\n/gi, "").replace(/\\r/gi, ""); // ì˜µì…˜ëª…
                     if(textName.lastIndexOf(" (") > 0){
                         textName = textName.substr(0,textName.lastIndexOf(" ("));
                     }
@@ -2500,7 +2500,7 @@ var popCupon = {
             }
         }
 
-        //»óÇ°»ó¼¼ ÇÏÀ§ ¿É¼Ç List ajax
+        //ìƒí’ˆìƒì„¸ í•˜ìœ„ ì˜µì…˜ List ajax
         function _fnOptGetSubOptAjaxCall(idx, prdNo, optNoArr, optLvl, dftOptNo, optElemIndex)
         {
             var _hasOption = function(obj)
@@ -2523,18 +2523,18 @@ var popCupon = {
             var _setOptLst = function(returnVal)
             {
                 if (returnVal == "FAIL") {
-                    alert("¿É¼ÇÀ» ºÒ·¯¿À´Â °úÁ¤¿¡¼­ ÀÏ½ÃÀûÀÎ ¿À·ù°¡ ¹ß»ıÇß½À´Ï´Ù. »õ·Î°íÄ§ÇÏ½Å ÈÄ ÀÌ¿ëÇØÁÖ¼¼¿ä!");
+                    alert("ì˜µì…˜ì„ ë¶ˆëŸ¬ì˜¤ëŠ” ê³¼ì •ì—ì„œ ì¼ì‹œì ì¸ ì˜¤ë¥˜ê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤. ìƒˆë¡œê³ ì¹¨í•˜ì‹  í›„ ì´ìš©í•´ì£¼ì„¸ìš”!");
                     document.getElementById("optionData"+idx).disabled = false;
                     return;
                 }
 
                 var jsonObj = eval(returnVal);
 
-                // ¿É¼ÇÃÊ±âÈ­
+                // ì˜µì…˜ì´ˆê¸°í™”
                 var trgt = document.getElementById("optionData"+ idx);
                 _removeAllOptions(trgt);
 
-                // ¿É¼Ç»ı¼º
+                // ì˜µì…˜ìƒì„±
                 for ( var i = 0; jsonObj.infoList != null && i < jsonObj.infoList.length; i++)
                 {
                     if (jsonObj.infoList[i] != undefined) {
@@ -2555,9 +2555,9 @@ var popCupon = {
         }
 
         /**
-         * ÃÖÇÏÀ§ ¿É¼Ç ¸®½ºÆ® Á¶È¸
-         * @param obj        : ¼±ÅÃÇü¿É¼Ç SelectBox
-         * @param dftOptNo   : ÃÊ±â½Ã ¼±ÅÃÇÒ optNo
+         * ìµœí•˜ìœ„ ì˜µì…˜ ë¦¬ìŠ¤íŠ¸ ì¡°íšŒ
+         * @param obj        : ì„ íƒí˜•ì˜µì…˜ SelectBox
+         * @param dftOptNo   : ì´ˆê¸°ì‹œ ì„ íƒí•  optNo
          */
         function _fnOptGetLastOpt(obj, dftOptNo, optElemIndex, prdNo)
         {
@@ -2569,7 +2569,7 @@ var popCupon = {
 
             if (contSeq < 0) return;
 
-            // ¿É¼Ç¿µ¿ªÀÇ Start À§Ä¡ Á¶È¸
+            // ì˜µì…˜ì˜ì—­ì˜ Start ìœ„ì¹˜ ì¡°íšŒ
             var optArr = "";
             var trgtIdx = contSeq;
             if (_selOptCnt > 1)
@@ -2593,11 +2593,11 @@ var popCupon = {
                 trgtIdx = contSeq;
             }
 
-            // ÃÖÇÏÀ§ ¿É¼Ç SelectBox ÃÊ±âÈ­
+            // ìµœí•˜ìœ„ ì˜µì…˜ SelectBox ì´ˆê¸°í™”
             _fnOptGetLastOptAjaxCall(trgtIdx, prdNo, optArr, dftOptNo, optElemIndex);
         }
 
-        //»óÇ°»ó¼¼ ¸¶Áö¸· ¿É¼Ç ³ëÃâ½Ã °¡°İ ½Ç½Ã°£ ajax
+        //ìƒí’ˆìƒì„¸ ë§ˆì§€ë§‰ ì˜µì…˜ ë…¸ì¶œì‹œ ê°€ê²© ì‹¤ì‹œê°„ ajax
         function _fnOptGetLastOptAjaxCall(idx, prdNo, optNoArr, dftOptNo, optElemIndex)
         {
             String.prototype.bytes = function()
@@ -2645,16 +2645,16 @@ var popCupon = {
                 if (addPrc != "0"){
                     if(addPrc.length>0){
                         if(addPrc.substring(0,1) == "-"){
-                            addStr += " (" + addPrc + "¿ø)";
+                            addStr += " (" + addPrc + "ì›)";
                         }
                         else{
-                            addStr += " (+" + addPrc + "¿ø)";
+                            addStr += " (+" + addPrc + "ì›)";
                         }
                     }
                 }
                 if (stckQty < 1)
-                    addStr += "/Ç°Àı";
-                var lmtCnt = 46; // 304px ±âÁØ ÃÖ´ë ³ëÃâ ¹®ÀÚ¼ö (Bytes ±âÁØ
+                    addStr += "/í’ˆì ˆ";
+                var lmtCnt = 46; // 304px ê¸°ì¤€ ìµœëŒ€ ë…¸ì¶œ ë¬¸ììˆ˜ (Bytes ê¸°ì¤€
 
                 if (addStr!="")
                     lmtCnt -= addStr.bytes();
@@ -2669,17 +2669,17 @@ var popCupon = {
             var _setOptLst = function(returnVal)
             {
                 if (returnVal == "FAIL" || returnVal.trim().indexOf("()") != -1) {
-                    alert("¼­ºñ½º Àå¾Ö°¡ ÀÖ½À´Ï´Ù. °í°´¼¾ÅÍ·Î ¿¬¶ô ÁÖ¼¼¿ä.(11¹ø°¡ ¿Â¶óÀÎ ¼­ºñ½º ¿¬µ¿ ¿À·ù)");
+                    alert("ì„œë¹„ìŠ¤ ì¥ì• ê°€ ìˆìŠµë‹ˆë‹¤. ê³ ê°ì„¼í„°ë¡œ ì—°ë½ ì£¼ì„¸ìš”.(11ë²ˆê°€ ì˜¨ë¼ì¸ ì„œë¹„ìŠ¤ ì—°ë™ ì˜¤ë¥˜)");
                     return;
                 }
 
                 var jsonObj = eval(returnVal);
 
-                // ¿É¼ÇÃÊ±âÈ­
+                // ì˜µì…˜ì´ˆê¸°í™”
                 var trgt = document.getElementById("optionData"+ idx );
                 _removeAllOptions(trgt);
 
-                // ¿É¼Ç»ı¼º
+                // ì˜µì…˜ìƒì„±
                 var optStr = "";
                 for ( var i = 0; jsonObj.infoList != null && i < jsonObj.infoList.length; i++)
                 {
@@ -2702,17 +2702,17 @@ var popCupon = {
                 "text");
         }
 
-        //µ¶¸³Çü ¿É¼Ç º¯°æ½Ã
+        //ë…ë¦½í˜• ì˜µì…˜ ë³€ê²½ì‹œ
         function _fnOptGetStock2(obj,seq,optElemIndex,prdNo){
 
-            var optArr = "";	//Àç°í Ã¼Å© ajax call ½Ã ÆÄ¶ó¹ÌÅÍ
-            var optArrNm = "";	//Àç°í Ã¼Å© ajax call ½Ã ÆÄ¶ó¹ÌÅÍ
+            var optArr = "";	//ì¬ê³  ì²´í¬ ajax call ì‹œ íŒŒë¼ë¯¸í„°
+            var optArrNm = "";	//ì¬ê³  ì²´í¬ ajax call ì‹œ íŒŒë¼ë¯¸í„°
 
             if (obj == null) return;
             curSlctdOptStr = "";
 
-            if ( obj.options[obj.selectedIndex].text.indexOf("Ç°Àı")>-1 ) {
-                alert("Ç°Àı »óÇ°ÀÔ´Ï´Ù.");
+            if ( obj.options[obj.selectedIndex].text.indexOf("í’ˆì ˆ")>-1 ) {
+                alert("í’ˆì ˆ ìƒí’ˆì…ë‹ˆë‹¤.");
                 return;
             }
 
@@ -2723,7 +2723,7 @@ var popCupon = {
 
                 for(var k=0; k < _entOptCnt; k++){
                     if(document.getElementById("optionText" + k).value=="") {
-                        alert("¿É¼ÇÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+                        alert("ì˜µì…˜ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
                         return;
                     } else {
                         curSlctdOptStr  = curSlctdOptStr + document.getElementById("optionText" + k).value + "/";
@@ -2737,11 +2737,11 @@ var popCupon = {
                     {
                         trgtObj = document.getElementById("optionData" + i);
 
-                        if ( trgtObj.options[trgtObj.selectedIndex].text.indexOf("Ç°Àı")>-1 ) {
-                            alert("Ç°Àı »óÇ°ÀÔ´Ï´Ù.");
+                        if ( trgtObj.options[trgtObj.selectedIndex].text.indexOf("í’ˆì ˆ")>-1 ) {
+                            alert("í’ˆì ˆ ìƒí’ˆì…ë‹ˆë‹¤.");
                             return;
                         } else if(trgtObj.options[trgtObj.selectedIndex].value == ""){
-                            alert("¿É¼ÇÀ» ¼±ÅÃÇØÁÖ¼¼¿ä.");
+                            alert("ì˜µì…˜ì„ ì„ íƒí•´ì£¼ì„¸ìš”.");
                             return;
                         } else {
                             optArr = optArr + trgtObj.value + ",";
@@ -2757,14 +2757,14 @@ var popCupon = {
                 var tmpPrcElem = "<span id='optionChangeCnt'>"+ document.getElementById("optionChangeCnt").innerHTML +"</span>";
                 document.getElementById("dtlOptNm").innerHTML = curSlctdOptStr +" / "+ tmpPrcElem;
 
-                // µ¶¸³Çü ¿É¼Ç Àç°íÃ¼Å©
+                // ë…ë¦½í˜• ì˜µì…˜ ì¬ê³ ì²´í¬
                 if (obj.value != ""){
                     _fnOptGetStockInfoByOptNos(contSeq, optArr, '02', optArrNm, prdNo);
                 }
             }
         }
 
-        //Àç°í ¿©ºÎ È®ÀÎ
+        //ì¬ê³  ì—¬ë¶€ í™•ì¸
         function _fnOptGetStockInfoByOptNos(contSeq, mixOptNo, optType, mixOptNm, prdNo)
         {
             var optNmList = document.getElementById("_optNms").innerText;
@@ -2773,10 +2773,10 @@ var popCupon = {
                 {
                     var jsonObj = eval(returnVal);
 
-                    // Àç°í °¡ ¾øÀ» °æ¿ì - ÇØ´ç ¿É¼Ç Á¤º¸ ÃÊ±âÈ­
+                    // ì¬ê³  ê°€ ì—†ì„ ê²½ìš° - í•´ë‹¹ ì˜µì…˜ ì •ë³´ ì´ˆê¸°í™”
                     if (jsonObj == null || jsonObj[0] == null)
                     {
-                        alert("ÇØ´ç ¿É¼Ç¿¡ Àç°í°¡ ¾ø½À´Ï´Ù.");
+                        alert("í•´ë‹¹ ì˜µì…˜ì— ì¬ê³ ê°€ ì—†ìŠµë‹ˆë‹¤.");
                         return;
                     }
                 };
@@ -2820,7 +2820,7 @@ var popCupon = {
                                 tmpMartAddrNoCnt = _martBunchAddrNoMap.get(tmpMartAddrNo)+1;
                                 _martBunchAddrNoMap.put(tmpMartAddrNo, tmpMartAddrNoCnt);
                             }else{
-                                //´Ù¸¥ ¹è¼ÛÁö ¹­À½ÀÌ ÀÌ¹Ì ¼±ÅÃµÈ °æ¿ì
+                                //ë‹¤ë¥¸ ë°°ì†¡ì§€ ë¬¶ìŒì´ ì´ë¯¸ ì„ íƒëœ ê²½ìš°
                                 return false;
                             }
                         }
@@ -2858,7 +2858,7 @@ var popCupon = {
 
                 if(ele.checked){
                     if(bunchKeys.length>0 && _martBunchAddrNoMap.get(tmpMartAddrNo) ==undefined){
-                        alert("ÁöÁ¡ ¹è¼Û»óÇ°Àº ÇÏ³ªÀÇ ¹è¼ÛÁö·Î¸¸ ÁÖ¹®ÀÌ °¡´ÉÇÕ´Ï´Ù. µ¿ÀÏÇÑ ÁöÁ¡ »óÇ°¸¸ ¼±ÅÃÇÏ¿© ÁÖ¹®ÇØ ÁÖ¼¼¿ä.");
+                        alert("ì§€ì  ë°°ì†¡ìƒí’ˆì€ í•˜ë‚˜ì˜ ë°°ì†¡ì§€ë¡œë§Œ ì£¼ë¬¸ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤. ë™ì¼í•œ ì§€ì  ìƒí’ˆë§Œ ì„ íƒí•˜ì—¬ ì£¼ë¬¸í•´ ì£¼ì„¸ìš”.");
                         ele.checked = false;
                         return;
                     }
@@ -2870,7 +2870,7 @@ var popCupon = {
                                 tmpMartAddrNoCnt = _martAddrNoMap.get(tmpMartAddrNo)+1;
                                 _martAddrNoMap.put(tmpMartAddrNo, tmpMartAddrNoCnt);
                             }else{
-                                alert("ÁöÁ¡ ¹è¼Û»óÇ°Àº ÇÏ³ªÀÇ ¹è¼ÛÁö·Î¸¸ ÁÖ¹®ÀÌ °¡´ÉÇÕ´Ï´Ù. µ¿ÀÏÇÑ ÁöÁ¡ »óÇ°¸¸ ¼±ÅÃÇÏ¿© ÁÖ¹®ÇØ ÁÖ¼¼¿ä.");
+                                alert("ì§€ì  ë°°ì†¡ìƒí’ˆì€ í•˜ë‚˜ì˜ ë°°ì†¡ì§€ë¡œë§Œ ì£¼ë¬¸ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤. ë™ì¼í•œ ì§€ì  ìƒí’ˆë§Œ ì„ íƒí•˜ì—¬ ì£¼ë¬¸í•´ ì£¼ì„¸ìš”.");
                                 ele.checked = false;
                             }
                         }
@@ -2891,7 +2891,7 @@ var popCupon = {
         function changeCoupon(seq, isMart, qty){
 
             if(qty<0){
-                alert("ÇØ´ç »óÇ°ÀÇ ¿É¼ÇÀÌ Á¸ÀçÇÕ´Ï´Ù. ¿É¼ÇÁ¤º¸¸¦ ¼³Á¤ÇØÁÖ¼¼¿ä.");
+                alert("í•´ë‹¹ ìƒí’ˆì˜ ì˜µì…˜ì´ ì¡´ì¬í•©ë‹ˆë‹¤. ì˜µì…˜ì •ë³´ë¥¼ ì„¤ì •í•´ì£¼ì„¸ìš”.");
                 return;
             }
             var cupnParamArr = new Array();
@@ -2952,14 +2952,14 @@ var popCupon = {
 
                                 slctPrdOptSeq += prod.slctPrdOptSeq+",";
 
-                                //¼±ÅÃÇÒÀÎÄíÆù
+                                //ì„ íƒí• ì¸ì¿ í°
                                 var addCupnBO = prod.cupnAdd;
                                 if(addCupnBO && addCupnBO.issueNo){
                                     addCupn += addCupnBO.issueNo +",";
                                 }else{
                                     addCupn +="0,";
                                 }
-                                //º¸³Ê½ºÇÒÀÎÄíÆù
+                                //ë³´ë„ˆìŠ¤í• ì¸ì¿ í°
                                 var bonusCupnBO = prod.cupnBonus;
                                 if(bonusCupnBO && bonusCupnBO.issueNo){
                                     bonusCupn += bonusCupnBO.issueNo +",";
@@ -2978,13 +2978,13 @@ var popCupon = {
                     }
 
                     if(slctPrdOptSeq.length>1){
-                        slctPrdOptSeq = slctPrdOptSeq.substring(0, slctPrdOptSeq.length-1); //¸¶Áö¸· ;¸¦ »èÁ¦
+                        slctPrdOptSeq = slctPrdOptSeq.substring(0, slctPrdOptSeq.length-1); //ë§ˆì§€ë§‰ ;ë¥¼ ì‚­ì œ
                     }
                     if(addCupn.length>1){
-                        addCupn = addCupn.substring(0, addCupn.length-1); //¸¶Áö¸· ;¸¦ »èÁ¦
+                        addCupn = addCupn.substring(0, addCupn.length-1); //ë§ˆì§€ë§‰ ;ë¥¼ ì‚­ì œ
                     }
                     if(bonusCupn.length>1){
-                        bonusCupn = bonusCupn.substring(0, bonusCupn.length-1); //¸¶Áö¸· ;¸¦ »èÁ¦
+                        bonusCupn = bonusCupn.substring(0, bonusCupn.length-1); //ë§ˆì§€ë§‰ ;ë¥¼ ì‚­ì œ
                     }
 
                 }
@@ -2994,7 +2994,7 @@ var popCupon = {
                 frm.dlvCupn.value = dlvCupn;
 
                 var url = "http://buy.m.11st.co.kr/MW/Cart/applyCoupon.tmall";
-                if(mwUI) mwUI.loadingFull({text : '¼±ÅÃÇÏ½Å ÄíÆùÀ» Àû¿ëÁßÀÔ´Ï´Ù.'});
+                if(mwUI) mwUI.loadingFull({text : 'ì„ íƒí•˜ì‹  ì¿ í°ì„ ì ìš©ì¤‘ì…ë‹ˆë‹¤.'});
                 try {
                     fn_getValueByAjax(url,
                         "POST",
@@ -3006,13 +3006,13 @@ var popCupon = {
                                 location.reload();
                             }else{
                                 if(data.hasRsMsg) alert(data.rsMsg);
-                                alert("ÄíÆùÀû¿ë¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.");
+                                alert("ì¿ í°ì ìš©ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤.");
                                 if(mwUI) mwUI.loadingFullClose();
                             }
                         },
                         "text");
                 } catch ( err ) {
-                    alert('ÄíÆù Àû¿ë Áß ¿À·ù°¡ ¹ß»ıÇÏ¿´½À´Ï´Ù.\nÀá½Ã ÈÄ ´Ù½Ã ÀÌ¿ëÇØ ÁÖ½Ê½Ã¿À.' );
+                    alert('ì¿ í° ì ìš© ì¤‘ ì˜¤ë¥˜ê°€ ë°œìƒí•˜ì˜€ìŠµë‹ˆë‹¤.\nì ì‹œ í›„ ë‹¤ì‹œ ì´ìš©í•´ ì£¼ì‹­ì‹œì˜¤.' );
                     location.reload();
                 }
             }else{
@@ -3023,8 +3023,8 @@ var popCupon = {
 
         }
 
-        // 2016.12.15 mjs : ¼¿·¯ÀÇ ÃÖ¼Ò±¸¸Å°¡´É±İ¾× ¼³Á¤¿©ºÎ, ±İ¾× Á¶È¸
-        // ÆÄÀÌÇÁ¶óÀÎÀ¸·Î ±¸ºĞµÈ °ª ±âÁØÀ¸·Î ¼¿·¯¹øÈ£, ÇÕ°è±İ¾× Á¶È¸ (±âº»ÀûÀ¸·Î °ª ÀÚÃ¼¿¡ ÄŞ¸¶°¡ µé¾î°¥ ¼ö ÀÖ¾î¼­ ÆÄÀÌÇÁ·Î ¼öÁ¤)
+        // 2016.12.15 mjs : ì…€ëŸ¬ì˜ ìµœì†Œêµ¬ë§¤ê°€ëŠ¥ê¸ˆì•¡ ì„¤ì •ì—¬ë¶€, ê¸ˆì•¡ ì¡°íšŒ
+        // íŒŒì´í”„ë¼ì¸ìœ¼ë¡œ êµ¬ë¶„ëœ ê°’ ê¸°ì¤€ìœ¼ë¡œ ì…€ëŸ¬ë²ˆí˜¸, í•©ê³„ê¸ˆì•¡ ì¡°íšŒ (ê¸°ë³¸ì ìœ¼ë¡œ ê°’ ìì²´ì— ì½¤ë§ˆê°€ ë“¤ì–´ê°ˆ ìˆ˜ ìˆì–´ì„œ íŒŒì´í”„ë¡œ ìˆ˜ì •)
         function checkMinBuyAmtInfBySeller(tempBcktSeqPipe) {
             var bcktSeq		= tempBcktSeqPipe.split("|");
             var sellerNo	= $("[name='sellerNo_"+bcktSeq[0]+"']").val();
@@ -3037,9 +3037,9 @@ var popCupon = {
                 }
             }
 
-            if(typeof mapMinBuyAmtInfBySeller.get(sellerNo) !== "undefined" ) {	// ¸Ê¿¡ µ¥ÀÌÅÍ°¡ ÀÖÀ¸¸é Ã¼Å©ÇØ¾ß ÇÔ
+            if(typeof mapMinBuyAmtInfBySeller.get(sellerNo) !== "undefined" ) {	// ë§µì— ë°ì´í„°ê°€ ìˆìœ¼ë©´ ì²´í¬í•´ì•¼ í•¨
                 if(Number(minBuyAmt) > Number(checkSumAmount)) {
-                    alert(minBuyAmt + "¿ø ÀÌÇÏ ±¸¸Å ºÒ°¡ »óÇ° ÀÔ´Ï´Ù. ÁÖ¹®±İ¾×À» ´Ù½Ã ÇÑ¹ø È®ÀÎÇØÁÖ¼¼¿ä.");
+                    alert(minBuyAmt + "ì› ì´í•˜ êµ¬ë§¤ ë¶ˆê°€ ìƒí’ˆ ì…ë‹ˆë‹¤. ì£¼ë¬¸ê¸ˆì•¡ì„ ë‹¤ì‹œ í•œë²ˆ í™•ì¸í•´ì£¼ì„¸ìš”.");
                     return false;
                 }
             }
@@ -3055,8 +3055,8 @@ var popCupon = {
 	
 						
 			<div class="head_bnr" id="app_down_bnr" style="display: none;">
-				<a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall#" onclick="call11stAppMain(); return false;" style="background-color:#e7e7ea;" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1401"><img src="cart_list_files/app_bnr.png" alt="¾ÛÀ¸·Î Á¢¼ÓÇÏ¸é ´õ Å«ÇıÅÃÀÌ-¾Û´Ù¿î·Îµå"></a>
-				<button type="button" onclick="closeElevenstAppDown();">¹è³Ê´İ±â</button>
+				<a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall#" onclick="call11stAppMain(); return false;" style="background-color:#e7e7ea;" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1401"><img src="cart_list_files/app_bnr.png" alt="ì•±ìœ¼ë¡œ ì ‘ì†í•˜ë©´ ë” í°í˜œíƒì´-ì•±ë‹¤ìš´ë¡œë“œ"></a>
+				<button type="button" onclick="closeElevenstAppDown();">ë°°ë„ˆë‹«ê¸°</button>
 			</div>
         
 
@@ -3118,18 +3118,18 @@ var popCupon = {
 
 	
 	<div class="gnb_mw gnb_m">
-		<h1><a href="http://m.11st.co.kr/MW" title="È¨À¸·Î ÀÌµ¿" data-clickurl="WGA01" data-clickkey="00">11¹ø°¡</a></h1>
+		<h1><a href="http://m.11st.co.kr/MW" title="í™ˆìœ¼ë¡œ ì´ë™" data-clickurl="WGA01" data-clickkey="00">11ë²ˆê°€</a></h1>
 	
-		<a href="http://m.11st.co.kr/MW/api/app/elevenst/menu/sideMenu.tmall" class="mu cate" data-clickurl="WGB01" data-clickkey="00">Ä«Å×°í¸®</a>
+		<a href="http://m.11st.co.kr/MW/api/app/elevenst/menu/sideMenu.tmall" class="mu cate" data-clickurl="WGB01" data-clickkey="00">ì¹´í…Œê³ ë¦¬</a>
 
 		<form id="search" name="searchForm" action="http://m.11st.co.kr/MW/Search/searchProduct.tmall" method="get" onsubmit="searchSubmit();return false;">
 			<fieldset>
-				<legend>ÅëÇÕ°Ë»ö</legend>
+				<legend>í†µí•©ê²€ìƒ‰</legend>
 				<div class="srch">
-					<input type="search" id="decSearchKeyword" name="decSearchKeyword" value="" title="°Ë»ö¾î" onfocus="getInput();" onblur="releaseInput();" autocomplete="off" autocorrect="off" autocapitalize="off" onclick="clearInputValue(&#39;decSearchKeyword&#39;);fncStop();return false;" data-clickurl="WSRC00" data-clickkey="WSRC00">
-					<button class="del" type="button" id="schdelbtn" style="display:none;" onclick="clearInputValue(&#39;decSearchKeyword&#39;);">°Ë»ö¾î »èÁ¦</button>
+					<input type="search" id="decSearchKeyword" name="decSearchKeyword" value="" title="ê²€ìƒ‰ì–´" onfocus="getInput();" onblur="releaseInput();" autocomplete="off" autocorrect="off" autocapitalize="off" onclick="clearInputValue(&#39;decSearchKeyword&#39;);fncStop();return false;" data-clickurl="WSRC00" data-clickkey="WSRC00">
+					<button class="del" type="button" id="schdelbtn" style="display:none;" onclick="clearInputValue(&#39;decSearchKeyword&#39;);">ê²€ìƒ‰ì–´ ì‚­ì œ</button>
 					
-					<input type="submit" id="search_submit" value="°Ë»ö" data-clickurl="WSRC11" data-clickkey="WSRC11">
+					<input type="submit" id="search_submit" value="ê²€ìƒ‰" data-clickurl="WSRC11" data-clickkey="WSRC11">
 					
 					<input type="hidden" id="searchType" name="searchType" value="">
 					<input type="hidden" id="dispObjLnkUrl" value="http://m.11st.co.kr/MW/html/nc/20170227_luckyCupnEvnt.html">
@@ -3164,40 +3164,40 @@ var popCupon = {
 					<input type="hidden" name="pageSize" value="0">
 					
 				</div>
-				<button type="button" class="prev" onclick="vLayer(&#39;kwd&#39;,false);setBodyClass(false);return false;">ÀÌÀü</button>
+				<button type="button" class="prev" onclick="vLayer(&#39;kwd&#39;,false);setBodyClass(false);return false;">ì´ì „</button>
 			</fieldset>
 		</form>
 	
-		<a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall" class="mu cart" data-clickurl="WGD01" data-clickkey="00">Àå¹Ù±¸´Ï</a>
+		<a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall" class="mu cart" data-clickurl="WGD01" data-clickkey="00">ì¥ë°”êµ¬ë‹ˆ</a>
 	
 	
 	</div>	
 	<div id="kwd" class="kword">
 		<div class="ctg" id="ctgDiv"></div>
 		<ul class="wrd" id="autoComplete"></ul>
-		<div class="sw_ft"><button type="button" class="close" onclick="vLayer(&#39;kwd&#39;,false);setBodyClass(false);return false;" data-clickurl="WSRB03" data-clickkey="WSRB03">´İ±â</button></div>
+		<div class="sw_ft"><button type="button" class="close" onclick="vLayer(&#39;kwd&#39;,false);setBodyClass(false);return false;" data-clickurl="WSRB03" data-clickkey="WSRB03">ë‹«ê¸°</button></div>
 	</div>
 	<div class="schwd" id="schwd" style="display:none;">
 		<ul class="sw_tab">
-			<li class="on"><a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall#schword01" onclick="goSearchSwipeMove(0);return false">ÃÖ±Ù°Ë»ö¾î</a></li>
+			<li class="on"><a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall#schword01" onclick="goSearchSwipeMove(0);return false">ìµœê·¼ê²€ìƒ‰ì–´</a></li>
 			<li>
-				<a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall#schword02" onclick="goSearchSwipeMove(1);return false">±Ş»ó½Â
-					<span class="pg" id="searchSwipeNavi"><span class="on"></span><span></span><span></span><b id="searchSwipePage">3ÆäÀÌÁöÁß 1ÆäÀÌÁö</b></span>
+				<a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall#schword02" onclick="goSearchSwipeMove(1);return false">ê¸‰ìƒìŠ¹
+					<span class="pg" id="searchSwipeNavi"><span class="on"></span><span></span><span></span><b id="searchSwipePage">3í˜ì´ì§€ì¤‘ 1í˜ì´ì§€</b></span>
 				</a>
 			</li>
-			<li><a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall#schword03" onclick="goSearchSwipeMove(2);return false">ÀÎ±â</a></li>
+			<li><a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall#schword03" onclick="goSearchSwipeMove(2);return false">ì¸ê¸°</a></li>
 		</ul>
 		<div class="sw_swp">
 			<div id="view_sch_swipe"><div class="mwContainer"><div></div><div></div><div></div></div></div>
-			<button type="button" class="prev" onclick="goPrev()">ÀÌÀü</button>
-			<button type="button" class="next" onclick="goNext()">´ÙÀ½</button>
+			<button type="button" class="prev" onclick="goPrev()">ì´ì „</button>
+			<button type="button" class="next" onclick="goNext()">ë‹¤ìŒ</button>
 		</div>
 		<div id="gnb_sch_swipe" style="display:none;">
-			<div id="schword01"><!-- ÃÖ±Ù °Ë»ö¾î --></div>
-			<div id="schword02"><!-- ±Ş»ó½Â --></div>
-			<div id="schword03"><!-- ÀÎ±â --></div>
+			<div id="schword01"><!-- ìµœê·¼ ê²€ìƒ‰ì–´ --></div>
+			<div id="schword02"><!-- ê¸‰ìƒìŠ¹ --></div>
+			<div id="schword03"><!-- ì¸ê¸° --></div>
 		</div>
-		<div class="sw_ft"><button type="button" class="close" onclick="setBodyClass(false);" data-clickurl="WSRC12" data-clickkey="WSRC12">´İ±â</button></div>
+		<div class="sw_ft"><button type="button" class="close" onclick="setBodyClass(false);" data-clickurl="WSRC12" data-clickkey="WSRC12">ë‹«ê¸°</button></div>
 	</div>
 	<script>
 		(function() {
@@ -3288,14 +3288,14 @@ var popCupon = {
 			<input type="hidden" name="martBcktSeq" value="">
 			<input type="hidden" name="oneClickFrom" value="">
 			<input type="hidden" name="changeCupnYN" value="">
-			<h1 class="title cart">Àå¹Ù±¸´Ï</h1>
+			<h1 class="title cart">ì¥ë°”êµ¬ë‹ˆ</h1>
 			<div class="cart_type">
-				<div class="chkb"><span class="chkBox"><input type="checkbox" id="allselect" onclick="selectAllChk();"> <label for="allselect">ÀüÃ¼¼±ÅÃ</label></span></div>
-				<div class="numb">ÃÑ Àå¹Ù±¸´Ï »óÇ° (<strong>1</strong>°³)</div>
+				<div class="chkb"><span class="chkBox"><input type="checkbox" id="allselect" onclick="selectAllChk();"> <label for="allselect">ì „ì²´ì„ íƒ</label></span></div>
+				<div class="numb">ì´ ì¥ë°”êµ¬ë‹ˆ ìƒí’ˆ (<strong>1</strong>ê°œ)</div>
 			</div>
 			
 			
-			<!-- ÇÏ³ª¾¿ º¸±â -->
+			<!-- í•˜ë‚˜ì”© ë³´ê¸° -->
 			<div id="typeOne" class="cart">
 				
 				
@@ -3306,10 +3306,10 @@ var popCupon = {
 		
 	<div class="cl">
 		<div class="mc">
-			<span class="chkBox"><input type="checkbox" name="bcktSeqChk0" value="1232313972" data-prdtypcd="28" data-prdno="958114815" id="bcktUniqueId0" onclick="calSelectedPrds()"><label for="bcktSeqBunch_p1_1">»óÇ°¼±ÅÃ</label></span>
+			<span class="chkBox"><input type="checkbox" name="bcktSeqChk0" value="1232313972" data-prdtypcd="28" data-prdno="958114815" id="bcktUniqueId0" onclick="calSelectedPrds()"><label for="bcktSeqBunch_p1_1">ìƒí’ˆì„ íƒ</label></span>
 			<a href="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo=958114815" data-clickurl="MSC003" data-clickkey="MSC003">
 				<span class="pimg"><img src="cart_list_files/958114815_B_V1.jpg" alt="" onerror="this.src=&#39;/MW/img/product/no_image_100.gif&#39;" id="prdUniqueImg0"></span>
-				<span class="pd">ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ® 1050g / ÄÚ½ºÆ®ÄÚ ¸Á°í¸À ¶óÁîº£¸®¸À ºí·çº£¸®¸À</span>
+				<span class="pd">í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ 1050g / ì½”ìŠ¤íŠ¸ì½” ë§ê³ ë§› ë¼ì¦ˆë² ë¦¬ë§› ë¸”ë£¨ë² ë¦¬ë§›</span>
 				
 			</a>
 			
@@ -3327,20 +3327,20 @@ var popCupon = {
 
 			
 			<div class="num">
-				<label for="qty_1232313972">¼ö·®</label>
+				<label for="qty_1232313972">ìˆ˜ëŸ‰</label>
 				<input type="tel" name="qty_1232313972" id="qty_1232313972" value="1" onclick="_setNumFocus(this)" maxlength="3" onkeyup="checkNum(this, this.value);setQtyNumValue(&#39;qty_1232313972&#39;,&#39;btnModify_1232313972&#39;,1,0);" onblur="checkNum(this, this.value);" onkeypress="return numbersOnly(event, false)">
-				<button type="button" class="qty_minus" title="1°³ °¨¼Ò" onclick="setQtyNumValue(&#39;qty_1232313972&#39;,&#39;btnModify_1232313972&#39;,1,-1);">-</button>
-				<button type="button" class="qty_plus" title="1°³ Áõ°¡" onclick="setQtyNumValue(&#39;qty_1232313972&#39;,&#39;btnModify_1232313972&#39;,1,1);">+</button>
-				<button type="button" id="btnModify_1232313972" class="qty_modify" title="¼ö·®º¯°æ" style="display:none;" onclick="doModify(&#39;1232313972&#39;,&#39;N&#39;,0,-10000,28, 1,&#39;&#39; );callStatAjax(&#39;MSC006&#39;, &#39;MSC006&#39;);">º¯°æ</button>
+				<button type="button" class="qty_minus" title="1ê°œ ê°ì†Œ" onclick="setQtyNumValue(&#39;qty_1232313972&#39;,&#39;btnModify_1232313972&#39;,1,-1);">-</button>
+				<button type="button" class="qty_plus" title="1ê°œ ì¦ê°€" onclick="setQtyNumValue(&#39;qty_1232313972&#39;,&#39;btnModify_1232313972&#39;,1,1);">+</button>
+				<button type="button" id="btnModify_1232313972" class="qty_modify" title="ìˆ˜ëŸ‰ë³€ê²½" style="display:none;" onclick="doModify(&#39;1232313972&#39;,&#39;N&#39;,0,-10000,28, 1,&#39;&#39; );callStatAjax(&#39;MSC006&#39;, &#39;MSC006&#39;);">ë³€ê²½</button>
 			</div>
-			<div class="prc"><b>10,500</b>¿ø</div>
+			<div class="prc"><b>10,500</b>ì›</div>
 		</div>
 		
 
 		
 
 		
-		<!-- ¼±ÅÃ»óÇ° °è»ê°ü·Ã -->
+		<!-- ì„ íƒìƒí’ˆ ê³„ì‚°ê´€ë ¨ -->
 		<input type="hidden" name="checkPrdAmt_0" id="checkPrdAmt_0" value="10500">
 		<input type="hidden" name="checkPreStlDlvAmt_0" id="checkPreStlDlvAmt_0" value="5500">
 		<input type="hidden" name="checkDlvWay_0" id="checkDlvWay_0" value="01">
@@ -3348,7 +3348,7 @@ var popCupon = {
 		<input type="hidden" name="checkDlvCupnDscAmt_0" id="checkDlvCupnDscAmt_0" value="0">
 		<input type="hidden" name="checkDlvCstInstBasiCd_0" id="checkDlvCstInstBasiCd_0" value="05">
 		<input type="hidden" name="checkDlvSellerKey_0" id="checkDlvSellerKey_0" value="0">
-		<!-- Àû¸³ÇıÅÃ -->
+		<!-- ì ë¦½í˜œíƒ -->
 		<input type="hidden" name="checkOpntSaveRt_0" id="checkOpntSaveRt_0" value="0.0">
 		<input type="hidden" name="checkBonusPointSaveAmt_0" id="checkBonusPointSaveAmt_0" value="0">
 		<input type="hidden" name="checkEmergencyPointSaveAmt_0" id="checkEmergencyPointSaveAmt_0" value="0">
@@ -3361,18 +3361,18 @@ var popCupon = {
 
 		<div class="clc" style="display:;">
 			<ul>
-				<li>ÃÑ »óÇ°±İ¾× <span class="prc" id="prdAmount0" title="10500"><b>10,500</b>¿ø</span></li>
-				<li>ÄíÆùÇÒÀÎ±İ¾× <span class="prc" id="dscAmount0" title="0"><b>0</b>¿ø</span></li>
-				<li class="last">ÃÑ ÇÕ°è±İ¾× <span class="prc"><b>10,500</b>¿ø</span></li>
+				<li>ì´ ìƒí’ˆê¸ˆì•¡ <span class="prc" id="prdAmount0" title="10500"><b>10,500</b>ì›</span></li>
+				<li>ì¿ í°í• ì¸ê¸ˆì•¡ <span class="prc" id="dscAmount0" title="0"><b>0</b>ì›</span></li>
+				<li class="last">ì´ í•©ê³„ê¸ˆì•¡ <span class="prc"><b>10,500</b>ì›</span></li>
 				<li class="dly">
-					¹è¼Ûºñ :
+					ë°°ì†¡ë¹„ :
 					
-					¼±°áÁ¦
+					ì„ ê²°ì œ
 					
-					<span class="prc"><b>5,500</b>¿ø</span>
+					<span class="prc"><b>5,500</b>ì›</span>
 
 					
-					<a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall#lyr10" onclick="mwUI.layerToggle(&#39;lyr10&#39;, this, &#39;lyw&#39;);return false;" class="help" data-clickurl="MSC008" data-clickkey="MSC008">µµ¿ò¸»</a>
+					<a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall#lyr10" onclick="mwUI.layerToggle(&#39;lyr10&#39;, this, &#39;lyw&#39;);return false;" class="help" data-clickurl="MSC008" data-clickkey="MSC008">ë„ì›€ë§</a>
 					
 				</li>
 			</ul>
@@ -3381,64 +3381,64 @@ var popCupon = {
 		<div class="btn_area">
 			<input type="hidden" name="agreeOrderMakePrdYN_1232313972" value="Y">
 			<div class="ag_left">
-				<button type="button" class="sbtn" onclick="doDelete(&#39;1232313972&#39;);callStatAjax(&#39;MSC011&#39;, &#39;MSC011&#39;);">»èÁ¦</button>
+				<button type="button" class="sbtn" onclick="doDelete(&#39;1232313972&#39;);callStatAjax(&#39;MSC011&#39;, &#39;MSC011&#39;);">ì‚­ì œ</button>
 			</div>
 
 
 
 
 			
-			<button type="button" class="sbtn fbl" onclick="changeCoupon(&#39;1232313972&#39;, &#39;N&#39;, 1);callStatAjax(&#39;MSA01&#39;,&#39;MSA0101&#39;);return false;">ÄíÆùº¯°æ</button>
-			<button type="button" class="sbtn frd" onclick="orderOneProduct(&#39;1232313972&#39;,&#39;N&#39;,0,1);callStatAjax(&#39;MSC009&#39;, &#39;MSC009&#39;);">ÁÖ¹®</button>
+			<button type="button" class="sbtn fbl" onclick="changeCoupon(&#39;1232313972&#39;, &#39;N&#39;, 1);callStatAjax(&#39;MSA01&#39;,&#39;MSA0101&#39;);return false;">ì¿ í°ë³€ê²½</button>
+			<button type="button" class="sbtn frd" onclick="orderOneProduct(&#39;1232313972&#39;,&#39;N&#39;,0,1);callStatAjax(&#39;MSC009&#39;, &#39;MSC009&#39;);">ì£¼ë¬¸</button>
 			
-			<button type="button" class="sbtn onec" onclick="orderOneProduct(&#39;1232313972&#39;,&#39;N&#39;,0,1 ,&#39;N&#39;,&#39;true&#39; ,&#39;958114815&#39;, &#39;Y&#39;);callStatAjax(&#39;MSC019&#39;, &#39;MSC019&#39;);">¿øÅ¬¸¯</button>
+			<button type="button" class="sbtn onec" onclick="orderOneProduct(&#39;1232313972&#39;,&#39;N&#39;,0,1 ,&#39;N&#39;,&#39;true&#39; ,&#39;958114815&#39;, &#39;Y&#39;);callStatAjax(&#39;MSC019&#39;, &#39;MSC019&#39;);">ì›í´ë¦­</button>
 			
 			<input type="hidden" name="soldOut_1232313972" value="F">
 			
 		</div>
 	</div>
 
-	<!-- s:¹­À½ ¹è¼Ûºñ Á¤Ã¥ -->
+	<!-- s:ë¬¶ìŒ ë°°ì†¡ë¹„ ì •ì±… -->
 
 	<div class="lyw" id="lyr10" style="display:none" ;="">
 		<div class="lym">
 			
-			<h3>¹è¼Ûºñ Á¶°Ç ¾È³»</h3>
+			<h3>ë°°ì†¡ë¹„ ì¡°ê±´ ì•ˆë‚´</h3>
 			
-			<p class="txt">º» »óÇ°Àº µ¿ÀÏ ÆÇ¸ÅÀÚÀÇ µ¿ÀÏ ¹è¼Ûºñ Á¶°Ç »óÇ°ÀÇ ¹­À½ ±¸¸Å¿¡ µû¶ó ¹è¼Ûºñ°¡ ´Ş¶óÁı´Ï´Ù.</p>
+			<p class="txt">ë³¸ ìƒí’ˆì€ ë™ì¼ íŒë§¤ìì˜ ë™ì¼ ë°°ì†¡ë¹„ ì¡°ê±´ ìƒí’ˆì˜ ë¬¶ìŒ êµ¬ë§¤ì— ë”°ë¼ ë°°ì†¡ë¹„ê°€ ë‹¬ë¼ì§‘ë‹ˆë‹¤.</p>
 			
 			<table class="tbl2">
-				<caption>¹è¼Ûºñ</caption>
+				<caption>ë°°ì†¡ë¹„</caption>
 				<tbody>
 				<tr>
-					<td><strong class="t_orgg">1°³´ç¹è¼Ûºñ</strong><br>5,500¿ø</td>
+					<td><strong class="t_orgg">1ê°œë‹¹ë°°ì†¡ë¹„</strong><br>5,500ì›</td>
 				</tr>
 				</tbody>
 			</table>
 			
-			<h3 class="tt">Á¦ÁÖ/µµ¼­»ê°£ Áö¿ª Ãß°¡¹è¼Ûºñ</h3>
-			<p class="txt">Á¦ÁÖ/µµ¼­»ê°£ ¹è¼ÛÁöÀÇ °æ¿ì ±¸¸ÅÀÚ´Â Ãß°¡ ¿î¼Ûºñ¸¦ ÁöºÒÇÏ¿©¾ß ÇÕ´Ï´Ù.<br>(Áö¿ª»ó¼¼Á¤º¸´Â PC¹öÀü¿¡¼­ È®ÀÎ)</p>
+			<h3 class="tt">ì œì£¼/ë„ì„œì‚°ê°„ ì§€ì—­ ì¶”ê°€ë°°ì†¡ë¹„</h3>
+			<p class="txt">ì œì£¼/ë„ì„œì‚°ê°„ ë°°ì†¡ì§€ì˜ ê²½ìš° êµ¬ë§¤ìëŠ” ì¶”ê°€ ìš´ì†¡ë¹„ë¥¼ ì§€ë¶ˆí•˜ì—¬ì•¼ í•©ë‹ˆë‹¤.<br>(ì§€ì—­ìƒì„¸ì •ë³´ëŠ” PCë²„ì „ì—ì„œ í™•ì¸)</p>
 			<table class="tbl2">
-				<caption>¹è¼Ûºñ</caption>
+				<caption>ë°°ì†¡ë¹„</caption>
 				<tbody>
 				
 				<tr>
-					<th scope="row">Á¦ÁÖÁö¿ª</th>
-					<td>3,000¿ø</td>
+					<th scope="row">ì œì£¼ì§€ì—­</th>
+					<td>3,000ì›</td>
 				</tr>
 				
 				<tr>
-					<th scope="row">µµ¼­»ê°£</th>
-					<td>5,000¿ø</td>
+					<th scope="row">ë„ì„œì‚°ê°„</th>
+					<td>5,000ì›</td>
 				</tr>
 				
 				</tbody>
 			</table>
 			
 		</div>
-		<button type="button" class="cls">µµ¿ò¸» ´İ±â</button>
+		<button type="button" class="cls">ë„ì›€ë§ ë‹«ê¸°</button>
 	</div>
-	<!-- e:¹­À½ ¹è¼Ûºñ Á¤Ã¥ -->
+	<!-- e:ë¬¶ìŒ ë°°ì†¡ë¹„ ì •ì±… -->
 
 		
 		</div>
@@ -3446,174 +3446,174 @@ var popCupon = {
 				
 
 			</div>
-			<!-- //ÇÏ³ª¾¿ º¸±â -->
+			<!-- //í•˜ë‚˜ì”© ë³´ê¸° -->
 
 			<div class="cart_type_btm">
-				<div class="chkb"><span class="chkBox"><input type="checkbox" id="allselectBelow" onclick="selectAllChk();"> <label for="allselect2">ÀüÃ¼¼±ÅÃ</label></span></div>
+				<div class="chkb"><span class="chkBox"><input type="checkbox" id="allselectBelow" onclick="selectAllChk();"> <label for="allselect2">ì „ì²´ì„ íƒ</label></span></div>
 			</div>
 
 			<div class="order_total">
 				<ul class="total">
 					<li>
-						<em>ÁÖ¹®±İ¾×<span>(¹è¼ÛºñÆ÷ÇÔ)</span></em>
-						<div class="cn"><strong id="totalOrderAmount">16,000</strong>¿ø</div>
+						<em>ì£¼ë¬¸ê¸ˆì•¡<span>(ë°°ì†¡ë¹„í¬í•¨)</span></em>
+						<div class="cn"><strong id="totalOrderAmount">16,000</strong>ì›</div>
 					</li>
 					<li>
-						<em>ÇÒÀÎ±İ¾×</em>
-						<div class="cn"><strong id="totalDscAmount">0</strong>¿ø</div>
+						<em>í• ì¸ê¸ˆì•¡</em>
+						<div class="cn"><strong id="totalDscAmount">0</strong>ì›</div>
 					</li>
 					<li>
-						<em>°áÁ¦¿¹Á¤±İ¾×</em>
-						<div class="cn"><strong id="finalOrderExpectAmount">16,000</strong>¿ø</div>
+						<em>ê²°ì œì˜ˆì •ê¸ˆì•¡</em>
+						<div class="cn"><strong id="finalOrderExpectAmount">16,000</strong>ì›</div>
 					</li>
 				</ul>
 				
 				<div class="bft">
-					<h2>Àû¸³ÇıÅÃ</h2>
+					<h2>ì ë¦½í˜œíƒ</h2>
 					<ul>
 						
-						<li id="displayMileSaveAmt">¸¶ÀÏ¸®Áö Àû¸³ <span id="sumMileSaveAmt"><b>210¸¶ÀÏ</b></span></li>
+						<li id="displayMileSaveAmt">ë§ˆì¼ë¦¬ì§€ ì ë¦½ <span id="sumMileSaveAmt"><b>210ë§ˆì¼</b></span></li>
 						
 					</ul>
 				</div>
 				
 			</div>
-			<!-- s:»çÀºÇ° -->
+			<!-- s:ì‚¬ì€í’ˆ -->
 			<div class="lyw" id="lyr_bookGift" style="display:none; margin-top: -14px;">
 				<div class="lym">
-					<h3>±¸¸ÅÁ¶°Çº° »çÀºÇ° ¾È³»</h3>
+					<h3>êµ¬ë§¤ì¡°ê±´ë³„ ì‚¬ì€í’ˆ ì•ˆë‚´</h3>
 					<div class="bk_gift" id="bookGiftInfo">
 					</div>
 				</div>
-				<button type="button" class="cls" onclick="helpClose(this)">µµ¿ò¸» ´İ±â</button>
+				<button type="button" class="cls" onclick="helpClose(this)">ë„ì›€ë§ ë‹«ê¸°</button>
 			</div>
 
-			<!-- e:»çÀºÇ° -->
+			<!-- e:ì‚¬ì€í’ˆ -->
 			<div id="cartBtn" class="btn_w3 btncart">
-				<div><span class="btnpr"><button type="button" onclick="goToOrderBasic(&#39;Checked&#39;,1);callStatAjax(&#39;MSC016&#39;, &#39;MSC016&#39;);" data-gactg="11111" data-gaaction="222´İ±â¹öÆ°">¼±ÅÃÁÖ¹®</button></span></div>
-				<div><span class="btnbn"><button type="button" onclick="goToOrderBasic(&#39;All&#39;,1);callStatAjax(&#39;MSC017&#39;, &#39;MSC017&#39;);">ÀüÃ¼ÁÖ¹®</button></span></div>
-				<div><span class="btnb"><button type="button" onclick="doMultiDelete(1);callStatAjax(&#39;MSC018&#39;, &#39;MSC018&#39;);">¼±ÅÃ»èÁ¦</button></span></div>
+				<div><span class="btnpr"><button type="button" onclick="goToOrderBasic(&#39;Checked&#39;,1);callStatAjax(&#39;MSC016&#39;, &#39;MSC016&#39;);" data-gactg="11111" data-gaaction="222ë‹«ê¸°ë²„íŠ¼">ì„ íƒì£¼ë¬¸</button></span></div>
+				<div><span class="btnbn"><button type="button" onclick="goToOrderBasic(&#39;All&#39;,1);callStatAjax(&#39;MSC017&#39;, &#39;MSC017&#39;);">ì „ì²´ì£¼ë¬¸</button></span></div>
+				<div><span class="btnb"><button type="button" onclick="doMultiDelete(1);callStatAjax(&#39;MSC018&#39;, &#39;MSC018&#39;);">ì„ íƒì‚­ì œ</button></span></div>
 			</div>
 			<input type="hidden" name="sellerCheckKey" value="1">
 			<input type="hidden" name="totalCartPrdCnt" value="1">
 
 
-			<!-- [Layer]µµÂø¿¹Á¤ÀÏ -->
+			<!-- [Layer]ë„ì°©ì˜ˆì •ì¼ -->
 			<div class="lyw" id="lyr_arrive" style="display:none">
 				<div class="lym">
-					<h3>µµÂø¿¹Á¤ÀÏ</h3>
+					<h3>ë„ì°©ì˜ˆì •ì¼</h3>
 					<div class="cons">
 						<p class="txt_dly">
-							ÁÖ¹® ÈÄ 2-3ÀÏ (¿µ¾÷ÀÏ ±âÁØ) ¹Ş¾Æ º¸½Ç ¼ö ÀÖÀ¸¸ç, ÆòÀÏ ±âÁØÀ¸·Î ´çÀÏ ¹è¼Û °¡´É½Ã°£¿¡ ÁÖ¹®ÇÏ½Å °æ¿ì ´çÀÏ È¤Àº ´ÙÀ½³¯ ¹Ş¾Æº¸½Ç ¼ö ÀÖ½À´Ï´Ù.
+							ì£¼ë¬¸ í›„ 2-3ì¼ (ì˜ì—…ì¼ ê¸°ì¤€) ë°›ì•„ ë³´ì‹¤ ìˆ˜ ìˆìœ¼ë©°, í‰ì¼ ê¸°ì¤€ìœ¼ë¡œ ë‹¹ì¼ ë°°ì†¡ ê°€ëŠ¥ì‹œê°„ì— ì£¼ë¬¸í•˜ì‹  ê²½ìš° ë‹¹ì¼ í˜¹ì€ ë‹¤ìŒë‚  ë°›ì•„ë³´ì‹¤ ìˆ˜ ìˆìŠµë‹ˆë‹¤.
 						</p>
 					</div>
 				</div>
-				<button type="button" class="cls" onclick="helpClose(this)">µµ¿ò¸» ´İ±â</button>
+				<button type="button" class="cls" onclick="helpClose(this)">ë„ì›€ë§ ë‹«ê¸°</button>
 			</div>
-			<!-- //[Layer]µµÂø¿¹Á¤ÀÏ -->
+			<!-- //[Layer]ë„ì°©ì˜ˆì •ì¼ -->
 
-			<!-- s:¹è¼Ûºñ/°ü,ºÎ°¡¼¼ -->
+			<!-- s:ë°°ì†¡ë¹„/ê´€,ë¶€ê°€ì„¸ -->
 			<div class="lyw" id="lyr2" style="display:none">
 				<div class="lym">
-					<h3>¹è¼Ûºñ/°ü,ºÎ°¡¼¼</h3>
+					<h3>ë°°ì†¡ë¹„/ê´€,ë¶€ê°€ì„¸</h3>
 					<div class="box2">
 						<ul>
-							<li>¹è¼Ûºñ
-								<p class="ncn">ÇØ¿ÜÇ×°ø¹è¼Û »óÇ°Àº, ÇØ¿ÜÇöÁö¿î¼Û·á + ±¹Á¦¿î¼Û·á + ±¹³»¿î¼Û·á·Î, »óÇ°¹«°Ô¿¡ µû¶ó Ã¥Á¤µË´Ï´Ù. </p>
+							<li>ë°°ì†¡ë¹„
+								<p class="ncn">í•´ì™¸í•­ê³µë°°ì†¡ ìƒí’ˆì€, í•´ì™¸í˜„ì§€ìš´ì†¡ë£Œ + êµ­ì œìš´ì†¡ë£Œ + êµ­ë‚´ìš´ì†¡ë£Œë¡œ, ìƒí’ˆë¬´ê²Œì— ë”°ë¼ ì±…ì •ë©ë‹ˆë‹¤. </p>
 							</li>
-							<li>°ü,ºÎ°¡¼¼
-								<p class="ncn">¼öÀÔÅë°ü½Ã ºÎ°úµÇ´Â ¼¼±İÀ¸·Î ÀÏ¹İÀûÀ¸·Î 15¸¸¿ø ÃÊ°úµÇ´Â °æ¿ì °ú¼¼µË´Ï´Ù.<br>
-									<strong>(°ü¼¼À²Àº ±¸ÀÔ »óÇ°ÀÇ Á¾·ù¿Í °¡°İ¿¡ µû¶ó ºÎ°úµË´Ï´Ù.)</strong></p>
+							<li>ê´€,ë¶€ê°€ì„¸
+								<p class="ncn">ìˆ˜ì…í†µê´€ì‹œ ë¶€ê³¼ë˜ëŠ” ì„¸ê¸ˆìœ¼ë¡œ ì¼ë°˜ì ìœ¼ë¡œ 15ë§Œì› ì´ˆê³¼ë˜ëŠ” ê²½ìš° ê³¼ì„¸ë©ë‹ˆë‹¤.<br>
+									<strong>(ê´€ì„¸ìœ¨ì€ êµ¬ì… ìƒí’ˆì˜ ì¢…ë¥˜ì™€ ê°€ê²©ì— ë”°ë¼ ë¶€ê³¼ë©ë‹ˆë‹¤.)</strong></p>
 							</li>
-							<li>±âÅ¸
-								<p class="ncn">ÇöÁö¼¼±İ, Åë°ü¼ö¼ö·á, »óÇ°°¡¿¡ µû¸¥ ¾È½Éº¸Çè·á µîÀÌ Æ÷ÇÔµÇ¾îÀÖÀ¸¸ç, <strong>°áÁ¦¿Ï·áÇÏ½Å ÈÄ È¯À²º¯µ¿ µîÀÌ ¹ß»ıÇØµµ Ãß°¡·Î °áÁ¦ÇÏÁö ¾ÊÀ¸¼Åµµ µË´Ï´Ù.</strong></p>
+							<li>ê¸°íƒ€
+								<p class="ncn">í˜„ì§€ì„¸ê¸ˆ, í†µê´€ìˆ˜ìˆ˜ë£Œ, ìƒí’ˆê°€ì— ë”°ë¥¸ ì•ˆì‹¬ë³´í—˜ë£Œ ë“±ì´ í¬í•¨ë˜ì–´ìˆìœ¼ë©°, <strong>ê²°ì œì™„ë£Œí•˜ì‹  í›„ í™˜ìœ¨ë³€ë™ ë“±ì´ ë°œìƒí•´ë„ ì¶”ê°€ë¡œ ê²°ì œí•˜ì§€ ì•Šìœ¼ì…”ë„ ë©ë‹ˆë‹¤.</strong></p>
 							</li>
 						</ul>
 					</div>
 				</div>
-				<button type="button" class="cls">µµ¿ò¸» ´İ±â</button>
+				<button type="button" class="cls">ë„ì›€ë§ ë‹«ê¸°</button>
 			</div>
-			<!-- e:¹è¼Ûºñ/°ü,ºÎ°¡¼¼ -->
+			<!-- e:ë°°ì†¡ë¹„/ê´€,ë¶€ê°€ì„¸ -->
 
-			<!-- s:¹è¼Û º¸ÀåÀÏ -->
+			<!-- s:ë°°ì†¡ ë³´ì¥ì¼ -->
 			<div class="lyw" id="lyr3" style="display:none">
 				<div class="lym">
-					<h3>¹è¼Û º¸ÀåÀÏ <span class="sut">(11¹ø°¡ ÇØ¿ÜÅëÇÕ¹è¼Û »óÇ°)</span></h3>
+					<h3>ë°°ì†¡ ë³´ì¥ì¼ <span class="sut">(11ë²ˆê°€ í•´ì™¸í†µí•©ë°°ì†¡ ìƒí’ˆ)</span></h3>
 					<div class="box2">
 						<ul>
-							<li>¹è¼Ûº¸ÀåÀÏÀÌ¶õ?
-								<p class="ncn">11¹ø°¡ ÇØ¿ÜÅëÇÕ¹è¼Û»óÇ°¿¡ ´ëÇØ, 11¹ø°¡°¡ ¹è¼ÛÀ» º¸ÀåÇÏ´Â ±â°£À¸·Î, °í°´´Ô²²¼­ ÁÖ¹®/°áÁ¦ÇÑ ½ÃÁ¡À¸·ÎºÎÅÍ »óÇ°À» ¼ö·ÉÇÏ½Å ½ÃÁ¡±îÁöÀÇ Æò±Õ±â°£À» ±âÁØÀ¸·Î »êÁ¤µË´Ï´Ù.</p>
+							<li>ë°°ì†¡ë³´ì¥ì¼ì´ë€?
+								<p class="ncn">11ë²ˆê°€ í•´ì™¸í†µí•©ë°°ì†¡ìƒí’ˆì— ëŒ€í•´, 11ë²ˆê°€ê°€ ë°°ì†¡ì„ ë³´ì¥í•˜ëŠ” ê¸°ê°„ìœ¼ë¡œ, ê³ ê°ë‹˜ê»˜ì„œ ì£¼ë¬¸/ê²°ì œí•œ ì‹œì ìœ¼ë¡œë¶€í„° ìƒí’ˆì„ ìˆ˜ë ¹í•˜ì‹  ì‹œì ê¹Œì§€ì˜ í‰ê· ê¸°ê°„ì„ ê¸°ì¤€ìœ¼ë¡œ ì‚°ì •ë©ë‹ˆë‹¤.</p>
 							</li>
-							<li>¹è¼ÛÀÏ ¿ÏÀü º¸ÀåÁ¦¶õ?
-								<p class="ncn">11¹ø°¡ ÇØ¿ÜÅëÇÕ¹è¼Û »óÇ°¿¡ ´ëÇØ,ÁÖ¹®½Ã ¾È³»µå¸° ¹è¼Ûº¸ÀåÀÏ ³»¿¡ ¹è¼ÛÀÌ ¾ÈµÇ´Â °æ¿ì, ´ÙÀ½³¯ºÎÅÍ 1ÀÏ¿¡ 1,000¿ø¾¿À» Æ÷ÀÎÆ®·Î Àû¸³ÇØµå¸®´Â Á¦µµÀÔ´Ï´Ù.  <br>
-									(ÁÖ¹®º° ÃÖ´ë 11,000¿ø, 11¹ø°¡ ÇØ¿ÜÅëÇÕ¹è¼Û»óÇ° ÇÑÁ¤, ¹ß»ıÀÏ¿¡ ÀÚµ¿Àû¸³)</p>
+							<li>ë°°ì†¡ì¼ ì™„ì „ ë³´ì¥ì œë€?
+								<p class="ncn">11ë²ˆê°€ í•´ì™¸í†µí•©ë°°ì†¡ ìƒí’ˆì— ëŒ€í•´,ì£¼ë¬¸ì‹œ ì•ˆë‚´ë“œë¦° ë°°ì†¡ë³´ì¥ì¼ ë‚´ì— ë°°ì†¡ì´ ì•ˆë˜ëŠ” ê²½ìš°, ë‹¤ìŒë‚ ë¶€í„° 1ì¼ì— 1,000ì›ì”©ì„ í¬ì¸íŠ¸ë¡œ ì ë¦½í•´ë“œë¦¬ëŠ” ì œë„ì…ë‹ˆë‹¤.  <br>
+									(ì£¼ë¬¸ë³„ ìµœëŒ€ 11,000ì›, 11ë²ˆê°€ í•´ì™¸í†µí•©ë°°ì†¡ìƒí’ˆ í•œì •, ë°œìƒì¼ì— ìë™ì ë¦½)</p>
 							</li>
-							<li>11¹ø°¡ ÇØ¿ÜÅëÇÕ¹è¼Û »óÇ°ÀÌ¶õ?
-								<p class="ncn">11¹ø°¡ ÇØ¿Ü¹°·ù¼¾ÅÍ¿¡¼­ ÇÕÆ÷ÀåÇÏ¿© ¹ß¼ÛÇØµå¸®´Â »óÇ°À¸·Î, °³º°ÁÖ¹®½Ãº¸´Ù ¹è¼Ûºñ°¡ Àú·ÅÇØÁı´Ï´Ù.</p>
+							<li>11ë²ˆê°€ í•´ì™¸í†µí•©ë°°ì†¡ ìƒí’ˆì´ë€?
+								<p class="ncn">11ë²ˆê°€ í•´ì™¸ë¬¼ë¥˜ì„¼í„°ì—ì„œ í•©í¬ì¥í•˜ì—¬ ë°œì†¡í•´ë“œë¦¬ëŠ” ìƒí’ˆìœ¼ë¡œ, ê°œë³„ì£¼ë¬¸ì‹œë³´ë‹¤ ë°°ì†¡ë¹„ê°€ ì €ë ´í•´ì§‘ë‹ˆë‹¤.</p>
 							</li>
 						</ul>
 					</div>
 				</div>
-				<button type="button" class="cls">µµ¿ò¸» ´İ±â</button>
+				<button type="button" class="cls">ë„ì›€ë§ ë‹«ê¸°</button>
 			</div>
-			<!-- e:¹è¼Û º¸ÀåÀÏ -->
+			<!-- e:ë°°ì†¡ ë³´ì¥ì¼ -->
 
-			<!-- s : ÁÖ¹®Á¦ÀÛ »óÇ° ±¸¸Å¾È³» -->
+			<!-- s : ì£¼ë¬¸ì œì‘ ìƒí’ˆ êµ¬ë§¤ì•ˆë‚´ -->
 			<div id="guideLayer" class="layer_confirm">
 				<div class="cont">
-					<h2>ÁÖ¹®Á¦ÀÛ »óÇ° ±¸¸Å¾È³»</h2>
-					<p>ÇØ´ç»óÇ°Àº °í°´´ÔÀÇ ÁÖ¹®»çÇ×¿¡ ¸ÂÃç Á¦ÀÛµÇ´Â »óÇ°ÀÌ¹Ç·Î ÆÇ¸ÅÀÚÀÇ ÀÇ»ç¿¡ ¹İÇÏ¿© Ãë¼Ò ¹× ±³È¯, ¹İÇ°ÀÌ ºÒ°¡´É ÇÕ´Ï´Ù.  (»óÇ°ÇÏÀÚ½Ã Á¦¿Ü)<br>ÀÌ¿¡ µ¿ÀÇÇÏ½Ã´Â °æ¿ì <strong class="red">µ¿ÀÇ</strong>¹öÆ°À» ¼±ÅÃÇØ ÁÖ¼¼¿ä.</p>
+					<h2>ì£¼ë¬¸ì œì‘ ìƒí’ˆ êµ¬ë§¤ì•ˆë‚´</h2>
+					<p>í•´ë‹¹ìƒí’ˆì€ ê³ ê°ë‹˜ì˜ ì£¼ë¬¸ì‚¬í•­ì— ë§ì¶° ì œì‘ë˜ëŠ” ìƒí’ˆì´ë¯€ë¡œ íŒë§¤ìì˜ ì˜ì‚¬ì— ë°˜í•˜ì—¬ ì·¨ì†Œ ë° êµí™˜, ë°˜í’ˆì´ ë¶ˆê°€ëŠ¥ í•©ë‹ˆë‹¤.  (ìƒí’ˆí•˜ìì‹œ ì œì™¸)<br>ì´ì— ë™ì˜í•˜ì‹œëŠ” ê²½ìš° <strong class="red">ë™ì˜</strong>ë²„íŠ¼ì„ ì„ íƒí•´ ì£¼ì„¸ìš”.</p>
 				</div>
 				<div class="btn_w2">
-					<div><span class="btnbr"><button type="button" data-move="no" onclick="document.actionForm.submit();return false;">µ¿ÀÇ</button></span></div>
-					<div><span class="btnb"><button type="button" data-move="no" onclick="mwUI.layerPopClose(&#39;guideLayer&#39;);return false;">Ãë¼Ò</button></span></div>
+					<div><span class="btnbr"><button type="button" data-move="no" onclick="document.actionForm.submit();return false;">ë™ì˜</button></span></div>
+					<div><span class="btnb"><button type="button" data-move="no" onclick="mwUI.layerPopClose(&#39;guideLayer&#39;);return false;">ì·¨ì†Œ</button></span></div>
 				</div>
 			</div>
-			<!-- e: ÁÖ¹®Á¦ÀÛ »óÇ° ±¸¸Å¾È³» -->
+			<!-- e: ì£¼ë¬¸ì œì‘ ìƒí’ˆ êµ¬ë§¤ì•ˆë‚´ -->
 
-			<!-- 2016-05-27 NDH ³ª¿ì¹è¼Û ¾È³» ·¹ÀÌ¾î -->
+			<!-- 2016-05-27 NDH ë‚˜ìš°ë°°ì†¡ ì•ˆë‚´ ë ˆì´ì–´ -->
 			<div class="lyw" id="lyrNow" style="display:none">
 				<div class="lym">
-					<h3>NOW¹è¼Û ¼­ºñ½º¶õ?</h3>
+					<h3>NOWë°°ì†¡ ì„œë¹„ìŠ¤ë€?</h3>
 					<p class="txt">
-						1. 11¹ø°¡¿¡¼­ ¾ö¼±ÇÑ »óÇ°À» ÇÑ¹ø¿¡ ´ã¾Æ¼­ ¹è¼Û!<br>
-						2. NOW¹è¼Û ¾ÆÀÌÄÜÀÌ ºÙÀº »óÇ°Àº °ñ¶ó ´ã¾Æ ¹è¼Ûºñ ÇÑ¹ø¸¸!<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;2¸¸¿ø ÀÌ»ó ±¸¸Å½Ã ¹«·á¹è¼Û! <br>
-						3. ¿ÀÈÄ 5½Ã ÀÌÀü ÁÖ¹®½Ã ¿À´Ã¹ß¼Û!
+						1. 11ë²ˆê°€ì—ì„œ ì—„ì„ í•œ ìƒí’ˆì„ í•œë²ˆì— ë‹´ì•„ì„œ ë°°ì†¡!<br>
+						2. NOWë°°ì†¡ ì•„ì´ì½˜ì´ ë¶™ì€ ìƒí’ˆì€ ê³¨ë¼ ë‹´ì•„ ë°°ì†¡ë¹„ í•œë²ˆë§Œ!<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;2ë§Œì› ì´ìƒ êµ¬ë§¤ì‹œ ë¬´ë£Œë°°ì†¡! <br>
+						3. ì˜¤í›„ 5ì‹œ ì´ì „ ì£¼ë¬¸ì‹œ ì˜¤ëŠ˜ë°œì†¡!
 					</p>
 				</div>
-				<button type="button" class="cls">µµ¿ò¸» ´İ±â</button>
+				<button type="button" class="cls">ë„ì›€ë§ ë‹«ê¸°</button>
 			</div>
-			<!-- //2016-05-27 NDH ³ª¿ì¹è¼Û ¾È³» ·¹ÀÌ¾î -->
+			<!-- //2016-05-27 NDH ë‚˜ìš°ë°°ì†¡ ì•ˆë‚´ ë ˆì´ì–´ -->
 
 
 			<div class="lyw" id="lyr_deliDate" style="display:none; top: 228px;">
 				<div class="lym">
-					<h2>[Èñ¸ÁÀÏ¹è¼Û ¾È³»]</h2>
+					<h2>[í¬ë§ì¼ë°°ì†¡ ì•ˆë‚´]</h2>
 					<div class="lyc">
 						<ul>
-							<li>1. °áÁ¦´Ü°è¿¡¼­ ¿øÇÏ½Ã´Â ¹è¼Û³¯Â¥¸¦ ÁöÁ¤ÇÒ ¼ö ÀÖ½À´Ï´Ù.(¿øÅ¬¸¯ ±¸¸Å´Â ÁöÁ¤ºÒ°¡)</li>
-							<li>2. ÁöÁ¤ÀÌ µÇÁö ¾Ê´Â ³¯Â¥´Â ¹è¼Û¿äÃ»»çÇ×¿¡ ³¯Â¥¸¦ ±âÀçÇØÁÖ¼¼¿ä.</li>
-							<li>3. ¹°·ù¼¾ÅÍ ÈŞ¹«ÀÏ¿¡´Â ¹è¼Û ¹× ¼³Ä¡°¡ ºÒ°¡´ÉÇÕ´Ï´Ù.</li>
-							<li>4. ¼±ÅÃÇÑ ¹è¼Û³¯Â¥¿¡ ¹°·ù±â»ç°¡ ¹æ¹®Àü ÇØÇÇÄİ ¿¹Á¤ÀÔ´Ï´Ù.</li>
+							<li>1. ê²°ì œë‹¨ê³„ì—ì„œ ì›í•˜ì‹œëŠ” ë°°ì†¡ë‚ ì§œë¥¼ ì§€ì •í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.(ì›í´ë¦­ êµ¬ë§¤ëŠ” ì§€ì •ë¶ˆê°€)</li>
+							<li>2. ì§€ì •ì´ ë˜ì§€ ì•ŠëŠ” ë‚ ì§œëŠ” ë°°ì†¡ìš”ì²­ì‚¬í•­ì— ë‚ ì§œë¥¼ ê¸°ì¬í•´ì£¼ì„¸ìš”.</li>
+							<li>3. ë¬¼ë¥˜ì„¼í„° íœ´ë¬´ì¼ì—ëŠ” ë°°ì†¡ ë° ì„¤ì¹˜ê°€ ë¶ˆê°€ëŠ¥í•©ë‹ˆë‹¤.</li>
+							<li>4. ì„ íƒí•œ ë°°ì†¡ë‚ ì§œì— ë¬¼ë¥˜ê¸°ì‚¬ê°€ ë°©ë¬¸ì „ í•´í”¼ì½œ ì˜ˆì •ì…ë‹ˆë‹¤.</li>
 						</ul>
-						<p class="txt">´Ü ¹°·ù»óÈ²¿¡ µû¶ó Áö¿¬µÇ´Â °æ¿ìµµ ÀÖÀ¸´Ï ¾çÇØ ºÎÅ¹ µå¸³´Ï´Ù.(Áö¿¬ ½Ã »çÀü ¿¬¶ô ¿¹Á¤)</p>
+						<p class="txt">ë‹¨ ë¬¼ë¥˜ìƒí™©ì— ë”°ë¼ ì§€ì—°ë˜ëŠ” ê²½ìš°ë„ ìˆìœ¼ë‹ˆ ì–‘í•´ ë¶€íƒ ë“œë¦½ë‹ˆë‹¤.(ì§€ì—° ì‹œ ì‚¬ì „ ì—°ë½ ì˜ˆì •)</p>
 					</div>
 				</div>
-				<button type="button" class="cls">´İ±â</button>
+				<button type="button" class="cls">ë‹«ê¸°</button>
 			</div>
 			
 
 			<div class="cart_note">
-				<h2 class="tit_note">Àå¹Ù±¸´Ï À¯ÀÇ»çÇ×</h2>
+				<h2 class="tit_note">ì¥ë°”êµ¬ë‹ˆ ìœ ì˜ì‚¬í•­</h2>
 				<ul class="ntc_lst">
-					<li>11¹ø°¡ ¸ğ¹ÙÀÏ À¥ Àå¹Ù±¸´Ï´Â 11¹ø°¡ À¥ »çÀÌÆ®ÀÇ Àå¹Ù±¸´Ï¿Í µ¿ÀÏÇÏ°Ô ¿¬µ¿µÇ³ª, ½Ã½ºÅÛ Àû¿ë ½ÃÂ÷°¡ ÀÖÀ» ¼ö ÀÖ½À´Ï´Ù.</li>
-					<li>Àå¹Ù±¸´Ï¿¡ ´ã±ä »óÇ°Àº ÃÖ´ë 30ÀÏ°£ ÀúÀåµÇ¸ç ÆÇ¸Å°¡ Á¾·áµÈ »óÇ°Àº ¸®½ºÆ®¸¸ À¯ÁöµË´Ï´Ù.</li>
-					<li>11¹ø°¡ ¸ğ¹ÙÀÏ À¥ Àå¹Ù±¸´Ï¿¡¼­´Â ¹­À½¹è¼Û ±¸¸Å, °³º°¹è¼Û ±¸¸Å¸¦ ÇÏ½Ç °æ¿ì ÃÖ´ë 20°³ÀÇ »óÇ°À» ±¸¸ÅÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù.(Ãß°¡»óÇ°Àº ¿¹¿Ü)</li>
-					<li>»ıÈ°+¹­À½¹è¼Û ±¸¸Å´Â µ¿ÀÏ ÆÇ¸ÅÀÚÀÇ ¼­ºñ½º À¯ÇüÀÌ °°°Å³ª, µ¿ÀÏ ¸ÅÀåÀÇ ¼­ºñ½º À¯ÇüÀÌ °°Àº °æ¿ì¿¡¸¸ ±¸¸Å¸¦ ÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù.</li>
-					<li>ÀÏ¹İ ¹è¼Û »óÇ°°ú »ıÈ°+ ¼­ºñ½º »óÇ°Àº ¹­À½¹è¼Û ±¸¸Å¸¦ ÇÏ½Ç ¼ö ¾ø½À´Ï´Ù.</li>
-					<li>¹Ì¼º³âÀÚ°¡ »óÇ°À» ÁÖ¹®/°áÁ¦ÇÒ °æ¿ì ¹ıÁ¤´ë¸®ÀÎÀÌ µ¿ÀÇÇÏÁö ¾ÊÀ¸¸é ¹Ì¼º³âÀÚ º»ÀÎ ¶Ç´Â ¹ıÁ¤´ë¸®ÀÎÀÌ ÁÖ¹®À» Ãë¼ÒÇÒ ¼ö ÀÖ½À´Ï´Ù.</li>
-					<li>»óÇ°ÀÇ ÇÕ°è ±İ¾×Àº ¹è¼Ûºñ¸¦ Á¦¿ÜÇÑ ±İ¾×ÀÌ¿À´Ï Âø¿À ¾øÀ¸½Ã±â ¹Ù¶ø´Ï´Ù.</li>
+					<li>11ë²ˆê°€ ëª¨ë°”ì¼ ì›¹ ì¥ë°”êµ¬ë‹ˆëŠ” 11ë²ˆê°€ ì›¹ ì‚¬ì´íŠ¸ì˜ ì¥ë°”êµ¬ë‹ˆì™€ ë™ì¼í•˜ê²Œ ì—°ë™ë˜ë‚˜, ì‹œìŠ¤í…œ ì ìš© ì‹œì°¨ê°€ ìˆì„ ìˆ˜ ìˆìŠµë‹ˆë‹¤.</li>
+					<li>ì¥ë°”êµ¬ë‹ˆì— ë‹´ê¸´ ìƒí’ˆì€ ìµœëŒ€ 30ì¼ê°„ ì €ì¥ë˜ë©° íŒë§¤ê°€ ì¢…ë£Œëœ ìƒí’ˆì€ ë¦¬ìŠ¤íŠ¸ë§Œ ìœ ì§€ë©ë‹ˆë‹¤.</li>
+					<li>11ë²ˆê°€ ëª¨ë°”ì¼ ì›¹ ì¥ë°”êµ¬ë‹ˆì—ì„œëŠ” ë¬¶ìŒë°°ì†¡ êµ¬ë§¤, ê°œë³„ë°°ì†¡ êµ¬ë§¤ë¥¼ í•˜ì‹¤ ê²½ìš° ìµœëŒ€ 20ê°œì˜ ìƒí’ˆì„ êµ¬ë§¤í•˜ì‹¤ ìˆ˜ ìˆìŠµë‹ˆë‹¤.(ì¶”ê°€ìƒí’ˆì€ ì˜ˆì™¸)</li>
+					<li>ìƒí™œ+ë¬¶ìŒë°°ì†¡ êµ¬ë§¤ëŠ” ë™ì¼ íŒë§¤ìì˜ ì„œë¹„ìŠ¤ ìœ í˜•ì´ ê°™ê±°ë‚˜, ë™ì¼ ë§¤ì¥ì˜ ì„œë¹„ìŠ¤ ìœ í˜•ì´ ê°™ì€ ê²½ìš°ì—ë§Œ êµ¬ë§¤ë¥¼ í•˜ì‹¤ ìˆ˜ ìˆìŠµë‹ˆë‹¤.</li>
+					<li>ì¼ë°˜ ë°°ì†¡ ìƒí’ˆê³¼ ìƒí™œ+ ì„œë¹„ìŠ¤ ìƒí’ˆì€ ë¬¶ìŒë°°ì†¡ êµ¬ë§¤ë¥¼ í•˜ì‹¤ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.</li>
+					<li>ë¯¸ì„±ë…„ìê°€ ìƒí’ˆì„ ì£¼ë¬¸/ê²°ì œí•  ê²½ìš° ë²•ì •ëŒ€ë¦¬ì¸ì´ ë™ì˜í•˜ì§€ ì•Šìœ¼ë©´ ë¯¸ì„±ë…„ì ë³¸ì¸ ë˜ëŠ” ë²•ì •ëŒ€ë¦¬ì¸ì´ ì£¼ë¬¸ì„ ì·¨ì†Œí•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.</li>
+					<li>ìƒí’ˆì˜ í•©ê³„ ê¸ˆì•¡ì€ ë°°ì†¡ë¹„ë¥¼ ì œì™¸í•œ ê¸ˆì•¡ì´ì˜¤ë‹ˆ ì°©ì˜¤ ì—†ìœ¼ì‹œê¸° ë°”ëë‹ˆë‹¤.</li>
 				</ul>
 			</div>
 		</form>
@@ -3627,36 +3627,36 @@ var popCupon = {
     }
 
     function callStatAjax(url, key, item) {
-        if (url && url != '') {
-            var statUrl = '/a.st?url='+url+'&ts='+Date.now();
-            if (key && key != '') statUrl += '&key='+key;
-            if (item && item != '') statUrl += '&item='+item;
-            var xhr = window.ActiveXObject ? new window.ActiveXObject('Microsoft.XMLHTTP') : new window.XMLHttpRequest();
-            try {
-                xhr.open('get', statUrl, true);
-                xhr.send(null);
-            } catch (e){ console.log(e); }
-        }
+//        if (url && url != '') {
+//            var statUrl = '/a.st?url='+url+'&ts='+Date.now();
+//            if (key && key != '') statUrl += '&key='+key;
+//            if (item && item != '') statUrl += '&item='+item;
+//            var xhr = window.ActiveXObject ? new window.ActiveXObject('Microsoft.XMLHTTP') : new window.XMLHttpRequest();
+//            try {
+//                xhr.open('get', statUrl, true);
+//                xhr.send(null);
+//            } catch (e){ console.log(e); }
+//        }
     }
 
     function callStat(url, key, item) {
-        if (url && url != '') {
-            var statUrl = '/a.st?url='+url+'&ts='+Date.now();
-            if (key && key != '') statUrl += '&key='+key;
-            if (item && item != '') statUrl += '&item='+item;
-            var clickIfrm;
-            if (document.getElementById('ifrmClickAnaly')) {
-                clickIfrm = document.getElementById('ifrmClickAnaly');
-            } else {
-                clickIfrm = document.createElement('IFRAME');
-                clickIfrm.id = 'ifrmClickAnaly';
-                clickIfrm.width = 0;
-                clickIfrm.height = 0;
-                clickIfrm.style.display = 'none';
-                document.body.appendChild(clickIfrm);
-            }
-            clickIfrm.src = statUrl;
-        }
+//        if (url && url != '') {
+//            var statUrl = '/a.st?url='+url+'&ts='+Date.now();
+//            if (key && key != '') statUrl += '&key='+key;
+//            if (item && item != '') statUrl += '&item='+item;
+//            var clickIfrm;
+//            if (document.getElementById('ifrmClickAnaly')) {
+//                clickIfrm = document.getElementById('ifrmClickAnaly');
+//            } else {
+//                clickIfrm = document.createElement('IFRAME');
+//                clickIfrm.id = 'ifrmClickAnaly';
+//                clickIfrm.width = 0;
+//                clickIfrm.height = 0;
+//                clickIfrm.style.display = 'none';
+//                document.body.appendChild(clickIfrm);
+//            }
+//            clickIfrm.src = statUrl;
+//        }
     }
 
     function catchItemClickEvent(e) {
@@ -3851,7 +3851,7 @@ var popCupon = {
         var gaSend = function(ctg, action, label) {
             try {
                 var appType = getCookie('appType');
-                var exposerLabel = label.indexOf('³ëÃâ');
+                var exposerLabel = label.indexOf('ë…¸ì¶œ');
                 if(exposerLabel>0){
                     if(appType === '') {
                         ga("send", "event", ctg, action, label, { nonInteraction: true });
@@ -3890,7 +3890,7 @@ var popCupon = {
 
 
 <script>
-// ·¹ÄÚÇÈ ·Î±× µ¥ÀÌÅÍ ÀûÀç½Ã »ç¿ëµÇ´Â »ç¿ëÀÚ Á¤º¸ ÇÔ¼ö
+// ë ˆì½”í”½ ë¡œê·¸ ë°ì´í„° ì ì¬ì‹œ ì‚¬ìš©ë˜ëŠ” ì‚¬ìš©ì ì •ë³´ í•¨ìˆ˜
 function getBase64UserInfo(){
 	try{
 		var changeStr	= '';
@@ -4019,7 +4019,7 @@ function callRecopickPrdStat(recoPickInfo, recopickServer) {
 }
 </script>
 
-	<iframe src="cart_list_files/ifrm_ga.html" scrolling="no" frameborder="0" width="0" height="0" title="GA ¾ÆÀÌÇÁ·¹ÀÓ"></iframe>
+	<iframe src="cart_list_files/ifrm_ga.html" scrolling="no" frameborder="0" width="0" height="0" title="GA ì•„ì´í”„ë ˆì„"></iframe>
  
 	<img height="1" width="1" border="0" alt="" style="display:none" src="cart_list_files/tr">
 
@@ -4030,22 +4030,22 @@ function callRecopickPrdStat(recoPickInfo, recopickServer) {
 	<div class="cp_wrap">
 		<div class="cp_banner">
 			<a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall#"></a>
-			<button type="button" class="stop">±×¸¸º¸±â</button>
+			<button type="button" class="stop">ê·¸ë§Œë³´ê¸°</button>
 		</div>
-		<button type="button" class="close" onclick="mwUI.moreToggle(&#39;cpFloating&#39;, &#39;on&#39;, this, &#39;º¸±â&#39;, &#39;´İ±â&#39;)">Ä·ÆäÀÎ º¸±â</button>
+		<button type="button" class="close" onclick="mwUI.moreToggle(&#39;cpFloating&#39;, &#39;on&#39;, this, &#39;ë³´ê¸°&#39;, &#39;ë‹«ê¸°&#39;)">ìº í˜ì¸ ë³´ê¸°</button>
 	</div>
 </section>
 <script id="mwDev_offerTemplate" type="text/x-elevenst-template">
 	<div class="cp_wrap">
 		{{html}}
-		<button type="button" class="close" onclick="cpOfferAllPopup.close('cpAllpopup')">Ä·ÆäÀÎ ´İ±â</button>
+		<button type="button" class="close" onclick="cpOfferAllPopup.close('cpAllpopup')">ìº í˜ì¸ ë‹«ê¸°</button>
 	</div>
 </script>
 
 <script>
 function toEndDateFormat(endDate) { //parseTime(time)
     var year = endDate.substr(0,4);
-    var month = endDate.substr(4,2) - 1; // 1¿ù=0,12¿ù=11
+    var month = endDate.substr(4,2) - 1; // 1ì›”=0,12ì›”=11
     var day = endDate.substr(6,2);
     var hour = endDate.substr(8,2);
     var min = endDate.substr(10,2);
@@ -4150,7 +4150,7 @@ function showOfferFloatBanner(banner) {
 	document.getElementById('cpFloating').style.display = 'block';
 	var cpFloatingBtn = document.getElementById('cpFloating').getElementsByClassName('close')[0];
 	setTimeout(function() { 
-		mwUI.moreToggle('cpFloating', 'on', cpFloatingBtn, 'º¸±â', '´İ±â');
+		mwUI.moreToggle('cpFloating', 'on', cpFloatingBtn, 'ë³´ê¸°', 'ë‹«ê¸°');
 		cpFloatingTO = setTimeout(function() {
 			document.getElementById('cpFloating').className = 'cp_floating';
         }, 5000);
@@ -4246,43 +4246,43 @@ window.addEventListener("load",  function(){
 	} else {
 		//if(offerCookie) return;
 		
-	    $.ajax({
-	        url: '/MW/Offer/Banner/getBanners.tmall',
-	        cache : false,		
-	        success: function(msg) {
-	        	setOfferCookie('offerBanners', true);
-	            var json = JSON.parse(msg);
-	            if(json && json.status.code == 200) {
-	            	if(json.response.cnt && json.response.cnt > 0) {
-	            		var bannerStore = {};
-	            		var banners = json.response.banners;
-	            		
-	            		var firstIdx = null;
-	            		for(var idx in banners) {
-	            			var viewYn = getOfferCookie(banners[idx].cpCode, 'VIEW');
-	            			var nativeView = (!offerBanners && viewYn == 'Y'); //Native ³ëÃâ ¿©ºÎ(LocalStorage ¿¡ Á¸ÀçÇÏÁö ¾Ê°í ÄíÅ°¿¡ ÀÖÀ»°æ¿ì)
-	            			var clickYn = banners[idx].clickYn;
-	            			var denyYn = getOfferCookie(banners[idx].cpCode, 'DENY');
-
-	            			if(denyYn == 'Y') banners[idx].denyYn = 'Y';
-	            			
-	            			if(denyYn != 'Y' && clickYn != 'Y') {
-	            				firstIdx = banners[idx].cpCode;
-	            			}
-	            			bannerStore[banners[idx].cpCode] = banners[idx];
-	            		}
-	            		bannerStore[firstIdx].viewYn = 'Y';
-	            		setBannerInfo(bannerStore);
-	            		
-						if(!nativeView && bannerStore[firstIdx].type == '00') {
-							showOfferFloatBanner(bannerStore[firstIdx]);
-						} else if(!nativeView && bannerStore[firstIdx].type == '01') {
-							showOfferAllPopup(bannerStore[firstIdx]);
-						}		            		
-	            	}
-	            }
-	        }
-	    });
+//	    $.ajax({
+//	        url: '/MW/Offer/Banner/getBanners.tmall',
+//	        cache : false,
+//	        success: function(msg) {
+//	        	setOfferCookie('offerBanners', true);
+//	            var json = JSON.parse(msg);
+//	            if(json && json.status.code == 200) {
+//	            	if(json.response.cnt && json.response.cnt > 0) {
+//	            		var bannerStore = {};
+//	            		var banners = json.response.banners;
+//
+//	            		var firstIdx = null;
+//	            		for(var idx in banners) {
+//	            			var viewYn = getOfferCookie(banners[idx].cpCode, 'VIEW');
+//	            			var nativeView = (!offerBanners && viewYn == 'Y'); //Native ë…¸ì¶œ ì—¬ë¶€(LocalStorage ì— ì¡´ì¬í•˜ì§€ ì•Šê³  ì¿ í‚¤ì— ìˆì„ê²½ìš°)
+//	            			var clickYn = banners[idx].clickYn;
+//	            			var denyYn = getOfferCookie(banners[idx].cpCode, 'DENY');
+//
+//	            			if(denyYn == 'Y') banners[idx].denyYn = 'Y';
+//
+//	            			if(denyYn != 'Y' && clickYn != 'Y') {
+//	            				firstIdx = banners[idx].cpCode;
+//	            			}
+//	            			bannerStore[banners[idx].cpCode] = banners[idx];
+//	            		}
+//	            		bannerStore[firstIdx].viewYn = 'Y';
+//	            		setBannerInfo(bannerStore);
+//
+//						if(!nativeView && bannerStore[firstIdx].type == '00') {
+//							showOfferFloatBanner(bannerStore[firstIdx]);
+//						} else if(!nativeView && bannerStore[firstIdx].type == '01') {
+//							showOfferAllPopup(bannerStore[firstIdx]);
+//						}
+//	            	}
+//	            }
+//	        }
+//	    });
 	}	
 }, false);
 </script>
@@ -4546,17 +4546,17 @@ function goDealAppFooter(){
 
 <div class="f_down">
 	<ul>
-		<li><a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall#" onclick="call11stAppFooter(&#39;://loadurl?domain=m.11st.co.kr&amp;url=&#39;,document.location.href); return false;" class="app11st" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1402">11¹ø°¡ ¾Û´Ù¿î·Îµå</a></li>
-		<li><a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall#" onclick="goDealAppFooter(); return false;" class="shocking" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1403">¼îÅ·µô ¾Û´Ù¿î·Îµå</a></li>
+		<li><a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall#" onclick="call11stAppFooter(&#39;://loadurl?domain=m.11st.co.kr&amp;url=&#39;,document.location.href); return false;" class="app11st" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1402">11ë²ˆê°€ ì•±ë‹¤ìš´ë¡œë“œ</a></li>
+		<li><a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall#" onclick="goDealAppFooter(); return false;" class="shocking" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1403">ì‡¼í‚¹ë”œ ì•±ë‹¤ìš´ë¡œë“œ</a></li>
 	</ul>
 </div>
 
 <div class="f_menu">
 	<ul>
-		<li id="loginBottom"><a href="http://buy.m.11st.co.kr/MW/Login/logout.tmall?type=" class="f5" data-clickurl="WGF01" data-clickkey="01">·Î±×¾Æ¿ô</a></li>
-		<li id="pcVersionLink"><a href="http://www.11st.co.kr/html/main.html" data-clickurl="WGF01" data-clickkey="02">PC¹öÀü</a></li>
-		<li><a href="http://m.11st.co.kr/MW/Customer/customerMain.tmall" data-clickurl="WGF01" data-clickkey="03">°í°´¼¾ÅÍ</a></li>
-		<li><a href="http://m.11st.co.kr/MW/Product/productMainConner.tmall" data-clickurl="WGF01" data-clickkey="04">ÀüÃ¼¼­ºñ½º</a></li>
+		<li id="loginBottom"><a href="http://buy.m.11st.co.kr/MW/Login/logout.tmall?type=" class="f5" data-clickurl="WGF01" data-clickkey="01">ë¡œê·¸ì•„ì›ƒ</a></li>
+		<li id="pcVersionLink"><a href="http://www.11st.co.kr/html/main.html" data-clickurl="WGF01" data-clickkey="02">PCë²„ì „</a></li>
+		<li><a href="http://m.11st.co.kr/MW/Customer/customerMain.tmall" data-clickurl="WGF01" data-clickkey="03">ê³ ê°ì„¼í„°</a></li>
+		<li><a href="http://m.11st.co.kr/MW/Product/productMainConner.tmall" data-clickurl="WGF01" data-clickkey="04">ì „ì²´ì„œë¹„ìŠ¤</a></li>
 	</ul>
 </div>
 <script type="text/javascript">
@@ -4568,9 +4568,9 @@ window.addEventListener("load",  function(){
 }, false);
 function footerSetLogin() {
 	if(funcCheckIsLogin()) {
-	    login.innerHTML = '<a href="/MW/Login/logout.tmall?type='+type+'" class="f5" data-clickurl="WGF01" data-clickkey="01">·Î±×¾Æ¿ô</a>';
+	    login.innerHTML = '<a href="/MW/Login/logout.tmall?type='+type+'" class="f5" data-clickurl="WGF01" data-clickkey="01">ë¡œê·¸ì•„ì›ƒ</a>';
 	} else {
-	    login.innerHTML = '<a href="https://m.11st.co.kr/MW/Login/login.tmall" class="f1" data-clickurl="WGF01" data-clickkey="01">·Î±×ÀÎ</a>';
+	    login.innerHTML = '<a href="https://m.11st.co.kr/MW/Login/login.tmall" class="f1" data-clickurl="WGF01" data-clickkey="01">ë¡œê·¸ì¸</a>';
 	}
 }
 (function() {
@@ -4598,9 +4598,9 @@ function footerSetLogin() {
 			var appType = getType();
 			var pcVersionWraps = document.getElementById('pcVersionLink');
             if(appType == "appmw_book" || appType == "appmwi_book") {
-            	pcVersionWraps.innerHTML = '<a href="http://www.11st.co.kr/booksmall/BooksAction.tmall?ID=BOOKS&ctgrNo=63516">PC¹öÀü</a>';
+            	pcVersionWraps.innerHTML = '<a href="http://www.11st.co.kr/booksmall/BooksAction.tmall?ID=BOOKS&ctgrNo=63516">PCë²„ì „</a>';
             } else {
-            	pcVersionWraps.innerHTML = '<a href="http://www.11st.co.kr/html/main.html"  data-clickurl="WGF01" data-clickkey="02">PC¹öÀü</a>';
+            	pcVersionWraps.innerHTML = '<a href="http://www.11st.co.kr/html/main.html"  data-clickurl="WGF01" data-clickkey="02">PCë²„ì „</a>';
             }
             if(appType == 'appmw' || appType == 'appmwi') {
 		    	document.querySelector('.f_down').style.display = 'none';
@@ -4620,18 +4620,18 @@ function footerSetLogin() {
 	</script>
 	<div class="f_foot">
 		<address>
-			<span class="p"><strong>SKÇÃ·¡´Ö(ÁÖ)</strong><em>´ëÇ¥ÀÌ»ç</em> : ¼­¼º¿ø</span>
-			<span class="p"><em>ÁÖ¼Ò</em> : (13487) °æ±âµµ ¼º³²½Ã ºĞ´ç±¸ ÆÇ±³·Î 264 (»ïÆòµ¿)</span>
-			<span class="p"><em>»ç¾÷ÀÚµî·Ï¹øÈ£</em> : 104-86-36968</span>
-			<span class="p"><em>Åë½ÅÆÇ¸Å¾÷½Å°í</em> : Á¦2014-°æ±â¼º³²-0036È£</span>
-			<span class="p"><em>°í°´¼¾ÅÍ</em> : <a href="tel:1599-0110" data-clickurl="WGF01" data-clickkey="08">1599 - 0110</a><span class="e">customerservice@11st.co.kr</span></span>
+			<span class="p"><strong>SKí”Œë˜ë‹›(ì£¼)</strong><em>ëŒ€í‘œì´ì‚¬</em> : ì„œì„±ì›</span>
+			<span class="p"><em>ì£¼ì†Œ</em> : (13487) ê²½ê¸°ë„ ì„±ë‚¨ì‹œ ë¶„ë‹¹êµ¬ íŒêµë¡œ 264 (ì‚¼í‰ë™)</span>
+			<span class="p"><em>ì‚¬ì—…ìë“±ë¡ë²ˆí˜¸</em> : 104-86-36968</span>
+			<span class="p"><em>í†µì‹ íŒë§¤ì—…ì‹ ê³ </em> : ì œ2014-ê²½ê¸°ì„±ë‚¨-0036í˜¸</span>
+			<span class="p"><em>ê³ ê°ì„¼í„°</em> : <a href="tel:1599-0110" data-clickurl="WGF01" data-clickkey="08">1599 - 0110</a><span class="e">customerservice@11st.co.kr</span></span>
 		</address>
 		<div class="link">
-			<a href="http://www.ftc.go.kr/info/bizinfo/communicationView.jsp?apv_perm_no=2011301010030201333&amp;area1=&amp;area2=&amp;currpage=1&amp;searchKey=04&amp;searchVal=1048636968&amp;stdate=&amp;enddate=" data-clickurl="WGF01" data-clickkey="05">»ç¾÷ÀÚÁ¤º¸È®ÀÎ</a>
-			<a href="http://www.11st.co.kr/annc/AnncMainPreview.tmall?method=getProvision&amp;anncCd=01" class="law" data-clickurl="WGF01" data-clickkey="06">ÀÌ¿ë¾à°ü</a>
-			<a href="http://www.11st.co.kr/annc/AnncMainPreview.tmall?method=getProvision&amp;anncCd=03" class="law" data-clickurl="WGF01" data-clickkey="07">°³ÀÎÁ¤º¸Ã³¸®¹æÄ§</a>
+			<a href="http://www.ftc.go.kr/info/bizinfo/communicationView.jsp?apv_perm_no=2011301010030201333&amp;area1=&amp;area2=&amp;currpage=1&amp;searchKey=04&amp;searchVal=1048636968&amp;stdate=&amp;enddate=" data-clickurl="WGF01" data-clickkey="05">ì‚¬ì—…ìì •ë³´í™•ì¸</a>
+			<a href="http://www.11st.co.kr/annc/AnncMainPreview.tmall?method=getProvision&amp;anncCd=01" class="law" data-clickurl="WGF01" data-clickkey="06">ì´ìš©ì•½ê´€</a>
+			<a href="http://www.11st.co.kr/annc/AnncMainPreview.tmall?method=getProvision&amp;anncCd=03" class="law" data-clickurl="WGF01" data-clickkey="07">ê°œì¸ì •ë³´ì²˜ë¦¬ë°©ì¹¨</a>
 		</div>
-		<p class="noti">SKÇÃ·¡´Ö(ÁÖ)´Â Åë½ÅÆÇ¸ÅÁß°³ÀÚ·Î¼­ ¿ÀÇÂ¸¶ÄÏ 11¹ø°¡ÀÇ °Å·¡´ç»çÀÚ°¡ ¾Æ´Ï¸ç, ÀÔÁ¡ÆÇ¸ÅÀÚ°¡ µî·ÏÇÑ »óÇ°Á¤º¸ ¹× °Å·¡¿¡ ´ëÇØ SKÇÃ·¡´Ö(ÁÖ)´Â ÀÏÃ¼ÀÇ Ã¥ÀÓÀ» ÁöÁö ¾Ê½À´Ï´Ù.</p>
+		<p class="noti">SKí”Œë˜ë‹›(ì£¼)ëŠ” í†µì‹ íŒë§¤ì¤‘ê°œìë¡œì„œ ì˜¤í”ˆë§ˆì¼“ 11ë²ˆê°€ì˜ ê±°ë˜ë‹¹ì‚¬ìê°€ ì•„ë‹ˆë©°, ì…ì íŒë§¤ìê°€ ë“±ë¡í•œ ìƒí’ˆì •ë³´ ë° ê±°ë˜ì— ëŒ€í•´ SKí”Œë˜ë‹›(ì£¼)ëŠ” ì¼ì²´ì˜ ì±…ì„ì„ ì§€ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
 		<p class="copy">COPYRIGHT &#169;SK planet. All RIGHTS RESERVED.</p>
 	</div>
 	
@@ -4700,26 +4700,26 @@ function footerSetLogin() {
 <div id="optionChange" class="lyr_pop">
 </div>
 
-<!-- ¼öÁ¤ 2015-06-18 : ÄíÆù  Layer-->
+<!-- ìˆ˜ì • 2015-06-18 : ì¿ í°  Layer-->
 <div id="cuponChange" class="pop_cupon">
 	<div class="tot_wrp">
 		<div class="tot">
-			<h1>»óÇ°ÄíÆùÀû¿ë</h1>
+			<h1>ìƒí’ˆì¿ í°ì ìš©</h1>
 			<ul>
-				<li><span class="t">ÁÖ¹®±İ¾×</span><span class="p"><b name="ordPrice">-</b>¿ø</span></li>
-				<li><span class="t">ÇÒÀÎ±İ¾×</span><span class="p"><b name="dscPrice">-</b>¿ø</span></li>
-				<li class="sm"><span class="t">°áÁ¦±İ¾×<span>(¹è¼ÛºñÆ÷ÇÔ)</span></span><span class="p"><b name="finalOrdPrice">-</b>¿ø</span></li>
+				<li><span class="t">ì£¼ë¬¸ê¸ˆì•¡</span><span class="p"><b name="ordPrice">-</b>ì›</span></li>
+				<li><span class="t">í• ì¸ê¸ˆì•¡</span><span class="p"><b name="dscPrice">-</b>ì›</span></li>
+				<li class="sm"><span class="t">ê²°ì œê¸ˆì•¡<span>(ë°°ì†¡ë¹„í¬í•¨)</span></span><span class="p"><b name="finalOrdPrice">-</b>ì›</span></li>
 			</ul>
 		</div>
 	</div>
 	<div class="lst" id="popCupnLayer">
 	</div>
-	<button type="button" class="close" onclick="mwCupnPop.closeCouponPop();callStatAjax(&#39;MSA01&#39;,&#39;MSA0102&#39;);return false;">ÄíÆùÆË¾÷´İ±â</button>
+	<button type="button" class="close" onclick="mwCupnPop.closeCouponPop();callStatAjax(&#39;MSA01&#39;,&#39;MSA0102&#39;);return false;">ì¿ í°íŒì—…ë‹«ê¸°</button>
 </div>
-<!-- //¼öÁ¤ 2015-06-18 : ÄíÆù  Layer-->
+<!-- //ìˆ˜ì • 2015-06-18 : ì¿ í°  Layer-->
 
 <div id="cartBtns" class="btn_w3 btncart fixed" style="display: block; opacity: 100; transition-duration: 300ms;">
-				<div><span class="btnpr"><button type="button" onclick="goToOrderBasic(&#39;Checked&#39;,1);callStatAjax(&#39;MSC016&#39;, &#39;MSC016&#39;);" data-gactg="11111" data-gaaction="222´İ±â¹öÆ°">¼±ÅÃÁÖ¹®</button></span></div>
-				<div><span class="btnbn"><button type="button" onclick="goToOrderBasic(&#39;All&#39;,1);callStatAjax(&#39;MSC017&#39;, &#39;MSC017&#39;);">ÀüÃ¼ÁÖ¹®</button></span></div>
-				<div><span class="btnb"><button type="button" onclick="doMultiDelete(1);callStatAjax(&#39;MSC018&#39;, &#39;MSC018&#39;);">¼±ÅÃ»èÁ¦</button></span></div>
+				<div><span class="btnpr"><button type="button" onclick="goToOrderBasic(&#39;Checked&#39;,1);callStatAjax(&#39;MSC016&#39;, &#39;MSC016&#39;);" data-gactg="11111" data-gaaction="222ë‹«ê¸°ë²„íŠ¼">ì„ íƒì£¼ë¬¸</button></span></div>
+				<div><span class="btnbn"><button type="button" onclick="goToOrderBasic(&#39;All&#39;,1);callStatAjax(&#39;MSC017&#39;, &#39;MSC017&#39;);">ì „ì²´ì£¼ë¬¸</button></span></div>
+				<div><span class="btnb"><button type="button" onclick="doMultiDelete(1);callStatAjax(&#39;MSC018&#39;, &#39;MSC018&#39;);">ì„ íƒì‚­ì œ</button></span></div>
 			</div><div id="feedly-mini" title="feedly Mini tookit"></div></body></html>

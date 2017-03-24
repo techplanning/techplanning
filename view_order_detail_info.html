@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- saved from url=(0059)https://buy.m.11st.co.kr/MW/Order/viewOrderDetailInfo.tmall -->
-<html lang="ko" class=" ios iphone mobile v9_0 portrait"><head><meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <script type="text/javascript" async="" src="./view_order_detail_info_files/analytics.js"></script><script type="text/javascript" async="" src="./view_order_detail_info_files/ec.js"></script><script async="" src="./view_order_detail_info_files/gtm.js"></script><script async="" src="./view_order_detail_info_files/analytics.js"></script><script>
 var mwScript = (function() {
@@ -36,9 +36,9 @@ var mwScript = (function() {
 <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width">
 <script>mwScript.addTouchIcon("apple-touch-icon-precomposed");</script><link rel="apple-touch-icon-precomposed" href="https://m.11st.co.kr/MW/img/mw11st_touchicon.png">
 <meta name="format-detection" content="telephone=no">
-<title>¹«ÅëÀå ÀÔ±Ý °áÁ¦ÇÏ±â - 11¹ø°¡ ¸ð¹ÙÀÏ</title>
-<link rel="stylesheet" href="./view_order_detail_info_files/base.css">
-<link rel="stylesheet" href="./view_order_detail_info_files/pay.css">
+<title>ë¬´í†µìž¥ ìž…ê¸ˆ ê²°ì œí•˜ê¸° - 11ë²ˆê°€ ëª¨ë°”ì¼</title>
+	<link rel="stylesheet" href="css/common/base.css">
+	<link rel="stylesheet" href="css/mart/mart.css">
 <!--[if lt IE 9]><script src="//c.m.011st.com/MW/js/ui/ie.js"></script><![endif]-->
 <script src="./view_order_detail_info_files/jquery-2.1.1.min.js"></script>
 <script src="./view_order_detail_info_files/ui.js"></script>
@@ -71,7 +71,7 @@ var _MOBILE_COOKIE_DOMAIN_ = 'm.11st.co.kr';
 <script src="./view_order_detail_info_files/orderCommon.js"></script>
 <script>
 function changeRefund(){
-    if(!document.getElementById("rfndMtdCd02").checked){ //Ä³½ÃÈ¯ºÒ Å¬¸¯½Ã. ¹«ÅëÀåÈ¯ºÒ ÀÔ·ÂÃ¢ ¸·¾ÆÁÖ±â.
+    if(!document.getElementById("rfndMtdCd02").checked){ //ìºì‹œí™˜ë¶ˆ í´ë¦­ì‹œ. ë¬´í†µìž¥í™˜ë¶ˆ ìž…ë ¥ì°½ ë§‰ì•„ì£¼ê¸°.
         document.ordform.rfndBnkCd.disabled = true;
         document.ordform.accountNoStar.disabled = true;
         document.ordform.ownerNm.disabled = true;
@@ -85,7 +85,7 @@ function changeRefund(){
 }
 
 function hgBankAuthInfo(){
-	// °èÁÂ¹øÈ£È®ÀÎ
+	// ê³„ì¢Œë²ˆí˜¸í™•ì¸
     var _rfndAcctNoStar = document.ordform.accountNoStar.value;
 
     if(_rfndAcctNoStar.indexOf("*") > -1){
@@ -98,7 +98,7 @@ function hgBankAuthInfo(){
 var payBtn = true;
 function doPay() {
     if ( sbk.value == "" ) {
-        alert("ÀÔ±ÝÀºÇàÀ» ¼±ÅÃÇØÁÖ¼¼¿ä!");
+        alert("ìž…ê¸ˆì€í–‰ì„ ì„ íƒí•´ì£¼ì„¸ìš”!");
         return;
     }
 
@@ -118,7 +118,7 @@ function checkElePayPrice(destObj){
     var txtNumber = '' + destObj.value;
     txtNumber = txtNumber.replace(",","");
     if (isNaN(txtNumber) ) {
-    	alert('¼ýÀÚ¸¸ ÀÔ·ÂÇÒ ¼ö ÀÖ½À´Ï´Ù.');
+    	alert('ìˆ«ìžë§Œ ìž…ë ¥í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.');
     	destObj.value = '';
     }
 }
@@ -128,15 +128,15 @@ window.onload = function(){
 }
 </script>
 <script src="./view_order_detail_info_files/netfunnel.js" charset="UTF-8"></script><script src="./view_order_detail_info_files/ts.wseq"></script><script src="./view_order_detail_info_files/mwapptools.js"></script><script src="./view_order_detail_info_files/mwapptools.js"></script></head>
-<body id="order"><!-- Àå¹Ù±¸´Ï,ÁÖ¹® id Ãß°¡ -->
+<body id="order"><!-- ìž¥ë°”êµ¬ë‹ˆ,ì£¼ë¬¸ id ì¶”ê°€ -->
 <div id="wrap">
 <!-- header -->
 <header>
 	
 						
 			<div class="head_bnr" id="app_down_bnr" style="display:none;">
-				<a href="https://buy.m.11st.co.kr/MW/Order/viewOrderDetailInfo.tmall#" onclick="call11stAppMain(); return false;" style="background-color:#e7e7ea;" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1401"><img src="./view_order_detail_info_files/app_bnr.png" alt="¾ÛÀ¸·Î Á¢¼ÓÇÏ¸é ´õ Å«ÇýÅÃÀÌ-¾Û´Ù¿î·Îµå"></a>
-				<button type="button" onclick="closeElevenstAppDown();">¹è³Ê´Ý±â</button>
+				<a href="https://buy.m.11st.co.kr/MW/Order/viewOrderDetailInfo.tmall#" onclick="call11stAppMain(); return false;" style="background-color:#e7e7ea;" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1401"><img src="./view_order_detail_info_files/app_bnr.png" alt="ì•±ìœ¼ë¡œ ì ‘ì†í•˜ë©´ ë” í°í˜œíƒì´-ì•±ë‹¤ìš´ë¡œë“œ"></a>
+				<button type="button" onclick="closeElevenstAppDown();">ë°°ë„ˆë‹«ê¸°</button>
 			</div>
         
 
@@ -198,18 +198,18 @@ window.onload = function(){
 
 	
 	<div class="gnb_mw gnb_m">
-		<h1><a href="http://m.11st.co.kr/MW" title="È¨À¸·Î ÀÌµ¿" data-clickurl="WGA01" data-clickkey="00">11¹ø°¡</a></h1>
+		<h1><a href="http://m.11st.co.kr/MW" title="í™ˆìœ¼ë¡œ ì´ë™" data-clickurl="WGA01" data-clickkey="00">11ë²ˆê°€</a></h1>
 	
-		<a href="http://m.11st.co.kr/MW/api/app/elevenst/menu/sideMenu.tmall" class="mu cate" data-clickurl="WGB01" data-clickkey="00">Ä«Å×°í¸®</a>
+		<a href="http://m.11st.co.kr/MW/api/app/elevenst/menu/sideMenu.tmall" class="mu cate" data-clickurl="WGB01" data-clickkey="00">ì¹´í…Œê³ ë¦¬</a>
 
 		<form id="search" name="searchForm" action="http://m.11st.co.kr/MW/Search/searchProduct.tmall" method="get" onsubmit="searchSubmit();return false;">
 			<fieldset>
-				<legend>ÅëÇÕ°Ë»ö</legend>
+				<legend>í†µí•©ê²€ìƒ‰</legend>
 				<div class="srch">
-					<input type="search" id="decSearchKeyword" name="decSearchKeyword" value="" title="°Ë»ö¾î" onfocus="getInput();" onblur="releaseInput();" autocomplete="off" autocorrect="off" autocapitalize="off" onclick="clearInputValue(&#39;decSearchKeyword&#39;);fncStop();return false;" data-clickurl="WSRC00" data-clickkey="WSRC00">
-					<button class="del" type="button" id="schdelbtn" style="display:none;" onclick="clearInputValue(&#39;decSearchKeyword&#39;);">°Ë»ö¾î »èÁ¦</button>
+					<input type="search" id="decSearchKeyword" name="decSearchKeyword" value="" title="ê²€ìƒ‰ì–´" onfocus="getInput();" onblur="releaseInput();" autocomplete="off" autocorrect="off" autocapitalize="off" onclick="clearInputValue(&#39;decSearchKeyword&#39;);fncStop();return false;" data-clickurl="WSRC00" data-clickkey="WSRC00">
+					<button class="del" type="button" id="schdelbtn" style="display:none;" onclick="clearInputValue(&#39;decSearchKeyword&#39;);">ê²€ìƒ‰ì–´ ì‚­ì œ</button>
 					
-					<input type="submit" id="search_submit" value="°Ë»ö" data-clickurl="WSRC11" data-clickkey="WSRC11">
+					<input type="submit" id="search_submit" value="ê²€ìƒ‰" data-clickurl="WSRC11" data-clickkey="WSRC11">
 					
 					<input type="hidden" id="searchType" name="searchType" value="">
 					<input type="hidden" id="dispObjLnkUrl" value="http://m.11st.co.kr/MW/Product/productPlanningDetail.tmall?plnDispNo=926588">
@@ -244,40 +244,40 @@ window.onload = function(){
 					<input type="hidden" name="pageSize" value="0">
 					
 				</div>
-				<button type="button" class="prev" onclick="vLayer(&#39;kwd&#39;,false);setBodyClass(false);return false;">ÀÌÀü</button>
+				<button type="button" class="prev" onclick="vLayer(&#39;kwd&#39;,false);setBodyClass(false);return false;">ì´ì „</button>
 			</fieldset>
 		</form>
 	
-		<a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall" class="mu cart" data-clickurl="WGD01" data-clickkey="00">Àå¹Ù±¸´Ï</a>
+		<a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall" class="mu cart" data-clickurl="WGD01" data-clickkey="00">ìž¥ë°”êµ¬ë‹ˆ</a>
 	
 	
 	</div>	
 	<div id="kwd" class="kword">
 		<div class="ctg" id="ctgDiv"></div>
 		<ul class="wrd" id="autoComplete"></ul>
-		<div class="sw_ft"><button type="button" class="close" onclick="vLayer(&#39;kwd&#39;,false);setBodyClass(false);return false;" data-clickurl="WSRB03" data-clickkey="WSRB03">´Ý±â</button></div>
+		<div class="sw_ft"><button type="button" class="close" onclick="vLayer(&#39;kwd&#39;,false);setBodyClass(false);return false;" data-clickurl="WSRB03" data-clickkey="WSRB03">ë‹«ê¸°</button></div>
 	</div>
 	<div class="schwd" id="schwd" style="display:none;">
 		<ul class="sw_tab">
-			<li class="on"><a href="https://buy.m.11st.co.kr/MW/Order/viewOrderDetailInfo.tmall#schword01" onclick="goSearchSwipeMove(0);return false">ÃÖ±Ù°Ë»ö¾î</a></li>
+			<li class="on"><a href="https://buy.m.11st.co.kr/MW/Order/viewOrderDetailInfo.tmall#schword01" onclick="goSearchSwipeMove(0);return false">ìµœê·¼ê²€ìƒ‰ì–´</a></li>
 			<li>
-				<a href="https://buy.m.11st.co.kr/MW/Order/viewOrderDetailInfo.tmall#schword02" onclick="goSearchSwipeMove(1);return false">±Þ»ó½Â
-					<span class="pg" id="searchSwipeNavi"><span class="on"></span><span></span><span></span><b id="searchSwipePage">3ÆäÀÌÁöÁß 1ÆäÀÌÁö</b></span>
+				<a href="https://buy.m.11st.co.kr/MW/Order/viewOrderDetailInfo.tmall#schword02" onclick="goSearchSwipeMove(1);return false">ê¸‰ìƒìŠ¹
+					<span class="pg" id="searchSwipeNavi"><span class="on"></span><span></span><span></span><b id="searchSwipePage">3íŽ˜ì´ì§€ì¤‘ 1íŽ˜ì´ì§€</b></span>
 				</a>
 			</li>
-			<li><a href="https://buy.m.11st.co.kr/MW/Order/viewOrderDetailInfo.tmall#schword03" onclick="goSearchSwipeMove(2);return false">ÀÎ±â</a></li>
+			<li><a href="https://buy.m.11st.co.kr/MW/Order/viewOrderDetailInfo.tmall#schword03" onclick="goSearchSwipeMove(2);return false">ì¸ê¸°</a></li>
 		</ul>
 		<div class="sw_swp">
 			<div id="view_sch_swipe"><div class="mwContainer"><div></div><div></div><div></div></div></div>
-			<button type="button" class="prev" onclick="goPrev()">ÀÌÀü</button>
-			<button type="button" class="next" onclick="goNext()">´ÙÀ½</button>
+			<button type="button" class="prev" onclick="goPrev()">ì´ì „</button>
+			<button type="button" class="next" onclick="goNext()">ë‹¤ìŒ</button>
 		</div>
 		<div id="gnb_sch_swipe" style="display:none;">
-			<div id="schword01"><!-- ÃÖ±Ù °Ë»ö¾î --></div>
-			<div id="schword02"><!-- ±Þ»ó½Â --></div>
-			<div id="schword03"><!-- ÀÎ±â --></div>
+			<div id="schword01"><!-- ìµœê·¼ ê²€ìƒ‰ì–´ --></div>
+			<div id="schword02"><!-- ê¸‰ìƒìŠ¹ --></div>
+			<div id="schword03"><!-- ì¸ê¸° --></div>
 		</div>
-		<div class="sw_ft"><button type="button" class="close" onclick="setBodyClass(false);" data-clickurl="WSRC12" data-clickkey="WSRC12">´Ý±â</button></div>
+		<div class="sw_ft"><button type="button" class="close" onclick="setBodyClass(false);" data-clickurl="WSRC12" data-clickkey="WSRC12">ë‹«ê¸°</button></div>
 	</div>
 	<script>
 		(function() {
@@ -322,17 +322,17 @@ window.onload = function(){
 <section id="cts">
 <form name="ordform" id="ordform" method="post" onsubmit="return false;">
     <fieldset>
-    <input type="hidden" name="rcvrDtlsAddr" value="¹®¼­¼ö¹ß½Ç">
+    <input type="hidden" name="rcvrDtlsAddr" value="ë¬¸ì„œìˆ˜ë°œì‹¤">
     <input type="hidden" name="ordDlvReqContPrd" value="">
 <input type="hidden" name="AppCode" value="5101">
 <input type="hidden" name="CcInstallType" value="">
 <input type="hidden" name="DtPlfCd" value="">
 <input type="hidden" name="DtSvcNO" value="">
-<input type="hidden" name="MpSellerNm" value="ÀÌ¿ä¿Í¸£">
+<input type="hidden" name="MpSellerNm" value="ì´ìš”ì™€ë¥´">
 <input type="hidden" name="MpSellerTel" value="01022997286">
 <input type="hidden" name="OcPasswd" value="">
 <input type="hidden" name="OcTID" value="">
-<input type="hidden" name="ProdDesc" value="ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ® 1050g / ÄÚ½ºÆ®ÄÚ ¸Á°í¸À ¶óÁîº£¸®¸À ºí·çº£¸®¸À">
+<input type="hidden" name="ProdDesc" value="í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ 1050g / ì½”ìŠ¤íŠ¸ì½” ë§ê³ ë§› ë¼ì¦ˆë² ë¦¬ë§› ë¸”ë£¨ë² ë¦¬ë§›">
 <input type="hidden" name="abrdDlvAmount" value="0">
 <input type="hidden" name="addPrdNo0" value="0">
 <input type="hidden" name="addPrdNoStr" value="958114815">
@@ -412,7 +412,7 @@ window.onload = function(){
 <input type="hidden" name="ctgrPntRt" value="0.0">
 <input type="hidden" name="cupnExCd" value="">
 <input type="hidden" name="cupnPrintPrdYn" value="N">
-<input type="hidden" name="cvsNm" value="CU,¼¼ºìÀÏ·¹ºì,¹ÙÀÌ´õ¿þÀÌ">
+<input type="hidden" name="cvsNm" value="CU,ì„¸ë¸ì¼ë ˆë¸,ë°”ì´ë”ì›¨ì´">
 <input type="hidden" name="delvChangeFlag" value="N">
 <input type="hidden" name="demandDscStrParam" value="">
 <input type="hidden" name="directDscAmtTot" value="0">
@@ -530,15 +530,15 @@ window.onload = function(){
 <input type="hidden" name="optPrcTot" value="0">
 <input type="hidden" name="optPrdYn" value="N">
 <input type="hidden" name="optUseGiftPrdYN" value="N">
-<input type="hidden" name="ordBaseAddr" value="°æ±âµµ ¼º³²½Ã ºÐ´ç±¸  ÆÇ±³·Î 264 (»ïÆòµ¿,skÇÃ·¡´ÖÆÇ±³»ç¿Á) ">
+<input type="hidden" name="ordBaseAddr" value="ê²½ê¸°ë„ ì„±ë‚¨ì‹œ ë¶„ë‹¹êµ¬  íŒêµë¡œ 264 (ì‚¼í‰ë™,skí”Œëž˜ë‹›íŒêµì‚¬ì˜¥) ">
 <input type="hidden" name="ordDlvReqContInput" value="">
 <input type="hidden" name="ordDlvReqContSelect" value="">
-<input type="hidden" name="ordDtlsAddr" value="¹®¼­¼ö¹ß½Ç">
+<input type="hidden" name="ordDtlsAddr" value="ë¬¸ì„œìˆ˜ë°œì‹¤">
 <input type="hidden" name="ordEMail" value="beyond_ps@nate.com">
 <input type="hidden" name="ordIp" value="124.66.181.240">
-<input type="hidden" name="ordKorNm" value="¹®ÇõÁß">
+<input type="hidden" name="ordKorNm" value="ë¬¸í˜ì¤‘">
 <input type="hidden" name="ordMailNo" value="463400">
-<input type="hidden" name="ordNm" value="¹®ÇõÁß">
+<input type="hidden" name="ordNm" value="ë¬¸í˜ì¤‘">
 <input type="hidden" name="ordPrdSeq" value="">
 <input type="hidden" name="ordPreSavePnt" value="0">
 <input type="hidden" name="ordPrtblTel" value="010-5466-2325">
@@ -609,7 +609,7 @@ window.onload = function(){
 <input type="hidden" name="prdMoney9581148151" value="10500">
 <input type="hidden" name="prdMoneyOpt9581148151" value="10500">
 <input type="hidden" name="prdNm" value="">
-<input type="hidden" name="prdNm9581148151" value="ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ® 1050g / ÄÚ½ºÆ®ÄÚ ¸Á°í¸À ¶óÁîº£¸®¸À ºí·çº£¸®¸À">
+<input type="hidden" name="prdNm9581148151" value="í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ 1050g / ì½”ìŠ¤íŠ¸ì½” ë§ê³ ë§› ë¼ì¦ˆë² ë¦¬ë§› ë¸”ë£¨ë² ë¦¬ë§›">
 <input type="hidden" name="prdNo" value="958114815">
 <input type="hidden" name="prdOcbSaveAmt" value="0">
 <input type="hidden" name="prdOcbSaveAmt9581148151" value="0">
@@ -632,10 +632,10 @@ window.onload = function(){
 <input type="hidden" name="prmtNoStr" value="">
 <input type="hidden" name="radioCashRcptIssTypCd" value="01">
 <input type="hidden" name="rakeTrTypeCd" value="">
-<input type="hidden" name="rcvrAddr" value="463400 °æ±âµµ ¼º³²½Ã ºÐ´ç±¸  ÆÇ±³·Î 264 (»ïÆòµ¿,skÇÃ·¡´ÖÆÇ±³»ç¿Á) ">
+<input type="hidden" name="rcvrAddr" value="463400 ê²½ê¸°ë„ ì„±ë‚¨ì‹œ ë¶„ë‹¹êµ¬  íŒêµë¡œ 264 (ì‚¼í‰ë™,skí”Œëž˜ë‹›íŒêµì‚¬ì˜¥) ">
 <input type="hidden" name="rcvrAddrSeq" value="718">
-<input type="hidden" name="rcvrBaseAddr" value="°æ±âµµ ¼º³²½Ã ºÐ´ç±¸  ÆÇ±³·Î 264 (»ïÆòµ¿,skÇÃ·¡´ÖÆÇ±³»ç¿Á) ">
-<input type="hidden" name="rcvrNm" value="¹®ÇõÁß">
+<input type="hidden" name="rcvrBaseAddr" value="ê²½ê¸°ë„ ì„±ë‚¨ì‹œ ë¶„ë‹¹êµ¬  íŒêµë¡œ 264 (ì‚¼í‰ë™,skí”Œëž˜ë‹›íŒêµì‚¬ì˜¥) ">
+<input type="hidden" name="rcvrNm" value="ë¬¸í˜ì¤‘">
 <input type="hidden" name="rdoPoint" value="3">
 <input type="hidden" name="regPageTypCd" value="05">
 <input type="hidden" name="regTypCd" value="">
@@ -663,7 +663,7 @@ window.onload = function(){
 <input type="hidden" name="sktMemAddPreAmtTot" value="0">
 <input type="hidden" name="sktPointDscAmt9581148151" value="0">
 <input type="hidden" name="sktPointDscRt9581148151" value="0.0">
-<input type="hidden" name="slctPrdOptNm" value="1°³">
+<input type="hidden" name="slctPrdOptNm" value="1ê°œ">
 <input type="hidden" name="smsSndAllwYn" value="Y">
 <input type="hidden" name="sno1" value="">
 <input type="hidden" name="sno2" value="">
@@ -708,160 +708,160 @@ window.onload = function(){
 <input type="hidden" name="zipParamName" value="zipcode">
 <input type="hidden" name="zipViewType" value="delivery">
 
-	<div class="title pay">ÁÖ¹®/°áÁ¦</div>
-	<h1 class="title">¹«ÅëÀå ÀÔ±Ý °áÁ¦ÇÏ±â</h1>
+	<div class="title pay">ì£¼ë¬¸/ê²°ì œ</div>
+	<h1 class="title">ë¬´í†µìž¥ ìž…ê¸ˆ ê²°ì œí•˜ê¸°</h1>
 	<div class="msg_odr">
-		<p class="tt"><span class="red">¹«ÅëÀå ÀÔ±Ý °áÁ¦</span>ÇÏ±â¸¦ ¼±ÅÃ ÇÏ¼Ì½À´Ï´Ù.</p>
-		<p>ÀÔ±Ý³»¿ªÀ» ÀÔ·ÂÇÏ½Ã°í<br>°áÁ¦¸¦ ¿Ï·á ÇØÁÖ½Ã±â ¹Ù¶ø´Ï´Ù.</p>
+		<p class="tt"><span class="red">ë¬´í†µìž¥ ìž…ê¸ˆ ê²°ì œ</span>í•˜ê¸°ë¥¼ ì„ íƒ í•˜ì…¨ìŠµë‹ˆë‹¤.</p>
+		<p>ìž…ê¸ˆë‚´ì—­ì„ ìž…ë ¥í•˜ì‹œê³ <br>ê²°ì œë¥¼ ì™„ë£Œ í•´ì£¼ì‹œê¸° ë°”ëžë‹ˆë‹¤.</p>
 	</div>
 
 	<fieldset>
-		<legend>°áÁ¦ÇÏ±â</legend>
+		<legend>ê²°ì œí•˜ê¸°</legend>
 		
 		<div class="sum">
-			<em>ÃÖÁ¾°áÁ¦±Ý¾×</em>
-			<div class="prc"><strong>16,000</strong>¿ø</div>
+			<em>ìµœì¢…ê²°ì œê¸ˆì•¡</em>
+			<div class="prc"><strong>16,000</strong>ì›</div>
 		</div>
 
-		<h2 class="tit_bs">°áÁ¦ ³»¿ª</h2>
+		<h2 class="tit_bs">ê²°ì œ ë‚´ì—­</h2>
 		<table class="odr_tbl">
-			<caption>»óÇ° ³»¿ª</caption>
+			<caption>ìƒí’ˆ ë‚´ì—­</caption>
 			<colgroup>
 				<col style="width:88px;">
 				<col>
 			</colgroup>
 			<tbody>
 				<tr>
-					<th scope="row">»óÇ°¸í</th>
-					<td>ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ® 1050g / ÄÚ½ºÆ®ÄÚ ¸Á°í¸À ¶óÁîº£¸®¸À ºí·çº£¸®¸À</td>
+					<th scope="row">ìƒí’ˆëª…</th>
+					<td>í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ 1050g / ì½”ìŠ¤íŠ¸ì½” ë§ê³ ë§› ë¼ì¦ˆë² ë¦¬ë§› ë¸”ë£¨ë² ë¦¬ë§›</td>
 				</tr>
 				<tr>
-					<th scope="row">°áÁ¦¾×</th>
-					<td><strong class="red">16,000¿ø</strong></td>
+					<th scope="row">ê²°ì œì•¡</th>
+					<td><strong class="red">16,000ì›</strong></td>
 				</tr>
 			</tbody>
 		</table>
 
 
-		<h2 class="tit_bs">¹«ÅëÀå ÀÔ±ÝÇÏ±â</h2>
+		<h2 class="tit_bs">ë¬´í†µìž¥ ìž…ê¸ˆí•˜ê¸°</h2>
 		<dl class="app">
-			<dt><label for="sbk">ÀºÇà ¼±ÅÃ</label></dt>
+			<dt><label for="sbk">ì€í–‰ ì„ íƒ</label></dt>
 			<dd>
 				<select id="sbk" name="VpBank">
-					<option value="">¼±ÅÃ ÇÏ¼¼¿ä</option>
+					<option value="">ì„ íƒ í•˜ì„¸ìš”</option>
 
-					<option value="39">°æ³²</option>
+					<option value="39">ê²½ë‚¨</option>
 
-					<option value="34">±¤ÁÖ</option>
+					<option value="34">ê´‘ì£¼</option>
 
-					<option value="04">±¹¹Î</option>
+					<option value="04">êµ­ë¯¼</option>
 
-					<option value="03">±â¾÷</option>
+					<option value="03">ê¸°ì—…</option>
 
-					<option value="11">³óÇù</option>
+					<option value="11">ë†í˜‘</option>
 
-					<option value="32">ºÎ»ê</option>
+					<option value="32">ë¶€ì‚°</option>
 
-					<option value="88">½ÅÇÑ</option>
+					<option value="88">ì‹ í•œ</option>
 
-					<option value="05">¿ÜÈ¯</option>
+					<option value="05">ì™¸í™˜</option>
 
-					<option value="20">¿ì¸®</option>
+					<option value="20">ìš°ë¦¬</option>
 
-					<option value="23">Á¦ÀÏ</option>
+					<option value="23">ì œì¼</option>
 
-					<option value="81">ÇÏ³ª</option>
+					<option value="81">í•˜ë‚˜</option>
 
 				</select>
 			</dd>
 		</dl>
 
 		<ul class="d_lst">
-			<li>ÁÖ¹® ÈÄ 5 ¿µ¾÷ÀÏ ÀÌ³» ÀÔ±ÝÈ®ÀÎÀÌ µÇÁö ¾ÊÀ¸¸é ÁÖ¹®ÀÌ ÀÚµ¿ Ãë¼Ò µÉ ¼ö ÀÖ½À´Ï´Ù.</li>
-			<li>Çö±Ý¿µ¼öÁõÀº 1¿ø ÀÌ»ó Çö±Ý°áÁ¦ ÇÑ °æ¿ì¿¡ È¸¿ø ¸íÀÇ·Î ÀÚµ¿ ¹ßÇà µË´Ï´Ù.</li>
-			<li>Ãë¼Ò/¹ÝÇ° ½ÅÃ» ½Ã È¯ºÒ¼ö´ÜÀ» ¹«ÅëÀåÀÌ³ª Ä³½Ã·Î ¼±ÅÃÇÏ¿© È¯ºÒ ¹ÞÀ¸½Ç ¼ö ÀÖ½À´Ï´Ù.</li>
+			<li>ì£¼ë¬¸ í›„ 5 ì˜ì—…ì¼ ì´ë‚´ ìž…ê¸ˆí™•ì¸ì´ ë˜ì§€ ì•Šìœ¼ë©´ ì£¼ë¬¸ì´ ìžë™ ì·¨ì†Œ ë  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</li>
+			<li>í˜„ê¸ˆì˜ìˆ˜ì¦ì€ 1ì› ì´ìƒ í˜„ê¸ˆê²°ì œ í•œ ê²½ìš°ì— íšŒì› ëª…ì˜ë¡œ ìžë™ ë°œí–‰ ë©ë‹ˆë‹¤.</li>
+			<li>ì·¨ì†Œ/ë°˜í’ˆ ì‹ ì²­ ì‹œ í™˜ë¶ˆìˆ˜ë‹¨ì„ ë¬´í†µìž¥ì´ë‚˜ ìºì‹œë¡œ ì„ íƒí•˜ì—¬ í™˜ë¶ˆ ë°›ìœ¼ì‹¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</li>
 		</ul>
 
-		<h2 class="tit_bs" style="display:none">È¯ºÒ¹æ½Ä ¼±ÅÃ</h2>
+		<h2 class="tit_bs" style="display:none">í™˜ë¶ˆë°©ì‹ ì„ íƒ</h2>
 		<div style="display:none">
 			<p class="csb">		
 						
-					<input type="radio" name="rfndMtdCd" value="01" id="rfndMtdCd01" checked="checked" onchange="changeRefund();"> <label for="rfndMtdCd01">Ä³½Ã È¯ºÒ</label>				
-					<input type="radio" name="rfndMtdCd" value="02" id="rfndMtdCd02" onchange="changeRefund();"> <label for="rfndMtdCd02">¹«ÅëÀå È¯ºÒ</label>		
+					<input type="radio" name="rfndMtdCd" value="01" id="rfndMtdCd01" checked="checked" onchange="changeRefund();"> <label for="rfndMtdCd01">ìºì‹œ í™˜ë¶ˆ</label>				
+					<input type="radio" name="rfndMtdCd" value="02" id="rfndMtdCd02" onchange="changeRefund();"> <label for="rfndMtdCd02">ë¬´í†µìž¥ í™˜ë¶ˆ</label>		
 				
 				<input type="hidden" name="returnAccountNo">			
 			</p>
 
 			<div id="cbill" style="display: none;">
 				<table class="odr_tbl">
-					<caption> È¯ºÒ Á¤º¸</caption>
+					<caption> í™˜ë¶ˆ ì •ë³´</caption>
 					<colgroup>
 						<col style="width:88px;">
 						<col>
 					</colgroup>
 					<tbody>
 						<tr>
-							<th scope="row"><label for="rbk">ÀºÇà ¼±ÅÃ</label></th>
+							<th scope="row"><label for="rbk">ì€í–‰ ì„ íƒ</label></th>
 							<td>				 
 								<select id="rbk" name="rfndBnkCd" onchange="hgBankAuthInfo();" disabled="">
-									<option value="">¼±ÅÃ ÇÏ¼¼¿ä</option>
-									<option value="11">³óÇù</option>
-<option value="04">±¹¹Î</option>
-<option value="20">¿ì¸®</option>
-<option value="88">½ÅÇÑ</option>
-<option value="07">¼öÇù</option>
-<option value="12">³óÇù´ÜÀ§</option>
-<option value="31">´ë±¸</option>
-<option value="81">ÇÏ³ª</option>
-<option value="02">»ê¾÷</option>
-<option value="45">»õ¸¶À»±Ý°í</option>
-<option value="03">±â¾÷</option>
-<option value="53">¾¾Æ¼</option>
-<option value="32">ºÎ»ê</option>
-<option value="05">¿ÜÈ¯</option>
-<option value="71">¿ìÃ¼±¹</option>
-<option value="34">±¤ÁÖ</option>
-<option value="37">ÀüºÏ</option>
-<option value="35">Á¦ÁÖ</option>
-<option value="16">ÃàÇù</option>
-<option value="23">Á¦ÀÏ</option>
-<option value="48">½ÅÇù</option>
-<option value="27">ÇÑ¹Ì</option>
-<option value="50">»óÈ£ÀúÃà</option>
-<option value="54">È«Äá»óÇÏÀÌ</option>
-<option value="209">µ¿¾çÁ¾ÇÕ±ÝÀ¶Áõ±Ç</option>
-<option value="218">Çö´ëÁõ±Ç</option>
-<option value="230">¹Ì·¡¿¡¼ÂÁõ±Ç</option>
-<option value="243">ÇÑ±¹ÅõÀÚÁõ±Ç</option>
-<option value="247">¿ì¸®ÅõÀÚÁõ±Ç</option>
-<option value="262">ÇÏÀÌÅõÀÚÁõ±Ç</option>
-<option value="263">HMCÅõÀÚÁõ±Ç</option>
-<option value="266">SKÁõ±Ç</option>
-<option value="267">´ë½ÅÁõ±Ç</option>
-<option value="270">ÇÏ³ª´ëÅõÁõ±Ç</option>
-<option value="278">½ÅÇÑ±ÝÀ¶ÅõÀÚ</option>
-<option value="279">µ¿ºÎÁõ±Ç</option>
-<option value="280">À¯ÁøÅõÀÚÁõ±Ç</option>
-<option value="287">¸Þ¸®Ã÷Á¾ÇÕ±ÝÀ¶Áõ±Ç</option>
-<option value="291">½Å¿µÁõ±Ç</option>
-<option value="39">°æ³²</option>
-<option value="64">»ê¸²Á¶ÇÕ</option>
+									<option value="">ì„ íƒ í•˜ì„¸ìš”</option>
+									<option value="11">ë†í˜‘</option>
+<option value="04">êµ­ë¯¼</option>
+<option value="20">ìš°ë¦¬</option>
+<option value="88">ì‹ í•œ</option>
+<option value="07">ìˆ˜í˜‘</option>
+<option value="12">ë†í˜‘ë‹¨ìœ„</option>
+<option value="31">ëŒ€êµ¬</option>
+<option value="81">í•˜ë‚˜</option>
+<option value="02">ì‚°ì—…</option>
+<option value="45">ìƒˆë§ˆì„ê¸ˆê³ </option>
+<option value="03">ê¸°ì—…</option>
+<option value="53">ì”¨í‹°</option>
+<option value="32">ë¶€ì‚°</option>
+<option value="05">ì™¸í™˜</option>
+<option value="71">ìš°ì²´êµ­</option>
+<option value="34">ê´‘ì£¼</option>
+<option value="37">ì „ë¶</option>
+<option value="35">ì œì£¼</option>
+<option value="16">ì¶•í˜‘</option>
+<option value="23">ì œì¼</option>
+<option value="48">ì‹ í˜‘</option>
+<option value="27">í•œë¯¸</option>
+<option value="50">ìƒí˜¸ì €ì¶•</option>
+<option value="54">í™ì½©ìƒí•˜ì´</option>
+<option value="209">ë™ì–‘ì¢…í•©ê¸ˆìœµì¦ê¶Œ</option>
+<option value="218">í˜„ëŒ€ì¦ê¶Œ</option>
+<option value="230">ë¯¸ëž˜ì—ì…‹ì¦ê¶Œ</option>
+<option value="243">í•œêµ­íˆ¬ìžì¦ê¶Œ</option>
+<option value="247">ìš°ë¦¬íˆ¬ìžì¦ê¶Œ</option>
+<option value="262">í•˜ì´íˆ¬ìžì¦ê¶Œ</option>
+<option value="263">HMCíˆ¬ìžì¦ê¶Œ</option>
+<option value="266">SKì¦ê¶Œ</option>
+<option value="267">ëŒ€ì‹ ì¦ê¶Œ</option>
+<option value="270">í•˜ë‚˜ëŒ€íˆ¬ì¦ê¶Œ</option>
+<option value="278">ì‹ í•œê¸ˆìœµíˆ¬ìž</option>
+<option value="279">ë™ë¶€ì¦ê¶Œ</option>
+<option value="280">ìœ ì§„íˆ¬ìžì¦ê¶Œ</option>
+<option value="287">ë©”ë¦¬ì¸ ì¢…í•©ê¸ˆìœµì¦ê¶Œ</option>
+<option value="291">ì‹ ì˜ì¦ê¶Œ</option>
+<option value="39">ê²½ë‚¨</option>
+<option value="64">ì‚°ë¦¼ì¡°í•©</option>
 									
 								</select>
 								<input type="hidden" name="returnRfndBnkCd">
 							</td>
 						</tr>
 						<tr>
-							<th scope="row"><label for="nbk">°èÁÂ ¹øÈ£</label></th>
+							<th scope="row"><label for="nbk">ê³„ì¢Œ ë²ˆí˜¸</label></th>
 							<td>
 								<input type="tel" name="accountNoStar" maxlength="30" onkeyup="javascript:checkElePayPrice(this);" id="nbk" value="" onchange="hgBankAuthInfo();" disabled="">
 								<input type="hidden" name="accountNo">
 							</td>
 						</tr>
 						<tr>
-							<th scope="row"><label for="mbk">¿¹±ÝÁÖ ¸í</label></th>
+							<th scope="row"><label for="mbk">ì˜ˆê¸ˆì£¼ ëª…</label></th>
 							<td>
-								<input type="text" name="ownerNm" id="mbk" class="name" value="¹®ÇõÁß" readonly="readonly" disabled="">
+								<input type="text" name="ownerNm" id="mbk" class="name" value="ë¬¸í˜ì¤‘" readonly="readonly" disabled="">
 							</td>
 						</tr>
 					</tbody>
@@ -870,25 +870,25 @@ window.onload = function(){
 		</div>
 
 		<div class="btn_w2 w_pay">			 
-			<div><a href="https://buy.m.11st.co.kr/MW/Order/viewOrderDetailInfo.tmall#" class="btnb" onclick="history.back();return false;"><span>ÁÖ¹®¼­ µ¹¾Æ°¡±â</span></a></div>
-			<div><span class="btnpr"><button type="submit" onclick="doPay();">°áÁ¦ÇÏ±â</button></span></div>
+			<div><a href="https://buy.m.11st.co.kr/MW/Order/viewOrderDetailInfo.tmall#" class="btnb" onclick="history.back();return false;"><span>ì£¼ë¬¸ì„œ ëŒì•„ê°€ê¸°</span></a></div>
+			<div><span class="btnpr"><button type="submit" onclick="doPay();">ê²°ì œí•˜ê¸°</button></span></div>
 		</div>		
 	</fieldset>
 	
 	<div class="note_box" id="noteBank">
-		<h2>¹«ÅëÀå ÀÔ±Ý¾È³»</h2>
+		<h2>ë¬´í†µìž¥ ìž…ê¸ˆì•ˆë‚´</h2>
 		<ul>
-			<li>¸ÕÀú °í°´´Ô²²¼­ ÀÔ±ÝÇÒ ÀºÇàÀ» ¼±ÅÃÇÕ´Ï´Ù.</li>
-			<li>ÀÔ±ÝÇÏ½Ç ÀºÇàÀ» ¼±ÅÃÇÏ½Ç¶§ Å¸ÇàÀÏ °æ¿ì ÀÔ±Ý ¼ö¼ö·á°¡ ¹ß»ýÇÕ´Ï´Ù.</li>
-			<li>ÀÔ±ÝÀÚ¸íÀº ¹Ýµå½Ã ±¸¸ÅÀÚ º»ÀÎ ¸íÀÇÀÌ¾î¾ß ÇÏ¹Ç·Î ¼öÁ¤ÀÌ ºÒ°¡´ÉÇÑ »óÅÂ·Î Ç¥½ÃµË´Ï´Ù. ¿¹±ÝÁÖ¸í¿¡´Â È¸»ç¸íÀÎ
-				(ÁÖ)11¹ø°¡ÀÌ Ç¥½ÃµÇ¸ç ÆÇ¸ÅÀÚ°¡ Çö±Ý¿µ¼öÁõÀ» Á¦°øÇÑ´Ù°í ÇßÀ» °æ¿ì ¼ö·É¿©ºÎ¸¦ ¼±ÅÃÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù.</li>
-			<li>Çö±Ý¿µ¼öÁõÀº ±¸¸ÅÈ®Á¤ 2ÀÏ ÀÌÈÄ¿¡ ³ªÀÇ 11¹ø°¡ &gt; Áõºù¼­·ù¹ß±Þ ÆäÀÌÁö¿¡¼­ Á÷Á¢ Ãâ·ÂÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù.</li>			
-			<li>ÇØ´ç °èÁÂ·Î 5¿µ¾÷ÀÏ ³»·Î ÀÔ±ÝÇÏÁö ¾ÊÀ¸½Ã¸é ±¸¸Å°ÅºÎ Ã³¸®µÇ¸ç °èÁÂÀÌÃ¼ ¹æ½ÄÀ¸·Î ÀÔ±ÝÀÌ °¡´ÉÇÏ´Ï Á÷Á¢ ÀºÇàÀ» ¹æ¹®ÇÏ½Ã°Å³ª
-				ÀÎÅÍ³Ý¹ðÅ·, ÀüÈ­¹ðÅ·, ATM±â¸¦ ÀÌ¿ëÇÑ °èÁÂÀÌÃ¼¸¦ ÀÌ¿ëÇÏ½Ã¾î ÀÔ±ÝÇÏ½Ã¸é ¹Ù·Î ÀÔ±ÝÃ³¸®µÇ¾î °áÁ¦°¡ ¿Ï·áµË´Ï´Ù.</li>
-			<li>ÆÇ¸ÅÀÚ°¡ Ãë¼Ò/¹ÝÇ° ½ÅÃ»ÇÏ´Â °æ¿ì ÀÚµ¿À¸·Î Ä³½Ã È¯ºÒ Ã³¸®µË´Ï´Ù.</li>
-			<li>200¸¸¿ø ÀÌ»ó °áÁ¦ ÈÄ Ãë¼Ò/¹ÝÇ° ½Ã °èÁÂ È¯ºÒ¸¸ °¡´ÉÇÕ´Ï´Ù. È¯ºÒ °èÁÂ´Â ³ªÀÇ 11¹ø°¡¿¡¼­ µî·ÏÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù.</li>
+			<li>ë¨¼ì € ê³ ê°ë‹˜ê»˜ì„œ ìž…ê¸ˆí•  ì€í–‰ì„ ì„ íƒí•©ë‹ˆë‹¤.</li>
+			<li>ìž…ê¸ˆí•˜ì‹¤ ì€í–‰ì„ ì„ íƒí•˜ì‹¤ë•Œ íƒ€í–‰ì¼ ê²½ìš° ìž…ê¸ˆ ìˆ˜ìˆ˜ë£Œê°€ ë°œìƒí•©ë‹ˆë‹¤.</li>
+			<li>ìž…ê¸ˆìžëª…ì€ ë°˜ë“œì‹œ êµ¬ë§¤ìž ë³¸ì¸ ëª…ì˜ì´ì–´ì•¼ í•˜ë¯€ë¡œ ìˆ˜ì •ì´ ë¶ˆê°€ëŠ¥í•œ ìƒíƒœë¡œ í‘œì‹œë©ë‹ˆë‹¤. ì˜ˆê¸ˆì£¼ëª…ì—ëŠ” íšŒì‚¬ëª…ì¸
+				(ì£¼)11ë²ˆê°€ì´ í‘œì‹œë˜ë©° íŒë§¤ìžê°€ í˜„ê¸ˆì˜ìˆ˜ì¦ì„ ì œê³µí•œë‹¤ê³  í–ˆì„ ê²½ìš° ìˆ˜ë ¹ì—¬ë¶€ë¥¼ ì„ íƒí•˜ì‹¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</li>
+			<li>í˜„ê¸ˆì˜ìˆ˜ì¦ì€ êµ¬ë§¤í™•ì • 2ì¼ ì´í›„ì— ë‚˜ì˜ 11ë²ˆê°€ &gt; ì¦ë¹™ì„œë¥˜ë°œê¸‰ íŽ˜ì´ì§€ì—ì„œ ì§ì ‘ ì¶œë ¥í•˜ì‹¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</li>			
+			<li>í•´ë‹¹ ê³„ì¢Œë¡œ 5ì˜ì—…ì¼ ë‚´ë¡œ ìž…ê¸ˆí•˜ì§€ ì•Šìœ¼ì‹œë©´ êµ¬ë§¤ê±°ë¶€ ì²˜ë¦¬ë˜ë©° ê³„ì¢Œì´ì²´ ë°©ì‹ìœ¼ë¡œ ìž…ê¸ˆì´ ê°€ëŠ¥í•˜ë‹ˆ ì§ì ‘ ì€í–‰ì„ ë°©ë¬¸í•˜ì‹œê±°ë‚˜
+				ì¸í„°ë„·ë±…í‚¹, ì „í™”ë±…í‚¹, ATMê¸°ë¥¼ ì´ìš©í•œ ê³„ì¢Œì´ì²´ë¥¼ ì´ìš©í•˜ì‹œì–´ ìž…ê¸ˆí•˜ì‹œë©´ ë°”ë¡œ ìž…ê¸ˆì²˜ë¦¬ë˜ì–´ ê²°ì œê°€ ì™„ë£Œë©ë‹ˆë‹¤.</li>
+			<li>íŒë§¤ìžê°€ ì·¨ì†Œ/ë°˜í’ˆ ì‹ ì²­í•˜ëŠ” ê²½ìš° ìžë™ìœ¼ë¡œ ìºì‹œ í™˜ë¶ˆ ì²˜ë¦¬ë©ë‹ˆë‹¤.</li>
+			<li>200ë§Œì› ì´ìƒ ê²°ì œ í›„ ì·¨ì†Œ/ë°˜í’ˆ ì‹œ ê³„ì¢Œ í™˜ë¶ˆë§Œ ê°€ëŠ¥í•©ë‹ˆë‹¤. í™˜ë¶ˆ ê³„ì¢ŒëŠ” ë‚˜ì˜ 11ë²ˆê°€ì—ì„œ ë“±ë¡í•˜ì‹¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</li>
 		</ul>
-		<a href="https://buy.m.11st.co.kr/MW/Order/viewOrderDetailInfo.tmall#noteBank" class="btn_mr" onclick="moreToggle(&#39;noteBank&#39;, this, &#39;open&#39;, &#39;´õº¸±â&#39;, &#39;´Ý±â&#39;);callStatAjax(&#39;MORSU&#39;, &#39;MORSU001&#39;);return false">´õº¸±â</a>
+		<a href="https://buy.m.11st.co.kr/MW/Order/viewOrderDetailInfo.tmall#noteBank" class="btn_mr" onclick="moreToggle(&#39;noteBank&#39;, this, &#39;open&#39;, &#39;ë”ë³´ê¸°&#39;, &#39;ë‹«ê¸°&#39;);callStatAjax(&#39;MORSU&#39;, &#39;MORSU001&#39;);return false">ë”ë³´ê¸°</a>
 	</div>
 
 </fieldset></form></section>
@@ -902,36 +902,36 @@ window.onload = function(){
     }
 
     function callStatAjax(url, key, item) {
-        if (url && url != '') {
-            var statUrl = '/a.st?url='+url+'&ts='+Date.now();
-            if (key && key != '') statUrl += '&key='+key;
-            if (item && item != '') statUrl += '&item='+item;
-            var xhr = window.ActiveXObject ? new window.ActiveXObject('Microsoft.XMLHTTP') : new window.XMLHttpRequest();
-            try {
-                xhr.open('get', statUrl, true);
-                xhr.send(null);
-            } catch (e){ console.log(e); }
-        }
+//        if (url && url != '') {
+//            var statUrl = '/a.st?url='+url+'&ts='+Date.now();
+//            if (key && key != '') statUrl += '&key='+key;
+//            if (item && item != '') statUrl += '&item='+item;
+//            var xhr = window.ActiveXObject ? new window.ActiveXObject('Microsoft.XMLHTTP') : new window.XMLHttpRequest();
+//            try {
+//                xhr.open('get', statUrl, true);
+//                xhr.send(null);
+//            } catch (e){ console.log(e); }
+//        }
     }
 
     function callStat(url, key, item) {
-        if (url && url != '') {
-            var statUrl = '/a.st?url='+url+'&ts='+Date.now();
-            if (key && key != '') statUrl += '&key='+key;
-            if (item && item != '') statUrl += '&item='+item;
-            var clickIfrm;
-            if (document.getElementById('ifrmClickAnaly')) {
-                clickIfrm = document.getElementById('ifrmClickAnaly');
-            } else {
-                clickIfrm = document.createElement('IFRAME');
-                clickIfrm.id = 'ifrmClickAnaly';
-                clickIfrm.width = 0;
-                clickIfrm.height = 0;
-                clickIfrm.style.display = 'none';
-                document.body.appendChild(clickIfrm);
-            }
-            clickIfrm.src = statUrl;
-        }
+//        if (url && url != '') {
+//            var statUrl = '/a.st?url='+url+'&ts='+Date.now();
+//            if (key && key != '') statUrl += '&key='+key;
+//            if (item && item != '') statUrl += '&item='+item;
+//            var clickIfrm;
+//            if (document.getElementById('ifrmClickAnaly')) {
+//                clickIfrm = document.getElementById('ifrmClickAnaly');
+//            } else {
+//                clickIfrm = document.createElement('IFRAME');
+//                clickIfrm.id = 'ifrmClickAnaly';
+//                clickIfrm.width = 0;
+//                clickIfrm.height = 0;
+//                clickIfrm.style.display = 'none';
+//                document.body.appendChild(clickIfrm);
+//            }
+//            clickIfrm.src = statUrl;
+//        }
     }
 
     function catchItemClickEvent(e) {
@@ -1126,7 +1126,7 @@ window.onload = function(){
         var gaSend = function(ctg, action, label) {
             try {
                 var appType = getCookie('appType');
-                var exposerLabel = label.indexOf('³ëÃâ');
+                var exposerLabel = label.indexOf('ë…¸ì¶œ');
                 if(exposerLabel>0){
                     if(appType === '') {
                         ga("send", "event", ctg, action, label, { nonInteraction: true });
@@ -1165,7 +1165,7 @@ window.onload = function(){
 
 
 <script>
-// ·¹ÄÚÇÈ ·Î±× µ¥ÀÌÅÍ ÀûÀç½Ã »ç¿ëµÇ´Â »ç¿ëÀÚ Á¤º¸ ÇÔ¼ö
+// ë ˆì½”í”½ ë¡œê·¸ ë°ì´í„° ì ìž¬ì‹œ ì‚¬ìš©ë˜ëŠ” ì‚¬ìš©ìž ì •ë³´ í•¨ìˆ˜
 function getBase64UserInfo(){
 	try{
 		var changeStr	= '';
@@ -1301,22 +1301,22 @@ function callRecopickPrdStat(recoPickInfo, recopickServer) {
 	<div class="cp_wrap">
 		<div class="cp_banner">
 			<a href="https://buy.m.11st.co.kr/MW/Order/viewOrderDetailInfo.tmall#"></a>
-			<button type="button" class="stop">±×¸¸º¸±â</button>
+			<button type="button" class="stop">ê·¸ë§Œë³´ê¸°</button>
 		</div>
-		<button type="button" class="close" onclick="mwUI.moreToggle(&#39;cpFloating&#39;, &#39;on&#39;, this, &#39;º¸±â&#39;, &#39;´Ý±â&#39;)">Ä·ÆäÀÎ º¸±â</button>
+		<button type="button" class="close" onclick="mwUI.moreToggle(&#39;cpFloating&#39;, &#39;on&#39;, this, &#39;ë³´ê¸°&#39;, &#39;ë‹«ê¸°&#39;)">ìº íŽ˜ì¸ ë³´ê¸°</button>
 	</div>
 </section>
 <script id="mwDev_offerTemplate" type="text/x-elevenst-template">
 	<div class="cp_wrap">
 		{{html}}
-		<button type="button" class="close" onclick="cpOfferAllPopup.close('cpAllpopup')">Ä·ÆäÀÎ ´Ý±â</button>
+		<button type="button" class="close" onclick="cpOfferAllPopup.close('cpAllpopup')">ìº íŽ˜ì¸ ë‹«ê¸°</button>
 	</div>
 </script>
 
 <script>
 function toEndDateFormat(endDate) { //parseTime(time)
     var year = endDate.substr(0,4);
-    var month = endDate.substr(4,2) - 1; // 1¿ù=0,12¿ù=11
+    var month = endDate.substr(4,2) - 1; // 1ì›”=0,12ì›”=11
     var day = endDate.substr(6,2);
     var hour = endDate.substr(8,2);
     var min = endDate.substr(10,2);
@@ -1421,7 +1421,7 @@ function showOfferFloatBanner(banner) {
 	document.getElementById('cpFloating').style.display = 'block';
 	var cpFloatingBtn = document.getElementById('cpFloating').getElementsByClassName('close')[0];
 	setTimeout(function() { 
-		mwUI.moreToggle('cpFloating', 'on', cpFloatingBtn, 'º¸±â', '´Ý±â');
+		mwUI.moreToggle('cpFloating', 'on', cpFloatingBtn, 'ë³´ê¸°', 'ë‹«ê¸°');
 		cpFloatingTO = setTimeout(function() {
 			document.getElementById('cpFloating').className = 'cp_floating';
         }, 5000);
@@ -1517,43 +1517,43 @@ window.addEventListener("load",  function(){
 	} else {
 		//if(offerCookie) return;
 		
-	    $.ajax({
-	        url: '/MW/Offer/Banner/getBanners.tmall',
-	        cache : false,		
-	        success: function(msg) {
-	        	setOfferCookie('offerBanners', true);
-	            var json = JSON.parse(msg);
-	            if(json && json.status.code == 200) {
-	            	if(json.response.cnt && json.response.cnt > 0) {
-	            		var bannerStore = {};
-	            		var banners = json.response.banners;
-	            		
-	            		var firstIdx = null;
-	            		for(var idx in banners) {
-	            			var viewYn = getOfferCookie(banners[idx].cpCode, 'VIEW');
-	            			var nativeView = (!offerBanners && viewYn == 'Y'); //Native ³ëÃâ ¿©ºÎ(LocalStorage ¿¡ Á¸ÀçÇÏÁö ¾Ê°í ÄíÅ°¿¡ ÀÖÀ»°æ¿ì)
-	            			var clickYn = banners[idx].clickYn;
-	            			var denyYn = getOfferCookie(banners[idx].cpCode, 'DENY');
-
-	            			if(denyYn == 'Y') banners[idx].denyYn = 'Y';
-	            			
-	            			if(denyYn != 'Y' && clickYn != 'Y') {
-	            				firstIdx = banners[idx].cpCode;
-	            			}
-	            			bannerStore[banners[idx].cpCode] = banners[idx];
-	            		}
-	            		bannerStore[firstIdx].viewYn = 'Y';
-	            		setBannerInfo(bannerStore);
-	            		
-						if(!nativeView && bannerStore[firstIdx].type == '00') {
-							showOfferFloatBanner(bannerStore[firstIdx]);
-						} else if(!nativeView && bannerStore[firstIdx].type == '01') {
-							showOfferAllPopup(bannerStore[firstIdx]);
-						}		            		
-	            	}
-	            }
-	        }
-	    });
+//	    $.ajax({
+//	        url: '/MW/Offer/Banner/getBanners.tmall',
+//	        cache : false,
+//	        success: function(msg) {
+//	        	setOfferCookie('offerBanners', true);
+//	            var json = JSON.parse(msg);
+//	            if(json && json.status.code == 200) {
+//	            	if(json.response.cnt && json.response.cnt > 0) {
+//	            		var bannerStore = {};
+//	            		var banners = json.response.banners;
+//
+//	            		var firstIdx = null;
+//	            		for(var idx in banners) {
+//	            			var viewYn = getOfferCookie(banners[idx].cpCode, 'VIEW');
+//	            			var nativeView = (!offerBanners && viewYn == 'Y'); //Native ë…¸ì¶œ ì—¬ë¶€(LocalStorage ì— ì¡´ìž¬í•˜ì§€ ì•Šê³  ì¿ í‚¤ì— ìžˆì„ê²½ìš°)
+//	            			var clickYn = banners[idx].clickYn;
+//	            			var denyYn = getOfferCookie(banners[idx].cpCode, 'DENY');
+//
+//	            			if(denyYn == 'Y') banners[idx].denyYn = 'Y';
+//
+//	            			if(denyYn != 'Y' && clickYn != 'Y') {
+//	            				firstIdx = banners[idx].cpCode;
+//	            			}
+//	            			bannerStore[banners[idx].cpCode] = banners[idx];
+//	            		}
+//	            		bannerStore[firstIdx].viewYn = 'Y';
+//	            		setBannerInfo(bannerStore);
+//
+//						if(!nativeView && bannerStore[firstIdx].type == '00') {
+//							showOfferFloatBanner(bannerStore[firstIdx]);
+//						} else if(!nativeView && bannerStore[firstIdx].type == '01') {
+//							showOfferAllPopup(bannerStore[firstIdx]);
+//						}
+//	            	}
+//	            }
+//	        }
+//	    });
 	}	
 }, false);
 </script>
@@ -1817,17 +1817,17 @@ function goDealAppFooter(){
 
 <div class="f_down">
 	<ul>
-		<li><a href="https://buy.m.11st.co.kr/MW/Order/viewOrderDetailInfo.tmall#" onclick="call11stAppFooter(&#39;://loadurl?domain=m.11st.co.kr&amp;url=&#39;,document.location.href); return false;" class="app11st" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1402">11¹ø°¡ ¾Û´Ù¿î·Îµå</a></li>
-		<li><a href="https://buy.m.11st.co.kr/MW/Order/viewOrderDetailInfo.tmall#" onclick="goDealAppFooter(); return false;" class="shocking" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1403">¼îÅ·µô ¾Û´Ù¿î·Îµå</a></li>
+		<li><a href="https://buy.m.11st.co.kr/MW/Order/viewOrderDetailInfo.tmall#" onclick="call11stAppFooter(&#39;://loadurl?domain=m.11st.co.kr&amp;url=&#39;,document.location.href); return false;" class="app11st" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1402">11ë²ˆê°€ ì•±ë‹¤ìš´ë¡œë“œ</a></li>
+		<li><a href="https://buy.m.11st.co.kr/MW/Order/viewOrderDetailInfo.tmall#" onclick="goDealAppFooter(); return false;" class="shocking" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1403">ì‡¼í‚¹ë”œ ì•±ë‹¤ìš´ë¡œë“œ</a></li>
 	</ul>
 </div>
 
 <div class="f_menu">
 	<ul>
-		<li id="loginBottom"><a href="https://buy.m.11st.co.kr/MW/Login/logout.tmall?type=" class="f5" data-clickurl="WGF01" data-clickkey="01">·Î±×¾Æ¿ô</a></li>
-		<li id="pcVersionLink"><a href="http://www.11st.co.kr/html/main.html" data-clickurl="WGF01" data-clickkey="02">PC¹öÀü</a></li>
-		<li><a href="http://m.11st.co.kr/MW/Customer/customerMain.tmall" data-clickurl="WGF01" data-clickkey="03">°í°´¼¾ÅÍ</a></li>
-		<li><a href="http://m.11st.co.kr/MW/Product/productMainConner.tmall" data-clickurl="WGF01" data-clickkey="04">ÀüÃ¼¼­ºñ½º</a></li>
+		<li id="loginBottom"><a href="https://buy.m.11st.co.kr/MW/Login/logout.tmall?type=" class="f5" data-clickurl="WGF01" data-clickkey="01">ë¡œê·¸ì•„ì›ƒ</a></li>
+		<li id="pcVersionLink"><a href="http://www.11st.co.kr/html/main.html" data-clickurl="WGF01" data-clickkey="02">PCë²„ì „</a></li>
+		<li><a href="http://m.11st.co.kr/MW/Customer/customerMain.tmall" data-clickurl="WGF01" data-clickkey="03">ê³ ê°ì„¼í„°</a></li>
+		<li><a href="http://m.11st.co.kr/MW/Product/productMainConner.tmall" data-clickurl="WGF01" data-clickkey="04">ì „ì²´ì„œë¹„ìŠ¤</a></li>
 	</ul>
 </div>
 <script type="text/javascript">
@@ -1839,9 +1839,9 @@ window.addEventListener("load",  function(){
 }, false);
 function footerSetLogin() {
 	if(funcCheckIsLogin()) {
-	    login.innerHTML = '<a href="/MW/Login/logout.tmall?type='+type+'" class="f5" data-clickurl="WGF01" data-clickkey="01">·Î±×¾Æ¿ô</a>';
+	    login.innerHTML = '<a href="/MW/Login/logout.tmall?type='+type+'" class="f5" data-clickurl="WGF01" data-clickkey="01">ë¡œê·¸ì•„ì›ƒ</a>';
 	} else {
-	    login.innerHTML = '<a href="https://m.11st.co.kr/MW/Login/login.tmall" class="f1" data-clickurl="WGF01" data-clickkey="01">·Î±×ÀÎ</a>';
+	    login.innerHTML = '<a href="https://m.11st.co.kr/MW/Login/login.tmall" class="f1" data-clickurl="WGF01" data-clickkey="01">ë¡œê·¸ì¸</a>';
 	}
 }
 (function() {
@@ -1869,9 +1869,9 @@ function footerSetLogin() {
 			var appType = getType();
 			var pcVersionWraps = document.getElementById('pcVersionLink');
             if(appType == "appmw_book" || appType == "appmwi_book") {
-            	pcVersionWraps.innerHTML = '<a href="http://www.11st.co.kr/booksmall/BooksAction.tmall?ID=BOOKS&ctgrNo=63516">PC¹öÀü</a>';
+            	pcVersionWraps.innerHTML = '<a href="http://www.11st.co.kr/booksmall/BooksAction.tmall?ID=BOOKS&ctgrNo=63516">PCë²„ì „</a>';
             } else {
-            	pcVersionWraps.innerHTML = '<a href="http://www.11st.co.kr/html/main.html"  data-clickurl="WGF01" data-clickkey="02">PC¹öÀü</a>';
+            	pcVersionWraps.innerHTML = '<a href="http://www.11st.co.kr/html/main.html"  data-clickurl="WGF01" data-clickkey="02">PCë²„ì „</a>';
             }
             if(appType == 'appmw' || appType == 'appmwi') {
 		    	document.querySelector('.f_down').style.display = 'none';
@@ -1891,18 +1891,18 @@ function footerSetLogin() {
 	</script>
 	<div class="f_foot">
 		<address>
-			<span class="p"><strong>SKÇÃ·¡´Ö(ÁÖ)</strong><em>´ëÇ¥ÀÌ»ç</em> : ¼­¼º¿ø</span>
-			<span class="p"><em>ÁÖ¼Ò</em> : (13487) °æ±âµµ ¼º³²½Ã ºÐ´ç±¸ ÆÇ±³·Î 264 (»ïÆòµ¿)</span>
-			<span class="p"><em>»ç¾÷ÀÚµî·Ï¹øÈ£</em> : 104-86-36968</span>
-			<span class="p"><em>Åë½ÅÆÇ¸Å¾÷½Å°í</em> : Á¦2014-°æ±â¼º³²-0036È£</span>
-			<span class="p"><em>°í°´¼¾ÅÍ</em> : <a href="tel:1599-0110" data-clickurl="WGF01" data-clickkey="08">1599 - 0110</a><span class="e">customerservice@11st.co.kr</span></span>
+			<span class="p"><strong>SKí”Œëž˜ë‹›(ì£¼)</strong><em>ëŒ€í‘œì´ì‚¬</em> : ì„œì„±ì›</span>
+			<span class="p"><em>ì£¼ì†Œ</em> : (13487) ê²½ê¸°ë„ ì„±ë‚¨ì‹œ ë¶„ë‹¹êµ¬ íŒêµë¡œ 264 (ì‚¼í‰ë™)</span>
+			<span class="p"><em>ì‚¬ì—…ìžë“±ë¡ë²ˆí˜¸</em> : 104-86-36968</span>
+			<span class="p"><em>í†µì‹ íŒë§¤ì—…ì‹ ê³ </em> : ì œ2014-ê²½ê¸°ì„±ë‚¨-0036í˜¸</span>
+			<span class="p"><em>ê³ ê°ì„¼í„°</em> : <a href="tel:1599-0110" data-clickurl="WGF01" data-clickkey="08">1599 - 0110</a><span class="e">customerservice@11st.co.kr</span></span>
 		</address>
 		<div class="link">
-			<a href="http://www.ftc.go.kr/info/bizinfo/communicationView.jsp?apv_perm_no=2011301010030201333&amp;area1=&amp;area2=&amp;currpage=1&amp;searchKey=04&amp;searchVal=1048636968&amp;stdate=&amp;enddate=" data-clickurl="WGF01" data-clickkey="05">»ç¾÷ÀÚÁ¤º¸È®ÀÎ</a>
-			<a href="http://www.11st.co.kr/annc/AnncMainPreview.tmall?method=getProvision&amp;anncCd=01" class="law" data-clickurl="WGF01" data-clickkey="06">ÀÌ¿ë¾à°ü</a>
-			<a href="http://www.11st.co.kr/annc/AnncMainPreview.tmall?method=getProvision&amp;anncCd=03" class="law" data-clickurl="WGF01" data-clickkey="07">°³ÀÎÁ¤º¸Ã³¸®¹æÄ§</a>
+			<a href="http://www.ftc.go.kr/info/bizinfo/communicationView.jsp?apv_perm_no=2011301010030201333&amp;area1=&amp;area2=&amp;currpage=1&amp;searchKey=04&amp;searchVal=1048636968&amp;stdate=&amp;enddate=" data-clickurl="WGF01" data-clickkey="05">ì‚¬ì—…ìžì •ë³´í™•ì¸</a>
+			<a href="http://www.11st.co.kr/annc/AnncMainPreview.tmall?method=getProvision&amp;anncCd=01" class="law" data-clickurl="WGF01" data-clickkey="06">ì´ìš©ì•½ê´€</a>
+			<a href="http://www.11st.co.kr/annc/AnncMainPreview.tmall?method=getProvision&amp;anncCd=03" class="law" data-clickurl="WGF01" data-clickkey="07">ê°œì¸ì •ë³´ì²˜ë¦¬ë°©ì¹¨</a>
 		</div>
-		<p class="noti">SKÇÃ·¡´Ö(ÁÖ)´Â Åë½ÅÆÇ¸ÅÁß°³ÀÚ·Î¼­ ¿ÀÇÂ¸¶ÄÏ 11¹ø°¡ÀÇ °Å·¡´ç»çÀÚ°¡ ¾Æ´Ï¸ç, ÀÔÁ¡ÆÇ¸ÅÀÚ°¡ µî·ÏÇÑ »óÇ°Á¤º¸ ¹× °Å·¡¿¡ ´ëÇØ SKÇÃ·¡´Ö(ÁÖ)´Â ÀÏÃ¼ÀÇ Ã¥ÀÓÀ» ÁöÁö ¾Ê½À´Ï´Ù.</p>
+		<p class="noti">SKí”Œëž˜ë‹›(ì£¼)ëŠ” í†µì‹ íŒë§¤ì¤‘ê°œìžë¡œì„œ ì˜¤í”ˆë§ˆì¼“ 11ë²ˆê°€ì˜ ê±°ëž˜ë‹¹ì‚¬ìžê°€ ì•„ë‹ˆë©°, ìž…ì íŒë§¤ìžê°€ ë“±ë¡í•œ ìƒí’ˆì •ë³´ ë° ê±°ëž˜ì— ëŒ€í•´ SKí”Œëž˜ë‹›(ì£¼)ëŠ” ì¼ì²´ì˜ ì±…ìž„ì„ ì§€ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
 		<p class="copy">COPYRIGHT &#169;SK planet. All RIGHTS RESERVED.</p>
 	</div>
 	

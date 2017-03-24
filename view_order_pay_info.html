@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- saved from url=(0205)https://buy.m.11st.co.kr/MW/Order/viewOrderPayInfo.tmall?incommingCode=02&ordNo=201703243661027&prdNo=958114815&rakePrdNo=958114815&dispSpceId=&dispSpceRank=&rakeTrTypeCd=&demandDscStr=&OCBcheck=N#complete -->
-<html lang="ko" class=" ios iphone mobile v9_0 portrait"><head><meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	
 <script async="" charset="utf-8" src="./view_order_pay_info_files/production.min.js"></script><script type="text/javascript" async="" src="./view_order_pay_info_files/analytics.js"></script><script type="text/javascript" async="" src="./view_order_pay_info_files/ec.js"></script><script type="text/javascript" async="" src="./view_order_pay_info_files/rake-skp-1.5.min.js"></script><script async="" src="./view_order_pay_info_files/gtm.js"></script><script async="" src="./view_order_pay_info_files/analytics.js"></script><script>
 var mwScript = (function() {
@@ -36,9 +36,9 @@ var mwScript = (function() {
 <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width">
 <script>mwScript.addTouchIcon("apple-touch-icon-precomposed");</script><link rel="apple-touch-icon-precomposed" href="https://m.11st.co.kr/MW/img/mw11st_touchicon.png">
 <meta name="format-detection" content="telephone=no">
-	<title>ÁÖ¹®¿Ï·á - 11¹ø°¡ ¸ğ¹ÙÀÏ</title>
-	<link rel="stylesheet" href="./view_order_pay_info_files/base.css">
-	<link rel="stylesheet" href="./view_order_pay_info_files/pay.css">
+	<title>ì£¼ë¬¸ì™„ë£Œ - 11ë²ˆê°€ ëª¨ë°”ì¼</title>
+	<link rel="stylesheet" href="css/common/base.css">
+	<link rel="stylesheet" href="css/mart/mart.css">
 	<!--[if lt IE 9]><script src="//c.m.011st.com/MW/js/ui/ie.js"></script><![endif]-->
 <script src="./view_order_pay_info_files/jquery-2.1.1.min.js"></script>
 <script src="./view_order_pay_info_files/ui.js"></script>
@@ -88,7 +88,7 @@ var _MOBILE_COOKIE_DOMAIN_ = 'm.11st.co.kr';
                 } catch(e) {}
             }, 300);
 
-            //ÃÖ±Ù °áÁ¦Á¤º¸ ÀúÀå
+            //ìµœê·¼ ê²°ì œì •ë³´ ì €ì¥
             try {
                 if(store.enabled && document.getElementById("recentPaymentCd") !=null){
                     store.set("order_recentPayment", recentPaymentCd.value);
@@ -132,18 +132,18 @@ var _MOBILE_COOKIE_DOMAIN_ = 'm.11st.co.kr';
                 }
                 recoPick('setUID', _uid);
                 recoPick('setMID', '6150708229371694165');
-                recoPick('sendLog', 'order', {id: 958114815, count: 1, total_sales:10500, c1:"°úÀÚ/°£½Ä", c2:"Äµµğ·ù", c3:"»çÅÁ/Äµµğ", c4:"", bc1:"", brand:"" });
+                recoPick('sendLog', 'order', {id: 958114815, count: 1, total_sales:10500, c1:"ê³¼ì/ê°„ì‹", c2:"ìº”ë””ë¥˜", c3:"ì‚¬íƒ•/ìº”ë””", c4:"", bc1:"", brand:"" });
             } catch(e) {}
         }
 
         window.addEventListener('hashchange', function(e) {
             if(!location.hash) {
                 location.hash = 'complete';
-                alert("ÀÌ¿ëÀÌ ¸¸·áµÈ ÆäÀÌÁö ÀÔ´Ï´Ù.");
+                alert("ì´ìš©ì´ ë§Œë£Œëœ í˜ì´ì§€ ì…ë‹ˆë‹¤.");
             }
         });
 
-        //¹è³Ê
+        //ë°°ë„ˆ
         function slideshow(id, num){
             this.source = document.getElementById(id);
             this.sourceA = this.source.getElementsByTagName("a");
@@ -169,7 +169,7 @@ var _MOBILE_COOKIE_DOMAIN_ = 'm.11st.co.kr';
             setTimeout("slideshow('"+id+"',"+num+")",2000);
         }
 
-        //·¹ÀÌ¾îToggle
+        //ë ˆì´ì–´Toggle
         function layerToggle(ele, btn, all){
             var element = document.getElementById(ele);
             element.style.display = (element.style.display != 'none') ? "none" : "block";
@@ -203,12 +203,12 @@ var _MOBILE_COOKIE_DOMAIN_ = 'm.11st.co.kr';
             }
         }
 
-        // ·¹ÀÌ¾î ´İ±â
+        // ë ˆì´ì–´ ë‹«ê¸°
         function helpClose(self){
             self.parentNode.style.display='none';
         }
 
-        //°°Àº class ´İ±â
+        //ê°™ì€ class ë‹«ê¸°
         function classClose(ele, all) {
             if(document.getElementsByClassName){
                 var elses = document.getElementsByClassName(all);
@@ -241,15 +241,15 @@ var _MOBILE_COOKIE_DOMAIN_ = 'm.11st.co.kr';
 	
 
 <script src="./view_order_pay_info_files/netfunnel.js" charset="UTF-8"></script><script src="./view_order_pay_info_files/mwapptools.js"></script><script src="./view_order_pay_info_files/mwapptools.js"></script></head>
-<body id="order"><!-- Àå¹Ù±¸´Ï,ÁÖ¹® id Ãß°¡ -->
+<body id="order"><!-- ì¥ë°”êµ¬ë‹ˆ,ì£¼ë¬¸ id ì¶”ê°€ -->
 <div id="wrap">
 	<!-- header -->
 	<header>
 	
 						
 			<div class="head_bnr" id="app_down_bnr" style="display:none;">
-				<a href="https://buy.m.11st.co.kr/MW/Order/viewOrderPayInfo.tmall?incommingCode=02&amp;ordNo=201703243661027&amp;prdNo=958114815&amp;rakePrdNo=958114815&amp;dispSpceId=&amp;dispSpceRank=&amp;rakeTrTypeCd=&amp;demandDscStr=&amp;OCBcheck=N#" onclick="call11stAppMain(); return false;" style="background-color:#e7e7ea;" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1401"><img src="view_order_pay_info_files/app_bnr.png" alt="¾ÛÀ¸·Î Á¢¼ÓÇÏ¸é ´õ Å«ÇıÅÃÀÌ-¾Û´Ù¿î·Îµå"></a>
-				<button type="button" onclick="closeElevenstAppDown();">¹è³Ê´İ±â</button>
+				<a href="https://buy.m.11st.co.kr/MW/Order/viewOrderPayInfo.tmall?incommingCode=02&amp;ordNo=201703243661027&amp;prdNo=958114815&amp;rakePrdNo=958114815&amp;dispSpceId=&amp;dispSpceRank=&amp;rakeTrTypeCd=&amp;demandDscStr=&amp;OCBcheck=N#" onclick="call11stAppMain(); return false;" style="background-color:#e7e7ea;" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1401"><img src="view_order_pay_info_files/app_bnr.png" alt="ì•±ìœ¼ë¡œ ì ‘ì†í•˜ë©´ ë” í°í˜œíƒì´-ì•±ë‹¤ìš´ë¡œë“œ"></a>
+				<button type="button" onclick="closeElevenstAppDown();">ë°°ë„ˆë‹«ê¸°</button>
 			</div>
         
 
@@ -311,18 +311,18 @@ var _MOBILE_COOKIE_DOMAIN_ = 'm.11st.co.kr';
 
 	
 	<div class="gnb_mw gnb_m">
-		<h1><a href="http://m.11st.co.kr/MW" title="È¨À¸·Î ÀÌµ¿" data-clickurl="WGA01" data-clickkey="00">11¹ø°¡</a></h1>
+		<h1><a href="http://m.11st.co.kr/MW" title="í™ˆìœ¼ë¡œ ì´ë™" data-clickurl="WGA01" data-clickkey="00">11ë²ˆê°€</a></h1>
 	
-		<a href="http://m.11st.co.kr/MW/api/app/elevenst/menu/sideMenu.tmall" class="mu cate" data-clickurl="WGB01" data-clickkey="00">Ä«Å×°í¸®</a>
+		<a href="http://m.11st.co.kr/MW/api/app/elevenst/menu/sideMenu.tmall" class="mu cate" data-clickurl="WGB01" data-clickkey="00">ì¹´í…Œê³ ë¦¬</a>
 
 		<form id="search" name="searchForm" action="http://m.11st.co.kr/MW/Search/searchProduct.tmall" method="get" onsubmit="searchSubmit();return false;">
 			<fieldset>
-				<legend>ÅëÇÕ°Ë»ö</legend>
+				<legend>í†µí•©ê²€ìƒ‰</legend>
 				<div class="srch">
-					<input type="search" id="decSearchKeyword" name="decSearchKeyword" value="" title="°Ë»ö¾î" onfocus="getInput();" onblur="releaseInput();" autocomplete="off" autocorrect="off" autocapitalize="off" onclick="clearInputValue(&#39;decSearchKeyword&#39;);fncStop();return false;" data-clickurl="WSRC00" data-clickkey="WSRC00">
-					<button class="del" type="button" id="schdelbtn" style="display:none;" onclick="clearInputValue(&#39;decSearchKeyword&#39;);">°Ë»ö¾î »èÁ¦</button>
+					<input type="search" id="decSearchKeyword" name="decSearchKeyword" value="" title="ê²€ìƒ‰ì–´" onfocus="getInput();" onblur="releaseInput();" autocomplete="off" autocorrect="off" autocapitalize="off" onclick="clearInputValue(&#39;decSearchKeyword&#39;);fncStop();return false;" data-clickurl="WSRC00" data-clickkey="WSRC00">
+					<button class="del" type="button" id="schdelbtn" style="display:none;" onclick="clearInputValue(&#39;decSearchKeyword&#39;);">ê²€ìƒ‰ì–´ ì‚­ì œ</button>
 					
-					<input type="submit" id="search_submit" value="°Ë»ö" data-clickurl="WSRC11" data-clickkey="WSRC11">
+					<input type="submit" id="search_submit" value="ê²€ìƒ‰" data-clickurl="WSRC11" data-clickkey="WSRC11">
 					
 					<input type="hidden" id="searchType" name="searchType" value="">
 					<input type="hidden" id="dispObjLnkUrl" value="http://m.11st.co.kr/MW/Product/productPlanningDetail.tmall?plnDispNo=926473">
@@ -357,40 +357,40 @@ var _MOBILE_COOKIE_DOMAIN_ = 'm.11st.co.kr';
 					<input type="hidden" name="pageSize" value="0">
 					
 				</div>
-				<button type="button" class="prev" onclick="vLayer(&#39;kwd&#39;,false);setBodyClass(false);return false;">ÀÌÀü</button>
+				<button type="button" class="prev" onclick="vLayer(&#39;kwd&#39;,false);setBodyClass(false);return false;">ì´ì „</button>
 			</fieldset>
 		</form>
 	
-		<a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall" class="mu cart" data-clickurl="WGD01" data-clickkey="00">Àå¹Ù±¸´Ï</a>
+		<a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall" class="mu cart" data-clickurl="WGD01" data-clickkey="00">ì¥ë°”êµ¬ë‹ˆ</a>
 	
 	
 	</div>	
 	<div id="kwd" class="kword">
 		<div class="ctg" id="ctgDiv"></div>
 		<ul class="wrd" id="autoComplete"></ul>
-		<div class="sw_ft"><button type="button" class="close" onclick="vLayer(&#39;kwd&#39;,false);setBodyClass(false);return false;" data-clickurl="WSRB03" data-clickkey="WSRB03">´İ±â</button></div>
+		<div class="sw_ft"><button type="button" class="close" onclick="vLayer(&#39;kwd&#39;,false);setBodyClass(false);return false;" data-clickurl="WSRB03" data-clickkey="WSRB03">ë‹«ê¸°</button></div>
 	</div>
 	<div class="schwd" id="schwd" style="display:none;">
 		<ul class="sw_tab">
-			<li class="on"><a href="https://buy.m.11st.co.kr/MW/Order/viewOrderPayInfo.tmall?incommingCode=02&amp;ordNo=201703243661027&amp;prdNo=958114815&amp;rakePrdNo=958114815&amp;dispSpceId=&amp;dispSpceRank=&amp;rakeTrTypeCd=&amp;demandDscStr=&amp;OCBcheck=N#schword01" onclick="goSearchSwipeMove(0);return false">ÃÖ±Ù°Ë»ö¾î</a></li>
+			<li class="on"><a href="https://buy.m.11st.co.kr/MW/Order/viewOrderPayInfo.tmall?incommingCode=02&amp;ordNo=201703243661027&amp;prdNo=958114815&amp;rakePrdNo=958114815&amp;dispSpceId=&amp;dispSpceRank=&amp;rakeTrTypeCd=&amp;demandDscStr=&amp;OCBcheck=N#schword01" onclick="goSearchSwipeMove(0);return false">ìµœê·¼ê²€ìƒ‰ì–´</a></li>
 			<li>
-				<a href="https://buy.m.11st.co.kr/MW/Order/viewOrderPayInfo.tmall?incommingCode=02&amp;ordNo=201703243661027&amp;prdNo=958114815&amp;rakePrdNo=958114815&amp;dispSpceId=&amp;dispSpceRank=&amp;rakeTrTypeCd=&amp;demandDscStr=&amp;OCBcheck=N#schword02" onclick="goSearchSwipeMove(1);return false">±Ş»ó½Â
-					<span class="pg" id="searchSwipeNavi"><span class="on"></span><span></span><span></span><b id="searchSwipePage">3ÆäÀÌÁöÁß 1ÆäÀÌÁö</b></span>
+				<a href="https://buy.m.11st.co.kr/MW/Order/viewOrderPayInfo.tmall?incommingCode=02&amp;ordNo=201703243661027&amp;prdNo=958114815&amp;rakePrdNo=958114815&amp;dispSpceId=&amp;dispSpceRank=&amp;rakeTrTypeCd=&amp;demandDscStr=&amp;OCBcheck=N#schword02" onclick="goSearchSwipeMove(1);return false">ê¸‰ìƒìŠ¹
+					<span class="pg" id="searchSwipeNavi"><span class="on"></span><span></span><span></span><b id="searchSwipePage">3í˜ì´ì§€ì¤‘ 1í˜ì´ì§€</b></span>
 				</a>
 			</li>
-			<li><a href="https://buy.m.11st.co.kr/MW/Order/viewOrderPayInfo.tmall?incommingCode=02&amp;ordNo=201703243661027&amp;prdNo=958114815&amp;rakePrdNo=958114815&amp;dispSpceId=&amp;dispSpceRank=&amp;rakeTrTypeCd=&amp;demandDscStr=&amp;OCBcheck=N#schword03" onclick="goSearchSwipeMove(2);return false">ÀÎ±â</a></li>
+			<li><a href="https://buy.m.11st.co.kr/MW/Order/viewOrderPayInfo.tmall?incommingCode=02&amp;ordNo=201703243661027&amp;prdNo=958114815&amp;rakePrdNo=958114815&amp;dispSpceId=&amp;dispSpceRank=&amp;rakeTrTypeCd=&amp;demandDscStr=&amp;OCBcheck=N#schword03" onclick="goSearchSwipeMove(2);return false">ì¸ê¸°</a></li>
 		</ul>
 		<div class="sw_swp">
 			<div id="view_sch_swipe"><div class="mwContainer"><div></div><div></div><div></div></div></div>
-			<button type="button" class="prev" onclick="goPrev()">ÀÌÀü</button>
-			<button type="button" class="next" onclick="goNext()">´ÙÀ½</button>
+			<button type="button" class="prev" onclick="goPrev()">ì´ì „</button>
+			<button type="button" class="next" onclick="goNext()">ë‹¤ìŒ</button>
 		</div>
 		<div id="gnb_sch_swipe" style="display:none;">
-			<div id="schword01"><!-- ÃÖ±Ù °Ë»ö¾î --></div>
-			<div id="schword02"><!-- ±Ş»ó½Â --></div>
-			<div id="schword03"><!-- ÀÎ±â --></div>
+			<div id="schword01"><!-- ìµœê·¼ ê²€ìƒ‰ì–´ --></div>
+			<div id="schword02"><!-- ê¸‰ìƒìŠ¹ --></div>
+			<div id="schword03"><!-- ì¸ê¸° --></div>
 		</div>
-		<div class="sw_ft"><button type="button" class="close" onclick="setBodyClass(false);" data-clickurl="WSRC12" data-clickkey="WSRC12">´İ±â</button></div>
+		<div class="sw_ft"><button type="button" class="close" onclick="setBodyClass(false);" data-clickurl="WSRC12" data-clickkey="WSRC12">ë‹«ê¸°</button></div>
 	</div>
 	<script>
 		(function() {
@@ -434,19 +434,19 @@ var _MOBILE_COOKIE_DOMAIN_ = 'm.11st.co.kr';
 	<!-- contents -->
 
 	<section id="cts">
-		<div class="title pay">ÁÖ¹®/°áÁ¦</div>
-		<h1 class="title">ÁÖ¹®¿Ï·á</h1>
+		<div class="title pay">ì£¼ë¬¸/ê²°ì œ</div>
+		<h1 class="title">ì£¼ë¬¸ì™„ë£Œ</h1>
 		<div class="msg_odr">
 			
-			<p class="tt"><span class="red">ÁÖ¹®ÀÌ ¿Ï·á</span>µÇ¾ú½À´Ï´Ù.</p>
-			<p>ÁÖ¹®³»¿ª/Á¤º¸¸¦ È®ÀÎÇÏ½Ã±â ¹Ù¶ø´Ï´Ù.</p>
+			<p class="tt"><span class="red">ì£¼ë¬¸ì´ ì™„ë£Œ</span>ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
+			<p>ì£¼ë¬¸ë‚´ì—­/ì •ë³´ë¥¼ í™•ì¸í•˜ì‹œê¸° ë°”ëë‹ˆë‹¤.</p>
 			
-			<!-- 2017-01-26 : OCBÅëÇÕ  -->
+			<!-- 2017-01-26 : OCBí†µí•©  -->
 			
 		</div>
 
 
-		<div class="lad" id="dsAD"><div style="background-color:#fffeed;"><a href="https://ds.11st.co.kr/click/11st/11st_mobile/mobile_order@M.order_banner?ads_id=39957&amp;creative_id=34170&amp;click_id=32697&amp;_=1490351531656"><img src="view_order_pay_info_files/45763e53512381425f2e3a0863ffc3e4.png" alt="ÇÒÀÎÄíÆùÁõÁ¤"></a></div></div>
+		<div class="lad" id="dsAD"><div style="background-color:#fffeed;"><a href="https://ds.11st.co.kr/click/11st/11st_mobile/mobile_order@M.order_banner?ads_id=39957&amp;creative_id=34170&amp;click_id=32697&amp;_=1490351531656"><img src="view_order_pay_info_files/45763e53512381425f2e3a0863ffc3e4.png" alt="í• ì¸ì¿ í°ì¦ì •"></a></div></div>
 		
 		
 		
@@ -454,32 +454,32 @@ var _MOBILE_COOKIE_DOMAIN_ = 'm.11st.co.kr';
 		
 		
 		<div class="odr_prd end">
-			<h3>[°³º°¹è¼Û»óÇ°]</h3><div class="cl">
+			<h3>[ê°œë³„ë°°ì†¡ìƒí’ˆ]</h3><div class="cl">
 <div class="mc3">
-<a href="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo=958114815"><span class="pd">ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ® 1050g / ÄÚ½ºÆ®ÄÚ ¸Á°í¸À ¶óÁîº£¸®¸À ºí·çº£¸®¸À</span></a></div>
+<a href="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo=958114815"><span class="pd">í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ 1050g / ì½”ìŠ¤íŠ¸ì½” ë§ê³ ë§› ë¼ì¦ˆë² ë¦¬ë§› ë¸”ë£¨ë² ë¦¬ë§›</span></a></div>
 <div class="op2"><ul>
-<li class="prc">»óÇ°±İ¾× :  <strong>10,500¿ø</strong></li>
-<li class="num">¼ö·® : 1°³</li><li>¹è¼Ûºñ : 5,500¿ø 
+<li class="prc">ìƒí’ˆê¸ˆì•¡ :  <strong>10,500ì›</strong></li>
+<li class="num">ìˆ˜ëŸ‰ : 1ê°œ</li><li>ë°°ì†¡ë¹„ : 5,500ì› 
 </li></ul></div>
 </div>
 
 			
 		</div>
-		<!-- s:¹­À½ ¹è¼Ûºñ Á¤Ã¥ --><div class="lyw" id="lyp1_each00" style="display:none;"><div class="lym"><h3>¹è¼Ûºñ Á¶°Ç ¾È³»</h3><p class="txt">º» »óÇ°Àº µ¿ÀÏ ÆÇ¸ÅÀÚÀÇ µ¿ÀÏ ¹è¼Ûºñ Á¶°Ç »óÇ°ÀÇ ¹­À½ ±¸¸Å¿¡ µû¶ó ¹è¼Ûºñ°¡ ´Ş¶óÁı´Ï´Ù.</p> <table class="tbl2"><caption>ÇÒÀÎ°¡</caption><tbody><tr><th>¹è¼Ûºñ</th><td>5,500¿ø</td></tr></tbody></table></div><button type="button" class="cls" onclick="helpClose(this)">µµ¿ò¸» ´İ±â</button></div>
+		<!-- s:ë¬¶ìŒ ë°°ì†¡ë¹„ ì •ì±… --><div class="lyw" id="lyp1_each00" style="display:none;"><div class="lym"><h3>ë°°ì†¡ë¹„ ì¡°ê±´ ì•ˆë‚´</h3><p class="txt">ë³¸ ìƒí’ˆì€ ë™ì¼ íŒë§¤ìì˜ ë™ì¼ ë°°ì†¡ë¹„ ì¡°ê±´ ìƒí’ˆì˜ ë¬¶ìŒ êµ¬ë§¤ì— ë”°ë¼ ë°°ì†¡ë¹„ê°€ ë‹¬ë¼ì§‘ë‹ˆë‹¤.</p> <table class="tbl2"><caption>í• ì¸ê°€</caption><tbody><tr><th>ë°°ì†¡ë¹„</th><td>5,500ì›</td></tr></tbody></table></div><button type="button" class="cls" onclick="helpClose(this)">ë„ì›€ë§ ë‹«ê¸°</button></div>
 		
 
 		
 		
 		<div class="sum end">
-			<em>°áÁ¦ ±İ¾×</em>
-			<div class="prc"><strong>16,000</strong>¿ø</div>
+			<em>ê²°ì œ ê¸ˆì•¡</em>
+			<div class="prc"><strong>16,000</strong>ì›</div>
 		</div>
 		
 		
 
-		<h2 class="tit_bs">ÁÖ¹®ÀÚ Á¤º¸ È®ÀÎ</h2>
+		<h2 class="tit_bs">ì£¼ë¬¸ì ì •ë³´ í™•ì¸</h2>
 		<table class="odr_tbl">
-			<caption>ÁÖ¹®ÀÚ Á¤º¸ È®ÀÎ</caption>
+			<caption>ì£¼ë¬¸ì ì •ë³´ í™•ì¸</caption>
 			<colgroup>
 				<col style="width:95px;">
 				<col>
@@ -487,36 +487,36 @@ var _MOBILE_COOKIE_DOMAIN_ = 'm.11st.co.kr';
 			<tbody>
 			
 			<tr>
-				<th>ÁÖ¹®ÀÚ</th>
-				<td>¹®ÇõÁß</td>
+				<th>ì£¼ë¬¸ì</th>
+				<td>ë¬¸í˜ì¤‘</td>
 			</tr>
 			<tr>
-				<th>ÁÖ¹®¹øÈ£</th>
+				<th>ì£¼ë¬¸ë²ˆí˜¸</th>
 				<td>201703243661027</td>
 			</tr>
 			<tr>
-				<th>ÁÖ¹®³»¿ª</th>
-				<td>»óÇ° ±İ¾× 10,500¿ø  + ¹è¼Ûºñ 5,500¿ø 
+				<th>ì£¼ë¬¸ë‚´ì—­</th>
+				<td>ìƒí’ˆ ê¸ˆì•¡ 10,500ì›  + ë°°ì†¡ë¹„ 5,500ì› 
 					
 				</td>
 			</tr>
 			<tr>
-				<th>ÃÑ ÁÖ¹®±İ¾×</th>
-				<td>16,000¿ø</td>
+				<th>ì´ ì£¼ë¬¸ê¸ˆì•¡</th>
+				<td>16,000ì›</td>
 			</tr>
 			
 			<tr>
-				<th>°áÁ¦³»¿ª</th>
+				<th>ê²°ì œë‚´ì—­</th>
 				<td>
 					<input type="hidden" name="recentPaymentCd" id="recentPaymentCd" value="02">
 <input type="hidden" name="recentPayCardCd" id="recentPayCardCd" value="">
-¹«ÅëÀåÀÔ±İ <strong class="red"> 16,000¿ø</strong>
+ë¬´í†µì¥ì…ê¸ˆ <strong class="red"> 16,000ì›</strong>
 
 				</td>
 			</tr>
 			
 			<tr>
-				<th>Àû¸³ ¿¹»ó ÇıÅÃ </th>
+				<th>ì ë¦½ ì˜ˆìƒ í˜œíƒ </th>
 				<td>
 					
 					
@@ -525,133 +525,133 @@ var _MOBILE_COOKIE_DOMAIN_ = 'm.11st.co.kr';
 					
 					
 					
-					<p class="sli">¸¶ÀÏ¸®Áö  210 M </p>
+					<p class="sli">ë§ˆì¼ë¦¬ì§€  210 M </p>
 					
 				</td>
 			</tr>
 			</tbody>
 		</table>
 
-		<!-- s:Á¦ÁÖ/µµ¼­»ê°£ Ãß°¡¹è¼Ûºñ ¼³¸í -->
+		<!-- s:ì œì£¼/ë„ì„œì‚°ê°„ ì¶”ê°€ë°°ì†¡ë¹„ ì„¤ëª… -->
 		<div class="lyw" id="lyp18" style="display:none">
 			<div class="lym">
-				<h3>¹è¼Ûºñ ¾È³»</h3>
+				<h3>ë°°ì†¡ë¹„ ì•ˆë‚´</h3>
 				<table class="tbl2">
 					<tbody>
 					<tr>
-						<th scope="row">¹è¼Ûºñ</th>
-						<td>5,500 ¿ø </td>
+						<th scope="row">ë°°ì†¡ë¹„</th>
+						<td>5,500 ì› </td>
 					</tr>
 					</tbody>
 					<tbody>
 					<tr>
-						<th scope="row">µµ¼­»ê°£ Ãß°¡¹è¼Ûºñ</th>
-						<td>0 ¿ø</td>
+						<th scope="row">ë„ì„œì‚°ê°„ ì¶”ê°€ë°°ì†¡ë¹„</th>
+						<td>0 ì›</td>
 					</tr>
 					</tbody>
 				</table>
 			</div>
-			<button type="button" class="cls" onclick="helpClose(this)">µµ¿ò¸» ´İ±â</button>
+			<button type="button" class="cls" onclick="helpClose(this)">ë„ì›€ë§ ë‹«ê¸°</button>
 		</div>
-		<!-- e:Á¦ÁÖ/µµ¼­»ê°£ Ãß°¡¹è¼Ûºñ ¼³¸í -->
-		<!-- //ÁÖ¹®Á¤º¸ -->
+		<!-- e:ì œì£¼/ë„ì„œì‚°ê°„ ì¶”ê°€ë°°ì†¡ë¹„ ì„¤ëª… -->
+		<!-- //ì£¼ë¬¸ì •ë³´ -->
 		
-		<!-- ¹«ÅëÀåÀÔ±İÁ¤º¸ -->
-		<h2 class="tit_bs">¹«ÅëÀå ÀÔ±İÁ¤º¸ <a class="help" href="https://buy.m.11st.co.kr/MW/Order/viewOrderPayInfo.tmall?incommingCode=02&amp;ordNo=201703243661027&amp;prdNo=958114815&amp;rakePrdNo=958114815&amp;dispSpceId=&amp;dispSpceRank=&amp;rakeTrTypeCd=&amp;demandDscStr=&amp;OCBcheck=N#lyr_bank" onclick="layerToggle(&#39;lyr_bank&#39;,this,&#39;lyw&#39;);return false;">µµ¿ò¸»</a></h2>
+		<!-- ë¬´í†µì¥ì…ê¸ˆì •ë³´ -->
+		<h2 class="tit_bs">ë¬´í†µì¥ ì…ê¸ˆì •ë³´ <a class="help" href="https://buy.m.11st.co.kr/MW/Order/viewOrderPayInfo.tmall?incommingCode=02&amp;ordNo=201703243661027&amp;prdNo=958114815&amp;rakePrdNo=958114815&amp;dispSpceId=&amp;dispSpceRank=&amp;rakeTrTypeCd=&amp;demandDscStr=&amp;OCBcheck=N#lyr_bank" onclick="layerToggle(&#39;lyr_bank&#39;,this,&#39;lyw&#39;);return false;">ë„ì›€ë§</a></h2>
 		<table class="odr_tbl">
-			<caption>¹«ÅëÀå ÀÔ±İÁ¤º¸</caption>
+			<caption>ë¬´í†µì¥ ì…ê¸ˆì •ë³´</caption>
 			<colgroup>
 				<col style="width:105px;">
 				<col>
 			</colgroup>
 			<tbody>
 			<tr>
-				<th>ÀÔ±İÇÒ ÀºÇà</th>
-				<td>±¤ÁÖÀºÇà&nbsp;(11¹ø°¡)</td>
+				<th>ì…ê¸ˆí•  ì€í–‰</th>
+				<td>ê´‘ì£¼ì€í–‰&nbsp;(11ë²ˆê°€)</td>
 			</tr>
 			<tr>
-				<th>ÀÔ±İÇÒ °èÁÂ¹øÈ£</th>
+				<th>ì…ê¸ˆí•  ê³„ì¢Œë²ˆí˜¸</th>
 				<td>810552084384</td>
 			</tr>
 			<tr>
-				<th>ÀÔ±İ ±İ¾×</th>
-				<td><strong>16,000</strong>¿ø</td>
+				<th>ì…ê¸ˆ ê¸ˆì•¡</th>
+				<td><strong>16,000</strong>ì›</td>
 			</tr>
 			<tr>
-				<th>ÀÔ±İ±âÇÑ</th>
+				<th>ì…ê¸ˆê¸°í•œ</th>
 				<td>2017-03-31</td>
 			</tr>
 			</tbody>
 		</table>
-		<!-- //¹«ÅëÀåÀÔ±İÁ¤º¸ -->
+		<!-- //ë¬´í†µì¥ì…ê¸ˆì •ë³´ -->
 		
-		<h2 class="tit_bs">¹è¼ÛÁ¤º¸</h2>
+		<h2 class="tit_bs">ë°°ì†¡ì •ë³´</h2>
 		<table class="odr_tbl">
-			<caption>¹è¼ÛÁ¤º¸</caption>
+			<caption>ë°°ì†¡ì •ë³´</caption>
 			<colgroup>
 				<col style="width:95px;">
 				<col>
 			</colgroup>
 			<tbody>
 			<tr>
-				<th>¹ŞÀ¸½Ã´ÂºĞ</th>
-				<td>¹®ÇõÁß</td>
+				<th>ë°›ìœ¼ì‹œëŠ”ë¶„</th>
+				<td>ë¬¸í˜ì¤‘</td>
 			</tr>
 			
 			<tr>
-				<th>ÁıÀüÈ­</th>
+				<th>ì§‘ì „í™”</th>
 				<td>010-5466-2325</td>
 			</tr>
 			
 			<tr>
-				<th>ÈŞ´ëÀüÈ­</th>
+				<th>íœ´ëŒ€ì „í™”</th>
 				<td>010-5466-2325</td>
 			</tr>
 			<tr>
-				<th>ÁÖ¼Ò</th>
-				<td>[463400] °æ±âµµ ¼º³²½Ã ºĞ´ç±¸  ÆÇ±³·Î 264 (»ïÆòµ¿,skÇÃ·¡´ÖÆÇ±³»ç¿Á)  ¹®¼­¼ö¹ß½Ç (Áö¹ø:»ïÆòµ¿ )</td>
+				<th>ì£¼ì†Œ</th>
+				<td>[463400] ê²½ê¸°ë„ ì„±ë‚¨ì‹œ ë¶„ë‹¹êµ¬  íŒêµë¡œ 264 (ì‚¼í‰ë™,skí”Œë˜ë‹›íŒêµì‚¬ì˜¥)  ë¬¸ì„œìˆ˜ë°œì‹¤ (ì§€ë²ˆ:ì‚¼í‰ë™ )</td>
 			</tr>
 			</tbody>
 		</table>
 		
 		<ul class="d_lst">
-			<li>ÁÖ¹®»ó¼¼³»¿ª, ÁÖ¹®¹è¼ÛÁ¶È¸, Áõºù¼­·ù¹ß±Ş, ÁÖ¹®Ãë¼Ò/¹İÇ°/±³È¯Àº "³ªÀÇ 11¹ø°¡"¿¡¼­ È®ÀÎÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù.</li>
-			<li>°í°´´ÔÀÇ ÁÖ¹®ÀÌ Ã¼°áµÈ ÈÄ »óÇ°Ç°Àı ¹× ´ÜÁ¾ µî¿¡ ÀÇÇØ ¹è¼ÛÀÌ
-				ºÒ°¡´ÉÇÒ °æ¿ì, ÀüÀÚ»ó°Å·¡ µî ¿¡¼­ÀÇ ¼ÒºñÀÚ º¸È£¿¡ °üÇÑ ¹ı·ü
-				Á¦15Á¶ 2Ç×¿¡ ÀÇ°ÅÇÏ¿© 2¿µ¾÷ÀÏ(°øÈŞÀÏÁ¦¿Ü) ÀÌ³»¿¡ ÀÚµ¿À¸·Î
-				Ãë¼ÒµÉ ¼ö ÀÖÀ¸¸ç, ÀÌ °æ¿ì Ãë¼Ò ¾È³» ¸ŞÀÏÀÌ °í°´´Ô²² ¹ß¼ÛµÇ¿À´Ï
-				¾çÁö ¹Ù¶ø´Ï´Ù. </li>
+			<li>ì£¼ë¬¸ìƒì„¸ë‚´ì—­, ì£¼ë¬¸ë°°ì†¡ì¡°íšŒ, ì¦ë¹™ì„œë¥˜ë°œê¸‰, ì£¼ë¬¸ì·¨ì†Œ/ë°˜í’ˆ/êµí™˜ì€ "ë‚˜ì˜ 11ë²ˆê°€"ì—ì„œ í™•ì¸í•˜ì‹¤ ìˆ˜ ìˆìŠµë‹ˆë‹¤.</li>
+			<li>ê³ ê°ë‹˜ì˜ ì£¼ë¬¸ì´ ì²´ê²°ëœ í›„ ìƒí’ˆí’ˆì ˆ ë° ë‹¨ì¢… ë“±ì— ì˜í•´ ë°°ì†¡ì´
+				ë¶ˆê°€ëŠ¥í•  ê²½ìš°, ì „ììƒê±°ë˜ ë“± ì—ì„œì˜ ì†Œë¹„ì ë³´í˜¸ì— ê´€í•œ ë²•ë¥ 
+				ì œ15ì¡° 2í•­ì— ì˜ê±°í•˜ì—¬ 2ì˜ì—…ì¼(ê³µíœ´ì¼ì œì™¸) ì´ë‚´ì— ìë™ìœ¼ë¡œ
+				ì·¨ì†Œë  ìˆ˜ ìˆìœ¼ë©°, ì´ ê²½ìš° ì·¨ì†Œ ì•ˆë‚´ ë©”ì¼ì´ ê³ ê°ë‹˜ê»˜ ë°œì†¡ë˜ì˜¤ë‹ˆ
+				ì–‘ì§€ ë°”ëë‹ˆë‹¤. </li>
 		</ul>
 		
-		<!-- //¼öÁ¤ 2013-03-22 -->
+		<!-- //ìˆ˜ì • 2013-03-22 -->
 		
-		<h2 class="tit_bs">È¯ºÒ Á¤º¸</h2>
+		<h2 class="tit_bs">í™˜ë¶ˆ ì •ë³´</h2>
 		<table class="odr_tbl">
-			<caption>È¯ºÒ Á¤º¸</caption>
+			<caption>í™˜ë¶ˆ ì •ë³´</caption>
 			<colgroup>
 				<col style="width:95px;">
 				<col>
 			</colgroup>
 			<tbody>
 			<tr>
-				<th>È¯ºÒ¹æ½Ä</th>
-				<td>Ä³½Ã</td>
+				<th>í™˜ë¶ˆë°©ì‹</th>
+				<td>ìºì‹œ</td>
 			</tr>
 			</tbody>
 		</table>
 		<ul class="d_lst">
-			<li>Ãë¼Ò/¹İÇ° ½ÅÃ» ½Ã È¯ºÒ¼ö´ÜÀ» ¹«ÅëÀåÀÌ³ª Ä³½Ã·Î ¼±ÅÃÇÏ¿© È¯ºÒ ¹ŞÀ¸½Ç ¼ö ÀÖ½À´Ï´Ù.</li>
-			<li>200¸¸¿ø ÀÌ»ó °áÁ¦ ÈÄ Ãë¼Ò/¹İÇ° ½Ã °èÁÂ È¯ºÒ¸¸ °¡´ÉÇÕ´Ï´Ù. È¯ºÒ °èÁÂ´Â PC &gt; ³ªÀÇ 11¹ø°¡¿¡¼­ µî·ÏÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù.</li>
+			<li>ì·¨ì†Œ/ë°˜í’ˆ ì‹ ì²­ ì‹œ í™˜ë¶ˆìˆ˜ë‹¨ì„ ë¬´í†µì¥ì´ë‚˜ ìºì‹œë¡œ ì„ íƒí•˜ì—¬ í™˜ë¶ˆ ë°›ìœ¼ì‹¤ ìˆ˜ ìˆìŠµë‹ˆë‹¤.</li>
+			<li>200ë§Œì› ì´ìƒ ê²°ì œ í›„ ì·¨ì†Œ/ë°˜í’ˆ ì‹œ ê³„ì¢Œ í™˜ë¶ˆë§Œ ê°€ëŠ¥í•©ë‹ˆë‹¤. í™˜ë¶ˆ ê³„ì¢ŒëŠ” PC &gt; ë‚˜ì˜ 11ë²ˆê°€ì—ì„œ ë“±ë¡í•˜ì‹¤ ìˆ˜ ìˆìŠµë‹ˆë‹¤.</li>
 		</ul>
 		
 
 		<div class="lyw" id="lyr_bank" style="display:none;">
 			<div class="lym">
 				<div class="cons">
-					<p class="txt_dly2">¹«ÅëÀåÁÖ¹®Àº ÀÔ±İÈ®ÀÎ¿Ï·á ½Ã°£À» ±âÁØÀ¸·Î ¹è¼ÛÀÌ ½ÃÀÛµË´Ï´Ù.</p>
+					<p class="txt_dly2">ë¬´í†µì¥ì£¼ë¬¸ì€ ì…ê¸ˆí™•ì¸ì™„ë£Œ ì‹œê°„ì„ ê¸°ì¤€ìœ¼ë¡œ ë°°ì†¡ì´ ì‹œì‘ë©ë‹ˆë‹¤.</p>
 				</div>
 			</div>
-			<button type="button" class="cls" onclick="helpClose(this)">µµ¿ò¸» ´İ±â</button>
+			<button type="button" class="cls" onclick="helpClose(this)">ë„ì›€ë§ ë‹«ê¸°</button>
 		</div>
 
 		
@@ -659,9 +659,9 @@ var _MOBILE_COOKIE_DOMAIN_ = 'm.11st.co.kr';
 
 		
 		<div class="btn_w2 w_pay">
-			<div><a href="http://m.11st.co.kr/MW/MyPage/orderList.tmall" class="btnbr"><span>ÁÖ¹®³»¿ª È®ÀÎ</span></a></div>
+			<div><a href="http://m.11st.co.kr/MW/MyPage/orderList.tmall" class="btnbr"><span>ì£¼ë¬¸ë‚´ì—­ í™•ì¸</span></a></div>
 			
-			<div><a href="http://m.11st.co.kr/MW" class="btnb"><span>¼îÇÎ °è¼ÓÇÏ±â</span></a></div>
+			<div><a href="http://m.11st.co.kr/MW" class="btnb"><span>ì‡¼í•‘ ê³„ì†í•˜ê¸°</span></a></div>
 			
 		</div>
 		
@@ -691,12 +691,12 @@ var _MOBILE_COOKIE_DOMAIN_ = 'm.11st.co.kr';
                     id:"958114815"
                     , total_sales:"10500"
                     , count:"1"
-                    , title:"ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ® 1050g / ÄÚ½ºÆ®ÄÚ ¸Á°í¸À ¶óÁîº£¸®¸À ºí·çº£¸®¸À"
+                    , title:"í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ 1050g / ì½”ìŠ¤íŠ¸ì½” ë§ê³ ë§› ë¼ì¦ˆë² ë¦¬ë§› ë¸”ë£¨ë² ë¦¬ë§›"
                     , img:"http://i.011st.com/ex_t/R/300x300/1/90/1/src/ag/1/1/4/8/1/5/958114815_B_V1.jpg"
                     , sales_state: "1"
-                    		, c1:"1001340:°úÀÚ/°£½Ä"
-		, c2:"1002113:Äµµğ·ù"
-		, c3:"1008043:»çÅÁ/Äµµğ"
+                    		, c1:"1001340:ê³¼ì/ê°„ì‹"
+		, c2:"1002113:ìº”ë””ë¥˜"
+		, c3:"1008043:ì‚¬íƒ•/ìº”ë””"
 
                 }, actionType));
                 
@@ -731,36 +731,36 @@ var _MOBILE_COOKIE_DOMAIN_ = 'm.11st.co.kr';
     }
 
     function callStatAjax(url, key, item) {
-        if (url && url != '') {
-            var statUrl = '/a.st?url='+url+'&ts='+Date.now();
-            if (key && key != '') statUrl += '&key='+key;
-            if (item && item != '') statUrl += '&item='+item;
-            var xhr = window.ActiveXObject ? new window.ActiveXObject('Microsoft.XMLHTTP') : new window.XMLHttpRequest();
-            try {
-                xhr.open('get', statUrl, true);
-                xhr.send(null);
-            } catch (e){ console.log(e); }
-        }
+//        if (url && url != '') {
+//            var statUrl = '/a.st?url='+url+'&ts='+Date.now();
+//            if (key && key != '') statUrl += '&key='+key;
+//            if (item && item != '') statUrl += '&item='+item;
+//            var xhr = window.ActiveXObject ? new window.ActiveXObject('Microsoft.XMLHTTP') : new window.XMLHttpRequest();
+//            try {
+//                xhr.open('get', statUrl, true);
+//                xhr.send(null);
+//            } catch (e){ console.log(e); }
+//        }
     }
 
     function callStat(url, key, item) {
-        if (url && url != '') {
-            var statUrl = '/a.st?url='+url+'&ts='+Date.now();
-            if (key && key != '') statUrl += '&key='+key;
-            if (item && item != '') statUrl += '&item='+item;
-            var clickIfrm;
-            if (document.getElementById('ifrmClickAnaly')) {
-                clickIfrm = document.getElementById('ifrmClickAnaly');
-            } else {
-                clickIfrm = document.createElement('IFRAME');
-                clickIfrm.id = 'ifrmClickAnaly';
-                clickIfrm.width = 0;
-                clickIfrm.height = 0;
-                clickIfrm.style.display = 'none';
-                document.body.appendChild(clickIfrm);
-            }
-            clickIfrm.src = statUrl;
-        }
+//        if (url && url != '') {
+//            var statUrl = '/a.st?url='+url+'&ts='+Date.now();
+//            if (key && key != '') statUrl += '&key='+key;
+//            if (item && item != '') statUrl += '&item='+item;
+//            var clickIfrm;
+//            if (document.getElementById('ifrmClickAnaly')) {
+//                clickIfrm = document.getElementById('ifrmClickAnaly');
+//            } else {
+//                clickIfrm = document.createElement('IFRAME');
+//                clickIfrm.id = 'ifrmClickAnaly';
+//                clickIfrm.width = 0;
+//                clickIfrm.height = 0;
+//                clickIfrm.style.display = 'none';
+//                document.body.appendChild(clickIfrm);
+//            }
+//            clickIfrm.src = statUrl;
+//        }
     }
 
     function catchItemClickEvent(e) {
@@ -955,7 +955,7 @@ var _MOBILE_COOKIE_DOMAIN_ = 'm.11st.co.kr';
         var gaSend = function(ctg, action, label) {
             try {
                 var appType = getCookie('appType');
-                var exposerLabel = label.indexOf('³ëÃâ');
+                var exposerLabel = label.indexOf('ë…¸ì¶œ');
                 if(exposerLabel>0){
                     if(appType === '') {
                         ga("send", "event", ctg, action, label, { nonInteraction: true });
@@ -994,7 +994,7 @@ var _MOBILE_COOKIE_DOMAIN_ = 'm.11st.co.kr';
 
 
 <script>
-// ·¹ÄÚÇÈ ·Î±× µ¥ÀÌÅÍ ÀûÀç½Ã »ç¿ëµÇ´Â »ç¿ëÀÚ Á¤º¸ ÇÔ¼ö
+// ë ˆì½”í”½ ë¡œê·¸ ë°ì´í„° ì ì¬ì‹œ ì‚¬ìš©ë˜ëŠ” ì‚¬ìš©ì ì •ë³´ í•¨ìˆ˜
 function getBase64UserInfo(){
 	try{
 		var changeStr	= '';
@@ -1123,7 +1123,7 @@ function callRecopickPrdStat(recoPickInfo, recopickServer) {
 }
 </script>
 
-	<iframe src="view_order_pay_info_files/ifrm_ga.html" scrolling="no" frameborder="0" width="0" height="0" title="GA ¾ÆÀÌÇÁ·¹ÀÓ"></iframe>
+	<iframe src="view_order_pay_info_files/ifrm_ga.html" scrolling="no" frameborder="0" width="0" height="0" title="GA ì•„ì´í”„ë ˆì„"></iframe>
  
 	<img height="1" width="1" border="0" alt="" style="display:none" src="view_order_pay_info_files/tr">
 
@@ -1134,22 +1134,22 @@ function callRecopickPrdStat(recoPickInfo, recopickServer) {
 	<div class="cp_wrap">
 		<div class="cp_banner">
 			<a href="https://buy.m.11st.co.kr/MW/Order/viewOrderPayInfo.tmall?incommingCode=02&amp;ordNo=201703243661027&amp;prdNo=958114815&amp;rakePrdNo=958114815&amp;dispSpceId=&amp;dispSpceRank=&amp;rakeTrTypeCd=&amp;demandDscStr=&amp;OCBcheck=N#"></a>
-			<button type="button" class="stop">±×¸¸º¸±â</button>
+			<button type="button" class="stop">ê·¸ë§Œë³´ê¸°</button>
 		</div>
-		<button type="button" class="close" onclick="mwUI.moreToggle(&#39;cpFloating&#39;, &#39;on&#39;, this, &#39;º¸±â&#39;, &#39;´İ±â&#39;)">Ä·ÆäÀÎ º¸±â</button>
+		<button type="button" class="close" onclick="mwUI.moreToggle(&#39;cpFloating&#39;, &#39;on&#39;, this, &#39;ë³´ê¸°&#39;, &#39;ë‹«ê¸°&#39;)">ìº í˜ì¸ ë³´ê¸°</button>
 	</div>
 </section>
 <script id="mwDev_offerTemplate" type="text/x-elevenst-template">
 	<div class="cp_wrap">
 		{{html}}
-		<button type="button" class="close" onclick="cpOfferAllPopup.close('cpAllpopup')">Ä·ÆäÀÎ ´İ±â</button>
+		<button type="button" class="close" onclick="cpOfferAllPopup.close('cpAllpopup')">ìº í˜ì¸ ë‹«ê¸°</button>
 	</div>
 </script>
 
 <script>
 function toEndDateFormat(endDate) { //parseTime(time)
     var year = endDate.substr(0,4);
-    var month = endDate.substr(4,2) - 1; // 1¿ù=0,12¿ù=11
+    var month = endDate.substr(4,2) - 1; // 1ì›”=0,12ì›”=11
     var day = endDate.substr(6,2);
     var hour = endDate.substr(8,2);
     var min = endDate.substr(10,2);
@@ -1254,7 +1254,7 @@ function showOfferFloatBanner(banner) {
 	document.getElementById('cpFloating').style.display = 'block';
 	var cpFloatingBtn = document.getElementById('cpFloating').getElementsByClassName('close')[0];
 	setTimeout(function() { 
-		mwUI.moreToggle('cpFloating', 'on', cpFloatingBtn, 'º¸±â', '´İ±â');
+		mwUI.moreToggle('cpFloating', 'on', cpFloatingBtn, 'ë³´ê¸°', 'ë‹«ê¸°');
 		cpFloatingTO = setTimeout(function() {
 			document.getElementById('cpFloating').className = 'cp_floating';
         }, 5000);
@@ -1350,43 +1350,43 @@ window.addEventListener("load",  function(){
 	} else {
 		//if(offerCookie) return;
 		
-	    $.ajax({
-	        url: '/MW/Offer/Banner/getBanners.tmall',
-	        cache : false,		
-	        success: function(msg) {
-	        	setOfferCookie('offerBanners', true);
-	            var json = JSON.parse(msg);
-	            if(json && json.status.code == 200) {
-	            	if(json.response.cnt && json.response.cnt > 0) {
-	            		var bannerStore = {};
-	            		var banners = json.response.banners;
-	            		
-	            		var firstIdx = null;
-	            		for(var idx in banners) {
-	            			var viewYn = getOfferCookie(banners[idx].cpCode, 'VIEW');
-	            			var nativeView = (!offerBanners && viewYn == 'Y'); //Native ³ëÃâ ¿©ºÎ(LocalStorage ¿¡ Á¸ÀçÇÏÁö ¾Ê°í ÄíÅ°¿¡ ÀÖÀ»°æ¿ì)
-	            			var clickYn = banners[idx].clickYn;
-	            			var denyYn = getOfferCookie(banners[idx].cpCode, 'DENY');
-
-	            			if(denyYn == 'Y') banners[idx].denyYn = 'Y';
-	            			
-	            			if(denyYn != 'Y' && clickYn != 'Y') {
-	            				firstIdx = banners[idx].cpCode;
-	            			}
-	            			bannerStore[banners[idx].cpCode] = banners[idx];
-	            		}
-	            		bannerStore[firstIdx].viewYn = 'Y';
-	            		setBannerInfo(bannerStore);
-	            		
-						if(!nativeView && bannerStore[firstIdx].type == '00') {
-							showOfferFloatBanner(bannerStore[firstIdx]);
-						} else if(!nativeView && bannerStore[firstIdx].type == '01') {
-							showOfferAllPopup(bannerStore[firstIdx]);
-						}		            		
-	            	}
-	            }
-	        }
-	    });
+//	    $.ajax({
+//	        url: '/MW/Offer/Banner/getBanners.tmall',
+//	        cache : false,
+//	        success: function(msg) {
+//	        	setOfferCookie('offerBanners', true);
+//	            var json = JSON.parse(msg);
+//	            if(json && json.status.code == 200) {
+//	            	if(json.response.cnt && json.response.cnt > 0) {
+//	            		var bannerStore = {};
+//	            		var banners = json.response.banners;
+//
+//	            		var firstIdx = null;
+//	            		for(var idx in banners) {
+//	            			var viewYn = getOfferCookie(banners[idx].cpCode, 'VIEW');
+//	            			var nativeView = (!offerBanners && viewYn == 'Y'); //Native ë…¸ì¶œ ì—¬ë¶€(LocalStorage ì— ì¡´ì¬í•˜ì§€ ì•Šê³  ì¿ í‚¤ì— ìˆì„ê²½ìš°)
+//	            			var clickYn = banners[idx].clickYn;
+//	            			var denyYn = getOfferCookie(banners[idx].cpCode, 'DENY');
+//
+//	            			if(denyYn == 'Y') banners[idx].denyYn = 'Y';
+//
+//	            			if(denyYn != 'Y' && clickYn != 'Y') {
+//	            				firstIdx = banners[idx].cpCode;
+//	            			}
+//	            			bannerStore[banners[idx].cpCode] = banners[idx];
+//	            		}
+//	            		bannerStore[firstIdx].viewYn = 'Y';
+//	            		setBannerInfo(bannerStore);
+//
+//						if(!nativeView && bannerStore[firstIdx].type == '00') {
+//							showOfferFloatBanner(bannerStore[firstIdx]);
+//						} else if(!nativeView && bannerStore[firstIdx].type == '01') {
+//							showOfferAllPopup(bannerStore[firstIdx]);
+//						}
+//	            	}
+//	            }
+//	        }
+//	    });
 	}	
 }, false);
 </script>
@@ -1650,17 +1650,17 @@ function goDealAppFooter(){
 
 <div class="f_down">
 	<ul>
-		<li><a href="https://buy.m.11st.co.kr/MW/Order/viewOrderPayInfo.tmall?incommingCode=02&amp;ordNo=201703243661027&amp;prdNo=958114815&amp;rakePrdNo=958114815&amp;dispSpceId=&amp;dispSpceRank=&amp;rakeTrTypeCd=&amp;demandDscStr=&amp;OCBcheck=N#" onclick="call11stAppFooter(&#39;://loadurl?domain=m.11st.co.kr&amp;url=&#39;,document.location.href); return false;" class="app11st" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1402">11¹ø°¡ ¾Û´Ù¿î·Îµå</a></li>
-		<li><a href="https://buy.m.11st.co.kr/MW/Order/viewOrderPayInfo.tmall?incommingCode=02&amp;ordNo=201703243661027&amp;prdNo=958114815&amp;rakePrdNo=958114815&amp;dispSpceId=&amp;dispSpceRank=&amp;rakeTrTypeCd=&amp;demandDscStr=&amp;OCBcheck=N#" onclick="goDealAppFooter(); return false;" class="shocking" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1403">¼îÅ·µô ¾Û´Ù¿î·Îµå</a></li>
+		<li><a href="https://buy.m.11st.co.kr/MW/Order/viewOrderPayInfo.tmall?incommingCode=02&amp;ordNo=201703243661027&amp;prdNo=958114815&amp;rakePrdNo=958114815&amp;dispSpceId=&amp;dispSpceRank=&amp;rakeTrTypeCd=&amp;demandDscStr=&amp;OCBcheck=N#" onclick="call11stAppFooter(&#39;://loadurl?domain=m.11st.co.kr&amp;url=&#39;,document.location.href); return false;" class="app11st" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1402">11ë²ˆê°€ ì•±ë‹¤ìš´ë¡œë“œ</a></li>
+		<li><a href="https://buy.m.11st.co.kr/MW/Order/viewOrderPayInfo.tmall?incommingCode=02&amp;ordNo=201703243661027&amp;prdNo=958114815&amp;rakePrdNo=958114815&amp;dispSpceId=&amp;dispSpceRank=&amp;rakeTrTypeCd=&amp;demandDscStr=&amp;OCBcheck=N#" onclick="goDealAppFooter(); return false;" class="shocking" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1403">ì‡¼í‚¹ë”œ ì•±ë‹¤ìš´ë¡œë“œ</a></li>
 	</ul>
 </div>
 
 <div class="f_menu">
 	<ul>
-		<li id="loginBottom"><a href="https://buy.m.11st.co.kr/MW/Login/logout.tmall?type=" class="f5" data-clickurl="WGF01" data-clickkey="01">·Î±×¾Æ¿ô</a></li>
-		<li id="pcVersionLink"><a href="http://www.11st.co.kr/html/main.html" data-clickurl="WGF01" data-clickkey="02">PC¹öÀü</a></li>
-		<li><a href="http://m.11st.co.kr/MW/Customer/customerMain.tmall" data-clickurl="WGF01" data-clickkey="03">°í°´¼¾ÅÍ</a></li>
-		<li><a href="http://m.11st.co.kr/MW/Product/productMainConner.tmall" data-clickurl="WGF01" data-clickkey="04">ÀüÃ¼¼­ºñ½º</a></li>
+		<li id="loginBottom"><a href="https://buy.m.11st.co.kr/MW/Login/logout.tmall?type=" class="f5" data-clickurl="WGF01" data-clickkey="01">ë¡œê·¸ì•„ì›ƒ</a></li>
+		<li id="pcVersionLink"><a href="http://www.11st.co.kr/html/main.html" data-clickurl="WGF01" data-clickkey="02">PCë²„ì „</a></li>
+		<li><a href="http://m.11st.co.kr/MW/Customer/customerMain.tmall" data-clickurl="WGF01" data-clickkey="03">ê³ ê°ì„¼í„°</a></li>
+		<li><a href="http://m.11st.co.kr/MW/Product/productMainConner.tmall" data-clickurl="WGF01" data-clickkey="04">ì „ì²´ì„œë¹„ìŠ¤</a></li>
 	</ul>
 </div>
 <script type="text/javascript">
@@ -1672,9 +1672,9 @@ window.addEventListener("load",  function(){
 }, false);
 function footerSetLogin() {
 	if(funcCheckIsLogin()) {
-	    login.innerHTML = '<a href="/MW/Login/logout.tmall?type='+type+'" class="f5" data-clickurl="WGF01" data-clickkey="01">·Î±×¾Æ¿ô</a>';
+	    login.innerHTML = '<a href="/MW/Login/logout.tmall?type='+type+'" class="f5" data-clickurl="WGF01" data-clickkey="01">ë¡œê·¸ì•„ì›ƒ</a>';
 	} else {
-	    login.innerHTML = '<a href="https://m.11st.co.kr/MW/Login/login.tmall" class="f1" data-clickurl="WGF01" data-clickkey="01">·Î±×ÀÎ</a>';
+	    login.innerHTML = '<a href="https://m.11st.co.kr/MW/Login/login.tmall" class="f1" data-clickurl="WGF01" data-clickkey="01">ë¡œê·¸ì¸</a>';
 	}
 }
 (function() {
@@ -1702,9 +1702,9 @@ function footerSetLogin() {
 			var appType = getType();
 			var pcVersionWraps = document.getElementById('pcVersionLink');
             if(appType == "appmw_book" || appType == "appmwi_book") {
-            	pcVersionWraps.innerHTML = '<a href="http://www.11st.co.kr/booksmall/BooksAction.tmall?ID=BOOKS&ctgrNo=63516">PC¹öÀü</a>';
+            	pcVersionWraps.innerHTML = '<a href="http://www.11st.co.kr/booksmall/BooksAction.tmall?ID=BOOKS&ctgrNo=63516">PCë²„ì „</a>';
             } else {
-            	pcVersionWraps.innerHTML = '<a href="http://www.11st.co.kr/html/main.html"  data-clickurl="WGF01" data-clickkey="02">PC¹öÀü</a>';
+            	pcVersionWraps.innerHTML = '<a href="http://www.11st.co.kr/html/main.html"  data-clickurl="WGF01" data-clickkey="02">PCë²„ì „</a>';
             }
             if(appType == 'appmw' || appType == 'appmwi') {
 		    	document.querySelector('.f_down').style.display = 'none';
@@ -1724,18 +1724,18 @@ function footerSetLogin() {
 	</script>
 	<div class="f_foot">
 		<address>
-			<span class="p"><strong>SKÇÃ·¡´Ö(ÁÖ)</strong><em>´ëÇ¥ÀÌ»ç</em> : ¼­¼º¿ø</span>
-			<span class="p"><em>ÁÖ¼Ò</em> : (13487) °æ±âµµ ¼º³²½Ã ºĞ´ç±¸ ÆÇ±³·Î 264 (»ïÆòµ¿)</span>
-			<span class="p"><em>»ç¾÷ÀÚµî·Ï¹øÈ£</em> : 104-86-36968</span>
-			<span class="p"><em>Åë½ÅÆÇ¸Å¾÷½Å°í</em> : Á¦2014-°æ±â¼º³²-0036È£</span>
-			<span class="p"><em>°í°´¼¾ÅÍ</em> : <a href="tel:1599-0110" data-clickurl="WGF01" data-clickkey="08">1599 - 0110</a><span class="e">customerservice@11st.co.kr</span></span>
+			<span class="p"><strong>SKí”Œë˜ë‹›(ì£¼)</strong><em>ëŒ€í‘œì´ì‚¬</em> : ì„œì„±ì›</span>
+			<span class="p"><em>ì£¼ì†Œ</em> : (13487) ê²½ê¸°ë„ ì„±ë‚¨ì‹œ ë¶„ë‹¹êµ¬ íŒêµë¡œ 264 (ì‚¼í‰ë™)</span>
+			<span class="p"><em>ì‚¬ì—…ìë“±ë¡ë²ˆí˜¸</em> : 104-86-36968</span>
+			<span class="p"><em>í†µì‹ íŒë§¤ì—…ì‹ ê³ </em> : ì œ2014-ê²½ê¸°ì„±ë‚¨-0036í˜¸</span>
+			<span class="p"><em>ê³ ê°ì„¼í„°</em> : <a href="tel:1599-0110" data-clickurl="WGF01" data-clickkey="08">1599 - 0110</a><span class="e">customerservice@11st.co.kr</span></span>
 		</address>
 		<div class="link">
-			<a href="http://www.ftc.go.kr/info/bizinfo/communicationView.jsp?apv_perm_no=2011301010030201333&amp;area1=&amp;area2=&amp;currpage=1&amp;searchKey=04&amp;searchVal=1048636968&amp;stdate=&amp;enddate=" data-clickurl="WGF01" data-clickkey="05">»ç¾÷ÀÚÁ¤º¸È®ÀÎ</a>
-			<a href="http://www.11st.co.kr/annc/AnncMainPreview.tmall?method=getProvision&amp;anncCd=01" class="law" data-clickurl="WGF01" data-clickkey="06">ÀÌ¿ë¾à°ü</a>
-			<a href="http://www.11st.co.kr/annc/AnncMainPreview.tmall?method=getProvision&amp;anncCd=03" class="law" data-clickurl="WGF01" data-clickkey="07">°³ÀÎÁ¤º¸Ã³¸®¹æÄ§</a>
+			<a href="http://www.ftc.go.kr/info/bizinfo/communicationView.jsp?apv_perm_no=2011301010030201333&amp;area1=&amp;area2=&amp;currpage=1&amp;searchKey=04&amp;searchVal=1048636968&amp;stdate=&amp;enddate=" data-clickurl="WGF01" data-clickkey="05">ì‚¬ì—…ìì •ë³´í™•ì¸</a>
+			<a href="http://www.11st.co.kr/annc/AnncMainPreview.tmall?method=getProvision&amp;anncCd=01" class="law" data-clickurl="WGF01" data-clickkey="06">ì´ìš©ì•½ê´€</a>
+			<a href="http://www.11st.co.kr/annc/AnncMainPreview.tmall?method=getProvision&amp;anncCd=03" class="law" data-clickurl="WGF01" data-clickkey="07">ê°œì¸ì •ë³´ì²˜ë¦¬ë°©ì¹¨</a>
 		</div>
-		<p class="noti">SKÇÃ·¡´Ö(ÁÖ)´Â Åë½ÅÆÇ¸ÅÁß°³ÀÚ·Î¼­ ¿ÀÇÂ¸¶ÄÏ 11¹ø°¡ÀÇ °Å·¡´ç»çÀÚ°¡ ¾Æ´Ï¸ç, ÀÔÁ¡ÆÇ¸ÅÀÚ°¡ µî·ÏÇÑ »óÇ°Á¤º¸ ¹× °Å·¡¿¡ ´ëÇØ SKÇÃ·¡´Ö(ÁÖ)´Â ÀÏÃ¼ÀÇ Ã¥ÀÓÀ» ÁöÁö ¾Ê½À´Ï´Ù.</p>
+		<p class="noti">SKí”Œë˜ë‹›(ì£¼)ëŠ” í†µì‹ íŒë§¤ì¤‘ê°œìë¡œì„œ ì˜¤í”ˆë§ˆì¼“ 11ë²ˆê°€ì˜ ê±°ë˜ë‹¹ì‚¬ìê°€ ì•„ë‹ˆë©°, ì…ì íŒë§¤ìê°€ ë“±ë¡í•œ ìƒí’ˆì •ë³´ ë° ê±°ë˜ì— ëŒ€í•´ SKí”Œë˜ë‹›(ì£¼)ëŠ” ì¼ì²´ì˜ ì±…ì„ì„ ì§€ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
 		<p class="copy">COPYRIGHT &#169;SK planet. All RIGHTS RESERVED.</p>
 	</div>
 	
@@ -1804,21 +1804,21 @@ function footerSetLogin() {
 	<script language="javascript">
         try{
 
-//ÁÖ¹® ¹øÈ£
+//ì£¼ë¬¸ ë²ˆí˜¸
             var id = "201703243661027";
-// xsite °ª
+// xsite ê°’
             var affilation = "1000132495";
-// ½Ç °áÁ¦ ÃÑÇÕ
+// ì‹¤ ê²°ì œ ì´í•©
             var revenue = "16000";
-// ¹è¼Ûºñ ÇÕ°è
+// ë°°ì†¡ë¹„ í•©ê³„
             var shipping = "5500";
-//ÃÑ ÇÒÀÎ±İ¾×
-            var coupon = "ÃÑÇÒÀÎ±İ¾×^0";
+//ì´ í• ì¸ê¸ˆì•¡
+            var coupon = "ì´í• ì¸ê¸ˆì•¡^0";
 
 //make proucts info array
             var arrProducts = new Array();
             
-            arrProducts.push({name:"ÈÄ¸£Æ®ÅÚ¶ó ¿ä±¸¸£Æ® 1050g / ÄÚ½ºÆ®ÄÚ ¸Á°í¸À ¶óÁîº£¸®¸À ºí·çº£¸®¸À",id:"958114815",price:"10500",variant:"",dimension11:"14568366",quantity:"1",coupon:"0"});
+            arrProducts.push({name:"í›„ë¥´íŠ¸í…”ë¼ ìš”êµ¬ë¥´íŠ¸ 1050g / ì½”ìŠ¤íŠ¸ì½” ë§ê³ ë§› ë¼ì¦ˆë² ë¦¬ë§› ë¸”ë£¨ë² ë¦¬ë§›",id:"958114815",price:"10500",variant:"",dimension11:"14568366",quantity:"1",coupon:"0"});
             
             
             GA_dataLayer.push({
@@ -1844,13 +1844,13 @@ function footerSetLogin() {
 	<script src="./view_order_pay_info_files/rake-install.js"></script>
 	<script src="./view_order_pay_info_files/ElevenstAppClientSentinelShuttle.js"></script>
 	<script language="javascript">
-        //À¯Àú Çàµ¿ ·Î±× ¼öÁı ½ºÅ©¸³Æ®
+        //ìœ ì € í–‰ë™ ë¡œê·¸ ìˆ˜ì§‘ ìŠ¤í¬ë¦½íŠ¸
         
         if('real' == 'real'){
-            //¿î¿µ
+            //ìš´ì˜
             rake.install({env:rake.LIVE, token:"e9257de0da793d89d793049109b39fec421e"});
         }else{
-            //°³¹ß
+            //ê°œë°œ
             rake.install({env:rake.DEV, token:"91fee424dcbd63d9868b2b57c237c2b21c50f5a8"});
         }
 
@@ -1864,13 +1864,13 @@ function footerSetLogin() {
         function getRakeShuttle(rakeTrTypeCd ,dispSpceId, prdNo, dispSpceRank, lDispCtgrNo,mDispCtgrNo, sDispCtgrNo) {
             var shuttle = new ElevenstAppClientSentinelShuttle();
 
-            // ÀÌÈÄ ¼öÁıÀÌ ÇÊ¿äÇÑ Á¤º¸¸¦ ¼ÅÆ²¿¡ ¼³Á¤ ÈÄ ¼­¹ö·Î Àü¼Û
+            // ì´í›„ ìˆ˜ì§‘ì´ í•„ìš”í•œ ì •ë³´ë¥¼ ì…”í‹€ì— ì„¤ì • í›„ ì„œë²„ë¡œ ì „ì†¡
             shuttle.setPage_id('/orderresult');
             shuttle.setPoc('11st_mobile_web');
             shuttle.setAction_id("view");
             shuttle.setPcid(TMCookieUtil.getCookie("PCID"));
             shuttle.setSession_id(TMCookieUtil.getSubCookie(0,'RAKE_ID'));
-            shuttle.setMem_no('14538450'); //È¸¿ø¹øÈ£
+            shuttle.setMem_no('14538450'); //íšŒì›ë²ˆí˜¸
             shuttle.setEvent_id("PRODUCT");
             shuttle.setTracking_id(rakeTrTypeCd);
             shuttle.setLog_source("webview");
@@ -1880,13 +1880,13 @@ function footerSetLogin() {
             return shuttle;
         }
 
-        // ÁÖ¹®¿Ï·á ÆäÀÌÁö ·Îµù
+        // ì£¼ë¬¸ì™„ë£Œ í˜ì´ì§€ ë¡œë”©
         userActionLog();
 
-        //ÁÖ¼Òº¹»ç¸¦ À§ÇÑ functionµé
+        //ì£¼ì†Œë³µì‚¬ë¥¼ ìœ„í•œ functionë“¤
         function clipBoardCopy(addr){
             window.location.href = "app://copyClipboardFrom/"+addr;
-            alert("È£ÅÚÁÖ¼Ò°¡ º¹»çµÇ¾ú½À´Ï´Ù.");
+            alert("í˜¸í…”ì£¼ì†Œê°€ ë³µì‚¬ë˜ì—ˆìŠµë‹ˆë‹¤.");
         }
         function isApp() {
             var appType = getCookie("appType");
