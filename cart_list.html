@@ -1,0 +1,4725 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)http://buy.m.11st.co.kr/MW/Cart/cartList.tmall -->
+<html lang="ko" class=" ios iphone mobile v9_0 portrait"><head><meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+	
+<script type="text/javascript" async="" src="./cart_list_files/analytics.js"></script><script type="text/javascript" async="" src="./cart_list_files/ec.js"></script><script async="" src="./cart_list_files/gtm.js"></script><script async="" src="./cart_list_files/analytics.js"></script><script>
+var mwScript = (function() {
+	var protocol = (window && window.location && window.location.protocol) ? window.location.protocol.replace(':', '') : "http";
+	var isSSL = function() {
+		if(protocol === "https") return true;
+		else return false;
+	};
+	var addTouchIcon = function(rel) {
+		try {
+			var element = document.createElement('link');
+			element.rel = rel;
+			if(isSSL()) element.href = "//m.11st.co.kr/MW/img/mw11st_touchicon.png";
+			else element.href = "//c.m.011st.com/MW/img/mw11st_touchicon.png";
+			document.head.appendChild(element);
+		} catch(e) { console.log(e); }
+	};
+	var addScript = function(path, encoding) {
+		try {
+			var element = document.createElement('script');
+			if(isSSL()) element.src = "//m.11st.co.kr/MW"+path;
+			else element.src = "//c.m.011st.com/MW"+path;
+			if(encoding) { element.charset = encoding }
+			document.head.appendChild(element);
+		} catch(e) { console.log(e); }
+	};
+	return {
+		addTouchIcon : addTouchIcon,
+		addScript : addScript
+	};
+}());
+</script>
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width">
+<script>mwScript.addTouchIcon("apple-touch-icon-precomposed");</script><link rel="apple-touch-icon-precomposed" href="http://c.m.011st.com/MW/img/mw11st_touchicon.png">
+<meta name="format-detection" content="telephone=no">
+	<title>장바구니 - 11번가 모바일</title>
+	<link rel="stylesheet" href="./cart_list_files/base.css">
+	<link rel="stylesheet" href="./cart_list_files/pay.css">
+	<!--[if lt IE 9]><script src="//c.m.011st.com/MW/js/ui/ie.js"></script><![endif]-->
+<script src="./cart_list_files/jquery-2.1.1.min.js"></script>
+<script src="./cart_list_files/ui.js"></script>
+<script src="./cart_list_files/mwSwipe.js"></script>
+<script src="./cart_list_files/gnb.js"></script>
+<script src="./cart_list_files/TMCookieUtil.js"></script>
+<script src="./cart_list_files/mDevice.js" defer=""></script>
+<script src="./cart_list_files/lstore.js" defer=""></script>
+<script src="./cart_list_files/device.js" defer=""></script>
+<script>
+var _MOBILE_URL_ = 'http://m.11st.co.kr/MW';
+var _SSL_MOBILE_URL_ = 'https://m.11st.co.kr/MW';
+var _MOBILE_BUY_URL_ = 'http://buy.m.11st.co.kr/MW';
+var _SSL_MOBILE_BUY_URL_ = 'https://buy.m.11st.co.kr/MW';
+var _CSS_URL_ = '//c.m.011st.com/MW';
+var _IMG_URL_ = '//c.m.011st.com/MW';
+var _UPLOAD_URL_ = 'http://i.011st.com';
+var _JS_URL_ = '//c.m.011st.com/MW';
+var _SSL_JS_URL_ = '//m.11st.co.kr/MW';
+var _DS_URL_ = 'http://ds.11st.co.kr';
+var _ST_URL_ = 'http://st.11st.co.kr';
+var _ACES_URL_ = 'http://aces.11st.co.kr';
+var _LOGIN_URL_ = 'https://m.11st.co.kr/MW/Login/login.tmall';
+var _LOGOUT_URL_ = 'https://m.11st.co.kr/MW/Login/logout.tmall';
+var _FRONT_URL_ = 'http://www.11st.co.kr';
+var _MOBILE_COOKIE_DOMAIN_ = 'm.11st.co.kr';
+</script>
+	<script src="./cart_list_files/Ajax.js"></script>
+	<script src="./cart_list_files/number.js"></script>
+	<script src="./cart_list_files/common.js" type="text/javascript"></script>
+	<script src="./cart_list_files/iscroll5.js" type="text/javascript"></script>
+	
+<script>
+if(typeof HashMap === 'undefined') {
+	HashMap = function(){
+			this.map = new Array();
+		};
+	
+	HashMap.prototype = {
+			put : function(key, value){
+				this.map[key] = value;
+			},
+			get : function(key){
+				return this.map[key];
+			},
+			getAll : function(){
+				return this.map;
+			},
+			clear : function(){
+				this.map = new Array();
+			},
+			getKeys : function(){
+				var keys = new Array();
+				for(i in this.map){
+					keys.push(i);
+				}
+				return keys;
+			}
+		};
+}
+
+if(typeof toLocaleNum === 'undefined') {
+	toLocaleNum = function(num) {
+		return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",");
+	}
+}
+
+CouponParam = function() {
+		// 조회요청 변수
+		this.prdNo; // 상품번호
+		this.optStckNo; // 옵션번호
+		this.ordQty; // 수량
+		this.dlvCstStlTyp; // 배송비결제방법
+		this.optionNm; // 옵션명
+		this.visitDlvYN; // 방문수령여부
+		this.cupnIssNo1; // 선택할인쿠폰
+		this.cupnIssNo2; // 보너스쿠폰
+		this.dlvCupnIssNo; // 배송비쿠폰
+		this.strNo; // 마트 지점번호
+		this.bcktSeq; // 장바구니번호(장바구니조회 시)
+		this.martBcktSeq; // 마트장바구니번호(장바구니조회 시)
+		this.addPrdAmtSum; // 추가구성상품 합산금액
+		this.slctPrdCalcOptNm;	//계산형옵션명
+		this.calcOptItemList;	//계산형옵션값
+		
+		// 조회결과 변수
+		this.SubmitCupnIssNo1; // 선택할인쿠폰
+		this.SubmitCupnIssNo2; // 보너스쿠폰
+		this.SubmitDlvCupnIssNo; // 배송비 쿠폰
+		this.cupnDscPrice0; // 기본할인금액
+		this.cupnDscPrice1; // 추가할인금액
+		this.cupnDscPrice2; // 보너스할인금액
+		this.dlvCupnDscPrice; // 배송비 할인금액
+		this.isSyrup; // 시럽 결제수단 사용 가능 여부
+	};
+
+var mwCupnPop = {
+		isInitModel : false,
+		isInitView : false,
+		selPrdMap : new HashMap(),
+		prdMap : new HashMap(),
+		couponMap : new HashMap(),
+		cupnMasterMap : new HashMap(),
+		paramArray : null,
+		couponModel : null,
+		couponCallBack : null,
+		modelBackup : null,
+		viewBackup : null,
+		openCouponPop : function(callBack) {
+			try {
+				this.setCallBack(callBack);
+				if(mwUI) mwUI.loadingFull({text : '쿠폰정보 조회 중 입니다.'});
+				
+				this.initModel();
+				this.viewBackup = popCupnLayer.innerHTML;
+				this.modelBackup = JSON.parse(JSON.stringify(this.couponModel));
+				this.initView();
+				
+				mwCupnPop.setCurPayRestrictCupn();
+				if(mwCupnPop.curPayRestrictInfo){
+					mwCupnPop.setPayRestrictCupnDisplay();
+				}
+				popCupon.open('cuponChange');
+			} finally {
+				if(mwUI) mwUI.loadingFullClose();
+			}
+		},
+		closeCouponPop : function() {
+			if(this.modelBackup) {
+				this.setModel(this.modelBackup);
+				this.modelBackup = null;
+				this.isInitModel = false;
+			}
+			if(this.viewBackup) {
+				popCupnLayer.innerHTML = this.viewBackup;
+				this.viewBackup = null;
+				this.isInitView = false;
+			}
+			popCupon.close('cuponChange');
+		},
+		setModel : function(model) {
+			this.couponModel = model;			
+		},
+		getModel : function() {
+			return this.couponModel;			
+		},
+		setView : function(htmlView) {
+			popCupnLayer.innerHTML = htmlView;
+		},
+		setCallBack : function(callBack) {
+			if(typeof callBack === 'function') this.couponCallBack = callBack;
+		},
+		loadCouponPop : function(couponparamArray, callBack) {
+			
+			
+			
+			if(mwUI) mwUI.loadingFull({text : '쿠폰정보 조회 중 입니다.'});
+			this.setCallBack(callBack);
+			if(couponparamArray) this.paramArray = couponparamArray;
+			
+			var jsonParam = JSON.stringify(couponparamArray);
+			var url = "//buy.m.11st.co.kr/MW/Order/getCupnInfoAjax.tmall";
+			try {
+				$.support.cors = true;
+				$.ajax({
+					url: url,
+					method: 'POST',
+					cache:false,
+					data: jsonParam,
+					contentType: "application/x-www-urlencoded; charset=UTF-8",
+					dataType: "json",
+					success: function(jsonData) {
+						try {
+							if(jsonData.FAIL) throw "쿠폰팝업 데이터 조회 실패";
+							
+							
+							mwCupnPop.setModel(JSON.parse(jsonData.model));
+							mwCupnPop.setView(jsonData.view);
+							mwCupnPop.isInitModel = false;
+							mwCupnPop.isInitView = false;
+							
+							mwCupnPop.initModel();
+							mwCupnPop.initView();
+							//현재 선택된 쿠폰이 결제수단제한쿠폰일때만 초기화되는 로직 추가 필요
+							mwCupnPop.setCurPayRestrictCupn();
+							if(mwCupnPop.curPayRestrictInfo){
+								mwCupnPop.setPayRestrictCupnDisplay();
+							}
+							popCupon.open('cuponChange');
+							if(mwCupnPop.couponModel.isInvalidCupn) alert("기존에 선택하신 쿠폰을 적용할 수 없습니다.\n다른 쿠폰을 적용해주세요.");
+						} finally {
+							if(mwUI) mwUI.loadingFullClose();
+						}
+			        },
+			        error: function(xhr, textStatus, e) {
+			        	if(mwCupnPop.couponCallBack) mwCupnPop.couponCallBack(null, "ERR_0002");
+			        	if(mwUI) mwUI.loadingFullClose();
+			        	throw "ERR_0002 쿠폰팝업 Ajax Call 오류";
+			      	}
+				});
+			} catch(e) {
+				if(mwUI) mwUI.loadingFullClose();
+				throw e;
+			}
+		},
+		initModel : function(isManual) {
+			if(!this.isInitModel || isManual) {
+				this.isInitModel = true;
+				this.cupnMasterMap.clear();
+				for(var key in this.couponModel.cupnMasterList) {
+					if(this.couponModel.cupnMasterList.hasOwnProperty(key)) {
+						var cupnMasterBO = this.couponModel.cupnMasterList[key];
+						this.cupnMasterMap.put(cupnMasterBO.couponNo, cupnMasterBO);
+					}
+				}
+				this.couponMap.clear();
+				for(var key in this.couponModel.selPrdList) {
+					if(this.couponModel.selPrdList.hasOwnProperty(key)) {
+						var selPrdBO = this.couponModel.selPrdList[key];
+						this.selPrdMap.put(selPrdBO.selPrdId, selPrdBO);
+						for(key in selPrdBO.dlvCupnList) {
+							if(selPrdBO.dlvCupnList.hasOwnProperty(key)) {
+								var cupnBO = selPrdBO.dlvCupnList[key];
+								this.couponMap.put(cupnBO.cupnId, cupnBO);
+								if(cupnBO.isSelected) selPrdBO.cupnDlv = cupnBO;
+							}
+						}
+						for(key in selPrdBO.prdList) {
+							if(selPrdBO.prdList.hasOwnProperty(key)) {
+								var prdBO = selPrdBO.prdList[key];
+								this.prdMap.put(prdBO.prdId, prdBO);
+								for(key in prdBO.seCupnList) {
+									if(prdBO.seCupnList.hasOwnProperty(key)) {
+										var cupnBO = prdBO.seCupnList[key];
+										this.couponMap.put(cupnBO.cupnId, cupnBO);
+										if(cupnBO.isSelected) prdBO.cupnBasic = cupnBO;
+									}
+								}
+								for(key in prdBO.moCupnList) {
+									if(prdBO.moCupnList.hasOwnProperty(key)) {
+										var cupnBO = prdBO.moCupnList[key];
+										this.couponMap.put(cupnBO.cupnId, cupnBO);
+										if(cupnBO.isSelected) prdBO.cupnAdd = cupnBO;
+									}
+								}
+								for(key in prdBO.seDupCupnList) {
+									if(prdBO.seDupCupnList.hasOwnProperty(key)) {
+										var cupnBO = prdBO.seDupCupnList[key];
+										this.couponMap.put(cupnBO.cupnId, cupnBO);
+										if(cupnBO.isSelected) prdBO.cupnAdd = cupnBO;
+									}
+								}
+								for(key in prdBO.moDupCupnList) {
+									if(prdBO.moDupCupnList.hasOwnProperty(key)) {
+										var cupnBO = prdBO.moDupCupnList[key];
+										this.couponMap.put(cupnBO.cupnId, cupnBO);
+										if(cupnBO.isSelected) prdBO.cupnBonus = cupnBO;
+									}
+								}
+								for(key in prdBO.moOCBCupnList) {
+									if(prdBO.moOCBCupnList.hasOwnProperty(key)) {
+										var cupnBO = prdBO.moOCBCupnList[key];
+										this.couponMap.put(cupnBO.cupnId, cupnBO);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		initView : function(isManual) {
+			if(!this.isInitView || isManual) {
+				this.isInitView = true;
+				this.updateTotalView();
+			}
+		},
+		setCoupon : function(domObj, type, selPrdId, prdId, cupnId) {
+			if(this.couponModel) {
+				var cupnBO = null;
+				var curCupnBO = null;
+				if(cupnId) cupnBO = this.couponMap.get(cupnId);
+				
+				
+				if(!cupnId || cupnBO){
+					var selPrdBO = this.selPrdMap.get(selPrdId);
+					var prdBO = this.prdMap.get(prdId);
+					
+					if(type == "add") curCupnBO = prdBO.cupnAdd;
+					else if(type == "bonus") curCupnBO = prdBO.cupnBonus;
+					else if(type == "dlv") curCupnBO = selPrdBO.cupnDlv;
+					
+					if(curCupnBO != cupnBO && !(curCupnBO && cupnBO && curCupnBO.cupnId == cupnBO.cupnId)) {
+						
+						if(type == "add") prdBO.cupnAdd = cupnBO;
+						else if(type == "bonus") prdBO.cupnBonus = cupnBO;
+						else if(type == "dlv") selPrdBO.cupnDlv = cupnBO;
+						if(!(curCupnBO && cupnBO && curCupnBO.cupnDscAmt == cupnBO.cupnDscAmt)) {
+							var cupnDscAmt = (cupnBO?cupnBO.cupnDscAmt:0);
+							var curCupnDscAmt = (curCupnBO?curCupnBO.cupnDscAmt:0);
+							if(type == "dlv") {
+								this.couponModel.dscPrice = this.couponModel.dscPrice - curCupnDscAmt + cupnDscAmt;
+								this.couponModel.finalOrdPrice = this.couponModel.finalOrdPrice + curCupnDscAmt - cupnDscAmt;
+							} else {
+								if(type == "add") this.reCalcBonusCupns(selPrdId, prdId, prdBO);
+								var curPrdFinalOrdPrice = prdBO.finalOrdPrice;
+								var prdFinalOrdPrice = prdBO.ordPrice - ((prdBO.cupnBasic?prdBO.cupnBasic.cupnDscAmt:0) + (prdBO.cupnAdd?prdBO.cupnAdd.cupnDscAmt:0) + (prdBO.cupnBonus?prdBO.cupnBonus.cupnDscAmt:0));
+								if(prdFinalOrdPrice <= 0) {
+									if(type == "add") prdBO.cupnAdd = curCupnBO;
+									else if(type == "bonus") prdBO.cupnBonus = curCupnBO;
+									if(type == "add") this.reCalcBonusCupns(selPrdId, prdId, prdBO);
+									alert("할인적용 후 금액이 0원이 될 수는 없습니다.");
+									return false;
+								}								
+								prdBO.finalOrdPrice = prdFinalOrdPrice;
+								this.couponModel.dscPrice = this.couponModel.dscPrice + curPrdFinalOrdPrice - prdFinalOrdPrice;
+								this.couponModel.finalOrdPrice = this.couponModel.finalOrdPrice - curPrdFinalOrdPrice + prdFinalOrdPrice;
+								this.updatePrdView(prdBO);
+							}
+							this.updateTotalView();
+						}
+						
+						if(type == "add" || type == "bonus"){
+							var payRestrictInfo = this.getPayRestrict(cupnBO);
+							if(payRestrictInfo || this.curPayRestrictInfo){
+								this.setCurPayRestrictCupn();																											
+								if(this.curPayRestrictInfo){
+									this.setPayRestrictCupnDisplay(cupnBO);
+								}else{
+									this.resetPayRestrictCupnDisplay();
+								}
+							}
+						}
+						
+						if(cupnBO) cupnBO.isSelected = true;
+						if(curCupnBO) curCupnBO.isSelected = false;
+						
+						this.setSelectedCupnDisplay(cupnBO, true, domObj);
+						this.setSelectedCupnDisplay(curCupnBO, false);												
+						
+						mwUI.tabClick(domObj);
+						
+					}
+				}
+			}
+		},
+		updatePrdView : function(prdBO) {
+			var prdOrdPriceDomObj = document.getElementById(prdBO.prdId).querySelector("del[name='prdOrdPrice']");
+			var prdFinalPriceDomObj = document.getElementById(prdBO.prdId).querySelector("b[name='prdFinalPrice']");
+			prdFinalPriceDomObj.innerText = toLocaleNum(prdBO.finalOrdPrice);
+			if(prdBO.ordPrice === prdBO.finalOrdPrice) {
+				if(prdOrdPriceDomObj.style.display == "") prdOrdPriceDomObj.style.display = "none";
+			} else {
+				if(prdOrdPriceDomObj.style.display == "none") prdOrdPriceDomObj.style.display = "";
+			}
+		},
+		updateTotalView : function() {
+			document.getElementById("cuponChange").querySelector(".p > b[name='ordPrice']").innerText = toLocaleNum(this.couponModel.ordPrice);
+			document.getElementById("cuponChange").querySelector(".p > b[name='dscPrice']").innerText = toLocaleNum(this.couponModel.dscPrice);
+			document.getElementById("cuponChange").querySelector(".p > b[name='finalOrdPrice']").innerText = toLocaleNum(this.couponModel.finalOrdPrice);
+		},
+		setSelectedCupnDisplay : function(cupnBO, disabled, exceptDomObj) {
+			if(cupnBO && cupnBO.issueNo) {
+				var sameCupnDomObjArr = document.getElementById("cuponChange").querySelectorAll("button[data-issueno='"+cupnBO.issueNo+"']");
+				for(var key in sameCupnDomObjArr) {
+					if(sameCupnDomObjArr.hasOwnProperty(key)) {
+						var cupnDomObj = sameCupnDomObjArr[key];
+						if(!exceptDomObj || cupnDomObj != exceptDomObj) cupnDomObj.disabled = disabled;
+					}
+				}
+			}
+		},
+		reCalcBonusCupns : function(selPrdId, prdId, prdBO) {
+			if(prdBO.moDupCupnList.length > 0) {
+				var dscAmt = 0;
+				if(prdBO.cupnBasic && prdBO.cupnBasic.cupnDscAmt > 0) dscAmt = prdBO.cupnBasic.cupnDscAmt / prdBO.ordQty;
+				if(prdBO.cupnAdd && prdBO.cupnAdd.cupnDscAmt > 0) {
+					var cupnMasterBO = this.cupnMasterMap.get(prdBO.cupnAdd.couponNo);
+					if(cupnMasterBO.issueMethodCode == "03") {
+						dscAmt += prdBO.cupnAdd.cupnDscAmt / prdBO.ordQty;
+					} else {
+						dscAmt += prdBO.cupnAdd.cupnDscAmt;
+					}
+				}
+				for(key in prdBO.moDupCupnList) {
+					if(prdBO.moDupCupnList.hasOwnProperty(key)) {
+						var cupnBO = prdBO.moDupCupnList[key];
+						var cupnMasterBO = this.cupnMasterMap.get(cupnBO.couponNo);
+						if(cupnMasterBO.discountRate != null && cupnMasterBO.discountRate > 0) {
+							cupnBO.cupnDscAmt = Math.floor((((prdBO.selPrc + prdBO.optPrc) - dscAmt) * Math.round(cupnMasterBO.discountRate*100)) / 10000 / 10) * 10;
+						} else {
+							cupnBO.cupnDscAmt = cupnMasterBO.discountAmount;
+						}
+						if(cupnMasterBO.discountMaxAmount > 0 && cupnMasterBO.discountMaxAmount < cupnBO.cupnDscAmt) cupnBO.cupnDscAmt = cupnMasterBO.discountMaxAmount;
+						
+						this.updateViewBonusCupnDsc(prdId, cupnBO);
+						
+						if(cupnMasterBO.minOrderAmount > ((prdBO.selPrc + prdBO.optPrc) - dscAmt)) {
+							if(prdBO.cupnBonus && prdBO.cupnBonus.issueNo == cupnBO.issueNo) {
+								defaultCupnDomObj = document.getElementById(prdId).querySelector("div[name='bonus']").querySelector("button[name='"+prdId+"_']");
+								this.setCoupon(defaultCupnDomObj,'bonus',selPrdId,prdId,null);
+							}
+							this.setDisableCupn(prdId, cupnBO, true);
+						} else {
+							if(document.getElementById(prdId).querySelector("button[name='"+cupnBO.cupnId+"']").disabled && !this.isUsedBonusCupn(cupnBO)) {
+								this.setDisableCupn(prdId, cupnBO, false);
+							}
+						}
+					}
+				}
+			}
+		},
+		isUsedBonusCupn : function(cupnBO) {
+			for(var key in this.couponModel.selPrdList) {
+				if(this.couponModel.selPrdList.hasOwnProperty(key)) {
+					var selPrdBO = this.couponModel.selPrdList[key];
+					for(key in selPrdBO.prdList) {
+						if(selPrdBO.prdList.hasOwnProperty(key)) {
+							var prdBO = selPrdBO.prdList[key];
+							if(prdBO.cupnBonus && prdBO.cupnBonus.issueNo == cupnBO.issueNo) {
+								return true;
+							}
+						}
+					}
+				}
+			}
+			return false;
+		},
+		setDisableCupn : function(prdId, cupnBO, disabled) {
+			prdDomObj = document.getElementById(prdId);
+			prdDomObj.querySelector("button[name='"+cupnBO.cupnId+"']").disabled = disabled;
+		},
+		updateViewBonusCupnDsc : function(prdId, cupnBO) {
+			prdDomObj = document.getElementById(prdId);
+			prdDomObj.querySelector("button[name='"+cupnBO.cupnId+"'] > .dc_pr").innerText = toLocaleNum(cupnBO.cupnDscAmt) + "원";
+		},
+		submitCouponPop : function() {
+			var isCallProdDetail = false;
+			if(this.couponModel.reqClf == "01") {
+				isCallProdDetail = true;
+				
+				
+				var cupnDlv = null;
+				selPrdList = this.selPrdMap.getAll();
+				if(selPrdList.length > 0) {
+					cupnDlv = selPrdList[0].cupnDlv;
+				}
+				
+				
+				var isSyrup = true;
+				var payRestrictInfo = this.curPayRestrictInfo;
+				if(payRestrictInfo){
+					if(payRestrictInfo.payTypeCd == "0" && payRestrictInfo.cardDtlCd == "01"){
+						isSyrup = false;
+					}else if(payRestrictInfo.payTypeCd.length>0 && payRestrictInfo.payTypeCd.substring(0,1) == "2"){
+						isSyrup = false;	
+					}					
+				}				
+				
+				
+				prdList = this.prdMap.getAll();
+				var prdNoMap = new HashMap();
+				for(var key in prdList) {
+					if(prdList.hasOwnProperty(key)) {
+						var prdBO = prdList[key];
+						prdNoMap.put(prdBO.optStckNo, prdBO);
+					}
+				}
+				
+				for(var key in this.paramArray) {
+					if(this.paramArray.hasOwnProperty(key)) {
+						var param = this.paramArray[key];
+						
+						var prdBO = prdNoMap.get(param.optStckNo);
+						
+						if(prdBO.cupnBasic) param.cupnDscPrice0 = prdBO.cupnBasic.cupnDscAmt;
+						if(prdBO.cupnAdd) {
+							param.SubmitCupnIssNo1 = prdBO.cupnAdd.issueNo;
+							param.cupnDiscPrice1 = prdBO.cupnAdd.cupnDscAmt;
+						}
+						if(prdBO.cupnBonus) {
+							param.SubmitCupnIssNo2 = prdBO.cupnBonus.issueNo;
+							param.cupnDiscPrice2 = prdBO.cupnBonus.cupnDscAmt;
+						}
+						if(cupnDlv) {
+							param.SubmitDlvCupnIssNo = cupnDlv.issueNo;
+							param.dlvCupnDiscPrice = cupnDlv.cupnDscAmt;
+						}
+						param.isSyrup = isSyrup;
+					}
+				}
+			}
+			
+			if(this.couponModel.reqClf == "02"){
+				this.couponModel.ordPayRestrictInfo = this.curPayRestrictInfo;								
+			}
+
+			this.modelBackup = null;
+			this.viewBackup = null;
+			popCupon.close('cuponChange');
+			if(this.couponCallBack) {
+				if(isCallProdDetail) {
+					this.couponCallBack(this.paramArray, null, this.couponModel);
+				} else {
+					this.couponCallBack(this.couponModel);
+				}
+				this.couponCallBack = null;
+			}
+		},
+		setPayRestrictCupnDisplay : function(cupnBO) {			
+			var payRestirctCupnDomObjArr = document.getElementById("cuponChange").querySelectorAll("button[data-payRestrictCupn='Y']");
+			var issueNoList = (this.curPayRestrictInfo)?this.curPayRestrictInfo.issueNoList:"";
+			for(var key=0; key<payRestirctCupnDomObjArr.length; key++) {				
+					var cupnDomObj = payRestirctCupnDomObjArr[key];
+					var issueNo = cupnDomObj.getAttribute('data-issueno');
+					
+					//동일쿠폰은 동일쿠폰 활성화/비활성화 로직에서 처리
+					//현재 선택된 결제수단쿠폰과 같은 쿠폰 예외처리
+					if((!cupnBO || cupnBO && issueNo != cupnBO.issueNo) && issueNoList.indexOf(issueNo+",")<0){	
+						if(this.checkPossibleUsePayRestrictCupn(cupnDomObj)){
+							cupnDomObj.disabled = false;
+						}else{
+							cupnDomObj.disabled = true;
+						}
+					}							
+			}
+			
+		},
+		resetPayRestrictCupnDisplay : function() {			
+			var payRestirctCupnDomObjArr = document.getElementById("cuponChange").querySelectorAll("button[data-payRestrictCupn='Y']");
+			for(var key=0; key<payRestirctCupnDomObjArr.length; key++) {				
+					var cupnDomObj = payRestirctCupnDomObjArr[key];					
+					cupnDomObj.disabled = false;								
+			}			
+		},
+		getPayRestrict : function(cupnBO){
+			var payRestrictInfo = null;
+			if(cupnBO){
+				var cupnNo = cupnBO.couponNo;							
+				var cupnMasterBO = this.cupnMasterMap.get(cupnNo);				
+				if(cupnMasterBO.payRestrictInfo){
+					payRestrictInfo = JSON.parse(JSON.stringify(cupnMasterBO.payRestrictInfo));
+				}
+			}
+			return payRestrictInfo;
+		},
+		checkPossibleUsePayRestrictCupn : function(cupnDomObj){
+			var result = true;
+			var payType = cupnDomObj.getAttribute('data-paytype');			
+			var cardCd="";
+			var cardDtlCd="";						
+			var detailCd="";
+			var strOrdersheetPayTypeCd = "";
+			
+			if(payType == "payCard"){
+				cardCd = cupnDomObj.getAttribute('data-paycardcd');
+				cardDtlCd = cupnDomObj.getAttribute('data-paycarddtlcd');
+				strOrdersheetPayTypeCd = cupnDomObj.getAttribute('data-strpaytype');
+			}else if(payType == "payNonBankbook"){
+				detailCd = cupnDomObj.getAttribute('data-paydetailcd');
+			}
+			
+			if(payType && payType != this.curPayRestrictInfo.ordersheetPayTypeCd){
+				result = false;
+			} else if(this.curPayRestrictInfo.ordersheetPayTypeCd == "payCard" && this.curPayRestrictInfo.cardCd != cardCd
+					&& !(this.curPayRestrictInfo.cardDtlCd && this.curPayRestrictInfo.cardDtlCd=="02" && this.curPayRestrictInfo.cardCd == "00") && !(cardDtlCd=="02" && cardCd == "00")) {
+				result = false;
+			} else if(this.curPayRestrictInfo.ordersheetPayTypeCd == "payCard" && this.curPayRestrictInfo.cardDtlCd 
+					&& ((this.curPayRestrictInfo.cardDtlCd=="01" && cardDtlCd=="02") || (this.curPayRestrictInfo.cardDtlCd=="02" && cardDtlCd=="01"))){
+				result = false;
+			}else if(this.curPayRestrictInfo.ordersheetPayTypeCd == "payNonBankbook" && this.curPayRestrictInfo.detailCd != detailCd) {
+				result = false;
+			}else if(!this.checkPossibleUseSyrupPayRestrictCupn(strOrdersheetPayTypeCd)){
+				result = false;
+			}
+			return result;			
+		},
+		checkPossibleUseSyrupPayRestrictCupn : function(strOrdersheetPayTypeCd){
+			var isPossibleUseCupn = true;
+			if(this.curPayRestrictInfo.strOrdersheetPayTypeCd && strOrdersheetPayTypeCd){
+				if(this.curPayRestrictInfo.strOrdersheetPayTypeCd.indexOf(strOrdersheetPayTypeCd)<0
+						&& strOrdersheetPayTypeCd.indexOf(this.curPayRestrictInfo.strOrdersheetPayTypeCd)<0){
+					isPossibleUseCupn = false;
+				}
+			}
+			return isPossibleUseCupn;
+		},
+		setCurCupnPayRestrictInfoForSyrup : function(payRestrictInfo, curPayRestrictInfo){
+			var resultPayRestrictInfo = payRestrictInfo;			
+			if(curPayRestrictInfo && payRestrictInfo){
+				if(curPayRestrictInfo.cardDtlCd && curPayRestrictInfo.cardDtlCd == "02" && payRestrictInfo.cardDtlCd && payRestrictInfo.cardDtlCd == "00"){  //시럽-카드쿠폰
+					resultPayRestrictInfo = curPayRestrictInfo;
+					resultPayRestrictInfo.cardCd = payRestrictInfo.cardCd;					
+				}else if(curPayRestrictInfo.cardDtlCd && curPayRestrictInfo.cardDtlCd == "00" && payRestrictInfo.cardDtlCd && payRestrictInfo.cardDtlCd == "02"){ //카드-시럽쿠폰
+					resultPayRestrictInfo = payRestrictInfo;
+					resultPayRestrictInfo.cardCd = curPayRestrictInfo.cardCd;					
+				}else if(curPayRestrictInfo.cardDtlCd && curPayRestrictInfo.cardDtlCd == "02" && curPayRestrictInfo.cardCd != "00" && payRestrictInfo.cardDtlCd && payRestrictInfo.cardDtlCd == "02" && payRestrictInfo.cardCd == "00"){ // 시럽카드 -시럽전체 
+					resultPayRestrictInfo = payRestrictInfo;
+					resultPayRestrictInfo.cardCd = curPayRestrictInfo.cardCd;
+				}else if(curPayRestrictInfo.cardDtlCd && curPayRestrictInfo.cardDtlCd == "02" && curPayRestrictInfo.cardCd == "00" && payRestrictInfo.cardDtlCd && payRestrictInfo.cardDtlCd == "02" && payRestrictInfo.cardCd != "00"){ // 시럽전체 -시럽카
+					resultPayRestrictInfo = curPayRestrictInfo;
+					resultPayRestrictInfo.cardCd = payRestrictInfo.cardCd;
+				}
+			}
+			return resultPayRestrictInfo;			
+		},
+		setCurPayRestrictCupn : function(){					
+			var curPrdCupnPayRestrictInfo= null;
+			var issueNoList = "";
+			for(var i=0; i<this.couponModel.selPrdList.length; i++){
+				var selPrdBO = this.couponModel.selPrdList[i];
+				for(var j=0; j<selPrdBO.prdList.length; j++){
+					var prdBO = selPrdBO.prdList[j];					
+					if(prdBO.cupnAdd){
+						var payRestrictInfo = this.getPayRestrict(prdBO.cupnAdd);
+						if(payRestrictInfo){
+							curPrdCupnPayRestrictInfo = this.getCurPayRestrictCupn(curPrdCupnPayRestrictInfo, payRestrictInfo);
+							issueNoList += prdBO.cupnAdd.issueNo+",";
+						}
+						 
+					}
+					if(prdBO.cupnBonus){
+						var payRestrictInfo = this.getPayRestrict(prdBO.cupnBonus);
+						if(payRestrictInfo){
+							curPrdCupnPayRestrictInfo = this.getCurPayRestrictCupn(curPrdCupnPayRestrictInfo, payRestrictInfo);
+							issueNoList += prdBO.cupnBonus.issueNo+",";
+						}
+					}
+				}
+			}
+			if(curPrdCupnPayRestrictInfo) curPrdCupnPayRestrictInfo.issueNoList = issueNoList;
+			this.curPayRestrictInfo = curPrdCupnPayRestrictInfo;			
+		},
+		getCurPayRestrictCupn : function(curPrdCupnPayRestrictInfo, payRestrictInfo){
+			var resultPayRestrictInfo = curPrdCupnPayRestrictInfo;
+			if((curPrdCupnPayRestrictInfo && curPrdCupnPayRestrictInfo.cardDtlCd && curPrdCupnPayRestrictInfo.cardDtlCd == "02")
+				|| (payRestrictInfo.cardDtlCd && payRestrictInfo.cardDtlCd == "02")){
+				resultPayRestrictInfo = this.setCurCupnPayRestrictInfoForSyrup(payRestrictInfo, curPrdCupnPayRestrictInfo);												
+			}else if(!(curPrdCupnPayRestrictInfo && curPrdCupnPayRestrictInfo.cardDtlCd && curPrdCupnPayRestrictInfo.cardDtlCd == "01")) {
+				resultPayRestrictInfo = payRestrictInfo;				
+			}
+			return resultPayRestrictInfo;
+		},
+		payRestrictCupnAlert : function(payTypeNm){
+			alert(payTypeNm+"로 결제수단이 제한되는 쿠폰입니다.");
+		},
+		usedCupnAlert : function(){
+			return confirm("해당 쿠폰은 다른상품에 적용중입니다.\n쿠폰을 본 상품에 적용하시겠습니까?");
+		},
+		isDisabled : function() {
+			if(mwCupnPop.couponModel.cupnMasterList.length == 0) return true;
+			else return false;
+		}
+	};
+
+var popCupon = {
+		id : '',
+		pos : '',
+		open :  function(id) {
+			var wrap = document.getElementById('wrap'),
+				div = document.getElementById(id);
+
+			this.id = id;
+			this.pos = window.pageYOffset;
+			window.scrollTo(0, 1);
+
+			wrap.style.display = 'none';
+			div.style.display = 'block';
+
+			window.addEventListener("resize",  popCupon.fix, false);
+			window.addEventListener("scroll",  popCupon.fix, false);
+			window.addEventListener("touchmove",  popCupon.fix, false);
+		},
+		fix :  function() {
+			var div = document.getElementById(popCupon.id) || popCupon.id,
+				obj = div.querySelector('.tot'),
+				objWrap = div.querySelector('.tot_wrp');
+
+				var winOffset = window.pageYOffset,
+					objPos = objWrap.offsetHeight - 44;
+				if(winOffset > objPos) {
+					if(obj.className.lastIndexOf('fix') < 0) obj.className += ' fix';
+				} else {
+					obj.className = obj.className.replace(' fix', '');
+				}
+			
+		},
+		close :  function(id) {
+			var wrap = document.getElementById('wrap'),
+				div = document.getElementById(id);
+
+			window.removeEventListener("resize",  popCupon.fix, false);
+			window.removeEventListener("scroll",  popCupon.fix, false);
+			window.removeEventListener("touchmove",  popCupon.fix, false);
+
+			wrap.style.display = '';
+			div.style.display = '';
+			window.scrollTo(0, this.pos);
+		}
+	};
+</script>
+	<script>
+        //HashMap
+        HashMap = function(){
+            this.map = new Array();
+        };
+
+        HashMap.prototype = {
+            put : function(key, value){
+                this.map[key] = value;
+            },
+            get : function(key){
+                return this.map[key];
+            },
+            getAll : function(){
+                return this.map;
+            },
+            clear : function(){
+                this.map = new Array();
+            },
+            getKeys : function(){
+                var keys = new Array();
+                for(i in this.map){
+                    keys.push(i);
+                }
+                return keys;
+            }
+        };
+
+        // 2016.12.15 mjs : 셀러의 최소구매가능금액 설정여부, 금액 조회
+        // java Map -> script Map 변환
+        var mapMinBuyAmtInfBySeller = new HashMap();
+        
+        var _ocbAddEvlLimitAmt = '5000';
+        var _isFreeGift = false;
+        var _totalPrdCount = 1;
+        if("true"=="false" && "null"=="http://buy.m.11st.co.kr/MW/Cart/deleteCartProduct.tmall")
+            window.location.reload(); //아이폰앱에서는 referer가 있어야 웹페이지 히스토리백 동작
+
+        
+
+        //전체선택
+        var curSelectAll = false;
+        function selectAllChk(key) {
+            synchSelectAllChk();
+
+            var sellerKeyCnt = document.actionForm.sellerCheckKey.value;
+            for(var i=0; i<sellerKeyCnt; i++){
+                var bcktSeqChk = document.querySelectorAll('[name="bcktSeqChk'+i+'"]');
+                if(bcktSeqChk.length>1 || (bcktSeqChk[0] && bcktSeqChk[0].getAttribute('data-ismart'))){
+                    document.querySelector('[name="bunchCheckAll_'+i+'"]').checked = !curSelectAll;
+                }
+                for(var j=0; j<bcktSeqChk.length; j++){
+                    bcktSeqChk[j].checked = !curSelectAll;
+                }
+            }
+
+            if(curSelectAll) curSelectAll = false;
+            else curSelectAll = true;
+
+            if(key!='load'){	//최초 로딩시에는 재계산 안함
+                calSelectedPrds();
+            }
+        }
+
+        //묶음배송 전체선택
+        function bunchCheckAll(seq){
+            var isCheck = false;
+            if(document.querySelector('[name="bunchCheckAll_'+seq+'"]').checked == true){
+                isCheck = true;
+            }
+
+            if(!martBunchAddrChk(seq)){
+                alert("홈플러스와 GS슈퍼 상품을 주문할 경우, 단일 배송지 기준으로만 주문이 가능합니다.");
+                document.querySelector('[name="bunchCheckAll_'+seq+'"]').checked = !isCheck;
+                return;
+            }
+
+
+            var tempBcktSeq =  document.querySelectorAll('[name="bcktSeqChk'+seq+'"]');
+            for(var i = 0; i<tempBcktSeq.length; i++){
+                if(isCheck){
+                    tempBcktSeq[i].checked = true;
+                }else{
+                    tempBcktSeq[i].checked = false;
+                }
+            }
+
+            //선택상품 계산
+            calSelectedPrds();
+        }
+
+        function synchSelectAllChk() {
+            document.getElementById("allselect").checked=!curSelectAll;
+            document.getElementById("allselectBelow").checked=!curSelectAll;
+        }
+
+        //상품삭제
+        function doDelete(bcktSeq, martBcktSeq) {
+            var tempBcktSeq = bcktSeq;
+
+            if ( confirm("상품을 장바구니에서 삭제하시겠습니까?") ) {// 장바구니 삭제 시 본 상품 및 추가구성상품 의 장바구니 정보를 ','로 구분하여 넘김
+                document.actionForm.bcktSeq.value = tempBcktSeq;
+                if(martBcktSeq && martBcktSeq != "") document.actionForm.martBcktSeq.value = martBcktSeq;
+                document.actionForm.action = "http://buy.m.11st.co.kr/MW/Cart/deleteCartProduct.tmall";
+                document.actionForm.submit();
+            }
+        }
+
+        //추가상품 삭제 2015.05.06
+        function doDeleteAddPrd(bcktSeq, addPrdYn) {
+            var tempBcktSeq = bcktSeq;
+
+            if(confirm("해당 상품을 장바구니에서 삭제 하시겠습니까?")){
+                document.actionForm.bcktSeq.value = tempBcktSeq;
+                document.actionForm.addPrdFlag.value = addPrdYn;
+                document.actionForm.action = "http://buy.m.11st.co.kr/MW/Cart/deleteCartProduct.tmall";
+                document.actionForm.submit();
+            }
+        }
+
+        //옵션상품 삭제 2015.05.06
+        function doDeleteOpt(bcktSeq, slctPrdOptSeq, martYn){
+
+            if(confirm("해당 옵션을 장바구니에서 삭제 하시겠습니까?")){
+                document.actionForm.bcktSeq.value = bcktSeq;
+                document.actionForm.slctPrdOptSeq.value = slctPrdOptSeq;
+                document.actionForm.isMart.value=martYn;
+                document.actionForm.action = "http://buy.m.11st.co.kr/MW/Cart/deleteOptionCartProduct.tmall";
+                document.actionForm.submit();
+            }
+        }
+
+
+        //선택삭제
+        function doMultiDelete(sellerCheckKey) {
+            var bcktSeqStr="";
+            var martBcktSeqStr="";
+            var tempBcktSeq = "";
+            for(var i = 0; i<sellerCheckKey; i++){
+                var tempBcktSeq = document.querySelectorAll('[name="bcktSeqChk'+i+'"]');
+                for(var j = 0; j<tempBcktSeq.length; j++){
+                    if(tempBcktSeq[j].checked) {
+                        if(tempBcktSeq[j].getAttribute('data-ismart') && tempBcktSeq[j].getAttribute('data-ismart') == "Y") {
+                            martBcktSeqStr = martBcktSeqStr+','+tempBcktSeq[j].value;
+                        } else {
+                            bcktSeqStr = bcktSeqStr+","+tempBcktSeq[j].value;
+                        }
+                    }
+                }
+            }
+
+            if(bcktSeqStr=="" && martBcktSeqStr=="") {
+                alert("상품을 선택해 주시기 바랍니다.");
+                return;
+            }
+
+            bcktSeqStr = bcktSeqStr.substring(1, bcktSeqStr.length);
+            martBcktSeqStr = martBcktSeqStr.substring(1, martBcktSeqStr.length);
+            doDelete(bcktSeqStr, martBcktSeqStr);
+        }
+
+        //수량변경-옵션상품
+        function doModifyOpt(slctPrdOptSeq, bcktSeq, addPrdFlag, selMinQty, selLimitQty, prdTypCd, beforeCnt, yes24Yn) {
+            var frm = document.querySelector('[name="qty_'+slctPrdOptSeq+'"]');
+            var qty = frm.value;
+
+            if (qty == "") {
+                alert("수량이 입력되지 않았습니다.");
+                return;
+            }
+
+            if ( isNaN(qty) ) {
+                alert("수량은 숫자로 입력하셔야합니다.");
+                return;
+            }
+
+            if ( parseInt(qty) <= 0 ) {
+                alert("수량은 0보다 크게 입력하셔야합니다.");
+                return;
+            }
+
+            if(  selLimitQty != undefined){
+                if(selLimitQty!=-10000 && (selLimitQty-qty < 0)){
+                    alert("해당상품의 최대구매 가능 수량을\n"+"초과하였습니다.");
+                    frm.value=beforeCnt;
+                    return;
+                }
+            }
+
+            if(prdTypCd != "" && prdTypCd != undefined){
+                if(prdTypCd == "19" && qty > 10){
+                    alert("해당상품의 최대 구매 수량은 10개 입니다.");
+                    frm.value=beforeCnt;
+                    return;
+                }
+            }
+
+            document.actionForm.addPrdFlag.value = addPrdFlag;
+            document.actionForm.selMinQty.value  = selMinQty;
+            document.actionForm.bcktSeq.value    = bcktSeq;
+            document.actionForm.slctPrdOptSeq.value = slctPrdOptSeq;
+            document.actionForm.qty.value = qty;
+            document.actionForm.yes24Yn.value = yes24Yn;
+            document.actionForm.action = "http://buy.m.11st.co.kr/MW/Cart/cartQuantityChange.tmall";
+            document.actionForm.submit();
+        }
+
+        //수량변경-무옵션상품
+        function doModify(bcktSeq, addPrdFlag, selMinQty, selLimitQty, prdTypCd, beforeCnt, yes24Yn, isMart) {
+            var frm = document.querySelector('[name="qty_'+bcktSeq+'"]');
+            var qty = frm.value;
+
+            if (qty == "") {
+                alert("수량이 입력되지 않았습니다.");
+                return;
+            }
+
+            if ( isNaN(qty) ) {
+                alert("수량은 숫자로 입력하셔야합니다.");
+                return;
+            }
+
+            if ( parseInt(qty) <= 0 ) {
+                alert("수량은 0보다 크게 입력하셔야합니다.");
+                return;
+            }
+
+            if(  selLimitQty != undefined){
+                if(selLimitQty!=-10000 && (selLimitQty-qty < 0)){
+                    alert("해당상품의 최대구매 가능 수량을\n"+"초과하였습니다.");
+                    frm.value=beforeCnt;
+                    return;
+                }
+            }
+
+            if(prdTypCd != "" && prdTypCd != undefined){
+                if(prdTypCd == "19" && qty > 10){
+                    alert("해당상품의 최대 구매 수량은 10개 입니다.");
+                    frm.value=beforeCnt;
+                    return;
+                }
+            }
+
+            document.actionForm.addPrdFlag.value = addPrdFlag;
+            document.actionForm.selMinQty.value  = selMinQty;
+            document.actionForm.bcktSeq.value    = bcktSeq;
+            document.actionForm.qty.value = qty;
+            document.actionForm.yes24Yn.value = yes24Yn;
+            if(isMart) document.actionForm.isMart.value = isMart;
+            document.actionForm.action = "http://buy.m.11st.co.kr/MW/Cart/cartQuantityChange.tmall";
+            document.actionForm.submit();
+        }
+
+        //수량버튼
+        function setQtyNumValue(objId, sbmBtnId, orgValue, chgValue) {
+
+            if(typeof(document.getElementsByTagName('footer')[0]) !='undefined'){
+                document.getElementsByTagName('footer')[0].style.paddingBottom = "10px";
+                setTimeout(function(){
+                    document.getElementsByTagName('footer')[0].style.paddingBottom = "";
+                }, 100);
+            }
+
+            objCtl = document.getElementById(objId);
+            sbmBtnObj = document.getElementById(sbmBtnId);
+
+            valCtl = parseInt(objCtl.value);
+
+            if(valCtl + chgValue > 0) {
+                objCtl.value = valCtl + chgValue;
+            }
+
+            if(orgValue == objCtl.value) sbmBtnObj.style.display = "none";
+            else sbmBtnObj.style.display = "";
+        }
+
+        function orderSubmit() {
+            
+            try {
+                NetFunnel_Action( {action_id:'m_act09'}, function() {
+                    document.actionForm.submit();
+                });
+            } catch (e) {
+                document.actionForm.submit();
+            }
+            
+        }
+        function reservationOrderSubmit(prdNo, shopBranchNo, bcktSeq){//생활+ 예약
+            var reservationForm = document.reservationForm;
+            reservationForm.action = "https://m.11st.co.kr/MW/lifeplus/Order/reservation/lifePlusRsrvForm.tmall";
+            var reservationStckNo = "";
+            var reservationPrdQty = "";
+            var reservationCompPrdNo = "";
+            var reservationCompPrdQty = "";
+            var reservationOptionNm = "";
+            var reservationOptionNo = "";
+            var reservationOptionText = "";
+            if(document.querySelector('[name="stckNo_'+bcktSeq+'"]') != null){
+                reservationStckNo = document.querySelector('[name="stckNo_'+bcktSeq+'"]').value;
+            }
+            if(document.querySelector('[name="prdQty_'+bcktSeq+'"]') != null){
+                reservationPrdQty = document.querySelector('[name="prdQty_'+bcktSeq+'"]').value;
+            }
+            if(document.querySelector('[name="compPrdNo_'+bcktSeq+'"]') != null){
+                reservationCompPrdNo = document.querySelector('[name="compPrdNo_'+bcktSeq+'"]').value;
+            }
+            if(document.querySelector('[name="compPrdQty_'+bcktSeq+'"]') != null){
+                reservationCompPrdQty = document.querySelector('[name="compPrdQty_'+bcktSeq+'"]').value;
+            }
+            if(document.querySelector('[name="optionNm_'+bcktSeq+'"]') != null){
+                reservationOptionNm = document.querySelector('[name="optionNm_'+bcktSeq+'"]').value;
+            }
+            if(document.querySelector('[name="optionNo_'+bcktSeq+'"]') != null){
+                reservationOptionNo = document.querySelector('[name="optionNo_'+bcktSeq+'"]').value;
+            }
+            if(document.querySelector('[name="optionText_'+bcktSeq+'"]') != null){
+                reservationOptionText = document.querySelector('[name="optionText_'+bcktSeq+'"]').value;
+            }
+            $("#reservationPrdno").val(prdNo);
+            $("#reservationStckNo").val(reservationStckNo);
+            $("#reservationPrdQty").val(reservationPrdQty);
+            $("#reservationCompPrdNo").val(reservationCompPrdNo);
+            $("#reservationCompPrdQty").val(reservationCompPrdQty);
+            $("#reservationShopBranchNo").val(shopBranchNo);
+            $("#reservationBcktSeq").val(bcktSeq);
+            $("#reservationOptionNm").val(reservationOptionNm);
+            $("#reservationOptionNo").val(reservationOptionNo);
+            $("#reservationOptionText").val(reservationOptionText);
+
+            // 2016.12.15 mjs : 셀러의 최소구매가능금액 설정여부, 금액 조회
+            if(!checkMinBuyAmtInfBySeller(bcktSeq)) {
+                return;
+            }
+
+            reservationForm.submit();
+        }
+
+        //한개의 상품 주문하기
+        function orderOneProduct(bcktSeq, addPrdFlag, selMinQty, qty, isMart ,isOneClickPrd,prdNo ,isDlvCupnNo){
+
+            if (qty < 0) {
+                alert("해당 상품의 옵션이  존재합니다. \n 옵션정보 설정 후 주문하세요");
+                return;
+            }
+
+            if(document.querySelector('[name="snoOptionYN_'+bcktSeq+'"]')) {
+                alert("선택 상품의 입력 옵션에 개인정보가 포함되어 있어 주문이 불가합니다.\n입력한 옵션이 개인정보가 아닌 경우 고객센터 1599-0110으로 문의주세요.");
+                return;
+            }
+
+            var obj = document.actionForm;
+
+            obj.qty.value = qty;
+            obj.addPrdFlag.value = addPrdFlag;
+            obj.selMinQty.value  = selMinQty;
+            if(isMart == "Y") obj.martBcktSeq.value = bcktSeq;
+            else obj.bcktSeq.value = bcktSeq;
+
+            if(isOneClickPrd == "true"){
+                obj.prdNo.value = prdNo;
+                obj.oneClickFrom.value = "sc1";		//   매출
+                obj.changeCupnYN.value = isDlvCupnNo;		//  장바구니 쿠폰
+                obj.action="https://buy.m.11st.co.kr/MW/Order/syrupPayOneClickOrder.tmall";
+            } else {
+                obj.action = "https://buy.m.11st.co.kr/MW/Order/orderBasicFirstStep.tmall";
+            }
+            
+            if(document.querySelector('[name="agreeOrderMakePrdYN_'+bcktSeq+'"]').value == "N"){
+                mwUI.layerPop('guideLayer','no');
+            }else{
+                orderSubmit();
+            }
+        }
+
+        //각 묶음배송 주문버튼 클릭시
+        function goToOrderBasicForBunch(seq, isMart){
+            var obj = document.actionForm;
+            var tempBcktSeq = ""; //주문할 BcktSeq
+            var tempBcktSeqPipe = "";
+            var agreeOrderMakePrd = 0;	//주문제작상품 수
+            var soldOutCnt = 0; //품절상품 수
+            var soldOutPrdObj ="";
+            var deliveryNCnt = 0; // 마트 배송불가 상품 수
+            var deliveryNPrdObj ="";
+            var isExceptSoldoutOrd = false;
+            var snoOptionCnt = 0; // 주민번호 직업입력 옵션 상품
+            var snoOptionPrdObj = "";
+            var isOnlyMartPrmtPrd = true;
+            var martPrmtMap = new HashMap();
+            var tmpPrdno = "";
+            var isValidCalcOptItemCnt = 0;  //계산형옵션 옵션오류건
+            var isValidCalcOptItemPrdObj ="";
+            var isLifePlusPrd = false;
+
+            //묶음상품 체크
+            document.querySelector('[name="bunchCheckAll_'+seq+'"]').checked = true;
+            bunchCheckAll(seq);
+
+            var tempBcktSeqChk = document.querySelectorAll('[name="bcktSeqChk'+seq+'"]');
+            var ordPrdCnt = tempBcktSeqChk.length; //주문상품 수
+
+            for(var i = 0; i<tempBcktSeqChk.length; i++){
+                if(tempBcktSeqChk[i].checked){
+                    //주문제작상품
+                    if(document.querySelector('[name="agreeOrderMakePrdYN_'+tempBcktSeqChk[i].value+'"]').value == "N"){
+                        agreeOrderMakePrd++;
+                    }
+
+                    //마트상품 주문 제한
+                    if(tempBcktSeqChk[i].getAttribute('data-ismart') && tempBcktSeqChk[i].getAttribute('data-ismart') == "Y"){
+                        //프로모션 상품
+                        tmpPrdno=tempBcktSeqChk[i].getAttribute('data-prdno');
+                        if(martPrmtMap.get(tmpPrdno) ==undefined){
+                            martPrmtMap.put(tmpPrdno,tempBcktSeqChk[i].getAttribute('data-martprmtseq') );
+                        }else{
+                            if(tempBcktSeqChk[i].getAttribute('data-martprmtseq') != martPrmtMap.get(tmpPrdno)){
+                                isOnlyMartPrmtPrd = false;
+                            }
+                        }
+                    }
+
+                    //품절상품 체크
+                    if(document.querySelector('[name="soldOut_'+tempBcktSeqChk[i].value+'"]').value == "T"){
+                        if(soldOutCnt==0) soldOutPrdObj=tempBcktSeqChk[i];
+                        soldOutCnt++;
+                    } else if(document.querySelector('[name="deliveryYn_'+tempBcktSeqChk[i].value+'"]') && document.querySelector('[name="deliveryYn_'+tempBcktSeqChk[i].value+'"]').value == "N") {
+                        if(deliveryNCnt==0) deliveryNPrdObj=tempBcktSeqChk[i];
+                        deliveryNCnt++;
+                    } else if(document.querySelector('[name="snoOptionYN_'+tempBcktSeqChk[i].value+'"]')) {
+                        if(snoOptionCnt==0) snoOptionPrdObj = tempBcktSeqChk[i];
+                        snoOptionCnt++;
+                    } else if(document.querySelector('[name="isValidCalcOptItem_'+tempBcktSeqChk[i].value+'"]')) {
+                        if(isValidCalcOptItemCnt==0) isValidCalcOptItemPrdObj = tempBcktSeqChk[i];
+                        isValidCalcOptItemCnt++;
+                    }
+
+                    if(tempBcktSeqChk[i].getAttribute('data-prdtypcd')==35 || tempBcktSeqChk[i].getAttribute('data-prdtypcd')==36 || tempBcktSeqChk[i].getAttribute('data-prdtypcd')==37){
+                        isLifePlusPrd = true;
+                        var reservationStckNo = "";
+                        var reservationPrdQty = "";
+                        var reservationCompPrdNo = "";
+                        var reservationCompPrdQty = "";
+                        var shopBranchNo = "";
+                        var reservationOptionNm = "";
+                        var reservationOptionNo = "";
+                        var reservationOptionText = "";
+                        if(document.querySelector('[name="stckNo_'+tempBcktSeqChk[i].value+'"]') != null){
+                            reservationStckNo = document.querySelector('[name="stckNo_'+tempBcktSeqChk[i].value+'"]').value;
+                        }
+                        if(document.querySelector('[name="prdQty_'+tempBcktSeqChk[i].value+'"]') != null){
+                            reservationPrdQty = document.querySelector('[name="prdQty_'+tempBcktSeqChk[i].value+'"]').value;
+                        }
+                        if(document.querySelector('[name="compPrdNo_'+tempBcktSeqChk[i].value+'"]') != null){
+                            reservationCompPrdNo = document.querySelector('[name="compPrdNo_'+tempBcktSeqChk[i].value+'"]').value;
+                        }
+                        if(document.querySelector('[name="compPrdQty_'+tempBcktSeqChk[i].value+'"]') != null){
+                            reservationCompPrdQty = document.querySelector('[name="compPrdQty_'+tempBcktSeqChk[i].value+'"]').value;
+                        }
+                        if(document.querySelector('[name="strNo_'+tempBcktSeqChk[i].value+'"]') != null){
+                            shopBranchNo = document.querySelector('[name="strNo_'+tempBcktSeqChk[i].value+'"]').value;
+                        }
+                        if(document.querySelector('[name="optionNm_'+tempBcktSeqChk[i].value+'"]') != null){
+                            reservationOptionNm = document.querySelector('[name="optionNm_'+tempBcktSeqChk[i].value+'"]').value;
+                        }
+                        if(document.querySelector('[name="optionNo_'+tempBcktSeqChk[i].value+'"]') != null){
+                            reservationOptionNo = document.querySelector('[name="optionNo_'+tempBcktSeqChk[i].value+'"]').value;
+                        }
+                        if(document.querySelector('[name="optionText_'+tempBcktSeqChk[i].value+'"]') != null){
+                            reservationOptionText = document.querySelector('[name="optionText_'+tempBcktSeqChk[i].value+'"]').value;
+                        }
+                        if($("#reservationPrdno").val() == ""){
+                            $("#reservationPrdno").val(tempBcktSeqChk[i].getAttribute('data-prdno'));
+                            $("#reservationStckNo").val(reservationStckNo);
+                            $("#reservationPrdQty").val(reservationPrdQty);
+                            $("#reservationCompPrdNo").val(reservationCompPrdNo);
+                            $("#reservationCompPrdQty").val(reservationCompPrdQty);
+                            $("#reservationShopBranchNo").val(shopBranchNo);
+                            $("#reservationBcktSeq").val(tempBcktSeqChk[i].value);
+                            $("#reservationOptionNm").val(reservationOptionNm);
+                            $("#reservationOptionNo").val(reservationOptionNo);
+                            $("#reservationOptionText").val(reservationOptionText);
+                        }else{
+                            $("#reservationPrdno").val($("#reservationPrdno").val() + "," +tempBcktSeqChk[i].getAttribute('data-prdno'));
+                            $("#reservationStckNo").val($("#reservationStckNo").val() + "," +reservationStckNo);
+                            $("#reservationPrdQty").val($("#reservationPrdQty").val() + "," +reservationPrdQty);
+                            $("#reservationCompPrdNo").val($("#reservationCompPrdNo").val() + "," +reservationCompPrdNo);
+                            $("#reservationCompPrdQty").val($("#reservationCompPrdQty").val() + "," +reservationCompPrdQty);
+                            //$("#reservationShopBranchNo").val($("#reservationShopBranchNo").val() + "," +shopBranchNo);
+                            $("#reservationBcktSeq").val($("#reservationBcktSeq").val() + "," +tempBcktSeqChk[i].value);
+                            if(reservationOptionNm == ""){
+                                reservationOptionNm = encodeURIComponent(" ");
+                                reservationOptionNo = 0;
+                                reservationOptionText = encodeURIComponent(" ");
+                            }
+                            $("#reservationOptionNm").val($("#reservationOptionNm").val() + "," + reservationOptionNm);
+                            $("#reservationOptionNo").val($("#reservationOptionNo").val() + "," + reservationOptionNo);
+                            $("#reservationOptionText").val($("#reservationOptionText").val() + "," + reservationOptionText);
+                        }
+                    }
+
+                }
+
+
+
+            }
+
+            if(ordPrdCnt>20){
+                alert("최대 20개까지 주문 가능합니다.");
+                return;
+            }
+
+            if(!isOnlyMartPrmtPrd){
+                alert("홈플러스 상품 주문시 동일한 상품에 다른 추가구성 상품을 함께 주문할 수 없습니다. 개별상품으로 주문해 주시기 바랍니다.");
+                return;
+            }
+
+            if(deliveryNCnt > 0) {
+                alert("상품정보가 변경된 상품이 있습니다. 다시 장바구니에 담아 주세요.");
+                deliveryNPrdObj.focus();
+                return;
+            }
+
+            if(soldOutCnt>0){
+                if(soldOutCnt==ordPrdCnt){	//품절상품만 있는경우
+                    alert("선택하신 상품은 품절 상품입니다.");
+                    soldOutPrdObj.focus();
+                    return;
+                }else{
+                    if(confirm("품절 상품"+soldOutCnt+"개가 포함되어 있습니다. 품절 상품을 제외하고 주문하시겠습니까?")){
+                        isExceptSoldoutOrd = true;
+                    }else{
+                        soldOutPrdObj.focus();
+                        return;
+                    }
+                }
+            }
+
+            if(snoOptionCnt>0){
+                alert("선택 상품 "+snoOptionCnt+"개의 입력 옵션에 개인정보가 포함되어 있어 주문이 불가합니다.\n입력한 옵션이 개인정보가 아닌 경우 고객센터 1599-0110으로 문의주세요.");
+                snoOptionPrdObj.focus();
+                return;
+            }
+
+            if(isValidCalcOptItemCnt>0){
+                alert("옵션을 다시 선택해주세요.");
+                isValidCalcOptItemPrdObj.focus();
+                return;
+            }
+
+            for(var j = 0; j<tempBcktSeqChk.length; j++){
+
+                if(isExceptSoldoutOrd){	//품절상품 체크해제
+                    if(document.querySelector('[name="soldOut_'+tempBcktSeqChk[j].value+'"]').value == "T"){
+                        tempBcktSeqChk[j].checked = false;
+                    }
+                }
+
+                if(tempBcktSeqChk[j].checked){
+                    tempBcktSeq += tempBcktSeqChk[j].value+",";
+                    tempBcktSeqPipe += tempBcktSeqChk[j].value+"|";
+                }
+            }
+
+            if(isLifePlusPrd){
+
+                // 2016.12.15 mjs : 셀러의 최소구매가능금액 설정여부, 금액 조회
+                if(!checkMinBuyAmtInfBySeller(tempBcktSeqPipe)) {
+                    return;
+                }
+
+                //생활+ 예약으로 이동
+                var reservationForm = document.reservationForm;
+                reservationForm.action = "https://m.11st.co.kr/MW/lifeplus/Order/reservation/lifePlusRsrvForm.tmall";
+                reservationForm.submit();
+                return;
+            }
+
+            if(isMart && isMart == "Y") obj.martBcktSeq.value = tempBcktSeq;
+            else obj.bcktSeq.value = tempBcktSeq;
+            obj.action = "https://buy.m.11st.co.kr/MW/Order/orderBasicFirstStep.tmall";
+            
+
+            if(agreeOrderMakePrd>0){
+                mwUI.layerPop('guideLayer','no');
+            }else{
+                orderSubmit();
+            }
+        }
+
+
+        //전체상품 주문하기, 선택상품 주문하기.
+        function goToOrderBasic(type, sellerCheckKeyCnt){
+
+            var obj = document.actionForm;
+            var tempBcktSeq = ""; //장바구니 번호 컴마 구분자로 붙혀서 담는 변수
+            var tempBcktSeqPipe = ""; // 장바구니 번호 파이프 구분자로 붙혀서 담는 변수
+            var tempMartBcktSeq = ""; //장바구니 번호 컴마 구분자로 붙혀서 담는 변수
+            var tempBcktSeqChk ="";
+
+            var checkCnt = 0;	//체크상품수
+            var soldOutCnt = 0; //품절상품
+            var agreeOrderMakePrd = 0;	//주문제작상품
+            var soldOutPrdObj = "";
+            var isExceptSoldoutOrd = false;	//품절제외 주문여부
+            var deliveryNCnt = 0; // 마트 주문불가상품
+            var deliveryNPrdObj = "";
+            var snoOptionCnt = 0; // 주민번호 직업입력 옵션 상품
+            var snoOptionPrdObj = "";
+
+            var firstMartAddrNo = "";
+            var isOnlyMartAddrNo = true;
+            var isOnlyMartPrmtPrd = true;
+            var isExcCatePrd = false;
+            var martPrmtMap = new HashMap();
+            var tmpPrdno = "";
+
+            var isValidCalcOptItemCnt = 0;  //계산형옵션 옵션오류건
+            var isValidCalcOptItemPrdObj ="";
+
+            var lifePlusPrdCnt =  0;
+            var dlvGroup = "";
+            var isLifePlusPrd = false;
+            for(var i = 0; i<sellerCheckKeyCnt; i++){
+                tempBcktSeqChk =document.querySelectorAll('[name="bcktSeqChk'+i+'"]');
+                for(var j=0; j<tempBcktSeqChk.length; j++){ //묶음배송 하나에 대한 하위 체크박스 체크여부 체크.
+                    if((type=="Checked" && tempBcktSeqChk[j].checked) || type=="All"){
+                        checkCnt++;
+                        //주문제작상품
+                        if(document.querySelector('[name="agreeOrderMakePrdYN_'+tempBcktSeqChk[j].value+'"]').value == "N"){
+                            agreeOrderMakePrd++;
+                        }
+
+                        //카테고리 상품 주문 제한
+                        if(tempBcktSeqChk[j].getAttribute('data-prdtypcd') &&tempBcktSeqChk[j].getAttribute('data-prdtypcd')=="19" ){
+                            isExcCatePrd = true;
+                        }
+
+                        //마트상품 주문 제한
+                        if(tempBcktSeqChk[j].getAttribute('data-ismart') && tempBcktSeqChk[j].getAttribute('data-ismart') == "Y"){
+                            //프로모션 상품
+                            tmpPrdno=tempBcktSeqChk[j].getAttribute('data-prdno');
+                            if(martPrmtMap.get(tmpPrdno) ==undefined){
+                                martPrmtMap.put(tmpPrdno,tempBcktSeqChk[j].getAttribute('data-martprmtseq') );
+                            }else{
+                                if(tempBcktSeqChk[j].getAttribute('data-martprmtseq') != martPrmtMap.get(tmpPrdno)){
+                                    isOnlyMartPrmtPrd = false;
+                                }
+                            }
+
+                            //다른 배송지 주문 제한
+                            if(firstMartAddrNo==""){
+                                firstMartAddrNo = tempBcktSeqChk[j].getAttribute('data-martaddrno');
+                            }else{
+                                if(firstMartAddrNo !=tempBcktSeqChk[j].getAttribute('data-martaddrno')){
+                                    isOnlyMartAddrNo = false;
+                                }
+                            }
+                        }
+
+                        //묶음상품 품절 체크
+                        if(document.querySelector('[name="soldOut_'+tempBcktSeqChk[j].value+'"]').value == "T"){
+                            if(soldOutCnt==0) soldOutPrdObj = tempBcktSeqChk[j];
+                            soldOutCnt++;
+                        } else if(document.querySelector('[name="deliveryYn_'+tempBcktSeqChk[j].value+'"]') && document.querySelector('[name="deliveryYn_'+tempBcktSeqChk[j].value+'"]').value == "N") {
+                            if(deliveryNCnt==0) deliveryNPrdObj=tempBcktSeqChk[j];
+                            deliveryNCnt++;
+                        } else if(document.querySelector('[name="snoOptionYN_'+tempBcktSeqChk[j].value+'"]')) {
+                            if(snoOptionCnt==0) snoOptionPrdObj = tempBcktSeqChk[j];
+                            snoOptionCnt++;
+                        } else if(document.querySelector('[name="isValidCalcOptItem_'+tempBcktSeqChk[j].value+'"]')) {
+                            if(isValidCalcOptItemCnt==0) isValidCalcOptItemPrdObj = tempBcktSeqChk[j];
+                            isValidCalcOptItemCnt++;
+                        } else{
+                            if(tempBcktSeqChk[j].getAttribute('data-ismart') && tempBcktSeqChk[j].getAttribute('data-ismart') == "Y") {
+                                tempMartBcktSeq += tempBcktSeqChk[j].value+",";
+                            } else {
+                                tempBcktSeq += tempBcktSeqChk[j].value+",";
+                                tempBcktSeqPipe += tempBcktSeqChk[j].value+"|";
+                            }
+                        }
+
+                        if(tempBcktSeqChk[j].getAttribute('data-prdtypcd')==35 || tempBcktSeqChk[j].getAttribute('data-prdtypcd')==36 || tempBcktSeqChk[j].getAttribute('data-prdtypcd')==37){
+                            lifePlusPrdCnt++;
+                            if(dlvGroup == ""){
+                                dlvGroup = document.querySelector('[name="dlvGroup_'+tempBcktSeqChk[j].value+'"]').value;
+                            }else if(dlvGroup != document.querySelector('[name="dlvGroup_'+tempBcktSeqChk[j].value+'"]').value){
+                                isLifePlusPrd = true;
+                            }
+
+                            var reservationStckNo = "";
+                            var reservationPrdQty = "";
+                            var reservationCompPrdNo = "";
+                            var reservationCompPrdQty = "";
+                            var shopBranchNo = "";
+                            if(document.querySelector('[name="stckNo_'+tempBcktSeqChk[j].value+'"]') != null){
+                                reservationStckNo = document.querySelector('[name="stckNo_'+tempBcktSeqChk[j].value+'"]').value;
+                            }
+                            if(document.querySelector('[name="prdQty_'+tempBcktSeqChk[j].value+'"]') != null){
+                                reservationPrdQty = document.querySelector('[name="prdQty_'+tempBcktSeqChk[j].value+'"]').value;
+                            }
+                            if(document.querySelector('[name="compPrdNo_'+tempBcktSeqChk[j].value+'"]') != null){
+                                reservationCompPrdNo = document.querySelector('[name="compPrdNo_'+tempBcktSeqChk[j].value+'"]').value;
+                            }
+                            if(document.querySelector('[name="compPrdQty_'+tempBcktSeqChk[j].value+'"]') != null){
+                                reservationCompPrdQty = document.querySelector('[name="compPrdQty_'+tempBcktSeqChk[j].value+'"]').value;
+                            }
+                            if(document.querySelector('[name="strNo_'+tempBcktSeqChk[j].value+'"]') != null){
+                                shopBranchNo = document.querySelector('[name="strNo_'+tempBcktSeqChk[j].value+'"]').value;
+                            }
+                            if($("#reservationPrdno").val() == ""){
+                                $("#reservationPrdno").val(tempBcktSeqChk[j].getAttribute('data-prdno'));
+                                $("#reservationStckNo").val(reservationStckNo);
+                                $("#reservationPrdQty").val(reservationPrdQty);
+                                $("#reservationCompPrdNo").val(reservationCompPrdNo);
+                                $("#reservationCompPrdQty").val(reservationCompPrdQty);
+                                $("#reservationShopBranchNo").val(shopBranchNo);
+                                $("#reservationBcktSeq").val(tempBcktSeqChk[j].value);
+                            }else{
+                                $("#reservationPrdno").val($("#reservationPrdno").val() + "," +tempBcktSeqChk[j].getAttribute('data-prdno'));
+                                $("#reservationStckNo").val($("#reservationStckNo").val() + "," +reservationStckNo);
+                                $("#reservationPrdQty").val($("#reservationPrdQty").val() + "," +reservationPrdQty);
+                                $("#reservationCompPrdNo").val($("#reservationCompPrdNo").val() + "," +reservationCompPrdNo);
+                                $("#reservationCompPrdQty").val($("#reservationCompPrdQty").val() + "," +reservationCompPrdQty);
+                                //$("#reservationShopBranchNo").val($("#reservationShopBranchNo").val() + "," +shopBranchNo);
+                                $("#reservationBcktSeq").val($("#reservationBcktSeq").val() + "," +tempBcktSeqChk[j].value);
+                            }
+                        }
+                    }
+                }
+            }
+
+            if(checkCnt == 0){
+                alert("상품이 선택되지 않았습니다. \n 상품 선택 후 주문하세요.");
+                return;
+            }
+
+            if(checkCnt > 20){
+                alert("최대 20개까지 주문 가능합니다.");
+                return;
+            }
+
+            if(!isOnlyMartPrmtPrd){
+                alert("홈플러스 상품 주문시 동일한 상품에 다른 추가구성 상품을 함께 주문할 수 없습니다. 개별상품으로 주문해 주시기 바랍니다.");
+                return;
+            }
+
+            if(!isOnlyMartAddrNo){
+                alert("지점 배송상품은 하나의 배송지로만 주문이 가능합니다. 동일한 지점 상품만 선택하여 주문해 주세요.");
+                return;
+            }
+
+            if(firstMartAddrNo!="" && isExcCatePrd){
+                alert("홈플러스와 GS슈퍼상품은 무형 상품과 함께 주문할 수 없습니다.");
+                return;
+            }
+
+            if(deliveryNCnt > 0){
+                alert("상품정보가 변경되었습니다. 다시 장바구니에 담아주세요.");
+                deliveryNPrdObj.focus();
+                return;
+            }
+
+            if(soldOutCnt>0){
+                if(soldOutCnt==checkCnt){
+                    alert("선택하신 상품은 품절 상품입니다.");
+                    soldOutPrdObj.focus();
+                    return;
+                }else{
+                    if(confirm("품절 상품"+soldOutCnt+"개가 포함되어 있습니다. 품절 상품을 제외하고 주문하시겠습니까?")){
+                        isExceptSoldoutOrd = true;
+                    }else{
+                        soldOutPrdObj.focus();
+                        return;
+                    }
+                }
+            }
+
+            if(snoOptionCnt>0){
+                alert("선택 상품 "+snoOptionCnt+"개의 입력 옵션에 개인정보가 포함되어 있어 주문이 불가합니다.\n입력한 옵션이 개인정보가 아닌 경우 고객센터 1599-0110으로 문의주세요.");
+                snoOptionPrdObj.focus();
+                return;
+            }
+
+            if(isValidCalcOptItemCnt>0){
+                alert("옵션을 다시 선택해주세요.");
+                isValidCalcOptItemPrdObj.focus();
+                return;
+            }
+
+            if(checkCnt != lifePlusPrdCnt && lifePlusPrdCnt > 0){
+                alert("생활플러스 상품과 배송상품은 동시 구매하실 수 없습니다.")
+                return;
+            }
+            if(isLifePlusPrd){
+                alert("다른 판매자, 다른 서비스 유형 상품은 동시 구매할 수 없습니다.")
+                return;
+            }
+            obj.bcktSeq.value = tempBcktSeq;
+            obj.martBcktSeq.value = tempMartBcktSeq;
+            obj.action = "https://buy.m.11st.co.kr/MW/Order/orderBasicFirstStep.tmall";
+            
+
+            if(lifePlusPrdCnt > 0){
+                // 2016.12.15 mjs : 셀러의 최소구매가능금액 설정여부, 금액 조회
+                if(!checkMinBuyAmtInfBySeller(tempBcktSeqPipe)) {
+                    return;
+                }
+
+                //생활+ 예약으로 이동
+                var reservationForm = document.reservationForm;
+                reservationForm.action = "https://m.11st.co.kr/MW/lifeplus/Order/reservation/lifePlusRsrvForm.tmall";
+                reservationForm.submit();
+                return;
+            }
+            if(agreeOrderMakePrd>0){
+                mwUI.layerPop('guideLayer','no');
+            }else{
+                orderSubmit();
+            }
+        }
+
+        var _isBookGiftPlus = false;
+        //선택상품 계산
+        function calSelectedPrds(){
+            var frm = document.actionForm;
+            var bcktDlvType = ""; 	//B: 묶음, E:개별
+            var bcktSeqArr = "";
+            var sellerKey = -1;
+
+            var totOrdAmt = 0; 		//주문금액k
+            var totPrdAmt = 0; 			//상품금액
+            var totPreStlDlvAmt = 0; 	//선결제배송비
+            var totDscAmt = 0; 			//할인금액
+            var totDlvCupnDscAmt = 0; 	//배송비쿠폰할인금액
+            var abrdDlvAmt = 0; //해외배송비
+            var sumAbrdDlvAmt = 0;	//해외배송비 합계
+            var abrdDlvChecked = false; 	//해외배송비 재계산여부
+
+            var sumSellerOcb = 0;			// 셀러적립 OCB
+            var sumOcbAddEvlSaveAmt = 0; //OCb 추가적립
+            var opntSaveRt = 0; 		//Oh point 적립율
+            var sumMallPntAmt = 0;			// 몰 포인트
+            var sumBonusPntSaveAmt = 0;	// 보너스포인트
+            var sumMileSaveAmt = 0;		// 마일리지
+            var sumMileageSellerAmt = 0;	//셀러적립 마일리지
+            var sumShockingEvlOcbSaveAmt =0;		//쇼킹딜 OCB추가적립(구매후기 작성시)
+            var isZeroDlvAmt = false;
+            var sumEmergencyPointSaveAmt = 0;	// 추가보너스포인트
+            var checkPreStlDlvAmtTmp = 0;  // 이전 배송비
+            var checkDlvSellerKeyTmp = ""; // 이전 셀러키
+
+            for(var i=0; i<_totalPrdCount; i++){
+                if(document.getElementById("bcktUniqueId"+i).checked){
+                    var bcktSeq = document.getElementById("bcktUniqueId"+i).value;
+                    bcktSeqArr += bcktSeq+",";
+
+                    totPrdAmt += parseInt(document.getElementById("checkPrdAmt_"+i).value);
+                    totDscAmt += parseInt(document.getElementById("checkDscAmt_"+i).value);
+                    totDlvCupnDscAmt += parseInt(document.getElementById("checkDlvCupnDscAmt_"+i).value);
+
+                    //적립혜택
+                    sumSellerOcb += parseInt(document.getElementById("checkOcbSellerAmt_"+i).value);
+                    sumOcbAddEvlSaveAmt += parseInt(document.getElementById("checkOcbAddEvlSaveAmt_"+i).value);
+
+                    var curOpntSaveRt = parseFloat(document.getElementById("checkOpntSaveRt_"+i).value);
+                    if(curOpntSaveRt > opntSaveRt){
+                        opntSaveRt = curOpntSaveRt;
+                    }
+
+                    sumMallPntAmt += parseInt(document.getElementById("checkMallPntAmt_"+i).value);
+                    sumBonusPntSaveAmt += parseInt(document.getElementById("checkBonusPointSaveAmt_"+i).value);
+                    sumMileSaveAmt +=parseInt(document.getElementById("checkMileSaveAmt_"+i).value);
+                    sumMileageSellerAmt += parseInt(document.getElementById("checkMileageSellerAmt_"+i).value);
+                    sumShockingEvlOcbSaveAmt += parseInt(document.getElementById("checkShockingEvlOcbSaveAmt_"+i).value);
+                    sumEmergencyPointSaveAmt += parseInt(document.getElementById("checkEmergencyPointSaveAmt_"+i).value);
+
+                    if(document.getElementById("checkDlvCstInstBasiCd_"+i).value == "10"){	//해외통합배송비
+                        abrdDlvChecked = true;
+                        if(sellerKey == document.getElementById("checkDlvSellerKey_"+i).value){	//묶음배송비 계산
+                            if(!isZeroDlvAmt && abrdDlvAmt<document.getElementById("checkPreStlDlvAmt_"+i).value){
+                                if(document.getElementById("checkDlvWay_"+i).value =="01"){
+                                    abrdDlvAmt = document.getElementById("checkPreStlDlvAmt_"+i).value;
+                                }else{
+                                    abrdDlvAmt = 0;
+                                }
+                            }else{
+                                abrdDlvAmt = 0;
+                            }
+                            if(document.getElementById("checkPreStlDlvAmt_"+i).value == 0){
+                                abrdDlvAmt = 0;
+                                isZeroDlvAmt = true;
+                            }
+                        }else{
+                            isZeroDlvAmt = false;
+                            if(document.getElementById("checkPreStlDlvAmt_"+i).value == 0){
+                                dlvAmt = 0;
+                                isZeroDlvAmt = true;
+                            }else if(document.getElementById("checkDlvWay_"+i).value == "01"){
+                                abrdDlvAmt = document.getElementById("checkPreStlDlvAmt_"+i).value;
+                            }else{
+                                abrdDlvAmt = 0;
+                            }
+                        }
+                        sumAbrdDlvAmt +=parseInt(abrdDlvAmt);
+                    }else{	//선결제 배송비
+                        if(sellerKey == document.getElementById("checkDlvSellerKey_"+i).value){	//묶음배송비 계산
+                            if(document.getElementById("checkDlvWay_"+i).value == "02"){
+                                dlvAmt = 0;
+                            }else{
+                                if(!isZeroDlvAmt && checkPreStlDlvAmtTmp < document.getElementById("checkPreStlDlvAmt_"+i).value){
+                                    if(document.getElementById("checkDlvWay_"+i).value =="01"){
+                                        dlvAmt = document.getElementById("checkPreStlDlvAmt_"+i).value;
+                                    }else{
+                                        dlvAmt = 0;
+                                    }
+                                }else{
+                                    dlvAmt = 0;
+                                }
+                                if(document.getElementById("checkPreStlDlvAmt_"+i).value == 0){
+                                    if(document.getElementById("checkDlvSellerKey_"+i).value == checkDlvSellerKeyTmp && document.getElementById("checkDlvWay_"+i).value == "01"){
+                                        totPreStlDlvAmt = totPreStlDlvAmt - checkPreStlDlvAmtTmp;
+                                    }
+                                    dlvAmt = 0;
+                                    isZeroDlvAmt = true;
+                                }
+                            }
+                        }else{
+                            isZeroDlvAmt = false;
+                            if(document.getElementById("checkPreStlDlvAmt_"+i).value == 0){
+                                dlvAmt = 0;
+                                isZeroDlvAmt = true;
+                            }else if(document.getElementById("checkDlvWay_"+i).value == "01"){
+                                dlvAmt = document.getElementById("checkPreStlDlvAmt_"+i).value;
+                            }else{
+                                dlvAmt = 0;
+                            }
+                        }
+                        if(document.getElementById("checkDlvWay_"+i).value == "02"){
+                            checkPreStlDlvAmtTmp = 0;
+                        }else{
+                            checkPreStlDlvAmtTmp = document.getElementById("checkPreStlDlvAmt_"+i).value;
+                        }
+                        checkDlvSellerKeyTmp = document.getElementById("checkDlvSellerKey_"+i).value;
+                        totPreStlDlvAmt += parseInt(dlvAmt);
+                    }
+                    sellerKey = document.getElementById("checkDlvSellerKey_"+i).value;
+                }
+            }
+
+            //해외배송비 재계산
+            try {
+                if(abrdDlvChecked){
+                    var url = "http://buy.m.11st.co.kr/MW/Cart/getCalcDlvCstAjax.tmall";
+                    var param = "bcktSeq="+bcktSeqArr;
+
+                    fn_getValueByAjax(url,
+                        "POST",
+                        param,
+                        false,
+                        function(jsonData){
+                            var data = eval('(' + jsonData + ')');
+                            if(data.rsCd == "SUCCESS") {
+                                if(parseInt(data.isdlvCst)>0) sumAbrdDlvAmt= data.isdlvCst;
+                            }
+                        }, "text");
+                }
+            } catch (e) {}
+
+            if(sumAbrdDlvAmt>0) totPreStlDlvAmt += sumAbrdDlvAmt;
+
+            totOrdAmt = totPrdAmt + totPreStlDlvAmt;
+
+            totalOrderAmount.innerText = formatToCommaNum(totOrdAmt);
+            totalDscAmount.innerText = formatToCommaNum(totDscAmt+totDlvCupnDscAmt);
+            finalOrderExpectAmount.innerText= formatToCommaNum(totOrdAmt - totDscAmt - totDlvCupnDscAmt);
+
+            //적립혜택
+            //OCB적립
+            _isBookGiftPlus = false;
+            if(document.getElementById("displayOcbSellerSaveAmt")){
+                var tempStr = "<b>"+formatToCommaNum(sumSellerOcb+sumShockingEvlOcbSaveAmt)+"P</b>";
+                if(sumOcbAddEvlSaveAmt>0 || opntSaveRt>0 || sumMallPntAmt>0 || sumBonusPntSaveAmt>0 || sumMileSaveAmt>0 || sumMileageSellerAmt>0 || sumEmergencyPointSaveAmt>0){
+                    tempStr += " + ";
+                }
+                document.getElementById("sumOcbSellerSaveAmt").innerHTML = tempStr;
+                if(sumSellerOcb+sumShockingEvlOcbSaveAmt>0){
+                    document.getElementById("displayOcbSellerSaveAmt").style.display = "";
+                    _isBookGiftPlus = true;
+                }else{
+                    document.getElementById("displayOcbSellerSaveAmt").style.display = "none";
+                }
+            }
+            //OCB추가적립
+            if(document.getElementById("displayOcbAddEvlSaveAmt")){
+                if(sumOcbAddEvlSaveAmt>parseInt(_ocbAddEvlLimitAmt)){
+                    sumOcbAddEvlSaveAmt = _ocbAddEvlLimitAmt;
+                }
+
+                var tempStr = "<b>"+formatToCommaNum(sumOcbAddEvlSaveAmt)+"P</b>";
+                if(opntSaveRt>0 || sumMallPntAmt>0 || sumBonusPntSaveAmt>0 || sumMileSaveAmt>0 || sumMileageSellerAmt>0 || sumEmergencyPointSaveAmt>0){
+                    tempStr += " + ";
+                }
+
+                document.getElementById("sumOcbAddEvlSaveAmt").innerHTML = tempStr;
+                if(sumOcbAddEvlSaveAmt>0){
+                    document.getElementById("displayOcbAddEvlSaveAmt").style.display = "";
+                    _isBookGiftPlus = true;
+                }else{
+                    document.getElementById("displayOcbAddEvlSaveAmt").style.display = "none";
+                }
+            }
+            //Oh!Point
+            if(document.getElementById("displayOpntAmt")){
+                var tempStr = "<b>"+formatToCommaNum(opntSaveRt)+"%</b>";
+                if(sumMallPntAmt>0 || sumBonusPntSaveAmt>0 || sumMileSaveAmt>0 || sumMileageSellerAmt>0 || sumEmergencyPointSaveAmt>0){
+                    tempStr += " + ";
+                }
+
+                document.getElementById("sumOpntAmt").innerHTML = tempStr;
+                if(opntSaveRt>0){
+                    document.getElementById("displayOpntAmt").style.display = "";
+                    _isBookGiftPlus = true;
+                }else{
+                    document.getElementById("displayOpntAmt").style.display = "none";
+                }
+            }
+            //몰포인트
+            if(document.getElementById("displayMallPntAmt")){
+                var tempStr = "<b>"+formatToCommaNum(sumMallPntAmt)+"P</b>";
+                if(sumBonusPntSaveAmt>0 || sumMileSaveAmt>0 || sumMileageSellerAmt>0 || sumEmergencyPointSaveAmt>0){
+                    tempStr += " + ";
+                }
+                document.getElementById("sumMallPntAmt").innerHTML = tempStr;
+                if(sumMallPntAmt>0){
+                    document.getElementById("displayMallPntAmt").style.display = "";
+                    _isBookGiftPlus = true;
+                }else{
+                    document.getElementById("displayMallPntAmt").style.display = "none";
+                }
+            }
+            //보너스포인트
+            if(document.getElementById("displayBonusPntSaveAmt")){
+                var tempStr = "<b>"+formatToCommaNum(sumBonusPntSaveAmt)+"P</b>";
+                if(sumMileSaveAmt>0 || sumMileageSellerAmt>0 || sumEmergencyPointSaveAmt>0){
+                    tempStr += " + ";
+                }
+                document.getElementById("sumBonusPntSaveAmt").innerHTML = tempStr;
+                if(sumBonusPntSaveAmt>0){
+                    document.getElementById("displayBonusPntSaveAmt").style.display = "";
+                    _isBookGiftPlus = true;
+                }else{
+                    document.getElementById("displayBonusPntSaveAmt").style.display = "none";
+                }
+            }
+            //추가보너스포인트
+            if(document.getElementById("displayEmergencyPointSaveAmt")){
+                var tempStr = "<b>"+formatToCommaNum(sumEmergencyPointSaveAmt)+"P</b>";
+                if(sumMileSaveAmt>0 || sumMileageSellerAmt>0){
+                    tempStr += " + ";
+                }
+                document.getElementById("sumEmergencyPointSaveAmt").innerHTML = tempStr;
+                if(sumEmergencyPointSaveAmt>0){
+                    document.getElementById("displayEmergencyPointSaveAmt").style.display = "";
+                    _isBookGiftPlus = true;
+                }else{
+                    document.getElementById("displayEmergencyPointSaveAmt").style.display = "none";
+                }
+            }
+            //마일리지
+            if(document.getElementById("displayMileSaveAmt")){
+                var tempStr = "<b>"+formatToCommaNum(sumMileSaveAmt+sumMileageSellerAmt)+"마일</b>";
+                document.getElementById("sumMileSaveAmt").innerHTML = tempStr;
+                if(sumMileSaveAmt+sumMileageSellerAmt>0){
+                    document.getElementById("displayMileSaveAmt").style.display = "";
+                    _isBookGiftPlus = true;
+                }else{
+                    document.getElementById("displayMileSaveAmt").style.display = "none";
+                }
+            }
+
+            
+        }
+
+
+        //숫자에 , 넣기.
+        function formatToCommaNum(x){
+
+            var txtNumber = '' + x;
+            if (isNaN(txtNumber) || txtNumber == "") {
+                alert("숫자만 입력 하세요");
+                fieldName.select();
+                fieldName.focus();
+            }
+            else {
+                var rxSplit = new RegExp('([0-9])([0-9][0-9][0-9][,.])');
+                var arrNumber = txtNumber.split('.');
+                arrNumber[0] += '.';
+                do {
+                    arrNumber[0] = arrNumber[0].replace(rxSplit, '$1,$2');
+                } while (rxSplit.test(arrNumber[0]));
+                if (arrNumber.length > 1) {
+                    return arrNumber.join('');
+                }
+                else {
+                    return arrNumber[0].split('.')[0];
+                }
+            }
+        }
+
+        function numbersOnly(e, decimal) {
+            var key;
+            var keychar;
+
+            if (window.event) {
+                key = window.event.keyCode;
+            } else if (e) {
+                key = e.which;
+            } else {
+                return true;
+            }
+
+            keychar = String.fromCharCode(key);
+            if ((key == null) || (key == 0) || (key == 8) || (key == 9) || (key == 13)
+                || (key == 27)) {
+                return true;
+            } else if ((("0123456789").indexOf(keychar) > -1)) {
+                return true;
+            } else if (decimal && (keychar == ".")) {
+                return true;
+            } else
+                return false;
+            //<input type="text" onKeyPress="return numbersOnly(event, false)"/>
+        }
+
+        //숫자 포커스를 맨 끝으로 이동
+        function _setNumFocus(obj){
+            var _name = obj.name;
+            var id_value=obj.value.replace(/[^(\d)]/gi,"");
+            eval("document.actionForm."+_name).value = id_value;
+
+            // 0값은 우측 끝, 1값은 우측 끝에서 한칸 좌측으로 이동된 포커스 위치를 말합니다.
+            setRightFocus(eval("document.actionForm."+_name), 0); // 우측끝으로 포커스를 위치시킵니다.
+        }
+
+        function setRightFocus(pThis, pPos) {
+            var lThis;
+            lThis = pThis;
+            if(typeof pThis == "string") {
+                lThis = document.getElementById(pThis);
+            }
+            pPos = lThis.value.length-pPos;
+            if(lThis.setSelectionRange) {
+                lThis.focus();
+                lThis.setSelectionRange(pPos,pPos);
+            }
+        }
+
+        //리스트 보여주기
+        function responseHtml(data, objId) {
+            document.getElementById(objId).innerHTML = data;// 리스트 보여주기
+        }// 응답
+
+        function callYes24DlvExpct(objId, param, btnObj){
+            lyrObj = document.getElementById(objId);
+            if(lyrObj.style.display == "block") {
+                mwUI.layerToggle(objId, btnObj, 'lyw');
+            } else {
+                try {
+                    param= param+ "&mailNo=&arr=";
+                    var yes24DlvExpctApiUrl = "http://buy.m.11st.co.kr/MW/Cart/getYes24ArriveExpctDayAjax_2013.tmall";
+                    //alert(yes24DlvExpctApiUrl+param);
+                    fn_getValueByAjax(yes24DlvExpctApiUrl+param,
+                        "POST",
+                        "",
+                        false,
+                        function(jsonData){
+                            var data = eval('(' + jsonData + ')');
+                            responseHtml(data.list, objId);
+                            mwUI.layerToggle(objId, btnObj, 'lyw');
+                        },
+                        "text");
+                    return true;
+
+                } catch ( err ) {}
+            }
+        }
+
+        //div열기
+        function helpClose(self){
+            self.parentNode.style.display='none';
+        }
+
+        window.onload = function () {
+            setLogin();
+            if(document.location.hash!=null && ""!=document.location.hash){
+                document.location.assign( document.location.hash );
+            }else{
+                if(parseInt(_totalPrdCount)==0){
+                    document.getElementById("allselect").disabled = true;
+                }else{
+                    document.getElementById("allselect").disabled = false;
+                    selectAllChk('load'); //전체선택
+                }
+                setTimeout(function() {
+                    window.scrollTo(0, 1)
+                }, 100);
+            }
+        }
+        
+        window.addEventListener("load", fixBtnLayer, false); // 버튼레이어
+        
+        window.addEventListener("load", function(){mwUI.tabs('typeChange')}, false); // tab
+
+        function fixBtnLayer(){
+            var copyLayer = document.getElementById('cartBtn').cloneNode(true);
+            copyLayer.id = 'cartBtns';
+            copyLayer.className += " fixed";
+            document.getElementById('order').insertBefore(copyLayer, undefined);
+            setTimeout(function() {
+                mwUI.fixLayer.startView('cartBtns','cartBtn');
+            }, 300);
+
+        }
+
+        //옵션변경레이어 관련 스크립트
+        var popLayerUserAgent = navigator.userAgent.toLowerCase();
+        window.addEventListener("load", function(){
+            if ((popLayerUserAgent.indexOf("android 1") > -1)
+                || (popLayerUserAgent.indexOf("android 2") > -1)
+                || (popLayerUserAgent.indexOf("android 3") > -1)
+                || (popLayerUserAgent.indexOf("android 4.0") > -1)
+                || (popLayerUserAgent.indexOf("iphone") > -1)
+                || (popLayerUserAgent.indexOf("ipad") > -1)
+            ){
+                if(popLayer) popLayer.popType = false;
+                if(popLayer) popLayer.aniType = false;
+            }
+        }, false);
+
+        var myScroll = null;
+        var popLayer = {
+            layer : '', //layer
+            pageYOffset : 0,
+            diff : 0,
+            popType : true,
+            aniType : true,
+            aniTime : 400,
+            size : function() {
+                //size & position
+                var self = popLayer,
+                    winHeight = window.innerHeight,
+                    layerHeight = self.layer.offsetHeight,
+                    layerCont = self.layer.getElementsByClassName('pop_con')[0],
+                    openTop = 0,
+                    openHeight = 'auto';
+
+                layerCont.style.height = openHeight;
+                layerHeight = self.layer.offsetHeight;
+                if(winHeight < layerHeight) {
+                    openTop = window.pageYOffset - getPos(self.layer);
+                    openHeight = winHeight - self.diff + 'px'
+                } else {
+                    openTop = window.pageYOffset + (winHeight - layerHeight)/2 - getPos(self.layer);
+                }
+                self.layer.style.top = openTop + 'px';
+                layerCont.style.height = openHeight;
+
+                function getPos(obj){
+                    var objPos = 0;
+                    if(obj.offsetParent){
+                        var objParent = obj.offsetParent;
+                        while (objParent.offsetParent) {
+                            objPos += objParent.offsetTop;
+                            objParent = objParent.offsetParent;
+                        };
+                    }
+                    return objPos;
+                }
+            },
+            sizeSimple : function() {
+                //size & position
+                var self = popLayer,
+                    winHeight = window.innerHeight,
+                    layerCont = self.layer.getElementsByClassName('pop_con')[0],
+                    openHeight = 'auto';
+
+                layerCont.style.height = 'auto';
+                var layerHeight = self.layer.offsetHeight;
+                if(winHeight >= layerHeight) {
+                    openHeight = winHeight - self.diff + 'px';
+                }
+                layerCont.style.height = openHeight;
+            },
+            openAnimation : function() {
+                var self = popLayer;
+                self.layer.style.webkitTransform = self.layer.style.Transform = 'translateX(100%)';
+                setTimeout(function() {
+                    self.layer.style.webkitTransitionDuration = self.layer.style.transitionDuration = self.aniTime + 'ms';
+                    self.layer.style.webkitTransform = self.layer.style.Transform = 'translateX(0%)';
+                }, 100);
+
+                self.layer.addEventListener('webkitTransitionEnd', openEnd, false);
+                self.layer.addEventListener('transitionEnd', openEnd, false);
+
+                function openEnd() {
+                    self.layer.style.webkitTransitionDuration = self.layer.style.transitionDuration = '';
+                    self.layer.style.webkitTransform = self.layer.style.Transform = '';
+                    self.layer.removeEventListener('webkitTransitionEnd', openEnd, false);
+                    self.layer.removeEventListener('transitionEnd', openEnd, false);
+                }
+            },
+            open : function() {
+                this.pageYOffset = window.pageYOffset;
+
+                this.layer.style.display = 'block';
+                if(this.popType) {
+                    document.body.className += ' optType';
+                    this.size();
+                    window.addEventListener('resize', popLayer.size, false);
+                    window.addEventListener('scroll', popLayer.size, false);
+
+                    //iscroll
+                    var scrollArea = this.layer.getElementsByClassName('pop_con')[0];
+                    scrollArea.id = 'optScroll';
+                    myScroll = new IScroll('#optScroll', {
+                        //click: true,
+                        scrollbars: true,
+                        fadeScrollbars: false //true
+                    });
+                    this.layer.addEventListener('touchmove', function(e) { e.preventDefault(); }, false);
+                } else {
+                    document.getElementById('wrap').style.display = 'none';
+                    this.layer.style.position = 'relative';
+                    this.sizeSimple();
+                    window.addEventListener('resize', popLayer.sizeSimple, false);
+                    window.scrollTo(0,5);
+                }
+                if(this.popType && this.aniType) {this.openAnimation();}
+
+                //back
+                var back = document.createElement("div"),
+                    wrap = document.getElementById('wrap');
+                back.id = "back";
+                document.body.insertBefore(back, wrap);
+                back.style.display = 'block';
+                back.addEventListener('touchmove', function(e) { e.preventDefault(); }, false);
+                back.addEventListener('click', function(e) { popLayer.close(); }, false);
+            },
+            closeAnimation : function() {
+                var self = popLayer;
+                self.layer.style.webkitTransform = self.layer.style.Transform = 'translateX(0%)';
+                setTimeout(function() {
+                    self.layer.style.webkitTransitionDuration = self.layer.style.transitionDuration = self.aniTime + 'ms';
+                    self.layer.style.webkitTransform = self.layer.style.Transform = 'translateX(100%)';
+                }, 100);
+                self.layer.addEventListener('webkitTransitionEnd', popLayer.closeEnd, false);
+                self.layer.addEventListener('transitionEnd', popLayer.closeEnd, false);
+            },
+            closeEnd : function() {
+                var self = popLayer;
+                //back
+                var back = document.getElementById('back');
+                document.body.removeChild(back);
+                document.body.className = document.body.className.replace(' optType', '');
+
+                //animation end
+                if(self.popType && self.aniType) {
+                    self.layer.style.webkitTransitionDuration = self.layer.style.transitionDuration = '';
+                    self.layer.style.webkitTransform = self.layer.style.Transform = '';
+                    self.layer.removeEventListener('webkitTransitionEnd', popLayer.closeEnd, false);
+                    self.layer.removeEventListener('transitionEnd', popLayer.closeEnd, false);
+                }
+
+                self.layer.style.display = 'none';
+            },
+            close : function() {
+                if(this.popType && this.aniType) {
+                    this.closeAnimation();
+                } else {
+                    this.closeEnd();
+                }
+                if(!this.popType) {
+                    document.getElementById('wrap').style.display = '';
+                    window.removeEventListener('resize', popLayer.sizeSimple, false);
+                } else {
+                    if(myScroll != null){
+                        myScroll.destroy();
+                        myScroll = null;
+                        this.layer.getElementsByClassName('pop_con')[0].id = '';
+                    }
+                    window.removeEventListener('resize', popLayer.size, false);
+                    window.removeEventListener('scroll', popLayer.size, false);
+                }
+            }
+        }
+
+        if("onhashchange" in window) { //다큐먼트 해시가 변경될 때 이벤트
+            window.addEventListener('hashchange', function(e) {
+                if(document.location.hash!=null && document.location.hash!="") { //옵션변경 후 해당 장바구니 상품 위치로 이동하게 했으므로 해시 값 존재
+                    if(optPopOpen && (document.location.hash).indexOf("prdUniqueImg")>-1){ //히스토리백 시 옵션변경 팝업 클로즈
+                        optPopOpen = false;
+                        popLayer.close();
+                    } else if (!optPopOpen && (document.location.hash).indexOf("dummyArea")>-1){ //히스토리포워드 시 다시 옵션변경 팝업 띄움
+                        optPopOpen = true;
+                        popLayer.open();
+                    }
+                } else { //옵션변경 전에는 해시 값 존재 안함
+                    if(optPopOpen){  //히스토리백 시 옵션변경 팝업 클로즈
+                        optPopOpen = false;
+                        popLayer.close();
+                    }
+                }
+            }, false);
+        }
+
+        var optPopOpen = false;
+        var layerOptOpen = function(index, curCnt, prdNo, optTitl, slctPrdOptSeq, bcktSeq) {
+
+            var callOptionHtmlSucc = false;
+            callOptionHtmlSucc = callOptionHtml('optionChange', prdNo, index, bcktSeq);
+
+            if(callOptionHtmlSucc) {
+                //버튼레이어
+                mwUI.fixLayer.hide();
+                mwUI.fixLayer.enabled = false;
+                //set
+                popLayer.layer = document.getElementById('optionChange');
+                popLayer.diff = 40;
+
+                var tmpPrcElem = "<span id='optionChangeCnt'>"+ curCnt +"개</span>";
+                document.getElementById("dtlOptNm").innerHTML = optTitl +" / "+ tmpPrcElem;
+                document.getElementById('slctPrdOptSeq').value = slctPrdOptSeq;
+
+                popLayer.open();
+                document.location.hash = "dummyArea";
+                optPopOpen = true;
+            } else {
+                alert('옵션변경을 위한 데이터 로딩 중 일시적인 장애가 발생했습니다.');
+            }
+        }
+
+        var layerOptClose = function() {
+            optPopOpen = false;
+            popLayer.close();
+            //버튼레이어
+            setTimeout(function() {
+                mwUI.fixLayer.enabled = true;
+                mwUI.fixLayer.show();
+                window.scrollTo(0,popLayer.pageYOffset);
+            }, 700);
+        }
+
+        var _optTextIdx  = 0;     
+        var _selOptCnt  = 0;     
+        var _entOptCnt = 0;     
+
+        function callOptionHtml(objId, prdNo, index, bcktSeq){
+            var rtnBool = false;
+            var param = "";
+            try {
+
+                param = "?prdNo="+prdNo+"&bcktSeq="+bcktSeq+"&index="+index;
+                var cartOptionHtmlUrl = "http://buy.m.11st.co.kr/MW/Cart/getCartOptionListAjax.tmall"+param;
+                fn_getValueByAjax(cartOptionHtmlUrl,
+                    "POST",
+                    "",
+                    false,
+                    function(data){
+                        if(data.indexOf("옵션변경조회")>-1){
+                            responseHtml(data, objId);
+                            if(document.getElementById("_optTextIdx") && document.getElementById("_selOptCnt") && document.getElementById("_entOptCnt")){
+                                rtnBool = true;
+                                _optTextIdx = parseInt(document.getElementById("_optTextIdx").innerText);
+                                _selOptCnt  = parseInt(document.getElementById("_selOptCnt").innerText);
+                                _entOptCnt  = parseInt(document.getElementById("_entOptCnt").innerText);
+                            }
+                        }
+                    },
+                    "text");
+            } catch ( err ) {
+                _optTextIdx=0; _selOptCnt=0; _entOptCnt=0;
+                alert('데이터 로딩에 실패했습니다.');
+                return false;
+            }
+            return rtnBool;
+        }
+
+        var curSlctdOptStr = "";
+        function _fnOptGetStock (obj,seq,optElemIndex){ //function optionStockSearch(obj,prdNo,seq) //최하위단 옵션 선택 시
+
+            if (obj == null) return;
+
+            var contNm = obj.id;
+            var contSeq = _fnOptGetContSeq(contNm);
+
+            if (contSeq < 0)  return;
+
+            var optArr = "";
+            var optArrNm = "";
+
+            curSlctdOptStr = "";
+            for(var k=0; k < _entOptCnt; k++){
+                if(document.getElementById("optionText" + k).value==""){
+                    alert("옵션을 입력해주세요.");
+                    return;
+                }
+                curSlctdOptStr  = curSlctdOptStr + document.getElementById("optionText"+ k).value + "/";
+            }
+            if (_selOptCnt > 1)
+            {
+                var trgtObj;
+                for ( var i = 0; i < _selOptCnt; i++)
+                {
+                    trgtObj = document.getElementById("optionData"+ i);
+
+                    if (i < _selOptCnt - 1 && trgtObj.value == "") {
+                        alert("상위 옵션을 먼저 선택해주세요.");
+                        optArr = "";
+                        optArrNm = "";
+                        break;
+                    }
+                    curSlctdOptStr  = curSlctdOptStr + trgtObj.options[trgtObj.selectedIndex].text + "/";
+
+                } // end for
+            } else {
+                curSlctdOptStr  = curSlctdOptStr + document.getElementById("optionData0").options[document.getElementById("optionData0").selectedIndex].text + "/";
+            }
+
+            if(obj.value == ''){ // select div로 인해 ''체크가 이벤트로 온다 그래서 공백인 경우 리턴
+                //resetAllOptionInit(obj);
+                return;
+            }
+
+            if(obj.value!=''){ // 선택된 항목이 존재할경우 재고 파악
+                if(obj.options[obj.selectedIndex].text.indexOf("품절") > -1){
+                    alert('해당 옵션에 재고가 없습니다.');
+                    return;
+                }
+            }
+
+            if (obj.value != "")  {
+                curSlctdOptStr = curSlctdOptStr.substring(0, curSlctdOptStr.length-1);
+                var tmpPrcElem = "<span id='optionChangeCnt'>"+ document.getElementById("optionChangeCnt").innerHTML +"</span>";
+                document.getElementById("dtlOptNm").innerHTML = curSlctdOptStr +" / "+ tmpPrcElem;
+            } else {
+                return;
+            }
+        }
+
+        function funcOptChg(index, bcktSeq, prdNo){
+            var actFormObj = document.actionForm;
+            var formObj = document.frmTmall;
+
+            var optString = "";
+            var optQtyString = "";
+            var optPrcString = "";
+            var selLength = document.getElementById("_selOptCnt").innerHTML; 	//선택형옵션 개수
+            var insLength = document.getElementById("_optTextIdx").innerHTML; //입력형옵션 개수
+            var optIdx = 0;
+            var dtlIdx = 0;
+
+            //선택형 옵션
+            if(selLength>0){
+                var lastSltObjForPrc = null;
+                for(var j=0;j<selLength;j++) {
+                    var tmpObjMul = document.getElementById("optionData"+j);
+                    if( ""==tmpObjMul.value ){
+                        alert("상품옵션은 필수 항목입니다.");
+                        tmpObjMul.focus();
+                        return;
+                    } else if(tmpObjMul.options[tmpObjMul.selectedIndex].text.indexOf("품절") > -1 ){
+                        alert("품절 상품입니다.");
+                        return;
+                    }
+                    optString = optString + "0†" + document.getElementById("optionData"+j).value.replace(":","¶") + "† ‡";
+                    if(j==selLength-1)
+                        lastSltObjForPrc = document.getElementById("optionData"+j);
+                }
+                var tmpTxt = lastSltObjForPrc.options[lastSltObjForPrc.selectedIndex].text;
+                if((tmpTxt.indexOf("(+")>-1)
+                    &&  !isNaN( tmpTxt.substring(tmpTxt.indexOf("(+")+2, tmpTxt.indexOf("원)")) ) ) {
+                    optPrcString = tmpTxt.substring(tmpTxt.indexOf("(+")+2, tmpTxt.indexOf("원)")) + "∏";
+                } else if((tmpTxt.indexOf("(-")>-1)
+                    &&  !isNaN( tmpTxt.substring(tmpTxt.indexOf("(-")+2, tmpTxt.indexOf("원)")) ) ) {
+                    optPrcString = tmpTxt.substring(tmpTxt.indexOf("(-")+2, tmpTxt.indexOf("원)")) + "∏";
+                } else {
+                    optPrcString = "0" + "∏";
+                }
+            }
+
+            if(insLength>0){
+                var tmpObjs = "";
+                for(var j=0;j<insLength;j++) {
+                    tmpObjs = document.getElementById('optionText'+j);
+                    if(tmpObjs.value=="") {
+                        alert("상품옵션은 필수 항목입니다.");
+                        tmpObjs.focus();
+                        return;
+                    }
+                    if(!_checkTagKeyUp(tmpObjs)){
+                        return;
+                    }
+                    optString = optString + "1†" + document.getElementById("optNoDtl"+index+"_"+j).value + "†" + tmpObjs.value + "‡";
+                }
+            }
+
+            optString = optString + "∏";
+
+            if(checkSNOString(optString)) {
+                alert("입력한 옵션에 개인정보가 포함되어 있어 옵션변경이 불가합니다.\n입력한 옵션이 개인정보가 아닌 경우 고객센터 1599-0110으로 문의주세요.");
+                return;
+            }
+
+            formObj.optString.value = optString;
+            formObj.prdNo.value = prdNo;
+            formObj.optQtyString.value = document.getElementById("optionChangeCnt").innerText.replace("개","");
+            formObj.bcktSeq.value = bcktSeq;
+            formObj.optPrcString.value = optPrcString;
+
+            try {
+                fn_getValueByAjax("http://buy.m.11st.co.kr/MW/Cart/getUpdateOptDetailQty.tmall",
+                    "POST",
+                    $(formObj).serialize(),
+                    false,
+                    function(jsonData){
+                        var data = eval('(' + jsonData + ')');
+                        if("fail"==data.success) {
+                            if("999"==data.failmsg)
+                                alert("동일한 옵션을 선택하셨습니다.");
+                            else
+                                alert('옵션 변경에 실패했습니다.');
+                            return false;
+                        }
+                        alert('옵션을 변경했습니다.');
+                        document.location.hash = "";
+                        optPopOpen = false;
+                        document.location.reload();
+                        return true;
+                    },
+                    "text");
+            } catch ( err ) {
+                alert('옵션 변경에 실패했습니다.');
+                return false;
+            }
+        }
+
+        function checkSNOString(str) {
+            str = str.replace(/\s/g,'');
+            var pattern = /([^\d]|\b)[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])[-_]?[1-4][0-9]{6}([^\d]|\b)/;
+            return pattern.test(str);
+        }
+
+        function _checkTagKeyUp(obj){
+
+            var objStrip = new RegExp();
+            objStrip = /[<>\\/]/gi;
+            repStr2 = obj.value.replace(objStrip, "");
+            if (obj.value != repStr2){
+                alert("<, >, / 특수문자는 입력할 수 없습니다.");
+                obj.value = repStr2;
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+
+        function _checkLastEnt(obj, optElemIndex) {
+            if(obj==null)
+                return;
+
+            var contNm = obj.id;
+            var contSeq = _fnOptGetContSeq(contNm);
+
+            if (contSeq < 0) {
+                alert('입력하신 옵션명으로 변경할 수 없습니다.'); //입력형 옵션 input box 혹은 input box의 데이터 시퀀스가 컨트롤러에서 잘못 생성된 경우
+                return;
+            }
+
+            if( 	"0" == document.getElementById("_selOptCnt").innerHTML	//선택형 옵션이 없고,
+                && obj.value != ""
+                && ((contSeq+1)+"") == document.getElementById("_optTextIdx").innerHTML ) //총 입력형 옵션의 개수로 확인 후 현재 입력박스가 마지막이면.
+            {
+                var curSlctdOptStrForEnt = "";
+                for(var e=0; e<(contSeq+1); e++){
+                    curSlctdOptStrForEnt = curSlctdOptStrForEnt + document.getElementById("optionText"+e).value + "/";
+                }
+
+                curSlctdOptStrForEnt = curSlctdOptStrForEnt.substring(0, curSlctdOptStrForEnt.length-1);
+                var tmpPrcElem = "<span id='optionChangeCnt'>"+ document.getElementById("optionChangeCnt").innerHTML +"</span>";
+                document.getElementById("dtlOptNm").innerHTML = curSlctdOptStrForEnt +" / "+ tmpPrcElem;
+            }
+        }
+
+        //contNm에서 숫자영역 추출
+        function _fnOptGetContSeq(contNm)
+        {
+            var seq = contNm.replace(/[^0-9]?/g,'');
+
+            if (isNaN(seq))
+                return -1;
+            else
+                return parseInt(seq);
+        }
+
+        /**
+         * 선택형 옵션 변경시 하위 옵션 리스트 재 설정
+         */
+        function _fnOptGetSubOpt(obj, seq, optElemIndex, prdNo, dftOptNo)
+        {
+            if (obj == null) return;
+            if (dftOptNo == undefined) dftOptNo = "";
+
+            var contNm = obj.id;
+            var contSeq = _fnOptGetContSeq(contNm); //(contNm.split("_"))[1];
+
+            if (contSeq < 0)  return;
+
+            var optIex = parseInt(contSeq % _selOptCnt);
+
+            if (_selOptCnt > 1)
+            {
+                // 하위 옵션이 선택된 상태에서 상위 옵션 수정시;
+                if (document.getElementById("optionData"+ contSeq).value != ""  && obj.value == "") {
+                    return;
+                } else if (optIex >= 1 && document.getElementById("optionData"+ contSeq).value == "") {
+                    alert("선택된 상위 옵션이 없습니다. 옵션을 재 선택 해주세요");
+                    return;
+                } else {
+                    if (optIex == (_selOptCnt - 2)) {
+                        if (obj.value == "") {
+                            document.getElementById("optionData"+ (contSeq + 1)).value = "";
+                            document.getElementById("optionData"+ (contSeq + 1)).length = 1;
+                        } else {
+                            _fnOptGetLastOpt(obj, dftOptNo, optElemIndex, prdNo);
+                        }
+                    } else {
+                        if (obj.value == "") {	return;	}
+
+                        var optArr = "";
+
+                        var trgtObjNm;
+                        for ( var i = 0; i <= optIex; i++)
+                        {
+                            trgtObjNm = "optionData"+ i;
+                            if (document.getElementById(trgtObjNm).value != "") {
+                                optArr = optArr + document.getElementById(trgtObjNm).value  + ",";
+                            }
+                        }
+                        _fnOptGetSubOptAjaxCall(contSeq + 1, prdNo, optArr, optIex+2, dftOptNo, optElemIndex);
+                    }
+                    var textName = obj.options[obj.selectedIndex].text;
+                    textName = textName.replace(/[<>]/gi,"").replace(/[\']/gi,"\'").replace(/\\n/gi, "").replace(/\\r/gi, ""); // 옵션명
+                    if(textName.lastIndexOf(" (") > 0){
+                        textName = textName.substr(0,textName.lastIndexOf(" ("));
+                    }
+                }
+            }
+        }
+
+        //상품상세 하위 옵션 List ajax
+        function _fnOptGetSubOptAjaxCall(idx, prdNo, optNoArr, optLvl, dftOptNo, optElemIndex)
+        {
+            var _hasOption = function(obj)
+            {
+                if (obj != null && obj.options != null) return true;
+                return false;
+            };
+            var _removeAllOptions = function(obj)
+            {
+                if (!_hasOption(obj))  return;
+                obj.length = 1;
+                obj.selectedIndex = 0;
+            };
+            var _addOption = function(obj, text, value)
+            {
+                if (obj != null && obj.options != null) {
+                    obj.options[obj.options.length] = new Option(text, value);
+                }
+            };
+            var _setOptLst = function(returnVal)
+            {
+                if (returnVal == "FAIL") {
+                    alert("옵션을 불러오는 과정에서 일시적인 오류가 발생했습니다. 새로고침하신 후 이용해주세요!");
+                    document.getElementById("optionData"+idx).disabled = false;
+                    return;
+                }
+
+                var jsonObj = eval(returnVal);
+
+                // 옵션초기화
+                var trgt = document.getElementById("optionData"+ idx);
+                _removeAllOptions(trgt);
+
+                // 옵션생성
+                for ( var i = 0; jsonObj.infoList != null && i < jsonObj.infoList.length; i++)
+                {
+                    if (jsonObj.infoList[i] != undefined) {
+                        _addOption(trgt, (""+jsonObj.infoList[i].dtlOptNm).replace("@#@[", "["), jsonObj.infoList[i].optNo);
+                    }
+                }
+                if (dftOptNo != "") trgt.value = dftOptNo;
+            };
+
+            var url = _MOBILE_BUY_URL_+"/Product/getProductDetailSubOptionList.jsp";
+            var param = "prdNo=" + prdNo    + "&optNoArr=" + optNoArr + "&optLvl=" + optLvl;
+            fn_getValueByAjax(url,
+                "POST",
+                param,
+                false,
+                _setOptLst,
+                "text");
+        }
+
+        /**
+         * 최하위 옵션 리스트 조회
+         * @param obj        : 선택형옵션 SelectBox
+         * @param dftOptNo   : 초기시 선택할 optNo
+         */
+        function _fnOptGetLastOpt(obj, dftOptNo, optElemIndex, prdNo)
+        {
+            if (obj == null) return;
+            if (dftOptNo == undefined) dftOptNo = "";
+
+            var contNm = obj.id;
+            var contSeq = _fnOptGetContSeq(contNm);
+
+            if (contSeq < 0) return;
+
+            // 옵션영역의 Start 위치 조회
+            var optArr = "";
+            var trgtIdx = contSeq;
+            if (_selOptCnt > 1)
+            {
+                var trgtObjNm;
+                for ( var i = 0; i < (_selOptCnt - 1); i++)
+                {
+                    trgtObjNm = "optionData"+ i;
+                    if (document.getElementById(trgtObjNm).value != "") {
+                        optArr = optArr + document.getElementById(trgtObjNm).value  + ",";
+                    }
+                }
+
+                trgtIdx = contSeq + 1;
+            }
+            else
+            {
+                if (obj.value != "") {
+                    optArr = optArr + obj.value;
+                }
+                trgtIdx = contSeq;
+            }
+
+            // 최하위 옵션 SelectBox 초기화
+            _fnOptGetLastOptAjaxCall(trgtIdx, prdNo, optArr, dftOptNo, optElemIndex);
+        }
+
+        //상품상세 마지막 옵션 노출시 가격 실시간 ajax
+        function _fnOptGetLastOptAjaxCall(idx, prdNo, optNoArr, dftOptNo, optElemIndex)
+        {
+            String.prototype.bytes = function()
+            {
+                var str = this;
+                var l = 0;
+                for ( var i = 0; i < str.length; i++)
+                    l += (str.charCodeAt(i) > 128) ? 2 : 1;
+                return l;
+            };
+
+            String.prototype.cutByte = function(len, add)
+            {
+                var str = this;
+                var dft = (typeof (add) != "undefined") ? add : "..";
+                var l = 0;
+                for ( var i = 0; i < str.length; i++) {
+                    l += (str.charCodeAt(i) > 128) ? 2 : 1;
+                    if (l > len)
+                        return str.substring(0, i) + dft;
+                }
+                return str;
+            };
+
+            var _hasOption = function(obj)
+            {
+                if (obj != null && obj.options != null) return true;
+                return false;
+            };
+            var _removeAllOptions = function(obj)
+            {
+                if (!_hasOption(obj))  return;
+                obj.length = 1;
+                obj.selectedIndex = 0;
+            };
+            var _addOption = function(obj, text, value)
+            {
+                if (obj != null && obj.options != null) {
+                    obj.options[obj.options.length] = new Option(text, value);
+                }
+            };
+            var _subOptStr = function(optNm, addPrc, stckQty)
+            {
+                var addStr = "";
+                if (addPrc != "0"){
+                    if(addPrc.length>0){
+                        if(addPrc.substring(0,1) == "-"){
+                            addStr += " (" + addPrc + "원)";
+                        }
+                        else{
+                            addStr += " (+" + addPrc + "원)";
+                        }
+                    }
+                }
+                if (stckQty < 1)
+                    addStr += "/품절";
+                var lmtCnt = 46; // 304px 기준 최대 노출 문자수 (Bytes 기준
+
+                if (addStr!="")
+                    lmtCnt -= addStr.bytes();
+
+                optNm = optNm.replace(/^@#@\[/g, "[");
+                if (optNm.bytes() > lmtCnt) {
+                    return optNm.cutByte(lmtCnt) + addStr;
+                } else {
+                    return optNm + addStr;
+                }
+            };
+            var _setOptLst = function(returnVal)
+            {
+                if (returnVal == "FAIL" || returnVal.trim().indexOf("()") != -1) {
+                    alert("서비스 장애가 있습니다. 고객센터로 연락 주세요.(11번가 온라인 서비스 연동 오류)");
+                    return;
+                }
+
+                var jsonObj = eval(returnVal);
+
+                // 옵션초기화
+                var trgt = document.getElementById("optionData"+ idx );
+                _removeAllOptions(trgt);
+
+                // 옵션생성
+                var optStr = "";
+                for ( var i = 0; jsonObj.infoList != null && i < jsonObj.infoList.length; i++)
+                {
+                    if (jsonObj.infoList[i] != undefined) {
+                        optStr = _subOptStr("" + jsonObj.infoList[i].dtlOptNm, "" + jsonObj.infoList[i].addPrc, jsonObj.infoList[i].stckQty);
+                        _addOption(trgt, optStr, jsonObj.infoList[i].optNo);
+                    }
+                }
+                if (dftOptNo != "") trgt.value = dftOptNo;
+            };
+
+            var url = _MOBILE_BUY_URL_+"/Product/getProductDetailLastOptionList.jsp";
+            var param = "prdNo=" + prdNo + "&optNoArr=" + optNoArr + "&selOptCnt=" + _selOptCnt; //document.frmMain.selOptCnt.value;
+
+            fn_getValueByAjax(url,
+                "POST",
+                param,
+                false,
+                _setOptLst,
+                "text");
+        }
+
+        //독립형 옵션 변경시
+        function _fnOptGetStock2(obj,seq,optElemIndex,prdNo){
+
+            var optArr = "";	//재고 체크 ajax call 시 파라미터
+            var optArrNm = "";	//재고 체크 ajax call 시 파라미터
+
+            if (obj == null) return;
+            curSlctdOptStr = "";
+
+            if ( obj.options[obj.selectedIndex].text.indexOf("품절")>-1 ) {
+                alert("품절 상품입니다.");
+                return;
+            }
+
+            var contNm = obj.id;
+            var contSeq = _fnOptGetContSeq(contNm);
+
+            if (_selOptCnt==(contSeq+1)) {
+
+                for(var k=0; k < _entOptCnt; k++){
+                    if(document.getElementById("optionText" + k).value=="") {
+                        alert("옵션을 입력해 주세요.");
+                        return;
+                    } else {
+                        curSlctdOptStr  = curSlctdOptStr + document.getElementById("optionText" + k).value + "/";
+                    }
+                }
+
+                if (_selOptCnt > 1)
+                {
+                    var trgtObj;
+                    for ( var i = 0; i < _selOptCnt; i++)
+                    {
+                        trgtObj = document.getElementById("optionData" + i);
+
+                        if ( trgtObj.options[trgtObj.selectedIndex].text.indexOf("품절")>-1 ) {
+                            alert("품절 상품입니다.");
+                            return;
+                        } else if(trgtObj.options[trgtObj.selectedIndex].value == ""){
+                            alert("옵션을 선택해주세요.");
+                            return;
+                        } else {
+                            optArr = optArr + trgtObj.value + ",";
+                            optArrNm = optArrNm + trgtObj.options[trgtObj.selectedIndex].text + ",";
+                            curSlctdOptStr  = curSlctdOptStr + trgtObj.options[trgtObj.selectedIndex].text + "/";
+                        }
+                    } // end for
+                } else {
+                    curSlctdOptStr  = curSlctdOptStr + document.getElementById("optionData0").options[document.getElementById("optionData0").selectedIndex].text + "/";
+                }
+
+                curSlctdOptStr = curSlctdOptStr.substring(0, curSlctdOptStr.length-1);
+                var tmpPrcElem = "<span id='optionChangeCnt'>"+ document.getElementById("optionChangeCnt").innerHTML +"</span>";
+                document.getElementById("dtlOptNm").innerHTML = curSlctdOptStr +" / "+ tmpPrcElem;
+
+                // 독립형 옵션 재고체크
+                if (obj.value != ""){
+                    _fnOptGetStockInfoByOptNos(contSeq, optArr, '02', optArrNm, prdNo);
+                }
+            }
+        }
+
+        //재고 여부 확인
+        function _fnOptGetStockInfoByOptNos(contSeq, mixOptNo, optType, mixOptNm, prdNo)
+        {
+            var optNmList = document.getElementById("_optNms").innerText;
+            try {
+                var _callBack = function(returnVal)
+                {
+                    var jsonObj = eval(returnVal);
+
+                    // 재고 가 없을 경우 - 해당 옵션 정보 초기화
+                    if (jsonObj == null || jsonObj[0] == null)
+                    {
+                        alert("해당 옵션에 재고가 없습니다.");
+                        return;
+                    }
+                };
+
+                var url = _MOBILE_BUY_URL_+"/Product/getStockInfoByOptNos.jsp";
+                var param = "prdNo=" + prdNo + "&mixOptNo=" + mixOptNo + "&selOptCnt=" + _selOptCnt + "&selOptTyp=" + optType + "&optNmList=" + escape(encodeURIComponent(optNmList)) + "&mixOptNm=" + escape(encodeURIComponent(mixOptNm));
+
+                fn_getValueByAjax(url,
+                    "POST",
+                    param,
+                    false,
+                    _callBack,
+                    "text");
+
+            } catch (e) {
+            }
+        }
+
+        var _martBunchAddrNoMap  = new HashMap();
+        function martBunchAddrChk(seq){
+            var ele = document.querySelector('[name="bunchCheckAll_'+seq+'"]');
+            var tmpMartAddrNo = "";
+            var tmpMartAddrNoCnt = 1;
+
+            if(ele.getAttribute('data-martaddrno')){
+                tmpMartAddrNo = ele.getAttribute('data-martaddrno');
+                var bunchkeys = _martBunchAddrNoMap.getKeys();
+                var keys = _martAddrNoMap.getKeys();
+
+                if(ele.checked){
+
+                    if(keys.length>0 && _martAddrNoMap.get(tmpMartAddrNo)==undefined){
+                        return false;
+                    }
+
+                    if(bunchkeys.length == 0 && _martBunchAddrNoMap.get(tmpMartAddrNo)==undefined) {
+                        _martBunchAddrNoMap.put(tmpMartAddrNo, 1);
+                    }else{
+                        for(var i in bunchkeys){
+                            if(tmpMartAddrNo ==bunchkeys[i]){
+                                tmpMartAddrNoCnt = _martBunchAddrNoMap.get(tmpMartAddrNo)+1;
+                                _martBunchAddrNoMap.put(tmpMartAddrNo, tmpMartAddrNoCnt);
+                            }else{
+                                //다른 배송지 묶음이 이미 선택된 경우
+                                return false;
+                            }
+                        }
+                    }
+                }else{
+                    if(_martBunchAddrNoMap.get(tmpMartAddrNo)!=undefined){
+                        if(_martBunchAddrNoMap.get(tmpMartAddrNo)>1){
+                            tmpMartAddrNoCnt = _martBunchAddrNoMap.get(tmpMartAddrNo)-1;
+                            _martBunchAddrNoMap.put(tmpMartAddrNo, tmpMartAddrNoCnt);
+                        }else{
+                            _martBunchAddrNoMap.clear();
+                            _martAddrNoMap.clear();
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+
+
+        var _martAddrNoMap  = new HashMap();
+        function martAddrChk(targetId, obj, type){
+            var ele = obj;
+            if(type=='img'){
+                ele =document.getElementById(targetId);
+            }
+
+            var tmpMartAddrNo = "";
+            var tmpMartAddrNoCnt = 1;
+
+            if(ele.getAttribute('data-ismart') && ele.getAttribute('data-ismart')=="Y"){
+                tmpMartAddrNo = ele.getAttribute('data-martaddrno');
+                var keys = _martAddrNoMap.getKeys();
+                var bunchKeys = _martBunchAddrNoMap.getKeys();
+
+                if(ele.checked){
+                    if(bunchKeys.length>0 && _martBunchAddrNoMap.get(tmpMartAddrNo) ==undefined){
+                        alert("지점 배송상품은 하나의 배송지로만 주문이 가능합니다. 동일한 지점 상품만 선택하여 주문해 주세요.");
+                        ele.checked = false;
+                        return;
+                    }
+                    if(keys.length == 0 && _martAddrNoMap.get(tmpMartAddrNo)==undefined) {
+                        _martAddrNoMap.put(tmpMartAddrNo, 1);
+                    }else{
+                        for(var i in keys){
+                            if(tmpMartAddrNo ==keys[i]){
+                                tmpMartAddrNoCnt = _martAddrNoMap.get(tmpMartAddrNo)+1;
+                                _martAddrNoMap.put(tmpMartAddrNo, tmpMartAddrNoCnt);
+                            }else{
+                                alert("지점 배송상품은 하나의 배송지로만 주문이 가능합니다. 동일한 지점 상품만 선택하여 주문해 주세요.");
+                                ele.checked = false;
+                            }
+                        }
+                    }
+                }else{
+                    if(_martAddrNoMap.get(tmpMartAddrNo)!=undefined){
+                        if(_martAddrNoMap.get(tmpMartAddrNo)>1){
+                            tmpMartAddrNoCnt = _martAddrNoMap.get(tmpMartAddrNo)-1;
+                            _martAddrNoMap.put(tmpMartAddrNo, tmpMartAddrNoCnt);
+                        }else{
+                            _martAddrNoMap.clear();
+                        }
+                    }
+                }
+            }
+        }
+
+        function changeCoupon(seq, isMart, qty){
+
+            if(qty<0){
+                alert("해당 상품의 옵션이 존재합니다. 옵션정보를 설정해주세요.");
+                return;
+            }
+            var cupnParamArr = new Array();
+            var cupnParam = new CouponParam();
+            cupnParamArr.push(cupnParam);
+
+            if(isMart == 'Y'){
+                cupnParam.martBcktSeq = seq;
+            }else{
+                cupnParam.bcktSeq = seq;
+
+                var slctPrdCalcOptNm = document.getElementsByName("slctPrdCalcOptNm_" + seq);
+                var calcOptItemList = document.getElementsByName("calcOptItemList_" + seq);
+
+                var slctPrdCalcOptNmTxt = "";
+                var calcOptItemListTxt = "";
+
+                for (var i = 0 ; i < slctPrdCalcOptNm.length ; i++) {
+                    if (i != 0) {
+                        slctPrdCalcOptNmTxt += "||";
+                        calcOptItemListTxt += "||";
+                    }
+                    slctPrdCalcOptNmTxt += slctPrdCalcOptNm[i].value;
+                    calcOptItemListTxt += calcOptItemList[i].value;
+                }
+                cupnParam.slctPrdCalcOptNm = encodeURI(slctPrdCalcOptNmTxt);
+                cupnParam.calcOptItemList = calcOptItemListTxt;
+            }
+
+            mwCupnPop.loadCouponPop(cupnParamArr,updateCoupon);
+
+        }
+
+        updateCoupon = function(couponModel, errCode){
+            if(couponModel){
+                var frm = document.couponForm;
+                var result = JSON.parse(JSON.stringify(couponModel));
+                var addCupn='';
+                var bonusCupn='';
+                var dlvCupn='';
+                var slctPrdOptSeq='';
+
+                if(result.martBcktSeq){
+                    frm.martBcktSeq.value=result.martBcktSeq;
+                    frm.bcktSeq.value = '';
+                }else{
+                    frm.bcktSeq.value=result.bcktSeq;
+                    frm.martBcktSeq.value = '';
+                }
+
+                if(result.selPrdList!='undefined' && result.selPrdList.length>0){
+                    for(var i=0; i<result.selPrdList.length;i++){
+                        var selPrdList = result.selPrdList[i];
+
+                        if(selPrdList.prdList!=undefined && selPrdList.prdList.length>0){
+                            for(var j=0;j<selPrdList.prdList.length;j++){
+                                var prod = selPrdList.prdList[j];
+
+                                slctPrdOptSeq += prod.slctPrdOptSeq+",";
+
+                                //선택할인쿠폰
+                                var addCupnBO = prod.cupnAdd;
+                                if(addCupnBO && addCupnBO.issueNo){
+                                    addCupn += addCupnBO.issueNo +",";
+                                }else{
+                                    addCupn +="0,";
+                                }
+                                //보너스할인쿠폰
+                                var bonusCupnBO = prod.cupnBonus;
+                                if(bonusCupnBO && bonusCupnBO.issueNo){
+                                    bonusCupn += bonusCupnBO.issueNo +",";
+                                }else{
+                                    bonusCupn += "0,";
+                                }
+                            }
+                        }
+
+                        if(selPrdList.cupnDlv){
+                            dlvCupn = selPrdList.cupnDlv.issueNo;
+                        }else{
+                            dlvCupn = "0";
+                        }
+
+                    }
+
+                    if(slctPrdOptSeq.length>1){
+                        slctPrdOptSeq = slctPrdOptSeq.substring(0, slctPrdOptSeq.length-1); //마지막 ;를 삭제
+                    }
+                    if(addCupn.length>1){
+                        addCupn = addCupn.substring(0, addCupn.length-1); //마지막 ;를 삭제
+                    }
+                    if(bonusCupn.length>1){
+                        bonusCupn = bonusCupn.substring(0, bonusCupn.length-1); //마지막 ;를 삭제
+                    }
+
+                }
+                frm.slctPrdOptSeqArr.value=slctPrdOptSeq;
+                frm.addCupnArr.value=addCupn;
+                frm.bonusCupnArr.value = bonusCupn;
+                frm.dlvCupn.value = dlvCupn;
+
+                var url = "http://buy.m.11st.co.kr/MW/Cart/applyCoupon.tmall";
+                if(mwUI) mwUI.loadingFull({text : '선택하신 쿠폰을 적용중입니다.'});
+                try {
+                    fn_getValueByAjax(url,
+                        "POST",
+                        $(frm).serialize(),
+                        false,
+                        function(jsonData){
+                            var data = eval('(' + jsonData + ')');
+                            if(data.rsCd=="SUCCESS"){
+                                location.reload();
+                            }else{
+                                if(data.hasRsMsg) alert(data.rsMsg);
+                                alert("쿠폰적용에 실패하였습니다.");
+                                if(mwUI) mwUI.loadingFullClose();
+                            }
+                        },
+                        "text");
+                } catch ( err ) {
+                    alert('쿠폰 적용 중 오류가 발생하였습니다.\n잠시 후 다시 이용해 주십시오.' );
+                    location.reload();
+                }
+            }else{
+                if(errCode == 'ERR_0002'){
+                    location.reload();
+                }
+            }
+
+        }
+
+        // 2016.12.15 mjs : 셀러의 최소구매가능금액 설정여부, 금액 조회
+        // 파이프라인으로 구분된 값 기준으로 셀러번호, 합계금액 조회 (기본적으로 값 자체에 콤마가 들어갈 수 있어서 파이프로 수정)
+        function checkMinBuyAmtInfBySeller(tempBcktSeqPipe) {
+            var bcktSeq		= tempBcktSeqPipe.split("|");
+            var sellerNo	= $("[name='sellerNo_"+bcktSeq[0]+"']").val();
+            var minBuyAmt	= mapMinBuyAmtInfBySeller.get(sellerNo);
+
+            var checkSumAmount = 0;
+            for(var i=0; i<bcktSeq.length; i++) {
+                if(bcktSeq[i] != "") {
+                    checkSumAmount += Number($("[name='checkSumAmount_"+bcktSeq[i]+"']").val());
+                }
+            }
+
+            if(typeof mapMinBuyAmtInfBySeller.get(sellerNo) !== "undefined" ) {	// 맵에 데이터가 있으면 체크해야 함
+                if(Number(minBuyAmt) > Number(checkSumAmount)) {
+                    alert(minBuyAmt + "원 이하 구매 불가 상품 입니다. 주문금액을 다시 한번 확인해주세요.");
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+	</script>
+<script src="./cart_list_files/netfunnel.js" charset="UTF-8"></script><script src="./cart_list_files/mwapptools.js"></script><script src="./cart_list_files/mwapptools.js"></script></head>
+<body id="order" data-feedly-mini="yes">
+<div id="wrap">
+	<header>
+	
+						
+			<div class="head_bnr" id="app_down_bnr" style="display: none;">
+				<a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall#" onclick="call11stAppMain(); return false;" style="background-color:#e7e7ea;" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1401"><img src="cart_list_files/app_bnr.png" alt="앱으로 접속하면 더 큰혜택이-앱다운로드"></a>
+				<button type="button" onclick="closeElevenstAppDown();">배너닫기</button>
+			</div>
+        
+
+    	<script type="text/javascript">
+	    	
+		    window.addEventListener("load",  function() {
+		    	try {
+		    		var protocol = (window && window.location && window.location.protocol) ? window.location.protocol.replace(':', '') : "http";
+		    		var element = document.createElement('script');
+		    		var domainPrefix = "//c.m.011st.com/MW";
+	    			if(protocol === "https") {
+	    				domainPrefix = "//m.11st.co.kr/MW";
+	    			}
+	    			element.src = domainPrefix + "/js/lib/mwapptools.js";
+	    			document.head.appendChild(element);
+				} catch(e) {};
+				
+		    	gnbAppDownBnr();
+		    }, false);
+		    
+			function gnbAppDownBnr(){
+				try {
+				    var partnerDirectYn = "";
+				    var partnerCookieVal = getCookie('PARTNER_CD');
+					partnerDirectYn = initialAppDownBnrData.PARTNERCD.WEB[partnerCookieVal];
+					if (partnerDirectYn != "N"){
+						if(!TMCookieUtil.getSubCookie(1, "elevenstAppDown") && getElevenstAppDownloadCookie('appType') == '') {
+				            document.getElementById('app_down_bnr').style.display = 'block';
+				        }
+					}
+				} catch(e){console.log(e);}
+			}
+		    
+	    	function getElevenstAppDownloadCookie(cName) {
+	            cName = cName + '=';
+	            var cookieData = document.cookie;
+	            var start = cookieData.indexOf(cName);
+	            var cValue = '';
+	            if(start != -1){
+	                start += cName.length;
+	                var end = cookieData.indexOf(';', start);
+	                if(end == -1)end = cookieData.length;
+	                cValue = cookieData.substring(start, end);
+	            }
+	            return unescape(cValue);
+	        }
+
+    		function closeElevenstAppDown() {
+    			mwUI.viewToggle("app_down_bnr");
+    			TMCookieUtil.add(1, "elevenstAppDown", "Y");
+    		}
+
+    		function call11stAppMain() {
+    			var scheme = "://home";
+    			var intentScheme = '#Intent;scheme=elevenst;package=com.elevenst;end';
+    			mwapptools.web2app({ urlScheme : 'elevenst'+scheme, intentURI : 'intent'+scheme+intentScheme, storeURL: 'itms-apps://itunes.apple.com/app/id397938216?mt=8' });
+    		}
+    	</script>
+
+	
+	<div class="gnb_mw gnb_m">
+		<h1><a href="http://m.11st.co.kr/MW" title="홈으로 이동" data-clickurl="WGA01" data-clickkey="00">11번가</a></h1>
+	
+		<a href="http://m.11st.co.kr/MW/api/app/elevenst/menu/sideMenu.tmall" class="mu cate" data-clickurl="WGB01" data-clickkey="00">카테고리</a>
+
+		<form id="search" name="searchForm" action="http://m.11st.co.kr/MW/Search/searchProduct.tmall" method="get" onsubmit="searchSubmit();return false;">
+			<fieldset>
+				<legend>통합검색</legend>
+				<div class="srch">
+					<input type="search" id="decSearchKeyword" name="decSearchKeyword" value="" title="검색어" onfocus="getInput();" onblur="releaseInput();" autocomplete="off" autocorrect="off" autocapitalize="off" onclick="clearInputValue(&#39;decSearchKeyword&#39;);fncStop();return false;" data-clickurl="WSRC00" data-clickkey="WSRC00">
+					<button class="del" type="button" id="schdelbtn" style="display:none;" onclick="clearInputValue(&#39;decSearchKeyword&#39;);">검색어 삭제</button>
+					
+					<input type="submit" id="search_submit" value="검색" data-clickurl="WSRC11" data-clickkey="WSRC11">
+					
+					<input type="hidden" id="searchType" name="searchType" value="">
+					<input type="hidden" id="dispObjLnkUrl" value="http://m.11st.co.kr/MW/html/nc/20170227_luckyCupnEvnt.html">
+					<input type="hidden" id="searchKeyword" name="searchKeyword" value="">
+					<input type="hidden" name="listType" value="">
+					<input type="hidden" name="sortCd" value="NP">
+					<input type="hidden" name="showAdvProducts" value="Y">
+					<input type="hidden" name="dispCtgrNo" value="">
+					<input type="hidden" name="dispCtgrLevel" value="">
+					<input type="hidden" name="pageNo" value="">
+					<input type="hidden" name="inKeyword" value="">
+					<input type="hidden" name="withoutKeyword" value="">
+					<input type="hidden" name="previousKwd" value="">
+					<input type="hidden" name="previousExcptKwd" value="">
+					<input type="hidden" name="fromPrice" value="">
+					<input type="hidden" name="toPrice" value="">
+					<input type="hidden" name="discountCheck" value="">
+					<input type="hidden" name="noInterestCheck" value="">
+					<input type="hidden" name="freeDeliveryCheck" value="">
+					<input type="hidden" name="worldDeliveryCheck" value="">
+					<input type="hidden" name="isSearchInSearch" value="">
+					<input type="hidden" name="isCategoryInSearch" value="">
+					<input type="hidden" name="isBrandInSearch" value="">
+					<input type="hidden" name="isOneCategorySearch" value="">
+					<input type="hidden" name="brandName" value="">
+					<input type="hidden" name="brandItemName" value="">
+					<input type="hidden" name="brandTitle" value="">
+					<input type="hidden" name="lCategoryNos" value="">
+					<input type="hidden" name="mCategoryNos" value="">
+					<input type="hidden" name="sCategoryNos" value="">
+					<input type="hidden" name="dCategoryNos" value="">
+					<input type="hidden" name="pageSize" value="0">
+					
+				</div>
+				<button type="button" class="prev" onclick="vLayer(&#39;kwd&#39;,false);setBodyClass(false);return false;">이전</button>
+			</fieldset>
+		</form>
+	
+		<a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall" class="mu cart" data-clickurl="WGD01" data-clickkey="00">장바구니</a>
+	
+	
+	</div>	
+	<div id="kwd" class="kword">
+		<div class="ctg" id="ctgDiv"></div>
+		<ul class="wrd" id="autoComplete"></ul>
+		<div class="sw_ft"><button type="button" class="close" onclick="vLayer(&#39;kwd&#39;,false);setBodyClass(false);return false;" data-clickurl="WSRB03" data-clickkey="WSRB03">닫기</button></div>
+	</div>
+	<div class="schwd" id="schwd" style="display:none;">
+		<ul class="sw_tab">
+			<li class="on"><a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall#schword01" onclick="goSearchSwipeMove(0);return false">최근검색어</a></li>
+			<li>
+				<a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall#schword02" onclick="goSearchSwipeMove(1);return false">급상승
+					<span class="pg" id="searchSwipeNavi"><span class="on"></span><span></span><span></span><b id="searchSwipePage">3페이지중 1페이지</b></span>
+				</a>
+			</li>
+			<li><a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall#schword03" onclick="goSearchSwipeMove(2);return false">인기</a></li>
+		</ul>
+		<div class="sw_swp">
+			<div id="view_sch_swipe"><div class="mwContainer"><div></div><div></div><div></div></div></div>
+			<button type="button" class="prev" onclick="goPrev()">이전</button>
+			<button type="button" class="next" onclick="goNext()">다음</button>
+		</div>
+		<div id="gnb_sch_swipe" style="display:none;">
+			<div id="schword01"><!-- 최근 검색어 --></div>
+			<div id="schword02"><!-- 급상승 --></div>
+			<div id="schword03"><!-- 인기 --></div>
+		</div>
+		<div class="sw_ft"><button type="button" class="close" onclick="setBodyClass(false);" data-clickurl="WSRC12" data-clickkey="WSRC12">닫기</button></div>
+	</div>
+	<script>
+		(function() {
+			var getCookie = function(cName) {
+			    cName = cName + '=';
+			    var cookieData = document.cookie;
+			    var start = cookieData.indexOf(cName);
+			    var cValue = '';
+			    if(start != -1){
+			         start += cName.length;
+			         var end = cookieData.indexOf(';', start);
+			         if(end == -1)end = cookieData.length;
+			         cValue = cookieData.substring(start, end);
+			    }
+			    return unescape(cValue);
+			};
+			var getType = function() {
+				return getCookie('appType');
+			};
+			var getVCA = function() {
+				return getCookie('appVCA');
+			};
+			try {
+			    var appType = getType();
+			    var appVCA = Number(getVCA());
+			    if((appType == 'appmw' || appType == 'appmwi') && appVCA >= 400) {
+			    	document.querySelector('header').style.display = 'none';
+		        	mwScript.addScript('/Hybrid/js/search.js');
+			    } else if((appType == 'appmw_book' && appVCA > 111) 
+					    || (appType == 'appmwi_book' && appVCA > 110)) {
+			    	document.querySelector('header').style.display = 'none';
+		        	mwScript.addScript('/Hybrid/js/search.js');
+			    }
+			} catch(e) {
+				console.log(e);
+			};
+		}());
+	</script>
+</header>
+	<!-- //header -->
+	<!-- contents -->
+	<section id="cts">
+
+		<form name="reservationForm" method="post">
+			<input type="hidden" name="incommingCode" value="01">
+			<input type="hidden" id="reservationPrdno" name="prdNo" value="">
+			<input type="hidden" id="reservationStckNo" name="stckNo" value="">
+			<input type="hidden" id="reservationPrdQty" name="prdQty" value="">
+			<input type="hidden" id="reservationCompPrdNo" name="compPrdNo" value="">
+			<input type="hidden" id="reservationCompPrdQty" name="compPrdQty" value="">
+			<input type="hidden" id="reservationShopBranchNo" name="shopBranchNo" value="">
+			<input type="hidden" id="reservationBcktSeq" name="bcktSeq" value="">
+			<input type="hidden" id="reservationOptionNm" name="optItemNm" value="">
+			<input type="hidden" id="reservationOptionNo" name="optItemNo" value="">
+			<input type="hidden" id="reservationOptionText" name="ansCont" value="">
+		</form>
+
+		<form name="couponForm" method="post">
+			<input type="hidden" name="bcktSeq" value="">
+			<input type="hidden" name="martBcktSeq" value="">
+			<input type="hidden" name="slctPrdOptSeqArr" value="">
+			<input type="hidden" name="addCupnArr" value="">
+			<input type="hidden" name="bonusCupnArr" value="">
+			<input type="hidden" name="dlvCupn" value="">
+		</form>
+
+		<form name="frmTmall" method="post">
+			<input type="hidden" name="optString" value="">
+			<input type="hidden" name="optQtyString" value="02">
+			<input type="hidden" name="optPrcString" value="">
+			<input type="hidden" name="bcktSeq" value="">
+			<input type="hidden" name="prdNo" value="">
+			<input type="hidden" name="evntNo" value="">
+			<input type="hidden" name="selPrc" value="">
+			<input type="hidden" name="slctPrdOptSeq" id="slctPrdOptSeq" value="">
+		</form>
+
+		<form name="actionForm" action="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall" method="post" onsubmit="return false;">
+			<input type="hidden" name="bcktSeq" value="">
+			<input type="hidden" name="slctPrdOptSeq" value="">
+			<input type="hidden" name="prdNo" value="">
+			<input type="hidden" name="addPrdFlag" value="">
+			<input type="hidden" name="qty" value="">
+			<input type="hidden" name="selMinQty" value="">
+			<input type="hidden" name="incommingCode" value="02">
+			<input type="hidden" name="yes24Yn" value="N">
+			<input type="hidden" name="isMart" value="N">
+			<input type="hidden" name="martBcktSeq" value="">
+			<input type="hidden" name="oneClickFrom" value="">
+			<input type="hidden" name="changeCupnYN" value="">
+			<h1 class="title cart">장바구니</h1>
+			<div class="cart_type">
+				<div class="chkb"><span class="chkBox"><input type="checkbox" id="allselect" onclick="selectAllChk();"> <label for="allselect">전체선택</label></span></div>
+				<div class="numb">총 장바구니 상품 (<strong>1</strong>개)</div>
+			</div>
+			
+			
+			<!-- 하나씩 보기 -->
+			<div id="typeOne" class="cart">
+				
+				
+
+
+<div class="cart_prd">
+		
+		
+	<div class="cl">
+		<div class="mc">
+			<span class="chkBox"><input type="checkbox" name="bcktSeqChk0" value="1232313972" data-prdtypcd="28" data-prdno="958114815" id="bcktUniqueId0" onclick="calSelectedPrds()"><label for="bcktSeqBunch_p1_1">상품선택</label></span>
+			<a href="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo=958114815" data-clickurl="MSC003" data-clickkey="MSC003">
+				<span class="pimg"><img src="cart_list_files/958114815_B_V1.jpg" alt="" onerror="this.src=&#39;/MW/img/product/no_image_100.gif&#39;" id="prdUniqueImg0"></span>
+				<span class="pd">후르트텔라 요구르트 1050g / 코스트코 망고맛 라즈베리맛 블루베리맛</span>
+				
+			</a>
+			
+			
+			
+
+			
+			
+
+		</div>
+
+
+		
+		<div class="opt" style="display:;">
+
+			
+			<div class="num">
+				<label for="qty_1232313972">수량</label>
+				<input type="tel" name="qty_1232313972" id="qty_1232313972" value="1" onclick="_setNumFocus(this)" maxlength="3" onkeyup="checkNum(this, this.value);setQtyNumValue(&#39;qty_1232313972&#39;,&#39;btnModify_1232313972&#39;,1,0);" onblur="checkNum(this, this.value);" onkeypress="return numbersOnly(event, false)">
+				<button type="button" class="qty_minus" title="1개 감소" onclick="setQtyNumValue(&#39;qty_1232313972&#39;,&#39;btnModify_1232313972&#39;,1,-1);">-</button>
+				<button type="button" class="qty_plus" title="1개 증가" onclick="setQtyNumValue(&#39;qty_1232313972&#39;,&#39;btnModify_1232313972&#39;,1,1);">+</button>
+				<button type="button" id="btnModify_1232313972" class="qty_modify" title="수량변경" style="display:none;" onclick="doModify(&#39;1232313972&#39;,&#39;N&#39;,0,-10000,28, 1,&#39;&#39; );callStatAjax(&#39;MSC006&#39;, &#39;MSC006&#39;);">변경</button>
+			</div>
+			<div class="prc"><b>10,500</b>원</div>
+		</div>
+		
+
+		
+
+		
+		<!-- 선택상품 계산관련 -->
+		<input type="hidden" name="checkPrdAmt_0" id="checkPrdAmt_0" value="10500">
+		<input type="hidden" name="checkPreStlDlvAmt_0" id="checkPreStlDlvAmt_0" value="5500">
+		<input type="hidden" name="checkDlvWay_0" id="checkDlvWay_0" value="01">
+		<input type="hidden" name="checkDscAmt_0" id="checkDscAmt_0" value="0">
+		<input type="hidden" name="checkDlvCupnDscAmt_0" id="checkDlvCupnDscAmt_0" value="0">
+		<input type="hidden" name="checkDlvCstInstBasiCd_0" id="checkDlvCstInstBasiCd_0" value="05">
+		<input type="hidden" name="checkDlvSellerKey_0" id="checkDlvSellerKey_0" value="0">
+		<!-- 적립혜택 -->
+		<input type="hidden" name="checkOpntSaveRt_0" id="checkOpntSaveRt_0" value="0.0">
+		<input type="hidden" name="checkBonusPointSaveAmt_0" id="checkBonusPointSaveAmt_0" value="0">
+		<input type="hidden" name="checkEmergencyPointSaveAmt_0" id="checkEmergencyPointSaveAmt_0" value="0">
+		<input type="hidden" name="checkOcbAddEvlSaveAmt_0" id="checkOcbAddEvlSaveAmt_0" value="0">
+		<input type="hidden" name="checkMileSaveAmt_0" id="checkMileSaveAmt_0" value="210">
+		<input type="hidden" name="checkMallPntAmt_0" id="checkMallPntAmt_0" value="0">
+		<input type="hidden" name="checkOcbSellerAmt_0" id="checkOcbSellerAmt_0" value="0">
+		<input type="hidden" name="checkMileageSellerAmt_0" id="checkMileageSellerAmt_0" value="0">
+		<input type="hidden" name="checkShockingEvlOcbSaveAmt_0" id="checkShockingEvlOcbSaveAmt_0" value="0">
+
+		<div class="clc" style="display:;">
+			<ul>
+				<li>총 상품금액 <span class="prc" id="prdAmount0" title="10500"><b>10,500</b>원</span></li>
+				<li>쿠폰할인금액 <span class="prc" id="dscAmount0" title="0"><b>0</b>원</span></li>
+				<li class="last">총 합계금액 <span class="prc"><b>10,500</b>원</span></li>
+				<li class="dly">
+					배송비 :
+					
+					선결제
+					
+					<span class="prc"><b>5,500</b>원</span>
+
+					
+					<a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall#lyr10" onclick="mwUI.layerToggle(&#39;lyr10&#39;, this, &#39;lyw&#39;);return false;" class="help" data-clickurl="MSC008" data-clickkey="MSC008">도움말</a>
+					
+				</li>
+			</ul>
+		</div>
+
+		<div class="btn_area">
+			<input type="hidden" name="agreeOrderMakePrdYN_1232313972" value="Y">
+			<div class="ag_left">
+				<button type="button" class="sbtn" onclick="doDelete(&#39;1232313972&#39;);callStatAjax(&#39;MSC011&#39;, &#39;MSC011&#39;);">삭제</button>
+			</div>
+
+
+
+
+			
+			<button type="button" class="sbtn fbl" onclick="changeCoupon(&#39;1232313972&#39;, &#39;N&#39;, 1);callStatAjax(&#39;MSA01&#39;,&#39;MSA0101&#39;);return false;">쿠폰변경</button>
+			<button type="button" class="sbtn frd" onclick="orderOneProduct(&#39;1232313972&#39;,&#39;N&#39;,0,1);callStatAjax(&#39;MSC009&#39;, &#39;MSC009&#39;);">주문</button>
+			
+			<button type="button" class="sbtn onec" onclick="orderOneProduct(&#39;1232313972&#39;,&#39;N&#39;,0,1 ,&#39;N&#39;,&#39;true&#39; ,&#39;958114815&#39;, &#39;Y&#39;);callStatAjax(&#39;MSC019&#39;, &#39;MSC019&#39;);">원클릭</button>
+			
+			<input type="hidden" name="soldOut_1232313972" value="F">
+			
+		</div>
+	</div>
+
+	<!-- s:묶음 배송비 정책 -->
+
+	<div class="lyw" id="lyr10" style="display:none" ;="">
+		<div class="lym">
+			
+			<h3>배송비 조건 안내</h3>
+			
+			<p class="txt">본 상품은 동일 판매자의 동일 배송비 조건 상품의 묶음 구매에 따라 배송비가 달라집니다.</p>
+			
+			<table class="tbl2">
+				<caption>배송비</caption>
+				<tbody>
+				<tr>
+					<td><strong class="t_orgg">1개당배송비</strong><br>5,500원</td>
+				</tr>
+				</tbody>
+			</table>
+			
+			<h3 class="tt">제주/도서산간 지역 추가배송비</h3>
+			<p class="txt">제주/도서산간 배송지의 경우 구매자는 추가 운송비를 지불하여야 합니다.<br>(지역상세정보는 PC버전에서 확인)</p>
+			<table class="tbl2">
+				<caption>배송비</caption>
+				<tbody>
+				
+				<tr>
+					<th scope="row">제주지역</th>
+					<td>3,000원</td>
+				</tr>
+				
+				<tr>
+					<th scope="row">도서산간</th>
+					<td>5,000원</td>
+				</tr>
+				
+				</tbody>
+			</table>
+			
+		</div>
+		<button type="button" class="cls">도움말 닫기</button>
+	</div>
+	<!-- e:묶음 배송비 정책 -->
+
+		
+		</div>
+
+				
+
+			</div>
+			<!-- //하나씩 보기 -->
+
+			<div class="cart_type_btm">
+				<div class="chkb"><span class="chkBox"><input type="checkbox" id="allselectBelow" onclick="selectAllChk();"> <label for="allselect2">전체선택</label></span></div>
+			</div>
+
+			<div class="order_total">
+				<ul class="total">
+					<li>
+						<em>주문금액<span>(배송비포함)</span></em>
+						<div class="cn"><strong id="totalOrderAmount">16,000</strong>원</div>
+					</li>
+					<li>
+						<em>할인금액</em>
+						<div class="cn"><strong id="totalDscAmount">0</strong>원</div>
+					</li>
+					<li>
+						<em>결제예정금액</em>
+						<div class="cn"><strong id="finalOrderExpectAmount">16,000</strong>원</div>
+					</li>
+				</ul>
+				
+				<div class="bft">
+					<h2>적립혜택</h2>
+					<ul>
+						
+						<li id="displayMileSaveAmt">마일리지 적립 <span id="sumMileSaveAmt"><b>210마일</b></span></li>
+						
+					</ul>
+				</div>
+				
+			</div>
+			<!-- s:사은품 -->
+			<div class="lyw" id="lyr_bookGift" style="display:none; margin-top: -14px;">
+				<div class="lym">
+					<h3>구매조건별 사은품 안내</h3>
+					<div class="bk_gift" id="bookGiftInfo">
+					</div>
+				</div>
+				<button type="button" class="cls" onclick="helpClose(this)">도움말 닫기</button>
+			</div>
+
+			<!-- e:사은품 -->
+			<div id="cartBtn" class="btn_w3 btncart">
+				<div><span class="btnpr"><button type="button" onclick="goToOrderBasic(&#39;Checked&#39;,1);callStatAjax(&#39;MSC016&#39;, &#39;MSC016&#39;);" data-gactg="11111" data-gaaction="222닫기버튼">선택주문</button></span></div>
+				<div><span class="btnbn"><button type="button" onclick="goToOrderBasic(&#39;All&#39;,1);callStatAjax(&#39;MSC017&#39;, &#39;MSC017&#39;);">전체주문</button></span></div>
+				<div><span class="btnb"><button type="button" onclick="doMultiDelete(1);callStatAjax(&#39;MSC018&#39;, &#39;MSC018&#39;);">선택삭제</button></span></div>
+			</div>
+			<input type="hidden" name="sellerCheckKey" value="1">
+			<input type="hidden" name="totalCartPrdCnt" value="1">
+
+
+			<!-- [Layer]도착예정일 -->
+			<div class="lyw" id="lyr_arrive" style="display:none">
+				<div class="lym">
+					<h3>도착예정일</h3>
+					<div class="cons">
+						<p class="txt_dly">
+							주문 후 2-3일 (영업일 기준) 받아 보실 수 있으며, 평일 기준으로 당일 배송 가능시간에 주문하신 경우 당일 혹은 다음날 받아보실 수 있습니다.
+						</p>
+					</div>
+				</div>
+				<button type="button" class="cls" onclick="helpClose(this)">도움말 닫기</button>
+			</div>
+			<!-- //[Layer]도착예정일 -->
+
+			<!-- s:배송비/관,부가세 -->
+			<div class="lyw" id="lyr2" style="display:none">
+				<div class="lym">
+					<h3>배송비/관,부가세</h3>
+					<div class="box2">
+						<ul>
+							<li>배송비
+								<p class="ncn">해외항공배송 상품은, 해외현지운송료 + 국제운송료 + 국내운송료로, 상품무게에 따라 책정됩니다. </p>
+							</li>
+							<li>관,부가세
+								<p class="ncn">수입통관시 부과되는 세금으로 일반적으로 15만원 초과되는 경우 과세됩니다.<br>
+									<strong>(관세율은 구입 상품의 종류와 가격에 따라 부과됩니다.)</strong></p>
+							</li>
+							<li>기타
+								<p class="ncn">현지세금, 통관수수료, 상품가에 따른 안심보험료 등이 포함되어있으며, <strong>결제완료하신 후 환율변동 등이 발생해도 추가로 결제하지 않으셔도 됩니다.</strong></p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<button type="button" class="cls">도움말 닫기</button>
+			</div>
+			<!-- e:배송비/관,부가세 -->
+
+			<!-- s:배송 보장일 -->
+			<div class="lyw" id="lyr3" style="display:none">
+				<div class="lym">
+					<h3>배송 보장일 <span class="sut">(11번가 해외통합배송 상품)</span></h3>
+					<div class="box2">
+						<ul>
+							<li>배송보장일이란?
+								<p class="ncn">11번가 해외통합배송상품에 대해, 11번가가 배송을 보장하는 기간으로, 고객님께서 주문/결제한 시점으로부터 상품을 수령하신 시점까지의 평균기간을 기준으로 산정됩니다.</p>
+							</li>
+							<li>배송일 완전 보장제란?
+								<p class="ncn">11번가 해외통합배송 상품에 대해,주문시 안내드린 배송보장일 내에 배송이 안되는 경우, 다음날부터 1일에 1,000원씩을 포인트로 적립해드리는 제도입니다.  <br>
+									(주문별 최대 11,000원, 11번가 해외통합배송상품 한정, 발생일에 자동적립)</p>
+							</li>
+							<li>11번가 해외통합배송 상품이란?
+								<p class="ncn">11번가 해외물류센터에서 합포장하여 발송해드리는 상품으로, 개별주문시보다 배송비가 저렴해집니다.</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<button type="button" class="cls">도움말 닫기</button>
+			</div>
+			<!-- e:배송 보장일 -->
+
+			<!-- s : 주문제작 상품 구매안내 -->
+			<div id="guideLayer" class="layer_confirm">
+				<div class="cont">
+					<h2>주문제작 상품 구매안내</h2>
+					<p>해당상품은 고객님의 주문사항에 맞춰 제작되는 상품이므로 판매자의 의사에 반하여 취소 및 교환, 반품이 불가능 합니다.  (상품하자시 제외)<br>이에 동의하시는 경우 <strong class="red">동의</strong>버튼을 선택해 주세요.</p>
+				</div>
+				<div class="btn_w2">
+					<div><span class="btnbr"><button type="button" data-move="no" onclick="document.actionForm.submit();return false;">동의</button></span></div>
+					<div><span class="btnb"><button type="button" data-move="no" onclick="mwUI.layerPopClose(&#39;guideLayer&#39;);return false;">취소</button></span></div>
+				</div>
+			</div>
+			<!-- e: 주문제작 상품 구매안내 -->
+
+			<!-- 2016-05-27 NDH 나우배송 안내 레이어 -->
+			<div class="lyw" id="lyrNow" style="display:none">
+				<div class="lym">
+					<h3>NOW배송 서비스란?</h3>
+					<p class="txt">
+						1. 11번가에서 엄선한 상품을 한번에 담아서 배송!<br>
+						2. NOW배송 아이콘이 붙은 상품은 골라 담아 배송비 한번만!<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;2만원 이상 구매시 무료배송! <br>
+						3. 오후 5시 이전 주문시 오늘발송!
+					</p>
+				</div>
+				<button type="button" class="cls">도움말 닫기</button>
+			</div>
+			<!-- //2016-05-27 NDH 나우배송 안내 레이어 -->
+
+
+			<div class="lyw" id="lyr_deliDate" style="display:none; top: 228px;">
+				<div class="lym">
+					<h2>[희망일배송 안내]</h2>
+					<div class="lyc">
+						<ul>
+							<li>1. 결제단계에서 원하시는 배송날짜를 지정할 수 있습니다.(원클릭 구매는 지정불가)</li>
+							<li>2. 지정이 되지 않는 날짜는 배송요청사항에 날짜를 기재해주세요.</li>
+							<li>3. 물류센터 휴무일에는 배송 및 설치가 불가능합니다.</li>
+							<li>4. 선택한 배송날짜에 물류기사가 방문전 해피콜 예정입니다.</li>
+						</ul>
+						<p class="txt">단 물류상황에 따라 지연되는 경우도 있으니 양해 부탁 드립니다.(지연 시 사전 연락 예정)</p>
+					</div>
+				</div>
+				<button type="button" class="cls">닫기</button>
+			</div>
+			
+
+			<div class="cart_note">
+				<h2 class="tit_note">장바구니 유의사항</h2>
+				<ul class="ntc_lst">
+					<li>11번가 모바일 웹 장바구니는 11번가 웹 사이트의 장바구니와 동일하게 연동되나, 시스템 적용 시차가 있을 수 있습니다.</li>
+					<li>장바구니에 담긴 상품은 최대 30일간 저장되며 판매가 종료된 상품은 리스트만 유지됩니다.</li>
+					<li>11번가 모바일 웹 장바구니에서는 묶음배송 구매, 개별배송 구매를 하실 경우 최대 20개의 상품을 구매하실 수 있습니다.(추가상품은 예외)</li>
+					<li>생활+묶음배송 구매는 동일 판매자의 서비스 유형이 같거나, 동일 매장의 서비스 유형이 같은 경우에만 구매를 하실 수 있습니다.</li>
+					<li>일반 배송 상품과 생활+ 서비스 상품은 묶음배송 구매를 하실 수 없습니다.</li>
+					<li>미성년자가 상품을 주문/결제할 경우 법정대리인이 동의하지 않으면 미성년자 본인 또는 법정대리인이 주문을 취소할 수 있습니다.</li>
+					<li>상품의 합계 금액은 배송비를 제외한 금액이오니 착오 없으시기 바랍니다.</li>
+				</ul>
+			</div>
+		</form>
+	</section>
+	<!-- //contents -->
+	<div id="adamAd"></div>
+
+<script>
+    if(!Date.now) {
+        Date.now = function() {return new Date().gtTime();}
+    }
+
+    function callStatAjax(url, key, item) {
+        if (url && url != '') {
+            var statUrl = '/a.st?url='+url+'&ts='+Date.now();
+            if (key && key != '') statUrl += '&key='+key;
+            if (item && item != '') statUrl += '&item='+item;
+            var xhr = window.ActiveXObject ? new window.ActiveXObject('Microsoft.XMLHTTP') : new window.XMLHttpRequest();
+            try {
+                xhr.open('get', statUrl, true);
+                xhr.send(null);
+            } catch (e){ console.log(e); }
+        }
+    }
+
+    function callStat(url, key, item) {
+        if (url && url != '') {
+            var statUrl = '/a.st?url='+url+'&ts='+Date.now();
+            if (key && key != '') statUrl += '&key='+key;
+            if (item && item != '') statUrl += '&item='+item;
+            var clickIfrm;
+            if (document.getElementById('ifrmClickAnaly')) {
+                clickIfrm = document.getElementById('ifrmClickAnaly');
+            } else {
+                clickIfrm = document.createElement('IFRAME');
+                clickIfrm.id = 'ifrmClickAnaly';
+                clickIfrm.width = 0;
+                clickIfrm.height = 0;
+                clickIfrm.style.display = 'none';
+                document.body.appendChild(clickIfrm);
+            }
+            clickIfrm.src = statUrl;
+        }
+    }
+
+    function catchItemClickEvent(e) {
+        try {
+            var evt = e || window.event;
+            var node = evt.srcElement || evt.target;
+            while(1) {
+                if (node.nodeName && node.nodeName.toLowerCase() === 'a') {
+                    break;
+                } else {
+                    if (node.parentNode) {node = node.parentNode;}
+                    else {break;}
+                }
+            }
+            if (node.nodeName.toLowerCase() === 'a' && node.parentNode.parentNode.getAttribute("data-clickurl")) {
+                var key = '';
+                var item = '';
+                if (node.parentNode.parentNode.getAttribute("data-clickkey")) key = node.parentNode.parentNode.getAttribute("data-clickkey");
+                if (node.getAttribute("data-clickitem")) item  = node.getAttribute("data-clickitem");
+                callStat(node.parentNode.parentNode.getAttribute("data-clickurl"), key, item);
+            }
+        } catch (e) {}
+        return true;
+    }
+
+    function catchAnchorClickEvent(e) {
+        try {
+            var evt = e || window.event;
+            var node = evt.srcElement || evt.target;
+            while(1) {
+                if (node.nodeName &&
+                    ( node.nodeName.toLowerCase() === 'a' || node.nodeName.toLowerCase() === 'input' || node.nodeName.toLowerCase() === 'button'  || node.nodeName.toLowerCase() === 'select') ) {
+                    break;
+                } else {
+                    if (node.parentNode) {node = node.parentNode;}
+                    else {break;}
+                }
+
+            }
+            if ( node.getAttribute("data-clickurl") ) {
+                var key = '';
+                var item = '';
+                if (node.getAttribute("data-clickkey")) key = node.getAttribute("data-clickkey");
+                if (node.getAttribute("data-clickitem")) item = node.getAttribute("data-clickitem");
+                callStat(node.getAttribute("data-clickurl"), key, item);
+            }
+        } catch (e) {}
+        return true;
+    }
+
+    function catchAnchorClickEventToAjax(e) {
+        try {
+            var evt = e || window.event;
+            var node = evt.srcElement || evt.target;
+            while(1) {
+                if (node.nodeName &&
+                    ( node.nodeName.toLowerCase() === 'a' || node.nodeName.toLowerCase() === 'input' || node.nodeName.toLowerCase() === 'button'  || node.nodeName.toLowerCase() === 'select') ) {
+                    break;
+                } else {
+                    if (node.parentNode) {node = node.parentNode;}
+                    else {break;}
+                }
+
+            }
+            if (node.getAttribute("data-clickurl")) {
+                var key = '';
+                var item = '';
+                if (node.getAttribute("data-clickkey")) key = node.getAttribute("data-clickkey");
+                if (node.getAttribute("data-clickitem")) item = node.getAttribute("data-clickitem");
+                callStatAjax(node.getAttribute("data-clickurl"), key, item);
+            }
+        } catch (e) {}
+        return true;
+    }
+
+    function hdStckFlush(trcUrl){
+        try {
+            if(trcUrl != null && typeof trcUrl != "undefined" && trcUrl != "") {
+
+                var baseURL;
+                if( document.location.href.indexOf( "https" ) == 0 ) {
+                    baseURL = "https://www.11st.co.kr/track.st?turl=";
+                } else {
+                    baseURL = "http://st.11st.co.kr/track.st?turl=";
+                }
+
+                var img = new Image();
+                img.src = baseURL + trcUrl;
+            }
+        } catch(e) {}
+    };
+
+    function callHotClickPairing(pin) {
+        try {
+            var getHotClickCookie = function(cName) {
+                cName = cName + '=';
+                var cookieData = document.cookie;
+                var start = cookieData.indexOf(cName);
+                var cValue = '';
+                if(start != -1){
+                    start += cName.length;
+                    var end = cookieData.indexOf(';', start);
+                    if(end == -1)end = cookieData.length;
+                    cValue = cookieData.substring(start, end);
+                }
+                return unescape(cValue);
+            };
+            var getHotClickAppType = function() {
+                return getHotClickCookie('appType');
+            };
+
+            var isAndroidApp = false;
+            if(getHotClickAppType() == "appmw") {
+                isAndroidApp = true;
+            }
+
+            var param = "";
+            var pin = pin || {};
+            var url = "//c.hotclick.netinsight.co.kr/hotclick/";
+            try {
+                if(document.location.protocol.indexOf("https") > -1) {
+                    url = "https://d1ehvyc0c0r8fr.cloudfront.net/hotclick/";
+                } else {
+                    url = "http:" + url;
+                }
+            } catch(e) {
+                url = "http:" + url;
+            }
+
+            if(typeof pin.method == "undefined" || pin.method == null || pin.method.length <= 0) {
+                pin.method = "visit";
+            }
+            if(pin.method == "purchase") {
+                url += "rm-cuki";
+            } else {
+                url += "set-cuki";
+            }
+            if(typeof pin.prdNo == "undefined" || pin.prdNo == null || pin.prdNo.length <= 0) {
+                return false;
+            }
+
+            param = "#method=" + pin.method;
+            if(typeof pin.ctgrNo != "undefined" && pin.ctgrNo != null && pin.ctgrNo.length > 0) {
+                param += "&ctgr_no=" + pin.ctgrNo;
+            }
+            param += "&prod_no=" + pin.prdNo;
+            if(typeof pin.price != "undefined" && pin.price != null && pin.price.length > 0) {
+                param += "&price=" + pin.price;
+            }
+            if(typeof pin.did != "undefined" && pin.did != null && pin.did.length > 0 && isAndroidApp) {
+                param += "&did=" + pin.did;
+            } else {
+                param += "&did="
+            }
+
+
+            var statUrl = url + param;
+            var clickIfrm;
+            if (document.getElementById('ifrmHotClickAnaly')) {
+                clickIfrm = document.getElementById('ifrmHotClickAnaly');
+            } else {
+                clickIfrm = document.createElement('IFRAME');
+                clickIfrm.id = 'ifrmHotClickAnaly';
+                clickIfrm.width = 0;
+                clickIfrm.height = 0;
+                clickIfrm.style.display = 'none';
+                document.body.appendChild(clickIfrm);
+            }
+            clickIfrm.src = statUrl;
+
+            setTimeout(function() {
+                document.body.removeChild(clickIfrm);
+            }, 1000);
+        } catch(ex) {}
+    }
+
+    function callPushGaTrc (ctg, action, label, url){
+        var getCookie = function(cName) {
+            cName = cName + '=';
+            var cookieData = document.cookie;
+            var start = cookieData.indexOf(cName);
+            var cValue = '';
+            if(start != -1){
+                start += cName.length;
+                var end = cookieData.indexOf(';', start);
+                if(end == -1)end = cookieData.length;
+                cValue = cookieData.substring(start, end);
+            }
+            return unescape(cValue);
+        };
+
+        var gaSend = function(ctg, action, label) {
+            try {
+                var appType = getCookie('appType');
+                var exposerLabel = label.indexOf('노출');
+                if(exposerLabel>0){
+                    if(appType === '') {
+                        ga("send", "event", ctg, action, label, { nonInteraction: true });
+                    }else{
+                        var jsonStr = "{ \"category\" : \""+ctg+"\", \"action\" :\""+action+"\", \"label\" : \"" +  label + "\"}";
+                        var appStr = "app://gaSendEvent/" + encodeURIComponent(jsonStr);
+                        executeMtAppCommand("appGaTrakFrame", appStr);
+                    }
+                }else{
+                    if(appType === '') {
+                        ga("send", "event", ctg, action, label);
+                    }else{
+                        var jsonStr = "{ \"category\" : \""+ctg+"\", \"action\" :\""+action+"\", \"label\" : \"" +  label + "\"}";
+                        var appStr = "app://gaSendEvent/" + encodeURIComponent(jsonStr);
+                        window.location.replace(appStr);
+                    }
+                }
+            } catch(e) {
+                console.log(e);
+            };
+        };
+
+        try {
+            if(typeof url != 'undefined'){
+                setTimeout(function() {
+                    document.location.href = url;
+                }, 500);
+            }
+        }catch(e) {
+            console.log(e);
+        };
+        gaSend(ctg, action, label);
+    }
+</script>
+
+
+
+<script>
+// 레코픽 로그 데이터 적재시 사용되는 사용자 정보 함수
+function getBase64UserInfo(){
+	try{
+		var changeStr	= '';
+		var birthyear	= TMCookieUtil.getSubCookie(0, "HODY");
+		var gender		= TMCookieUtil.getSubCookie(0, "GND");
+		if(gender != null && gender != "undefined" && gender.length > 0
+				&& (gender == "10"|| gender == "20")){
+			gender = gender == "10" ? "M" : "F";
+		}
+		changeStr	= '{"user":{"birthyear":"'+birthyear+'","gender":"'+gender+'"}}';
+		
+		var incodeStr	= "";
+		if(gender != null && gender != "" && birthyear != null && birthyear != ""){
+			incodeStr	= window.btoa(changeStr);
+		}
+		return incodeStr;
+	} catch (e) {
+		console.log(e);
+		return null;
+	}
+}
+
+window.addEventListener("DOMContentLoaded",  function(){
+	$("#search_submit").click(function(){
+		var reco_searhword	= "";
+		if($("#decSearchKeyword") && $("#decSearchKeyword").val() != ""){
+			reco_searhword	= $("#decSearchKeyword").val();
+		}
+		if(reco_searhword != null && reco_searhword != "" && reco_searhword != "undefined"){
+			try {
+				(function(w,d,n,s,e,o) {
+			    	w[n]=w[n]||function(){(w[n].q=w[n].q||[]).push(arguments)}; 
+			    	e=d.createElement(s);e.async=1;e.charset='utf-8';e.src='//static.recopick.com/dist/production.min.js'; 
+			    	o=d.getElementsByTagName(s)[0];o.parentNode.insertBefore(e,o);
+			  	})(window, document, 'recoPick', 'script'); 
+		  
+					recoPick('service', 'm.11st.co.kr');
+					recoPick('setUID', TMCookieUtil.getCookie("PCID"));
+					
+						if(getBase64UserInfo() != ""){
+							try{recoPick('b', getBase64UserInfo());} catch (err) {console.log(err);}
+						}
+					
+					
+					recoPick('setMID', '6150708229371694165');
+					
+					recoPick('sendLog', 'search', reco_searhword);
+			} catch ( err ) {console.log("recopick : " + err);}
+		} 
+	});
+});
+
+var RecoPickInfo = function(pin) {
+	this.site		= pin.service;
+	this.url		= encodeURIComponent(document.location.href);
+    this.ref		= encodeURIComponent(document.referrer);
+	this.items		= [];
+	this.uid		= pin.setUID;
+	this.action		= pin.action;
+	
+	if(pin.b != null && typeof pin.b != "undefined" && pin.b.length > 0) {
+		this.b = pin.b;
+	}
+	if(pin.mid != null && typeof pin.mid != "undefined" && pin.mid.length > 0) {
+		this.mid = pin.mid;
+	}
+	
+	this.getUrl	= function(recopickServer) {
+		resultStr = recopickServer
+					+ this.action
+					+ "/" + this.site
+					+ "/" + this.uid
+					+ "?site=" + this.site
+					+ "&url=" + this.url
+					+ "&ref="  + this.ref;
+		if(this.mid != null && typeof this.mid != "undefined" && this.mid.length > 0) {
+			resultStr += "&mid=" + this.mid;
+		}
+		if(this.items != null && typeof this.items != "undefined" && this.items.length > 0) {
+			for(var i = 0; i < this.items.length; i++) {
+				resultStr += this.items[i].getItemStr(i);
+			}
+		}
+		resultStr += "&uid=" + this.uid;
+		resultStr += "&action=" + this.action;
+		
+		return resultStr;
+	}
+}
+
+var RecoPickPrdInfo = function(pin){
+	this.id	= pin.id;
+	this.c1	= pin.c1;
+	this.c2	= pin.c2;
+	this.c3	= pin.c3;
+	this.c4	= pin.c4;
+
+	if(pin.count != null && typeof pin.count != "undefined" && pin.count.length > 0) {
+		this.count = pin.count;
+	}
+
+	this.getItemStr = function(idx) {
+		var resultStr = ""
+				+ "&" + encodeURIComponent("items[" + idx + "][id]") + "=" + this.id
+				+ "&" + encodeURIComponent("items[" + idx + "][c1]") + "=" + this.c1
+				+ "&" + encodeURIComponent("items[" + idx + "][c2]") + "=" + this.c2
+				+ "&" + encodeURIComponent("items[" + idx + "][c3]") + "=" + this.c3
+				+ "&" + encodeURIComponent("items[" + idx + "][c4]") + "=" + this.c4
+				;
+		if(this.count != null && typeof this.count != "undefined" && this.count.length > 0) {
+			resultStr += "&" + encodeURIComponent("items[" + idx + "][count]") + "=" + this.count;
+		}
+
+		return resultStr;
+	}
+}
+
+function callRecopickPrdStat(recoPickInfo, recopickServer) {
+	if(recopickServer == null || typeof recopickServer == "undefined" || recopickServer == "") {
+		recopickServer	= "http://api.recopick.com/v1/logs/";
+	}
+	try {
+		var img = new Image();
+		img.src = recoPickInfo.getUrl(recopickServer);
+	} catch(e) {console.log('RecoPickLog'+e);}
+}
+</script>
+
+	<iframe src="cart_list_files/ifrm_ga.html" scrolling="no" frameborder="0" width="0" height="0" title="GA 아이프레임"></iframe>
+ 
+	<img height="1" width="1" border="0" alt="" style="display:none" src="cart_list_files/tr">
+
+
+
+
+<section id="cpFloating" class="cp_floating" style="display:none;">
+	<div class="cp_wrap">
+		<div class="cp_banner">
+			<a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall#"></a>
+			<button type="button" class="stop">그만보기</button>
+		</div>
+		<button type="button" class="close" onclick="mwUI.moreToggle(&#39;cpFloating&#39;, &#39;on&#39;, this, &#39;보기&#39;, &#39;닫기&#39;)">캠페인 보기</button>
+	</div>
+</section>
+<script id="mwDev_offerTemplate" type="text/x-elevenst-template">
+	<div class="cp_wrap">
+		{{html}}
+		<button type="button" class="close" onclick="cpOfferAllPopup.close('cpAllpopup')">캠페인 닫기</button>
+	</div>
+</script>
+
+<script>
+function toEndDateFormat(endDate) { //parseTime(time)
+    var year = endDate.substr(0,4);
+    var month = endDate.substr(4,2) - 1; // 1월=0,12월=11
+    var day = endDate.substr(6,2);
+    var hour = endDate.substr(8,2);
+    var min = endDate.substr(10,2);
+    var second = endDate.substr(12,2);
+
+    return new Date(year,month,day,hour,min, second);
+}
+
+function setOfferCookie(c_name,value, endDate)
+{
+    var expdate;
+    if(endDate) {
+		expdate = toEndDateFormat(endDate);
+    } else {
+        expdate = new Date();
+        expdate.setTime(expdate.getTime() + (1000* 24 * 60 * 60 * 1));
+    }
+    document.cookie = c_name+"=" + encodeURIComponent(value) + "; path=/; expires=" + expdate.toGMTString();
+}
+
+function getOfferCookie(cpCode, type) {
+	var INFO = ['CODE', 'VIEW', 'CLICK', 'DENY'];
+	
+	function getCookie(cName) {
+	    cName = cName + '=';
+	    var cookieData = document.cookie;
+	    var start = cookieData.indexOf(cName);
+	    var cValue = '';
+	    if(start != -1){
+	         start += cName.length;
+	         var end = cookieData.indexOf(';', start);
+	         if(end == -1)end = cookieData.length;
+	         cValue = cookieData.substring(start, end);
+	    }
+	    return unescape(cValue);
+	}
+	
+	var cookieValue = getCookie('offerBnInfo');
+    if(cookieValue) {
+        var cArry = cookieValue.split('@');
+        for(var idx in cArry) {
+        	var info = cArry[idx].split('|');
+            if(cArry[idx] && cArry[idx] != '' && cpCode == info[0]) {
+            	return info[INFO.indexOf(type)];
+            }
+        }
+    }
+    return 'N';
+}
+
+function setBannerInfo(offerBanners) {
+	//set local storage
+	store.set('offerBanners', offerBanners);
+	
+	var bannerStore = store.get('offerBanners');
+	
+	var strInfo = ''; //full Cookie String
+	var endDate = ''; //Cookie End Date
+	
+	for(var key in bannerStore) {
+		var info = bannerStore[key];
+		var denyYn = getOfferCookie(key, 'DENY');
+		if(info.endDate > endDate ) {
+			endDate = info.endDate;	
+		}
+		if(denyYn != 'Y') denyYn = info.denyYn;
+		strInfo += key + '|' + info.viewYn + '|' + info.clickYn + '|' + denyYn + '@';
+	}
+	setOfferCookie('offerBnInfo', strInfo, endDate);
+}
+
+function clickOfferBanner(banner, deny) {
+    var offerBanners = store.get('offerBanners');
+    if(offerBanners) {
+        for(var idx in offerBanners) {
+            if(offerBanners[idx].cpCode == banner.cpCode) {
+                offerBanners[idx].clickYn = 'Y';
+                if(deny && banner.cntType == '00') {
+                	offerBanners[idx].denyYn = 'Y';
+                }
+            }
+        }
+        setBannerInfo(offerBanners);
+    }
+    var img = new Image();
+    img.src = '/MW/Offer/Banner/updateBannerClick.tmall?campaignCode='+banner.cpCode;
+}
+
+var cpFloatingTO = null;
+function showOfferFloatBanner(banner) {
+	document.querySelector('#cpFloating a').href = banner.link;
+	document.querySelector('#cpFloating a').addEventListener('click', function() {
+		clickOfferBanner(banner);
+		document.getElementById('cpFloating').style.display = 'none';
+	}, false);
+	document.querySelector('#cpFloating a').innerHTML = '<img src="'+banner.imgUrl+'" alt="'+banner.name+'"/>';
+	document.querySelector('#cpFloating .stop').addEventListener('click', function() {
+		clickOfferBanner(banner, true);
+		document.getElementById('cpFloating').style.display = 'none';
+	}, false);
+
+	document.getElementById('cpFloating').style.display = 'block';
+	var cpFloatingBtn = document.getElementById('cpFloating').getElementsByClassName('close')[0];
+	setTimeout(function() { 
+		mwUI.moreToggle('cpFloating', 'on', cpFloatingBtn, '보기', '닫기');
+		cpFloatingTO = setTimeout(function() {
+			document.getElementById('cpFloating').className = 'cp_floating';
+        }, 5000);
+	}, 500);
+}
+
+function showOfferAllPopup(banner) {
+	var sec = document.createElement('section');
+	sec.id = 'cpAllpopup';
+	sec.className = 'cp_allpopup';
+	
+	var template = document.getElementById('mwDev_offerTemplate').innerHTML;
+	sec.innerHTML = template.replace('{{html}}', banner.contents);
+	
+	document.body.appendChild(sec);
+	
+	setTimeout(function() {
+		cpOfferAllPopup.open('cpAllpopup');
+	}, 500);
+}
+
+var cpOfferAllPopup = {
+	open : function(id) {
+		var obj = document.getElementById(id);
+ 
+		document.body.className += ' allpopup';
+ 
+		obj.className += ' start';
+		setTimeout(function() { 
+			obj.className = obj.className.replace(" start", " animation");
+		}, 500);
+		obj.addEventListener('webkitTransitionEnd', function() {
+			obj.className = obj.className.replace(" animation", "");
+		}, false);
+	},
+	close : function(id) {
+		var obj = document.getElementById(id);
+ 
+		obj.className += ' animation';
+		setTimeout(function() { 
+			obj.className = obj.className.replace(" animation", " end");
+		}, 500);
+		obj.addEventListener('webkitTransitionEnd', function() {
+			obj.className = obj.className.replace(" end", "");
+			document.body.className = document.body.className.replace(' allpopup', '');
+		}, false);
+	}
+}
+
+window.addEventListener("load",  function(){
+	if(location.href.indexOf('/Login') > -1 || location.href.indexOf('/Order') > -1) return;
+	
+	var externalCookie = getAdCookie('externalBanners');
+	if (location.href.indexOf('/productBasicInfo') > -1 && "Y" == "" && "Y" == "") {
+		var banner = {};
+		banner.contents = '';
+		showOfferAllPopup(banner);
+		return;
+	} else if (location.href.indexOf('/productBasicInfo') > -1 && "" != '' && (!externalCookie || externalCookie < 1) ) {
+		var banner = {};
+		setOfferCookie('externalBanners', !externalCookie ? 1 : parseInt(externalCookie)+1);
+		banner.contents = '';
+		showOfferAllPopup(banner);
+		
+		return;
+	}
+	
+	var offerCookie = getAdCookie('offerBanners');
+	var offerBanners = store.get('offerBanners');
+
+	if(offerCookie && offerBanners) {
+		for(var idx in offerBanners) {
+			if(getOfferCookie(offerBanners[idx].cpCode, 'CLICK') == 'N' && getOfferCookie(offerBanners[idx].cpCode, 'VIEW')  == 'N') {
+                var endDate = offerBanners[idx].endDate;
+                if((new Date() - toEndDateFormat(endDate)) > 0) {
+                    continue;
+                }
+                if(getOfferCookie(offerBanners[idx].cpCode, 'DENY') == 'Y') {
+                    continue;
+                }
+			
+				offerBanners[idx].viewYn = 'Y';
+				setBannerInfo(offerBanners);
+				
+				if(offerBanners[idx].type == '00') {
+					showOfferFloatBanner(offerBanners[idx]);
+				} else if(offerBanners[idx].type == '01') {
+					showOfferAllPopup(offerBanners[idx]);
+				}
+        		break;
+			}
+		}
+	} else {
+		//if(offerCookie) return;
+		
+	    $.ajax({
+	        url: '/MW/Offer/Banner/getBanners.tmall',
+	        cache : false,		
+	        success: function(msg) {
+	        	setOfferCookie('offerBanners', true);
+	            var json = JSON.parse(msg);
+	            if(json && json.status.code == 200) {
+	            	if(json.response.cnt && json.response.cnt > 0) {
+	            		var bannerStore = {};
+	            		var banners = json.response.banners;
+	            		
+	            		var firstIdx = null;
+	            		for(var idx in banners) {
+	            			var viewYn = getOfferCookie(banners[idx].cpCode, 'VIEW');
+	            			var nativeView = (!offerBanners && viewYn == 'Y'); //Native 노출 여부(LocalStorage 에 존재하지 않고 쿠키에 있을경우)
+	            			var clickYn = banners[idx].clickYn;
+	            			var denyYn = getOfferCookie(banners[idx].cpCode, 'DENY');
+
+	            			if(denyYn == 'Y') banners[idx].denyYn = 'Y';
+	            			
+	            			if(denyYn != 'Y' && clickYn != 'Y') {
+	            				firstIdx = banners[idx].cpCode;
+	            			}
+	            			bannerStore[banners[idx].cpCode] = banners[idx];
+	            		}
+	            		bannerStore[firstIdx].viewYn = 'Y';
+	            		setBannerInfo(bannerStore);
+	            		
+						if(!nativeView && bannerStore[firstIdx].type == '00') {
+							showOfferFloatBanner(bannerStore[firstIdx]);
+						} else if(!nativeView && bannerStore[firstIdx].type == '01') {
+							showOfferAllPopup(bannerStore[firstIdx]);
+						}		            		
+	            	}
+	            }
+	        }
+	    });
+	}	
+}, false);
+</script>
+
+<script>
+window.addEventListener("DOMContentLoaded",  function(){
+
+	var hasTouch = 'ontouchstart' in window;
+	var click = hasTouch ? 'touchend' : 'mousedown';
+	
+	$("header #kwd ul").delegate("li a", "click", catchAnchorClickEvent);
+    $("header #schwd #schword01").delegate("ul li a", "click", catchAnchorClickEvent);
+    $("header #schwd #schword02 div div").delegate("ul li a", "click", catchAnchorClickEvent);
+    $("header #schwd #schword03").delegate("ul li a", "click", catchAnchorClickEvent);
+    $(".f_menu ul").delegate("li a", "click", catchAnchorClickEvent);
+    $(".prdAdd").delegate("a", "click", catchAnchorClickEvent);
+    
+	var as = document.querySelectorAll("#wrap a");
+	for(var i=0,len=as.length; i<len; i++){
+		if( !(as[i].dataset.clickurl == undefined || as[i].dataset.clickurl == '') ){
+			as[i].addEventListener('click', catchAnchorClickEvent );
+		}
+    }
+	var input = document.querySelectorAll("#wrap input");
+	for(var i=0,len=input.length; i<len; i++){
+		if( !(input[i].dataset.clickurl == undefined || input[i].dataset.clickurl == '') ){
+			if( input[i].dataset.calltype == 'ajax' ){
+				input[i].addEventListener('click', catchAnchorClickEventToAjax );
+			}else{
+				input[i].addEventListener('click', catchAnchorClickEvent );
+			}
+		}
+    }
+	var button = document.querySelectorAll("#wrap button");
+	for(var i=0,len=button.length; i<len; i++){
+		if( !(button[i].dataset.clickurl == undefined || button[i].dataset.clickurl == '') ){
+			button[i].addEventListener('click', catchAnchorClickEvent );	
+		}
+    }
+	
+    $(".cont_wrap .sch_sort .sort").bind(click, catchAnchorClickEventToAjax);
+    $(".cont_wrap .sch_sort .sort").bind("change", function(){
+    	callStatAjax( $(":selected").data().clickurl, $(":selected").data().clickkey );
+    });
+
+    $(".cont_wrap .schbox2 select").bind(click, catchAnchorClickEventToAjax);
+    $(".cont_wrap .schbox2 select").bind("change", function(){
+    	$(":selected", this).each(function(){
+    		callStatAjax( $(this).data().clickurl, $(this).data().clickkey ) ;
+    	});
+    });
+    
+}, false);
+
+
+if (!isApp()) {
+	window.addEventListener("scroll",  function(){
+		var scrollHeight;
+		if ( pageYOffset ) {
+			scrollHeight = pageYOffset;
+		} else {
+			var body = document.body;
+			var de = document.documentElement;
+			de = (de.clientHeight) ? de : body;
+			scrollHeight = de.scrollTop;
+		}
+		if (scrollHeight > 1) {
+			document.querySelector('.f_top').style.display = 'block';
+		} else {
+			document.querySelector('.f_top').style.display = 'none';
+		}
+		
+	}, false);
+}
+</script>
+
+<footer>
+<script>
+function fn_goTop() {
+	window.scrollTo(0, 1);
+}
+function fn_doAjax(urlString, cbFunction) {
+    if (!urlString) return false;
+    if(typeof jQuery != 'undefined') {
+	    $.ajax({
+	        url: urlString,
+	        context: document.body,	
+	        success: function(msg) {
+	            if (cbFunction) eval(cbFunction + "(" + msg + ")");
+	        },	
+	        error: function() {
+	            if (cbFunction) eval(cbFunction+"()");
+	        }
+	    });
+    }
+}
+
+function fn_doAjaxCall(urlString, cbFunction) {
+    if (!urlString) return false;
+
+    if(typeof jQuery != 'undefined') {
+	    $.ajax({
+	        url: urlString,
+	        dataType : 'json',
+	        success: function(msg) {
+	        	if (cbFunction) cbFunction.call(this, msg);
+	        },	
+	        error: function() {
+	        	if (cbFunction) cbFunction.call(this);
+	        }
+	    });
+    }
+}
+
+function funcCheckIsLogin(){
+	var arg = "TMALL_AUTH=";
+	var alen = arg.length;
+	var clen = document.cookie.length;
+	var i = 0;
+
+	while (i < clen)
+	{
+		var j = i + alen;
+		if (document.cookie.substring(i, j) == arg)
+			return true;
+		i = document.cookie.indexOf(" ", i) + 1;
+		if (i == 0)
+			break;
+	}
+	return false;
+}
+function keyOneShow()
+{	
+		num = (Math.ceil(Math.random()*keyArray.length)) - 1;
+		$("#decSearchKeyword").val(keyArray[num]);
+		$("#dispObjLnkUrl").val(keyLinkArray[num]);
+}
+
+var keyArray = new Array();
+var keyLinkArray = new Array();
+var domainUrl = document.URL;
+var sslType = domainUrl.split("://");
+
+
+var gnbTextAjaxUrl = '/MW/Common/getGNBTextListAjax.tmall';
+if(document.location.hostname == 'm.11st.co.kr') {
+    gnbTextAjaxUrl = '/MW/html/nc/getGNBTextListAjax.js';
+}
+fn_doAjaxCall(gnbTextAjaxUrl, gnbTextListJson);
+
+
+function callAdAppScheme(scheme, json) {
+    try {
+        var ifr = document.getElementById('appAdTextInterface');
+        if (!ifr) {
+            ifr = document.createElement('iframe');
+            ifr.id = 'appAdTextInterface';
+            ifr.width = 0;
+            ifr.height = 0;
+            ifr.style.display = 'none';
+            document.body.appendChild(ifr);
+        }
+        ifr.src = scheme+encodeURIComponent(JSON.stringify(json));
+    } catch(e) {console.log(e);}
+}
+
+function getAdCookie(cName) {
+    cName = cName + '=';
+    var cookieData = document.cookie;
+    var start = cookieData.indexOf(cName);
+    var cValue = '';
+    if(start != -1){
+         start += cName.length;
+         var end = cookieData.indexOf(';', start);
+         if(end == -1)end = cookieData.length;
+         cValue = cookieData.substring(start, end);
+    }
+    return unescape(cValue);
+}
+
+function gnbTextListJson(json) {
+	var appData = {};
+	appData.viewLogUrl = 'http://m.11st.co.kr/a.st?type=view&idx={{idx}}';
+    appData.clickLogUrl = 'http://m.11st.co.kr/a.st?type=view&idx={{idx}}';
+    appData.list = [];
+	if (json) {		
+		if (json.textList.length > 0) {		
+
+			var textCnt = json.textList.length;
+			if(textCnt > 20) textCnt = 20;
+			
+			for (var i=0 ; i<textCnt ; i++) {
+				keyArray[i] = json.textList[i].dispObjNm;
+				keyLinkArray[i] = json.textList[i].dispObjLnkUrl;
+				
+				//for app
+				var appListData = {};
+                appListData.idx = i;
+                appListData.name = json.textList[i].dispObjNm;
+                appListData.link = json.textList[i].dispObjLnkUrl;
+                appData.list[i] = appListData;
+			}			            
+		}
+	}
+	var searchText = "";
+	if (keyArray.length > 0 && searchText == "" ) {
+		keyOneShow();
+		var appType = getAdCookie("appType");
+		if(appType.indexOf("appmw") > -1) {
+			callAdAppScheme('app://ads/searchKeywords/', appData);
+		}
+	} else {
+        var appTextData = {};
+        appTextData.list = [];
+        var appTextListData = {};
+        appTextListData.name = searchText;
+        
+        var searchUrl = 'http://m.11st.co.kr/MW/Search/searchProduct.tmall?decSearchKeyword=' + encodeURIComponent(searchText) + '&searchKeyword=' + encodeURIComponent(encodeURIComponent(searchText));
+        appTextListData.link = searchUrl;
+        appTextData.list[appTextData.list.length] = appTextListData;
+        
+        var appType = getAdCookie("appType");
+        if(appType.indexOf("appmw") > -1) {
+            callAdAppScheme('app://ads/searchText/', appTextData);
+        }
+    }
+}
+
+</script>
+
+
+<script type="text/javascript">
+window.addEventListener("load",  function() {
+	try {
+		var protocol = (window && window.location && window.location.protocol) ? window.location.protocol.replace(':', '') : "http";
+		var element = document.createElement('script');
+		var domainPrefix = "//c.m.011st.com/MW";
+		if(protocol === "https") {
+			domainPrefix = "//m.11st.co.kr/MW";
+		}
+		element.src = domainPrefix + "/js/lib/mwapptools.js";
+		document.head.appendChild(element);
+	} catch(e) {};
+}, false);
+
+function call11stAppFooter(scheme, url) {
+	var path = scheme;
+	if(path.indexOf('loadurl') > -1) {
+		path += encodeURIComponent(url);
+	}
+	var intentScheme = '#Intent;scheme=elevenst;package=com.elevenst;end';
+	mwapptools.web2app({ urlScheme : 'elevenst'+path, intentURI :
+		'intent'+path+intentScheme, storeURL: 'itms-apps://itunes.apple.com/app/id397938216?mt=8' });
+}
+function goDealAppFooter(){	
+	var scheme = '://maintab/home';
+    var intentScheme ='#Intent;scheme=elevenstdeal;package=com.elevenst.deals;end';
+    mwapptools.web2app({ urlScheme : "elevenstdeal"+scheme, intentURI : "intent"+scheme+intentScheme, storeURL: "itms-apps://itunes.apple.com/app/id804663259?mt=8" }); 
+}
+</script>
+
+<div class="f_down">
+	<ul>
+		<li><a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall#" onclick="call11stAppFooter(&#39;://loadurl?domain=m.11st.co.kr&amp;url=&#39;,document.location.href); return false;" class="app11st" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1402">11번가 앱다운로드</a></li>
+		<li><a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall#" onclick="goDealAppFooter(); return false;" class="shocking" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1403">쇼킹딜 앱다운로드</a></li>
+	</ul>
+</div>
+
+<div class="f_menu">
+	<ul>
+		<li id="loginBottom"><a href="http://buy.m.11st.co.kr/MW/Login/logout.tmall?type=" class="f5" data-clickurl="WGF01" data-clickkey="01">로그아웃</a></li>
+		<li id="pcVersionLink"><a href="http://www.11st.co.kr/html/main.html" data-clickurl="WGF01" data-clickkey="02">PC버전</a></li>
+		<li><a href="http://m.11st.co.kr/MW/Customer/customerMain.tmall" data-clickurl="WGF01" data-clickkey="03">고객센터</a></li>
+		<li><a href="http://m.11st.co.kr/MW/Product/productMainConner.tmall" data-clickurl="WGF01" data-clickkey="04">전체서비스</a></li>
+	</ul>
+</div>
+<script type="text/javascript">
+var login = document.getElementById("loginBottom");
+var type = "";
+window.addEventListener("load",  function(){
+	setTimeout("footerSetLogin()", 310);
+	
+}, false);
+function footerSetLogin() {
+	if(funcCheckIsLogin()) {
+	    login.innerHTML = '<a href="/MW/Login/logout.tmall?type='+type+'" class="f5" data-clickurl="WGF01" data-clickkey="01">로그아웃</a>';
+	} else {
+	    login.innerHTML = '<a href="https://m.11st.co.kr/MW/Login/login.tmall" class="f1" data-clickurl="WGF01" data-clickkey="01">로그인</a>';
+	}
+}
+(function() {
+	(function() {
+		var getCookie = function(cName) {
+		    cName = cName + '=';
+		    var cookieData = document.cookie;
+		    var start = cookieData.indexOf(cName);
+		    var cValue = '';
+		    if(start != -1){
+		         start += cName.length;
+		         var end = cookieData.indexOf(';', start);
+		         if(end == -1)end = cookieData.length;
+		         cValue = cookieData.substring(start, end);
+		    }
+		    return unescape(cValue);
+		};
+		var getType = function() {
+			return getCookie('appType');
+		};
+		var getVCA = function() {
+			return getCookie('appVCA');
+		};
+		try {
+			var appType = getType();
+			var pcVersionWraps = document.getElementById('pcVersionLink');
+            if(appType == "appmw_book" || appType == "appmwi_book") {
+            	pcVersionWraps.innerHTML = '<a href="http://www.11st.co.kr/booksmall/BooksAction.tmall?ID=BOOKS&ctgrNo=63516">PC버전</a>';
+            } else {
+            	pcVersionWraps.innerHTML = '<a href="http://www.11st.co.kr/html/main.html"  data-clickurl="WGF01" data-clickkey="02">PC버전</a>';
+            }
+            if(appType == 'appmw' || appType == 'appmwi') {
+		    	document.querySelector('.f_down').style.display = 'none';
+		    }
+		} catch(e) {console.error(e);}
+	} ());
+}());
+</script>
+
+
+	<script>
+	window.addEventListener("load",  function(){
+		var comparePricesSrchClickCd = 'W'+'SRPMDG05'; 
+		var comparePricesDtalClickCd = 'W'+'SRPDMDI01'; 
+		
+	}, false);
+	</script>
+	<div class="f_foot">
+		<address>
+			<span class="p"><strong>SK플래닛(주)</strong><em>대표이사</em> : 서성원</span>
+			<span class="p"><em>주소</em> : (13487) 경기도 성남시 분당구 판교로 264 (삼평동)</span>
+			<span class="p"><em>사업자등록번호</em> : 104-86-36968</span>
+			<span class="p"><em>통신판매업신고</em> : 제2014-경기성남-0036호</span>
+			<span class="p"><em>고객센터</em> : <a href="tel:1599-0110" data-clickurl="WGF01" data-clickkey="08">1599 - 0110</a><span class="e">customerservice@11st.co.kr</span></span>
+		</address>
+		<div class="link">
+			<a href="http://www.ftc.go.kr/info/bizinfo/communicationView.jsp?apv_perm_no=2011301010030201333&amp;area1=&amp;area2=&amp;currpage=1&amp;searchKey=04&amp;searchVal=1048636968&amp;stdate=&amp;enddate=" data-clickurl="WGF01" data-clickkey="05">사업자정보확인</a>
+			<a href="http://www.11st.co.kr/annc/AnncMainPreview.tmall?method=getProvision&amp;anncCd=01" class="law" data-clickurl="WGF01" data-clickkey="06">이용약관</a>
+			<a href="http://www.11st.co.kr/annc/AnncMainPreview.tmall?method=getProvision&amp;anncCd=03" class="law" data-clickurl="WGF01" data-clickkey="07">개인정보처리방침</a>
+		</div>
+		<p class="noti">SK플래닛(주)는 통신판매중개자로서 오픈마켓 11번가의 거래당사자가 아니며, 입점판매자가 등록한 상품정보 및 거래에 대해 SK플래닛(주)는 일체의 책임을 지지 않습니다.</p>
+		<p class="copy">COPYRIGHT &#169;SK planet. All RIGHTS RESERVED.</p>
+	</div>
+	
+	<a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall#" onclick="fn_goTop();return false;" class="f_top" style="display: none;" data-clickurl="WSRPK00" data-clickkey="WSRPK00">TOP</a>
+	
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+	function getDimensionValue(){
+	   	var dimenVal = 'WEB';
+		try{
+			var cName = 'appType=';
+		    var cookieData = document.cookie;
+		    var start = cookieData.indexOf(cName);
+		    var cValue = '';
+		    if(start != -1){
+		         start += cName.length;
+		         var end = cookieData.indexOf(';', start);
+		         if(end == -1)end = cookieData.length;
+		         cValue = cookieData.substring(start, end);
+		    }
+		   	var appType = unescape(cValue);
+		   	if(appType.indexOf('app') > -1){
+		   		dimenVal = 'APP';
+		   	} else if (appType.indexOf('deal') > -1){
+		   		dimenVal = 'APP_SD';
+		   	}
+		   	
+		}catch(e){}
+   		return dimenVal;
+	}
+	
+	var dimensionValue = getDimensionValue();
+	ga('create', 'UA-68494772-1', 'auto');
+	ga('set', 'dimension6', dimensionValue);
+
+</script>
+
+<!-- Google Tag Manager -->
+
+<noscript>&lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-T4V5PJ" height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+<script>
+	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','GA_dataLayer','GTM-T4V5PJ');
+	try{
+		GA_dataLayer.push(
+				{ '11st_cd_6': dimensionValue } 
+		);
+	}catch(e){}
+</script>
+<!-- End Google Tag Manager -->
+<script src="./cart_list_files/initData.js"></script>
+<script>mwScript.addScript('/js/lib/netfunnel.js', "UTF-8");</script>
+<iframe width="0" height="0" id="appAdTextInterface" style="display:none;" src="cart_list_files/saved_resource.html"></iframe>
+</footer>
+
+	<!-- //footer -->
+</div>
+<div id="optionChange" class="lyr_pop">
+</div>
+
+<!-- 수정 2015-06-18 : 쿠폰  Layer-->
+<div id="cuponChange" class="pop_cupon">
+	<div class="tot_wrp">
+		<div class="tot">
+			<h1>상품쿠폰적용</h1>
+			<ul>
+				<li><span class="t">주문금액</span><span class="p"><b name="ordPrice">-</b>원</span></li>
+				<li><span class="t">할인금액</span><span class="p"><b name="dscPrice">-</b>원</span></li>
+				<li class="sm"><span class="t">결제금액<span>(배송비포함)</span></span><span class="p"><b name="finalOrdPrice">-</b>원</span></li>
+			</ul>
+		</div>
+	</div>
+	<div class="lst" id="popCupnLayer">
+	</div>
+	<button type="button" class="close" onclick="mwCupnPop.closeCouponPop();callStatAjax(&#39;MSA01&#39;,&#39;MSA0102&#39;);return false;">쿠폰팝업닫기</button>
+</div>
+<!-- //수정 2015-06-18 : 쿠폰  Layer-->
+
+<div id="cartBtns" class="btn_w3 btncart fixed" style="display: block; opacity: 100; transition-duration: 300ms;">
+				<div><span class="btnpr"><button type="button" onclick="goToOrderBasic(&#39;Checked&#39;,1);callStatAjax(&#39;MSC016&#39;, &#39;MSC016&#39;);" data-gactg="11111" data-gaaction="222닫기버튼">선택주문</button></span></div>
+				<div><span class="btnbn"><button type="button" onclick="goToOrderBasic(&#39;All&#39;,1);callStatAjax(&#39;MSC017&#39;, &#39;MSC017&#39;);">전체주문</button></span></div>
+				<div><span class="btnb"><button type="button" onclick="doMultiDelete(1);callStatAjax(&#39;MSC018&#39;, &#39;MSC018&#39;);">선택삭제</button></span></div>
+			</div><div id="feedly-mini" title="feedly Mini tookit"></div></body></html>

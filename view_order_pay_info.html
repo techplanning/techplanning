@@ -1,0 +1,1908 @@
+<!DOCTYPE html>
+<!-- saved from url=(0205)https://buy.m.11st.co.kr/MW/Order/viewOrderPayInfo.tmall?incommingCode=02&ordNo=201703243661027&prdNo=958114815&rakePrdNo=958114815&dispSpceId=&dispSpceRank=&rakeTrTypeCd=&demandDscStr=&OCBcheck=N#complete -->
+<html lang="ko" class=" ios iphone mobile v9_0 portrait"><head><meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+	
+<script async="" charset="utf-8" src="./view_order_pay_info_files/production.min.js"></script><script type="text/javascript" async="" src="./view_order_pay_info_files/analytics.js"></script><script type="text/javascript" async="" src="./view_order_pay_info_files/ec.js"></script><script type="text/javascript" async="" src="./view_order_pay_info_files/rake-skp-1.5.min.js"></script><script async="" src="./view_order_pay_info_files/gtm.js"></script><script async="" src="./view_order_pay_info_files/analytics.js"></script><script>
+var mwScript = (function() {
+	var protocol = (window && window.location && window.location.protocol) ? window.location.protocol.replace(':', '') : "http";
+	var isSSL = function() {
+		if(protocol === "https") return true;
+		else return false;
+	};
+	var addTouchIcon = function(rel) {
+		try {
+			var element = document.createElement('link');
+			element.rel = rel;
+			if(isSSL()) element.href = "//m.11st.co.kr/MW/img/mw11st_touchicon.png";
+			else element.href = "//c.m.011st.com/MW/img/mw11st_touchicon.png";
+			document.head.appendChild(element);
+		} catch(e) { console.log(e); }
+	};
+	var addScript = function(path, encoding) {
+		try {
+			var element = document.createElement('script');
+			if(isSSL()) element.src = "//m.11st.co.kr/MW"+path;
+			else element.src = "//c.m.011st.com/MW"+path;
+			if(encoding) { element.charset = encoding }
+			document.head.appendChild(element);
+		} catch(e) { console.log(e); }
+	};
+	return {
+		addTouchIcon : addTouchIcon,
+		addScript : addScript
+	};
+}());
+</script>
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width">
+<script>mwScript.addTouchIcon("apple-touch-icon-precomposed");</script><link rel="apple-touch-icon-precomposed" href="https://m.11st.co.kr/MW/img/mw11st_touchicon.png">
+<meta name="format-detection" content="telephone=no">
+	<title>주문완료 - 11번가 모바일</title>
+	<link rel="stylesheet" href="./view_order_pay_info_files/base.css">
+	<link rel="stylesheet" href="./view_order_pay_info_files/pay.css">
+	<!--[if lt IE 9]><script src="//c.m.011st.com/MW/js/ui/ie.js"></script><![endif]-->
+<script src="./view_order_pay_info_files/jquery-2.1.1.min.js"></script>
+<script src="./view_order_pay_info_files/ui.js"></script>
+<script src="./view_order_pay_info_files/mwSwipe.js"></script>
+<script src="./view_order_pay_info_files/gnb.js"></script>
+<script src="./view_order_pay_info_files/TMCookieUtil.js"></script>
+<script src="./view_order_pay_info_files/mDevice.js" defer=""></script>
+<script src="./view_order_pay_info_files/lstore.js" defer=""></script>
+<script src="./view_order_pay_info_files/device.js" defer=""></script>
+<script>
+var _MOBILE_URL_ = 'http://m.11st.co.kr/MW';
+var _SSL_MOBILE_URL_ = 'https://m.11st.co.kr/MW';
+var _MOBILE_BUY_URL_ = 'http://buy.m.11st.co.kr/MW';
+var _SSL_MOBILE_BUY_URL_ = 'https://buy.m.11st.co.kr/MW';
+var _CSS_URL_ = '//c.m.011st.com/MW';
+var _IMG_URL_ = '//c.m.011st.com/MW';
+var _UPLOAD_URL_ = 'http://i.011st.com';
+var _JS_URL_ = '//c.m.011st.com/MW';
+var _SSL_JS_URL_ = '//m.11st.co.kr/MW';
+var _DS_URL_ = 'http://ds.11st.co.kr';
+var _ST_URL_ = 'http://st.11st.co.kr';
+var _ACES_URL_ = 'http://aces.11st.co.kr';
+var _LOGIN_URL_ = 'https://m.11st.co.kr/MW/Login/login.tmall';
+var _LOGOUT_URL_ = 'https://m.11st.co.kr/MW/Login/logout.tmall';
+var _FRONT_URL_ = 'http://www.11st.co.kr';
+var _MOBILE_COOKIE_DOMAIN_ = 'm.11st.co.kr';
+</script>
+	<script src="./view_order_pay_info_files/common.js"></script>
+	<script src="./view_order_pay_info_files/jquery-merge.js"></script>
+	<script src="./view_order_pay_info_files/inc_syrupAd.js"></script>
+	
+	<script>
+        var _uid = "";
+        
+
+        window.onload = function () {
+            
+            setTimeout(function() {
+                window.scrollTo(0, 1);
+                location.hash = 'complete';
+            }, 100);
+
+            setTimeout(function() {
+                loadDsAD('//ds.11st.co.kr/NetInsight/text/11st/11st_mobile/mobile_order@M.order_banner', true, true);
+                try {
+                    callHotClickPairing({method:"purchase", ctgrNo:"1008043", prdNo:"958114815", price:"10500", did:""});
+                } catch(e) {}
+            }, 300);
+
+            //최근 결제정보 저장
+            try {
+                if(store.enabled && document.getElementById("recentPaymentCd") !=null){
+                    store.set("order_recentPayment", recentPaymentCd.value);
+                    if(recentPaymentCd.value == '01' && document.getElementById("recentPayCardCd") !=null){
+                        store.set("order_recentPayCard", recentPayCardCd.value);
+                    }else{
+                        store.remove("order_recentPayCard");
+                    }
+                }
+            } catch(e){}
+
+            try {
+                
+                _uid = TMCookieUtil.getCookie("PCID");
+                
+                sendRecoPickData(1);
+            } catch ( err ) {}
+        };
+
+        function sendRecoPickData(callCnt) {
+            try{
+                if(_uid == "") {
+                    if(callCnt <= 10) {
+                        setTimeout(function() {
+                            sendRecoPickData(callCnt+1);
+                        }, 100);
+                        return false;
+                    } else {
+                        _uid = TMCookieUtil.getCookie("PCID");
+                    }
+                }
+
+                (function(w,d,n,s,e,o) {
+                    w[n]=w[n]||function(){(w[n].q=w[n].q||[]).push(arguments)};
+                    e=d.createElement(s);e.async=1;e.charset='utf-8';e.src='//static.recopick.com/dist/production.min.js';
+                    o=d.getElementsByTagName(s)[0];o.parentNode.insertBefore(e,o);
+                })(window, document, 'recoPick', 'script');
+                recoPick('service', 'm.11st.co.kr');
+                if(getBase64UserInfo() != null && getBase64UserInfo() != ""){
+                    try{recoPick('b', getBase64UserInfo());} catch(errb){console.log("recouserset err : " + errb);}
+                }
+                recoPick('setUID', _uid);
+                recoPick('setMID', '6150708229371694165');
+                recoPick('sendLog', 'order', {id: 958114815, count: 1, total_sales:10500, c1:"과자/간식", c2:"캔디류", c3:"사탕/캔디", c4:"", bc1:"", brand:"" });
+            } catch(e) {}
+        }
+
+        window.addEventListener('hashchange', function(e) {
+            if(!location.hash) {
+                location.hash = 'complete';
+                alert("이용이 만료된 페이지 입니다.");
+            }
+        });
+
+        //배너
+        function slideshow(id, num){
+            this.source = document.getElementById(id);
+            this.sourceA = this.source.getElementsByTagName("a");
+
+            var temp = num;
+            num = Math.round(Math.random() * (sourceA.length-1));
+
+            if( this.sourceA.length != 1){
+                while (temp == num) {
+                    num = Math.round(Math.random() * (sourceA.length-1));
+                }
+            }
+
+            for(i=0; i<this.sourceA.length; i++){
+                this.sourceA[i].style.display = "none";
+                if(i == num){this.sourceA[i].style.display = "block";}
+            }
+
+            if(this.sourceA.length == 1) {
+                num++;
+                if(this.sourceA.length == num){num = 0}
+            }
+            setTimeout("slideshow('"+id+"',"+num+")",2000);
+        }
+
+        //레이어Toggle
+        function layerToggle(ele, btn, all){
+            var element = document.getElementById(ele);
+            element.style.display = (element.style.display != 'none') ? "none" : "block";
+
+            if(btn && (element.style.display != 'none')){
+                var pos = (document.getElementById(btn)) ? document.getElementById(btn) : btn;
+                if(pos){
+                    var posTop = pos.offsetTop,
+                        posHeight = pos.offsetHeight;
+
+                    if(element.offsetParent !== pos.offsetParent) {
+                        var posParent = pos.offsetParent;
+
+                        while (posParent.offsetParent) {
+                            posTop += posParent.offsetTop;
+                            posParent = posParent.offsetParent;
+                        };
+
+                        var elementParent = element.offsetParent;
+
+                        while (elementParent.offsetParent) {
+                            posTop -= elementParent.offsetTop;
+                            elementParent = elementParent.offsetParent;
+                        };
+                    }
+                    element.style.top = posTop + posHeight +'px';
+                }
+            }
+            if(all && (element.style.display != 'none')){
+                classClose(ele, all);
+            }
+        }
+
+        // 레이어 닫기
+        function helpClose(self){
+            self.parentNode.style.display='none';
+        }
+
+        //같은 class 닫기
+        function classClose(ele, all) {
+            if(document.getElementsByClassName){
+                var elses = document.getElementsByClassName(all);
+            } else {
+                var elses = getElementsByClassName(all);
+                function getElementsByClassName( className ){
+                    var regEx = new RegExp('(^| )'+className+'( |$)');
+                    var nodes = new Array();
+                    var elements = document.body.getElementsByTagName("*");
+                    var len = elements.length;
+                    for(var i=0; i < len ; i++) {
+                        if(regEx.test(elements[i].className)) {
+                            nodes.push(elements[i]);
+                        }
+                    }
+                    elements = null;
+                    return nodes;
+                }
+            }
+            for (var i=0; i < elses.length; i++){
+                if((elses[i].style.display != 'none') && (elses[i].id != ele)) {elses[i].style.display = 'none'} ;
+            }
+        }
+        function closeSelf(){
+            window.opener = window;
+            var win = window.open( location.href, "_self" );
+            win.close();
+        }
+	</script>
+	
+
+<script src="./view_order_pay_info_files/netfunnel.js" charset="UTF-8"></script><script src="./view_order_pay_info_files/mwapptools.js"></script><script src="./view_order_pay_info_files/mwapptools.js"></script></head>
+<body id="order"><!-- 장바구니,주문 id 추가 -->
+<div id="wrap">
+	<!-- header -->
+	<header>
+	
+						
+			<div class="head_bnr" id="app_down_bnr" style="display:none;">
+				<a href="https://buy.m.11st.co.kr/MW/Order/viewOrderPayInfo.tmall?incommingCode=02&amp;ordNo=201703243661027&amp;prdNo=958114815&amp;rakePrdNo=958114815&amp;dispSpceId=&amp;dispSpceRank=&amp;rakeTrTypeCd=&amp;demandDscStr=&amp;OCBcheck=N#" onclick="call11stAppMain(); return false;" style="background-color:#e7e7ea;" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1401"><img src="view_order_pay_info_files/app_bnr.png" alt="앱으로 접속하면 더 큰혜택이-앱다운로드"></a>
+				<button type="button" onclick="closeElevenstAppDown();">배너닫기</button>
+			</div>
+        
+
+    	<script type="text/javascript">
+	    	
+		    window.addEventListener("load",  function() {
+		    	try {
+		    		var protocol = (window && window.location && window.location.protocol) ? window.location.protocol.replace(':', '') : "http";
+		    		var element = document.createElement('script');
+		    		var domainPrefix = "//c.m.011st.com/MW";
+	    			if(protocol === "https") {
+	    				domainPrefix = "//m.11st.co.kr/MW";
+	    			}
+	    			element.src = domainPrefix + "/js/lib/mwapptools.js";
+	    			document.head.appendChild(element);
+				} catch(e) {};
+				
+		    	gnbAppDownBnr();
+		    }, false);
+		    
+			function gnbAppDownBnr(){
+				try {
+				    var partnerDirectYn = "";
+				    var partnerCookieVal = getCookie('PARTNER_CD');
+					partnerDirectYn = initialAppDownBnrData.PARTNERCD.WEB[partnerCookieVal];
+					if (partnerDirectYn != "N"){
+						if(!TMCookieUtil.getSubCookie(1, "elevenstAppDown") && getElevenstAppDownloadCookie('appType') == '') {
+				            document.getElementById('app_down_bnr').style.display = 'block';
+				        }
+					}
+				} catch(e){console.log(e);}
+			}
+		    
+	    	function getElevenstAppDownloadCookie(cName) {
+	            cName = cName + '=';
+	            var cookieData = document.cookie;
+	            var start = cookieData.indexOf(cName);
+	            var cValue = '';
+	            if(start != -1){
+	                start += cName.length;
+	                var end = cookieData.indexOf(';', start);
+	                if(end == -1)end = cookieData.length;
+	                cValue = cookieData.substring(start, end);
+	            }
+	            return unescape(cValue);
+	        }
+
+    		function closeElevenstAppDown() {
+    			mwUI.viewToggle("app_down_bnr");
+    			TMCookieUtil.add(1, "elevenstAppDown", "Y");
+    		}
+
+    		function call11stAppMain() {
+    			var scheme = "://home";
+    			var intentScheme = '#Intent;scheme=elevenst;package=com.elevenst;end';
+    			mwapptools.web2app({ urlScheme : 'elevenst'+scheme, intentURI : 'intent'+scheme+intentScheme, storeURL: 'itms-apps://itunes.apple.com/app/id397938216?mt=8' });
+    		}
+    	</script>
+
+	
+	<div class="gnb_mw gnb_m">
+		<h1><a href="http://m.11st.co.kr/MW" title="홈으로 이동" data-clickurl="WGA01" data-clickkey="00">11번가</a></h1>
+	
+		<a href="http://m.11st.co.kr/MW/api/app/elevenst/menu/sideMenu.tmall" class="mu cate" data-clickurl="WGB01" data-clickkey="00">카테고리</a>
+
+		<form id="search" name="searchForm" action="http://m.11st.co.kr/MW/Search/searchProduct.tmall" method="get" onsubmit="searchSubmit();return false;">
+			<fieldset>
+				<legend>통합검색</legend>
+				<div class="srch">
+					<input type="search" id="decSearchKeyword" name="decSearchKeyword" value="" title="검색어" onfocus="getInput();" onblur="releaseInput();" autocomplete="off" autocorrect="off" autocapitalize="off" onclick="clearInputValue(&#39;decSearchKeyword&#39;);fncStop();return false;" data-clickurl="WSRC00" data-clickkey="WSRC00">
+					<button class="del" type="button" id="schdelbtn" style="display:none;" onclick="clearInputValue(&#39;decSearchKeyword&#39;);">검색어 삭제</button>
+					
+					<input type="submit" id="search_submit" value="검색" data-clickurl="WSRC11" data-clickkey="WSRC11">
+					
+					<input type="hidden" id="searchType" name="searchType" value="">
+					<input type="hidden" id="dispObjLnkUrl" value="http://m.11st.co.kr/MW/Product/productPlanningDetail.tmall?plnDispNo=926473">
+					<input type="hidden" id="searchKeyword" name="searchKeyword" value="">
+					<input type="hidden" name="listType" value="">
+					<input type="hidden" name="sortCd" value="NP">
+					<input type="hidden" name="showAdvProducts" value="Y">
+					<input type="hidden" name="dispCtgrNo" value="">
+					<input type="hidden" name="dispCtgrLevel" value="">
+					<input type="hidden" name="pageNo" value="">
+					<input type="hidden" name="inKeyword" value="">
+					<input type="hidden" name="withoutKeyword" value="">
+					<input type="hidden" name="previousKwd" value="">
+					<input type="hidden" name="previousExcptKwd" value="">
+					<input type="hidden" name="fromPrice" value="">
+					<input type="hidden" name="toPrice" value="">
+					<input type="hidden" name="discountCheck" value="">
+					<input type="hidden" name="noInterestCheck" value="">
+					<input type="hidden" name="freeDeliveryCheck" value="">
+					<input type="hidden" name="worldDeliveryCheck" value="">
+					<input type="hidden" name="isSearchInSearch" value="">
+					<input type="hidden" name="isCategoryInSearch" value="">
+					<input type="hidden" name="isBrandInSearch" value="">
+					<input type="hidden" name="isOneCategorySearch" value="">
+					<input type="hidden" name="brandName" value="">
+					<input type="hidden" name="brandItemName" value="">
+					<input type="hidden" name="brandTitle" value="">
+					<input type="hidden" name="lCategoryNos" value="">
+					<input type="hidden" name="mCategoryNos" value="">
+					<input type="hidden" name="sCategoryNos" value="">
+					<input type="hidden" name="dCategoryNos" value="">
+					<input type="hidden" name="pageSize" value="0">
+					
+				</div>
+				<button type="button" class="prev" onclick="vLayer(&#39;kwd&#39;,false);setBodyClass(false);return false;">이전</button>
+			</fieldset>
+		</form>
+	
+		<a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall" class="mu cart" data-clickurl="WGD01" data-clickkey="00">장바구니</a>
+	
+	
+	</div>	
+	<div id="kwd" class="kword">
+		<div class="ctg" id="ctgDiv"></div>
+		<ul class="wrd" id="autoComplete"></ul>
+		<div class="sw_ft"><button type="button" class="close" onclick="vLayer(&#39;kwd&#39;,false);setBodyClass(false);return false;" data-clickurl="WSRB03" data-clickkey="WSRB03">닫기</button></div>
+	</div>
+	<div class="schwd" id="schwd" style="display:none;">
+		<ul class="sw_tab">
+			<li class="on"><a href="https://buy.m.11st.co.kr/MW/Order/viewOrderPayInfo.tmall?incommingCode=02&amp;ordNo=201703243661027&amp;prdNo=958114815&amp;rakePrdNo=958114815&amp;dispSpceId=&amp;dispSpceRank=&amp;rakeTrTypeCd=&amp;demandDscStr=&amp;OCBcheck=N#schword01" onclick="goSearchSwipeMove(0);return false">최근검색어</a></li>
+			<li>
+				<a href="https://buy.m.11st.co.kr/MW/Order/viewOrderPayInfo.tmall?incommingCode=02&amp;ordNo=201703243661027&amp;prdNo=958114815&amp;rakePrdNo=958114815&amp;dispSpceId=&amp;dispSpceRank=&amp;rakeTrTypeCd=&amp;demandDscStr=&amp;OCBcheck=N#schword02" onclick="goSearchSwipeMove(1);return false">급상승
+					<span class="pg" id="searchSwipeNavi"><span class="on"></span><span></span><span></span><b id="searchSwipePage">3페이지중 1페이지</b></span>
+				</a>
+			</li>
+			<li><a href="https://buy.m.11st.co.kr/MW/Order/viewOrderPayInfo.tmall?incommingCode=02&amp;ordNo=201703243661027&amp;prdNo=958114815&amp;rakePrdNo=958114815&amp;dispSpceId=&amp;dispSpceRank=&amp;rakeTrTypeCd=&amp;demandDscStr=&amp;OCBcheck=N#schword03" onclick="goSearchSwipeMove(2);return false">인기</a></li>
+		</ul>
+		<div class="sw_swp">
+			<div id="view_sch_swipe"><div class="mwContainer"><div></div><div></div><div></div></div></div>
+			<button type="button" class="prev" onclick="goPrev()">이전</button>
+			<button type="button" class="next" onclick="goNext()">다음</button>
+		</div>
+		<div id="gnb_sch_swipe" style="display:none;">
+			<div id="schword01"><!-- 최근 검색어 --></div>
+			<div id="schword02"><!-- 급상승 --></div>
+			<div id="schword03"><!-- 인기 --></div>
+		</div>
+		<div class="sw_ft"><button type="button" class="close" onclick="setBodyClass(false);" data-clickurl="WSRC12" data-clickkey="WSRC12">닫기</button></div>
+	</div>
+	<script>
+		(function() {
+			var getCookie = function(cName) {
+			    cName = cName + '=';
+			    var cookieData = document.cookie;
+			    var start = cookieData.indexOf(cName);
+			    var cValue = '';
+			    if(start != -1){
+			         start += cName.length;
+			         var end = cookieData.indexOf(';', start);
+			         if(end == -1)end = cookieData.length;
+			         cValue = cookieData.substring(start, end);
+			    }
+			    return unescape(cValue);
+			};
+			var getType = function() {
+				return getCookie('appType');
+			};
+			var getVCA = function() {
+				return getCookie('appVCA');
+			};
+			try {
+			    var appType = getType();
+			    var appVCA = Number(getVCA());
+			    if((appType == 'appmw' || appType == 'appmwi') && appVCA >= 400) {
+			    	document.querySelector('header').style.display = 'none';
+		        	mwScript.addScript('/Hybrid/js/search.js');
+			    } else if((appType == 'appmw_book' && appVCA > 111) 
+					    || (appType == 'appmwi_book' && appVCA > 110)) {
+			    	document.querySelector('header').style.display = 'none';
+		        	mwScript.addScript('/Hybrid/js/search.js');
+			    }
+			} catch(e) {
+				console.log(e);
+			};
+		}());
+	</script>
+</header>
+	<!-- //header -->
+	<!-- contents -->
+
+	<section id="cts">
+		<div class="title pay">주문/결제</div>
+		<h1 class="title">주문완료</h1>
+		<div class="msg_odr">
+			
+			<p class="tt"><span class="red">주문이 완료</span>되었습니다.</p>
+			<p>주문내역/정보를 확인하시기 바랍니다.</p>
+			
+			<!-- 2017-01-26 : OCB통합  -->
+			
+		</div>
+
+
+		<div class="lad" id="dsAD"><div style="background-color:#fffeed;"><a href="https://ds.11st.co.kr/click/11st/11st_mobile/mobile_order@M.order_banner?ads_id=39957&amp;creative_id=34170&amp;click_id=32697&amp;_=1490351531656"><img src="view_order_pay_info_files/45763e53512381425f2e3a0863ffc3e4.png" alt="할인쿠폰증정"></a></div></div>
+		
+		
+		
+
+		
+		
+		<div class="odr_prd end">
+			<h3>[개별배송상품]</h3><div class="cl">
+<div class="mc3">
+<a href="http://m.11st.co.kr/MW/Product/productBasicInfo.tmall?prdNo=958114815"><span class="pd">후르트텔라 요구르트 1050g / 코스트코 망고맛 라즈베리맛 블루베리맛</span></a></div>
+<div class="op2"><ul>
+<li class="prc">상품금액 :  <strong>10,500원</strong></li>
+<li class="num">수량 : 1개</li><li>배송비 : 5,500원 
+</li></ul></div>
+</div>
+
+			
+		</div>
+		<!-- s:묶음 배송비 정책 --><div class="lyw" id="lyp1_each00" style="display:none;"><div class="lym"><h3>배송비 조건 안내</h3><p class="txt">본 상품은 동일 판매자의 동일 배송비 조건 상품의 묶음 구매에 따라 배송비가 달라집니다.</p> <table class="tbl2"><caption>할인가</caption><tbody><tr><th>배송비</th><td>5,500원</td></tr></tbody></table></div><button type="button" class="cls" onclick="helpClose(this)">도움말 닫기</button></div>
+		
+
+		
+		
+		<div class="sum end">
+			<em>결제 금액</em>
+			<div class="prc"><strong>16,000</strong>원</div>
+		</div>
+		
+		
+
+		<h2 class="tit_bs">주문자 정보 확인</h2>
+		<table class="odr_tbl">
+			<caption>주문자 정보 확인</caption>
+			<colgroup>
+				<col style="width:95px;">
+				<col>
+			</colgroup>
+			<tbody>
+			
+			<tr>
+				<th>주문자</th>
+				<td>문혁중</td>
+			</tr>
+			<tr>
+				<th>주문번호</th>
+				<td>201703243661027</td>
+			</tr>
+			<tr>
+				<th>주문내역</th>
+				<td>상품 금액 10,500원  + 배송비 5,500원 
+					
+				</td>
+			</tr>
+			<tr>
+				<th>총 주문금액</th>
+				<td>16,000원</td>
+			</tr>
+			
+			<tr>
+				<th>결제내역</th>
+				<td>
+					<input type="hidden" name="recentPaymentCd" id="recentPaymentCd" value="02">
+<input type="hidden" name="recentPayCardCd" id="recentPayCardCd" value="">
+무통장입금 <strong class="red"> 16,000원</strong>
+
+				</td>
+			</tr>
+			
+			<tr>
+				<th>적립 예상 혜택 </th>
+				<td>
+					
+					
+					
+					
+					
+					
+					
+					<p class="sli">마일리지  210 M </p>
+					
+				</td>
+			</tr>
+			</tbody>
+		</table>
+
+		<!-- s:제주/도서산간 추가배송비 설명 -->
+		<div class="lyw" id="lyp18" style="display:none">
+			<div class="lym">
+				<h3>배송비 안내</h3>
+				<table class="tbl2">
+					<tbody>
+					<tr>
+						<th scope="row">배송비</th>
+						<td>5,500 원 </td>
+					</tr>
+					</tbody>
+					<tbody>
+					<tr>
+						<th scope="row">도서산간 추가배송비</th>
+						<td>0 원</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+			<button type="button" class="cls" onclick="helpClose(this)">도움말 닫기</button>
+		</div>
+		<!-- e:제주/도서산간 추가배송비 설명 -->
+		<!-- //주문정보 -->
+		
+		<!-- 무통장입금정보 -->
+		<h2 class="tit_bs">무통장 입금정보 <a class="help" href="https://buy.m.11st.co.kr/MW/Order/viewOrderPayInfo.tmall?incommingCode=02&amp;ordNo=201703243661027&amp;prdNo=958114815&amp;rakePrdNo=958114815&amp;dispSpceId=&amp;dispSpceRank=&amp;rakeTrTypeCd=&amp;demandDscStr=&amp;OCBcheck=N#lyr_bank" onclick="layerToggle(&#39;lyr_bank&#39;,this,&#39;lyw&#39;);return false;">도움말</a></h2>
+		<table class="odr_tbl">
+			<caption>무통장 입금정보</caption>
+			<colgroup>
+				<col style="width:105px;">
+				<col>
+			</colgroup>
+			<tbody>
+			<tr>
+				<th>입금할 은행</th>
+				<td>광주은행&nbsp;(11번가)</td>
+			</tr>
+			<tr>
+				<th>입금할 계좌번호</th>
+				<td>810552084384</td>
+			</tr>
+			<tr>
+				<th>입금 금액</th>
+				<td><strong>16,000</strong>원</td>
+			</tr>
+			<tr>
+				<th>입금기한</th>
+				<td>2017-03-31</td>
+			</tr>
+			</tbody>
+		</table>
+		<!-- //무통장입금정보 -->
+		
+		<h2 class="tit_bs">배송정보</h2>
+		<table class="odr_tbl">
+			<caption>배송정보</caption>
+			<colgroup>
+				<col style="width:95px;">
+				<col>
+			</colgroup>
+			<tbody>
+			<tr>
+				<th>받으시는분</th>
+				<td>문혁중</td>
+			</tr>
+			
+			<tr>
+				<th>집전화</th>
+				<td>010-5466-2325</td>
+			</tr>
+			
+			<tr>
+				<th>휴대전화</th>
+				<td>010-5466-2325</td>
+			</tr>
+			<tr>
+				<th>주소</th>
+				<td>[463400] 경기도 성남시 분당구  판교로 264 (삼평동,sk플래닛판교사옥)  문서수발실 (지번:삼평동 )</td>
+			</tr>
+			</tbody>
+		</table>
+		
+		<ul class="d_lst">
+			<li>주문상세내역, 주문배송조회, 증빙서류발급, 주문취소/반품/교환은 "나의 11번가"에서 확인하실 수 있습니다.</li>
+			<li>고객님의 주문이 체결된 후 상품품절 및 단종 등에 의해 배송이
+				불가능할 경우, 전자상거래 등 에서의 소비자 보호에 관한 법률
+				제15조 2항에 의거하여 2영업일(공휴일제외) 이내에 자동으로
+				취소될 수 있으며, 이 경우 취소 안내 메일이 고객님께 발송되오니
+				양지 바랍니다. </li>
+		</ul>
+		
+		<!-- //수정 2013-03-22 -->
+		
+		<h2 class="tit_bs">환불 정보</h2>
+		<table class="odr_tbl">
+			<caption>환불 정보</caption>
+			<colgroup>
+				<col style="width:95px;">
+				<col>
+			</colgroup>
+			<tbody>
+			<tr>
+				<th>환불방식</th>
+				<td>캐시</td>
+			</tr>
+			</tbody>
+		</table>
+		<ul class="d_lst">
+			<li>취소/반품 신청 시 환불수단을 무통장이나 캐시로 선택하여 환불 받으실 수 있습니다.</li>
+			<li>200만원 이상 결제 후 취소/반품 시 계좌 환불만 가능합니다. 환불 계좌는 PC &gt; 나의 11번가에서 등록하실 수 있습니다.</li>
+		</ul>
+		
+
+		<div class="lyw" id="lyr_bank" style="display:none;">
+			<div class="lym">
+				<div class="cons">
+					<p class="txt_dly2">무통장주문은 입금확인완료 시간을 기준으로 배송이 시작됩니다.</p>
+				</div>
+			</div>
+			<button type="button" class="cls" onclick="helpClose(this)">도움말 닫기</button>
+		</div>
+
+		
+		
+
+		
+		<div class="btn_w2 w_pay">
+			<div><a href="http://m.11st.co.kr/MW/MyPage/orderList.tmall" class="btnbr"><span>주문내역 확인</span></a></div>
+			
+			<div><a href="http://m.11st.co.kr/MW" class="btnb"><span>쇼핑 계속하기</span></a></div>
+			
+		</div>
+		
+
+		
+
+		<script language="javascript">
+            try {
+                callSyrupAdPrdInfo('order');
+
+                
+
+            } catch(e) {}
+
+            function callSyrupAdPrdInfo(actionType) {
+                if(actionType == null || typeof actionType == "undefined" || actionType == "") {
+                    actionType = "order";
+                }
+
+                
+
+                var syrupAdInfo = new SyrupAdInfo({action:actionType,mid:"6150708229371694165",ref_cd:"",channel:"5",gender:"4",age:"30",gaid:"",idfa:"",pcid:"14690912137194721287062"});
+                
+
+
+                syrupAdInfo.items.push( new SyrupAdPrd({
+                    id:"958114815"
+                    , total_sales:"10500"
+                    , count:"1"
+                    , title:"후르트텔라 요구르트 1050g / 코스트코 망고맛 라즈베리맛 블루베리맛"
+                    , img:"http://i.011st.com/ex_t/R/300x300/1/90/1/src/ag/1/1/4/8/1/5/958114815_B_V1.jpg"
+                    , sales_state: "1"
+                    		, c1:"1001340:과자/간식"
+		, c2:"1002113:캔디류"
+		, c3:"1008043:사탕/캔디"
+
+                }, actionType));
+                
+                callSyrupAdPrdStat(syrupAdInfo, "https://idm.skplanet.com/dcd/log.skp");
+
+            }
+
+            // Google Code
+            var google_conversion_id = 958147478;
+            var google_conversion_language = "en";
+            var google_conversion_format = "1";
+            var google_conversion_color = "ffffff";
+            var google_conversion_label = "zJ6dCNuB-1kQltfwyAM";
+            var google_conversion_value = 16000;
+            var google_conversion_currency = "KRW";
+            var google_remarketing_only = false;
+		</script>
+		<script type="text/javascript" src="view_order_pay_info_files/conversion.jss"></script>
+		<div style="display:inline;">
+			<img height="1" width="1" style="border-style:none;" alt="" src="view_order_pay_info_files/saved_resource">
+		</div>
+	</section>
+	<!-- //contents -->
+	
+	
+	<!-- footer -->
+	<div id="adamAd"></div>
+
+<script>
+    if(!Date.now) {
+        Date.now = function() {return new Date().gtTime();}
+    }
+
+    function callStatAjax(url, key, item) {
+        if (url && url != '') {
+            var statUrl = '/a.st?url='+url+'&ts='+Date.now();
+            if (key && key != '') statUrl += '&key='+key;
+            if (item && item != '') statUrl += '&item='+item;
+            var xhr = window.ActiveXObject ? new window.ActiveXObject('Microsoft.XMLHTTP') : new window.XMLHttpRequest();
+            try {
+                xhr.open('get', statUrl, true);
+                xhr.send(null);
+            } catch (e){ console.log(e); }
+        }
+    }
+
+    function callStat(url, key, item) {
+        if (url && url != '') {
+            var statUrl = '/a.st?url='+url+'&ts='+Date.now();
+            if (key && key != '') statUrl += '&key='+key;
+            if (item && item != '') statUrl += '&item='+item;
+            var clickIfrm;
+            if (document.getElementById('ifrmClickAnaly')) {
+                clickIfrm = document.getElementById('ifrmClickAnaly');
+            } else {
+                clickIfrm = document.createElement('IFRAME');
+                clickIfrm.id = 'ifrmClickAnaly';
+                clickIfrm.width = 0;
+                clickIfrm.height = 0;
+                clickIfrm.style.display = 'none';
+                document.body.appendChild(clickIfrm);
+            }
+            clickIfrm.src = statUrl;
+        }
+    }
+
+    function catchItemClickEvent(e) {
+        try {
+            var evt = e || window.event;
+            var node = evt.srcElement || evt.target;
+            while(1) {
+                if (node.nodeName && node.nodeName.toLowerCase() === 'a') {
+                    break;
+                } else {
+                    if (node.parentNode) {node = node.parentNode;}
+                    else {break;}
+                }
+            }
+            if (node.nodeName.toLowerCase() === 'a' && node.parentNode.parentNode.getAttribute("data-clickurl")) {
+                var key = '';
+                var item = '';
+                if (node.parentNode.parentNode.getAttribute("data-clickkey")) key = node.parentNode.parentNode.getAttribute("data-clickkey");
+                if (node.getAttribute("data-clickitem")) item  = node.getAttribute("data-clickitem");
+                callStat(node.parentNode.parentNode.getAttribute("data-clickurl"), key, item);
+            }
+        } catch (e) {}
+        return true;
+    }
+
+    function catchAnchorClickEvent(e) {
+        try {
+            var evt = e || window.event;
+            var node = evt.srcElement || evt.target;
+            while(1) {
+                if (node.nodeName &&
+                    ( node.nodeName.toLowerCase() === 'a' || node.nodeName.toLowerCase() === 'input' || node.nodeName.toLowerCase() === 'button'  || node.nodeName.toLowerCase() === 'select') ) {
+                    break;
+                } else {
+                    if (node.parentNode) {node = node.parentNode;}
+                    else {break;}
+                }
+
+            }
+            if ( node.getAttribute("data-clickurl") ) {
+                var key = '';
+                var item = '';
+                if (node.getAttribute("data-clickkey")) key = node.getAttribute("data-clickkey");
+                if (node.getAttribute("data-clickitem")) item = node.getAttribute("data-clickitem");
+                callStat(node.getAttribute("data-clickurl"), key, item);
+            }
+        } catch (e) {}
+        return true;
+    }
+
+    function catchAnchorClickEventToAjax(e) {
+        try {
+            var evt = e || window.event;
+            var node = evt.srcElement || evt.target;
+            while(1) {
+                if (node.nodeName &&
+                    ( node.nodeName.toLowerCase() === 'a' || node.nodeName.toLowerCase() === 'input' || node.nodeName.toLowerCase() === 'button'  || node.nodeName.toLowerCase() === 'select') ) {
+                    break;
+                } else {
+                    if (node.parentNode) {node = node.parentNode;}
+                    else {break;}
+                }
+
+            }
+            if (node.getAttribute("data-clickurl")) {
+                var key = '';
+                var item = '';
+                if (node.getAttribute("data-clickkey")) key = node.getAttribute("data-clickkey");
+                if (node.getAttribute("data-clickitem")) item = node.getAttribute("data-clickitem");
+                callStatAjax(node.getAttribute("data-clickurl"), key, item);
+            }
+        } catch (e) {}
+        return true;
+    }
+
+    function hdStckFlush(trcUrl){
+        try {
+            if(trcUrl != null && typeof trcUrl != "undefined" && trcUrl != "") {
+
+                var baseURL;
+                if( document.location.href.indexOf( "https" ) == 0 ) {
+                    baseURL = "https://www.11st.co.kr/track.st?turl=";
+                } else {
+                    baseURL = "http://st.11st.co.kr/track.st?turl=";
+                }
+
+                var img = new Image();
+                img.src = baseURL + trcUrl;
+            }
+        } catch(e) {}
+    };
+
+    function callHotClickPairing(pin) {
+        try {
+            var getHotClickCookie = function(cName) {
+                cName = cName + '=';
+                var cookieData = document.cookie;
+                var start = cookieData.indexOf(cName);
+                var cValue = '';
+                if(start != -1){
+                    start += cName.length;
+                    var end = cookieData.indexOf(';', start);
+                    if(end == -1)end = cookieData.length;
+                    cValue = cookieData.substring(start, end);
+                }
+                return unescape(cValue);
+            };
+            var getHotClickAppType = function() {
+                return getHotClickCookie('appType');
+            };
+
+            var isAndroidApp = false;
+            if(getHotClickAppType() == "appmw") {
+                isAndroidApp = true;
+            }
+
+            var param = "";
+            var pin = pin || {};
+            var url = "//c.hotclick.netinsight.co.kr/hotclick/";
+            try {
+                if(document.location.protocol.indexOf("https") > -1) {
+                    url = "https://d1ehvyc0c0r8fr.cloudfront.net/hotclick/";
+                } else {
+                    url = "http:" + url;
+                }
+            } catch(e) {
+                url = "http:" + url;
+            }
+
+            if(typeof pin.method == "undefined" || pin.method == null || pin.method.length <= 0) {
+                pin.method = "visit";
+            }
+            if(pin.method == "purchase") {
+                url += "rm-cuki";
+            } else {
+                url += "set-cuki";
+            }
+            if(typeof pin.prdNo == "undefined" || pin.prdNo == null || pin.prdNo.length <= 0) {
+                return false;
+            }
+
+            param = "#method=" + pin.method;
+            if(typeof pin.ctgrNo != "undefined" && pin.ctgrNo != null && pin.ctgrNo.length > 0) {
+                param += "&ctgr_no=" + pin.ctgrNo;
+            }
+            param += "&prod_no=" + pin.prdNo;
+            if(typeof pin.price != "undefined" && pin.price != null && pin.price.length > 0) {
+                param += "&price=" + pin.price;
+            }
+            if(typeof pin.did != "undefined" && pin.did != null && pin.did.length > 0 && isAndroidApp) {
+                param += "&did=" + pin.did;
+            } else {
+                param += "&did="
+            }
+
+
+            var statUrl = url + param;
+            var clickIfrm;
+            if (document.getElementById('ifrmHotClickAnaly')) {
+                clickIfrm = document.getElementById('ifrmHotClickAnaly');
+            } else {
+                clickIfrm = document.createElement('IFRAME');
+                clickIfrm.id = 'ifrmHotClickAnaly';
+                clickIfrm.width = 0;
+                clickIfrm.height = 0;
+                clickIfrm.style.display = 'none';
+                document.body.appendChild(clickIfrm);
+            }
+            clickIfrm.src = statUrl;
+
+            setTimeout(function() {
+                document.body.removeChild(clickIfrm);
+            }, 1000);
+        } catch(ex) {}
+    }
+
+    function callPushGaTrc (ctg, action, label, url){
+        var getCookie = function(cName) {
+            cName = cName + '=';
+            var cookieData = document.cookie;
+            var start = cookieData.indexOf(cName);
+            var cValue = '';
+            if(start != -1){
+                start += cName.length;
+                var end = cookieData.indexOf(';', start);
+                if(end == -1)end = cookieData.length;
+                cValue = cookieData.substring(start, end);
+            }
+            return unescape(cValue);
+        };
+
+        var gaSend = function(ctg, action, label) {
+            try {
+                var appType = getCookie('appType');
+                var exposerLabel = label.indexOf('노출');
+                if(exposerLabel>0){
+                    if(appType === '') {
+                        ga("send", "event", ctg, action, label, { nonInteraction: true });
+                    }else{
+                        var jsonStr = "{ \"category\" : \""+ctg+"\", \"action\" :\""+action+"\", \"label\" : \"" +  label + "\"}";
+                        var appStr = "app://gaSendEvent/" + encodeURIComponent(jsonStr);
+                        executeMtAppCommand("appGaTrakFrame", appStr);
+                    }
+                }else{
+                    if(appType === '') {
+                        ga("send", "event", ctg, action, label);
+                    }else{
+                        var jsonStr = "{ \"category\" : \""+ctg+"\", \"action\" :\""+action+"\", \"label\" : \"" +  label + "\"}";
+                        var appStr = "app://gaSendEvent/" + encodeURIComponent(jsonStr);
+                        window.location.replace(appStr);
+                    }
+                }
+            } catch(e) {
+                console.log(e);
+            };
+        };
+
+        try {
+            if(typeof url != 'undefined'){
+                setTimeout(function() {
+                    document.location.href = url;
+                }, 500);
+            }
+        }catch(e) {
+            console.log(e);
+        };
+        gaSend(ctg, action, label);
+    }
+</script>
+
+
+
+<script>
+// 레코픽 로그 데이터 적재시 사용되는 사용자 정보 함수
+function getBase64UserInfo(){
+	try{
+		var changeStr	= '';
+		var birthyear	= TMCookieUtil.getSubCookie(0, "HODY");
+		var gender		= TMCookieUtil.getSubCookie(0, "GND");
+		if(gender != null && gender != "undefined" && gender.length > 0
+				&& (gender == "10"|| gender == "20")){
+			gender = gender == "10" ? "M" : "F";
+		}
+		changeStr	= '{"user":{"birthyear":"'+birthyear+'","gender":"'+gender+'"}}';
+		
+		var incodeStr	= "";
+		if(gender != null && gender != "" && birthyear != null && birthyear != ""){
+			incodeStr	= window.btoa(changeStr);
+		}
+		return incodeStr;
+	} catch (e) {
+		console.log(e);
+		return null;
+	}
+}
+
+window.addEventListener("DOMContentLoaded",  function(){
+	$("#search_submit").click(function(){
+		var reco_searhword	= "";
+		if($("#decSearchKeyword") && $("#decSearchKeyword").val() != ""){
+			reco_searhword	= $("#decSearchKeyword").val();
+		}
+		if(reco_searhword != null && reco_searhword != "" && reco_searhword != "undefined"){
+			try {
+				(function(w,d,n,s,e,o) {
+			    	w[n]=w[n]||function(){(w[n].q=w[n].q||[]).push(arguments)}; 
+			    	e=d.createElement(s);e.async=1;e.charset='utf-8';e.src='//static.recopick.com/dist/production.min.js'; 
+			    	o=d.getElementsByTagName(s)[0];o.parentNode.insertBefore(e,o);
+			  	})(window, document, 'recoPick', 'script'); 
+		  
+					recoPick('service', 'm.11st.co.kr');
+					recoPick('setUID', TMCookieUtil.getCookie("PCID"));
+					
+						if(getBase64UserInfo() != ""){
+							try{recoPick('b', getBase64UserInfo());} catch (err) {console.log(err);}
+						}
+					
+					
+					recoPick('setMID', '6150708229371694165');
+					
+					recoPick('sendLog', 'search', reco_searhword);
+			} catch ( err ) {console.log("recopick : " + err);}
+		} 
+	});
+});
+
+var RecoPickInfo = function(pin) {
+	this.site		= pin.service;
+	this.url		= encodeURIComponent(document.location.href);
+    this.ref		= encodeURIComponent(document.referrer);
+	this.items		= [];
+	this.uid		= pin.setUID;
+	this.action		= pin.action;
+	
+	if(pin.b != null && typeof pin.b != "undefined" && pin.b.length > 0) {
+		this.b = pin.b;
+	}
+	if(pin.mid != null && typeof pin.mid != "undefined" && pin.mid.length > 0) {
+		this.mid = pin.mid;
+	}
+	
+	this.getUrl	= function(recopickServer) {
+		resultStr = recopickServer
+					+ this.action
+					+ "/" + this.site
+					+ "/" + this.uid
+					+ "?site=" + this.site
+					+ "&url=" + this.url
+					+ "&ref="  + this.ref;
+		if(this.mid != null && typeof this.mid != "undefined" && this.mid.length > 0) {
+			resultStr += "&mid=" + this.mid;
+		}
+		if(this.items != null && typeof this.items != "undefined" && this.items.length > 0) {
+			for(var i = 0; i < this.items.length; i++) {
+				resultStr += this.items[i].getItemStr(i);
+			}
+		}
+		resultStr += "&uid=" + this.uid;
+		resultStr += "&action=" + this.action;
+		
+		return resultStr;
+	}
+}
+
+var RecoPickPrdInfo = function(pin){
+	this.id	= pin.id;
+	this.c1	= pin.c1;
+	this.c2	= pin.c2;
+	this.c3	= pin.c3;
+	this.c4	= pin.c4;
+
+	if(pin.count != null && typeof pin.count != "undefined" && pin.count.length > 0) {
+		this.count = pin.count;
+	}
+
+	this.getItemStr = function(idx) {
+		var resultStr = ""
+				+ "&" + encodeURIComponent("items[" + idx + "][id]") + "=" + this.id
+				+ "&" + encodeURIComponent("items[" + idx + "][c1]") + "=" + this.c1
+				+ "&" + encodeURIComponent("items[" + idx + "][c2]") + "=" + this.c2
+				+ "&" + encodeURIComponent("items[" + idx + "][c3]") + "=" + this.c3
+				+ "&" + encodeURIComponent("items[" + idx + "][c4]") + "=" + this.c4
+				;
+		if(this.count != null && typeof this.count != "undefined" && this.count.length > 0) {
+			resultStr += "&" + encodeURIComponent("items[" + idx + "][count]") + "=" + this.count;
+		}
+
+		return resultStr;
+	}
+}
+
+function callRecopickPrdStat(recoPickInfo, recopickServer) {
+	if(recopickServer == null || typeof recopickServer == "undefined" || recopickServer == "") {
+		recopickServer	= "http://api.recopick.com/v1/logs/";
+	}
+	try {
+		var img = new Image();
+		img.src = recoPickInfo.getUrl(recopickServer);
+	} catch(e) {console.log('RecoPickLog'+e);}
+}
+</script>
+
+	<iframe src="view_order_pay_info_files/ifrm_ga.html" scrolling="no" frameborder="0" width="0" height="0" title="GA 아이프레임"></iframe>
+ 
+	<img height="1" width="1" border="0" alt="" style="display:none" src="view_order_pay_info_files/tr">
+
+
+
+
+<section id="cpFloating" class="cp_floating" style="display:none;">
+	<div class="cp_wrap">
+		<div class="cp_banner">
+			<a href="https://buy.m.11st.co.kr/MW/Order/viewOrderPayInfo.tmall?incommingCode=02&amp;ordNo=201703243661027&amp;prdNo=958114815&amp;rakePrdNo=958114815&amp;dispSpceId=&amp;dispSpceRank=&amp;rakeTrTypeCd=&amp;demandDscStr=&amp;OCBcheck=N#"></a>
+			<button type="button" class="stop">그만보기</button>
+		</div>
+		<button type="button" class="close" onclick="mwUI.moreToggle(&#39;cpFloating&#39;, &#39;on&#39;, this, &#39;보기&#39;, &#39;닫기&#39;)">캠페인 보기</button>
+	</div>
+</section>
+<script id="mwDev_offerTemplate" type="text/x-elevenst-template">
+	<div class="cp_wrap">
+		{{html}}
+		<button type="button" class="close" onclick="cpOfferAllPopup.close('cpAllpopup')">캠페인 닫기</button>
+	</div>
+</script>
+
+<script>
+function toEndDateFormat(endDate) { //parseTime(time)
+    var year = endDate.substr(0,4);
+    var month = endDate.substr(4,2) - 1; // 1월=0,12월=11
+    var day = endDate.substr(6,2);
+    var hour = endDate.substr(8,2);
+    var min = endDate.substr(10,2);
+    var second = endDate.substr(12,2);
+
+    return new Date(year,month,day,hour,min, second);
+}
+
+function setOfferCookie(c_name,value, endDate)
+{
+    var expdate;
+    if(endDate) {
+		expdate = toEndDateFormat(endDate);
+    } else {
+        expdate = new Date();
+        expdate.setTime(expdate.getTime() + (1000* 24 * 60 * 60 * 1));
+    }
+    document.cookie = c_name+"=" + encodeURIComponent(value) + "; path=/; expires=" + expdate.toGMTString();
+}
+
+function getOfferCookie(cpCode, type) {
+	var INFO = ['CODE', 'VIEW', 'CLICK', 'DENY'];
+	
+	function getCookie(cName) {
+	    cName = cName + '=';
+	    var cookieData = document.cookie;
+	    var start = cookieData.indexOf(cName);
+	    var cValue = '';
+	    if(start != -1){
+	         start += cName.length;
+	         var end = cookieData.indexOf(';', start);
+	         if(end == -1)end = cookieData.length;
+	         cValue = cookieData.substring(start, end);
+	    }
+	    return unescape(cValue);
+	}
+	
+	var cookieValue = getCookie('offerBnInfo');
+    if(cookieValue) {
+        var cArry = cookieValue.split('@');
+        for(var idx in cArry) {
+        	var info = cArry[idx].split('|');
+            if(cArry[idx] && cArry[idx] != '' && cpCode == info[0]) {
+            	return info[INFO.indexOf(type)];
+            }
+        }
+    }
+    return 'N';
+}
+
+function setBannerInfo(offerBanners) {
+	//set local storage
+	store.set('offerBanners', offerBanners);
+	
+	var bannerStore = store.get('offerBanners');
+	
+	var strInfo = ''; //full Cookie String
+	var endDate = ''; //Cookie End Date
+	
+	for(var key in bannerStore) {
+		var info = bannerStore[key];
+		var denyYn = getOfferCookie(key, 'DENY');
+		if(info.endDate > endDate ) {
+			endDate = info.endDate;	
+		}
+		if(denyYn != 'Y') denyYn = info.denyYn;
+		strInfo += key + '|' + info.viewYn + '|' + info.clickYn + '|' + denyYn + '@';
+	}
+	setOfferCookie('offerBnInfo', strInfo, endDate);
+}
+
+function clickOfferBanner(banner, deny) {
+    var offerBanners = store.get('offerBanners');
+    if(offerBanners) {
+        for(var idx in offerBanners) {
+            if(offerBanners[idx].cpCode == banner.cpCode) {
+                offerBanners[idx].clickYn = 'Y';
+                if(deny && banner.cntType == '00') {
+                	offerBanners[idx].denyYn = 'Y';
+                }
+            }
+        }
+        setBannerInfo(offerBanners);
+    }
+    var img = new Image();
+    img.src = '/MW/Offer/Banner/updateBannerClick.tmall?campaignCode='+banner.cpCode;
+}
+
+var cpFloatingTO = null;
+function showOfferFloatBanner(banner) {
+	document.querySelector('#cpFloating a').href = banner.link;
+	document.querySelector('#cpFloating a').addEventListener('click', function() {
+		clickOfferBanner(banner);
+		document.getElementById('cpFloating').style.display = 'none';
+	}, false);
+	document.querySelector('#cpFloating a').innerHTML = '<img src="'+banner.imgUrl+'" alt="'+banner.name+'"/>';
+	document.querySelector('#cpFloating .stop').addEventListener('click', function() {
+		clickOfferBanner(banner, true);
+		document.getElementById('cpFloating').style.display = 'none';
+	}, false);
+
+	document.getElementById('cpFloating').style.display = 'block';
+	var cpFloatingBtn = document.getElementById('cpFloating').getElementsByClassName('close')[0];
+	setTimeout(function() { 
+		mwUI.moreToggle('cpFloating', 'on', cpFloatingBtn, '보기', '닫기');
+		cpFloatingTO = setTimeout(function() {
+			document.getElementById('cpFloating').className = 'cp_floating';
+        }, 5000);
+	}, 500);
+}
+
+function showOfferAllPopup(banner) {
+	var sec = document.createElement('section');
+	sec.id = 'cpAllpopup';
+	sec.className = 'cp_allpopup';
+	
+	var template = document.getElementById('mwDev_offerTemplate').innerHTML;
+	sec.innerHTML = template.replace('{{html}}', banner.contents);
+	
+	document.body.appendChild(sec);
+	
+	setTimeout(function() {
+		cpOfferAllPopup.open('cpAllpopup');
+	}, 500);
+}
+
+var cpOfferAllPopup = {
+	open : function(id) {
+		var obj = document.getElementById(id);
+ 
+		document.body.className += ' allpopup';
+ 
+		obj.className += ' start';
+		setTimeout(function() { 
+			obj.className = obj.className.replace(" start", " animation");
+		}, 500);
+		obj.addEventListener('webkitTransitionEnd', function() {
+			obj.className = obj.className.replace(" animation", "");
+		}, false);
+	},
+	close : function(id) {
+		var obj = document.getElementById(id);
+ 
+		obj.className += ' animation';
+		setTimeout(function() { 
+			obj.className = obj.className.replace(" animation", " end");
+		}, 500);
+		obj.addEventListener('webkitTransitionEnd', function() {
+			obj.className = obj.className.replace(" end", "");
+			document.body.className = document.body.className.replace(' allpopup', '');
+		}, false);
+	}
+}
+
+window.addEventListener("load",  function(){
+	if(location.href.indexOf('/Login') > -1 || location.href.indexOf('/Order') > -1) return;
+	
+	var externalCookie = getAdCookie('externalBanners');
+	if (location.href.indexOf('/productBasicInfo') > -1 && "Y" == "" && "Y" == "") {
+		var banner = {};
+		banner.contents = '';
+		showOfferAllPopup(banner);
+		return;
+	} else if (location.href.indexOf('/productBasicInfo') > -1 && "" != '' && (!externalCookie || externalCookie < 1) ) {
+		var banner = {};
+		setOfferCookie('externalBanners', !externalCookie ? 1 : parseInt(externalCookie)+1);
+		banner.contents = '';
+		showOfferAllPopup(banner);
+		
+		return;
+	}
+	
+	var offerCookie = getAdCookie('offerBanners');
+	var offerBanners = store.get('offerBanners');
+
+	if(offerCookie && offerBanners) {
+		for(var idx in offerBanners) {
+			if(getOfferCookie(offerBanners[idx].cpCode, 'CLICK') == 'N' && getOfferCookie(offerBanners[idx].cpCode, 'VIEW')  == 'N') {
+                var endDate = offerBanners[idx].endDate;
+                if((new Date() - toEndDateFormat(endDate)) > 0) {
+                    continue;
+                }
+                if(getOfferCookie(offerBanners[idx].cpCode, 'DENY') == 'Y') {
+                    continue;
+                }
+			
+				offerBanners[idx].viewYn = 'Y';
+				setBannerInfo(offerBanners);
+				
+				if(offerBanners[idx].type == '00') {
+					showOfferFloatBanner(offerBanners[idx]);
+				} else if(offerBanners[idx].type == '01') {
+					showOfferAllPopup(offerBanners[idx]);
+				}
+        		break;
+			}
+		}
+	} else {
+		//if(offerCookie) return;
+		
+	    $.ajax({
+	        url: '/MW/Offer/Banner/getBanners.tmall',
+	        cache : false,		
+	        success: function(msg) {
+	        	setOfferCookie('offerBanners', true);
+	            var json = JSON.parse(msg);
+	            if(json && json.status.code == 200) {
+	            	if(json.response.cnt && json.response.cnt > 0) {
+	            		var bannerStore = {};
+	            		var banners = json.response.banners;
+	            		
+	            		var firstIdx = null;
+	            		for(var idx in banners) {
+	            			var viewYn = getOfferCookie(banners[idx].cpCode, 'VIEW');
+	            			var nativeView = (!offerBanners && viewYn == 'Y'); //Native 노출 여부(LocalStorage 에 존재하지 않고 쿠키에 있을경우)
+	            			var clickYn = banners[idx].clickYn;
+	            			var denyYn = getOfferCookie(banners[idx].cpCode, 'DENY');
+
+	            			if(denyYn == 'Y') banners[idx].denyYn = 'Y';
+	            			
+	            			if(denyYn != 'Y' && clickYn != 'Y') {
+	            				firstIdx = banners[idx].cpCode;
+	            			}
+	            			bannerStore[banners[idx].cpCode] = banners[idx];
+	            		}
+	            		bannerStore[firstIdx].viewYn = 'Y';
+	            		setBannerInfo(bannerStore);
+	            		
+						if(!nativeView && bannerStore[firstIdx].type == '00') {
+							showOfferFloatBanner(bannerStore[firstIdx]);
+						} else if(!nativeView && bannerStore[firstIdx].type == '01') {
+							showOfferAllPopup(bannerStore[firstIdx]);
+						}		            		
+	            	}
+	            }
+	        }
+	    });
+	}	
+}, false);
+</script>
+
+<script>
+window.addEventListener("DOMContentLoaded",  function(){
+
+	var hasTouch = 'ontouchstart' in window;
+	var click = hasTouch ? 'touchend' : 'mousedown';
+	
+	$("header #kwd ul").delegate("li a", "click", catchAnchorClickEvent);
+    $("header #schwd #schword01").delegate("ul li a", "click", catchAnchorClickEvent);
+    $("header #schwd #schword02 div div").delegate("ul li a", "click", catchAnchorClickEvent);
+    $("header #schwd #schword03").delegate("ul li a", "click", catchAnchorClickEvent);
+    $(".f_menu ul").delegate("li a", "click", catchAnchorClickEvent);
+    $(".prdAdd").delegate("a", "click", catchAnchorClickEvent);
+    
+	var as = document.querySelectorAll("#wrap a");
+	for(var i=0,len=as.length; i<len; i++){
+		if( !(as[i].dataset.clickurl == undefined || as[i].dataset.clickurl == '') ){
+			as[i].addEventListener('click', catchAnchorClickEvent );
+		}
+    }
+	var input = document.querySelectorAll("#wrap input");
+	for(var i=0,len=input.length; i<len; i++){
+		if( !(input[i].dataset.clickurl == undefined || input[i].dataset.clickurl == '') ){
+			if( input[i].dataset.calltype == 'ajax' ){
+				input[i].addEventListener('click', catchAnchorClickEventToAjax );
+			}else{
+				input[i].addEventListener('click', catchAnchorClickEvent );
+			}
+		}
+    }
+	var button = document.querySelectorAll("#wrap button");
+	for(var i=0,len=button.length; i<len; i++){
+		if( !(button[i].dataset.clickurl == undefined || button[i].dataset.clickurl == '') ){
+			button[i].addEventListener('click', catchAnchorClickEvent );	
+		}
+    }
+	
+    $(".cont_wrap .sch_sort .sort").bind(click, catchAnchorClickEventToAjax);
+    $(".cont_wrap .sch_sort .sort").bind("change", function(){
+    	callStatAjax( $(":selected").data().clickurl, $(":selected").data().clickkey );
+    });
+
+    $(".cont_wrap .schbox2 select").bind(click, catchAnchorClickEventToAjax);
+    $(".cont_wrap .schbox2 select").bind("change", function(){
+    	$(":selected", this).each(function(){
+    		callStatAjax( $(this).data().clickurl, $(this).data().clickkey ) ;
+    	});
+    });
+    
+}, false);
+
+
+if (!isApp()) {
+	window.addEventListener("scroll",  function(){
+		var scrollHeight;
+		if ( pageYOffset ) {
+			scrollHeight = pageYOffset;
+		} else {
+			var body = document.body;
+			var de = document.documentElement;
+			de = (de.clientHeight) ? de : body;
+			scrollHeight = de.scrollTop;
+		}
+		if (scrollHeight > 1) {
+			document.querySelector('.f_top').style.display = 'block';
+		} else {
+			document.querySelector('.f_top').style.display = 'none';
+		}
+		
+	}, false);
+}
+</script>
+
+<footer>
+<script>
+function fn_goTop() {
+	window.scrollTo(0, 1);
+}
+function fn_doAjax(urlString, cbFunction) {
+    if (!urlString) return false;
+    if(typeof jQuery != 'undefined') {
+	    $.ajax({
+	        url: urlString,
+	        context: document.body,	
+	        success: function(msg) {
+	            if (cbFunction) eval(cbFunction + "(" + msg + ")");
+	        },	
+	        error: function() {
+	            if (cbFunction) eval(cbFunction+"()");
+	        }
+	    });
+    }
+}
+
+function fn_doAjaxCall(urlString, cbFunction) {
+    if (!urlString) return false;
+
+    if(typeof jQuery != 'undefined') {
+	    $.ajax({
+	        url: urlString,
+	        dataType : 'json',
+	        success: function(msg) {
+	        	if (cbFunction) cbFunction.call(this, msg);
+	        },	
+	        error: function() {
+	        	if (cbFunction) cbFunction.call(this);
+	        }
+	    });
+    }
+}
+
+function funcCheckIsLogin(){
+	var arg = "TMALL_AUTH=";
+	var alen = arg.length;
+	var clen = document.cookie.length;
+	var i = 0;
+
+	while (i < clen)
+	{
+		var j = i + alen;
+		if (document.cookie.substring(i, j) == arg)
+			return true;
+		i = document.cookie.indexOf(" ", i) + 1;
+		if (i == 0)
+			break;
+	}
+	return false;
+}
+function keyOneShow()
+{	
+		num = (Math.ceil(Math.random()*keyArray.length)) - 1;
+		$("#decSearchKeyword").val(keyArray[num]);
+		$("#dispObjLnkUrl").val(keyLinkArray[num]);
+}
+
+var keyArray = new Array();
+var keyLinkArray = new Array();
+var domainUrl = document.URL;
+var sslType = domainUrl.split("://");
+
+
+var gnbTextAjaxUrl = '/MW/Common/getGNBTextListAjax.tmall';
+if(document.location.hostname == 'm.11st.co.kr') {
+    gnbTextAjaxUrl = '/MW/html/nc/getGNBTextListAjax.js';
+}
+fn_doAjaxCall(gnbTextAjaxUrl, gnbTextListJson);
+
+
+function callAdAppScheme(scheme, json) {
+    try {
+        var ifr = document.getElementById('appAdTextInterface');
+        if (!ifr) {
+            ifr = document.createElement('iframe');
+            ifr.id = 'appAdTextInterface';
+            ifr.width = 0;
+            ifr.height = 0;
+            ifr.style.display = 'none';
+            document.body.appendChild(ifr);
+        }
+        ifr.src = scheme+encodeURIComponent(JSON.stringify(json));
+    } catch(e) {console.log(e);}
+}
+
+function getAdCookie(cName) {
+    cName = cName + '=';
+    var cookieData = document.cookie;
+    var start = cookieData.indexOf(cName);
+    var cValue = '';
+    if(start != -1){
+         start += cName.length;
+         var end = cookieData.indexOf(';', start);
+         if(end == -1)end = cookieData.length;
+         cValue = cookieData.substring(start, end);
+    }
+    return unescape(cValue);
+}
+
+function gnbTextListJson(json) {
+	var appData = {};
+	appData.viewLogUrl = 'http://m.11st.co.kr/a.st?type=view&idx={{idx}}';
+    appData.clickLogUrl = 'http://m.11st.co.kr/a.st?type=view&idx={{idx}}';
+    appData.list = [];
+	if (json) {		
+		if (json.textList.length > 0) {		
+
+			var textCnt = json.textList.length;
+			if(textCnt > 20) textCnt = 20;
+			
+			for (var i=0 ; i<textCnt ; i++) {
+				keyArray[i] = json.textList[i].dispObjNm;
+				keyLinkArray[i] = json.textList[i].dispObjLnkUrl;
+				
+				//for app
+				var appListData = {};
+                appListData.idx = i;
+                appListData.name = json.textList[i].dispObjNm;
+                appListData.link = json.textList[i].dispObjLnkUrl;
+                appData.list[i] = appListData;
+			}			            
+		}
+	}
+	var searchText = "";
+	if (keyArray.length > 0 && searchText == "" ) {
+		keyOneShow();
+		var appType = getAdCookie("appType");
+		if(appType.indexOf("appmw") > -1) {
+			callAdAppScheme('app://ads/searchKeywords/', appData);
+		}
+	} else {
+        var appTextData = {};
+        appTextData.list = [];
+        var appTextListData = {};
+        appTextListData.name = searchText;
+        
+        var searchUrl = 'http://m.11st.co.kr/MW/Search/searchProduct.tmall?decSearchKeyword=' + encodeURIComponent(searchText) + '&searchKeyword=' + encodeURIComponent(encodeURIComponent(searchText));
+        appTextListData.link = searchUrl;
+        appTextData.list[appTextData.list.length] = appTextListData;
+        
+        var appType = getAdCookie("appType");
+        if(appType.indexOf("appmw") > -1) {
+            callAdAppScheme('app://ads/searchText/', appTextData);
+        }
+    }
+}
+
+</script>
+
+
+<script type="text/javascript">
+window.addEventListener("load",  function() {
+	try {
+		var protocol = (window && window.location && window.location.protocol) ? window.location.protocol.replace(':', '') : "http";
+		var element = document.createElement('script');
+		var domainPrefix = "//c.m.011st.com/MW";
+		if(protocol === "https") {
+			domainPrefix = "//m.11st.co.kr/MW";
+		}
+		element.src = domainPrefix + "/js/lib/mwapptools.js";
+		document.head.appendChild(element);
+	} catch(e) {};
+}, false);
+
+function call11stAppFooter(scheme, url) {
+	var path = scheme;
+	if(path.indexOf('loadurl') > -1) {
+		path += encodeURIComponent(url);
+	}
+	var intentScheme = '#Intent;scheme=elevenst;package=com.elevenst;end';
+	mwapptools.web2app({ urlScheme : 'elevenst'+path, intentURI :
+		'intent'+path+intentScheme, storeURL: 'itms-apps://itunes.apple.com/app/id397938216?mt=8' });
+}
+function goDealAppFooter(){	
+	var scheme = '://maintab/home';
+    var intentScheme ='#Intent;scheme=elevenstdeal;package=com.elevenst.deals;end';
+    mwapptools.web2app({ urlScheme : "elevenstdeal"+scheme, intentURI : "intent"+scheme+intentScheme, storeURL: "itms-apps://itunes.apple.com/app/id804663259?mt=8" }); 
+}
+</script>
+
+<div class="f_down">
+	<ul>
+		<li><a href="https://buy.m.11st.co.kr/MW/Order/viewOrderPayInfo.tmall?incommingCode=02&amp;ordNo=201703243661027&amp;prdNo=958114815&amp;rakePrdNo=958114815&amp;dispSpceId=&amp;dispSpceRank=&amp;rakeTrTypeCd=&amp;demandDscStr=&amp;OCBcheck=N#" onclick="call11stAppFooter(&#39;://loadurl?domain=m.11st.co.kr&amp;url=&#39;,document.location.href); return false;" class="app11st" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1402">11번가 앱다운로드</a></li>
+		<li><a href="https://buy.m.11st.co.kr/MW/Order/viewOrderPayInfo.tmall?incommingCode=02&amp;ordNo=201703243661027&amp;prdNo=958114815&amp;rakePrdNo=958114815&amp;dispSpceId=&amp;dispSpceRank=&amp;rakeTrTypeCd=&amp;demandDscStr=&amp;OCBcheck=N#" onclick="goDealAppFooter(); return false;" class="shocking" data-clickurl="MWJ" data-clickkey="MWJ14" data-clickitem="MWJ1403">쇼킹딜 앱다운로드</a></li>
+	</ul>
+</div>
+
+<div class="f_menu">
+	<ul>
+		<li id="loginBottom"><a href="https://buy.m.11st.co.kr/MW/Login/logout.tmall?type=" class="f5" data-clickurl="WGF01" data-clickkey="01">로그아웃</a></li>
+		<li id="pcVersionLink"><a href="http://www.11st.co.kr/html/main.html" data-clickurl="WGF01" data-clickkey="02">PC버전</a></li>
+		<li><a href="http://m.11st.co.kr/MW/Customer/customerMain.tmall" data-clickurl="WGF01" data-clickkey="03">고객센터</a></li>
+		<li><a href="http://m.11st.co.kr/MW/Product/productMainConner.tmall" data-clickurl="WGF01" data-clickkey="04">전체서비스</a></li>
+	</ul>
+</div>
+<script type="text/javascript">
+var login = document.getElementById("loginBottom");
+var type = "";
+window.addEventListener("load",  function(){
+	setTimeout("footerSetLogin()", 310);
+	
+}, false);
+function footerSetLogin() {
+	if(funcCheckIsLogin()) {
+	    login.innerHTML = '<a href="/MW/Login/logout.tmall?type='+type+'" class="f5" data-clickurl="WGF01" data-clickkey="01">로그아웃</a>';
+	} else {
+	    login.innerHTML = '<a href="https://m.11st.co.kr/MW/Login/login.tmall" class="f1" data-clickurl="WGF01" data-clickkey="01">로그인</a>';
+	}
+}
+(function() {
+	(function() {
+		var getCookie = function(cName) {
+		    cName = cName + '=';
+		    var cookieData = document.cookie;
+		    var start = cookieData.indexOf(cName);
+		    var cValue = '';
+		    if(start != -1){
+		         start += cName.length;
+		         var end = cookieData.indexOf(';', start);
+		         if(end == -1)end = cookieData.length;
+		         cValue = cookieData.substring(start, end);
+		    }
+		    return unescape(cValue);
+		};
+		var getType = function() {
+			return getCookie('appType');
+		};
+		var getVCA = function() {
+			return getCookie('appVCA');
+		};
+		try {
+			var appType = getType();
+			var pcVersionWraps = document.getElementById('pcVersionLink');
+            if(appType == "appmw_book" || appType == "appmwi_book") {
+            	pcVersionWraps.innerHTML = '<a href="http://www.11st.co.kr/booksmall/BooksAction.tmall?ID=BOOKS&ctgrNo=63516">PC버전</a>';
+            } else {
+            	pcVersionWraps.innerHTML = '<a href="http://www.11st.co.kr/html/main.html"  data-clickurl="WGF01" data-clickkey="02">PC버전</a>';
+            }
+            if(appType == 'appmw' || appType == 'appmwi') {
+		    	document.querySelector('.f_down').style.display = 'none';
+		    }
+		} catch(e) {console.error(e);}
+	} ());
+}());
+</script>
+
+
+	<script>
+	window.addEventListener("load",  function(){
+		var comparePricesSrchClickCd = 'W'+'SRPMDG05'; 
+		var comparePricesDtalClickCd = 'W'+'SRPDMDI01'; 
+		
+	}, false);
+	</script>
+	<div class="f_foot">
+		<address>
+			<span class="p"><strong>SK플래닛(주)</strong><em>대표이사</em> : 서성원</span>
+			<span class="p"><em>주소</em> : (13487) 경기도 성남시 분당구 판교로 264 (삼평동)</span>
+			<span class="p"><em>사업자등록번호</em> : 104-86-36968</span>
+			<span class="p"><em>통신판매업신고</em> : 제2014-경기성남-0036호</span>
+			<span class="p"><em>고객센터</em> : <a href="tel:1599-0110" data-clickurl="WGF01" data-clickkey="08">1599 - 0110</a><span class="e">customerservice@11st.co.kr</span></span>
+		</address>
+		<div class="link">
+			<a href="http://www.ftc.go.kr/info/bizinfo/communicationView.jsp?apv_perm_no=2011301010030201333&amp;area1=&amp;area2=&amp;currpage=1&amp;searchKey=04&amp;searchVal=1048636968&amp;stdate=&amp;enddate=" data-clickurl="WGF01" data-clickkey="05">사업자정보확인</a>
+			<a href="http://www.11st.co.kr/annc/AnncMainPreview.tmall?method=getProvision&amp;anncCd=01" class="law" data-clickurl="WGF01" data-clickkey="06">이용약관</a>
+			<a href="http://www.11st.co.kr/annc/AnncMainPreview.tmall?method=getProvision&amp;anncCd=03" class="law" data-clickurl="WGF01" data-clickkey="07">개인정보처리방침</a>
+		</div>
+		<p class="noti">SK플래닛(주)는 통신판매중개자로서 오픈마켓 11번가의 거래당사자가 아니며, 입점판매자가 등록한 상품정보 및 거래에 대해 SK플래닛(주)는 일체의 책임을 지지 않습니다.</p>
+		<p class="copy">COPYRIGHT &#169;SK planet. All RIGHTS RESERVED.</p>
+	</div>
+	
+	<a href="https://buy.m.11st.co.kr/MW/Order/viewOrderPayInfo.tmall?incommingCode=02&amp;ordNo=201703243661027&amp;prdNo=958114815&amp;rakePrdNo=958114815&amp;dispSpceId=&amp;dispSpceRank=&amp;rakeTrTypeCd=&amp;demandDscStr=&amp;OCBcheck=N#" onclick="fn_goTop();return false;" class="f_top" style="display: none;" data-clickurl="WSRPK00" data-clickkey="WSRPK00">TOP</a>
+	
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+	function getDimensionValue(){
+	   	var dimenVal = 'WEB';
+		try{
+			var cName = 'appType=';
+		    var cookieData = document.cookie;
+		    var start = cookieData.indexOf(cName);
+		    var cValue = '';
+		    if(start != -1){
+		         start += cName.length;
+		         var end = cookieData.indexOf(';', start);
+		         if(end == -1)end = cookieData.length;
+		         cValue = cookieData.substring(start, end);
+		    }
+		   	var appType = unescape(cValue);
+		   	if(appType.indexOf('app') > -1){
+		   		dimenVal = 'APP';
+		   	} else if (appType.indexOf('deal') > -1){
+		   		dimenVal = 'APP_SD';
+		   	}
+		   	
+		}catch(e){}
+   		return dimenVal;
+	}
+	
+	var dimensionValue = getDimensionValue();
+	ga('create', 'UA-68494772-1', 'auto');
+	ga('set', 'dimension6', dimensionValue);
+
+</script>
+
+<!-- Google Tag Manager -->
+
+<noscript>&lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-T4V5PJ" height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+<script>
+	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','GA_dataLayer','GTM-T4V5PJ');
+	try{
+		GA_dataLayer.push(
+				{ '11st_cd_6': dimensionValue } 
+		);
+	}catch(e){}
+</script>
+<!-- End Google Tag Manager -->
+<script src="./view_order_pay_info_files/initData.js"></script>
+<script>mwScript.addScript('/js/lib/netfunnel.js', "UTF-8");</script>
+<iframe width="0" height="0" id="appAdTextInterface" style="display:none;" src="view_order_pay_info_files/saved_resource.html"></iframe>
+</footer>
+
+	<!-- //footer -->
+	<!-- google ecommerce script  -->
+	<script language="javascript">
+        try{
+
+//주문 번호
+            var id = "201703243661027";
+// xsite 값
+            var affilation = "1000132495";
+// 실 결제 총합
+            var revenue = "16000";
+// 배송비 합계
+            var shipping = "5500";
+//총 할인금액
+            var coupon = "총할인금액^0";
+
+//make proucts info array
+            var arrProducts = new Array();
+            
+            arrProducts.push({name:"후르트텔라 요구르트 1050g / 코스트코 망고맛 라즈베리맛 블루베리맛",id:"958114815",price:"10500",variant:"",dimension11:"14568366",quantity:"1",coupon:"0"});
+            
+            
+            GA_dataLayer.push({
+                'event': 'transaction',
+                'ecommerce': {
+                    'purchase': {
+                        'actionField': {
+                            'id': id,
+                            'affiliation': affilation,
+                            'revenue': revenue,
+                            'shipping': shipping,
+                            'coupon':coupon
+                        },
+                        'products': arrProducts
+                    }
+                }
+            });
+            
+        }catch(e) {}
+	</script>
+	<!-- // google ecommerce script -->
+	<!-- rake script -->
+	<script src="./view_order_pay_info_files/rake-install.js"></script>
+	<script src="./view_order_pay_info_files/ElevenstAppClientSentinelShuttle.js"></script>
+	<script language="javascript">
+        //유저 행동 로그 수집 스크립트
+        
+        if('real' == 'real'){
+            //운영
+            rake.install({env:rake.LIVE, token:"e9257de0da793d89d793049109b39fec421e"});
+        }else{
+            //개발
+            rake.install({env:rake.DEV, token:"91fee424dcbd63d9868b2b57c237c2b21c50f5a8"});
+        }
+
+        function userActionLog(){
+            
+            rake.flush();
+            
+
+        }
+        //shuttle setting
+        function getRakeShuttle(rakeTrTypeCd ,dispSpceId, prdNo, dispSpceRank, lDispCtgrNo,mDispCtgrNo, sDispCtgrNo) {
+            var shuttle = new ElevenstAppClientSentinelShuttle();
+
+            // 이후 수집이 필요한 정보를 셔틀에 설정 후 서버로 전송
+            shuttle.setPage_id('/orderresult');
+            shuttle.setPoc('11st_mobile_web');
+            shuttle.setAction_id("view");
+            shuttle.setPcid(TMCookieUtil.getCookie("PCID"));
+            shuttle.setSession_id(TMCookieUtil.getSubCookie(0,'RAKE_ID'));
+            shuttle.setMem_no('14538450'); //회원번호
+            shuttle.setEvent_id("PRODUCT");
+            shuttle.setTracking_id(rakeTrTypeCd);
+            shuttle.setLog_source("webview");
+
+            shuttle.setBodyOfPRODUCT(dispSpceId, prdNo, dispSpceRank, lDispCtgrNo, mDispCtgrNo, sDispCtgrNo);
+
+            return shuttle;
+        }
+
+        // 주문완료 페이지 로딩
+        userActionLog();
+
+        //주소복사를 위한 function들
+        function clipBoardCopy(addr){
+            window.location.href = "app://copyClipboardFrom/"+addr;
+            alert("호텔주소가 복사되었습니다.");
+        }
+        function isApp() {
+            var appType = getCookie("appType");
+            if(appType.indexOf("appmw") > -1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        if(!isApp()){
+            $("#clipBoardCopy").hide();
+        }
+
+	</script>
+	<!-- // rake script -->
+</div>
+
+
+</body></html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0119)https://11st.kr/html/common/googleAd/ifrm_ga.html?mobileYn=Y&ref=newOrderResult&param=prdNoList:958114815;directVisit:2 -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+		<title>google analytics</title>
+						
+		<meta http-equiv="Expires" content="-1"> 
+		<meta http-equiv="Pragma" content="no-cache"> 
+		<meta http-equiv="Cache-Control" content="No-Cache">
+		<meta name="description" content="google analytics">
+		<script type="text/javascript">
+			function getParameter(key) {
+				try {
+					var _param = document.location.search;	
+					if ( typeof _param !== 'undefined' && _param !== '' ) {
+						_param = _param.substr(1);
+						
+						var _chkKey = key + '=';
+						var _arrParam =  _param.split('&');
+						
+						for ( var idx = 0; idx < _arrParam.length; idx++ ) {
+							if ( _arrParam[idx].indexOf(_chkKey) === 0 ) {
+								return _arrParam[idx].replace(_chkKey, '');
+							}
+						}
+					} else {
+						return '';
+					}
+				} catch (ex) {
+					return '';
+				}
+			}		
+			
+			try
+			{
+				var account = 'UA-39567387-2';
+				
+				if ( getParameter('mobileYn') == 'Y' ) {
+					account = 'UA-39567387-3';
+				}
+				
+				var _gaq = _gaq || [];
+				_gaq.push(['_setAccount', account]);
+				_gaq.push(['_setDomainName', '11st.kr']);
+				_gaq.push(['_setAllowLinker', true]);
+				
+				var arrIdx = 1;
+				var param = getParameter('param');
+				if ( param != '' ) {
+					var arrParam = param.split(';');
+					
+					for ( var idx = 0; idx < arrParam.length; idx++ ) {
+						var customData = arrParam[idx];
+						var arrCustomData = customData.split(':');
+						
+						if ( arrCustomData[0] != '' ) {
+							var customkey = arrCustomData[0];
+							var customVar = null;
+							
+							if ( arrCustomData.length == 2) {
+								customVar = arrCustomData[1];
+							}
+							else
+							{
+								customVar = '';
+							}
+							_gaq.push(['_setCustomVar', arrIdx++, customkey, customVar, 3]);
+							
+							if ( arrIdx >= 5 ) {
+								break;
+							}								
+							
+						}
+						
+					}
+				}
+			
+				_gaq.push(['_trackPageview']);
+			}
+			catch (ex) {}
+		</script>		
+		<script type="text/javascript" src="./dc.js"></script>
+	</head>
+	<body>	
+	
+
+
+
+</body></html>
