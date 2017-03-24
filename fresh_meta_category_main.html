@@ -175,7 +175,7 @@ mwScript.addScript('/js/lib/device.js');
 			
 		<a href="http://m.11st.co.kr/MW/Mart/getCategoryTab.tmall?mallType=mart" class="mu cate" data-clickurl="MWMART00" data-clickkey="MWMART0001">카테고리</a>
 	
-		<form id="search" name="searchForm" action="#" method="get" onsubmit="searchSubmit();return false;">
+		<form id="search" name="searchForm" action="/techplanning/search_mart_prd_list.html" method="get" onsubmit="searchSubmit();return false;">
 			<fieldset>
 				<legend>통합검색</legend>
 				<div class="srch" style="border:2px red solid;">
@@ -1208,7 +1208,7 @@ window.addEventListener("load",  function(){
 	            		var bannerStore = {};
 	            		var banners = json.response.banners;
 
-	            		var firstIdx = null;
+	            		var firstIdx = null;ㅎ
 	            		for(var idx in banners) {
 	            			var viewYn = getOfferCookie(banners[idx].cpCode, 'VIEW');
 	            			var nativeView = (!offerBanners && viewYn == 'Y'); //Native 노출 여부(LocalStorage 에 존재하지 않고 쿠키에 있을경우)
