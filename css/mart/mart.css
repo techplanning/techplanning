@@ -299,7 +299,7 @@ body.totalSearchType .gnb_mart .srch input[type='submit']{background-color:#ff6f
 
 .mtlist_base{padding:0 8px;}
 .mtlist_base li{position:relative;margin-top:8px;}
-.mtlist_base li:first-child{margin-top:0;border:2px red solid;}
+.mtlist_base li:first-child{margin-top:0;border:2px blue solid;}
 .mtlist_base li a{display:block;overflow:hidden;position:relative;min-height:130px;padding:10px 10px 0;border-bottom:1px solid #d1d1d6;background:#fff;}
 .mtlist_base .thumb{position:absolute;top:10px;left:10px;width:120px;height:120px;}
 .mtlist_base .thumb img{position:absolute;top:0;left:0;right:0;bottom:0;max-width:100%;max-height:100%;margin:auto;}
