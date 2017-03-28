@@ -48,6 +48,22 @@ var mwScript = (function() {
 <script src="./view_order_pay_info_files/mDevice.js" defer=""></script>
 <script src="./view_order_pay_info_files/lstore.js" defer=""></script>
 <script src="./view_order_pay_info_files/device.js" defer=""></script>
+	<!-- Shuttle 스크립트 로딩 -->
+	<script src="js/common/TECHTESTSAMPLESentinelShuttle.js"></script>
+	<script>
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+                function(m,key,value) {
+                    vars[key] = value;
+                });
+            return vars;
+        }
+
+        var _$SHUTTLE = TECHTESTSAMPLESentinelShuttle();
+        _$SHUTTLE.setPage_id("/order/view_order_pay_info").setPc_id(TMCookieUtil.getCookie("PCID"));
+	</script>
+	<script src="js/common/Log.js"></script>
 <script>
 var _MOBILE_URL_ = 'http://m.11st.co.kr/MW';
 var _SSL_MOBILE_URL_ = 'https://m.11st.co.kr/MW';
