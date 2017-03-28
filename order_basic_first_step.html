@@ -67,7 +67,7 @@ var mwScript = (function() {
 	</script>
 	<script src="js/common/Log.js"></script>
 	<script>
-        function goSearch() {
+        function goOrderDetail() {
             shuttle = TECHTESTSAMPLESentinelShuttle();
             shuttle.setPage_id("/order/order_basic_first_step").setPc_id(TMCookieUtil.getCookie("PCID"));
             shuttle.get()._$body.cart_no = 1232313972;
@@ -77,6 +77,8 @@ var mwScript = (function() {
 
             _$RAKE_collect(shuttle);
             _$RAKE_flush();
+
+            location.href='/techplanning/view_order_detail_info';
         }
 	</script>
 <script>
@@ -10771,7 +10773,7 @@ var popCupon = {
 				
 				<div><a href="http://buy.m.11st.co.kr/MW/Cart/cartList.tmall" class="btnb" onclick="callStatAjax(&#39;MOROR&#39;, &#39;MOROR005&#39;);"><span>장바구니 돌아가기</span></a></div>
 				
-				<div><span class="btnpr"><button type="submit" onclick="location.href='/techplanning/view_order_detail_info';" style="border:2px blue solid;">결제하기</button></span></div>
+				<div><span class="btnpr"><button type="submit" onclick="goOrderDetail();" style="border:2px blue solid;">결제하기</button></span></div>
 			</div>
 
 		</form>
