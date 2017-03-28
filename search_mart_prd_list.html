@@ -67,8 +67,8 @@ var mwScript = (function() {
                 shuttle = TECHTESTSAMPLESentinelShuttle();
 				shuttle.setPage_id("/mart/search_mart_prd_list").setPc_id(TMCookieUtil.getCookie("PCID"));
 				shuttle.get()._$body.search_keyword = getUrlVars()["searchKeyword"];
+            	shuttle.get()._$body.list_no = 1;
             	shuttle.get()._$body.prd_no = 958114815;
-            	shuttle.get()._$body.prd_amount = 1;
                 shuttle.setAction_id('search_result.prd_list');
                 shuttle.setAction_event_id('click');
 
