@@ -48,6 +48,37 @@ var mwScript = (function() {
 <script src="./order_basic_first_step_files/mDevice.js" defer=""></script>
 <script src="./order_basic_first_step_files/lstore.js" defer=""></script>
 <script src="./order_basic_first_step_files/device.js" defer=""></script>
+	<!-- Shuttle 스크립트 로딩 -->
+	<script src="js/common/TECHTESTSAMPLESentinelShuttle.js"></script>
+	<script>
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+                function(m,key,value) {
+                    vars[key] = value;
+                });
+            return vars;
+        }
+
+        var _$SHUTTLE = TECHTESTSAMPLESentinelShuttle();
+        _$SHUTTLE.setPage_id("/order/order_basic_first_step").setPc_id(TMCookieUtil.getCookie("PCID"));
+        _$SHUTTLE.get()._$body.cart_no = 1232313972;
+        _$SHUTTLE.get()._$body.prd_no = 958114815;
+	</script>
+	<script src="js/common/Log.js"></script>
+	<script>
+        function goSearch() {
+            shuttle = TECHTESTSAMPLESentinelShuttle();
+            shuttle.setPage_id("/order/order_basic_first_step").setPc_id(TMCookieUtil.getCookie("PCID"));
+            shuttle.get()._$body.cart_no = 1232313972;
+            shuttle.get()._$body.prd_no = 958114815;
+            shuttle.setAction_id('order_confirm.pay');
+            shuttle.setAction_event_id('click');
+
+            _$RAKE_collect(shuttle);
+            _$RAKE_flush();
+        }
+	</script>
 <script>
 var _MOBILE_URL_ = 'http://m.11st.co.kr/MW';
 var _SSL_MOBILE_URL_ = 'https://m.11st.co.kr/MW';
