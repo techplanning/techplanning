@@ -67,9 +67,6 @@ var mwScript = (function() {
 	<script src="js/common/Log.js"></script>
 	<script>
         function addCart() {
-            if(schdelbtn.style.display == 'block') {
-
-            } else {
                 shuttle = TECHTESTSAMPLESentinelShuttle();
                 shuttle.setPage_id("/product/product_basic_info").setPc_id(TMCookieUtil.getCookie("PCID"));
                 shuttle.get()._$body.prd_no = 958114815;
@@ -79,7 +76,6 @@ var mwScript = (function() {
 
                 _$RAKE_collect(shuttle);
                 _$RAKE_flush();
-            }
         }
 	</script>
 <script>
