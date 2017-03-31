@@ -46,28 +46,28 @@ function Nethru_GetCookie(name)
  	}
 	return null;
 }
-function Nethru_makePersistentCookie(name,length,path,domain)
-{
-	var today = new Date();
-	var expiredDate = new Date(2020, 1, 1);
-	var cookie;
-	var value;
-
-	cookie = Nethru_GetCookie(name);
-	if (cookie)
-   		return 1;
-
-	var values = new Array();
-	for (var i = 0; i < length; i++)
-		values[i] = "" + Math.random();
-
-	value = today.getTime();
-
-	for (var i = 0; i < length; i++)
-		value += values[i].charAt(2);
-
-	Nethru_SetCookie(name, value, expiredDate, path, domain);
-}
+// function Nethru_makePersistentCookie(name,length,path,domain)
+// {
+// 	var today = new Date();
+// 	var expiredDate = new Date(2020, 1, 1);
+// 	var cookie;
+// 	var value;
+//
+// 	cookie = Nethru_GetCookie(name);
+// 	if (cookie)
+//    		return 1;
+//
+// 	var values = new Array();
+// 	for (var i = 0; i < length; i++)
+// 		values[i] = "" + Math.random();
+//
+// 	value = today.getTime();
+//
+// 	for (var i = 0; i < length; i++)
+// 		value += values[i].charAt(2);
+//
+// 	Nethru_SetCookie(name, value, expiredDate, path, domain);
+// }
 function Nethru_getDomain()
 {
 	var _host = document.domain;
