@@ -46,7 +46,7 @@ function Nethru_GetCookie(name)
  	}
 	return null;
 }
-// function Nethru_makePersistentCookie(name,length,path,domain)
+ function Nethru_makePersistentCookie(name,length,path,domain)
 // {
 // 	var today = new Date();
 // 	var expiredDate = new Date(2020, 1, 1);
@@ -67,7 +67,7 @@ function Nethru_GetCookie(name)
 // 		value += values[i].charAt(2);
 //
 // 	Nethru_SetCookie(name, value, expiredDate, path, domain);
-// }
+ }
 function Nethru_getDomain()
 {
 	var _host = document.domain;
