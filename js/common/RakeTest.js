@@ -83,8 +83,3 @@ function _$RAKE_cleanData() {
 }(document, window[window.RAKE] || []);
 
 //window.onpageshow = _$RAKE_CALLBACK();
-
-var _$SHUTTLE = TECHTESTSAMPLESentinelShuttle();
-_$SHUTTLE.setPage_id("/product/product_basic_info");
-_$SHUTTLE.get()._$body.prd_no = 958114815;
-_$SHUTTLE.get()._$body.prd_nm = "무슨무슨 상품";
