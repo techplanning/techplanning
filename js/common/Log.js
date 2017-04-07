@@ -1,5 +1,5 @@
 var _$RAKE_ENV = 'DEV';
-var _$RAKE_TOKEN = 'e9257de0da793d89d793049109b39fec421e';//'dd1077a21df7b34a59a086cd432d2f169c9b2af';
+var _$RAKE_TOKEN = 'dd1077a21df7b34a59a086cd432d2f169c9b2af';
 
 function _$RAKE_CALLBACK() {
     RAKE.create({ token: _$RAKE_TOKEN });
@@ -38,11 +38,11 @@ function _$RAKE_cleanData() {
     try {
         var o, s = "RAKE";
         if ("DEV" === _$RAKE_ENV)
-            o = "https://rake.skplanet.com:8663/log/static/js/rake/current/";
+            o = "https://pg.rake.skplanet.com:8443/log/static/js/rake/current/";
         else {
             if ("LIVE" !== _$RAKE_ENV)
                 throw Error("Invalid $_RAKE_ENV: " + _$RAKE_ENV);
-            o = "https://rake.skplanet.com:8663/log/static/js/rake/current/"
+            o = "https://rake.skplanet.com:8443/log/static/js/rake/current/"
         }
         if (window.XMLHttpRequest && "withCredentials"in new XMLHttpRequest)
             o += "rake.bundle.js";
