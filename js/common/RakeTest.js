@@ -43,7 +43,7 @@ function _$RAKE_cleanData() {
         else {
             if ("LIVE" !== _$RAKE_ENV)
                 throw Error("Invalid $_RAKE_ENV: " + _$RAKE_ENV);
-            o = "https://rake.skplanet.com:8443/log/static/js/rake/current/"
+            o = "https://rake.skplanet.com:8663/log/static/js/rake/current/"
         }
         if (window.XMLHttpRequest && "withCredentials"in new XMLHttpRequest)
             o += "rake.bundle.js";
