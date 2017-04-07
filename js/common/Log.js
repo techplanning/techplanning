@@ -38,7 +38,7 @@ function _$RAKE_cleanData() {
     try {
         var o, s = "RAKE";
         if ("DEV" === _$RAKE_ENV)
-            o = "https://pg.rake.skplanet.com:8663/log/static/js/rake/current/";
+            o = "https://rake.skplanet.com:8663/log/static/js/rake/current/";
         else {
             if ("LIVE" !== _$RAKE_ENV)
                 throw Error("Invalid $_RAKE_ENV: " + _$RAKE_ENV);
