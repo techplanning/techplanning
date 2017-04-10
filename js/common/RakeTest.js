@@ -69,7 +69,7 @@ function _$RAKE_cleanData() {
                 l = e.getElementsByTagName("script")[0],
                 l.parentNode.insertBefore(c, l);
             var E = t;
-            for (p = ["autoTrack", "create", "remove", "track", "collect", "flush"],
+            for (p = ["autoTrack", "create", "remove", "track", "collect", "flush", "setServerPort"],
                      u = 0; u < p.length; u++)
                 r(E, p[u]);
             t[i] = 1,
