@@ -56,6 +56,7 @@ var _$RAKE_TOKEN = 'e9257de0da793d89d793049109b39fec421e';//'dd1077a21df7b34a59a
         console && console.log && (console.log("Failed to execute RAKE snippet due to"),
             console.log(e))
     }
+    RAKE.setServerPort(8663);
 }(document, window[window.RAKE] || []);
 
 function _$RAKE_CALLBACK() {
