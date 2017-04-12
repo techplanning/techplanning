@@ -1,30 +1,5 @@
-var _$RAKE_ENV = 'DEV';
+var _$RAKE_ENV = 'LIVE';
 var _$RAKE_TOKEN = 'dd1077a21df7b34a59a086cd432d2f169c9b2af';
-
-function _$RAKE_CALLBACK() {
-    RAKE.create({ token: _$RAKE_TOKEN });
-    RAKE.setServerPort(8663);
-
-    _$RAKE_collect(_$SHUTTLE);
-
-    _$RAKE_flush();
-}
-
-function _$RAKE_collect(shuttle) {
-    RAKE.collect({payload:shuttle.getImmutableJSONObject()});
-}
-
-function _$RAKE_flush() {
-    RAKE.flush({
-        timeoutAsMillis: 15000,
-        successCallback: function() { console.log('USER SUCCESS CALLBACK') },
-        failureCallback: function() { console.log('USER FAILURE CALLBACK') }
-    })
-}
-
-function _$RAKE_cleanData() {
-    RAKE.cleanData();
-}
 
 !function(e, t) {
     function n() {
