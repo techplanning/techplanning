@@ -58,4 +58,28 @@ var _$RAKE_TOKEN = 'e9257de0da793d89d793049109b39fec421e';//'dd1077a21df7b34a59a
     }
 }(document, window[window.RAKE] || []);
 
+function _$RAKE_CALLBACK() {
+    RAKE.create({ token: _$RAKE_TOKEN });
+
+    _$RAKE_collect(_$SHUTTLE);
+
+    _$RAKE_flush();
+}
+
+function _$RAKE_collect(shuttle) {
+    RAKE.collect({payload:shuttle.getImmutableJSONObject()});
+}
+
+function _$RAKE_flush() {
+    RAKE.flush({
+        timeoutAsMillis: 15000,
+        successCallback: function() { console.log('USER SUCCESS CALLBACK') },
+        failureCallback: function() { console.log('USER FAILURE CALLBACK') }
+    })
+}
+
+function _$RAKE_cleanData() {
+    RAKE.cleanData();
+}
+
 //window.onpageshow = _$RAKE_CALLBACK();
