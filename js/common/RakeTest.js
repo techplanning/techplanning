@@ -60,6 +60,7 @@ var _$RAKE_TOKEN = 'e9257de0da793d89d793049109b39fec421e';//'dd1077a21df7b34a59a
 
 function _$RAKE_CALLBACK() {
     RAKE.create({ token: _$RAKE_TOKEN });
+    RAKE.setServerPort(8663);
 
     _$RAKE_collect(_$SHUTTLE);
 
