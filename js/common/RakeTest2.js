@@ -56,7 +56,7 @@
 }(document, window[window.RAKE] || []);
 
 function _$RAKE_CALLBACK() {
-//    RAKE.create({ token: _$RAKE_TOKEN });
+///    RAKE.create({ token: _$RAKE_TOKEN });
 //    RAKE.setServerPort(8663);
 
 //    _$RAKE_collect(_$SHUTTLE);
