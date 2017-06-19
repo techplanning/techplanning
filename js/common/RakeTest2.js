@@ -80,4 +80,18 @@ function _$RAKE_cleanData() {
     RAKE.cleanData();
 }
 
+window.addEventListener("pageshow", function(event) {
+    pageView('page_show');
+}, false);
+
+window.addEventListener("DOMContentLoaded",  function(){
+    pageView('dom_content_loaded');
+});
+
 //window.onpageshow = _$RAKE_CALLBACK();
+
+function pageView(action_id) {
+    _$RAKE_collect(_$SHUTTLE);
+
+    _$RAKE_flush();
+}
