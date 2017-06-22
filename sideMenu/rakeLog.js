@@ -60,7 +60,7 @@
         RAKE.setServerPort(8663);
     //}
 
-    var rakeLog = (function(rakeLog){
+    ;var rakeLog = (function(rakeLog){
     var loggingEnable = true;
     if ("LIVE" === rakeLogPageInfo._$RAKE_ENV) {
         loggingEnable = false;
