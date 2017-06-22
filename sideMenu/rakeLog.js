@@ -55,10 +55,10 @@
     }
 }(document, window[window.RAKE] || []);
 
-    function _$RAKE_CALLBACK() {
+    //function _$RAKE_CALLBACK() {
         RAKE.create({token: rakeLogPageInfo._$RAKE_TOKEN});
         RAKE.setServerPort(8663);
-    }
+    //}
 
     var rakeLog = (function(rakeLog){
     var loggingEnable = true;
