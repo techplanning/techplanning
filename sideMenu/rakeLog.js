@@ -58,7 +58,7 @@
 RAKE.create({ token: rakeLogPageInfo._$RAKE_TOKEN });
 RAKE.setServerPort(8663);
 
-;var rakeLog = (function(rakeLog1){
+var rakeLog = (function(rakeLog){
     var loggingEnable = true;
     if ("LIVE" === rakeLogPageInfo._$RAKE_ENV) {
         loggingEnable = false;
@@ -291,7 +291,7 @@ RAKE.setServerPort(8663);
         ele.addEventListener("click", pageAction, false);
     });
 
-    rakeLog1.refresh = function() {
+    rakeLog.refresh = function() {
         pageView('page_show');
         pageView('dom_content_loaded');
 
@@ -306,9 +306,9 @@ RAKE.setServerPort(8663);
         });
     }
 
-    rakeLog1.sendRakeLog = function(ele, gesture) {
+    rakeLog.sendRakeLog = function(ele, gesture) {
         pageAction.call(ele, event, gesture);
     };
 
-    return rakeLog1;
+    //return rakeLog;
 }(window.rakeLog || {}));
