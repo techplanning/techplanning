@@ -35,7 +35,7 @@
             var c, l, p, u;
             c = e.createElement("script"),
                 c.type = "text/javascript",
-                c.onload = _$RAKE_CALLBACK,
+                //c.onload = _$RAKE_CALLBACK,
                 c.async = !0,
                 c.src = o,
                 l = e.getElementsByTagName("script")[0],
