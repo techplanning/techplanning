@@ -58,7 +58,7 @@
 RAKE.create({ token: rakeLogPageInfo._$RAKE_TOKEN });
 RAKE.setServerPort(8663);
 
-;var rakeLog = (function(rakeLog){
+;var rakeLog = (function(rakeLog, $, undefined){
     var loggingEnable = true;
     if ("LIVE" === rakeLogPageInfo._$RAKE_ENV) {
         loggingEnable = false;
