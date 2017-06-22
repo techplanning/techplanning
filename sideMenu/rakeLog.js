@@ -35,7 +35,7 @@
             var c, l, p, u;
             c = e.createElement("script"),
                 c.type = "text/javascript",
-                //c.onload = _$RAKE_CALLBACK,
+                c.onload = _$RAKE_CALLBACK,
                 c.async = !0,
                 c.src = o,
                 l = e.getElementsByTagName("script")[0],
@@ -55,12 +55,10 @@
     }
 }(document, window[window.RAKE] || []);
 
-    function _$RAKE_CALLBACK() {
-        RAKE.create({token: rakeLogPageInfo._$RAKE_TOKEN});
-        RAKE.setServerPort(8663);
-    }
+RAKE.create({ token: rakeLogPageInfo._$RAKE_TOKEN });
+RAKE.setServerPort(8663);
 
-    var rakeLog = (function(rakeLog){
+;var rakeLog = (function(rakeLog){
     var loggingEnable = true;
     if ("LIVE" === rakeLogPageInfo._$RAKE_ENV) {
         loggingEnable = false;
