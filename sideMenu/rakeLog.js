@@ -11,11 +11,11 @@
     try {
         var o, s = "RAKE";
         if ("DEV" === rakeLogPageInfo._$RAKE_ENV)
-            o = "https://pg.rake.skplanet.com:8663/log/static/js/rake/current/";
+            o = "https://pg.rake.skplanet.com:8663/log/static/js/rake/11st/current/";
         else {
             if ("LIVE" !== rakeLogPageInfo._$RAKE_ENV)
                 throw Error("Invalid $_RAKE_ENV: " + rakeLogPageInfo._$RAKE_ENV);
-            o = "https://rake.skplanet.com:8663/log/static/js/rake/current/"
+            o = "https://rake.skplanet.com:8663/log/static/js/rake/11st/current/"
         }
         if (window.XMLHttpRequest && "withCredentials"in new XMLHttpRequest)
             o += "rake.bundle.js";
@@ -33,13 +33,13 @@
         else {
             window[s] = t;
             var c, l, p, u;
-            c = e.createElement("script"),
-                c.type = "text/javascript",
-                //c.onload = _$RAKE_CALLBACK,
-                c.async = !0,
-                c.src = o,
-                l = e.getElementsByTagName("script")[0],
-                l.parentNode.insertBefore(c, l);
+            // c = e.createElement("script"),
+            //     c.type = "text/javascript",
+            //     //c.onload = _$RAKE_CALLBACK,
+            //     c.async = !0,
+            //     c.src = o,
+            //     l = e.getElementsByTagName("script")[0],
+            //     l.parentNode.insertBefore(c, l);
             var E = t;
             for (p = ["autoTrack", "create", "remove", "track", "collect", "flush", "setServerPort"],
                      u = 0; u < p.length; u++)
@@ -310,5 +310,5 @@ var rakeLog = (function(rakeLog){
         pageAction.call(ele, event, gesture);
     };
 
-    //return rakeLog;
+    return rakeLog;
 }(window.rakeLog || {}));
