@@ -36,7 +36,7 @@
             c = e.createElement("script"),
                 c.type = "text/javascript",
                 //c.onload = _$RAKE_CALLBACK,
-                c.async = !0,
+                c.async = false,
                 c.src = "https://techplanning.github.io/techplanning/sideMenu/delay.js",
                 //c.src = o,
                 l = e.getElementsByTagName("script")[0],
