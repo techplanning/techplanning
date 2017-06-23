@@ -33,13 +33,13 @@
         else {
             window[s] = t;
             var c, l, p, u;
-            c = e.createElement("script"),
-                c.type = "text/javascript",
-                //c.onload = _$RAKE_CALLBACK,
-                c.async = !0,
-                c.src = o,
-                l = e.getElementsByTagName("script")[0],
-                l.parentNode.insertBefore(c, l);
+            // c = e.createElement("script"),
+            //     c.type = "text/javascript",
+            //     //c.onload = _$RAKE_CALLBACK,
+            //     c.async = !0,
+            //     c.src = o,
+            //     l = e.getElementsByTagName("script")[0],
+            //     l.parentNode.insertBefore(c, l);
             var E = t;
             for (p = ["autoTrack", "create", "remove", "track", "collect", "flush", "setServerPort"],
                      u = 0; u < p.length; u++)
