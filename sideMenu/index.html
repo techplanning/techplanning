@@ -6,20 +6,33 @@
 </head>
 <body>
 
-<button onclick = "rakeLog.pageView('page_show');"></button>
+<a href="http://m.11st.co.kr/MW/Product/productPlanningDetail.tmall?plnDispNo=931118">test</a>
 
 </body>
 
 <script>
-    var rakeLogPageInfo = {
-        "_$RAKE_TOKEN": "77676cd4b78ff710716a67e0b833b231a27f2793",
-        "DataMerge": false,
-        "AppSessionId": "",
-        "PageInfo": {},
-        "_$RAKE_ENV": "LIVE"
-    };
+    var _thisPageInfo, _thisPageDataMerge, nodeFilter, _thisPageButtonsFilteredBefore, _thisPageButtons;
+    nodeFilter = Array.prototype.filter;
+    _thisPageButtonsFilteredBefore = document.querySelectorAll("a, button, area");
+    _thisPageButtons = nodeFilter.call(_thisPageButtonsFilteredBefore, function(ele) {
+        return !ele.getAttribute("onclick") || ele.getAttribute("onclick").indexOf("rakeLog.sendRakeLog") == -1
+    });
+
+    _thisPageButtons.forEach( function(ele) {
+        ele.addEventListener("click", pageAction, false);
+    });
+
+    // rake button action
+    function pageAction(event, gesture) {
+        var gap = 5000;
+        var then,now;
+        then=new Date().getTime();
+        now=then;
+        while((now-then)<gap){
+            now=new Date().getTime();  // 현재시간을 읽어 함수를 불러들인 시간과의 차를 이용하여 처리
+        }
+        alert('1');
+    }
 </script>
-<script src="./Log11stClientSentinelShuttle.js"></script>
-<script src="./rakeLog.js"></script>
 
 </html>
