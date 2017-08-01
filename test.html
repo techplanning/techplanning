@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Google Sheets API Quickstart</title>
-	<meta charset='utf-8' />
+    <title>Google Sheets API Quickstart</title>
+    <meta charset='utf-8'/>
 </head>
 <body>
 <p>Google Sheets API Quickstart</p>
@@ -112,7 +112,7 @@
         gapi.client.sheets.spreadsheets.values.get({
             spreadsheetId: '1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms',
             range: 'Class Data!A2:E',
-        }).then(function(response) {
+        }).then(function (response) {
             var range = response.result;
             if (range.values.length > 0) {
                 appendPre('Name, Major:');
@@ -124,7 +124,7 @@
             } else {
                 appendPre('No data found.');
             }
-        }, function(response) {
+        }, function (response) {
             appendPre('Error: ' + response.result.error.message);
         });
     }
@@ -145,8 +145,11 @@
 </script>
 
 <script async defer src="https://apis.google.com/js/api.js"
-		onload="this.onload=function(){};handleClientLoad()"
-		onreadystatechange="if (this.readyState === 'complete') this.onload()">
-</script>
+        onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()"/>
+
+
+<div id="output"></div>
+
 </body>
 </html>
