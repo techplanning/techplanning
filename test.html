@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Google Sheets API Quickstart</title>
+	<title>로그정의서 처리기</title>
 	<meta charset='utf-8' />
 </head>
 <body>
-<p>Google Sheets API Quickstart</p>
+<p>구글시트 로그정의서 처리기</p>
 
 <!--Add buttons to initiate auth sequence and sign out-->
 <button id="authorize-button" style="display: none;">Authorize</button>
@@ -101,46 +101,226 @@
     function loadSheetsApi() {
         var discoveryUrl =
             'https://sheets.googleapis.com/$discovery/rest?version=v4';
-        gapi.client.load(discoveryUrl).then(listMajors);
+        gapi.client.load(discoveryUrl).then(readSpreadsheet);
     }
 
-    /**
-     * Print the names and majors of students in a sample spreadsheet:
-     * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
-     */
-    function listMajors() {
+    var _sheet = {};
+
+    // 파일 읽기
+    function readSpreadsheet() {
+        var spreadsheetId = '1iHImkn-pfDpMwew-IgoUcpaO5y-fo3mm3tJRjeSMBeE';
+
+        var params = {
+            spreadsheetId: [spreadsheetId],
+            ranges: [],
+            includeGridData: false,
+        };
+
+        appendPre("[LOG] 정의서 로딩 시작 ("+ spreadsheetId + ")");
+        var request = gapi.client.sheets.spreadsheets.get(params);
+        request.then(function(response) {
+            console.log(response.result);
+
+            _sheet["spreadsheetId"] = spreadsheetId;
+            _sheet["spreadsheetTitle"] = response.result.properties.title;
+            for(s = 0; s < response.result.sheets.length; s++) {
+                _sheet[s] = {};
+                _sheet[s].sheetId = response.result.sheets[s].properties.sheetId;
+                _sheet[s].sheetTitle = response.result.sheets[s].properties.title;
+
+                appendPre("[INFO] 시트 ("+ _sheet[s].sheetTitle + ")");
+
+                if(_sheet[s].sheetTitle == "연계로그 사전") {
+                    _sheet[s]["sheetType"] = "DIC";
+                    _sheet[s]["sheetData"] = {};
+                    appendPre("[LOG] 시트 처리 시작 ("+ response.result.properties.title+ " : " + _sheet[s].sheetTitle + ")");
+                    readDic(spreadsheetId, response.result.properties.title, _sheet[s].sheetTitle, s, function(sheetIndex, sheetData) {
+                        _sheet[sheetIndex].sheetData = sheetData;
+                        appendPre("[LOG] 시트 처리 완료 ("+ _sheet.spreadsheetTitle+ " : " + _sheet[sheetIndex].sheetTitle + ")");
+                    });
+                } else if(/history$/.test(_sheet[s].sheetTitle)) {
+                    _sheet[s]["sheetType"] = "HIST";
+                    _sheet[s]["sheetData"] = {};
+                    appendPre("[LOG] 시트 처리 시작 ("+ response.result.properties.title+ " : " + _sheet[s].sheetTitle + ")");
+                    readHistory(spreadsheetId, response.result.properties.title, _sheet[s].sheetTitle, s, function(sheetIndex, sheetData) {
+                        _sheet[sheetIndex].sheetData = sheetData;
+                        appendPre("[LOG] 시트 처리 완료 ("+ _sheet.spreadsheetTitle+ " : " + _sheet[sheetIndex].sheetTitle + ")");
+                    });
+                } else {
+                    _sheet[s]["sheetType"] = "DEF";
+                    _sheet[s]["sheetData"] = {};
+                    appendPre("[LOG] 시트 속성 처리 시작 ("+ response.result.properties.title+ " : " + _sheet[s].sheetTitle + ")");
+                    readDefinitionProperties(spreadsheetId, response.result.properties.title, _sheet[s].sheetTitle, s, function(sheetIndex, sheetData) {
+                        _sheet[sheetIndex].sheetProperties = sheetData;
+                        appendPre("[LOG] 시트 속성 처리 완료 ("+ _sheet.spreadsheetTitle+ " : " + _sheet[sheetIndex].sheetTitle + ")");
+                    });
+
+                    appendPre("[LOG] 시트 처리 시작 ("+ response.result.properties.title+ " : " + _sheet[s].sheetTitle + ")");
+                    readDefinitionData(spreadsheetId, response.result.properties.title, _sheet[s].sheetTitle, s, function(sheetIndex, sheetData) {
+                        _sheet[sheetIndex].sheetData = sheetData;
+                        appendPre("[LOG] 시트 처리 완료 ("+ _sheet.spreadsheetTitle+ " : " + _sheet[sheetIndex].sheetTitle + ")");
+                    });
+                }
+            }
+            appendPre("[LOG] 정의서 로딩 완료 ("+ _sheet.spreadsheetTitle + ")");
+
+            console.log(_sheet);
+//            appendPre(JSON.stringify(_sheet));
+        }, function(reason) {
+            appendPre("[ERROR] 정의서 로딩 오류 ("+ spreadsheetId + ") " + reason.result.error.message);
+            console.error('error: ' + reason.result.error.message);
+        });
+    }
+
+    // 정의서 액션정의 읽기
+    function readDefinitionData(spreadsheetId, spreadsheetTitle, sheetTitle, sheetIndex, callback) {
+        var params = {
+            spreadsheetId: [spreadsheetId],
+            ranges: [sheetTitle+"!A15:ZZZ"],
+            includeGridData: true,
+        };
+
+        var request = gapi.client.sheets.spreadsheets.get(params);
+        request.then(function(response) {
+            console.log(response.result);
+            var range = response.result.sheets[0].data[0].rowData;
+            var rowSize = range.length;
+
+            var data = [];
+            for (r = 1; r < rowSize; r++) {
+                if(range[r].values && range[r].values[0].formattedValue) {
+                    var row = {};
+                    row["body"] = [];
+                    var colSize = range[r].values.length;
+                    for (c = 0; c < colSize; c++) {
+                        if (range[0].values[c].formattedValue && range[r].values[c].formattedValue) {
+                            if (/^\d*$/.test(range[0].values[c].formattedValue)) {
+                                row.body[range[0].values[c].formattedValue - 1] = {};
+                                row.body[range[0].values[c].formattedValue - 1].id = range[r].values[c].formattedValue;
+                                if(range[r].values[c].note) {
+                                    row.body[range[0].values[c].formattedValue - 1].description = range[r].values[c].note;
+                                }
+                            } else {
+                                row[range[0].values[c].formattedValue] = range[r].values[c].formattedValue;
+                            }
+                        }
+                        data[r - 1] = row;
+                    }
+                }
+            }
+
+            callback(sheetIndex, data);
+        }, function(reason) {
+            appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle + ") " + reason.result.error.message);
+            console.error('error: ' + reason.result.error.message);
+        });
+    }
+
+    // 정의서 속성 읽기
+    function readDefinitionProperties(spreadsheetId, spreadsheetTitle, sheetTitle, sheetIndex, callback) {
         gapi.client.sheets.spreadsheets.values.get({
-            spreadsheetId: '1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms',
-            range: 'Class Data!A2:E',
+            spreadsheetId: [spreadsheetId],
+            range: sheetTitle + '!A3:E11',
         }).then(function(response) {
             var range = response.result;
             if (range.values.length > 0) {
-                appendPre('Name, Major:');
-                for (i = 0; i < range.values.length; i++) {
-                    var row = range.values[i];
-                    // Print columns A and E, which correspond to indices 0 and 4.
-                    appendPre(row[0] + ', ' + row[4]);
+                var rowSize = range.values.length;
+
+                var data = {};
+                for (r = 0; r < rowSize; r++) {
+                    var colSize = range.values[r].length;
+                    if(range.values[r][0] == "POC 구분") {
+                        data[range.values[r][0]] = [];
+                        for (c = 1; c < colSize; c++) {
+                            data[range.values[r][0]][c - 1] = range.values[r][c];
+                        }
+                    } else {
+                        for (c = 0; c < colSize; c++) {
+                            data[range.values[r][0]] = range.values[r][c];
+                        }
+                    }
                 }
+
+                callback(sheetIndex, data);
             } else {
-                appendPre('No data found.');
+                appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle + ") No data found.");
             }
         }, function(response) {
+            appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle + ") " + reason.result.error.message);
             appendPre('Error: ' + response.result.error.message);
         });
     }
 
-    /**
-     * Append a pre element to the body containing the given message
-     * as its text node.
-     *
-     * @param {string} message Text to be placed in pre element.
-     */
-    function appendPre(message) {
-        var pre = document.getElementById('output');
-        var textContent = document.createTextNode(message + '\n');
-        pre.appendChild(textContent);
+    // 히스토리 읽기
+    function readHistory(spreadsheetId, spreadsheetTitle, sheetTitle, sheetIndex, callback) {
+        gapi.client.sheets.spreadsheets.values.get({
+            spreadsheetId: [spreadsheetId],
+            range: sheetTitle + '!A1:F',
+        }).then(function(response) {
+            var range = response.result;
+            if (range.values.length > 0) {
+                var colSize = range.values[0].length;
+                var rowSize = range.values.length;
+                var col = [];
+                for (r = 0; r < colSize; r++) {
+                    col[r] = range.values[0][r];
+                }
+
+                var data = [];
+                for (r = 1; r < rowSize; r++) {
+                    var row = {};
+                    for (c = 0; c < colSize; c++) {
+                        row[col[c]] = range.values[r][c];
+                    }
+                    data[r-1] = row;
+                }
+
+                callback(sheetIndex, data);
+            } else {
+                appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle + ") No data found.");
+            }
+        }, function(response) {
+            appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle + ") " + reason.result.error.message);
+        });
     }
 
+    // 연계로그 사전 읽기
+    function readDic(spreadsheetId, spreadsheetTitle, sheetTitle, sheetIndex, callback) {
+        gapi.client.sheets.spreadsheets.values.get({
+            spreadsheetId: [spreadsheetId],
+            range: sheetTitle + '!A2:G',
+        }).then(function(response) {
+            var range = response.result;
+            if (range.values.length > 0) {
+                var index_col_no = 1;
+                var colSize = range.values[0].length;
+                var rowSize = range.values.length;
+                var col = [];
+                for (r = 0; r < colSize; r++) {
+                    col[r] = range.values[0][r];
+                }
+
+                var dic = [];
+                for (r = 1; r < rowSize; r++) {
+                    var row = {};
+                    if(range.values[r][index_col_no] != r) {
+                        appendPre("[ERROR] 유효하지 않은 연계로그 번호 ("+ spreadsheetTitle+ " : " + sheetTitle + " : " + range.values[r][index_col_no] + ") -> " + r);
+                    }
+                    for (c = 0; c < colSize; c++) {
+                        row[col[c]] = range.values[r][c];
+                    }
+                    dic[r-1] = row;
+                }
+
+                callback(sheetIndex, dic);
+//                appendPre(JSON.stringify(_sheet));
+            } else {
+                appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle + ") No data found.");
+            }
+        }, function(response) {
+            appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle + ") " + reason.result.error.message);
+        });
+    }
 
 </script>
 
@@ -148,9 +328,6 @@
 		onload="this.onload=function(){};handleClientLoad()"
 		onreadystatechange="if (this.readyState === 'complete') this.onload()">
 </script>
-
-
-<div id="output"></div>
 
 </body>
 </html>
