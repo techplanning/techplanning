@@ -11,7 +11,7 @@
 <button id="authorize-button" style="display: none;">Authorize</button>
 <button id="signout-button" style="display: none;">Sign Out</button>
 
-<pre id="content"></pre>
+<pre id="log"></pre>
 
 <script type="text/javascript">
     // Client ID and API key from the Developer Console
@@ -90,7 +90,7 @@
      * @param {string} message Text to be placed in pre element.
      */
     function appendPre(message) {
-        var pre = document.getElementById('content');
+        var pre = document.getElementById('log');
         var textContent = document.createTextNode(message + '\n');
         pre.appendChild(textContent);
     }
@@ -104,12 +104,9 @@
         gapi.client.load(discoveryUrl).then(readDefinitionList);
     }
 
-    var _INFO = 0;
-    var _DEBUG = 1;
-    var _WARNING = 2;
-    var _ERROR = 3;
-    var _logLevelNm = ["[INFO]","[DEBUG]","[WARNING]","[ERROR]"];
-    var _logLevel = _ERROR;
+    var _ALL = 0, _TRACE = 1, _DEBUG = 2, _INFO = 3, _WARN = 4, _ERROR = 5, _FATAL = 6, _OFF = 7;
+    var _logLevelNm = ["[ALL]","[TRACE]","[DEBUG]","[INFO]","[WARN]","[ERROR]","[FATAL]","[OFF]"];
+    var _logLevel = _WARN;
 
     function log(logLevel, code, message, infoObj, targetInfoObj) {
         if(logLevel >= _logLevel) {
@@ -117,6 +114,21 @@
             if(infoObj) logMsg = logMsg + "\n\t(처리대상 : "+ JSON.stringify(infoObj) + ")"
             if(targetInfoObj) logMsg = logMsg + "\n\t(비교대상 : "+ JSON.stringify(targetInfoObj) + ")"
             appendPre(logMsg);
+        }
+    }
+
+    var _PROC = 0, _NOTI = 1, _SYSTEM = 2;
+    var _tagLevelNm = ["[PROCESS]","[NOTI]","[SYSTEM]"];
+    var _tagLevel = _PROC;
+
+    function msg(tag, message, infoObj, responseObj) {
+        if(tag >= _tagLevel) {
+            var msg = message;
+            if(tag > _NOTI) msg = _tagLevelNm[tag] + " " + msg;
+            if(infoObj) msg = msg + "\t("+ JSON.stringify(infoObj) + ")";
+            appendPre(msg);
+
+            if(tag > _NOTI) console.error(msg, responseObj);
         }
     }
 
@@ -128,7 +140,7 @@
         var spreadsheetTitle = 'PageID_11번가 Log 2.0';
         var sheetTitle = ['모바일 v.2.3', 'PC v.2.1'];
 
-        appendPre("[LOG] 시트 처리 시작 ("+ spreadsheetTitle + " : " + sheetTitle + ")");
+        msg(_PROC,"시트 처리 시작", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle]});
 
         var params = {
             spreadsheetId: [spreadsheetId],
@@ -144,7 +156,8 @@
             var poc = ['MW','PC'];
             if(sheetSize == sheetTitle.length) {
                 for(s = 0; s < sheetSize; s++) {
-                    appendPre("[LOG] 시트 처리 시작 ("+ spreadsheetTitle + " : " + sheetTitle[s] + ")");
+                    msg(_PROC,"시트 처리 시작", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle[s]]},response);
+//                    appendPre("[LOG] 시트 처리 시작 ("+ spreadsheetTitle + " : " + sheetTitle[s] + ")");
                     var range = valueRanges[s];
                     if (range.values.length > 0) {
                         var rowSize = range.values.length;
@@ -172,24 +185,26 @@
                             }
                         }
                         _defList = _defList.concat(data);
-                        appendPre("[LOG] 시트 처리 완료 ("+ spreadsheetTitle + " : " + sheetTitle[s] + ")");
+                        msg(_PROC,"시트 처리 완료", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle[s]]});
+//                        appendPre("[LOG] 시트 처리 완료 ("+ spreadsheetTitle + " : " + sheetTitle[s] + ")");
                     } else {
-                        appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle[s] + ") No data found.");
+                        msg(_SYSTEM,"시트 처리 오류 - No data found.", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle[s]]}, response);
+//                        appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle[s] + ") No data found.");
                     }
                 }
-                appendPre("[LOG] 시트 처리 완료 ("+ spreadsheetTitle + " : " + sheetTitle + ")");
+                msg(_PROC,"시트 처리 완료", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle]});
+//                appendPre("[LOG] 시트 처리 완료 ("+ spreadsheetTitle + " : " + sheetTitle + ")");
                 checkDefList(spreadsheetTitle);
             } else {
-                appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + ") POC별 시트 로딩 실패.");
+                msg(_SYSTEM,"시트 처리 오류 - POC별 시트 로딩 실패.", {spreadsheetTitle : [spreadsheetTitle]},response);
             }
         }, function(response) {
-            appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle + ") " + response.result.error.message);
-            console.error('error: ' + response.result.error.message);
+            msg(_SYSTEM,"시트 처리 오류 - " + response.result.error.message, {spreadsheetTitle : [spreadsheetTitle]}, response);
         });
     }
 
     function checkDefList(spreadsheetTitle) {
-        appendPre("[LOG] 로그 정의서 내역 검증 ("+ spreadsheetTitle + ")");
+        msg(_PROC,"로그 정의서 내역 검증 시작", {spreadsheetTitle : [spreadsheetTitle]});
 
         var sheetMap = {};
 
@@ -200,13 +215,13 @@
 
             // 빈 값 체크
             if(!info["로그정의서명"]) {
-                log(_WARNING,"0001","\"로그정의서명\"이 없습니다.",info);
+                log(_DEBUG,"0001","\"로그정의서명\"이 없습니다.",info);
             } else if(!/^\[로그정의서\] .*$/.test(info["로그정의서명"])) {
                 log(_ERROR,"0005","\"로그정의서명\"서식이 올바르지 않습니다.",info);
             }
 
             if(!info["로그정의서 링크URL"]) {
-                log(_WARNING,"0002","\"로그정의서 링크URL\"이 없습니다.",info);
+                log(_DEBUG,"0002","\"로그정의서 링크URL\"이 없습니다.",info);
             } else {
                 if(!info["spreadsheetId"]) {
                     log(_ERROR,"0003","\"시트파일ID\"가 없습니다.",info);
@@ -234,6 +249,7 @@
                 sheetMap[info["spreadsheetId"]] = info
             }
         }
+        msg(_PROC,"로그 정의서 내역 검증 완료", {spreadsheetTitle : [spreadsheetTitle]});
     }
 
     // 파일 읽기
