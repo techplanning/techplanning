@@ -134,6 +134,7 @@
 
     var _defList = [];
     var _sheet = [];
+    var _sheetMap = {};
 
     function readDefinitionList() {
         var spreadsheetId = '18HiiJG-Utm6e-wXr2Ie_z_8TtlBwq3yPFLjf8v45F-Q';
@@ -195,6 +196,7 @@
                 msg(_PROC,"시트 처리 완료", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle]});
 //                appendPre("[LOG] 시트 처리 완료 ("+ spreadsheetTitle + " : " + sheetTitle + ")");
                 checkDefList(spreadsheetTitle);
+                loadSheets();
             } else {
                 msg(_SYSTEM,"시트 처리 오류 - POC별 시트 로딩 실패.", {spreadsheetTitle : [spreadsheetTitle]},response);
             }
@@ -203,10 +205,12 @@
         });
     }
 
+    function loadSheets() {
+
+    }
+
     function checkDefList(spreadsheetTitle) {
         msg(_PROC,"로그 정의서 내역 검증 시작", {spreadsheetTitle : [spreadsheetTitle]});
-
-        var sheetMap = {};
 
         var defSize = _defList.length;
         for(d = 0; d < defSize; d++) {
@@ -233,20 +237,18 @@
             }
 
             // 중복체크
-            if(info["spreadsheetId"] && sheetMap[info["spreadsheetId"]]) {
-                var targetInfo = sheetMap[info["spreadsheetId"]];
+            if(info["spreadsheetId"] && _sheetMap[info["spreadsheetId"]]) {
+                var targetInfo = _sheetMap[info["spreadsheetId"]];
                 log(_INFO,"0006","중복된 정의서 링크가 있습니다.",info, targetInfo);
                 if(targetInfo["로그정의서명"] != info["로그정의서명"]) {
                     log(_ERROR,"0008","\"로그정의서명\"이 다른 중복된 정의서 링크가 있습니다.",info, targetInfo);
                 }
 
-                if(info["sheetId"] && sheetMap[info["spreadsheetId"]][info["sheetId"]]) {
-                    log(_ERROR,"0007","중복된 정의서 시트 링크가 있습니다.",info);
-                } else {
-                    sheetMap[info["spreadsheetId"]] = info;
+                if(info["sheetId"] && targetInfo["sheetId"] == info["sheetId"]) {
+                    log(_ERROR,"0007","중복된 정의서 시트 링크가 있습니다.",info,targetInfo);
                 }
             } else {
-                sheetMap[info["spreadsheetId"]] = info
+                _sheetMap[info["spreadsheetId"]] = info
             }
         }
         msg(_PROC,"로그 정의서 내역 검증 완료", {spreadsheetTitle : [spreadsheetTitle]});
