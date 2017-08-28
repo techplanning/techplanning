@@ -237,18 +237,25 @@
             }
 
             // 중복체크
-            if(info["spreadsheetId"] && _sheetMap[info["spreadsheetId"]]) {
-                var targetInfo = _sheetMap[info["spreadsheetId"]];
-                log(_INFO,"0006","중복된 정의서 링크가 있습니다.",info, targetInfo);
-                if(targetInfo["로그정의서명"] != info["로그정의서명"]) {
-                    log(_ERROR,"0008","\"로그정의서명\"이 다른 중복된 정의서 링크가 있습니다.",info, targetInfo);
-                }
+            if(info["spreadsheetId"]) {
+                if(_sheetMap[info["spreadsheetId"]]) {
+                    var targetInfo = _sheetMap[info["spreadsheetId"]];
+                    if(info["poc"] == targetInfo["poc"]) {
+                        log(_ERROR, "0009", "동일한 POC에 중복된 정의서 링크가 있습니다.", info, targetInfo);
+                    } else {
+                        log(_INFO, "0006", "중복된 정의서 링크가 있습니다.", info, targetInfo);
+                    }
 
-                if(info["sheetId"] && targetInfo["sheetId"] == info["sheetId"]) {
-                    log(_ERROR,"0007","중복된 정의서 시트 링크가 있습니다.",info,targetInfo);
+                    if(targetInfo["로그정의서명"] != info["로그정의서명"]) {
+                        log(_ERROR,"0008","\"로그정의서명\"이 다른 중복된 정의서 링크가 있습니다.",info, targetInfo);
+                    }
+
+                    if(info["sheetId"] && targetInfo["sheetId"] == info["sheetId"]) {
+                        log(_ERROR,"0007","중복된 정의서 시트 링크가 있습니다.",info,targetInfo);
+                    }
+                } else {
+                    _sheetMap[info["spreadsheetId"]] = info
                 }
-            } else {
-                _sheetMap[info["spreadsheetId"]] = info
             }
         }
         msg(_PROC,"로그 정의서 내역 검증 완료", {spreadsheetTitle : [spreadsheetTitle]});
