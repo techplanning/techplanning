@@ -36,7 +36,7 @@ function _$RAKE_cleanData() {
         }
     }
     try {
-        var o, s = "RAKE";
+        var o, s = "KAKE";
         if ("DEV" === _$RAKE_ENV)
             o = "https://pg.rake.skplanet.com:8663/log/static/js/rake/current/";
         else {
