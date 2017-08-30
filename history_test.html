@@ -1,5 +1,19 @@
-//ㅇㅇㅇㅇㅇ
+<!DOCTYPE html>
+<html>
+<head>
+	<title>로그정의서 처리기</title>
+	<meta charset='utf-8' />
+</head>
+<body>
+<p>구글시트 로그정의서 처리기</p>
 
+<!--Add buttons to initiate auth sequence and sign out-->
+<button id="authorize-button" style="display: none;">Authorize</button>
+<button id="signout-button" style="display: none;">Sign Out</button>
+
+<pre id="log"></pre>
+
+<script type="text/javascript">
 // Client ID and API key from the Developer Console
 var CLIENT_ID = '696566559550-7rge69rqjpck7nup7dkfa0tt5huqusi0.apps.googleusercontent.com';
 // Array of API discovery doc URLs for APIs used by the quickstart
@@ -565,3 +579,12 @@ function readDic(spreadsheetId, spreadsheetTitle, sheetTitle, sheetIndex, callba
         appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle + ") " + reason.result.error.message);
     });
 }
+</script>
+
+<script async defer src="https://apis.google.com/js/api.js"
+		onload="this.onload=function(){};handleClientLoad()"
+		onreadystatechange="if (this.readyState === 'complete') this.onload()">
+</script>
+
+</body>
+</html>
