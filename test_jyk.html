@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>로그정의서 처리기</title>
+	<meta charset='utf-8' />
+</head>
+<body>
+<p>구글시트 로그정의서 처리기</p>
+
+<!--Add buttons to initiate auth sequence and sign out-->
+<button id="authorize-button" style="display: none;">Authorize</button>
+<button id="signout-button" style="display: none;">Sign Out</button>
+
+<pre id="log"></pre>
+
+<script type="text/javascript">
+    // Client ID and API key from the Developer Console
+    var CLIENT_ID = '696566559550-7rge69rqjpck7nup7dkfa0tt5huqusi0.apps.googleusercontent.com';
+
+    // Array of API discovery doc URLs for APIs used by the quickstart
+    var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/sheets/v4/rest"];
+
+    // Authorization scopes required by the API; multiple scopes can be
+    // included, separated by spaces.
+    var SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly";
+
+    var authorizeButton = document.getElementById('authorize-button');
+    var signoutButton = document.getElementById('signout-button');
+
+    /**
+     *  On load, called to load the auth2 library and API client library.
+     */
+    function handleClientLoad() {
+        gapi.load('client:auth2', initClient);
+    }
+
+    /**
+     *  Initializes the API client library and sets up sign-in state
+     *  listeners.
+     */
+    function initClient() {
+        gapi.client.init({
+            discoveryDocs: DISCOVERY_DOCS,
+            clientId: CLIENT_ID,
+            scope: SCOPES
+        }).then(function () {
+            // Listen for sign-in state changes.
+            gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+
+            // Handle the initial sign-in state.
+            updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+            authorizeButton.onclick = handleAuthClick;
+            signoutButton.onclick = handleSignoutClick;
+        });
+    }
+
+    /**
+     *  Called when the signed in status changes, to update the UI
+     *  appropriately. After a sign-in, the API is called.
+     */
+    function updateSigninStatus(isSignedIn) {
+        if (isSignedIn) {
+            authorizeButton.style.display = 'none';
+            signoutButton.style.display = 'block';
+            loadSheetsApi();
+        } else {
+            authorizeButton.style.display = 'block';
+            signoutButton.style.display = 'none';
+        }
+    }
+
+    /**
+     *  Sign in the user upon button click.
+     */
+    function handleAuthClick(event) {
+        gapi.auth2.getAuthInstance().signIn();
+    }
+
+    /**
+     *  Sign out the user upon button click.
+     */
+    function handleSignoutClick(event) {
+        gapi.auth2.getAuthInstance().signOut();
+    }
+
+    /**
+     * Append a pre element to the body containing the given message
+     * as its text node. Used to display the results of the API call.
+     *
+     * @param {string} message Text to be placed in pre element.
+     */
+    function appendPre(message) {
+        var pre = document.getElementById('log');
+        var textContent = document.createTextNode(message + '\n');
+        pre.appendChild(textContent);
+    }
+
+    /**
+     * Load Sheets API client library.
+     */
+    function loadSheetsApi() {
+        var discoveryUrl =
+            'https://sheets.googleapis.com/$discovery/rest?version=v4';
+        gapi.client.load(discoveryUrl).then(readDefinitionList);
+    }
+
+    var _ALL = 0, _TRACE = 1, _DEBUG = 2, _INFO = 3, _WARN = 4, _ERROR = 5, _FATAL = 6, _OFF = 7;
+    var _logLevelNm = ["[ALL]","[TRACE]","[DEBUG]","[INFO]","[WARN]","[ERROR]","[FATAL]","[OFF]"];
+    var _logLevel = _WARN;
+
+    function log(logLevel, code, message, infoObj, targetInfoObj) {
+        if(logLevel >= _logLevel) {
+            logMsg = _logLevelNm[logLevel] + " " + code + " - " + message;
+            if(infoObj) logMsg = logMsg + "\n\t(처리대상 : "+ JSON.stringify(infoObj) + ")"
+            if(targetInfoObj) logMsg = logMsg + "\n\t(비교대상 : "+ JSON.stringify(targetInfoObj) + ")"
+            appendPre(logMsg);
+        }
+    }
+
+    var _PROC = 0, _NOTI = 1, _SYSTEM = 2;
+    var _tagLevelNm = ["[PROCESS]","[NOTI]","[SYSTEM]"];
+    var _tagLevel = _PROC;
+
+    function msg(tag, message, infoObj, responseObj) {
+        if(tag >= _tagLevel) {
+            var msg = message;
+            if(tag > _NOTI) msg = _tagLevelNm[tag] + " " + msg;
+            if(infoObj) msg = msg + "\t("+ JSON.stringify(infoObj) + ")";
+            appendPre(msg);
+
+            if(tag > _NOTI) console.error(msg, responseObj);
+        }
+    }
+
+    var _defList = [];
+    var _sheet = [];
+    var _sheetMap = {};
+
+    function readDefinitionList() {
+        var spreadsheetId = '18HiiJG-Utm6e-wXr2Ie_z_8TtlBwq3yPFLjf8v45F-Q';
+        var spreadsheetTitle = 'PageID_11번가 Log 2.0';
+        var sheetTitle = ['모바일 v.2.3', 'PC v.2.1'];
+
+        msg(_PROC,"시트 처리 시작", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle]});
+
+        var params = {
+            spreadsheetId: [spreadsheetId],
+            ranges: [
+                sheetTitle[0] + '!N2:O',
+                sheetTitle[1] + '!M2:N'
+            ]
+        };
+
+        gapi.client.sheets.spreadsheets.values.batchGet(params).then(function(response) {
+            var valueRanges = response.result.valueRanges;
+            var sheetSize = valueRanges.length;
+            var poc = ['MW','PC'];
+            if(sheetSize == sheetTitle.length) {
+                for(s = 0; s < sheetSize; s++) {
+                    msg(_PROC,"시트 처리 시작", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle[s]]},response);
+//                    appendPre("[LOG] 시트 처리 시작 ("+ spreadsheetTitle + " : " + sheetTitle[s] + ")");
+                    var range = valueRanges[s];
+                    if (range.values.length > 0) {
+                        var rowSize = range.values.length;
+
+                        var data = [];
+                        for (r = 1; r < rowSize; r++) {
+                            if(range.values[r]) {
+                                data[r - 1] = {};
+                                data[r - 1]["poc"] = poc[s];
+                                data[r - 1]["no"] = r;
+                                var colSize = range.values[r].length;
+                                for (c = 0; c < colSize; c++) {
+                                    data[r - 1][range.values[0][c]] = range.values[r][c];
+                                }
+                                if(data[r - 1]["로그정의서 링크URL"]) {
+                                    var regEx1 = /spreadsheets\/d\/([a-zA-Z0-9-_]+)/.exec(data[r - 1]["로그정의서 링크URL"]);
+                                    if(regEx1 && regEx1.length > 0) {
+                                        data[r - 1]["spreadsheetId"] = regEx1[1];
+                                    }
+                                    var regEx2 = /[#&]gid=([0-9]+)/.exec(data[r - 1]["로그정의서 링크URL"])
+                                    if(regEx2 && regEx2.length > 0) {
+                                        data[r - 1]["sheetId"] = regEx2[1];
+                                    }
+                                }
+                            }
+                        }
+                        _defList = _defList.concat(data);
+                        msg(_PROC,"시트 처리 완료", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle[s]]});
+//                        appendPre("[LOG] 시트 처리 완료 ("+ spreadsheetTitle + " : " + sheetTitle[s] + ")");
+                    } else {
+                        msg(_SYSTEM,"시트 처리 오류 - No data found.", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle[s]]}, response);
+//                        appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle[s] + ") No data found.");
+                    }
+                }
+                msg(_PROC,"시트 처리 완료", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle]});
+//                appendPre("[LOG] 시트 처리 완료 ("+ spreadsheetTitle + " : " + sheetTitle + ")");
+                checkDefList(spreadsheetTitle);
+                loadSheets();
+            } else {
+                msg(_SYSTEM,"시트 처리 오류 - POC별 시트 로딩 실패.", {spreadsheetTitle : [spreadsheetTitle]},response);
+            }
+        }, function(response) {
+            msg(_SYSTEM,"시트 처리 오류 - " + response.result.error.message, {spreadsheetTitle : [spreadsheetTitle]}, response);
+        });
+    }
+
+    function loadSheets() {
+
+    }
+
+    function checkDefList(spreadsheetTitle) {
+        msg(_PROC,"로그 정의서 내역 검증 시작", {spreadsheetTitle : [spreadsheetTitle]});
+
+        var defSize = _defList.length;
+        for(d = 0; d < defSize; d++) {
+            var info = _defList[d];
+            info.spreadsheetTitle = spreadsheetTitle;
+
+            // 빈 값 체크
+            if(!info["로그정의서명"]) {
+                log(_DEBUG,"0001","\"로그정의서명\"이 없습니다.",info);
+            } else if(!/^\[로그정의서\] .*$/.test(info["로그정의서명"])) {
+                log(_ERROR,"0005","\"로그정의서명\"서식이 올바르지 않습니다.",info);
+            }
+
+            if(!info["로그정의서 링크URL"]) {
+                log(_DEBUG,"0002","\"로그정의서 링크URL\"이 없습니다.",info);
+            } else {
+                if(!info["spreadsheetId"]) {
+                    log(_ERROR,"0003","\"시트파일ID\"가 없습니다.",info);
+                } else {
+                    if(!info["sheetId"]) {
+                        log(_ERROR,"0004","\"로그정의서 링크URL\"이 파일에 대한 링크로, 시트에 대한 링크가 아닙니다.",info);
+                    }
+                }
+            }
+
+            // 중복체크
+            if(info["spreadsheetId"]) {
+                if(_sheetMap[info["spreadsheetId"]]) {
+                    var targetInfo = _sheetMap[info["spreadsheetId"]];
+                    if(info["poc"] == targetInfo["poc"]) {
+                        log(_ERROR, "0009", "동일한 POC에 중복된 정의서 링크가 있습니다.", info, targetInfo);
+                    } else {
+                        log(_INFO, "0006", "중복된 정의서 링크가 있습니다.", info, targetInfo);
+                    }
+
+                    if(targetInfo["로그정의서명"] != info["로그정의서명"]) {
+                        log(_ERROR,"0008","\"로그정의서명\"이 다른 중복된 정의서 링크가 있습니다.",info, targetInfo);
+                    }
+
+                    if(info["sheetId"] && targetInfo["sheetId"] == info["sheetId"]) {
+                        log(_ERROR,"0007","중복된 정의서 시트 링크가 있습니다.",info,targetInfo);
+                    }
+                } else {
+                    _sheetMap[info["spreadsheetId"]] = info
+                }
+            }
+        }
+        msg(_PROC,"로그 정의서 내역 검증 완료", {spreadsheetTitle : [spreadsheetTitle]});
+    }
+
+    // 파일 읽기
+    function readSpreadsheet() {
+        var spreadsheetId = '1iHImkn-pfDpMwew-IgoUcpaO5y-fo3mm3tJRjeSMBeE';
+
+        var params = {
+            spreadsheetId: [spreadsheetId],
+            ranges: [],
+            includeGridData: false,
+        };
+
+        appendPre("[LOG] 정의서 로딩 시작 ("+ spreadsheetId + ")");
+        var request = gapi.client.sheets.spreadsheets.get(params);
+        request.then(function(response) {
+//            console.log(response.result);
+
+            _sheet["spreadsheetId"] = spreadsheetId;
+            _sheet["spreadsheetTitle"] = response.result.properties.title;
+            for(s = 0; s < response.result.sheets.length; s++) {
+                _sheet[s] = {};
+                _sheet[s].sheetId = response.result.sheets[s].properties.sheetId;
+                _sheet[s].sheetTitle = response.result.sheets[s].properties.title;
+
+                appendPre("[INFO] 시트 ("+ _sheet[s].sheetTitle + ")");
+
+                if(_sheet[s].sheetTitle == "연계로그 사전") {
+                    _sheet[s]["sheetType"] = "DIC";
+                    _sheet[s]["sheetData"] = {};
+                    appendPre("[LOG] 시트 처리 시작 ("+ response.result.properties.title+ " : " + _sheet[s].sheetTitle + ")");
+                    readDic(spreadsheetId, response.result.properties.title, _sheet[s].sheetTitle, s, function(sheetIndex, sheetData) {
+                        _sheet[sheetIndex].sheetData = sheetData;
+                        appendPre("[LOG] 시트 처리 완료 ("+ _sheet.spreadsheetTitle+ " : " + _sheet[sheetIndex].sheetTitle + ")");
+                    });
+                } else if(/history$/.test(_sheet[s].sheetTitle)) {
+                    _sheet[s]["sheetType"] = "HIST";
+                    _sheet[s]["sheetData"] = {};
+                    appendPre("[LOG] 시트 처리 시작 ("+ response.result.properties.title+ " : " + _sheet[s].sheetTitle + ")");
+                    readHistory(spreadsheetId, response.result.properties.title, _sheet[s].sheetTitle, s, function(sheetIndex, sheetData) {
+                        _sheet[sheetIndex].sheetData = sheetData;
+                        appendPre("[LOG] 시트 처리 완료 ("+ _sheet.spreadsheetTitle+ " : " + _sheet[sheetIndex].sheetTitle + ")");
+                    });
+                } else {
+                    _sheet[s]["sheetType"] = "DEF";
+                    _sheet[s]["sheetData"] = {};
+                    appendPre("[LOG] 시트 속성 처리 시작 ("+ response.result.properties.title+ " : " + _sheet[s].sheetTitle + ")");
+                    readDefinitionProperties(spreadsheetId, response.result.properties.title, _sheet[s].sheetTitle, s, function(sheetIndex, sheetData) {
+                        _sheet[sheetIndex].sheetProperties = sheetData;
+                        appendPre("[LOG] 시트 속성 처리 완료 ("+ _sheet.spreadsheetTitle+ " : " + _sheet[sheetIndex].sheetTitle + ")");
+                    });
+
+                    appendPre("[LOG] 시트 처리 시작 ("+ response.result.properties.title+ " : " + _sheet[s].sheetTitle + ")");
+                    readDefinitionData(spreadsheetId, response.result.properties.title, _sheet[s].sheetTitle, s, function(sheetIndex, sheetData) {
+                        _sheet[sheetIndex].sheetData = sheetData;
+                        appendPre("[LOG] 시트 처리 완료 ("+ _sheet.spreadsheetTitle+ " : " + _sheet[sheetIndex].sheetTitle + ")");
+                    });
+                }
+            }
+            appendPre("[LOG] 정의서 로딩 완료 ("+ _sheet.spreadsheetTitle + ")");
+
+            console.log(_sheet);
+//            appendPre(JSON.stringify(_sheet));
+        }, function(reason) {
+            appendPre("[ERROR] 정의서 로딩 오류 ("+ spreadsheetId + ") " + reason.result.error.message);
+//            console.error('error: ' + reason.result.error.message);
+        });
+    }
+
+    // 정의서 액션정의 읽기
+    function readDefinitionData(spreadsheetId, spreadsheetTitle, sheetTitle, sheetIndex, callback) {
+        var params = {
+            spreadsheetId: [spreadsheetId],
+            ranges: [sheetTitle+"!A15:ZZZ"],
+            includeGridData: true,
+        };
+
+        var request = gapi.client.sheets.spreadsheets.get(params);
+        request.then(function(response) {
+//            console.log(response.result);
+            var range = response.result.sheets[0].data[0].rowData;
+            var rowSize = range.length;
+
+            var data = [];
+            for (r = 1; r < rowSize; r++) {
+                if(range[r].values && range[r].values[0].formattedValue) {
+                    var row = {};
+                    row["body"] = [];
+                    var colSize = range[r].values.length;
+                    for (c = 0; c < colSize; c++) {
+                        if (range[0].values[c].formattedValue && range[r].values[c].formattedValue) {
+                            if (/^\d*$/.test(range[0].values[c].formattedValue)) {
+                                row.body[range[0].values[c].formattedValue - 1] = {};
+                                row.body[range[0].values[c].formattedValue - 1].id = range[r].values[c].formattedValue;
+                                if(range[r].values[c].note) {
+                                    row.body[range[0].values[c].formattedValue - 1].description = range[r].values[c].note;
+                                }
+                            } else {
+                                row[range[0].values[c].formattedValue] = range[r].values[c].formattedValue;
+                            }
+                        }
+                        data[r - 1] = row;
+                    }
+                }
+            }
+
+            callback(sheetIndex, data);
+        }, function(reason) {
+            appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle + ") " + reason.result.error.message);
+//            console.error('error: ' + reason.result.error.message);
+        });
+    }
+
+    // 정의서 속성 읽기
+    function readDefinitionProperties(spreadsheetId, spreadsheetTitle, sheetTitle, sheetIndex, callback) {
+        gapi.client.sheets.spreadsheets.values.get({
+            spreadsheetId: [spreadsheetId],
+            range: sheetTitle + '!A3:E11',
+        }).then(function(response) {
+            var range = response.result;
+            if (range.values.length > 0) {
+                var rowSize = range.values.length;
+
+                var data = {};
+                for (r = 0; r < rowSize; r++) {
+                    var colSize = range.values[r].length;
+                    if(range.values[r][0] == "POC 구분") {
+                        data[range.values[r][0]] = [];
+                        for (c = 1; c < colSize; c++) {
+                            data[range.values[r][0]][c - 1] = range.values[r][c];
+                        }
+                    } else {
+                        for (c = 0; c < colSize; c++) {
+                            data[range.values[r][0]] = range.values[r][c];
+                        }
+                    }
+                }
+
+                callback(sheetIndex, data);
+            } else {
+                appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle + ") No data found.");
+            }
+        }, function(response) {
+            appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle + ") " + reason.result.error.message);
+            appendPre('Error: ' + response.result.error.message);
+        });
+    }
+
+    // 히스토리 읽기
+    function readHistory(spreadsheetId, spreadsheetTitle, sheetTitle, sheetIndex, callback) {
+        gapi.client.sheets.spreadsheets.values.get({
+            spreadsheetId: [spreadsheetId],
+            range: sheetTitle + '!A1:F',
+        }).then(function(response) {
+            var range = response.result;
+            if (range.values.length > 0) {
+                var colSize = range.values[0].length;
+                var rowSize = range.values.length;
+                var col = [];
+                for (r = 0; r < colSize; r++) {
+                    col[r] = range.values[0][r];
+                }
+
+                var data = [];
+                for (r = 1; r < rowSize; r++) {
+                    var row = {};
+                    for (c = 0; c < colSize; c++) {
+                        row[col[c]] = range.values[r][c];
+                    }
+                    data[r-1] = row;
+                }
+
+                callback(sheetIndex, data);
+            } else {
+                appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle + ") No data found.");
+            }
+        }, function(response) {
+            appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle + ") " + reason.result.error.message);
+        });
+    }
+
+    // 연계로그 사전 읽기
+    function readDic(spreadsheetId, spreadsheetTitle, sheetTitle, sheetIndex, callback) {
+        gapi.client.sheets.spreadsheets.values.get({
+            spreadsheetId: [spreadsheetId],
+            range: sheetTitle + '!A2:F',
+        }).then(function(response) {
+            var range = response.result;
+            if (range.values.length > 0) {
+                var index_col_no = 1;
+                var colSize = range.values[0].length;
+                var rowSize = range.values.length;
+                var col = [];
+                for (r = 0; r < colSize; r++) {
+                    col[r] = range.values[0][r];
+                }
+
+                var dic = [];
+                for (r = 1; r < rowSize; r++) {
+                    var row = {};
+                    if(range.values[r][index_col_no] != r) {
+                        appendPre("[ERROR] 유효하지 않은 연계로그 번호 ("+ spreadsheetTitle+ " : " + sheetTitle + " : " + range.values[r][index_col_no] + ") -> " + r);
+                    }
+                    for (c = 0; c < colSize; c++) {
+                        row[col[c]] = range.values[r][c];
+                    }
+                    dic[r-1] = row;
+                }
+
+                callback(sheetIndex, dic);
+//                appendPre(JSON.stringify(_sheet));
+            } else {
+                appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle + ") No data found.");
+            }
+        }, function(response) {
+            appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle + ") " + reason.result.error.message);
+        });
+    }
+
+</script>
+
+<script async defer src="https://apis.google.com/js/api.js"
+		onload="this.onload=function(){};handleClientLoad()"
+		onreadystatechange="if (this.readyState === 'complete') this.onload()">
+</script>
+
+</body>
+</html>
