@@ -158,7 +158,7 @@
         var spreadsheetTitle = 'PageID_11번가 Log 2.0';
         var sheetTitle = ['모바일 v.2.3', 'PC v.2.1'];
 
-        msg(_PROC,"시트 처리 시작", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle]});
+//        msg(_PROC,"(무의미) 스프레드시트 처리 시작", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle]});
 
         var params = {
             spreadsheetId: [spreadsheetId],
@@ -174,8 +174,8 @@
             var poc = ['MW','PC'];
             if(sheetSize == sheetTitle.length) {
                 for(s = 0; s < sheetSize; s++) {
-                    msg(_PROC,"시트 처리 시작", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle[s]]},response);
-                    appendPre("[LOG] 시트 처리 시작 ("+ spreadsheetTitle + " : " + sheetTitle[s] + ")");
+                    msg(_PROC,"시트에 기록된 spreadsheetID 와 sheetID 추출을 시작합니다", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle[s]]},response);
+//                    appendPre("[LOG] 시트 처리 시작 ("+ spreadsheetTitle + " : " + sheetTitle[s] + ")");
                     var range = valueRanges[s];
                     if (range.values.length > 0) {
                         var rowSize = range.values.length;
@@ -191,10 +191,14 @@
                                     data[r - 1][range.values[0][c]] = range.values[r][c];
                                 }
                                 if(data[r - 1]["로그정의서 링크URL"]) {
+                                    // The spreadsheet ID is a string containing letters, numbers, and some special characters. The following regular expression can be used to extract the spreadsheet ID from a Google Sheets URL: "/spreadsheets\/d\/([a-zA-Z0-9-_]+)" .... Regular expression to extract sheet ID: "/[#&]gid=([0-9]+)"
+                                    
+                                    // 기록된 로그정의서 링크 URL에서 spreadsheetID 추출 후 data array에 보관
                                     var regEx1 = /spreadsheets\/d\/([a-zA-Z0-9-_]+)/.exec(data[r - 1]["로그정의서 링크URL"]);
                                     if(regEx1 && regEx1.length > 0) {
                                         data[r - 1]["spreadsheetId"] = regEx1[1];
                                     }
+                                    // 기록된 로그정의서 링크 URL에서 sheetID 추출 후 data array에 보관
                                     var regEx2 = /[#&]gid=([0-9]+)/.exec(data[r - 1]["로그정의서 링크URL"])
                                     if(regEx2 && regEx2.length > 0) {
                                         data[r - 1]["sheetId"] = regEx2[1];
@@ -202,23 +206,26 @@
                                 }
                             }
                         }
+                        // concat method를 이용하여 data array를 글로벌 변수 _defList array에 join
                         _defList = _defList.concat(data);
-                        msg(_PROC,"시트 처리 완료", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle[s]]});
+                       
+                        // 완료 메시지 표시
+                        msg(_PROC,"ID 추출 처리가 완료되었으며, 이제 검증작업이 가능합니다.", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle[s]]});
 //                        appendPre("[LOG] 시트 처리 완료 ("+ spreadsheetTitle + " : " + sheetTitle[s] + ")");
                     } else {
                         msg(_SYSTEM,"시트 처리 오류 - No data found.", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle[s]]}, response);
 //                        appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle[s] + ") No data found.");
                     }
                 }
-                msg(_PROC,"시트 처리 완료", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle]});
+//                msg(_PROC,"(무의미) 스프레드시트 처리 완료", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle]});
 //                appendPre("[LOG] 시트 처리 완료 ("+ spreadsheetTitle + " : " + sheetTitle + ")");
                 checkDefList(spreadsheetTitle);
                 loadSheets();
             } else {
-                msg(_SYSTEM,"시트 처리 오류 - POC별 시트 로딩 실패.", {spreadsheetTitle : [spreadsheetTitle]},response);
+                msg(_SYSTEM,"스프레드시트 처리 오류 - POC별 시트 로딩 실패.", {spreadsheetTitle : [spreadsheetTitle]},response);
             }
         }, function(response) {
-            msg(_SYSTEM,"시트 처리 오류 - " + response.result.error.message, {spreadsheetTitle : [spreadsheetTitle]}, response);
+            msg(_SYSTEM,"스프레드시트 처리 오류 - " + response.result.error.message, {spreadsheetTitle : [spreadsheetTitle]}, response);
         });
     }
 
