@@ -147,7 +147,7 @@
             defListCheckButton.style.display = 'block';
             //loadSheetsApi();
         } else {
-            //authorizeButton.style.display = 'block';
+            authorizeButton.style.display = 'block';
             signoutButton.style.display = 'none';
             defListCheckButton.style.display = 'none';
         }
@@ -218,10 +218,48 @@
 
     function log(logLevel, code, message, infoObj, targetInfoObj) {
         if(logLevel >= _logLevel) {
-            logMsg = _logLevelNm[logLevel] + " " + code + " - " + message;
-            if(infoObj) logMsg = logMsg + "\n\t(처리대상 : "+ JSON.stringify(infoObj) + ")"
-            if(targetInfoObj) logMsg = logMsg + "\n\t(비교대상 : "+ JSON.stringify(targetInfoObj) + ")"
-            appendPre(logMsg);
+            //logMsg = _logLevelNm[logLevel] + " " + code + " - " + message;
+            //if(infoObj) logMsg = logMsg + "\n\t(처리대상 : "+ JSON.stringify(infoObj) + ")"
+            //if(targetInfoObj) logMsg = logMsg + "\n\t(비교대상 : "+ JSON.stringify(targetInfoObj) + ")"
+            //appendPre(logMsg);
+            if (logLevel == _ALL) {
+
+            }
+            if (logLevel == _TRACE) {
+
+            }
+            if (logLevel == _DEBUG) {
+
+            }
+            if (logLevel == _INFO) {
+
+            }
+            if (logLevel == _WARN) {
+                var node = document.createElement("li");
+                node.className = "list-group-item list-group-item-warning";
+                logMsg = _logLevelNm[logLevel] + " " + code + " - " + message;
+                if(infoObj) logMsg = logMsg + "\n\t(처리대상 : "+ JSON.stringify(infoObj) + ")"
+                if(targetInfoObj) logMsg = logMsg + "\n\t(비교대상 : "+ JSON.stringify(targetInfoObj) + ")"
+                var textContent = document.createTextNode(logMsg + '\n');
+                node.appendChild(textContent);
+                document.getElementById("log").appendChild(node);
+            }
+            if (logLevel == _ERROR) {
+                var node = document.createElement("li");
+                node.className = "list-group-item list-group-item-danger";
+                logMsg = _logLevelNm[logLevel] + " " + code + " - " + message;
+                if(infoObj) logMsg = logMsg + "\n\t(처리대상 : "+ JSON.stringify(infoObj) + ")"
+                if(targetInfoObj) logMsg = logMsg + "\n\t(비교대상 : "+ JSON.stringify(targetInfoObj) + ")"
+                var textContent = document.createTextNode(logMsg + '\n');
+                node.appendChild(textContent);
+                document.getElementById("log").appendChild(node);
+            }
+            if (logLevel == _FATAL) {
+
+            }
+            if (logLevel == _OFF) {
+
+            }
         }
     }
 
