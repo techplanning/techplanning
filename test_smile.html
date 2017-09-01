@@ -184,7 +184,7 @@
             var loading_message = document.getElementById('on_status');
             loading_message.style.display = "block";
 
-            var msg = loading_message.createTextNode(message +'\n');
+            var msg = document.createTextNode(message +'\n');
             loading_message.appendChild(msg);
         }
         function appendPre(message) {
