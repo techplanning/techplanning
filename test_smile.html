@@ -175,11 +175,7 @@ function menu1_vi(){
     /**
      * Load Sheets API client library.
      */
-    function loadSheetsApi() {
-        var discoveryUrl =
-            'https://sheets.googleapis.com/$discovery/rest?version=v4';
-        gapi.client.load(discoveryUrl).then(readDefinitionList);
-    }
+    
     var _ALL = 0, _TRACE = 1, _DEBUG = 2, _INFO = 3, _WARN = 4, _ERROR = 5, _FATAL = 6, _OFF = 7;
     var _logLevelNm = ["[ALL]","[TRACE]","[DEBUG]","[INFO]","[WARN]","[ERROR]","[FATAL]","[OFF]"];
     var _logLevel = _WARN;
@@ -585,6 +581,11 @@ function menu3_vi(){
      */
     function handleSignoutClick(event) {
         gapi.auth2.getAuthInstance().signOut();
+    }
+	function loadSheetsApi() {
+        var discoveryUrl =
+            'https://sheets.googleapis.com/$discovery/rest?version=v4';
+        gapi.client.load(discoveryUrl).then(readDefinitionList);
     }
     /**
      * Append a pre element to the body containing the given message
