@@ -181,7 +181,7 @@
         function appendPre(message, pre_typ) {
             var pre = document.getElementById('log');
             var pre_type = pre_typ;
-            var textContent = document.createTextNode(message + pre_typ + '\n');
+            var textContent = document.createTextNode(message + pre_type + '\n');
             
             if(pre_type == ("load"|"error"|"finished")){
                 if(pre_type == "load"){
@@ -222,7 +222,7 @@
                 var msg = message;
                 var pre_type = pre_typ;
                 if(tag > _NOTI) msg = _tagLevelNm[tag] + " " + msg;
-                if(infoObj) msg = msg + "\t("+ JSON.stringify(infoObj) + ")";
+                if(infoObj) msg = msg + "\t("+ JSON.stringify(infoObj) + ")" + pre_type;
                 appendPre(msg, pre_type);
                 if(tag > _NOTI) console.error(msg, responseObj);
             }
