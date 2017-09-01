@@ -216,7 +216,7 @@
         var _PROC = 0, _NOTI = 1, _SYSTEM = 2;
         var _tagLevelNm = ["[PROCESS]","[NOTI]","[SYSTEM]"];
         var _tagLevel = _PROC;
-        function msg(tag, message, infoObj, pre_typ, responseObj) {
+        function msg(tag, message, pre_typ, infoObj, responseObj) {
             if(tag >= _tagLevel) {
                 var msg = message;
                 var pre_type = pre_typ;
