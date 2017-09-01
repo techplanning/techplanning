@@ -174,7 +174,7 @@
             var poc = ['MW','PC'];
             if(sheetSize == sheetTitle.length) {
                 for(s = 0; s < sheetSize; s++) {
-                    msg(_PROC,sheetTitle[s] + "시트에 기록된 spreadsheetID 와 sheetID 추출을 시작합니다", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle[s]]},response);
+                    msg(_PROC,spreadsheetTitle + "문서 " + sheetTitle[s] + " 시트에 기록된 spreadsheetID 와 sheetID 추출을 시작합니다",,response);
 //                    appendPre("[LOG] 시트 처리 시작 ("+ spreadsheetTitle + " : " + sheetTitle[s] + ")");
                     var range = valueRanges[s];
                     if (range.values.length > 0) {
