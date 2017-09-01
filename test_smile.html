@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="home.css">
+    <title>Title</title>
+</head>
+<body>
+<div class="header">
+    <div class="header_logo">
+        <a href="home.html">
+            Reindeer
+        </a>
+    </div>
+    <div class="header_status">
+        <button id="authorize-button" style="display: none;">Authorize</button>
+        <button id="signout-button" style="display: none;">Sign Out</button>
+    </div>
+</div>
+<div class="home">
+    <div class="home_banner">
+            배너 영역
+    </div>
+    <div class="home_guide">
+        <div class="home_guide_banner">
+            사용 가이드>
+        </div>
+        <div class="home_guide_contents">
+            <ul>
+                <li><a>공지1</a></li>
+                <li><a>공지2</a></li>
+                <li><a>공지3</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="home_notice">
+        <div class="home_notice_banner">
+            공지사항>
+        </div>
+        <div class="home_notice_contents">
+            <ul>
+                <li><a>공지1</a></li>
+                <li><a>공지2</a></li>
+                <li><a>공지3</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="menu1">
+    <pre id="log"></pre>
+</div>
+<div class="menu2">
+    Menu2
+</div>
+<div class="menu3">
+    Menu3
+</div>
+<div class="footer">
+    <ul>
+        <li>
+            <a href="#" id="menu1_btn"><img src="menu1_icon.png"/><br>정의서 검사</a>
+        </li>
+        <li>
+            <a href="#" id="menu2_btn"><img src="menu2_icon.png"/><br>QA 검사</a>
+        </li>
+        <li>
+            <a href="#" id="menu3_btn"><img src="menu3_icon.png"/><br>메뉴3</a>
+        </li>
+    </ul>
+</div>
+<script async defer src="https://apis.google.com/js/api.js"
+        onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+</script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="test_smile2.js"></script>
+<script type="text/javascript" src="test_smile3.js"></script>
+</body>
+</html>
