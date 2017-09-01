@@ -164,22 +164,22 @@
 </script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script type="text/javascript">
-    $("#menu1_btn").click(function(){
+document.getElementById("menu1_btn").onclick(function(){
     document.getElementsByClassName("menu1")[0].style.display = "block";
     document.getElementsByClassName("menu2")[0].style.display = "none";
     document.getElementsByClassName("menu3")[0].style.display = "none";
     document.getElementsByClassName("home")[0].style.display = "none";
 });
-$("#menu2_btn").click(function(){
-    document.getElementsByClassName("menu1")[0].style.display = "none";
-    document.getElementsByClassName("menu2")[0].style.display = "block";
+document.getElementById("menu2_btn").onclick(function(){
+    document.getElementsByClassName("menu1")[0].style.display = "block";
+    document.getElementsByClassName("menu2")[0].style.display = "none";
     document.getElementsByClassName("menu3")[0].style.display = "none";
     document.getElementsByClassName("home")[0].style.display = "none";
 });
-$("#menu3_btn").click(function(){
-    document.getElementsByClassName("menu1")[0].style.display = "none";
+document.getElementById("menu3_btn").onclick(function(){
+    document.getElementsByClassName("menu1")[0].style.display = "block";
     document.getElementsByClassName("menu2")[0].style.display = "none";
-    document.getElementsByClassName("menu3")[0].style.display = "block";
+    document.getElementsByClassName("menu3")[0].style.display = "none";
     document.getElementsByClassName("home")[0].style.display = "none";
 });
 
