@@ -222,7 +222,7 @@
                 var msg = message;
                 var pre_type = pre_typ;
                 if(tag > _NOTI) msg = _tagLevelNm[tag] + " " + msg;
-                if(infoObj) msg = msg + "\t("+ JSON.stringify(infoObj) + ")" + pre_type;
+                if(infoObj) msg = msg + "\t("+ JSON.stringify(infoObj) + ")" + "msg : " +pre_type;
                 appendPre(msg, pre_type);
                 if(tag > _NOTI) console.error(msg, responseObj);
             }
