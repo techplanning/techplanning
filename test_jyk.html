@@ -264,9 +264,11 @@
                 node.innerHTML = "<span class=\"badge badge-warning\">" + _logLevelNm[logLevel] + " " + code + "</span> " + message;
                 
                 if(infoObj) {
-                    node.insertAdjacentHTML('beforeend', "<small class=\"text-muted\">" + "(처리대상 : " + JSON.stringify(infoObj) + ")"+ "</small>");
+                    node.insertAdjacentHTML('beforeend', "<br><small class=\"text-muted\">" + "(처리대상 : " + JSON.stringify(infoObj) + ")"+ "</small>");
                 }
-                //if(targetInfoObj) logMsg = logMsg + "\n\t(비교대상 : "+ JSON.stringify(targetInfoObj) + ")"
+                if(targetInfoObj) {
+                    node.insertAdjacentHTML('beforeend', "<br><small class=\"text-muted\">" + "(비교대상 : " + JSON.stringify(targetInfoObj) + ")"+ "</small>");
+                }
                 //var textContent = document.createTextNode(logMsg + '\n');
                 //node.appendChild(textContent);
                 document.getElementById("log").appendChild(node);
