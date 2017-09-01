@@ -437,6 +437,7 @@
                     loading_appneder("시트 로딩 완료", "load_finished");
                     loading_appneder("현재 로딩된 시트", "load_finished");
                     loading_appneder(spreadsheetTitle +" > " + sheetTitle, "load_finished");
+                    checkDefList(spreadsheetTitle);
                     loadSheets();
                 } else {
                     msg(_SYSTEM,"시트 처리 오류 - POC별 시트 로딩 실패.", {spreadsheetTitle : [spreadsheetTitle]},response);
