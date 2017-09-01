@@ -61,6 +61,9 @@
             display : none;
             background-color : darkgrey;
         }
+        #load_finished{
+            display : none;
+        }
         #loading_error{
             display : none;
         }
@@ -162,13 +165,13 @@
     <div id = "on_status">
         <div id="loading"align = "center"></div>
     </div>
+    <div id = "load_finished">
+        
+    </div>
     <div id = "loading_error">
 
     </div>
     <pre id="log"></pre>
-    <pre id="log_load"></pre>
-    <pre id="log_error"></pre>
-    <pre id="log_finished"></pre>
 </div>
 <div class="menu2">
     Menu2
@@ -195,8 +198,12 @@
         document.getElementsByClassName("menu2")[0].style.display = "none";
         document.getElementsByClassName("menu3")[0].style.display = "none";
         document.getElementsByClassName("home")[0].style.display = "none";
-        function loading_appneder(message){
-            var loading_message = document.getElementById('on_status');
+
+        function load_finished(message, status){
+
+        }
+        function loading_appneder(message, status){
+            var loading_message = document.getElementById(status);
             loading_message.style.display = "block";
             var msg = document.createTextNode(message +"\n");
             loading_message.appendChild(msg);
@@ -242,7 +249,7 @@
             var spreadsheetId = '18HiiJG-Utm6e-wXr2Ie_z_8TtlBwq3yPFLjf8v45F-Q';
             var spreadsheetTitle = 'PageID_11번가 Log 2.0';
             var sheetTitle = ['모바일 v.2.3', 'PC v.2.1'];
-            loading_appneder("\"" + spreadsheetTitle + "\" 스프레드 시트를 로딩하고 있습니다.");
+            loading_appneder("\"" + spreadsheetTitle + "\" 스프레드 시트를 로딩하고 있습니다.\n", "on_status");
             var params = {
                 spreadsheetId: [spreadsheetId],
                 ranges: [
@@ -256,7 +263,7 @@
                 var poc = ['MW','PC'];
                 if(sheetSize == sheetTitle.length) {
                     for(s = 0; s < sheetSize; s++){
-                        loading_appneder("\"" + sheetTitle[s] + "\" 시트를 로딩하고 있습니다.");
+                        loading_appneder("\"" + sheetTitle[s] + "\" 시트를 로딩하고 있습니다.\n", "on_status");
                         var range = valueRanges[s];
                         if (range.values.length > 0) {
                             var rowSize = range.values.length;
@@ -283,11 +290,14 @@
                                 }
                             }
                             _defList = _defList.concat(data);
-                            loading_appneder("\"" + sheetTitle[s] + "\" 시트 로딩이 완료되었습니다.");
+                            loading_appneder("\"" + sheetTitle[s] + "\" 시트 로딩이 완료되었습니다.\n", "on_status");
                         } else {
                             msg(_SYSTEM,"시트 로딩 오류 - No data found.", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle[s]]}, response);
                         }
                     }
+                    loading_appneder("시트 로딩 완료", "load_finished");
+                    loading_appneder(spreadsheetTitle, "load_finished");
+                    loading_appneder(sheetTitle, "load_finished");
                     msg(_PROC,"시트 로딩이 완료되었습니다.", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle]});
                     checkDefList(spreadsheetTitle);
                     loadSheets();
