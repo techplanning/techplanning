@@ -263,10 +263,10 @@
                 node.className = "list-group-item list-group-item-danger";
                 node.innerHTML = "<span class=\"badge badge-warning\">" + _logLevelNm[logLevel] + " " + code + "</span> " + message;
                 if(infoObj) {
-                    node.insertAdjacentHTML('beforeend', "<br><small class=\"text-muted\">" + " 대상 : " + infoObj["로그정의서명"] + "</small>");
+                    node.insertAdjacentHTML('beforeend', "<br><small class=\"text-muted\">" + "[대상]<br>" + infoObj["로그정의서명"] + "<br>" + infoObj["spreadsheetId"] + "</small>");
                 }
                 if(targetInfoObj) {
-                    node.insertAdjacentHTML('beforeend', "<br><small class=\"text-muted\">" + " 중복 : " + targetInfoObj["로그정의서명"] + "</small>");
+                    node.insertAdjacentHTML('beforeend', "<br><small class=\"text-muted\">" + "[중복]<br>" + targetInfoObj["로그정의서명"] + "<br>" + infoObj["spreadsheetId"] + "</small>");
                 }
                 /*if(infoObj) {
                     node.insertAdjacentHTML('beforeend', "<br><small class=\"text-muted\">" + "(처리대상 : " + JSON.stringify(infoObj) + ")"+ "</small>");
