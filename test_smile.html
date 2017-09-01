@@ -163,7 +163,27 @@
         onreadystatechange="if (this.readyState === 'complete') this.onload()">
 </script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script type="text/javascript" src="test_smile2.js"></script>
+<script type="text/javascript">
+    $("#menu1_btn").click(function(){
+    document.getElementsByClassName("menu1")[0].style.display = "block";
+    document.getElementsByClassName("menu2")[0].style.display = "none";
+    document.getElementsByClassName("menu3")[0].style.display = "none";
+    document.getElementsByClassName("home")[0].style.display = "none";
+});
+$("#menu2_btn").click(function(){
+    document.getElementsByClassName("menu1")[0].style.display = "none";
+    document.getElementsByClassName("menu2")[0].style.display = "block";
+    document.getElementsByClassName("menu3")[0].style.display = "none";
+    document.getElementsByClassName("home")[0].style.display = "none";
+});
+$("#menu3_btn").click(function(){
+    document.getElementsByClassName("menu1")[0].style.display = "none";
+    document.getElementsByClassName("menu2")[0].style.display = "none";
+    document.getElementsByClassName("menu3")[0].style.display = "block";
+    document.getElementsByClassName("home")[0].style.display = "none";
+});
+
+</script>
 <script type="text/javascript" src="test_smile3.js"></script>
 </body>
 </html>
