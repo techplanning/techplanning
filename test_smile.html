@@ -231,7 +231,7 @@
             var spreadsheetTitle = 'PageID_11번가 Log 2.0';
             var sheetTitle = ['모바일 v.2.3', 'PC v.2.1'];
 
-            loading_appneder(spreadsheetTitle + "스프레드 시트를 로딩하고 있습니다.");
+            loading_appneder("\"" + spreadsheetTitle + "\" 스프레드 시트를 로딩하고 있습니다.");
 
             var params = {
                 spreadsheetId: [spreadsheetId],
@@ -246,7 +246,7 @@
                 var poc = ['MW','PC'];
                 if(sheetSize == sheetTitle.length) {
                     for(s = 0; s < sheetSize; s++){
-                        loading_appneder(sheetTitle[s] + "시트를 로딩하고 있습니다.");
+                        loading_appneder("\"" + sheetTitle[s] + "\" 시트를 로딩하고 있습니다.");
 
                         var range = valueRanges[s];
                         if (range.values.length > 0) {
@@ -274,7 +274,7 @@
                                 }
                             }
                             _defList = _defList.concat(data);
-                            loading_appneder(sheetTitle[s] + "시트 로딩이 완료되었습니다.");
+                            loading_appneder("\"" + sheetTitle[s] + "\" 시트 로딩이 완료되었습니다.");
                         } else {
                             msg(_SYSTEM,"시트 로딩 오류 - No data found.", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle[s]]}, response);
                         }
