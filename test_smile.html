@@ -40,23 +40,24 @@
             display : none;
         }
         #loading {
-          display: inline-block;
-          width: 50px;
-          height: 50px;
-          border: 3px solid rgba(255,255,255,.3);
-          border-radius: 50%;
-          border-top-color: #fff;
-          animation: spin 1s ease-in-out infinite;
-          -webkit-animation: spin 1s ease-in-out infinite;
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+            -webkit-animation: spin 1s ease-in-out infinite;
         }
-
         @keyframes spin {
-          to { -webkit-transform: rotate(360deg); }
+            to { -webkit-transform: rotate(360deg); }
         }
         @-webkit-keyframes spin {
-          to { -webkit-transform: rotate(360deg); }
+            to { -webkit-transform: rotate(360deg); }
         }
         #on_status{
+            margin : 20px 20px 20px 20px;
+            border-radius : 10%;
             display : none;
             background-color : darkgrey;
         }
@@ -71,9 +72,7 @@
             border : 3px solid skyblue;
             display : none;
         }
-
         .footer{
-
             align-content : center;
             position: fixed;
             bottom: 0;
@@ -111,7 +110,6 @@
             -moz-animation-duration: 1s;
             -o-animation-duration: 1s;
         }
-
         .footer a img{
             width: 80px;
             height: 80px;
@@ -162,7 +160,7 @@
 </div>
 <div class="menu1">
     <div id = "on_status">
-        <div id="loading"></div>
+        <div id="loading"align = "center"></div>
     </div>
     <div id = "loading_error">
 
@@ -197,11 +195,9 @@
         document.getElementsByClassName("menu2")[0].style.display = "none";
         document.getElementsByClassName("menu3")[0].style.display = "none";
         document.getElementsByClassName("home")[0].style.display = "none";
-
         function loading_appneder(message){
             var loading_message = document.getElementById('on_status');
             loading_message.style.display = "block";
-
             var msg = document.createTextNode(message +"\n");
             loading_message.appendChild(msg);
         }
@@ -210,11 +206,10 @@
             var textContent = document.createTextNode(message + "\n");
             pre.appendChild(textContent);
         }
-        
+
         /**
          * Load Sheets API client library.
          */
-
         var _ALL = 0, _TRACE = 1, _DEBUG = 2, _INFO = 3, _WARN = 4, _ERROR = 5, _FATAL = 6, _OFF = 7;
         var _logLevelNm = ["[ALL]","[TRACE]","[DEBUG]","[INFO]","[WARN]","[ERROR]","[FATAL]","[OFF]"];
         var _logLevel = _WARN;
@@ -232,7 +227,7 @@
         function msg(tag, message, infoObj, responseObj) {
             if(tag >= _tagLevel) {
                 var msg = message;
-                
+
                 if(tag > _NOTI) msg = _tagLevelNm[tag] + " " + msg;
                 if(infoObj) msg = msg + "\t("+ JSON.stringify(infoObj) + ")";
                 appendPre(msg);
@@ -242,15 +237,12 @@
         var _defList = [];
         var _sheet = [];
         var _sheetMap = {};
-
         readDefinitionList();
         function readDefinitionList() {
             var spreadsheetId = '18HiiJG-Utm6e-wXr2Ie_z_8TtlBwq3yPFLjf8v45F-Q';
             var spreadsheetTitle = 'PageID_11번가 Log 2.0';
             var sheetTitle = ['모바일 v.2.3', 'PC v.2.1'];
-
             loading_appneder("\"" + spreadsheetTitle + "\" 스프레드 시트를 로딩하고 있습니다.");
-
             var params = {
                 spreadsheetId: [spreadsheetId],
                 ranges: [
@@ -265,7 +257,6 @@
                 if(sheetSize == sheetTitle.length) {
                     for(s = 0; s < sheetSize; s++){
                         loading_appneder("\"" + sheetTitle[s] + "\" 시트를 로딩하고 있습니다.");
-
                         var range = valueRanges[s];
                         if (range.values.length > 0) {
                             var rowSize = range.values.length;
@@ -628,7 +619,6 @@
     function handleSignoutClick(event) {
         gapi.auth2.getAuthInstance().signOut();
     }
-
     /**
      * Append a pre element to the body containing the given message
      * as its text node. Used to display the results of the API call.
