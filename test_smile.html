@@ -182,7 +182,7 @@
 
         function loading_appneder(message){
             var loading_message = document.getElementById('on_status');
-            loading_message.style.display('block');
+            loading_message.style.display = "block";
 
             var msg = loading_message.createTextNode(message +'\n');
             loading_message.appendChild(msg);
