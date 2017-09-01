@@ -26,7 +26,7 @@
 <button id="signout-button" class="centeredStyle" style="display: none;">로그아웃</button>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#definitionCheckResultModal">
+<button type="button" class="btn btn-primary centeredStyle" id="definitionListCheck-button" data-toggle="modal" data-target="#definitionCheckResultModal" style="display: none;">
   정의서 검사
 </button>
 
@@ -69,6 +69,7 @@
 
     var authorizeButton = document.getElementById('authorize-button');
     var signoutButton = document.getElementById('signout-button');
+    var defListCheckButton = document.getElementById('definitionListCheck-button');
 
     /**
      *  On load, called to load the auth2 library and API client library.
@@ -105,10 +106,12 @@
         if (isSignedIn) {
             authorizeButton.style.display = 'none';
             signoutButton.style.display = 'block';
-            loadSheetsApi();
+            defListCheckButton.style.display = 'block';
+            //loadSheetsApi();
         } else {
             authorizeButton.style.display = 'block';
             signoutButton.style.display = 'none';
+            defListCheckButton.style.display = 'none';
         }
     }
 
