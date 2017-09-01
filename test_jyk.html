@@ -24,7 +24,7 @@
         margin: 0 auto;
     }
     .actionButtonBox {
-        max-width: 500px;
+        max-width: 300px;
         padding: 15px;
         margin: 0 auto;
     }
@@ -40,6 +40,7 @@
         margin-bottom: 10px;
     }
 </style>
+
 <div class="container">
 <h1 class="display-4 titleStyle centeredStyle">로그정의서 처리기<small class="text-muted"></small></h1>
 
@@ -68,7 +69,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body"><pre id="log"></pre></div>
+      <div class="modal-body"><ul class="list-group" id="log"></ul></div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">다 봤음 닫아용</button>
         <!--<button type="button" class="btn btn-primary">Save changes</button>-->
@@ -146,7 +147,7 @@
             defListCheckButton.style.display = 'block';
             //loadSheetsApi();
         } else {
-            authorizeButton.style.display = 'block';
+            //authorizeButton.style.display = 'block';
             signoutButton.style.display = 'none';
             defListCheckButton.style.display = 'none';
         }
@@ -178,15 +179,28 @@
      *
      * @param {string} message Text to be placed in pre element.
      */
-    function appendPre(message) {
+/*    function appendPre(message) {
         //var headingEl = document.querySelector("#heading");
         //headingEl.className = "titleStyle centeredStyle";
         //headingEl.innerHTML = "구글시트 로그정의서 처리기";
+        var node = document.createElement("li");
 
         var pre = document.getElementById('log');
         //var pre = document.getElementByClass('logbox');
         var textContent = document.createTextNode(message + '\n');
+        node.
         pre.appendChild(textContent);
+    }
+    */
+    function appendPre(message) {
+        //var headingEl = document.querySelector("#heading");
+        //headingEl.className = "titleStyle centeredStyle";
+        //headingEl.innerHTML = "구글시트 로그정의서 처리기";
+        var node = document.createElement("li");
+        node.className = "list-group-item";
+        var textContent = document.createTextNode(message + '\n');
+        node.appendChild(textContent);
+        document.getElementById("log").appendChild(node);
     }
 
     /**
