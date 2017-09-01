@@ -304,14 +304,6 @@
         <pre id="load_finished"></pre>
     </div>
     <div id = "definition_list">
-        <div class="loading_2">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
         <pre id="on_status_definition_list_check"></pre>
     </div>
     <div id = "loading_error">
@@ -457,7 +449,6 @@
         }
         function checkDefList(spreadsheetTitle) {
             loading_appneder("로그 정의서 내역 검증중", "on_status_definition_list_check");
-            msg(_PROC,"로그 정의서 내역 검증 시작", {spreadsheetTitle : [spreadsheetTitle]});
             var defSize = _defList.length;
             for(d = 0; d < defSize; d++) {
                 var info = _defList[d];
