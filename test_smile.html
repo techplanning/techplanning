@@ -196,11 +196,13 @@
     </div>
 </div>
 <div class="menu1">
-    <div id = "on_status">
+    <div id = "on_status_box">
         <div id="loading"></div>
+        <pre id="on_status"></pre>
     </div>
-    <div id = "load_finished">
+    <div id = "load_finished_box">
         <div class="loader loader-2"></div>
+        <pre id="load_finished"></pre>
     </div>
     <div id = "loading_error">
 
@@ -239,9 +241,8 @@
         function loading_appneder(message, status){
             var loading_message = document.getElementById(status);
             loading_message.style.display = "block";
-            var msg = document.createTextNode(message);
+            var msg = document.createTextNode(message + "\n");
             loading_message.appendChild(msg);
-            loading_message.appendChild(msg(document.write('<br/>')));
         }
         function appendPre(message) {
             var pre = document.getElementById('log');
