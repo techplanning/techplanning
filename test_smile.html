@@ -265,6 +265,9 @@
         #loading_error{
             display : none;
         }
+        #definition_finished_box{
+            background: greenyellow;
+        }
         .menu2{
             border : 3px solid palevioletred;
             display : none;
@@ -370,8 +373,11 @@
         </div>
         <pre id="load_finished"></pre>
     </div>
-    <div id = "definition_list">
+    <div id = "definition_list_box">
         <pre id="on_status_definition_list_check"></pre>
+    </div>
+    <div id = "definition_finished_box">
+        <pre id="definition_finished"></pre>
     </div>
     <div id = "loading_error">
 
@@ -513,8 +519,7 @@
                     document.getElementById('on_status_box').style.display = "none";
                     document.getElementById('load_finished_box').style.display = "block";
                     loading_appneder("시트 로딩 완료", "load_finished");
-                    loading_appneder("현재 로딩된 시트", "load_finished");
-                    loading_appneder(spreadsheetTitle + " > " + sheetTitle, "load_finished");
+                    loading_appneder("현재 로딩된 시트" + spreadsheetTitle + " > " + sheetTitle, "load_finished");
                     checkDefList(spreadsheetTitle);
                     loadSheets();
                 } else {
@@ -573,7 +578,8 @@
                     }
                 }
             }
-            msg(_PROC, "로그 정의서 내역 검증 완료", "finished", {spreadsheetTitle: [spreadsheetTitle]});
+            document.getElementById('on_status_definition_list_box').style.display = "none";
+            loading_appneder("로그 정의서 내용 검증 완료", "definition_finished");
         }
     }
 
