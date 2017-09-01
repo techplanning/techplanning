@@ -136,13 +136,13 @@
         </div>
     </div>
 </div>
-<div class="menu1">
+<div class="menu1" onClick="menu1_vi()">
     <pre id="log"></pre>
 </div>
-<div class="menu2">
+<div class="menu2" onClick="menu2_vi()">
     Menu2
 </div>
-<div class="menu3">
+<div class="menu3" onClick="menu3_vi()">
     Menu3
 </div>
 <div class="footer">
@@ -159,24 +159,24 @@
     </ul>
 </div>
 <script type="text/javascript">
-$("#menu1_btn").click(function(){
+function menu1_vi(){
     document.getElementsByClassName("menu1")[0].style.display = "block";
     document.getElementsByClassName("menu2")[0].style.display = "none";
     document.getElementsByClassName("menu3")[0].style.display = "none";
     document.getElementsByClassName("home")[0].style.display = "none";
-});
-$("#menu2_btn").click(function(){
-    document.getElementsByClassName("menu1")[0].style.display = "none";
-    document.getElementsByClassName("menu2")[0].style.display = "block";
+}
+function menu2_vi(){
+    document.getElementsByClassName("menu1")[0].style.display = "block";
+    document.getElementsByClassName("menu2")[0].style.display = "none";
     document.getElementsByClassName("menu3")[0].style.display = "none";
     document.getElementsByClassName("home")[0].style.display = "none";
-});
-$("#menu3_btn").click(function(){
-    document.getElementsByClassName("menu1")[0].style.display = "none";
+}
+function menu3_vi(){
+    document.getElementsByClassName("menu1")[0].style.display = "block";
     document.getElementsByClassName("menu2")[0].style.display = "none";
-    document.getElementsByClassName("menu3")[0].style.display = "block";
+    document.getElementsByClassName("menu3")[0].style.display = "none";
     document.getElementsByClassName("home")[0].style.display = "none";
-});
+}
 </script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 </body>
