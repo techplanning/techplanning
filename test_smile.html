@@ -63,11 +63,76 @@
             color: white;
             text-align : center;
         }
-        #load_finished{
-
-        }
-        #load_finished{
+        #load_finished_box{
             display : none;
+            background-color : darkorange;
+        }
+        .icon-smile {
+            background-color: #000;
+            border-radius:8px;
+            -webkit-border-radius:8px;
+            -moz-border-radius:8px;
+            width: 16px;
+            height: 16px;
+            position: relative;
+            top:0;
+            left:0;
+        }
+        .icon-smile:after {
+            background-color: #fff;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            width: 2px;
+            height: 3px;
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            content: "";
+        }
+        .icon-smile:before {
+            background-color: #fff;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            width: 2px;
+            height: 3px;
+            position: absolute;
+            top: 4px;
+            left: 10px;
+            content: "";
+        }
+        .icon-smile-line {
+            background-color: #fff;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            -webkit-border-bottom-left-radius: 8px;
+            -webkit-border-bottom-right-radius: 8px;
+            -moz-border-radius-bottomleft: 8px;
+            -moz-border-radius-bottomright: 8px;
+            width: 8px;
+            height: 3px;
+            position: absolute;
+            top: 9px;
+            left: 4px;
+        }
+
+        .icon-smile .icon-smile-line {
+            -webkit-transition-property: -webkit-border-bottom-left-radius, -webkit-border-bottom-right-radius, -webkit-border-top-left-radius, -webkit-border-top-right-radius;
+            -webkit-transition-duration: 0.333s;
+            -webkit-transition-timing-function: linear;
+            -moz-transition-property: -moz-border-radius-bottomleft, -moz-border-radius-bottomright, -moz-border-radius-topleft, -moz-border-radius-topright;
+            -moz-transition-duration: 0.333s;
+            -moz-transition-delay: 0;
+            -moz-transition-timing-function: linear;
+        }
+        .icon-smile:hover .icon-smile-line {
+            -webkit-border-bottom-left-radius: 0;
+            -webkit-border-bottom-right-radius: 0;
+            -webkit-border-top-left-radius: 8px;
+            -webkit-border-top-right-radius: 8px;
+            -moz-border-radius-bottomleft: 0;
+            -moz-border-radius-bottomright: 0;
+            -moz-border-radius-topleft: 8px;
+            -moz-border-radius-topright: 8px;
         }
         .loading_2 {
             width: 70px;
@@ -300,7 +365,9 @@
         <pre id="on_status"></pre>
     </div>
     <div id = "load_finished_box">
-        <div class="loader loader-2"></div>
+        <div class="icon icon-smile">
+            <div class="icon-smile-line"></div>
+        </div>
         <pre id="load_finished"></pre>
     </div>
     <div id = "definition_list">
@@ -444,6 +511,7 @@
                         }
                     }
                     document.getElementById('on_status_box').style.display = "none";
+                    document.getElementById('load_finished_box').style.display = "block";
                     loading_appneder("시트 로딩 완료", "load_finished");
                     loading_appneder("현재 로딩된 시트", "load_finished");
                     loading_appneder(spreadsheetTitle + " > " + sheetTitle, "load_finished");
@@ -461,8 +529,9 @@
         }
 
         function checkDefList(spreadsheetTitle) {
+            document.write('checkdeflist called');
             loading_appneder("로그 정의서 내역 검증중", "on_status_definition_list_check");
-            
+
             var defSize = _defList.length;
             for (d = 0; d < defSize; d++) {
                 var info = _defList[d];
