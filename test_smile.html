@@ -66,15 +66,18 @@
             text-align : center;
         }
         #load_finished_box{
-            padding : 2px 2px 2px 2px;
+            padding-left: 10px;
+            padding-top:2px;
+            padding-bottom:2px;
+            border-left: 3px solid white
             display : none;
-            background-color : bisque;
+            background-color : lightpink;
             border-radius: 5px;
             color: white;
-            font-size: 14px;
+            font-size: 20px;
         }
         #load_finished_box pre {
-            display : inline-block;
+            display : inline;
         }
         .icon-smile {
             display: inline-block;
@@ -276,11 +279,15 @@
             display : none;
         }
         #definition_finished_box{
-            background: lightpink;
+            padding-left: 10px;
+            padding-top:2px;
+            padding-bottom:2px;
+            border-left: 3px solid white
+            display : none;
+            background-color : lightpink;
             border-radius: 5px;
             color: white;
-            padding : 2px 2px 2px 2px;
-            font-size: 14px;
+            font-size: 20px;
         }
         .menu2{
             border : 3px solid palevioletred;
@@ -391,6 +398,9 @@
         <pre id="on_status_definition_list_check"></pre>
     </div>
     <div id = "definition_finished_box">
+        <div class="icon icon-smile">
+            <div class="icon-smile-line"></div>
+        </div>
         <pre id="definition_finished"></pre>
     </div>
     <div id = "loading_error">
