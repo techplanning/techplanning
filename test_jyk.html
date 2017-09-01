@@ -3,27 +3,44 @@
 <head>
 	<title>로그정의서 처리기</title>
 	<meta charset='utf-8' />
-    <style>
-        .titleStyle {
-            font-size: 24pt;
-            font-weight: bold;
-            color: orange;
-        }
-        .centeredStyle {
-            display: table;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    </style>
+    
 </head>
 <body>
+<div class="container">
 <p id="heading" class="titleStyle centeredStyle">구글시트 로그정의서 처리기</p>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
+<!-- override bootstrap style -->
+<style>
+    body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #eee;
+    }
+    .container {
+        max-width: 600px;
+        padding: 15px;
+        margin: 0 auto;
+    }
+    .titleStyle {
+        font-size: 24pt;
+        font-weight: bold;
+        color: orange;
+    }
+    .centeredStyle {
+        display: table;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .btn {
+        margin-bottom: 10px;
+    }
+</style>
+
 
 <!--Add buttons to initiate auth sequence and sign out-->
-<button id="authorize-button" class="centeredStyle" style="display: none;">로그인</button>
-<button id="signout-button" class="centeredStyle" style="display: none;">로그아웃</button>
+<button type="button" id="authorize-button" class="btn btn-primary centeredStyle" style="display: none;">로그인</button>
+<button type="button" id="signout-button" class="btn btn-primary centeredStyle" style="display: none;">로그아웃</button>
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary centeredStyle" id="definitionListCheck-button" data-toggle="modal" data-target="#definitionCheckResultModal" style="display: none;">
@@ -48,6 +65,8 @@
     </div>
   </div>
 </div>
+
+</div> <!-- container -->
 
 
 
