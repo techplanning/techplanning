@@ -97,6 +97,134 @@
         #load_finished{
             display : none;
         }
+        .loading_2 {
+            width: 70px;
+            height: 50px;
+            position: relative;
+            margin: 50px auto;
+        }
+        .loading_2 span {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            width: 10px;
+            height: 5px;
+            background-color: #ea834c;
+            animation: waving 1.5s  infinite ease-in-out;
+            -webkit-animation: waving 1.5s  infinite ease-in-out;
+            -moz-animation: waving 1.5s  infinite ease-in-out;
+            -o-animation: waving 1.5s  infinite ease-in-out;
+        }
+        .loading span:nth-of-type(2) {
+            left:11px;
+            animation-delay: .2s;
+            -webkit-animation-delay: .2s;
+            -moz-animation-delay: .2s;
+            -o-animation-delay: .2s;
+        }
+        .loading span:nth-of-type(3) {
+            left:22px;
+            animation-delay: .4s;
+            -webkit-animation-delay: .4s;
+            -moz-animation-delay: .4s;
+            -o-animation-delay: .4s;
+        }
+        .loading span:nth-of-type(4) {
+            left:33px;
+            animation-delay: .6s;
+            -webkit-animation-delay: .6s;
+            -moz-animation-delay: .6s;
+            -o-animation-delay: .6s;
+        }
+        .loading span:nth-of-type(5) {
+            left:44px;
+            animation-delay: .8s;
+            -webkit-animation-delay: .8s;
+            -moz-animation-delay: .8s;
+            -o-animation-delay: .8s;
+        }
+        .loading span:last-of-type {
+            left:55px;
+            animation-delay: 1s;
+            -webkit-animation-delay: 1s;
+            -moz-animation-delay: 1s;
+            -o-animation-delay: 1s;
+        }
+        @keyframes waving {
+            0% , 50% , 100%{
+                height: 5px;
+                transform: translateY(0px);
+                -webkit-transform: translateY(0px);
+                -moz-transform: translateY(0px);
+                -o-transform: translateY(0px);
+                background-color: #ea834c;
+            }
+            25%{
+                height: 60px;
+                transform: translateY(15px);
+                -webkit-transform: translateY(15px);
+                -moz-transform: translateY(15px);
+                -o-transform: translateY(15px);
+                background-color: #ea4c4c;
+            }
+        }
+        @-webkit-keyframes waving {
+            0% , 50% , 100%{
+                height: 5px;
+                transform: translateY(0px);
+                -webkit-transform: translateY(0px);
+                -moz-transform: translateY(0px);
+                -o-transform: translateY(0px);
+                background-color: #ea834c;
+            }
+            25%{
+                height: 60px;
+                transform: translateY(15px);
+                -webkit-transform: translateY(15px);
+                -moz-transform: translateY(15px);
+                -o-transform: translateY(15px);
+                background-color: #ea4c4c;
+            }
+        }
+        @-moz-keyframes waving {
+            0% , 50% , 100%{
+                height: 5px;
+                transform: translateY(0px);
+                -webkit-transform: translateY(0px);
+                -moz-transform: translateY(0px);
+                -o-transform: translateY(0px);
+                background-color: #ea834c;
+            }
+            25%{
+                height: 60px;
+                transform: translateY(15px);
+                -webkit-transform: translateY(15px);
+                -moz-transform: translateY(15px);
+                -o-transform: translateY(15px);
+                background-color: #ea4c4c;
+            }
+        }
+        @-o-keyframes waving {
+            0% , 50% , 100%{
+                height: 5px;
+                transform: translateY(0px);
+                -webkit-transform: translateY(0px);
+                -moz-transform: translateY(0px);
+                -o-transform: translateY(0px);
+                background-color: #ea834c;
+            }
+            25%{
+                height: 60px;
+                transform: translateY(15px);
+                -webkit-transform: translateY(15px);
+                -moz-transform: translateY(15px);
+                -o-transform: translateY(15px);
+                background-color: #ea4c4c;
+            }
+        }
+        #definition_list{
+            background_color: #FABEBE;
+        }
         #loading_error{
             display : none;
         }
@@ -202,6 +330,17 @@
     <div id = "load_finished_box">
         <div class="loader loader-2"></div>
         <pre id="load_finished"></pre>
+    </div>
+    <div id = "definition_list">
+        <div class="loading_2">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <pre id="on_status_definition_list_check"></pre>
     </div>
     <div id = "loading_error">
 
@@ -330,11 +469,10 @@
                             msg(_SYSTEM,"시트 로딩 오류 - No data found.", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle[s]]}, response);
                         }
                     }
-                    //document.getelementbyid('on_status').style.display = "none";
+                    document.getelementbyid('on_status').style.display = "none";
                     loading_appneder("시트 로딩 완료", "load_finished");
-                    loading_appneder(spreadsheetTitle, "load_finished");
-                    loading_appneder(sheetTitle, "load_finished");
-                    checkDefList(spreadsheetTitle);
+                    loading_appneder("현재 로딩된 시트", "load_finished");
+                    loading_appneder(spreadsheetTitle +" > " + sheetTitle, "load_finished");
                     loadSheets();
                 } else {
                     msg(_SYSTEM,"시트 처리 오류 - POC별 시트 로딩 실패.", {spreadsheetTitle : [spreadsheetTitle]},response);
@@ -346,6 +484,7 @@
         function loadSheets() {
         }
         function checkDefList(spreadsheetTitle) {
+            loading_appneder("로그 정의서 내역 검증중", "on_status_definition_list_check");
             msg(_PROC,"로그 정의서 내역 검증 시작", {spreadsheetTitle : [spreadsheetTitle]});
             var defSize = _defList.length;
             for(d = 0; d < defSize; d++) {
