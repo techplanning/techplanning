@@ -261,10 +261,12 @@
             if (logLevel == _ERROR) {
                 var node = document.createElement("li");
                 node.className = "list-group-item list-group-item-danger";
-                //logMsg = "<span class=\"badge badge-warning\">" + _logLevelNm[logLevel] + " " + code + "</span> - " + message;
-                //if(infoObj) logMsg = logMsg + "\n\t(처리대상 : "+ JSON.stringify(infoObj) + ")"
+                node.innerHTML = "<span class=\"badge badge-warning\">" + _logLevelNm[logLevel] + " " + code + "</span> " + message;
+                
+                if(infoObj) {
+                    node.insertAdjacentHTML('beforeend', "<small class=\"text-muted\">" + "(처리대상 : " + JSON.stringify(infoObj) + ")"+ "</small>");
+                }
                 //if(targetInfoObj) logMsg = logMsg + "\n\t(비교대상 : "+ JSON.stringify(targetInfoObj) + ")"
-                node.innerHTML = "<span class=\"badge badge-warning\">" + _logLevelNm[logLevel] + " " + code + "</span> - " + message;
                 //var textContent = document.createTextNode(logMsg + '\n');
                 //node.appendChild(textContent);
                 document.getElementById("log").appendChild(node);
