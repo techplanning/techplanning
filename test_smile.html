@@ -138,46 +138,6 @@
 </div>
 <div class="menu1">
     <pre id="log"></pre>
-</div>
-<div class="menu2">
-    Menu2
-</div>
-<div class="menu3">
-    Menu3
-</div>
-<div class="footer">
-    <ul>
-        <li>
-            <a href="#" id="menu1_btn" onclick="menu1_vi();"><img src="menu1_icon.png"/><br>정의서 검사</a>
-        </li>
-        <li>
-            <a href="#" id="menu2_btn" onclick="menu2_vi();"><img src="menu2_icon.png"/><br>QA 검사</a>
-        </li>
-        <li>
-            <a href="#" id="menu3_btn" onclick="menu3_vi();"><img src="menu3_icon.png"/><br>메뉴3</a>
-        </li>
-    </ul>
-</div>
-<script type="text/javascript">
-function menu1_vi(){
-    document.getElementsByClassName("menu1")[0].style.display = "block";
-    document.getElementsByClassName("menu2")[0].style.display = "none";
-    document.getElementsByClassName("menu3")[0].style.display = "none";
-    document.getElementsByClassName("home")[0].style.display = "none";
-}
-function menu2_vi(){
-    document.getElementsByClassName("menu1")[0].style.display = "none";
-    document.getElementsByClassName("menu2")[0].style.display = "block";
-    document.getElementsByClassName("menu3")[0].style.display = "none";
-    document.getElementsByClassName("home")[0].style.display = "none";
-}
-function menu3_vi(){
-    document.getElementsByClassName("menu1")[0].style.display = "none";
-    document.getElementsByClassName("menu2")[0].style.display = "none";
-    document.getElementsByClassName("menu3")[0].style.display = "block";
-    document.getElementsByClassName("home")[0].style.display = "none";
-}
-</script>
 <script>
     // Client ID and API key from the Developer Console
     var CLIENT_ID = '696566559550-7rge69rqjpck7nup7dkfa0tt5huqusi0.apps.googleusercontent.com';
@@ -641,6 +601,46 @@ function menu3_vi(){
             appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle + ") " + reason.result.error.message);
         });
     }
+</script>
+</div>
+<div class="menu2">
+    Menu2
+</div>
+<div class="menu3">
+    Menu3
+</div>
+<div class="footer">
+    <ul>
+        <li>
+            <a href="#" id="menu1_btn" onclick="menu1_vi();"><img src="menu1_icon.png"/><br>정의서 검사</a>
+        </li>
+        <li>
+            <a href="#" id="menu2_btn" onclick="menu2_vi();"><img src="menu2_icon.png"/><br>QA 검사</a>
+        </li>
+        <li>
+            <a href="#" id="menu3_btn" onclick="menu3_vi();"><img src="menu3_icon.png"/><br>메뉴3</a>
+        </li>
+    </ul>
+</div>
+<script type="text/javascript">
+function menu1_vi(){
+    document.getElementsByClassName("menu1")[0].style.display = "block";
+    document.getElementsByClassName("menu2")[0].style.display = "none";
+    document.getElementsByClassName("menu3")[0].style.display = "none";
+    document.getElementsByClassName("home")[0].style.display = "none";
+}
+function menu2_vi(){
+    document.getElementsByClassName("menu1")[0].style.display = "none";
+    document.getElementsByClassName("menu2")[0].style.display = "block";
+    document.getElementsByClassName("menu3")[0].style.display = "none";
+    document.getElementsByClassName("home")[0].style.display = "none";
+}
+function menu3_vi(){
+    document.getElementsByClassName("menu1")[0].style.display = "none";
+    document.getElementsByClassName("menu2")[0].style.display = "none";
+    document.getElementsByClassName("menu3")[0].style.display = "block";
+    document.getElementsByClassName("home")[0].style.display = "none";
+}
 </script>
     <script async defer src="https://apis.google.com/js/api.js"
 		onload="this.onload=function(){};handleClientLoad()"
