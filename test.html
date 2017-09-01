@@ -93,6 +93,8 @@
         var pre = document.getElementById('log');
         var textContent = document.createTextNode(message + '\n');
         pre.appendChild(textContent);
+
+        window.scrollTo(0, document.body.scrollHeight);
     }
 
     /**
@@ -133,8 +135,9 @@
     }
 
     var _defList = [];
-    var _sheet = [];
+    var _spreadsheets = {};
     var _sheetMap = {};
+    var _sheetMapWithPOC = {};
 
     function readDefinitionList() {
         var spreadsheetId = '18HiiJG-Utm6e-wXr2Ie_z_8TtlBwq3yPFLjf8v45F-Q';
@@ -196,7 +199,15 @@
                 msg(_PROC,"시트 처리 완료", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle]});
 //                appendPre("[LOG] 시트 처리 완료 ("+ spreadsheetTitle + " : " + sheetTitle + ")");
                 checkDefList(spreadsheetTitle);
-                loadSheets();
+                msg(_PROC,"로그 정의서 로딩 시작");
+
+                var obj = loadLocalStorage("_spreadsheets");
+                if(obj && confirm("이전에 로딩 된 로그정의서 정보를 사용하겠습니까?")){
+                    _spreadsheets = obj;
+                    msg(_PROC,"로그 정의서 로딩 완료");
+                } else {
+                    loadSheets();
+                }
             } else {
                 msg(_SYSTEM,"시트 처리 오류 - POC별 시트 로딩 실패.", {spreadsheetTitle : [spreadsheetTitle]},response);
             }
@@ -205,8 +216,40 @@
         });
     }
 
-    function loadSheets() {
+    function loadSheets(index) {
+        var key = Object.keys(_sheetMap);
+        if(!index) {
+            index = 0;
+        }
 
+        if(index < key.length) {
+            msg(_PROC,"index : " + index);
+            var o = _sheetMap[key[index]];
+            readSpreadsheet(o["spreadsheetId"]);
+            setTimeout("loadSheets(" + (index + 1) + ");", 10000);
+        } else {
+            msg(_PROC,"로그 정의서 로딩 요청 완료");
+            setTimeout("saveLocalStorage('_spreadsheets', _spreadsheets);", 1000);
+        }
+    }
+
+    function saveLocalStorage(key, obj) {
+        if (typeof(Storage) !== "undefined") {
+            localStorage.setItem(key, JSON.stringify(obj));
+        } else {
+            msg(_SYSTEM,"로컬 스토리지 사용 불가 브라우저");
+        }
+    }
+
+    function loadLocalStorage(key) {
+        if (typeof(Storage) !== "undefined") {
+            var val = localStorage.getItem(key);
+            if(val) {
+                return JSON.parse(val);
+            }
+        } else {
+            msg(_SYSTEM,"로컬 스토리지 사용 불가 브라우저");
+        }
     }
 
     function checkDefList(spreadsheetTitle) {
@@ -215,7 +258,6 @@
         var defSize = _defList.length;
         for(d = 0; d < defSize; d++) {
             var info = _defList[d];
-            info.spreadsheetTitle = spreadsheetTitle;
 
             // 빈 값 체크
             if(!info["로그정의서명"]) {
@@ -240,9 +282,12 @@
             if(info["spreadsheetId"]) {
                 if(_sheetMap[info["spreadsheetId"]]) {
                     var targetInfo = _sheetMap[info["spreadsheetId"]];
-                    if(info["poc"] == targetInfo["poc"]) {
-                        log(_ERROR, "0009", "동일한 POC에 중복된 정의서 링크가 있습니다.", info, targetInfo);
+
+                    var targetPOCSheet = _sheetMapWithPOC["["+info["poc"]+"]" + info["spreadsheetId"]];
+                    if(targetPOCSheet && targetPOCSheet["poc"] == info["poc"]) {
+                        log(_ERROR, "0009", "동일 POC에 중복된 정의서 링크가 있습니다.", info, targetPOCSheet);
                     } else {
+                        _sheetMapWithPOC["["+info["poc"]+"]" + info["spreadsheetId"]] = info;
                         log(_INFO, "0006", "중복된 정의서 링크가 있습니다.", info, targetInfo);
                     }
 
@@ -254,7 +299,8 @@
                         log(_ERROR,"0007","중복된 정의서 시트 링크가 있습니다.",info,targetInfo);
                     }
                 } else {
-                    _sheetMap[info["spreadsheetId"]] = info
+                    _sheetMap[info["spreadsheetId"]] = info;
+                    _sheetMapWithPOC["["+info["poc"]+"]" + info["spreadsheetId"]] = info;
                 }
             }
         }
@@ -262,8 +308,8 @@
     }
 
     // 파일 읽기
-    function readSpreadsheet() {
-        var spreadsheetId = '1iHImkn-pfDpMwew-IgoUcpaO5y-fo3mm3tJRjeSMBeE';
+    function readSpreadsheet(spreadsheetId) {
+//        var spreadsheetId = '1iHImkn-pfDpMwew-IgoUcpaO5y-fo3mm3tJRjeSMBeE';
 
         var params = {
             spreadsheetId: [spreadsheetId],
@@ -275,55 +321,59 @@
         var request = gapi.client.sheets.spreadsheets.get(params);
         request.then(function(response) {
 //            console.log(response.result);
+            var spreadsheet = {};
 
-            _sheet["spreadsheetId"] = spreadsheetId;
-            _sheet["spreadsheetTitle"] = response.result.properties.title;
+            spreadsheet["spreadsheetId"] = spreadsheetId;
+            spreadsheet["spreadsheetTitle"] = response.result.properties.title;
+
+            _spreadsheets[spreadsheet["spreadsheetId"]] = spreadsheet;
+
             for(s = 0; s < response.result.sheets.length; s++) {
-                _sheet[s] = {};
-                _sheet[s].sheetId = response.result.sheets[s].properties.sheetId;
-                _sheet[s].sheetTitle = response.result.sheets[s].properties.title;
+                spreadsheet[s] = {};
+                spreadsheet[s].sheetId = response.result.sheets[s].properties.sheetId;
+                spreadsheet[s].sheetTitle = response.result.sheets[s].properties.title;
 
-                appendPre("[INFO] 시트 ("+ _sheet[s].sheetTitle + ")");
+                appendPre("[INFO] 시트 ("+ spreadsheet[s].sheetTitle + ")");
 
-                if(_sheet[s].sheetTitle == "연계로그 사전") {
-                    _sheet[s]["sheetType"] = "DIC";
-                    _sheet[s]["sheetData"] = {};
-                    appendPre("[LOG] 시트 처리 시작 ("+ response.result.properties.title+ " : " + _sheet[s].sheetTitle + ")");
-                    readDic(spreadsheetId, response.result.properties.title, _sheet[s].sheetTitle, s, function(sheetIndex, sheetData) {
-                        _sheet[sheetIndex].sheetData = sheetData;
-                        appendPre("[LOG] 시트 처리 완료 ("+ _sheet.spreadsheetTitle+ " : " + _sheet[sheetIndex].sheetTitle + ")");
+                if(spreadsheet[s].sheetTitle == "연계로그 사전") {
+                    spreadsheet[s]["sheetType"] = "DIC";
+                    spreadsheet[s]["sheetData"] = {};
+                    appendPre("[LOG] 시트 처리 시작 ("+ response.result.properties.title+ " : " + spreadsheet[s].sheetTitle + ")");
+                    readDic(spreadsheetId, response.result.properties.title, spreadsheet[s].sheetTitle, s, function(spreadsheetId, sheetIndex, sheetData) {
+                        _spreadsheets[spreadsheetId][sheetIndex].sheetData = sheetData;
+                        appendPre("[LOG] 시트 처리 완료 ("+ spreadsheet.spreadsheetTitle+ " : " + spreadsheet[sheetIndex].sheetTitle + ")");
                     });
-                } else if(/history$/.test(_sheet[s].sheetTitle)) {
-                    _sheet[s]["sheetType"] = "HIST";
-                    _sheet[s]["sheetData"] = {};
-                    appendPre("[LOG] 시트 처리 시작 ("+ response.result.properties.title+ " : " + _sheet[s].sheetTitle + ")");
-                    readHistory(spreadsheetId, response.result.properties.title, _sheet[s].sheetTitle, s, function(sheetIndex, sheetData) {
-                        _sheet[sheetIndex].sheetData = sheetData;
-                        appendPre("[LOG] 시트 처리 완료 ("+ _sheet.spreadsheetTitle+ " : " + _sheet[sheetIndex].sheetTitle + ")");
+                } else if(/history$/.test(spreadsheet[s].sheetTitle)) {
+                    spreadsheet[s]["sheetType"] = "HIST";
+                    spreadsheet[s]["sheetData"] = {};
+                    appendPre("[LOG] 시트 처리 시작 ("+ response.result.properties.title+ " : " + spreadsheet[s].sheetTitle + ")");
+                    readHistory(spreadsheetId, response.result.properties.title, spreadsheet[s].sheetTitle, s, function(spreadsheetId, sheetIndex, sheetData) {
+                        _spreadsheets[spreadsheetId][sheetIndex].sheetData = sheetData;
+                        appendPre("[LOG] 시트 처리 완료 ("+ spreadsheet.spreadsheetTitle+ " : " + spreadsheet[sheetIndex].sheetTitle + ")");
                     });
                 } else {
-                    _sheet[s]["sheetType"] = "DEF";
-                    _sheet[s]["sheetData"] = {};
-                    appendPre("[LOG] 시트 속성 처리 시작 ("+ response.result.properties.title+ " : " + _sheet[s].sheetTitle + ")");
-                    readDefinitionProperties(spreadsheetId, response.result.properties.title, _sheet[s].sheetTitle, s, function(sheetIndex, sheetData) {
-                        _sheet[sheetIndex].sheetProperties = sheetData;
-                        appendPre("[LOG] 시트 속성 처리 완료 ("+ _sheet.spreadsheetTitle+ " : " + _sheet[sheetIndex].sheetTitle + ")");
+                    spreadsheet[s]["sheetType"] = "DEF";
+                    spreadsheet[s]["sheetData"] = {};
+                    appendPre("[LOG] 시트 속성 처리 시작 ("+ response.result.properties.title+ " : " + spreadsheet[s].sheetTitle + ")");
+                    readDefinitionProperties(spreadsheetId, response.result.properties.title, spreadsheet[s].sheetTitle, s, function(spreadsheetId, sheetIndex, sheetData) {
+                        _spreadsheets[spreadsheetId][sheetIndex].sheetProperties = sheetData;
+                        appendPre("[LOG] 시트 속성 처리 완료 ("+ spreadsheet.spreadsheetTitle+ " : " + spreadsheet[sheetIndex].sheetTitle + ")");
                     });
 
-                    appendPre("[LOG] 시트 처리 시작 ("+ response.result.properties.title+ " : " + _sheet[s].sheetTitle + ")");
-                    readDefinitionData(spreadsheetId, response.result.properties.title, _sheet[s].sheetTitle, s, function(sheetIndex, sheetData) {
-                        _sheet[sheetIndex].sheetData = sheetData;
-                        appendPre("[LOG] 시트 처리 완료 ("+ _sheet.spreadsheetTitle+ " : " + _sheet[sheetIndex].sheetTitle + ")");
+                    appendPre("[LOG] 시트 처리 시작 ("+ response.result.properties.title+ " : " + spreadsheet[s].sheetTitle + ")");
+                    readDefinitionData(spreadsheetId, response.result.properties.title, spreadsheet[s].sheetTitle, s, function(spreadsheetId, sheetIndex, sheetData) {
+                        _spreadsheets[spreadsheetId][sheetIndex].sheetData = sheetData;
+                        appendPre("[LOG] 시트 처리 완료 ("+ spreadsheet.spreadsheetTitle+ " : " + spreadsheet[sheetIndex].sheetTitle + ")");
                     });
                 }
             }
-            appendPre("[LOG] 정의서 로딩 완료 ("+ _sheet.spreadsheetTitle + ")");
+            appendPre("[LOG] 정의서 로딩 완료 ("+ spreadsheet.spreadsheetTitle + ")");
 
-            console.log(_sheet);
-//            appendPre(JSON.stringify(_sheet));
-        }, function(reason) {
-            appendPre("[ERROR] 정의서 로딩 오류 ("+ spreadsheetId + ") " + reason.result.error.message);
-//            console.error('error: ' + reason.result.error.message);
+            console.log(spreadsheet);
+//            appendPre(JSON.stringify(spreadsheet));
+        }, function(response) {
+            appendPre("[ERROR] 정의서 로딩 오류 ("+ spreadsheetId + ") " + response.result.error.message);
+//            console.error('error: ' + response.result.error.message);
         });
     }
 
@@ -364,10 +414,10 @@
                 }
             }
 
-            callback(sheetIndex, data);
-        }, function(reason) {
-            appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle + ") " + reason.result.error.message);
-//            console.error('error: ' + reason.result.error.message);
+            callback(spreadsheetId, sheetIndex, data);
+        }, function(response) {
+            appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle + ") " + response.result.error.message);
+//            console.error('error: ' + response.result.error.message);
         });
     }
 
@@ -396,12 +446,12 @@
                     }
                 }
 
-                callback(sheetIndex, data);
+                callback(spreadsheetId, sheetIndex, data);
             } else {
                 appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle + ") No data found.");
             }
         }, function(response) {
-            appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle + ") " + reason.result.error.message);
+            appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle + ") " + response.result.error.message);
             appendPre('Error: ' + response.result.error.message);
         });
     }
@@ -430,12 +480,12 @@
                     data[r-1] = row;
                 }
 
-                callback(sheetIndex, data);
+                callback(spreadsheetId, sheetIndex, data);
             } else {
                 appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle + ") No data found.");
             }
         }, function(response) {
-            appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle + ") " + reason.result.error.message);
+            appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle + ") " + response.result.error.message);
         });
     }
 
@@ -467,13 +517,12 @@
                     dic[r-1] = row;
                 }
 
-                callback(sheetIndex, dic);
-//                appendPre(JSON.stringify(_sheet));
+                callback(spreadsheetId, sheetIndex, dic);
             } else {
                 appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle + ") No data found.");
             }
         }, function(response) {
-            appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle + ") " + reason.result.error.message);
+            appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle + ") " + response.result.error.message);
         });
     }
 
