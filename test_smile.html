@@ -239,7 +239,7 @@
         function loading_appneder(message, status){
             var loading_message = document.getElementById(status);
             loading_message.style.display = "block";
-            var msg = document.createTextNode(message +"\n");
+            var msg = document.createTextNode(message +"<br/>");
             loading_message.appendChild(msg);
         }
         function appendPre(message) {
@@ -330,9 +330,9 @@
                         }
                     }
                     //document.getelementbyid('on_status').style.display = "none";
-                    loading_appneder("시트 로딩 완료<br/>", "load_finished");
-                    loading_appneder(spreadsheetTitle + "<br/>", "load_finished");
-                    loading_appneder(sheetTitle + "<br/>", "load_finished");
+                    loading_appneder("시트 로딩 완료", "load_finished");
+                    loading_appneder(spreadsheetTitle, "load_finished");
+                    loading_appneder(sheetTitle, "load_finished");
                     checkDefList(spreadsheetTitle);
                     loadSheets();
                 } else {
