@@ -433,6 +433,7 @@
         var _ALL = 0, _TRACE = 1, _DEBUG = 2, _INFO = 3, _WARN = 4, _ERROR = 5, _FATAL = 6, _OFF = 7;
         var _logLevelNm = ["[ALL]", "[TRACE]", "[DEBUG]", "[INFO]", "[WARN]", "[ERROR]", "[FATAL]", "[OFF]"];
         var _logLevel = _WARN;
+        var error_counter = 0;
 
         function log(logLevel, code, message, infoObj, targetInfoObj) {
             if (logLevel >= _logLevel) {
@@ -440,6 +441,7 @@
                 if (infoObj) logMsg = logMsg + "\n\t(처리대상 : " + JSON.stringify(infoObj) + ")"
                 if (targetInfoObj) logMsg = logMsg + "\n\t(비교대상 : " + JSON.stringify(targetInfoObj) + ")"
                 appendPre(logMsg);
+                error_counter++;
             }
         }
 
@@ -534,7 +536,6 @@
         }
 
         function checkDefList(spreadsheetTitle) {
-            
             loading_appneder("로그 정의서 내역 검증중", "on_status_definition_list_check");
 
             var defSize = _defList.length;
@@ -580,6 +581,7 @@
             }
             document.getElementById('definition_list_box').style.display = "none";
             loading_appneder("로그 정의서 내용 검증 완료", "definition_finished");
+            loading_appneder("총 "+error_counter+"개의 오류가 발견되었습니다.", "definition_finished");
         }
     }
 
