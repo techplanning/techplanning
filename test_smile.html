@@ -65,7 +65,7 @@
             text-align : center;
         }
         #load_finished{
-            
+
         }
         .loader-2:before,
         .loader-2:after {
@@ -283,7 +283,7 @@
             var spreadsheetId = '18HiiJG-Utm6e-wXr2Ie_z_8TtlBwq3yPFLjf8v45F-Q';
             var spreadsheetTitle = 'PageID_11번가 Log 2.0';
             var sheetTitle = ['모바일 v.2.3', 'PC v.2.1'];
-            loading_appneder("\"" + spreadsheetTitle + "\" 스프레드 시트를 로딩하고 있습니다.\n", "on_status");
+            loading_appneder("\"" + spreadsheetTitle + "\" 스프레드 시트를 로딩하고 있습니다.<br/>", "on_status");
             var params = {
                 spreadsheetId: [spreadsheetId],
                 ranges: [
@@ -297,7 +297,7 @@
                 var poc = ['MW','PC'];
                 if(sheetSize == sheetTitle.length) {
                     for(s = 0; s < sheetSize; s++){
-                        loading_appneder("\"" + sheetTitle[s] + "\" 시트를 로딩하고 있습니다.\n", "on_status");
+                        loading_appneder("\"" + sheetTitle[s] + "\" 시트를 로딩하고 있습니다.<br/>", "on_status");
                         var range = valueRanges[s];
                         if (range.values.length > 0) {
                             var rowSize = range.values.length;
@@ -324,16 +324,15 @@
                                 }
                             }
                             _defList = _defList.concat(data);
-                            loading_appneder("\"" + sheetTitle[s] + "\" 시트 로딩이 완료되었습니다.\n", "on_status");
+                            loading_appneder("\"" + sheetTitle[s] + "\" 시트 로딩이 완료되었습니다.<br/>", "on_status");
                         } else {
                             msg(_SYSTEM,"시트 로딩 오류 - No data found.", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle[s]]}, response);
                         }
                     }
                     //document.getelementbyid('on_status').style.display = "none";
-                    loading_appneder("시트 로딩 완료", "load_finished");
-                    loading_appneder(spreadsheetTitle, "load_finished");
-                    loading_appneder(sheetTitle, "load_finished");
-                    msg(_PROC,"시트 로딩이 완료되었습니다.", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle]});
+                    loading_appneder("시트 로딩 완료<br/>", "load_finished");
+                    loading_appneder(spreadsheetTitle + "<br/>", "load_finished");
+                    loading_appneder(sheetTitle + "<br/>", "load_finished");
                     checkDefList(spreadsheetTitle);
                     loadSheets();
                 } else {
