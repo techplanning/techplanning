@@ -182,6 +182,7 @@
 
 
         function appendPre(message, pre_typ) {
+            document.write('called');
             var pre = document.getElementById('log');
             var pre_type = pre_typ;
             var textContent = document.createTextNode(message + "----pre_type : "+pre_type + '\n');
