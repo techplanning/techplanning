@@ -95,6 +95,7 @@
             updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
             authorizeButton.onclick = handleAuthClick;
             signoutButton.onclick = handleSignoutClick;
+            defListCheckButton.onclick = handleDefListCheckClick;
         });
     }
 
@@ -128,6 +129,11 @@
     function handleSignoutClick(event) {
         gapi.auth2.getAuthInstance().signOut();
         location.reload();
+    }
+
+    /* */
+    function handleDefListCheckClick(event) {
+        loadSheetsApi();
     }
 
     /**
