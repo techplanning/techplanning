@@ -39,17 +39,11 @@
             border : 3px solid forestgreen;
             display : none;
         }
-        #log{
-            background-color : palegoldenrod;
+        #on_status{
+            display : none;
         }
-        #log_error{
-            background-color : palevioletred;
-        }
-        #log_load{
-            background-color : palegreen;
-        }
-        #log_finished{
-            background-color : paleturquoise;
+        #loading_error{
+            display : none;
         }
         .menu2{
             border : 3px solid palevioletred;
@@ -81,7 +75,7 @@
             opacity: 0.5;
         }
         @keyframes menu_hovering{
-            form {
+            from {
                 opacity: 0.5;
             }
             to {
@@ -149,6 +143,12 @@
     </div>
 </div>
 <div class="menu1">
+    <div id = "on_status">
+
+    </div>
+    <div id = "loading_error">
+
+    </div>
     <pre id="log"></pre>
     <pre id="log_load"></pre>
     <pre id="log_error"></pre>
@@ -180,29 +180,19 @@
         document.getElementsByClassName("menu3")[0].style.display = "none";
         document.getElementsByClassName("home")[0].style.display = "none";
 
+        function loading_appneder(message){
+            var loading_message = document.getElementById('on_status');
+            loading_message.style.display('block');
 
-        function appendPre(message, pre_typ) {
-            document.write('called');
-            var pre = document.getElementById('log');
-            var pre_type = pre_typ;
-            var textContent = document.createTextNode(message + "----pre_type : "+pre_type + '\n');
-            
-            if(pre_type == ("load"|"error"|"finished")){
-                if(pre_type == "load"){
-                    var pre_load = document.getElementById('log_load');
-                    pre_load.appendChild(textContent);
-                }else if(pre_type == "error"){
-                    var pre_error = document.getElementById('log_error');
-                    pre_error.appendChild(textContent);
-                }else if(pre_type == "finished"){
-                    var pre_finished = document.getElementById('log_finished');
-                    pre_finished.appendChild(textContent);
-                }
-            }else {
-                var textContent = document.createTextNode(message + '\n');
-                pre.appendChild(textContent);
-            }
+            var msg = loading_message.createTextNode(message +'\n');
+            loading_message.appendChild(msg);
         }
+        function appendPre(message) {
+            var pre = document.getElementById('log');
+            var textContent = document.createTextNode(message + '\n');
+            pre.appendChild(textContent);
+        }
+        
         /**
          * Load Sheets API client library.
          */
@@ -221,12 +211,12 @@
         var _PROC = 0, _NOTI = 1, _SYSTEM = 2;
         var _tagLevelNm = ["[PROCESS]","[NOTI]","[SYSTEM]"];
         var _tagLevel = _PROC;
-        function msg(tag, message, pre_typ, infoObj, responseObj) {
+        function msg(tag, message, infoObj, responseObj) {
             if(tag >= _tagLevel) {
                 var msg = message;
                 var pre_type = pre_typ;
                 if(tag > _NOTI) msg = _tagLevelNm[tag] + " " + msg;
-                if(infoObj) msg = msg + "\t("+ JSON.stringify(infoObj) + ")" + "msg : " +pre_type;
+                if(infoObj) msg = msg + "\t("+ JSON.stringify(infoObj) + ")";
                 appendPre(msg, pre_type);
                 if(tag > _NOTI) console.error(msg, responseObj);
             }
@@ -240,7 +230,9 @@
             var spreadsheetId = '18HiiJG-Utm6e-wXr2Ie_z_8TtlBwq3yPFLjf8v45F-Q';
             var spreadsheetTitle = 'PageID_11번가 Log 2.0';
             var sheetTitle = ['모바일 v.2.3', 'PC v.2.1'];
-            msg(_PROC,"스프레드 시트를 로딩하고 있습니다.", "load",{spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle]});
+
+            loading_appneder(spreadsheetTitle + "스프레드 시트를 로딩하고 있습니다.");
+
             var params = {
                 spreadsheetId: [spreadsheetId],
                 ranges: [
@@ -253,8 +245,9 @@
                 var sheetSize = valueRanges.length;
                 var poc = ['MW','PC'];
                 if(sheetSize == sheetTitle.length) {
-                    for(s = 0; s < sheetSize; s++) {
-                        msg(_PROC,"시트를 로딩하고 있습니다.","load", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle[s]]},response);
+                    for(s = 0; s < sheetSize; s++){
+                        loading_appneder(sheetTitle[s] + "시트를 로딩하고 있습니다.");
+
                         var range = valueRanges[s];
                         if (range.values.length > 0) {
                             var rowSize = range.values.length;
@@ -281,25 +274,25 @@
                                 }
                             }
                             _defList = _defList.concat(data);
-                            msg(_PROC,"시트 로딩이 완료되었습니다.", "finished", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle[s]]});
+                            loading_appneder(sheetTitle[s] + "시트 로딩이 완료되었습니다.");
                         } else {
-                            msg(_SYSTEM,"시트 로딩 오류 - No data found.", "error", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle[s]]}, response);
+                            msg(_SYSTEM,"시트 로딩 오류 - No data found.", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle[s]]}, response);
                         }
                     }
-                    msg(_PROC,"시트 로딩이 완료되었습니다.", "finished", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle]});
+                    msg(_PROC,"시트 로딩이 완료되었습니다.", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle]});
                     checkDefList(spreadsheetTitle);
                     loadSheets();
                 } else {
-                    msg(_SYSTEM,"시트 처리 오류 - POC별 시트 로딩 실패.","error", {spreadsheetTitle : [spreadsheetTitle]},response);
+                    msg(_SYSTEM,"시트 처리 오류 - POC별 시트 로딩 실패.", {spreadsheetTitle : [spreadsheetTitle]},response);
                 }
             }, function(response) {
-                msg(_SYSTEM,"시트 처리 오류 - " + response.result.error.message,"error", {spreadsheetTitle : [spreadsheetTitle]}, response);
+                msg(_SYSTEM,"시트 처리 오류 - " + response.result.error.message, {spreadsheetTitle : [spreadsheetTitle]}, response);
             });
         }
         function loadSheets() {
         }
         function checkDefList(spreadsheetTitle) {
-            msg(_PROC,"로그 정의서 내역 검증 시작", "load", {spreadsheetTitle : [spreadsheetTitle]});
+            msg(_PROC,"로그 정의서 내역 검증 시작", {spreadsheetTitle : [spreadsheetTitle]});
             var defSize = _defList.length;
             for(d = 0; d < defSize; d++) {
                 var info = _defList[d];
