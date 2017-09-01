@@ -202,6 +202,8 @@ function menu1_vi(){
     var _defList = [];
     var _sheet = [];
     var _sheetMap = {};
+	
+	readDefinitionList();
     function readDefinitionList() {
         var spreadsheetId = '18HiiJG-Utm6e-wXr2Ie_z_8TtlBwq3yPFLjf8v45F-Q';
         var spreadsheetTitle = 'PageID_11번가 Log 2.0';
@@ -563,7 +565,7 @@ function menu3_vi(){
 	function loadSheetsApi() {
         var discoveryUrl =
             'https://sheets.googleapis.com/$discovery/rest?version=v4';
-        gapi.client.load(discoveryUrl).then(readDefinitionList);
+        gapi.client.load(discoveryUrl);
     }
     function updateSigninStatus(isSignedIn) {
         if (isSignedIn) {
