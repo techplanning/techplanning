@@ -229,10 +229,24 @@
 
             }
             if (logLevel == _DEBUG) {
-
+                var node = document.createElement("li");
+                node.className = "list-group-item list-group-item-dark";
+                logMsg = _logLevelNm[logLevel] + " " + code + " - " + message;
+                if(infoObj) logMsg = logMsg + "\n\t(처리대상 : "+ JSON.stringify(infoObj) + ")"
+                if(targetInfoObj) logMsg = logMsg + "\n\t(비교대상 : "+ JSON.stringify(targetInfoObj) + ")"
+                var textContent = document.createTextNode(logMsg + '\n');
+                node.appendChild(textContent);
+                document.getElementById("log").appendChild(node);
             }
             if (logLevel == _INFO) {
-
+                var node = document.createElement("li");
+                node.className = "list-group-item list-group-item-info";
+                logMsg = _logLevelNm[logLevel] + " " + code + " - " + message;
+                if(infoObj) logMsg = logMsg + "\n\t(처리대상 : "+ JSON.stringify(infoObj) + ")"
+                if(targetInfoObj) logMsg = logMsg + "\n\t(비교대상 : "+ JSON.stringify(targetInfoObj) + ")"
+                var textContent = document.createTextNode(logMsg + '\n');
+                node.appendChild(textContent);
+                document.getElementById("log").appendChild(node);
             }
             if (logLevel == _WARN) {
                 var node = document.createElement("li");
@@ -247,7 +261,7 @@
             if (logLevel == _ERROR) {
                 var node = document.createElement("li");
                 node.className = "list-group-item list-group-item-danger";
-                logMsg = _logLevelNm[logLevel] + " " + code + " - " + message;
+                logMsg = "<span class=\"badge badge-warning\">" + _logLevelNm[logLevel] + " " + code + "</span> - " + message;
                 if(infoObj) logMsg = logMsg + "\n\t(처리대상 : "+ JSON.stringify(infoObj) + ")"
                 if(targetInfoObj) logMsg = logMsg + "\n\t(비교대상 : "+ JSON.stringify(targetInfoObj) + ")"
                 var textContent = document.createTextNode(logMsg + '\n');
@@ -255,7 +269,14 @@
                 document.getElementById("log").appendChild(node);
             }
             if (logLevel == _FATAL) {
-
+                var node = document.createElement("li");
+                node.className = "list-group-item list-group-item-danger";
+                logMsg = _logLevelNm[logLevel] + " " + code + " - " + message;
+                if(infoObj) logMsg = logMsg + "\n\t(처리대상 : "+ JSON.stringify(infoObj) + ")"
+                if(targetInfoObj) logMsg = logMsg + "\n\t(비교대상 : "+ JSON.stringify(targetInfoObj) + ")"
+                var textContent = document.createTextNode(logMsg + '\n');
+                node.appendChild(textContent);
+                document.getElementById("log").appendChild(node);
             }
             if (logLevel == _OFF) {
 
