@@ -40,9 +40,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div id="modal-body">
-        asdfadsfasdfadsfadsfadsfadsfadsfadsfadsfadsfasdfadsf
-      </div>
+      <div id="logbox" class="modal-body"></div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
@@ -140,7 +138,7 @@
         //headingEl.innerHTML = "구글시트 로그정의서 처리기";
 
         //var pre = document.getElementById('log');
-        var pre = document.getElementById('modal-body');
+        var pre = document.getElementByClass('logbox');
         var textContent = document.createTextNode(message + '\n');
         pre.appendChild(textContent);
     }
