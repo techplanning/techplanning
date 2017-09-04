@@ -83,10 +83,14 @@
             font-size: 20px;
         }
         #load_finished_box pre {
+            margin-left: 20px;
             display : inline;
         }
-        #definition_list{
-            background_color: #FABEBE;
+        #definition_list_box{
+            border-left: 3px solid cornflowerblue;
+        }
+        #on_status_definition_list_check{
+            margin-left: 20px;
         }
         #loading_error{
 
@@ -98,12 +102,14 @@
             display : none;
         }
         #definition_finished{
+            margin-left: 20px;
             font-size: 20px;
         }
         #definition_finished_target{
             font-size: 10px;
         }
         #loading_error_box{
+            margin-left: 20px;
             border-left: 3px solid lightpink;
             margin-top: 5px;
             display : none;
@@ -116,6 +122,7 @@
         .loading_error_list_table{
             font-size: 12px;
             margin-left: 50px;
+            margin-bottom: 20px;
             text-align: center;
         }
         .menu2{
@@ -345,7 +352,7 @@
                 }
             }
             //0006~0009
-            if(target){
+            else if(target){
                 var info_list = info;
                 var target_list = target;
                 var info_cell_json = JSON.parse(info);
@@ -381,13 +388,12 @@
             }
         }
 
-        //레거시
+        //사용하지 않습니다.
         function appendPre(message) {
             var pre = document.getElementById('log');
             var textContent = document.createTextNode(message + "\n");
             pre.appendChild(textContent);
         }
-        //레거시
 
         /**
          * Load Sheets API client library.
