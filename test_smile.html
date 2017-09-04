@@ -15,21 +15,20 @@
         .home{
             content_align: center;
         }
-        .home_banner{
-            width: 100%;
-            background-image: url('https://preview.ibb.co/gEc4Mv/38890830_reindeer_wallpapers.jpg');
-            background-size: 100% auto;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
+
         .header_logo{
+            background: linear-gradient(to right, #63A69F, #F2E1AC, #F2836B, #F2594B, #CD2C24);
             font-family: 'Libre Barcode 39 Text', cursive;
             font-size: 50px;
             position : relative;
             display: block;
             width: 100%;
-            height: 100px;
+            height: 200px;
             text-align: center;
+        }
+        .header_logo a{
+            position: absolute;
+            margin-bottom: 0;
         }
         .header_menu div{
             display: inline-block;
@@ -161,9 +160,6 @@
 <div class="header">
 </div>
 <div class="home">
-    <div class="home_banner">
-        배너 영역
-    </div>
     <div class="header_logo">
         <a href="home.html">
             Reindeer
@@ -209,7 +205,7 @@
     로그인 여부 검사중
 </div>
 <div class="footer_login">
-    
+
     <a id="footer_login_btn">로그인 후 사용 가능합니다.</a>
 </div>
 <div class="footer">
@@ -497,4 +493,5 @@
         onreadystatechange="if (this.readyState === 'complete') this.onload()">
 </script>
 </body>
+</html>
 </html>
