@@ -315,6 +315,7 @@
                 //json 파싱해서 테이블에 넣어줌
                 var info_list = info;
                 var info_cell_json = JSON.parse(info); //후에 json 핸들링 할 일 없으면 걍 msg에서 json으로 받는 것으로 수정
+                appendPre(info_cell_json.toString());
                 var info_cell = [];
                 var kk = 0;
 
@@ -342,6 +343,8 @@
                 var target_list = target;
                 var info_cell_json = JSON.parse(info);
                 var target_cell_json = JSON.parse(target);
+                appendPre(info_cell_json.toString());
+                appendPre(target_cell_json.toString());
                 var info_cell = [];
                 var target_cell = [];
                 var kk = 0;
