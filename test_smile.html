@@ -4,6 +4,10 @@
 
     <meta charset="UTF-8">
     <style>
+        body{
+            padding-right: 20%;
+            padding-left: 20%;
+        }
         .header{
             width: 100%;
             height: 100px;
@@ -55,12 +59,21 @@
             to { -webkit-transform: rotate(360deg); }
         }
         #on_status_box{
-            border-left: 3px solid darkgray;
+            margin : 20px 20px 20px 20px;
+            border-radius : 5px;
+            background-color : darkgrey;
+            color: white;
+            text-align : center;
         }
         #load_finished_box{
-            border-left: 3px solid lightpink;
-            margin-top: 5px;
+            padding-left: 10px;
+            padding-top:2px;
+            padding-bottom:2px;
+            border-left: 3px solid white
             display : none;
+            background-color : lightpink;
+            border-radius: 5px;
+            color: white;
             font-size: 20px;
         }
         #load_finished_box pre {
@@ -73,15 +86,14 @@
             display : none;
         }
         #definition_finished_box{
-            border-left: 3px solid palegoldenrod;
-            margin-top: 5px;
+            padding-left: 10px;
+            padding-top:2px;
+            padding-bottom:2px;
+            border-left: 3px solid white
             display : none;
-            font-size: 20px;
-        }
-        #loading_error_box{
-            border-left: 3px solid lightpink;
-            margin-top: 5px;
-            display : none;
+            background-color : lightpink;
+            border-radius: 5px;
+            color: white;
             font-size: 20px;
         }
         .menu2{
@@ -93,8 +105,6 @@
             display : none;
         }
         .footer{
-            margin-right: 20%;
-            margin-left: 20%;
             align-content : center;
             position: fixed;
             bottom: 0;
@@ -255,7 +265,8 @@
                 logMsg = _logLevelNm[logLevel] + " " + code + " - " + message;
                 if (infoObj) logMsg = logMsg + "\n\t(처리대상 : " + JSON.stringify(infoObj) + ")"
                 if (targetInfoObj) logMsg = logMsg + "\n\t(비교대상 : " + JSON.stringify(targetInfoObj) + ")"
-                appendPre(logMsg);
+                document.getElementById('loading_error_box').style.display = "block";
+                loading_appneder(logMsg, "loading_error");
                 error_counter++;
             }
         }
@@ -394,7 +405,8 @@
                     }
                 }
             }
-            document.getElementById('definition_list_box').style.display = "none";
+            document.getElementById('definition_finished_box').style.display = "block";
+            document.getElementById('on_status_box').style.display = "none";
             loading_appneder("로그 정의서 내용 검증 완료", "definition_finished");
             loading_appneder("총 "+error_counter+"개의 오류가 발견되었습니다.", "definition_finished");
         }
