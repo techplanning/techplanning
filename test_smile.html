@@ -319,11 +319,11 @@
                 var kk = 0;
 
                 var index_cell = ['POC', 'NO', '로그정의서명', '로그정의서 링크 URL','스프레드시트 ID']; //(참고)spreadsheetTitle 항목 없앰
-                for(key in info_cell_json){
+                for(value in info_cell_json){
                     if(kk == 5){
                         break;
                     }
-                    info_cell.push(key);
+                    info_cell.push(value);
                     kk++;
                 }
 
@@ -333,7 +333,7 @@
 
                 var error_list_target_row2 = error_list_target.insertRow(error_list_target.length);
                 for(qq = 0; qq < index_cell.length; qq++){
-                    error_list_target_row.insertCell(qq).innerHTML = info_cell[qq];
+                    error_list_target_row2.insertCell(qq).innerHTML = info_cell[qq];
                 }
             }
             //0006~0009
@@ -348,18 +348,18 @@
                 var gg = 0;
 
                 var index_cell = ['POC', 'NO', '로그정의서명', '로그정의서 링크 URL','스프레드시트 ID', '시트ID']; //(참고)spreadsheetTitle 항목 없앰
-                for(key in info_cell_json){
+                for(value in info_cell_json){
                     if(kk == 6){
                         break;
                     }
-                    info_cell.push(key);
+                    info_cell.push(value);
                     kk++;
                 }
-                for(key in target_cell_json){
+                for(value in target_cell_json){
                     if(gg == 6){
                         break;
                     }
-                    target_cell.push(key);
+                    target_cell.push(value);
                     gg++;
                 }
 
@@ -369,11 +369,11 @@
 
                 var error_list_target_row2 = error_list_target.insertRow(error_list_target.length);
                 for(qq = 0; qq < index_cell.length; qq++){
-                    error_list_target_row.insertCell(qq).innerHTML = info_cell[qq];
+                    error_list_target_row2.insertCell(qq).innerHTML = info_cell[qq];
                 }
                 var error_list_target_row3 = error_list_target.insertRow(error_list_target.length);
                 for(zz = 0; zz < index_cell.length; zz++){
-                    error_list_target_row.insertCell(zz).innerHTML = info_cell[zz];
+                    error_list_target_row3.insertCell(zz).innerHTML = info_cell[zz];
                 }
             }
         }
