@@ -262,7 +262,7 @@
                 logMsg = _logLevelNm[logLevel] + " " + code + " - " + message;
                 if (infoObj) logMsg = logMsg + "\n\t(처리대상 : " + JSON.stringify(infoObj) + ")"
                 if (targetInfoObj) logMsg = logMsg + "\n\t(비교대상 : " + JSON.stringify(targetInfoObj) + ")"
-                appendPre(logMsg);
+                loading_appneder(logMsg, "loading_error");
                 error_counter++;
             }
         }
@@ -343,7 +343,7 @@
                     document.getElementById('on_status_box').style.display = "none";
                     document.getElementById('load_finished_box').style.display = "block";
                     loading_appneder("시트 로딩 완료", "load_finished");
-                    loading_appneder("현재 로딩된 시트" + spreadsheetTitle + " > " + sheetTitle, "load_finished");
+                    loading_appneder("현재 로딩된 시트" + spreadsheetTitle + " > " + sheetTitle, "load_finished_target");
                     checkDefList(spreadsheetTitle);
                     loadSheets();
                 } else {
@@ -402,6 +402,7 @@
                 }
             }
             document.getElementById('definition_list_box').style.display = "none";
+            document.getElementById('definition_finished_box').style.display = "block";
             loading_appneder("로그 정의서 내용 검증 완료", "definition_finished");
             loading_appneder("총 "+error_counter+"개의 오류가 발견되었습니다.", "definition_finished");
         }
