@@ -315,7 +315,7 @@
                 //json 파싱해서 테이블에 넣어줌
                 var info_list = info;
                 var info_cell_json = JSON.parse(info); //후에 json 핸들링 할 일 없으면 걍 msg에서 json으로 받는 것으로 수정
-                var info_cell;
+                var info_cell = [];
                 var kk = 0;
 
                 var index_cell = ['POC', 'NO', '로그정의서명', '로그정의서 링크 URL','스프레드시트 ID']; //(참고)spreadsheetTitle 항목 없앰
@@ -342,8 +342,8 @@
                 var target_list = target;
                 var info_cell_json = JSON.parse(info);
                 var target_cell_json = JSON.parse(target);
-                var info_cell;
-                var target_cell;
+                var info_cell = [];
+                var target_cell = [];
                 var kk = 0;
                 var gg = 0;
 
