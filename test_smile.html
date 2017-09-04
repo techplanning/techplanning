@@ -90,6 +90,7 @@
             background_color: #FABEBE;
         }
         #loading_error{
+
         }
         #definition_finished_box{
             padding-left: 5px;
@@ -283,6 +284,92 @@
             loading_message.appendChild(msg);
         }
 
+        var error_counter = 0;
+
+        function error_msg_appender(message, _code, target_box, info, target){
+            var error_title = message;
+            var code = _code;
+            var target_box = target_box;
+
+            //오류 제목 영역
+            var error_box = document.getElementById('loading_error_box');
+            var error_list = error_box.createElement('div').classList.add('loading_error_list');
+            var error_title_box = document.getElementsByClassName('loading_error_list')[error_counter];
+            error_title.box.innerHTML = error_title;
+
+            //오류 내용 영역
+            var error_list_table = error_box.createElement('table').classList.add('loading_error_list_table');
+            var error_list_target = document.getElementsByClassName('loading_error_list_table')[error_counter];
+            var error_list_target_row = error_list_target.insertRow(error_list_target.length);
+
+            //0001~0005
+            if(!target){
+                //json 파싱해서 테이블에 넣어줌
+                var info_list = info;
+                var info_cell_json = info.toJSON();
+                var info_cell;
+                var kk = 0;
+
+                var index_cell = ['POC', 'NO', '로그정의서명', '로그정의서 링크 URL','스프레드시트 ID']; //(참고)spreadsheetTitle 항목 없앰
+                for(key in info_cell_json){
+                    if(kk == 5){
+                        break;
+                    }
+                    info_cell[kk] = key;
+                    kk++;
+                }
+
+                for(jj = 0; jj < index_cell.length; jj++){
+                    error_list_target_row.insertCell(jj).innerHTML = index_cell[jj];
+                }
+
+                var error_list_target_row2 = error_list_target.insertRow(error_list_target.length);
+                for(qq = 0; qq < index_cell.length; qq++){
+                    error_list_target_row.insertCell(qq).innerHTML = info_cell[qq];
+                }
+            }
+            //0006~0009
+            if(target){
+                var info_list = info;
+                var target_list = target;
+                var info_cell_json = info.toJSON();
+                var target_cell_json = target.toJSON();
+                var info_cell;
+                var target_cell;
+                var kk = 0;
+                var gg = 0;
+
+                var index_cell = ['POC', 'NO', '로그정의서명', '로그정의서 링크 URL','스프레드시트 ID', '시트ID']; //(참고)spreadsheetTitle 항목 없앰
+                for(key in info_cell_json){
+                    if(kk == 6){
+                        break;
+                    }
+                    info_cell[kk] = key;
+                    kk++;
+                }
+                for(key in target_cell_json){
+                    if(gg == 6){
+                        break;
+                    }
+                    target_cell[gg] = key;
+                    gg++;
+                }
+
+                for(jj = 0; jj < index_cell.length; jj++){
+                    error_list_target_row.insertCell(jj).innerHTML = index_cell[jj];
+                }
+
+                var error_list_target_row2 = error_list_target.insertRow(error_list_target.length);
+                for(qq = 0; qq < index_cell.length; qq++){
+                    error_list_target_row.insertCell(qq).innerHTML = info_cell[qq];
+                }
+                var error_list_target_row3 = error_list_target.insertRow(error_list_target.length);
+                for(zz = 0; zz < index_cell.length; zz++){
+                    error_list_target_row.insertCell(zz).innerHTML = info_cell[zz];
+                }
+            }
+        }
+
         function appendPre(message) {
             var pre = document.getElementById('log');
             var textContent = document.createTextNode(message + "\n");
@@ -300,9 +387,9 @@
         function log(logLevel, code, message, infoObj, targetInfoObj) {
             if (logLevel >= _logLevel) {
                 logMsg = _logLevelNm[logLevel] + " " + code + " - " + message;
-                if (infoObj) logMsg = logMsg + "\n\t(처리대상 : " + JSON.stringify(infoObj) + ")"
-                if (targetInfoObj) logMsg = logMsg + "\n\t(비교대상 : " + JSON.stringify(targetInfoObj) + ")"
-                loading_appneder(logMsg, "loading_error");
+                if (infoObj) logMsg_info = JSON.stringify(infoObj);
+                if (targetInfoObj) logMsg_target = JSON.stringify(targetInfoObj);
+                error_msg_appender(logMsg, code, "loading_error_box", logMsg_info, logMsg_target);
                 error_counter++;
             }
         }
