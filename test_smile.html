@@ -193,6 +193,7 @@
     </div>
     <div id = "load_finished_box">
         <pre id="load_finished"></pre>
+        <pre id="load_finished_target"></pre>
     </div>
     <div id = "definition_list_box">
         <pre id="on_status_definition_list_check"></pre>
@@ -238,7 +239,6 @@
 
         function loading_appneder(message, status) {
             var loading_message = document.getElementById(status);
-            loading_message.style.display = "block";
             var msg = document.createTextNode(message + "\n");
             loading_message.appendChild(msg);
         }
