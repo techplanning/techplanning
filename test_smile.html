@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
+
     <style>
         @import url('https://fonts.googleapis.com/earlyaccess/jejugothic.css');
         @import url('https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text');
@@ -14,8 +14,9 @@
         }
         .header_logo{
             font-family: 'Libre Barcode 39 Text', cursive;
+            font-size: 50px;
             position : relative;
-            display: inline-block;
+            display: inline;
             text-align: center;
         }
         .header_menu{
@@ -507,7 +508,7 @@
         onreadystatechange="if (this.readyState === 'complete') this.onload()">
 </script>
 <script>
-    document.getElementsByClassName("footer_loading")[0].style.display = "none";
+document.getElementsByClassName("footer_loading")[0].style.display = "none";
 document.getElementsByClassName("footer")[0].style.display = "block";
 </script>
 </body>
