@@ -53,7 +53,6 @@
             display: inline-block;
         }
         .menu1{
-            font-family: 'Jeju Gothic', serif;
             display : none;
         }
         #loading {
@@ -109,6 +108,14 @@
             margin-top: 5px;
             display : none;
             font-size: 20px;
+        }
+        .loading_error_list{
+            font-family: 'Jeju Gothic', serif;
+            font-size: 20px;
+        }
+        .loading_error_list.table{
+            font-size: 12px;
+            margin-left: 50px;
         }
         .menu2{
             border : 3px solid palevioletred;
@@ -345,7 +352,7 @@
                 var target_cell_json = JSON.parse(target);
                 appendPre(info_cell_json.stringify(info_cell_json));
                 appendPre(target_cell_json.stringify(target_cell_json));
-                
+
                 var info_cell = [];
                 var target_cell = [];
                 var kk = 0;
