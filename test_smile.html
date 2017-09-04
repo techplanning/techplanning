@@ -116,6 +116,7 @@
             position: fixed;
             bottom: 0;
             width : 100%;
+            display: none;
         }
         .footer ul{
             list-style-type: none;
@@ -165,10 +166,6 @@
             Reindeer
         </a>
     </div>
-    <div class="header_status">
-        <button id="authorize-button" style="display: none;">Authorize</button>
-        <button id="signout-button" style="display: none;">Sign Out</button>
-    </div>
     <div class="home_banner">
         배너 영역
     </div>
@@ -209,7 +206,7 @@
     Menu3
 </div>
 <div class="footer_loading">
-    로딩중...
+    <a id="footer_login_btn">로그인 후 사용 가능합니다.</a>
 </div>
 <div class="footer">
     <ul>
@@ -427,8 +424,8 @@
     // Authorization scopes required by the API; multiple scopes can be
     // included, separated by spaces.
     var SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly";
-    var authorizeButton = document.getElementById('authorize-button');
-    var signoutButton = document.getElementById('signout-button');
+    var authorizeButton = document.getElementById('footer_login_btn');
+    //var signoutButton = document.getElementById('signout-button');
     /**
      *  On load, called to load the auth2 library and API client library.
      */
@@ -450,7 +447,7 @@
             // Handle the initial sign-in state.
             updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
             authorizeButton.onclick = handleAuthClick;
-            signoutButton.onclick = handleSignoutClick;
+            //signoutButton.onclick = handleSignoutClick;
         });
     }
     /**
@@ -464,12 +461,12 @@
     }
     function updateSigninStatus(isSignedIn) {
         if (isSignedIn) {
-            authorizeButton.style.display = 'none';
-            signoutButton.style.display = 'block';
             loadSheetsApi();
+            document.getElementsByClassName('footer_loading')[0].style.display = "none";
+            document.getElementsByClassName('footer')[0].style.display = "block";
         } else {
-            authorizeButton.style.display = 'block';
-            signoutButton.style.display = 'none';
+            document.getElementsByClassName('footer_loading')[0].style.display = "block";
+            document.getElementsByClassName('footer')[0].style.display = "none";
         }
     }
     /**
@@ -494,10 +491,6 @@
 <script async defer src="https://apis.google.com/js/api.js"
         onload="this.onload=function(){};handleClientLoad()"
         onreadystatechange="if (this.readyState === 'complete') this.onload()">
-</script>
-<script>
-document.getElementsByClassName("footer_loading")[0].style.display = "none";
-document.getElementsByClassName("footer")[0].style.display = "block";
 </script>
 </body>
 </html>
