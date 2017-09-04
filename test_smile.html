@@ -4,10 +4,6 @@
 
     <meta charset="UTF-8">
     <style>
-        body{
-            padding-right: 20%;
-            padding-left: 20%;
-        }
         .header{
             width: 100%;
             height: 100px;
@@ -59,218 +55,16 @@
             to { -webkit-transform: rotate(360deg); }
         }
         #on_status_box{
-            margin : 20px 20px 20px 20px;
-            border-radius : 5px;
-            background-color : darkgrey;
-            color: white;
-            text-align : center;
+            border-left: 3px solid darkgray;
         }
         #load_finished_box{
-            padding-left: 10px;
-            padding-top:2px;
-            padding-bottom:2px;
-            border-left: 3px solid white
+            border-left: 3px solid lightpink;
+            margin-top: 5px;
             display : none;
-            background-color : lightpink;
-            border-radius: 5px;
-            color: white;
             font-size: 20px;
         }
         #load_finished_box pre {
             display : inline;
-        }
-        .icon-smile {
-            display: inline-block;
-            background-color: #000;
-            border-radius:8px;
-            -webkit-border-radius:8px;
-            -moz-border-radius:8px;
-            width: 16px;
-            height: 16px;
-            position: relative;
-            top:0;
-            left:0;
-        }
-        .icon-smile:after {
-            background-color: #fff;
-            -webkit-border-radius: 2px;
-            -moz-border-radius: 2px;
-            width: 2px;
-            height: 3px;
-            position: absolute;
-            top: 4px;
-            left: 4px;
-            content: "";
-        }
-        .icon-smile:before {
-            background-color: #fff;
-            -webkit-border-radius: 2px;
-            -moz-border-radius: 2px;
-            width: 2px;
-            height: 3px;
-            position: absolute;
-            top: 4px;
-            left: 10px;
-            content: "";
-        }
-        .icon-smile-line {
-            background-color: #fff;
-            border-bottom-left-radius: 8px;
-            border-bottom-right-radius: 8px;
-            -webkit-border-bottom-left-radius: 8px;
-            -webkit-border-bottom-right-radius: 8px;
-            -moz-border-radius-bottomleft: 8px;
-            -moz-border-radius-bottomright: 8px;
-            width: 8px;
-            height: 3px;
-            position: absolute;
-            top: 9px;
-            left: 4px;
-        }
-
-        .icon-smile .icon-smile-line {
-            -webkit-transition-property: -webkit-border-bottom-left-radius, -webkit-border-bottom-right-radius, -webkit-border-top-left-radius, -webkit-border-top-right-radius;
-            -webkit-transition-duration: 0.333s;
-            -webkit-transition-timing-function: linear;
-            -moz-transition-property: -moz-border-radius-bottomleft, -moz-border-radius-bottomright, -moz-border-radius-topleft, -moz-border-radius-topright;
-            -moz-transition-duration: 0.333s;
-            -moz-transition-delay: 0;
-            -moz-transition-timing-function: linear;
-        }
-        .icon-smile:hover .icon-smile-line {
-            -webkit-border-bottom-left-radius: 0;
-            -webkit-border-bottom-right-radius: 0;
-            -webkit-border-top-left-radius: 8px;
-            -webkit-border-top-right-radius: 8px;
-            -moz-border-radius-bottomleft: 0;
-            -moz-border-radius-bottomright: 0;
-            -moz-border-radius-topleft: 8px;
-            -moz-border-radius-topright: 8px;
-        }
-        .loading_2 {
-            width: 70px;
-            height: 50px;
-            position: relative;
-            margin: 50px auto;
-        }
-        .loading_2 span {
-            display: block;
-            position: absolute;
-            bottom: 0;
-            width: 10px;
-            height: 5px;
-            background-color: #ea834c;
-            animation: waving 1.5s  infinite ease-in-out;
-            -webkit-animation: waving 1.5s  infinite ease-in-out;
-            -moz-animation: waving 1.5s  infinite ease-in-out;
-            -o-animation: waving 1.5s  infinite ease-in-out;
-        }
-        .loading span:nth-of-type(2) {
-            left:11px;
-            animation-delay: .2s;
-            -webkit-animation-delay: .2s;
-            -moz-animation-delay: .2s;
-            -o-animation-delay: .2s;
-        }
-        .loading span:nth-of-type(3) {
-            left:22px;
-            animation-delay: .4s;
-            -webkit-animation-delay: .4s;
-            -moz-animation-delay: .4s;
-            -o-animation-delay: .4s;
-        }
-        .loading span:nth-of-type(4) {
-            left:33px;
-            animation-delay: .6s;
-            -webkit-animation-delay: .6s;
-            -moz-animation-delay: .6s;
-            -o-animation-delay: .6s;
-        }
-        .loading span:nth-of-type(5) {
-            left:44px;
-            animation-delay: .8s;
-            -webkit-animation-delay: .8s;
-            -moz-animation-delay: .8s;
-            -o-animation-delay: .8s;
-        }
-        .loading span:last-of-type {
-            left:55px;
-            animation-delay: 1s;
-            -webkit-animation-delay: 1s;
-            -moz-animation-delay: 1s;
-            -o-animation-delay: 1s;
-        }
-        @keyframes waving {
-            0% , 50% , 100%{
-                height: 5px;
-                transform: translateY(0px);
-                -webkit-transform: translateY(0px);
-                -moz-transform: translateY(0px);
-                -o-transform: translateY(0px);
-                background-color: #ea834c;
-            }
-            25%{
-                height: 60px;
-                transform: translateY(15px);
-                -webkit-transform: translateY(15px);
-                -moz-transform: translateY(15px);
-                -o-transform: translateY(15px);
-                background-color: #ea4c4c;
-            }
-        }
-        @-webkit-keyframes waving {
-            0% , 50% , 100%{
-                height: 5px;
-                transform: translateY(0px);
-                -webkit-transform: translateY(0px);
-                -moz-transform: translateY(0px);
-                -o-transform: translateY(0px);
-                background-color: #ea834c;
-            }
-            25%{
-                height: 60px;
-                transform: translateY(15px);
-                -webkit-transform: translateY(15px);
-                -moz-transform: translateY(15px);
-                -o-transform: translateY(15px);
-                background-color: #ea4c4c;
-            }
-        }
-        @-moz-keyframes waving {
-            0% , 50% , 100%{
-                height: 5px;
-                transform: translateY(0px);
-                -webkit-transform: translateY(0px);
-                -moz-transform: translateY(0px);
-                -o-transform: translateY(0px);
-                background-color: #ea834c;
-            }
-            25%{
-                height: 60px;
-                transform: translateY(15px);
-                -webkit-transform: translateY(15px);
-                -moz-transform: translateY(15px);
-                -o-transform: translateY(15px);
-                background-color: #ea4c4c;
-            }
-        }
-        @-o-keyframes waving {
-            0% , 50% , 100%{
-                height: 5px;
-                transform: translateY(0px);
-                -webkit-transform: translateY(0px);
-                -moz-transform: translateY(0px);
-                -o-transform: translateY(0px);
-                background-color: #ea834c;
-            }
-            25%{
-                height: 60px;
-                transform: translateY(15px);
-                -webkit-transform: translateY(15px);
-                -moz-transform: translateY(15px);
-                -o-transform: translateY(15px);
-                background-color: #ea4c4c;
-            }
         }
         #definition_list{
             background_color: #FABEBE;
@@ -279,14 +73,15 @@
             display : none;
         }
         #definition_finished_box{
-            padding-left: 10px;
-            padding-top:2px;
-            padding-bottom:2px;
-            border-left: 3px solid white
+            border-left: 3px solid palegoldenrod;
+            margin-top: 5px;
             display : none;
-            background-color : lightpink;
-            border-radius: 5px;
-            color: white;
+            font-size: 20px;
+        }
+        #loading_error_box{
+            border-left: 3px solid lightpink;
+            margin-top: 5px;
+            display : none;
             font-size: 20px;
         }
         .menu2{
@@ -298,6 +93,8 @@
             display : none;
         }
         .footer{
+            margin-right: 20%;
+            margin-left: 20%;
             align-content : center;
             position: fixed;
             bottom: 0;
@@ -389,22 +186,16 @@
         <pre id="on_status"></pre>
     </div>
     <div id = "load_finished_box">
-        <div class="icon icon-smile">
-            <div class="icon-smile-line"></div>
-        </div>
         <pre id="load_finished"></pre>
     </div>
     <div id = "definition_list_box">
         <pre id="on_status_definition_list_check"></pre>
     </div>
     <div id = "definition_finished_box">
-        <div class="icon icon-smile">
-            <div class="icon-smile-line"></div>
-        </div>
         <pre id="definition_finished"></pre>
     </div>
-    <div id = "loading_error">
-
+    <div id = "loading_error_box">
+        <pre id="loading_error"></pre>
     </div>
     <pre id="log"></pre>
 </div>
