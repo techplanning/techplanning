@@ -290,16 +290,24 @@
             var error_title = message;
             var code = _code;
             var target_box = target_box;
+            
+            var error_box = document.getElementById('loading_error_box');
 
             //오류 제목 영역
-            var error_box = document.getElementById('loading_error_box');
-            var error_list = error_box.createElement('div').classList.add('loading_error_list');
+            var error_list = document.createElement('div');
+            error_box.appendChild(error_list);
+            error_list.classList.add('loading_error_list');
             var error_title_box = document.getElementsByClassName('loading_error_list')[error_counter];
-            error_title.box.innerHTML = error_title;
+            error_title.box.innerHTML = error_title; //만약 스타일 적용되지 않으면 innerHTML을 appendchile로 변경
 
             //오류 내용 영역
-            var error_list_table = error_box.createElement('table').classList.add('loading_error_list_table');
+            //테이블 생성
+            var error_list_table = document.createElement('table');
+            error_box.appendChild(error_list_table);
+            error_list_table.classList.add('loading_error_list_table');
             var error_list_target = document.getElementsByClassName('loading_error_list_table')[error_counter];
+            
+            //열 생성
             var error_list_target_row = error_list_target.insertRow(error_list_target.length);
 
             //0001~0005
