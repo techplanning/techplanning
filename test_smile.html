@@ -370,11 +370,13 @@
             }
         }
 
+        //레거시
         function appendPre(message) {
             var pre = document.getElementById('log');
             var textContent = document.createTextNode(message + "\n");
             pre.appendChild(textContent);
         }
+        //레거시
 
         /**
          * Load Sheets API client library.
@@ -387,9 +389,14 @@
         function log(logLevel, code, message, infoObj, targetInfoObj) {
             if (logLevel >= _logLevel) {
                 logMsg = _logLevelNm[logLevel] + " " + code + " - " + message;
-                if (infoObj) logMsg_info = JSON.stringify(infoObj);
-                if (targetInfoObj) logMsg_target = JSON.stringify(targetInfoObj);
-                error_msg_appender(logMsg, code, "loading_error_box", logMsg_info, logMsg_target);
+                if (infoObj){
+                    logMsg_info = JSON.stringify(infoObj);
+                    error_msg_appender(logMsg, code, "loading_error_box", logMsg_info);
+                }
+                if (targetInfoObj){
+                    logMsg_target = JSON.stringify(targetInfoObj);
+                    error_msg_appender(logMsg, code, "loading_error_box", logMsg_info, logMsg_target);
+                }
                 error_counter++;
             }
         }
