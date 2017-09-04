@@ -101,7 +101,11 @@
             margin-left: 20px;
         }
         #loading_error{
-
+            
+        }
+        #loading_error_status{
+            font-family: 'Jeju Gothic', serif;
+            font-size: 20px;
         }
         #definition_finished_box{
             padding-left: 5px;
@@ -264,6 +268,7 @@
         <pre id="definition_finished_target"></pre>
     </div>
     <div id = "loading_error_box">
+        <div id="loading_error_status"></div>
         <pre id="loading_error"></pre>
     </div>
     <pre id="log"></pre>
@@ -415,6 +420,9 @@
         var error_counter = 0;
 
         function log(logLevel, code, message, infoObj, targetInfoObj) {
+            document.getElementById('loading_error_box').style.display = "block";
+            document.getElementById('loading_error_status').innerHTML = "오류가 발견되었습니다.";
+            
             if (logLevel >= _logLevel) {
                 logMsg = _logLevelNm[logLevel] + " " + code + " - " + message;
                 if (infoObj){
@@ -521,7 +529,6 @@
 
         function checkDefList(spreadsheetTitle) {
             loading_appneder("로그 정의서 내역 검증중", "on_status_definition_list_check");
-            document.getElementById('loading_error_box').style.display = "block";
 
             var defSize = _defList.length;
             for (d = 0; d < defSize; d++) {
@@ -566,8 +573,8 @@
             }
             document.getElementById('definition_list_box').style.display = "none";
             document.getElementById('definition_finished_box').style.display = "block";
-            loading_appneder("√ 로그 정의서 내용 검증 완료 - 총 \"+error_counter+\"개의 오류가 발견되었습니다.\"", "definition_finished");
-            loading_appneder("총 "+error_counter+"개의 오류가 발견되었습니다.", "definition_finished");
+            document.getElementById('loading_error_status').innerHTML = "총 "+error_counter+"개의 오류가 발견되었습니다.";
+            loading_appneder("√ 로그 정의서 내용 검증 완료", "definition_finished");
         }
     }
 
