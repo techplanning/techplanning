@@ -88,7 +88,7 @@
         }
         #load_finished{
             font-family: 'Jeju Gothic', serif;
-            font-size: 20px;
+            font-size: 25px;
         }
         #load_finished_target{
             font-size: 12px;
@@ -101,11 +101,11 @@
             margin-left: 20px;
         }
         #loading_error{
-            
+
         }
         #loading_error_status{
             font-family: 'Jeju Gothic', serif;
-            font-size: 20px;
+            font-size: 25px;
         }
         #definition_finished_box{
             padding-left: 5px;
@@ -116,7 +116,7 @@
         #definition_finished{
             font-family: 'Jeju Gothic', serif;
             margin-left: 20px;
-            font-size: 20px;
+            font-size: 25px;
         }
         #definition_finished_target{
             font-size: 10px;
@@ -128,14 +128,14 @@
             font-size: 20px;
         }
         .loading_error_list{
-            margin-left: 20px;
+            margin-left: 30px;
             font-family: 'Jeju Gothic', serif;
             font-size: 20px;
             border-bottom: dashed 1px palevioletred;
         }
         .loading_error_list_table{
             font-size: 12px;
-            margin-left: 50px;
+            margin-left: 60px;
             margin-top: 10px;
             margin-bottom: 20px;
             text-align: center;
@@ -422,7 +422,7 @@
         function log(logLevel, code, message, infoObj, targetInfoObj) {
             document.getElementById('loading_error_box').style.display = "block";
             document.getElementById('loading_error_status').innerHTML = "오류가 발견되었습니다.";
-            
+
             if (logLevel >= _logLevel) {
                 logMsg = _logLevelNm[logLevel] + " " + code + " - " + message;
                 if (infoObj){
@@ -573,8 +573,8 @@
             }
             document.getElementById('definition_list_box').style.display = "none";
             document.getElementById('definition_finished_box').style.display = "block";
-            document.getElementById('loading_error_status').innerHTML = "총 "+error_counter+"개의 오류가 발견되었습니다.";
-            loading_appneder("√ 로그 정의서 내용 검증 완료", "definition_finished");
+            document.getElementById('loading_error_status').innerHTML = " 총 "+error_counter+"개의 오류가 발견되었습니다.";
+            loading_appneder("로그 정의서 내용 검증 완료", "definition_finished");
         }
     }
 
