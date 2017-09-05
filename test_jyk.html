@@ -71,8 +71,8 @@
       </div>
       <div class="modal-body"><ul class="list-group" id="log"></ul></div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
-        <button type="button" class="btn btn-primary">저장</button>
+        <button type="button" class="btn btn-secondary" id="dataDismiss-button" data-dismiss="modal">취소</button>
+        <button type="button" class="btn btn-primary" id="dataSave-button">저장</button>
       </div>
     </div>
   </div>
@@ -107,6 +107,8 @@
     var authorizeButton = document.getElementById('authorize-button');
     var signoutButton = document.getElementById('signout-button');
     var defListCheckButton = document.getElementById('definitionListCheck-button');
+    var dataDismissButton = document.getElementById('dataDismiss-Button');
+    var dataSaveButton = document.getElementById('dataSave-button');
 
     /**
      *  On load, called to load the auth2 library and API client library.
@@ -133,6 +135,8 @@
             authorizeButton.onclick = handleAuthClick;
             signoutButton.onclick = handleSignoutClick;
             defListCheckButton.onclick = handleDefListCheckClick;
+            dataDismissButton.onclick = handleDataDissmissClick;
+            dataSaveButton.onclick = handleDataSaveClick;
         });
     }
 
@@ -171,6 +175,14 @@
     /* */
     function handleDefListCheckClick(event) {
         loadSheetsApi();
+    }
+
+    function handleDataDissmissClick(event) {
+        location.reload();
+    }
+
+    function handleDataSaveClick(event) {
+        location.reload();
     }
 
     /**
