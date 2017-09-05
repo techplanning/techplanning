@@ -270,6 +270,12 @@
                         s1 += "<th>" + key + "</th>";
                         s2 += "<td>" + infoObj[key] + "</td>";
                     }
+                    if (targetInfoObj) {
+                        s2 += "</tr>";
+                        for (var key in targetInfoObj) {
+                            s2 += "<td>" + targetInfoObj[key] + "</td>";
+                        }
+                    }
                     s1 += "</tr></thead>";
                     s2 += "</tr></tbody>"
                     node.insertAdjacentHTML('beforeend', "<br><br><table class=\"table table-sm table-dark table-bordered table-responsive\">" + s1 + s2 + "</table>");
