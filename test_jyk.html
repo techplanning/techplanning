@@ -262,13 +262,27 @@
                 var node = document.createElement("li");
                 node.className = "list-group-item list-group-item-danger";
                 node.innerHTML = "<span class=\"badge badge-warning\">" + _logLevelNm[logLevel] + " " + code + "</span> " + message;
+                if (infoObj) {
+                    var s1 = "<thead><tr>";
+                    var s2 = "";
+                    for (var key in infoObj) {
+                        //create html table s
+                        s1 += "<th>" + key + "</th>";
+                    }
+                    s1 += "</tr></thead>";
+                    //s2 += 
+                    node.insertAdjacentHTML('beforeend', "<br><table class=\"table\">" + s1 + s2 + "</table>");
+                }
+                /* ver.2
                 if(infoObj) {
                     node.insertAdjacentHTML('beforeend', "<br><small class=\"text-muted\">" + infoObj["로그정의서명"] + "<br>" + infoObj["spreadsheetId"] + "</small>");
                 }
                 if(targetInfoObj) {
                     node.insertAdjacentHTML('beforeend', "<br><small class=\"text-muted\">" + "<br>[중복]<br>" + targetInfoObj["로그정의서명"] + "<br>" + infoObj["spreadsheetId"] + "</small>");
                 }
-                /*if(infoObj) {
+                */
+                /* ver.1
+                if(infoObj) {
                     node.insertAdjacentHTML('beforeend', "<br><small class=\"text-muted\">" + "(처리대상 : " + JSON.stringify(infoObj) + ")"+ "</small>");
                 }
                 if(targetInfoObj) {
