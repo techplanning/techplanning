@@ -264,14 +264,15 @@
                 node.innerHTML = "<span class=\"badge badge-warning\">" + _logLevelNm[logLevel] + " " + code + "</span> " + message;
                 if (infoObj) {
                     var s1 = "<thead><tr>";
-                    var s2 = "";
+                    var s2 = "<tbody><tr>";
                     for (var key in infoObj) {
                         //create html table s
                         s1 += "<th>" + key + "</th>";
+                        s2 += "<td>" + infoObj[key] + "</td>";
                     }
                     s1 += "</tr></thead>";
-                    //s2 += 
-                    node.insertAdjacentHTML('beforeend', "<br><table class=\"table\">" + s1 + s2 + "</table>");
+                    s2 += "</tr></tbody>"
+                    node.insertAdjacentHTML('beforeend', "<br><table class=\"table table-sm table-active\">" + s1 + s2 + "</table>");
                 }
                 /* ver.2
                 if(infoObj) {
