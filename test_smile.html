@@ -268,9 +268,13 @@
     </div>
 </div>
 <div class="menu1">
+    <div id="menu1_title">정의서 검사</div>
     <div id = "on_status_box">
         <div id="loading"></div>
         <pre id="on_status"></pre>
+    </div>
+    <div id = "load_error_box">
+
     </div>
     <div id = "load_finished_box">
         <pre id="load_finished"></pre>
@@ -300,6 +304,22 @@
 </div>
 <div class="footer_login">
     <a id="footer_login_btn">로그인 후 사용 가능합니다.</a>
+</div>
+<div class="side_menu">
+    <ul>
+        <li>
+            <a href="#" id="side_menu1_btn" onclick="menu1_vi();">정의서 검사</a>
+        </li>
+        <li>
+            <a href="#" id="side_menu2_btn" onclick="menu2_vi();">QA 검사</a>
+        </li>
+        <li>
+            <a href="#" id="side_menu3_btn" onclick="menu3_vi();">메뉴3</a>
+        </li>
+    </ul>
+    <div id="side_menu_home" onclick="menu_home_vi();">
+        <a href="https://techplanning.github.io/techplanning/test_smile.html">Reindeer</a>
+    </div>
 </div>
 <div class="footer">
     <ul>
@@ -528,8 +548,8 @@
                     }
                     document.getElementById('on_status_box').style.display = "none";
                     document.getElementById('load_finished_box').style.display = "block";
-                    loading_appneder("♥ 시트 로딩 완료", "load_finished");
-                    loading_appneder("현재 로딩된 시트" + spreadsheetTitle + " > " + sheetTitle, "load_finished_target");
+                    loading_appneder("시트 로딩 완료", "load_finished");
+                    loading_appneder("  현재 로딩된 시트" + spreadsheetTitle + " > " + sheetTitle, "load_finished_target");
                     checkDefList(spreadsheetTitle);
                     loadSheets();
                 } else {
@@ -605,6 +625,9 @@
         document.getElementsByClassName("menu2")[0].style.display = "none";
         document.getElementsByClassName("menu3")[0].style.display = "block";
         document.getElementsByClassName("home")[0].style.display = "none";
+    }
+    function menu_home_vi(){
+
     }
 </script>
 <script>
