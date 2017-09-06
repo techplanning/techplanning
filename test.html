@@ -251,6 +251,8 @@
                 if(findSheet) {
                     ele.sheet = findSheet;
                 }
+            } else {
+                log(_ERROR,"0012","로그정의서 내역의 시트가 로딩되지 않았습니다.", ele);
             }
         });
 
@@ -279,7 +281,7 @@
                             sheetTitle : [sheet.sheetTitle],
                             spreadsheetId : [ele.spreadsheetId]
                         }
-                        log(_ERROR,"0011","시트 이름은 POC(MW|PC|APP) 와 \/ 만 사용 가능합니다. (예:APP/MW)", info);
+                        log(_ERROR,"0011","시트명 오류 : POC(MW|PC|APP) 와 \/ 만 사용 가능합니다. (예:APP/MW)", info);
                     }
                 }
             });
