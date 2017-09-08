@@ -600,30 +600,35 @@
                     var info = _defList[d];
 
                     if(search_target_list_code[o] == '0001'){
+                        //로그정의서명이 없습니다.
                         if (!info["로그정의서명"]) {
                             search_target_list_result.push(0);
                         }else if(info["로그정의서명"]){
                             search_target_list_result.push(1);
                         }
                     }else if(search_target_list_code[o] == '0002'){
+                        //"로그정의서 링크URL"이 없습니다.
                         if (!info["로그정의서 링크URL"]) {
                             search_target_list_result.push(0);
                         }else if(info["로그정의서 링크URL"]){
                             search_target_list_result.push(1);
                         }
                     }else if(search_target_list_code[o] == '0003'){
+                        //"시트파일ID"가 없습니다.
                         if (!info["spreadsheetId"]) {
                             search_target_list_result.push(0);
                         }else if(info["spreadsheetId"]){
                             search_target_list_result.push(1);
                         }
                     }else if(search_target_list_code[o] == '0004'){
+                        //"로그정의서 링크URL"이 파일에 대한 링크로, 시트에 대한 링크가 아닙니다.
                         if (!info["sheetId"]) {
                             search_target_list_result.push(0);
                         }else if(info["sheetId"]){
                             search_target_list_result.push(1);
                         }
                     }else if(search_target_list_code[o] == '0005'){
+                        //"로그정의서명"서식이 올바르지 않습니다.
                         if (!info["sheetId"]) {
                             search_target_list_result.push(0);
                         }else if(info["sheetId"]){
@@ -670,91 +675,15 @@
                         }
                     }
                 }
-
-                var reer_temp = new Object();
-                info.spreadsheetTitle = spreadsheetTitle; //(JSON)info
-                var check_flag = true;
-
-                if (!info["로그정의서명"]) {
-                    reer_temp.code = "0001";
-                    reer_temp.infoObj = info;
-                    re_error_list.push(JSON.stringify(reer_temp));
-                    reer_temp = {};// 객체 초기화해서 비움
-                    check_flag = false;
-                } else if (!/^\[로그정의서\] .*$/.test(info["로그정의서명"])) {
-                    reer_temp.code = "0005";
-                    reer_temp.infoObj = info;
-                    re_error_list.push(JSON.stringify(reer_temp));
-                    reer_temp = {};
-                    check_flag = false;
-                }
-                if (!info["로그정의서 링크URL"]) {
-                    reer_temp.code = "0002";
-                    reer_temp.infoObj = info;
-                    re_error_list.push(JSON.stringify(reer_temp));
-                    reer_temp = {};
-                    check_flag = false;
-                } else {
-                    if (!info["spreadsheetId"]) {
-                        reer_temp.code = "0003";
-                        reer_temp.infoObj = info;
-                        re_error_list.push(JSON.stringify(reer_temp));
-                        reer_temp = {};
-                        check_flag = false;
-                    } else {
-                        if (!info["sheetId"]) {
-                            reer_temp.code = "0004";
-                            reer_temp.infoObj = info;
-                            re_error_list.push(JSON.stringify(reer_temp));
-                            reer_temp = {};
-                            check_flag = false;
-                        }
-                    }
-                }
-                //중복 값에 대한 내용 검사
-                if (info["spreadsheetId"]) {
-                    if (_sheetMap[info["spreadsheetId"]]) {
-                        var targetInfo = _sheetMap[info["spreadsheetId"]];
-                        if (info["poc"] == targetInfo["poc"]) {
-                            reer_temp.code = "0009";
-                            reer_temp.infoObj = info;
-                            reer_temp.targetObj = targetInfo;
-                            re_error_list.push(JSON.stringify(reer_temp));
-                            reer_temp = {};
-                            check_flag = false;
-                        } else {
-                            reer_temp.code = "0006";
-                            reer_temp.infoObj = info;
-                            reer_temp.targetObj = targetInfo;
-                            re_error_list.push(JSON.stringify(reer_temp));
-                            reer_temp = {};
-                            check_flag = false;
-                        }
-                        if (targetInfo["로그정의서명"] != info["로그정의서명"]) {
-                            reer_temp.code = "0008";
-                            reer_temp.infoObj = info;
-                            reer_temp.targetObj = targetInfo;
-                            re_error_list.push(JSON.stringify(reer_temp));
-                            reer_temp = {};
-                            check_flag = false;
-                        }
-                        if (info["sheetId"] && targetInfo["sheetId"] == info["sheetId"]) {
-                            reer_temp.code = "0007";
-                            reer_temp.infoObj = info;
-                            reer_temp.targetObj = targetInfo;
-                            re_error_list.push(JSON.stringify(reer_temp));
-                            reer_temp = {};
-                            check_flag = false;
-                        }
-                    } else {
-                        _sheetMap[info["spreadsheetId"]] = info
-                    }
-                }
                 //채점 결과 저장 완료
             }
-            //추가된 오류는 하단에 상자 추가
-            //기존 오류는 그대로
-            //검증 완료 버튼 추가
+            //채점 결과를 히스토리에 업데이트 한 후 오류 리로드
+        }
+        function insert_history(){
+
+        }
+        function edit_history(){
+            
         }
 
         //사용하지 않습니다.
