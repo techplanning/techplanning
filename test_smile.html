@@ -379,9 +379,15 @@
             loading_message.appendChild(msg);
         }
 
+        //log 호출시마다 추가
         var error_counter = 0;
+        var error_list_arr_info = [];
 
-        function error_msg_appender(message, _code, target_box, info, target){
+        //타겟하여 시트에서 새로 불러온 값들을 저장할 배열
+        var _target_defList = [];
+
+        //에러 메세지 핸들링
+       function error_msg_appender(message, _code, target_box, info, target){
             var error_title = message;
             var code = _code;
             var target_box = target_box;
@@ -411,9 +417,14 @@
                 var info_list = info;
                 var info_cell_json = JSON.parse(info); //후에 json 핸들링 할 일 없으면 걍 msg에서 json으로 받는 것으로 수정
                 var info_cell = [];
+                var index_cell = ['POC', 'NO', '로그정의서명', '로그정의서 링크 URL','스프레드시트 ID'];
                 var kk = 0;
 
-                var index_cell = ['POC', 'NO', '로그정의서명', '로그정의서 링크 URL','스프레드시트 ID']; //(참고)spreadsheetTitle 항목 없앰
+                for(value in info_cell_json){
+                    index_cell.push(info_cell_json[value]);
+                }
+
+                 //(참고)spreadsheetTitle 항목 없앰
                 for(key in info_cell_json){
                     if(kk == 5){
                         break;
@@ -468,6 +479,284 @@
             }
         }
 
+        var search_target_list = []; //타겟할 셀의 열
+        var search_target_list_poc = []; //타겟할 셀의 POC정보
+        var search_target_list_no = []; //타겟할 셀의 NO정보
+        var search_target_list_code = [];
+        var search_target_list_result = [];
+
+        //클릭하면 실행되어 이제까지 발생된 에러의 값을 저장한 배열을 변수로 받아 처리하는 함수
+        function init_search(index, info, target){
+           //error_list_arr_info에서 json obj에 접근 불가능하면 stringfy로 받은걸 json.parse로 변경
+            var error_list_size = error_list_arr_info.length; //찾은 에러의 수
+
+            //시트 기본 정보
+            var spreadsheetId = '18HiiJG-Utm6e-wXr2Ie_z_8TtlBwq3yPFLjf8v45F-Q';
+            var spreadsheetTitle = 'PageID_11번가 Log 2.0';
+            var sheetTitle = ['모바일 v.2.3', 'PC v.2.1'];
+            var tg_no = 0;
+
+            //타겟의 POC, 행 정보를 가져와서 타겟 셀을 만들어 리스트에 추가
+            for(tt = 0; tt < error_list_arr_info.length; tt++){
+                var temp = error_list_arr_info[tt];
+
+                tg_no = temp['infoObj']['no'] + 2;
+                search_target_list_code.push(temp['code']); //타겟의 오류 코드 적재
+                search_target_list_poc.push(tg_no - 2);//타겟의 열 번호를 배열에 삽입(기존 코드와 통일하여 한 번에 처리하기 위해 -2)
+
+                //poc가 MW면 sheetTitle[0] N:O, PC면 sheetTitle[1] M:N
+                if(temp['infoObj']['poc'] == 'MW'){ //오류나면 poc를 대문자로 치환
+                    search_target_list.push(sheetTitle[0] + '!N' + tg_no + ':O' + tg_no);
+                    search_target_list_poc.push('MW');
+                }else if(temp['infoObj']['poc'] == 'PC'){
+                    search_target_list.push(sheetTitle[1] + '!M' + tg_no + ':N' + tg_no);
+                    search_target_list_poc.push('PC');
+                }
+
+                //targetObj가 있는지 검사 후 POC 리스트에 적재
+                if(temp['targetObj']){
+                    if(temp['targetObj']['poc'] == 'MW'){ //오류나면 poc를 대문자로 치환
+                        search_target_list.push(sheetTitle[0] + '!N' + tg_no + ':O' + tg_no);
+                        search_target_list_poc.push('MW');
+                    }else if(temp['targetObj']['poc'] == 'PC'){
+                        search_target_list.push(sheetTitle[1] + '!M' + tg_no + ':N' + tg_no);
+                        search_target_list_poc.push('PC');
+                    }
+                }
+            }
+
+            var error_params = {
+                spreadsheetId: [spreadsheetId],
+                ranges: search_target_list
+            };
+
+            //error_params을 넣어서 다시 처리가 필요한 값들 로드
+            gapi.client.sheets.spreadsheets.values.batchGet(error_params).then(function (response) {
+                var valueRanges_re = response.result.valueRanges; //valueRanges_re배열의 값은 error_params 값의 길이만큼
+                var target_size = valueRanges_re.length;
+                if(target_size == valueRanges_re){
+                    //
+                    for(qq = 0; qq < target_size; qq++){
+                        var range = valueRanges_re[qq]; //타겟의 qq번 데이터를 불러와서 range변수에 넣음, range[0][1] (1x2 테이블)
+                        //range[로그정의서명, 로그정의서 링크URL]
+                        if(range.values.length > 0){
+                            var rowSize = range.values.length; //rowSize = 1
+                            var data = [];
+
+                            if(range.values[0]){
+                                data[0] = {};
+                                data[0]['poc'] = search_target_list_poc[qq];
+                                data[0]['no'] = search_target_list_no[qq];
+                                data[0]['로그정의서명'] = range.values[0][0];
+                                data[0]['로그정의서 링크URL'] = range.values[0][1];
+                                //스프레드시트 id와 시트 id 추가
+                                if(data[0]['로그정의서 링크URL']){
+                                    var regEx1 = /spreadsheets\/d\/([a-zA-Z0-9-_]+)/.exec(data[0]['로그정의서 링크URL']);
+                                    //스프레드시트 id를 검증
+                                    if (regEx1 && regEx1.length > 0) {
+                                        data[0]["spreadsheetId"] = regEx1[1];
+                                    }
+                                    //시트 id를 검증
+                                    var regEx2 = /[#&]gid=([0-9]+)/.exec(data[r - 1]["로그정의서 링크URL"])
+                                    if (regEx2 && regEx2.length > 0) {
+                                        data[0]["sheetId"] = regEx2[1];
+                                    }
+                                }
+                            }
+                            _target_defList = _target_defList.concat(data); //처리 완료된 데이터를 합침
+                        } else {
+                            msg(_SYSTEM, "시트 로딩 오류 - No data found.", {
+                                spreadsheetTitle: [spreadsheetTitle],
+                                sheetTitle: [sheetTitle[s]]
+                            }, response);
+                        }
+                    }loading_appneder("시트 로딩 완료", "load_finished");
+                    loading_appneder("  현재 로딩된 시트" + spreadsheetTitle + " > " + sheetTitle, "load_finished_target");
+                    init_check(spreadsheetTitle);
+                    loadSheets();
+                } else {
+                    msg(_SYSTEM, "시트 처리 오류 - POC별 시트 로딩 실패.", {spreadsheetTitle: [spreadsheetTitle]}, response);
+                }
+            }, function (response) {
+                msg(_SYSTEM, "시트 처리 오류 - " + response.result.error.message, {spreadsheetTitle: [spreadsheetTitle]}, response);
+            });
+        }
+
+        var re_error_list = []; //새로 발견된 오류들을 저장하는 배열
+        var check_result = []; //채점 결과를 저장하는 배열, 맞으면 1 틀리면 0
+
+        //타겟으로 불러온 값들에 대한 검증
+        //코드로 분기하여 새로 가져온 값을 기존 로직과 같이 검사한다.
+        //0001~0005는 리스트에서 1개를 불러오고(infoObj) 0006~0009는 리스트에서 2개를 불러와서(infoObj, targetObj) 검사한다.
+        function init_check(spreadsheetTitle){
+            //로딩 상태 상자 추가
+            var t_defSize = _target_defList.length; //타겟으로 불러온 obj들의 길이
+
+            //코드로 분기하여 새로 가져온 Obj값이 해당 오류를 내포하고 있는지 검사
+            //검사 결과 문제 없으면 1, 문제가 있으면 0
+            //모든 오류를 분석하려면 시트의 모든 값을 로드해야 하기 때문에 발견된 오류만 채점한 후 히스토리에 결과만 저장
+            for(o = 0; o < t_defSize; o++){
+                if(search_target_list_code == ('0001'|'0002'|'0003'|'0004'|'0005')){
+                    var info = _defList[d];
+
+                    if(search_target_list_code[o] == '0001'){
+                        if (!info["로그정의서명"]) {
+                            search_target_list_result.push(0);
+                        }else if(info["로그정의서명"]){
+                            search_target_list_result.push(1);
+                        }
+                    }else if(search_target_list_code[o] == '0002'){
+                        if (!info["로그정의서 링크URL"]) {
+                            search_target_list_result.push(0);
+                        }else if(info["로그정의서 링크URL"]){
+                            search_target_list_result.push(1);
+                        }
+                    }else if(search_target_list_code[o] == '0003'){
+                        if (!info["spreadsheetId"]) {
+                            search_target_list_result.push(0);
+                        }else if(info["spreadsheetId"]){
+                            search_target_list_result.push(1);
+                        }
+                    }else if(search_target_list_code[o] == '0004'){
+                        if (!info["sheetId"]) {
+                            search_target_list_result.push(0);
+                        }else if(info["sheetId"]){
+                            search_target_list_result.push(1);
+                        }
+                    }else if(search_target_list_code[o] == '0005'){
+                        if (!info["sheetId"]) {
+                            search_target_list_result.push(0);
+                        }else if(info["sheetId"]){
+                            search_target_list_result.push(1);
+                        }
+                    }
+                }else if(search_target_list_code == ('0006'|'0007'|'0008'|'0009')){
+                    var info = _defList[o];
+                    var target = _defList[o+1];
+                    o++;
+                    if(info['spreadsheetId'] == target['spreadsheetId']){
+                        if(search_target_list_code[o] == '0006'){
+                            //중복된 정의서 링크가 있습니다.
+                            if (info['poc']!=target['poc']) {
+                                if(info['spreadsheetId']==target['spreadsheetId']){
+                                    search_target_list_result.push(0);
+                                }else if(info['spreadsheetId']!=target['spreadsheetId']){
+                                    search_target_list_result.push(1);
+                                }
+                            }
+                        }else if(search_target_list_code[o] == '0007'){
+                            //중복된 정의서 시트 링크가 있습니다.
+                            if (info["sheetId"] && targetInfo["sheetId"] == info["sheetId"]) {
+                                search_target_list_result.push(0);
+                            }else if(targetInfo["sheetId"] != info["sheetId"]){
+                                search_target_list_result.push(1);
+                            }
+                        }else if(search_target_list_code[o] == '0008'){
+                            //로그정의서명이 다른 중복된 정의서 링크가 있습니다.
+                            if(targetInfo["로그정의서명"] != info["로그정의서명"]){
+                                search_target_list_result.push(0);
+                            }else if(targetInfo["로그정의서명"] == info["로그정의서명"]){
+                                search_target_list_result.push(1);
+                            }
+                        }else if(search_target_list_code[o] == '0009'){
+                            //동일한 POC에 중복된 정의서 링크가 있습니다.
+                            if (info['poc']==target['poc']) {
+                                if(info['spreadsheetId']==target['spreadsheetId']){
+                                    search_target_list_result.push(0);
+                                }else if(info['spreadsheetId']!=target['spreadsheetId']){
+                                    search_target_list_result.push(1);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                var reer_temp = new Object();
+                info.spreadsheetTitle = spreadsheetTitle; //(JSON)info
+                var check_flag = true;
+
+                if (!info["로그정의서명"]) {
+                    reer_temp.code = "0001";
+                    reer_temp.infoObj = info;
+                    re_error_list.push(JSON.stringify(reer_temp));
+                    reer_temp = {};// 객체 초기화해서 비움
+                    check_flag = false;
+                } else if (!/^\[로그정의서\] .*$/.test(info["로그정의서명"])) {
+                    reer_temp.code = "0005";
+                    reer_temp.infoObj = info;
+                    re_error_list.push(JSON.stringify(reer_temp));
+                    reer_temp = {};
+                    check_flag = false;
+                }
+                if (!info["로그정의서 링크URL"]) {
+                    reer_temp.code = "0002";
+                    reer_temp.infoObj = info;
+                    re_error_list.push(JSON.stringify(reer_temp));
+                    reer_temp = {};
+                    check_flag = false;
+                } else {
+                    if (!info["spreadsheetId"]) {
+                        reer_temp.code = "0003";
+                        reer_temp.infoObj = info;
+                        re_error_list.push(JSON.stringify(reer_temp));
+                        reer_temp = {};
+                        check_flag = false;
+                    } else {
+                        if (!info["sheetId"]) {
+                            reer_temp.code = "0004";
+                            reer_temp.infoObj = info;
+                            re_error_list.push(JSON.stringify(reer_temp));
+                            reer_temp = {};
+                            check_flag = false;
+                        }
+                    }
+                }
+                //중복 값에 대한 내용 검사
+                if (info["spreadsheetId"]) {
+                    if (_sheetMap[info["spreadsheetId"]]) {
+                        var targetInfo = _sheetMap[info["spreadsheetId"]];
+                        if (info["poc"] == targetInfo["poc"]) {
+                            reer_temp.code = "0009";
+                            reer_temp.infoObj = info;
+                            reer_temp.targetObj = targetInfo;
+                            re_error_list.push(JSON.stringify(reer_temp));
+                            reer_temp = {};
+                            check_flag = false;
+                        } else {
+                            reer_temp.code = "0006";
+                            reer_temp.infoObj = info;
+                            reer_temp.targetObj = targetInfo;
+                            re_error_list.push(JSON.stringify(reer_temp));
+                            reer_temp = {};
+                            check_flag = false;
+                        }
+                        if (targetInfo["로그정의서명"] != info["로그정의서명"]) {
+                            reer_temp.code = "0008";
+                            reer_temp.infoObj = info;
+                            reer_temp.targetObj = targetInfo;
+                            re_error_list.push(JSON.stringify(reer_temp));
+                            reer_temp = {};
+                            check_flag = false;
+                        }
+                        if (info["sheetId"] && targetInfo["sheetId"] == info["sheetId"]) {
+                            reer_temp.code = "0007";
+                            reer_temp.infoObj = info;
+                            reer_temp.targetObj = targetInfo;
+                            re_error_list.push(JSON.stringify(reer_temp));
+                            reer_temp = {};
+                            check_flag = false;
+                        }
+                    } else {
+                        _sheetMap[info["spreadsheetId"]] = info
+                    }
+                }
+                //채점 결과 저장 완료
+            }
+            //추가된 오류는 하단에 상자 추가
+            //기존 오류는 그대로
+            //검증 완료 버튼 추가
+        }
+
         //사용하지 않습니다.
         function appendPre(message) {
             var pre = document.getElementById('log');
@@ -483,20 +772,31 @@
         var _logLevel = _WARN;
         var error_counter = 0;
 
+        //log함수 출력시 에러를 저장하는 배열을 생성
+        //error_list_arr_info[0]{"code" : "", "infoObj" : "", targetObj : ""}
         function log(logLevel, code, message, infoObj, targetInfoObj) {
             document.getElementById('loading_error_box').style.display = "block";
             document.getElementById('loading_error_status').innerHTML = "오류가 발견되었습니다.";
 
+            var error_list_temp = new Object(); //log호출시의 에러를 저장하는 객체
+            //error_list_arr_info에 JSON으로 한 번에 저장
+            //{'code':'', 'infoObj':'', 'targetObj':''}
+
             if (logLevel >= _logLevel) {
+                error_list_temp.code = code;
+
                 logMsg = _logLevelNm[logLevel] + " " + code + " - " + message;
                 if (infoObj){
                     logMsg_info = JSON.stringify(infoObj);
-                    error_msg_appender(logMsg, code, "loading_error_box", logMsg_info);
+                    error_msg_appender(logMsg, code, "loading_error_box", logMsg_info); //★★json으로 바로 보내게 수정
+                    error_list_temp.infoObj = logMsg_info;
                 }
                 if (targetInfoObj){
                     logMsg_target = JSON.stringify(targetInfoObj);
-                    error_msg_appender(logMsg, code, "loading_error_box", logMsg_info, logMsg_target);
+                    error_msg_appender(logMsg, code, "loading_error_box", logMsg_info, logMsg_target); //★★json으로 바로 보내게 수정
+                    error_list_temp.logMsg_target = logMsg_info;
                 }
+                error_list_arr_info.push(JSON.stringify(error_list_temp));
                 error_counter++;
             }
         }
