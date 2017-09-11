@@ -321,7 +321,7 @@
                         } else {
                             var word = _dic[obj["ID"]];
                             if (word["형식"] != obj["형식"]) {
-                                log(_ERROR, "0015", "연계로그 정의서 통합 시 서로 다르게 정의된 변수가 있습니다.", {
+                                log(_ERROR, "0015", "연계로그 사전에 \"형식\"이 서로 다르게 정의된 변수가 있습니다.", {
                                     "spreadsheetTitle": ele.spreadsheetTitle,
                                     "word": obj
                                 }, {"spreadsheetTitle": word.spreadsheetTitle, "word": word});
