@@ -138,6 +138,7 @@
     var _spreadsheets = {};
     var _sheetMap = {};
     var _sheetMapWithPOC = {};
+    var _dic = {};
 
     function readDefinitionList() {
         var spreadsheetId = '18HiiJG-Utm6e-wXr2Ie_z_8TtlBwq3yPFLjf8v45F-Q';
@@ -259,6 +260,7 @@
         msg(_PROC,"로그 정의서 데이터 처리 완료");
 
         checkDefinition();
+        prodcessDIC();
     }
 
     function checkDefinition() {
@@ -282,12 +284,68 @@
                             spreadsheetId : [ele.spreadsheetId]
                         }
                         log(_ERROR,"0011","시트명 오류 : POC(MW|PC|APP) 와 \/ 만 사용 가능합니다. (예:APP/MW)", info);
+                    } else {
+                        var findSheet = ele.sheet.find(function(obj) {
+                            return obj.sheetType == "HIST" && (sheet.sheetTitle + "-history") == obj.sheetTitle
+                        });
+                        if(!findSheet) {
+                            log(_ERROR,"0013","\"" + sheet.sheetTitle + "\"정의서 시트의 history sheet가 없습니다.", {spreadsheetTitle : ele.spreadsheetTitle});
+                        }
                     }
                 }
             });
         });
 
         msg(_PROC,"로그 정의서 검증 완료");
+    }
+
+    function prodcessDIC() {
+        msg(_PROC,"연계로그 사전 처리 시작");
+        _dic = {};
+
+        var keys = Object.keys(_spreadsheets);
+
+        keys.forEach(function(key) {
+            var ele = _spreadsheets[key];
+
+            var findSheet = ele.sheet.find(function(obj) {
+                return obj.sheetType == "DIC"
+            });
+
+            if(findSheet) {
+                findSheet.sheetData.forEach(function(obj) {
+                    if(obj["ID"]) {
+                        if (!_dic[obj["ID"]]) {
+                            _dic[obj["ID"]] = obj;
+                            _dic[obj["ID"]]["spreadsheetTitle"] = ele.spreadsheetTitle;
+                        } else {
+                            var word = _dic[obj["ID"]];
+                            if (word["형식"] != obj["형식"]) {
+                                log(_ERROR, "0015", "연계로그 정의서 통합 시 서로 다르게 정의된 변수가 있습니다.", {
+                                    "spreadsheetTitle": ele.spreadsheetTitle,
+                                    "word": obj
+                                }, {"spreadsheetTitle": word.spreadsheetTitle, "word": word});
+                            } else if(word["상태"] != obj["상태"] || word["설명"] != obj["설명"]) {
+                                log(_WARN, "0018", "연계로그 변수 상태 또는 설명이 다릅니다.", {
+                                    "spreadsheetTitle": ele.spreadsheetTitle,
+                                    "word": obj
+                                }, {"spreadsheetTitle": word.spreadsheetTitle, "word": word});
+                            }
+                        }
+                    } else {
+                        log(_ERROR, "0017", "연계로그 ID가 없습니다.", {
+                            "spreadsheetTitle": ele.spreadsheetTitle,
+                            "word": obj
+                        });
+                    }
+                });
+
+            } else {
+                log(_ERROR,"0014","연계로그 정의서 시트가 없습니다.", {spreadsheetTitle : ele.spreadsheetTitle});
+            }
+        });
+
+        msg(_PROC,"연계로그 사전 처리 완료");
     }
 
     function saveLocalStorage(key, obj) {
@@ -574,7 +632,13 @@
                     for (c = 0; c < colSize; c++) {
                         row[col[c]] = range.values[r][c];
                     }
-                    dic[r-1] = row;
+                    if(row[col[0]] && row[col[1]] && row[col[2]] && row[col[3]]) {
+                        dic[r-1] = row;
+                    } else if(!row[col[0]] && !row[col[1]] && !row[col[2]] && !row[col[3]]) {
+                        break;
+                    } else {
+                        log(_ERROR,"0016","연계로그 정의 필수입력값이 누락되었습니다.", {["spreadsheetTitle"] : spreadsheetTitle, ["sheetTitle"] : sheetTitle, ["word"] : row});
+                    }
                 }
 
                 callback(spreadsheetId, sheetIndex, dic);
