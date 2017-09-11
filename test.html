@@ -627,7 +627,7 @@
                 for (r = 1; r < rowSize; r++) {
                     var row = {};
                     if(range.values[r][index_col_no] != r) {
-                        msg(_SYSTEM, "유효하지 않은 연계로그 번호" + range.values[r][index_col_no] + ") -> " + r, {["spreadsheetTitle"] : spreadsheetTitle, ["sheetTitle"] : sheetTitle});
+                        log(_ERROR, "유효하지 않은 연계로그 번호 : " + range.values[r][index_col_no] + ") -> " + r, {["spreadsheetTitle"] : spreadsheetTitle, ["sheetTitle"] : sheetTitle});
                     }
                     for (c = 0; c < colSize; c++) {
                         row[col[c]] = range.values[r][c];
