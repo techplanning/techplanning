@@ -22,7 +22,7 @@
 
     // Authorization scopes required by the API; multiple scopes can be
     // included, separated by spaces.
-    var SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly";
+    var SCOPES = "https://www.googleapis.com/auth/spreadsheets";
 
     var authorizeButton = document.getElementById('authorize-button');
     var signoutButton = document.getElementById('signout-button');
@@ -261,6 +261,7 @@
 
         checkDefinition();
         prodcessDIC();
+        setDICSheet();
     }
 
     function checkDefinition() {
@@ -314,8 +315,8 @@
 
             if(findSheet) {
                 findSheet.sheetData.forEach(function(obj) {
-                    if(obj["ID"]) {
-                        if (!_dic[obj["ID"]]) {
+                    if(obj && obj["ID"]) {
+                        if (!_dic[obj["ID"]] || _dic[obj["ID"]]["상태"] == "삭제") {
                             _dic[obj["ID"]] = obj;
                             _dic[obj["ID"]]["spreadsheetTitle"] = ele.spreadsheetTitle;
                         } else {
@@ -339,13 +340,66 @@
                         });
                     }
                 });
-
             } else {
                 log(_ERROR,"0014","연계로그 정의서 시트가 없습니다.", {spreadsheetTitle : ele.spreadsheetTitle});
             }
         });
 
         msg(_PROC,"연계로그 사전 처리 완료");
+    }
+
+    function printDIC() {
+        msg(_PROC,"연계로그사전 생성 시작");
+
+        var params = {
+            spreadsheetId: '1MKCx0EOD-YU-lr0Ifq2LmNMN6VqGxzNuH7jRWXRhD4M',
+            range: '통합 연계로그 사전!A3',
+            valueInputOption: 'USER_ENTERED',
+        };
+
+        var values = [];
+        var keys = Object.keys(_dic);
+
+        var n = 0;
+        keys.forEach(function(key) {
+            n++;
+            var ele = _dic[key];
+            var ex = ele["입력 값 예제"];
+            if(!ex) ex = "";
+            values.push([ele["상태"],n,ele["ID"],ele["형식"],ele["설명"],ex]);
+        });
+
+
+        var valueRangeBody = {
+            "values": values
+        };
+
+        var request = gapi.client.sheets.spreadsheets.values.update(params, valueRangeBody);
+        request.then(function(response) {
+            console.log(response.result);
+        }, function(reason) {
+            msg(_SYSTEM, "통합 연계로그 사전 작성 오류", reason.result.error.message);
+        });
+
+        msg(_PROC,"연계로그사전 생성 완료");
+    }
+
+    function setDICSheet() {
+        var params = {
+            spreadsheetId: '1MKCx0EOD-YU-lr0Ifq2LmNMN6VqGxzNuH7jRWXRhD4M',
+            range: 'A3:Z',
+        };
+
+        var clearValuesRequestBody = {
+        };
+
+        var request = gapi.client.sheets.spreadsheets.values.clear(params, clearValuesRequestBody);
+        request.then(function(response) {
+            console.log(response.result);
+            printDIC();
+        }, function(reason) {
+            msg(_SYSTEM, "시트 clear 오류", reason.result.error.message);
+        });
     }
 
     function saveLocalStorage(key, obj) {
