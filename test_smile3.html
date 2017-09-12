@@ -22,7 +22,11 @@
                 valueInputOption: 'INPUT_VALUE_OPTION_UNSPECIFIED',  // TODO: Update placeholder value.
 
                 // The new values to apply to the spreadsheet.
-                data: data_params1  // TODO: Update placeholder value.
+                data: {
+                    "range": string,
+                      "majorDimension": enum(COLUMNS),
+                      "values": data_params1
+                }  // TODO: Update placeholder value.
 
                 // TODO: Add desired properties to the request body.
             };
