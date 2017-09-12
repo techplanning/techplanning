@@ -1,3 +1,4 @@
+/*
 var _$RAKE_ENV = 'DEV';
 var _$RAKE_TOKEN = 'dd1077a21df7b34a59a086cd432d2f169c9b2af';
 
@@ -81,7 +82,7 @@ function _$RAKE_cleanData() {
             console.log(e))
     }
 }(document, window[window.RAKE] || []);
-
+*/
 //window.onpageshow = _$RAKE_CALLBACK();
 
 document.addEventListener("DOMContentLoaded", function(event) {
