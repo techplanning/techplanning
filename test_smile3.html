@@ -7,6 +7,13 @@
 <body>
     <h2>TEST</h2>
     <button onclick="makeApiCall()">클릭</button>
+    
+    <script async defer src="https://apis.google.com/js/api.js"
+            onload="this.onload=function(){};handleClientLoad()"
+            onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+    <button id="signin-button" onclick="handleSignInClick()">Sign in</button>
+        <button id="signout-button" onclick="handleSignOutClick()">Sign out</button>
     <script>
         function makeApiCall() {
             var params = {
@@ -76,12 +83,6 @@
             gapi.auth2.getAuthInstance().signOut();
         }
     </script>
-    <script async defer src="https://apis.google.com/js/api.js"
-            onload="this.onload=function(){};handleClientLoad()"
-            onreadystatechange="if (this.readyState === 'complete') this.onload()">
-    </script>
-    <button id="signin-button" onclick="handleSignInClick()">Sign in</button>
-        <button id="signout-button" onclick="handleSignOutClick()">Sign out</button>
     </body>
 </body>
 </html>
