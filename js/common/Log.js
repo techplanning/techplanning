@@ -83,3 +83,12 @@ function _$RAKE_cleanData() {
 }(document, window[window.RAKE] || []);
 
 //window.onpageshow = _$RAKE_CALLBACK();
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    console.log("DOM fully loaded and parsed");
+});
+
+window.addEventListener('pageshow', function(event) {
+    console.log('pageshow:');
+    console.log(event);
+});
