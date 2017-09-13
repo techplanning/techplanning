@@ -43,23 +43,23 @@
 
 
     <nav class="navbar navbar-expand-md navbar-light bg-light mb-4">
-      <a class="navbar-brand" href="#">로정처_v2</a>
+      <a class="navbar-brand" href="#home">로정처_v2</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="nav nav-pills mr-auto" role="tablist" id="myTab">
-          <li class="nav-item">
+          <!--<li class="nav-item">
             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-expanded="true">홈</a>
-          </li>
-          <div class="mr-auto" id="nav-button" style="display: none;">
-          <li class="nav-item">
+          </li>-->
+
+          <li class="nav-item" id="nav-button1" style="display: none;">
             <a class="nav-link" id="defListCheck-tab" data-toggle="tab" href="#defListCheck" role="tab" aria-controls="defListCheck">정의서 검사</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" id="nav-button2" style="display: none;">
             <a class="nav-link" id="resultCheck-tab" data-toggle="tab" href="#resultCheck" role="tab" aria-controls="resultCheck">검사 결과 처리</a>
           </li>
-          </div>
+
         </ul>
         
         <form class="form-inline mt-2 mt-md-0">
@@ -100,7 +100,6 @@
 
     var authorizeButton = document.getElementById('authorize-button');
     var signoutButton = document.getElementById('signout-button');
-    var navButton = document.getElementById('nav-button');
     var navButton1 = document.getElementById('nav-button1');
     var navButton2 = document.getElementById('nav-button2');
     //var defListCheckButton = document.getElementById('definitionListCheck-button');
@@ -141,13 +140,15 @@
         if (isSignedIn) {
             authorizeButton.style.display = 'none';
             signoutButton.style.display = 'block';
-            navButton.style.display = 'block';
+            navButton1.style.display = 'block';
+            navButton2.style.display = 'block';
             //defListCheckButton.style.display = 'block';
             //loadSheetsApi();
         } else {
             authorizeButton.style.display = 'block';
             signoutButton.style.display = 'none';
-            navButton.style.display = 'none';
+            navButton1.style.display = 'none';
+            navButton2.style.display = 'none';
             //defListCheckButton.style.display = 'none';
         }
     }
