@@ -52,14 +52,15 @@
           <li class="nav-item">
             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-expanded="true">홈</a>
           </li>
-          <span id="nav-button" style="display: none;">
-          <li class="nav-item">
+          <li class="nav-item" id="nav-button1" style="display: none;">
             <a class="nav-link" id="defListCheck-tab" data-toggle="tab" href="#defListCheck" role="tab" aria-controls="defListCheck">정의서 검사</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" id="nav-button2" style="display: none;">
             <a class="nav-link" id="resultCheck-tab" data-toggle="tab" href="#resultCheck" role="tab" aria-controls="resultCheck">검사 결과 처리</a>
           </li>
-          </span>
+          <span class="navbar-text" id="nav-login-message">
+      		로그인 해주세요
+    	  </span>
         </ul>
         
         <form class="form-inline mt-2 mt-md-0">
@@ -100,8 +101,9 @@
 
     var authorizeButton = document.getElementById('authorize-button');
     var signoutButton = document.getElementById('signout-button');
-    var navButton = document.getElementById('nav-button');
-    //var navButton2 = document.getElementById('nav-button2');
+    var navButton1 = document.getElementById('nav-button1');
+    var navButton2 = document.getElementById('nav-button2');
+    var navLoginMessage = document.getElementById('nav-login-message');
     //var defListCheckButton = document.getElementById('definitionListCheck-button');
 
     /**
@@ -140,15 +142,17 @@
         if (isSignedIn) {
             authorizeButton.style.display = 'none';
             signoutButton.style.display = 'block';
-            navButton.style.display = 'block';
-            //navButton2.style.display = 'block';
+            navButton1.style.display = 'block';
+            navButton2.style.display = 'block';
+            navLoginMessage.style.display = 'none';
             //defListCheckButton.style.display = 'block';
             //loadSheetsApi();
         } else {
             authorizeButton.style.display = 'block';
             signoutButton.style.display = 'none';
-            navButton.style.display = 'none';
-            //navButton2.style.display = 'none';
+            navButton1.style.display = 'none';
+            navButton2.style.display = 'none';
+            navLoginMessage.style.display = 'block';
             //defListCheckButton.style.display = 'none';
         }
     }
