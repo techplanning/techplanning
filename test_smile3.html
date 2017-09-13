@@ -27,9 +27,22 @@
                             "startIndex": 1,
                             "endIndex": 4
                             //2부터 2개의 빈 행 삽입
-                            //2부터 시작해서 3과 4가 생긴다고 보면 됨
+                            //1부터 시작해서 3과 4가 생긴다고 보면 됨
                         },
                         "inheritFromBefore": false
+                    },
+                    "UpdateCellsRequest": {
+                        "rows": [
+                            data_params1, data_params2, data_params3
+                        ],
+                        "fields": string,
+                        "range": {
+                            "sheetId": 0,
+                            "startRowIndex": 1,
+                            "endRowIndex": 3,
+                            "startColumnIndex": 0,
+                            "endColumnIndex": 4,
+                        }
                     }
                 }
             ]
