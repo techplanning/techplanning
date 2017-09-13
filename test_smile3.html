@@ -47,9 +47,35 @@
                 }
             ]
         };
+        var batchUpdateValuesRequestBody2 = {
+            "requests": [
+                {
+                    "updateCells": {
+                        "rows": [
+                            data_params1, data_params2, data_params3
+                        ],
+                        "fields": "userEnteredValue",
+                        "range": {
+                            "sheetId": 0,
+                            "startRowIndex": 1,
+                            "endRowIndex": 3,
+                            "startColumnIndex": 0,
+                            "endColumnIndex": 4,
+                        }
+                    }
+                }
+            ]
+        };
 
         var request = gapi.client.sheets.spreadsheets.batchUpdate(params, batchUpdateValuesRequestBody);
         request.then(function(response) {
+            // TODO: Change code below to process the `response` object:
+            console.log(response.result);
+        }, function(reason) {
+            console.error('error: ' + reason.result.error.message);
+        });
+        var request2 = gapi.client.sheets.spreadsheets.batchUpdate(params, batchUpdateValuesRequestBody2);
+        request2.then(function(response) {
             // TODO: Change code below to process the `response` object:
             console.log(response.result);
         }, function(reason) {
