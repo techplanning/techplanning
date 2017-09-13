@@ -48,7 +48,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="nav nav-pills mb-auto" role="tablist" id="nav-button" style="display: none;">
+        <ul class="nav nav-pills mb-auto" role="tablist" id="myTab">
           <li class="nav-item">
             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-expanded="true">홈</a>
           </li>
@@ -161,7 +161,7 @@
      */
     function handleSignoutClick(event) {
         gapi.auth2.getAuthInstance().signOut();
-        location.reload();
+        //location.reload();
     }
 
     /* */
