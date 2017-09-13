@@ -52,7 +52,7 @@
           <li class="nav-item">
             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-expanded="true">홈</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" id="nav-button" style="display: none;">
             <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile">정의서 검사</a>
           </li>
           <!--
@@ -99,7 +99,7 @@
 
     var authorizeButton = document.getElementById('authorize-button');
     var signoutButton = document.getElementById('signout-button');
-    //var navButton = document.getElementById('nav-button');
+    var navButton = document.getElementById('nav-button');
     var defListCheckButton = document.getElementById('definitionListCheck-button');
 
     /**
@@ -138,7 +138,7 @@
         if (isSignedIn) {
             authorizeButton.style.display = 'none';
             signoutButton.style.display = 'block';
-            //navButton.style.display = 'block';
+            navButton.style.display = 'block';
             //defListCheckButton.style.display = 'block';
             //loadSheetsApi();
         } else {
