@@ -52,12 +52,14 @@
           <li class="nav-item">
             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-expanded="true">홈</a>
           </li>
-          <li class="nav-item nav-button" style="display: none;">
+          <div id="nav-button" style="display: none;">
+          <li class="nav-item">
             <a class="nav-link" id="defListCheck-tab" data-toggle="tab" href="#defListCheck" role="tab" aria-controls="defListCheck">정의서 검사</a>
           </li>
-          <li class="nav-item nav-button" style="display: none;">
+          <li class="nav-item">
             <a class="nav-link" id="resultCheck-tab" data-toggle="tab" href="#resultCheck" role="tab" aria-controls="resultCheck">검사 결과 처리</a>
           </li>
+          </div>
         </ul>
         
         <form class="form-inline mt-2 mt-md-0">
@@ -98,7 +100,9 @@
 
     var authorizeButton = document.getElementById('authorize-button');
     var signoutButton = document.getElementById('signout-button');
-    var navButton = document.getElementByClass('nav-button');
+    var navButton = document.getElementById('nav-button');
+    var navButton1 = document.getElementById('nav-button1');
+    var navButton2 = document.getElementById('nav-button2');
     //var defListCheckButton = document.getElementById('definitionListCheck-button');
 
     /**
