@@ -35,25 +35,19 @@
             ]
         };
         var batchUpdateValuesRequestBody2 = {
-            "requests": [
+            "valueInputOption": 'RAW',
+            "data": [
                 {
-                    "updateCells": {
-                        "rows": [
-                            {
-                              "values": data_params1, data_params2, data_params3
-                            }
-                        ],
-                        "fields": "userEnteredValue",
-                        "range": {
-                            "sheetId": 0,
-                            "startRowIndex": 1,
-                            "endRowIndex": 3,
-                            "startColumnIndex": 0,
-                            "endColumnIndex": 4,
-                        }
-                    }
+                    "range": 'history_sheet!A2:E4',
+                    "majorDimension": 'COLUMNS',
+                    "values": [
+                        data_params1, data_params2, data_params3
+                    ],
                 }
-            ]
+            ],
+            "includeValuesInResponse": true,
+            "responseValueRenderOption": 'FORMATTED_VALUE',
+            "responseDateTimeRenderOption": 'SERIAL_NUMBER',
         };
 
         var request = gapi.client.sheets.spreadsheets.batchUpdate(params, batchUpdateValuesRequestBody);
@@ -63,7 +57,7 @@
         }, function(reason) {
             console.error('error: ' + reason.result.error.message);
         });
-        var request2 = gapi.client.sheets.spreadsheets.batchUpdate(params, batchUpdateValuesRequestBody2);
+        var request2 = gapi.client.sheets.spreadsheets.values.batchUpdate(params, batchUpdateValuesRequestBody2);
         request2.then(function(response) {
             // TODO: Change code below to process the `response` object:
             console.log(response.result);
