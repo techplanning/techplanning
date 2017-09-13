@@ -48,7 +48,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="nav nav-pills mb-auto" role="tablist" id="myTab">
+        <ul class="nav nav-pills mr-auto" role="tablist" id="myTab">
           <li class="nav-item">
             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-expanded="true">홈</a>
           </li>
@@ -99,7 +99,7 @@
 
     var authorizeButton = document.getElementById('authorize-button');
     var signoutButton = document.getElementById('signout-button');
-    var navButton = document.getElementById('nav-button');
+    //var navButton = document.getElementById('nav-button');
     var defListCheckButton = document.getElementById('definitionListCheck-button');
 
     /**
@@ -138,7 +138,7 @@
         if (isSignedIn) {
             authorizeButton.style.display = 'none';
             signoutButton.style.display = 'block';
-            navButton.style.display = 'block';
+            //navButton.style.display = 'block';
             //defListCheckButton.style.display = 'block';
             //loadSheetsApi();
         } else {
