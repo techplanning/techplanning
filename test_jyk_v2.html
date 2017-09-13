@@ -43,7 +43,7 @@
 
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-      <a class="navbar-brand" href="#">Top navbar</a>
+      <a class="navbar-brand" href="#">로그정의서_처리기_v2</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -60,21 +60,14 @@
           </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <button type="button" id="authorize-button" class="btn btn-success" style="display: none;">로그인</button>
+	      <button type="button" id="signout-button" class="btn btn-warning" style="display: none;">로그아웃</button>
         </form>
       </div>
     </nav>
 
 
 <div class="container">
-<h1 class="display-4 titleStyle centeredStyle">로그정의서 처리기 v2<small class="text-muted"></small></h1>
-
-<!--Add buttons to initiate auth sequence and sign out-->
-<div class="authorizeButtonBox">
-<button type="button" id="authorize-button" class="btn btn-success centeredStyle" style="display: none;">로그인</button>
-<button type="button" id="signout-button" class="btn btn-warning centeredStyle" style="display: none;">로그아웃</button>
-</div>
 
 
 <div class="actionButtonBox">
