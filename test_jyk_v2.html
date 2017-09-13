@@ -100,7 +100,7 @@
     var authorizeButton = document.getElementById('authorize-button');
     var signoutButton = document.getElementById('signout-button');
     var navButton = document.getElementById('nav-button');
-    var defListCheckButton = document.getElementById('definitionListCheck-button');
+    //var defListCheckButton = document.getElementById('definitionListCheck-button');
 
     /**
      *  On load, called to load the auth2 library and API client library.
@@ -126,7 +126,7 @@
             updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
             authorizeButton.onclick = handleAuthClick;
             signoutButton.onclick = handleSignoutClick;
-            defListCheckButton.onclick = handleDefListCheckClick;
+            //defListCheckButton.onclick = handleDefListCheckClick;
         });
     }
 
@@ -161,7 +161,7 @@
      */
     function handleSignoutClick(event) {
         gapi.auth2.getAuthInstance().signOut();
-        //location.reload();
+        location.reload();
     }
 
     /* */
