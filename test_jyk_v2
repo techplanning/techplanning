@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>로그정의서 처리기</title>
+	<meta charset='utf-8' />
+    
+</head>
+<body>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+<!-- override bootstrap style -->
+<style>
+    body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #eee;
+        min-height: 75rem;
+    }
+    .authorizeButtonBox {
+        max-width: 500px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        margin: 0 auto;
+    }
+    .actionButtonBox {
+        max-width: 300px;
+        padding: 15px;
+        margin: 0 auto;
+    }
+    .titleStyle {
+        color: orange;
+    }
+    .centeredStyle {
+        display: table;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .btn {
+        margin-bottom: 10px;
+    }
+</style>
+
+
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+      <a class="navbar-brand" href="#">Top navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+
+<div class="container">
+<h1 class="display-4 titleStyle centeredStyle">로그정의서 처리기 v2<small class="text-muted"></small></h1>
+
+<!--Add buttons to initiate auth sequence and sign out-->
+<div class="authorizeButtonBox">
+<button type="button" id="authorize-button" class="btn btn-success centeredStyle" style="display: none;">로그인</button>
+<button type="button" id="signout-button" class="btn btn-warning centeredStyle" style="display: none;">로그아웃</button>
+</div>
+
+
+<div class="actionButtonBox">
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-info btn-lg btn-block" id="definitionListCheck-button" data-toggle="modal" data-target="#definitionCheckResultModal" style="display: none;">
+  정의서 검사
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="definitionCheckResultModal" tabindex="-1" role="dialog" aria-labelledby="definitionCheckResultModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="definitionCheckResultModalTitle">정의서 검사 결과</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body"><ul class="list-group" id="log"></ul></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+        <button type="button" class="btn btn-primary">저장</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div> <!-- actionButtonBox -->
+
+
+
+</div> <!-- container -->
+
+
+
+
+<script type="text/javascript">
+    // Client ID and API key from the Developer Console
+    var CLIENT_ID = '696566559550-7rge69rqjpck7nup7dkfa0tt5huqusi0.apps.googleusercontent.com';
+
+    // Array of API discovery doc URLs for APIs used by the quickstart
+    var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/sheets/v4/rest"];
+
+    // Authorization scopes required by the API; multiple scopes can be
+    // included, separated by spaces.
+    var SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly";
+
+    var authorizeButton = document.getElementById('authorize-button');
+    var signoutButton = document.getElementById('signout-button');
+    var defListCheckButton = document.getElementById('definitionListCheck-button');
+
+    /**
+     *  On load, called to load the auth2 library and API client library.
+     */
+    function handleClientLoad() {
+        gapi.load('client:auth2', initClient);
+    }
+
+    /**
+     *  Initializes the API client library and sets up sign-in state
+     *  listeners.
+     */
+    function initClient() {
+        gapi.client.init({
+            discoveryDocs: DISCOVERY_DOCS,
+            clientId: CLIENT_ID,
+            scope: SCOPES
+        }).then(function () {
+            // Listen for sign-in state changes.
+            gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+
+            // Handle the initial sign-in state.
+            updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+            authorizeButton.onclick = handleAuthClick;
+            signoutButton.onclick = handleSignoutClick;
+            defListCheckButton.onclick = handleDefListCheckClick;
+        });
+    }
+
+    /**
+     *  Called when the signed in status changes, to update the UI
+     *  appropriately. After a sign-in, the API is called.
+     */
+    function updateSigninStatus(isSignedIn) {
+        if (isSignedIn) {
+            authorizeButton.style.display = 'none';
+            signoutButton.style.display = 'block';
+            defListCheckButton.style.display = 'block';
+            //loadSheetsApi();
+        } else {
+            authorizeButton.style.display = 'block';
+            signoutButton.style.display = 'none';
+            defListCheckButton.style.display = 'none';
+        }
+    }
+
+    /**
+     *  Sign in the user upon button click.
+     */
+    function handleAuthClick(event) {
+        gapi.auth2.getAuthInstance().signIn();
+    }
+
+    /**
+     *  Sign out the user upon button click.
+     */
+    function handleSignoutClick(event) {
+        gapi.auth2.getAuthInstance().signOut();
+        location.reload();
+    }
+
+    /* */
+    function handleDefListCheckClick(event) {
+        loadSheetsApi();
+    }
+
+    /**
+     * Append a pre element to the body containing the given message
+     * as its text node. Used to display the results of the API call.
+     *
+     * @param {string} message Text to be placed in pre element.
+     */
+    /*  
+    function appendPre(message) {
+        var node = document.createElement("li");
+
+        var pre = document.getElementById('log');
+        //var pre = document.getElementByClass('logbox');
+        var textContent = document.createTextNode(message + '\n');
+        node.
+        pre.appendChild(textContent);
+    }
+    */
+    function appendPre(message) {
+        //var headingEl = document.querySelector("#heading");
+        //headingEl.className = "titleStyle centeredStyle";
+        //headingEl.innerHTML = "구글시트 로그정의서 처리기";
+        var node = document.createElement("li");
+        node.className = "list-group-item";
+        var textContent = document.createTextNode(message + '\n');
+        node.appendChild(textContent);
+        document.getElementById("log").appendChild(node);
+    }
+
+    /**
+     * Load Sheets API client library.
+     */
+    function loadSheetsApi() {
+        var discoveryUrl =
+            'https://sheets.googleapis.com/$discovery/rest?version=v4';
+        gapi.client.load(discoveryUrl).then(readDefinitionList);
+    }
+
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+<script async defer src="https://apis.google.com/js/api.js"
+        onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+</script>
+
+</body>
+</html>
