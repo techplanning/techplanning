@@ -13,9 +13,9 @@
             // The ID of the spreadsheet to update.
             spreadsheetId: '15_8jerhqEZNj3BJ4bzwkklH2K2W5pfcS3mUuwZ1AO2I'
         };
-        var data_params1 = ['2017-09-12', 'N', '오류001'];
-        var data_params2 = ['2017-09-12', 'Y', '오류002'];
-        var data_params3 = ['2017-09-12', 'N', '오류003'];
+        var data_params1 = ['2017-09-12', 1,'N','0001', '오류001'];
+        var data_params2 = ['2017-09-12', 2,'Y','0002', '오류004'];
+        var data_params3 = ['2017-09-12', 3,'N','0003', '오류005'];
 
         var batchUpdateValuesRequestBody = {
             "requests": [
@@ -39,9 +39,11 @@
                 {
                     "updateCells": {
                         "rows": [
-                            ['2017-09-12', 1,'N','0001', '오류001'], 
-                            ['2017-09-12', 2,'Y','0002', '오류004'], 
-                            ['2017-09-12', 3,'N','0003', '오류005']
+                            {
+                              "values": [
+                                  data_params1, data_params2, data_params3
+                              ]
+                            }
                         ],
                         "fields": "userEnteredValue",
                         "range": {
