@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>로그정의서 처리기</title>
+	<title>로그 정의서 처리기</title>
 	<meta charset='utf-8' />
     
 </head>
@@ -42,65 +42,44 @@
 
 
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <nav class="navbar navbar-expand-md navbar-light bg-light mb-4">
       <a class="navbar-brand" href="#">로정처_v2</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" id="nav-button" style="display: none;">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">홈 <span class="sr-only">(Current)</span></a>
+        <ul class="nav nav-pills mb-auto" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-expanded="true">홈</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">정의서 검사</a>
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile">정의서 검사</a>
           </li>
+          <!--
           <li class="nav-item">
             <a class="nav-link disabled" href="#">Disabled</a>
           </li>
+          -->
         </ul>
+        
         <form class="form-inline mt-2 mt-md-0">
           <button type="button" id="authorize-button" class="btn btn-success my-2 my-sm-0" style="display: none;">로그인</button>
-	      <button type="button" id="signout-button" class="btn btn-warning my-2 my-sm-0" style="display: none;">로그아웃</button>
+          <button type="button" id="signout-button" class="btn btn-warning my-2 my-sm-0" style="display: none;">로그아웃</button>
         </form>
+        
       </div>
     </nav>
+
+
 
 
 <div class="container">
 
 
-<div class="actionButtonBox">
-
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-info btn-lg btn-block" id="definitionListCheck-button" data-toggle="modal" data-target="#definitionCheckResultModal" style="display: none;">
-  정의서 검사
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="definitionCheckResultModal" tabindex="-1" role="dialog" aria-labelledby="definitionCheckResultModalTitle" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="definitionCheckResultModalTitle">정의서 검사 결과</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body"><ul class="list-group" id="log"></ul></div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
-        <button type="button" class="btn btn-primary">저장</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-</div> <!-- actionButtonBox -->
-
-
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...1111</div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...2222</div>
+</div> <!-- tab-content -->
 
 </div> <!-- container -->
 
@@ -120,6 +99,7 @@
 
     var authorizeButton = document.getElementById('authorize-button');
     var signoutButton = document.getElementById('signout-button');
+    var navButton = document.getElementById('nav-button');
     var defListCheckButton = document.getElementById('definitionListCheck-button');
 
     /**
@@ -158,12 +138,14 @@
         if (isSignedIn) {
             authorizeButton.style.display = 'none';
             signoutButton.style.display = 'block';
-            defListCheckButton.style.display = 'block';
+            navButton.style.display = 'block';
+            //defListCheckButton.style.display = 'block';
             //loadSheetsApi();
         } else {
             authorizeButton.style.display = 'block';
             signoutButton.style.display = 'none';
-            defListCheckButton.style.display = 'none';
+            navButton.style.display = 'none';
+            //defListCheckButton.style.display = 'none';
         }
     }
 
