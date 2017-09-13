@@ -52,10 +52,10 @@
           <li class="nav-item">
             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-expanded="true">홈</a>
           </li>
-          <li class="nav-item" id="nav-button" style="display: none;">
+          <li class="nav-item nav-button" style="display: none;">
             <a class="nav-link" id="defListCheck-tab" data-toggle="tab" href="#defListCheck" role="tab" aria-controls="defListCheck">정의서 검사</a>
           </li>
-          <li class="nav-item" id="nav-button" style="display: none;">
+          <li class="nav-item nav-button" style="display: none;">
             <a class="nav-link" id="resultCheck-tab" data-toggle="tab" href="#resultCheck" role="tab" aria-controls="resultCheck">검사 결과 처리</a>
           </li>
         </ul>
@@ -76,8 +76,8 @@
 
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...홈ㅋ</div>
-  <div class="tab-pane fade" id="defListCheck" role="tabpanel" aria-labelledby="defListCheck-tab">...2222</div>
-  <div class="tab-pane fade" id="resultCheck" role="tabpanel" aria-labelledby="resultCheck-tab">...3333</div>
+  <div class="tab-pane fade" id="defListCheck" role="tabpanel" aria-labelledby="defListCheck-tab">...2222.. 검사실행 버튼... 결과만 표시..</div>
+  <div class="tab-pane fade" id="resultCheck" role="tabpanel" aria-labelledby="resultCheck-tab">...3333.. 결과 불러오기 버튼.. 결과만 표시..</div>
 </div> <!-- tab-content -->
 
 </div> <!-- container -->
@@ -98,7 +98,7 @@
 
     var authorizeButton = document.getElementById('authorize-button');
     var signoutButton = document.getElementById('signout-button');
-    var navButton = document.getElementById('nav-button');
+    var navButton = document.getElementByClass('nav-button');
     //var defListCheckButton = document.getElementById('definitionListCheck-button');
 
     /**
