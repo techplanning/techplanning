@@ -84,7 +84,7 @@
                 <br>
             </div>
             <div class="tab-pane fade" id="resultCheck" role="tabpanel" aria-labelledby="resultCheck-tab">
-                <button type="button" class="btn btn-primary btn-block">결과 불러오기</button>
+                <button type="button" class="btn btn-primary btn-block" id="resultsCall-button">결과 불러오기</button>
                 <div class="row">
                     <div class="col-2">
                         <div class="list-group" id="list-tab" role="tablist">
@@ -97,7 +97,7 @@
                     <div class="col-10">
                         <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed lacus auctor, euismod metus ac, viverra dolor. Phasellus dictum nec leo vitae sollicitudin. Donec consequat mattis lorem, sit amet egestas enim egestas sed. Ut eros ligula, cursus sit amet aliquet quis, posuere quis nulla. Vestibulum venenatis sagittis pharetra. Pellentesque vel aliquam orci. Ut augue neque, malesuada a vestibulum sed, aliquam vel tellus. Morbi vehicula lacus in iaculis pretium. Phasellus eu aliquet tortor. Morbi accumsan fringilla nisi vitae accumsan. Nunc condimentum nisi quis augue viverra commodo sit amet condimentum purus.</div>
-                            <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">Nulla facilisi. Suspendisse potenti. Cras molestie porta urna. Proin dignissim vestibulum felis vitae feugiat. Nunc fringilla diam id purus vestibulum, ut elementum nibh gravida. Integer urna magna, luctus eu lobortis a, tristique in urna. Sed rutrum in urna eget eleifend. Aliquam elementum, erat ut sollicitudin venenatis, mauris enim pharetra metus, iaculis vestibulum mi mi eget quam. Vivamus diam nisi, volutpat et mi non, ullamcorper semper elit. Aenean sodales orci vel lectus mollis, at rutrum dui ultricies. Fusce blandit magna eget ornare iaculis. Etiam laoreet vel metus vitae vulputate. Etiam elementum purus a lacus pellentesque pretium. Praesent nec scelerisque dolor. Quisque placerat interdum massa nec accumsan. Etiam id imperdiet odio. Ut maximus egestas molestie. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed a tincidunt diam. Donec eget semper nunc. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras vel egestas lacus. Nullam non dolor quis leo rhoncus posuere. Nam sodales viverra velit ultricies eleifend. Cras tristique turpis nunc, et sodales leo feugiat sed. Pellentesque nec tristique dolor, ut congue lectus. Maecenas eu porttitor nunc, eu finibus nisl. Vivamus eget hendrerit purus. Vestibulum sed velit enim. Donec eu urna leo. Donec porttitor, ligula non tristique interdum, odio elit interdum neque, at viverra felis sem ut arcu. Integer bibendum, orci sit amet sagittis porttitor, mi lacus tristique augue, et accumsan nisi nulla vitae velit. Sed a iaculis tellus.</div>
+                            <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list"><pre id="results"></pre></div>
                             <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">Maecenas arcu dui, tincidunt et neque a, rutrum vestibulum elit. Sed magna felis, viverra sed interdum eget, feugiat vel arcu. Curabitur sit amet finibus ante, ultricies pretium ex. Pellentesque commodo mattis nunc, nec dapibus sem aliquet nec. Donec laoreet purus ac dolor ullamcorper, ut aliquet sem vehicula. Nulla ac augue ut nulla commodo tincidunt. Nunc dignissim a ex non dignissim. Nam placerat tellus ac placerat fringilla. Sed finibus scelerisque felis in ultricies. Morbi sodales magna elementum rutrum vehicula. Cras purus velit, commodo ac tincidunt nec, dignissim sit amet nisi. Nam dolor metus, porttitor sit amet dolor in, malesuada maximus risus. Maecenas lobortis tincidunt enim in mollis.</div>
                             <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">Maecenas arcu dui, tincidunt et neque a, rutrum vestibulum elit. Sed magna felis, viverra sed interdum eget, feugiat vel arcu. Curabitur sit amet finibus ante, ultricies pretium ex. Pellentesque commodo mattis nunc, nec dapibus sem aliquet nec. Donec laoreet purus ac dolor ullamcorper, ut aliquet sem vehicula. Nulla ac augue ut nulla commodo tincidunt. Nunc dignissim a ex non dignissim. Nam placerat tellus ac placerat fringilla. Sed finibus scelerisque felis in ultricies. Morbi sodales magna elementum rutrum vehicula. Cras purus velit, commodo ac tincidunt nec, dignissim sit amet nisi. Nam dolor metus, porttitor sit amet dolor in, malesuada maximus risus. Maecenas lobortis tincidunt enim in mollis.</div>
                         </div>
@@ -125,6 +125,7 @@
     var navButton2 = document.getElementById('nav-button2');
     var navLoginMessage = document.getElementById('nav-login-message');
     var defListCheckButton = document.getElementById('definitionListCheck-button');
+    var resultsCallButton = document.getElementById('resultsCall-button');
 
     /**
      *  On load, called to load the auth2 library and API client library.
@@ -151,6 +152,7 @@
             authorizeButton.onclick = handleAuthClick;
             signoutButton.onclick = handleSignoutClick;
             defListCheckButton.onclick = handleDefListCheckClick;
+            resultsCallButton.onclick = handleResultsCallClick;
         });
     }
 
@@ -198,6 +200,12 @@
         loadSheetsApi();
     }
 
+    /* */
+    function handleResultsCallClick(event) {
+        //resultsCallButton.style.display = 'none';
+        loadSheetsApi2();
+    }
+
     /**
      * Append a pre element to the body containing the given message
      * as its text node. Used to display the results of the API call.
@@ -223,6 +231,12 @@
         document.getElementById("log").appendChild(node);
     }
 
+    function appendPre2(message) {
+        var pre = document.getElementById('results');
+        var textContent = document.createTextNode(message + '\n');
+        pre.appendChild(textContent);
+      }
+
     /**
      * Load Sheets API client library.
      */
@@ -231,6 +245,37 @@
             'https://sheets.googleapis.com/$discovery/rest?version=v4';
         gapi.client.load(discoveryUrl).then(readDefinitionList);
     }
+
+    function loadSheetsApi2() {
+        var discoveryUrl =
+            'https://sheets.googleapis.com/$discovery/rest?version=v4';
+        gapi.client.load(discoveryUrl).then(listMajors);
+    }
+
+    /**
+       * Print the names and majors of students in a sample spreadsheet:
+       * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
+       */
+      function listMajors() {
+        gapi.client.sheets.spreadsheets.values.get({
+          spreadsheetId: '1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms',
+          range: 'Class Data!A2:E',
+        }).then(function(response) {
+          var range = response.result;
+          if (range.values.length > 0) {
+            appendPre('Name, Major:');
+            for (i = 0; i < range.values.length; i++) {
+              var row = range.values[i];
+              // Print columns A and E, which correspond to indices 0 and 4.
+              appendPre(row[0] + ', ' + row[4]);
+            }
+          } else {
+            appendPre('No data found.');
+          }
+        }, function(response) {
+          appendPre('Error: ' + response.result.error.message);
+        });
+      }
 
 
     var _ALL = 0,
