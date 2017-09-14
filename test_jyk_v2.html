@@ -212,17 +212,6 @@
      *
      * @param {string} message Text to be placed in pre element.
      */
-    /*  
-    function appendPre(message) {
-        var node = document.createElement("li");
-
-        var pre = document.getElementById('log');
-        //var pre = document.getElementByClass('logbox');
-        var textContent = document.createTextNode(message + '\n');
-        node.
-        pre.appendChild(textContent);
-    }
-    */
     function appendPre(message) {
         var node = document.createElement("li");
         node.className = "list-group-item";
@@ -258,16 +247,16 @@
        */
       function listMajors() {
         gapi.client.sheets.spreadsheets.values.get({
-          spreadsheetId: '1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms',
-          range: 'Class Data!A2:E',
+          spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw',
+          range: 'TEST - JYK!A4:A',
         }).then(function(response) {
           var range = response.result;
           if (range.values.length > 0) {
-            appendPre2('Name, Major:');
+            //appendPre2('Name, Major:');
             for (i = 0; i < range.values.length; i++) {
               var row = range.values[i];
               // Print columns A and E, which correspond to indices 0 and 4.
-              appendPre2(row[0] + ', ' + row[4]);
+              appendPre2(row[0]);
             }
           } else {
             appendPre2('No data found.');
