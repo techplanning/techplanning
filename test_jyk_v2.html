@@ -337,22 +337,19 @@
 
             //dump into Google Sheets
 
-            var discoveryUrl =
-                'https://sheets.googleapis.com/$discovery/rest?version=v4';
-            gapi.client.load(discoveryUrl).then(
-                gapi.client.sheets.spreadsheets.values.append({
-                    spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw',
-                    range: 'TEST - JYK!A1:B1',
-                    majorDimension: 'ROWS',
-                    valueInputOption: 'USER_ENTERED',
-                    insertDataOption: 'INSERT_ROWS',
-                    values: [
-                        ["test", "2"]
-                    ]
-                }).then(function(response) {
-                    console.log(response);
-                })
-            );
+            gapi.client.sheets.spreadsheets.values.append({
+                spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw',
+                range: 'TEST - JYK!A1:B1',
+                majorDimension: 'ROWS',
+                valueInputOption: 'USER_ENTERED',
+                insertDataOption: 'INSERT_ROWS',
+                values: [
+                    ["test", "2"]
+                ]
+            }).then(function(response) {
+                console.log(response);
+            });
+
         }
     }
 
