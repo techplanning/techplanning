@@ -85,7 +85,6 @@
             </div>
             <div class="tab-pane fade" id="resultCheck" role="tabpanel" aria-labelledby="resultCheck-tab">
                 <button type="button" class="btn btn-primary btn-block" id="resultsCall-button">결과 불러오기</button>
-                <button type="button" class="btn btn-success btn-block" id="dataUpdate-button">업데이트 (test)</button>
                 <div class="row">
                     <div class="col-2">
                         <div class="list-group" id="list-tab" role="tablist">
@@ -99,7 +98,18 @@
                         <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed lacus auctor, euismod metus ac, viverra dolor. Phasellus dictum nec leo vitae sollicitudin. Donec consequat mattis lorem, sit amet egestas enim egestas sed. Ut eros ligula, cursus sit amet aliquet quis, posuere quis nulla. Vestibulum venenatis sagittis pharetra. Pellentesque vel aliquam orci. Ut augue neque, malesuada a vestibulum sed, aliquam vel tellus. Morbi vehicula lacus in iaculis pretium. Phasellus eu aliquet tortor. Morbi accumsan fringilla nisi vitae accumsan. Nunc condimentum nisi quis augue viverra commodo sit amet condimentum purus.</div>
                             <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list"><pre id="results"></pre></div>
-                            <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list"></div>
+                            <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="input-group">
+                                            <input type="text" id="formData1" class="form-control" placeholder="값 입력..." aria-label="값 입력...">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-secondary" type="button" id="dataUpdate-button">Update</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">Maecenas arcu dui, tincidunt et neque a, rutrum vestibulum elit. Sed magna felis, viverra sed interdum eget, feugiat vel arcu. Curabitur sit amet finibus ante, ultricies pretium ex. Pellentesque commodo mattis nunc, nec dapibus sem aliquet nec. Donec laoreet purus ac dolor ullamcorper, ut aliquet sem vehicula. Nulla ac augue ut nulla commodo tincidunt. Nunc dignissim a ex non dignissim. Nam placerat tellus ac placerat fringilla. Sed finibus scelerisque felis in ultricies. Morbi sodales magna elementum rutrum vehicula. Cras purus velit, commodo ac tincidunt nec, dignissim sit amet nisi. Nam dolor metus, porttitor sit amet dolor in, malesuada maximus risus. Maecenas lobortis tincidunt enim in mollis.</div>
                         </div>
                     </div>
@@ -255,8 +265,8 @@
     }
 
     function updateDataTest() {
-        //var testNamee = document.getElementById('testName').value;
-        var testName = "Helloww";
+        var testName = document.getElementById('formData1').value;
+        //var testName = "Helloww";
         gapi.client.sheets.spreadsheets.values.update({
             spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw',
             range: 'TEST - JYK!E1',
