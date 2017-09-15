@@ -432,7 +432,7 @@
         if (tag >= _tagLevel) {
             var msg = message;
             msg = _tagLevelNm[tag] + " " + msg;
-            if (infoObj) msg = msg + "\t(" + JSON.stringify(infoObj) + ")";
+            if (infoObj) msg = msg + " " + JSON.stringify(infoObj);
             appendPre(msg);
 
             if (tag > _NOTI) console.error(msg, responseObj);
