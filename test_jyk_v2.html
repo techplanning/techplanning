@@ -336,15 +336,14 @@
 
 
             //dump into Google Sheets
-
             gapi.client.sheets.spreadsheets.values.append({
                 spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw',
-                range: 'TEST - JYK!A1:B1',
+                range: 'TEST - JYK!A1:C1',
                 majorDimension: 'ROWS',
                 valueInputOption: 'USER_ENTERED',
                 insertDataOption: 'INSERT_ROWS',
                 values: [
-                    ["test", "2"]
+                    [_tagLevelNm[tag], message, JSON.stringify(infoObj)]
                 ]
             }).then(function(response) {
                 console.log(response);
