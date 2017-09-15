@@ -331,10 +331,6 @@
 
     function log(logLevel, code, message, infoObj, targetInfoObj) {
         if (logLevel >= _logLevel) {
-            //logMsg = _logLevelNm[logLevel] + " " + code + " - " + message;
-            //if(infoObj) logMsg = logMsg + "\n\t(처리대상 : "+ JSON.stringify(infoObj) + ")"
-            //if(targetInfoObj) logMsg = logMsg + "\n\t(비교대상 : "+ JSON.stringify(targetInfoObj) + ")"
-            //appendPre(logMsg);
             if (logLevel == _ALL) {
 
             }
@@ -452,7 +448,7 @@
         var spreadsheetTitle = 'PageID_11번가 Log 2.0';
         var sheetTitle = ['모바일 v.2.3', 'PC v.2.1'];
 
-        //        msg(_PROC,"(무의미) 스프레드시트 처리 시작", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle]});
+        msg(_PROC,"(무의미) 스프레드시트 처리 시작", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle]});
 
         var params = {
             spreadsheetId: [spreadsheetId],
@@ -468,9 +464,7 @@
             var poc = ['MW', 'PC'];
             if (sheetSize == sheetTitle.length) {
                 for (s = 0; s < sheetSize; s++) {
-                    appendPre("[" + spreadsheetTitle + "] 문서 [" + sheetTitle[s] + "] 시트에 기록된 ID 추출을 시작합니다.");
-                    //                    msg(_PROC,"[" + spreadsheetTitle + "] 문서 [" + sheetTitle[s] + "] 시트에 기록된 ID 추출을 시작합니다.", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle[s]]},response);
-                    //                    appendPre("[LOG] 시트 처리 시작 ("+ spreadsheetTitle + " : " + sheetTitle[s] + ")");
+                    msg(_PROC,"[" + spreadsheetTitle + "] 문서 [" + sheetTitle[s] + "] 시트에 기록된 ID 추출을 시작합니다.", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle[s]]},response);
                     var range = valueRanges[s];
                     if (range.values.length > 0) {
                         var rowSize = range.values.length;
@@ -505,19 +499,12 @@
                         _defList = _defList.concat(data);
 
                         // 완료 메시지 표시
-                        appendPre("ID 추출 처리가 완료되었으며, 이제 검증작업이 가능합니다.");
-                        //                        msg(_PROC,"ID 추출 처리가 완료되었으며, 이제 검증작업이 가능합니다.", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle[s]]});
-                        //                        appendPre("[LOG] 시트 처리 완료 ("+ spreadsheetTitle + " : " + sheetTitle[s] + ")");
+                        msg(_PROC,"ID 추출 처리가 완료되었으며, 이제 검증작업이 가능합니다.", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle[s]]});
                     } else {
-                        msg(_SYSTEM, "시트 처리 오류 - No data found.", {
-                            spreadsheetTitle: [spreadsheetTitle],
-                            sheetTitle: [sheetTitle[s]]
-                        }, response);
-                        //                        appendPre("[ERROR] 시트 처리 오류 ("+ spreadsheetTitle + " : " + sheetTitle[s] + ") No data found.");
+                        msg(_SYSTEM, "시트 처리 오류 - No data found.", {spreadsheetTitle: [spreadsheetTitle], sheetTitle: [sheetTitle[s]]}, response);
                     }
                 }
-                //                msg(_PROC,"(무의미) 스프레드시트 처리 완료", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle]});
-                //                appendPre("[LOG] 시트 처리 완료 ("+ spreadsheetTitle + " : " + sheetTitle + ")");
+                msg(_PROC,"(무의미) 스프레드시트 처리 완료", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle]});
                 checkDefList(spreadsheetTitle);
                 loadSheets();
             } else {
