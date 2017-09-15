@@ -318,23 +318,22 @@
 
     // create temp array storage for mass dumping log data to google sheets.
     var logArray = [];
-    var logArrayIndex = 0;
-    // logArray[logArrayIndex] = [];
-
-    // ANOTHERARRAY = [];
-    // logArray.push(ANOTHERARRAY);
 
     function dumpLogData() {
+        //this function will dump all the log data temporarily stored in logArray to google sheets.
         gapi.client.sheets.spreadsheets.values.append({
-                spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw',
-                range: 'TEST - JYK!A1:E1',
-                majorDimension: 'ROWS',
-                valueInputOption: 'USER_ENTERED',
-                insertDataOption: 'INSERT_ROWS',
-                values: logArray,
-            }).then(function(response) {
-                console.log(response);
-            });
+            spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw',
+            range: 'TEST - JYK!A1:E1',
+            majorDimension: 'ROWS',
+            valueInputOption: 'USER_ENTERED',
+            insertDataOption: 'INSERT_ROWS',
+            values: logArray,
+        }).then(function(response) {
+            console.log(response);
+            //and clear log array for next dumping...
+            logArray.length = 0;
+        });
+
     }
 
 
