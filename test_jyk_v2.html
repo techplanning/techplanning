@@ -246,14 +246,13 @@
 
     /**************************************************************************
      **************************************************************************/
-    function appendPre(message) {
+    function appendMsgList(message) {
         var node = document.createElement("li");
         node.className = "list-group-item";
         var textContent = document.createTextNode(message + '\n');
         node.appendChild(textContent);
         document.getElementById("log").appendChild(node);
     }
-
     function appendResults(message) {
         var pre = document.getElementById('results');
         var textContent = document.createTextNode(message + '\n');
@@ -264,15 +263,21 @@
      * Load Sheets API client library.
      */
     function loadSheetsApi() {
+        /*
         var discoveryUrl =
             'https://sheets.googleapis.com/$discovery/rest?version=v4';
         gapi.client.load(discoveryUrl).then(readDefinitionList);
+        */
+        readDefinitionList();
     }
 
     function loadSheetsApi2() {
+        /*
         var discoveryUrl =
             'https://sheets.googleapis.com/$discovery/rest?version=v4';
         gapi.client.load(discoveryUrl).then(callResults);
+        */
+        callResults();
     }
 
     /**************************************************************************
@@ -346,7 +351,7 @@
             var msg = message;
             msg = _tagLevelNm[tag] + " " + msg;
             if (infoObj) msg = msg + " " + JSON.stringify(infoObj);
-            appendPre(msg);
+            appendMsgList(msg);
 
             if (tag > _NOTI) console.error(msg, responseObj);
 
