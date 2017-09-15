@@ -336,7 +336,7 @@
 
 
             //dump into Google Sheets
-            gapi.client.sheets.spreadsheets.values.update({
+            gapi.client.sheets.spreadsheets.values.append({
                 spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw',
                 range: 'TEST - JYK!A1',
                 //valueInputOption: 'USER_ENTERED',
