@@ -98,7 +98,16 @@
                         <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed lacus auctor, euismod metus ac, viverra dolor. Phasellus dictum nec leo vitae sollicitudin. Donec consequat mattis lorem, sit amet egestas enim egestas sed. Ut eros ligula, cursus sit amet aliquet quis, posuere quis nulla. Vestibulum venenatis sagittis pharetra. Pellentesque vel aliquam orci. Ut augue neque, malesuada a vestibulum sed, aliquam vel tellus. Morbi vehicula lacus in iaculis pretium. Phasellus eu aliquet tortor. Morbi accumsan fringilla nisi vitae accumsan. Nunc condimentum nisi quis augue viverra commodo sit amet condimentum purus.</div>
                             <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list"><pre id="results"></pre></div>
-                            <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">Maecenas arcu dui, tincidunt et neque a, rutrum vestibulum elit. Sed magna felis, viverra sed interdum eget, feugiat vel arcu. Curabitur sit amet finibus ante, ultricies pretium ex. Pellentesque commodo mattis nunc, nec dapibus sem aliquet nec. Donec laoreet purus ac dolor ullamcorper, ut aliquet sem vehicula. Nulla ac augue ut nulla commodo tincidunt. Nunc dignissim a ex non dignissim. Nam placerat tellus ac placerat fringilla. Sed finibus scelerisque felis in ultricies. Morbi sodales magna elementum rutrum vehicula. Cras purus velit, commodo ac tincidunt nec, dignissim sit amet nisi. Nam dolor metus, porttitor sit amet dolor in, malesuada maximus risus. Maecenas lobortis tincidunt enim in mollis.</div>
+                            <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+                                <div class="row">
+                                    <div class="input-group">
+                                        <input type="text" name="testName" class="form-control" placeholder="데이터 입력..." aria-label="데이터 입력...">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-secondary" type="button" id="dataUpdate-button">Update</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">Maecenas arcu dui, tincidunt et neque a, rutrum vestibulum elit. Sed magna felis, viverra sed interdum eget, feugiat vel arcu. Curabitur sit amet finibus ante, ultricies pretium ex. Pellentesque commodo mattis nunc, nec dapibus sem aliquet nec. Donec laoreet purus ac dolor ullamcorper, ut aliquet sem vehicula. Nulla ac augue ut nulla commodo tincidunt. Nunc dignissim a ex non dignissim. Nam placerat tellus ac placerat fringilla. Sed finibus scelerisque felis in ultricies. Morbi sodales magna elementum rutrum vehicula. Cras purus velit, commodo ac tincidunt nec, dignissim sit amet nisi. Nam dolor metus, porttitor sit amet dolor in, malesuada maximus risus. Maecenas lobortis tincidunt enim in mollis.</div>
                         </div>
                     </div>
@@ -126,6 +135,7 @@
     var navLoginMessage = document.getElementById('nav-login-message');
     var defListCheckButton = document.getElementById('definitionListCheck-button');
     var resultsCallButton = document.getElementById('resultsCall-button');
+    var dataUpdateButton = document.getElementById('dataUpdate-button');
 
     /**
      *  On load, called to load the auth2 library and API client library.
@@ -153,6 +163,7 @@
             signoutButton.onclick = handleSignoutClick;
             defListCheckButton.onclick = handleDefListCheckClick;
             resultsCallButton.onclick = handleResultsCallClick;
+            dataUpdateButton.onClick = handleDataUpdateClick;
         });
     }
 
@@ -206,6 +217,10 @@
         loadSheetsApi2();
     }
 
+    function handleDataUpdateClick(event) {
+        loadSheetsApi3();
+    }
+
     /**
      * Append a pre element to the body containing the given message
      * as its text node. Used to display the results of the API call.
@@ -224,7 +239,7 @@
         var pre = document.getElementById('results');
         var textContent = document.createTextNode(message + '\n');
         pre.appendChild(textContent);
-      }
+    }
 
     /**
      * Load Sheets API client library.
@@ -241,30 +256,50 @@
         gapi.client.load(discoveryUrl).then(listMajors);
     }
 
-    /**
-       * Print the names and majors of students in a sample spreadsheet:
-       * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
-       */
-      function listMajors() {
-        gapi.client.sheets.spreadsheets.values.get({
-          spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw',
-          range: 'TEST - JYK!A1:A',
+    function loadSheetsApi3() {
+        var discoveryUrl =
+            'https://sheets.googleapis.com/$discovery/rest?version=v4';
+        gapi.client.load(discoveryUrl).then(updateDataTest);
+    }
+
+    function updateDataTest() {
+        var testName = document.getElementByName("testName")[0].value;
+        gapi.client.sheets.spreadsheets.values.update({
+            spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw',
+            range: 'TEST - JYK!E1',
+            valueInputOption: 'USER_ENTERED',
+            values: [
+                [testName]
+            ]
         }).then(function(response) {
-          var range = response.result;
-          if (range.values.length > 0) {
-            //appendPre2('Name, Major:');
-            for (i = 0; i < range.values.length; i++) {
-              var row = range.values[i];
-              // Print columns A and E, which correspond to indices 0 and 4.
-              appendPre2(row[0]);
-            }
-          } else {
-            appendPre2('No data found.');
-          }
-        }, function(response) {
-          appendPre2('Error: ' + response.result.error.message);
+            console.log(response);
         });
-      }
+    }
+
+    /**
+     * Print the names and majors of students in a sample spreadsheet:
+     * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
+     */
+    function listMajors() {
+        gapi.client.sheets.spreadsheets.values.get({
+            spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw',
+            range: 'TEST - JYK!A1:A',
+        }).then(function(response) {
+            var range = response.result;
+            if (range.values.length > 0) {
+                //appendPre2('Name, Major:');
+                for (i = 0; i < range.values.length; i++) {
+                    var row = range.values[i];
+                    // Print columns A and E, which correspond to indices 0 and 4.
+                    appendPre2(row[0]);
+                }
+            } else {
+                appendPre2('No data found.');
+            }
+        }, function(response) {
+            appendPre2('Error: ' + response.result.error.message);
+        });
+    }
 
 
     var _ALL = 0,
