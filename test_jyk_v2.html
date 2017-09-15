@@ -324,6 +324,19 @@
     // ANOTHERARRAY = [];
     // logArray.push(ANOTHERARRAY);
 
+    function dumpLogData() {
+        gapi.client.sheets.spreadsheets.values.append({
+                spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw',
+                range: 'TEST - JYK!A1:E1',
+                majorDimension: 'ROWS',
+                valueInputOption: 'USER_ENTERED',
+                insertDataOption: 'INSERT_ROWS',
+                values: logArray,
+            }).then(function(response) {
+                console.log(response);
+            });
+    }
+
 
     var _PROC = 0,
         _NOTI = 1,
@@ -347,6 +360,7 @@
             var tempArray = [_tagLevelNm[tag], "null", message, JSON.stringify(infoObj)];
             logArray.push(tempArray);
 
+            /*
             //dump into Google Sheets
             gapi.client.sheets.spreadsheets.values.append({
                 spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw',
@@ -360,6 +374,7 @@
             }).then(function(response) {
                 console.log(response);
             });
+            */
 
         }
     }
@@ -458,6 +473,7 @@
                 var tempArray = [_logLevelNm[logLevel], code, message, JSON.stringify(infoObj), JSON.stringify(targetInfoObj)];
                 logArray.push(tempArray);
 
+                /*
                 //dump into Google Sheets
                 gapi.client.sheets.spreadsheets.values.append({
                     spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw',
@@ -471,6 +487,7 @@
                 }).then(function(response) {
                     console.log(response);
                 });
+                */
             }
             if (logLevel == _FATAL) {
                 var node = document.createElement("li");
@@ -620,6 +637,7 @@
             }
         }
         msg(_PROC, "로그 정의서 내역 검증 완료", { spreadsheetTitle: [spreadsheetTitle] });
+        dumpLogData();
     }
 
     // 파일 읽기
