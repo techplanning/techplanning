@@ -54,6 +54,9 @@
             <li class="nav-item" id="nav-button2" style="display: none;">
                 <a class="nav-link" id="resultCheck-tab" data-toggle="tab" href="#resultCheck" role="tab" aria-controls="resultCheck">검사 결과 처리</a>
             </li>
+            <li class="nav-item" id="nav-button3" style="display: none;">
+                <a class="nav-link" id="test-tab" data-toggle="tab" href="#test" role="tab" aria-controls="test">Test</a>
+            </li>
         </ul>
         <span class="navbar-text" id="nav-login-message">로그인 해주세요 &nbsp;&nbsp;</span>
         <form class="form-inline mt-2 mt-md-0">
@@ -84,6 +87,10 @@
                 <br>
             </div>
             <div class="tab-pane fade" id="resultCheck" role="tabpanel" aria-labelledby="resultCheck-tab">
+                
+            </div>
+
+            <div class="tab-pane fade" id="test" role="tabpanel" aria-labelledby="test-tab">
                 <button type="button" class="btn btn-primary btn-block" id="resultsCall-button">결과 불러오기</button>
                 <form>
                     <div class="form-row align-items-center">
@@ -138,6 +145,7 @@
     var signoutButton = document.getElementById('signout-button');
     var navButton1 = document.getElementById('nav-button1');
     var navButton2 = document.getElementById('nav-button2');
+    var navButton3 = document.getElementById('nav-button3');
     var navLoginMessage = document.getElementById('nav-login-message');
     var defListCheckButton = document.getElementById('definitionListCheck-button');
     var resultsCallButton = document.getElementById('resultsCall-button');
@@ -186,6 +194,7 @@
             signoutButton.style.display = 'block';
             navButton1.style.display = 'block';
             navButton2.style.display = 'block';
+            navButton3.style.display = 'block';
             navLoginMessage.style.display = 'none';
             //defListCheckButton.style.display = 'block';
             //loadSheetsApi();
@@ -194,6 +203,7 @@
             signoutButton.style.display = 'none';
             navButton1.style.display = 'none';
             navButton2.style.display = 'none';
+            navButton3.style.display = 'none';
             navLoginMessage.style.display = 'block';
             //defListCheckButton.style.display = 'none';
         }
