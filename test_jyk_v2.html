@@ -343,7 +343,7 @@
                 valueInputOption: 'USER_ENTERED',
                 insertDataOption: 'INSERT_ROWS',
                 values: [
-                    [_tagLevelNm[tag], '', message, JSON.stringify(infoObj)]
+                    [_tagLevelNm[tag], null, message, JSON.stringify(infoObj)]
                 ]
             }).then(function(response) {
                 console.log(response);
