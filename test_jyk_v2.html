@@ -338,9 +338,10 @@
             //dump into Google Sheets
             gapi.client.sheets.spreadsheets.values.append({
                 spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw',
-                range: 'TEST - JYK!A1',
+                range: 'TEST - JYK!A1:B1',
+                majorDimension: 'ROWS',
                 //valueInputOption: 'USER_ENTERED',
-                insertDataOption: 'INSERT_ROWS',
+                //insertDataOption: 'INSERT_ROWS',
                 values: [
                     ["test", "2"]
                 ]
