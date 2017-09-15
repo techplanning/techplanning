@@ -87,9 +87,7 @@
                 <br>
             </div>
             <div class="tab-pane fade" id="resultCheck" role="tabpanel" aria-labelledby="resultCheck-tab">
-                
             </div>
-
             <div class="tab-pane fade" id="test" role="tabpanel" aria-labelledby="test-tab">
                 <button type="button" class="btn btn-primary btn-block" id="resultsCall-button">결과 불러오기</button>
                 <form>
@@ -318,6 +316,57 @@
     }
 
 
+    var logIndex = 1;
+
+
+    var _PROC = 0,
+        _NOTI = 1,
+        _SYSTEM = 2;
+    var _tagLevelNm = ["[PROCESS]", "[NOTI]", "[SYSTEM]"];
+    var _tagLevel = _PROC;
+
+    function msg(tag, message, infoObj, responseObj) {
+        if (tag >= _tagLevel) {
+            var msg = message;
+            msg = _tagLevelNm[tag] + " " + msg;
+            if (infoObj) msg = msg + " " + JSON.stringify(infoObj);
+            appendPre(msg);
+
+            if (tag > _NOTI) console.error(msg, responseObj);
+
+
+            //dump into Google Sheets
+            var params = {
+                // The ID of the spreadsheet to update.
+                spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw', // TODO: Update placeholder value.
+
+                // The A1 notation of a range to search for a logical table of data.
+                // Values will be appended after the last row of the table.
+                range: 'TEST - JYK!A1', // TODO: Update placeholder value.
+
+                // How the input data should be interpreted.
+                //valueInputOption: '', // TODO: Update placeholder value.
+
+                // How the input data should be inserted.
+                insertDataOption: 'INSERT_ROWS', // TODO: Update placeholder value.
+            };
+
+            var valueRangeBody = {
+                // TODO: Add desired properties to the request body.
+                [[1,2]]
+            };
+
+            var request = gapi.client.sheets.spreadsheets.values.append(params, valueRangeBody);
+            request.then(function(response) {
+                // TODO: Change code below to process the `response` object:
+                console.log(response.result);
+            }, function(reason) {
+                console.error('error: ' + reason.result.error.message);
+            });
+        }
+    }
+
+
     var _ALL = 0,
         _TRACE = 1,
         _DEBUG = 2,
@@ -422,22 +471,7 @@
         }
     }
 
-    var _PROC = 0,
-        _NOTI = 1,
-        _SYSTEM = 2;
-    var _tagLevelNm = ["[PROCESS]", "[NOTI]", "[SYSTEM]"];
-    var _tagLevel = _PROC;
 
-    function msg(tag, message, infoObj, responseObj) {
-        if (tag >= _tagLevel) {
-            var msg = message;
-            msg = _tagLevelNm[tag] + " " + msg;
-            if (infoObj) msg = msg + " " + JSON.stringify(infoObj);
-            appendPre(msg);
-
-            if (tag > _NOTI) console.error(msg, responseObj);
-        }
-    }
 
     var _defList = [];
     var _sheet = [];
@@ -448,7 +482,7 @@
         var spreadsheetTitle = 'PageID_11번가 Log 2.0';
         var sheetTitle = ['모바일 v.2.3', 'PC v.2.1'];
 
-        msg(_PROC,"(무의미) 스프레드시트 처리 시작", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle]});
+        msg(_PROC, "(무의미) 스프레드시트 처리 시작", { spreadsheetTitle: [spreadsheetTitle], sheetTitle: [sheetTitle] });
 
         var params = {
             spreadsheetId: [spreadsheetId],
@@ -464,7 +498,7 @@
             var poc = ['MW', 'PC'];
             if (sheetSize == sheetTitle.length) {
                 for (s = 0; s < sheetSize; s++) {
-                    msg(_PROC,"[" + spreadsheetTitle + "] 문서 [" + sheetTitle[s] + "] 시트에 기록된 ID 추출을 시작합니다.", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle[s]]},response);
+                    msg(_PROC, "[" + spreadsheetTitle + "] 문서 [" + sheetTitle[s] + "] 시트에 기록된 ID 추출을 시작합니다.", { spreadsheetTitle: [spreadsheetTitle], sheetTitle: [sheetTitle[s]] }, response);
                     var range = valueRanges[s];
                     if (range.values.length > 0) {
                         var rowSize = range.values.length;
@@ -499,12 +533,12 @@
                         _defList = _defList.concat(data);
 
                         // 완료 메시지 표시
-                        msg(_PROC,"ID 추출 처리가 완료되었으며, 이제 검증작업이 가능합니다.", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle[s]]});
+                        msg(_PROC, "ID 추출 처리가 완료되었으며, 이제 검증작업이 가능합니다.", { spreadsheetTitle: [spreadsheetTitle], sheetTitle: [sheetTitle[s]] });
                     } else {
-                        msg(_SYSTEM, "시트 처리 오류 - No data found.", {spreadsheetTitle: [spreadsheetTitle], sheetTitle: [sheetTitle[s]]}, response);
+                        msg(_SYSTEM, "시트 처리 오류 - No data found.", { spreadsheetTitle: [spreadsheetTitle], sheetTitle: [sheetTitle[s]] }, response);
                     }
                 }
-                msg(_PROC,"(무의미) 스프레드시트 처리 완료", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle]});
+                msg(_PROC, "(무의미) 스프레드시트 처리 완료", { spreadsheetTitle: [spreadsheetTitle], sheetTitle: [sheetTitle] });
                 checkDefList(spreadsheetTitle);
                 loadSheets();
             } else {
