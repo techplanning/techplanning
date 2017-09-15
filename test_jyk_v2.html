@@ -336,32 +336,16 @@
 
 
             //dump into Google Sheets
-            var params = {
-                // The ID of the spreadsheet to update.
-                spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw', // TODO: Update placeholder value.
-
-                // The A1 notation of a range to search for a logical table of data.
-                // Values will be appended after the last row of the table.
-                range: 'TEST - JYK!A1', // TODO: Update placeholder value.
-
-                // How the input data should be interpreted.
-                //valueInputOption: '', // TODO: Update placeholder value.
-
-                // How the input data should be inserted.
-                insertDataOption: 'INSERT_ROWS', // TODO: Update placeholder value.
-            };
-
-            var valueRangeBody = {
-                // TODO: Add desired properties to the request body.
-                ["1", "2"]
-            };
-
-            var request = gapi.client.sheets.spreadsheets.values.append(params, valueRangeBody);
-            request.then(function(response) {
-                // TODO: Change code below to process the `response` object:
-                console.log(response.result);
-            }, function(reason) {
-                console.error('error: ' + reason.result.error.message);
+            gapi.client.sheets.spreadsheets.values.update({
+                spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw',
+                range: 'TEST - JYK!A1',
+                //valueInputOption: 'USER_ENTERED',
+                insertDataOption: 'INSERT_ROWS',
+                values: [
+                    ["test", "2"]
+                ]
+            }).then(function(response) {
+                console.log(response);
             });
         }
     }
