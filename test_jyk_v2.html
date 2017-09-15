@@ -280,7 +280,7 @@
         //var testName = "Helloww";
         gapi.client.sheets.spreadsheets.values.update({
             spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw',
-            range: 'TEST - JYK!E1',
+            range: 'TEST - JYK!M1',
             valueInputOption: 'USER_ENTERED',
             values: [
                 [testName]
@@ -297,7 +297,7 @@
     function listMajors() {
         gapi.client.sheets.spreadsheets.values.get({
             spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw',
-            range: 'TEST - JYK!A1:A',
+            range: 'TEST - JYK!A1:E',
         }).then(function(response) {
             var range = response.result;
             if (range.values.length > 0) {
@@ -305,7 +305,7 @@
                 for (i = 0; i < range.values.length; i++) {
                     var row = range.values[i];
                     // Print columns A and E, which correspond to indices 0 and 4.
-                    appendPre2(row[0]);
+                    appendPre2(row[0] + row[2]);
                 }
             } else {
                 appendPre2('No data found.');
