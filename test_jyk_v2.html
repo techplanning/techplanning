@@ -431,7 +431,7 @@
     function msg(tag, message, infoObj, responseObj) {
         if (tag >= _tagLevel) {
             var msg = message;
-            if (tag > _NOTI) msg = _tagLevelNm[tag] + " " + msg;
+            msg = _tagLevelNm[tag] + " " + msg;
             if (infoObj) msg = msg + "\t(" + JSON.stringify(infoObj) + ")";
             appendPre(msg);
 
