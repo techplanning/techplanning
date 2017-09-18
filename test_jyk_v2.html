@@ -554,7 +554,8 @@
                             s2 += "<td>" + tempObj2[tempKeys2[2]] + "</td>" + "<td>" + tempObj2[tempKeys2[4]] + "</td>" + "<td>" + tempObj2[tempKeys2[5]] + "</td>";
                             s1 += "</tr></thead>";
                             s2 += "</tr></tbody>";
-                            node.insertAdjacentHTML('beforeend', "<br><table class=\"table table-sm table-secondary table-responsive\">" + s2 + "</table><div class=\"text-right\"><button type=\"button\" class=\"btn btn-primary btn-sm\">수정하기</button></div>");
+                            node.insertAdjacentHTML('beforeend', "<br><table class=\"table table-sm table-secondary table-responsive\">" + s2 + "</table><div class=\"text-right\"><button type=\"button\" class=\"btn btn-primary btn-sm\" data-toggle=\"modal\" data-target=\".bd-example-modal-lg\">수정하기</button></div>");
+                            node.insertAdjacentHTML('beforeend', "<div class=\"modal fade bd-example-modal-lg\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myLargeModalLabel\" aria-hidden=\"true\"><div class=\"modal-dialog modal-lg\"><div class=\"modal-content\">...</div></div></div>");
                         }
 
                         document.getElementById("results").appendChild(node);
