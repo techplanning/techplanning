@@ -512,6 +512,7 @@
                         node.className = "list-group-item list-group-item-danger";
                         node.innerHTML = "<span class=\"badge badge-pill badge-warning\">" + row[0] + " 000" + row[1] + "</span><h5>" + row[2] + "</h5>";
 
+                        // 로그정의서 링크URL이 잘못 기술되었습니다.
                         if (row[1] == 3) {
                             var tempObj1 = JSON.parse(row[3]);
                             var tempKeys1 = Object.keys(tempObj1);
@@ -524,6 +525,35 @@
                             s1 += "</tr></thead>";
                             s2 += "</tr></tbody>";
                             node.insertAdjacentHTML('beforeend', "<br><table class=\"table table-sm table-secondary table-responsive\">" + s1 + s2 + "</table>");
+                        }
+
+                        // 같은 정의서 URL을 공유하는 서로 다른 로그정의서명이 있습니다.
+                        if (row[1] == 8) {
+                            var tempObj1 = JSON.parse(row[3]);
+                            var tempObj2 = JSON.parse(row[4]);
+                            var tempKeys1 = Object.keys(tempObj1);
+                            var tempKeys2 = Object.keys(tempObj2);
+                            node.insertAdjacentHTML('beforeend', "<br><small class=\"text-muted\">" + tempObj1.spreadsheetTitle + " → " + tempObj1[tempKeys1[0]] + " → " + tempObj1[tempKeys1[1]] + "</small>");
+                            //
+                            var s1 = "<thead><tr>";
+                            var s2 = "<tbody><tr>";
+                            s1 += "<th class=\"text-uppercase\">" + tempKeys1[2] + "</th>" + "<th class=\"text-uppercase\">" + tempKeys1[3] + "</th>";
+                            s2 += "<td>" + tempObj1[tempKeys1[2]] + "</td>" + "<td>" + tempObj1[tempKeys1[3]] + "</td>";
+                            s1 += "</tr></thead>";
+                            s2 += "</tr></tbody>";
+                            node.insertAdjacentHTML('beforeend', "<br><table class=\"table table-sm table-secondary table-responsive\">" + s1 + s2 + "</table>");
+
+                            //
+                            node.insertAdjacentHTML('beforeend', "<br><small class=\"text-muted\">" + tempObj2.spreadsheetTitle + " → " + tempObj2[tempKeys2[0]] + " → " + tempObj2[tempKeys2[1]] + "</small>");
+
+                            //
+                            var s1 = "<thead><tr>";
+                            var s2 = "<tbody><tr>";
+                            s1 += "<th class=\"text-uppercase\">" + tempKeys2[2] + "</th>" + "<th class=\"text-uppercase\">" + tempKeys2[3] + "</th>";
+                            s2 += "<td>" + tempObj2[tempKeys2[2]] + "</td>" + "<td>" + tempObj2[tempKeys2[3]] + "</td>";
+                            s1 += "</tr></thead>";
+                            s2 += "</tr></tbody>";
+                            node.insertAdjacentHTML('beforeend', "<br><table class=\"table table-sm table-secondary table-responsive\">" + s2 + "</table>");
                         }
                         /*
                         if (infoObj) {
