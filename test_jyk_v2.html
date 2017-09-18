@@ -104,7 +104,8 @@
                             <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
                                 <button type="button" class="btn btn-primary btn-block" id="callResults-button">결과 불러오기</button>
                                 <button type="button" class="btn btn-secondary btn-block" id="clearResults-button">결과 지우기 (Test)</button>
-                                <pre id="results"></pre>
+                                <!--<pre id="results"></pre>-->
+                                <ul class="list-group" id="results"></ul>
                             </div>
                             <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
                                 <form>
@@ -262,21 +263,22 @@
         node.appendChild(textContent);
         document.getElementById("log").appendChild(node);
     }
+
     function appendResults(message) {
         var pre = document.getElementById('results');
         var textContent = document.createTextNode(message + '\n');
         pre.appendChild(textContent);
     }
 
-    /*
-    */
+    /**************************************************************************
+     **************************************************************************/
     function appendClear(target) {
         document.querySelector("#" + target).innerHTML = "";
     }
 
-    /**
-     * Load Sheets API client library.
-     */
+    /**************************************************************************
+        Load Sheets API client library.
+     **************************************************************************/
     function loadSheetsApi() {
         /*
         var discoveryUrl =
@@ -313,27 +315,6 @@
 
     /**************************************************************************
      **************************************************************************/
-    function callResults() {
-        gapi.client.sheets.spreadsheets.values.get({
-            spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw',
-            range: 'TEST - JYK!A1:E',
-        }).then(function(response) {
-            var range = response.result;
-            if (range.values.length > 0) {
-                for (i = 0; i < range.values.length; i++) {
-                    var row = range.values[i];
-                    // Print columns A and E, which correspond to indices 0 and 4.
-                    appendResults(row[0] + row[2]);
-                }
-            } else {
-                appendResults('No data found.');
-            }
-        }, function(response) {
-            appendResults('Error: ' + response.result.error.message);
-        });
-    }
-
-
     // create temp array storage for mass dumping log data to google sheets.
     var logArray = [];
 
@@ -354,7 +335,8 @@
 
     }
 
-    //
+    /**************************************************************************
+     **************************************************************************/
     var _PROC = 0,
         _NOTI = 1,
         _SYSTEM = 2;
@@ -376,7 +358,8 @@
         }
     }
 
-    //
+    /**************************************************************************
+     **************************************************************************/
     var _ALL = 0,
         _TRACE = 1,
         _DEBUG = 2,
@@ -486,8 +469,79 @@
         }
     }
 
+    /**************************************************************************
+     **************************************************************************/
+    /*
+    function callResults() {
+        gapi.client.sheets.spreadsheets.values.get({
+            spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw',
+            range: 'TEST - JYK!A1:E',
+        }).then(function(response) {
+            var range = response.result;
+            if (range.values.length > 0) {
+                for (i = 0; i < range.values.length; i++) {
+                    var row = range.values[i];
+                    // Print columns A and E, which correspond to indices 0 and 4.
+                    appendResults(row[0] + row[2]);
+                }
+            } else {
+                appendResults('No data found.');
+            }
+        }, function(response) {
+            appendResults('Error: ' + response.result.error.message);
+        });
+    }
+    */
+    function callResults() {
+        gapi.client.sheets.spreadsheets.values.get({
+            spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw',
+            range: 'TEST - JYK!A1:E',
+        }).then(function(response) {
+            var range = response.result;
+            if (range.values.length > 0) {
+                for (i = 0; i < range.values.length; i++) {
+                    var row = range.values[i];
+                    // Print columns A and E, which correspond to indices 0 and 4.
+                    //appendResults(row[0] + row[2]);
+                    if (row[0] == "[ERROR]") {
 
+                        var node = document.createElement("li");
+                        node.className = "list-group-item list-group-item-danger";
+                        node.innerHTML = "<span class=\"badge badge-warning\">" + row[0] + " 000" + row[1] + "</span> " + row[2];
+                        /*
+                        if (infoObj) {
+                            var s1 = "<thead><tr>";
+                            var s2 = "<tbody><tr>";
+                            for (var key in infoObj) {
+                                //create html table s
+                                s1 += "<th class=\"text-uppercase\">" + key + "</th>";
+                                s2 += "<td>" + infoObj[key] + "</td>";
+                            }
+                            if (targetInfoObj) {
+                                s2 += "</tr>";
+                                for (var key in targetInfoObj) {
+                                    s2 += "<td>" + targetInfoObj[key] + "</td>";
+                                }
+                            }
+                            s1 += "</tr></thead>";
+                            s2 += "</tr></tbody>";
+                            node.insertAdjacentHTML('beforeend', "<br><br><table class=\"table table-sm table-dark table-bordered table-responsive\">" + s1 + s2 + "</table>");
+                        }
+                        */
+                        document.getElementById("results").appendChild(node);
 
+                    }
+                }
+            } else {
+                //appendResults('No data found.');
+            }
+        }, function(response) {
+            //appendResults('Error: ' + response.result.error.message);
+        });
+    }
+
+    /**************************************************************************
+     **************************************************************************/
     var _defList = [];
     var _sheet = [];
     var _sheetMap = {};
@@ -497,7 +551,7 @@
         var spreadsheetTitle = 'PageID_11번가 Log 2.0';
         var sheetTitle = ['모바일 v.2.3', 'PC v.2.1'];
 
-        msg(_PROC, "(무의미) 스프레드시트 처리 시작", { spreadsheetTitle: [spreadsheetTitle], sheetTitle: [sheetTitle] });
+        msg(_PROC, "스프레드시트 처리 시작", { spreadsheetTitle: [spreadsheetTitle], sheetTitle: [sheetTitle] });
 
         var params = {
             spreadsheetId: [spreadsheetId],
@@ -553,7 +607,7 @@
                         msg(_SYSTEM, "시트 처리 오류 - No data found.", { spreadsheetTitle: [spreadsheetTitle], sheetTitle: [sheetTitle[s]] }, response);
                     }
                 }
-                msg(_PROC, "(무의미) 스프레드시트 처리 완료", { spreadsheetTitle: [spreadsheetTitle], sheetTitle: [sheetTitle] });
+                msg(_PROC, "스프레드시트 처리 완료", { spreadsheetTitle: [spreadsheetTitle], sheetTitle: [sheetTitle] });
                 checkDefList(spreadsheetTitle);
                 loadSheets();
             } else {
@@ -564,10 +618,14 @@
         });
     }
 
+    /**************************************************************************
+     **************************************************************************/
     function loadSheets() {
 
     }
 
+    /**************************************************************************
+     **************************************************************************/
     function checkDefList(spreadsheetTitle) {
         msg(_PROC, "로그 정의서 내역 검증 시작", { spreadsheetTitle: [spreadsheetTitle] });
 
