@@ -537,20 +537,20 @@
                             //
                             var s1 = "<thead><tr>";
                             var s2 = "<tbody><tr>";
-                            s1 += "<th class=\"text-uppercase\">" + tempKeys1[2] + "</th>" + "<th class=\"text-uppercase\">" + tempKeys1.spreadsheetId + "</th>" + "<th class=\"text-uppercase\">" + tempKeys1.sheetId + "</th>";
-                            s2 += "<td>" + tempObj1[tempKeys1[2]] + "</td>" + "<td>" + tempKeys1.spreadsheetId + "</td>" + "<td>" + tempKeys1.sheetId + "</td>";
+                            s1 += "<th class=\"text-uppercase\">" + tempKeys1[2] + "</th>" + "<th class=\"text-uppercase\">" + tempKeys1[4] + "</th>" + "<th class=\"text-uppercase\">" + tempKeys1[5] + "</th>";
+                            s2 += "<td>" + tempObj1[tempKeys1[2]] + "</td>" + "<td>" + tempObj1[tempKeys1[4]] + "</td>" + "<td>" + tempObj1[tempKeys1[5]] + "</td>";
                             s1 += "</tr></thead>";
                             s2 += "</tr></tbody>";
                             node.insertAdjacentHTML('beforeend', "<br><table class=\"table table-sm table-secondary table-responsive\">" + s1 + s2 + "</table>");
 
                             //
-                            node.insertAdjacentHTML('beforeend', "<br><small class=\"text-muted\">" + tempObj2.spreadsheetTitle + " → " + tempObj2[tempKeys2[0]] + " → " + tempObj2[tempKeys2[1]] + "</small>");
+                            node.insertAdjacentHTML('beforeend', "<small class=\"text-muted\">" + tempObj2.spreadsheetTitle + " → " + tempObj2[tempKeys2[0]] + " → " + tempObj2[tempKeys2[1]] + "</small>");
 
                             //
                             var s1 = "<thead><tr>";
                             var s2 = "<tbody><tr>";
-                            s1 += "<th class=\"text-uppercase\">" + tempKeys2[2] + "</th>" + "<th class=\"text-uppercase\">" + tempKeys2.spreadsheetId + "</th>" + "<th class=\"text-uppercase\">" + tempKeys2.sheetId + "</th>";
-                            s2 += "<td>" + tempObj2[tempKeys2[2]] + "</td>" + "<td>" + tempKeys2.spreadsheetId + "</td>" + "<td>" + tempKeys2.sheetId + "</td>";
+                            s1 += "<th class=\"text-uppercase\">" + tempKeys2[2] + "</th>" + "<th class=\"text-uppercase\">" + tempKeys2[4] + "</th>" + "<th class=\"text-uppercase\">" + tempKeys2[5] + "</th>";
+                            s2 += "<td>" + tempObj2[tempKeys2[2]] + "</td>" + "<td>" + tempObj2[tempKeys2[4]] + "</td>" + "<td>" + tempObj2[tempKeys2[5]] + "</td>";
                             s1 += "</tr></thead>";
                             s2 += "</tr></tbody>";
                             node.insertAdjacentHTML('beforeend', "<br><table class=\"table table-sm table-secondary table-responsive\">" + s2 + "</table>");
