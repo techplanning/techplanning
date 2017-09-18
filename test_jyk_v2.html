@@ -510,8 +510,13 @@
                         node.innerHTML = "<span class=\"badge badge-warning\">" + row[0] + " 000" + row[1] + "</span> " + row[2];
 
                         if (row[1] == 3) {
-                            var tempObj = JSON.parse(row[3]);
-                            node.insertAdjacentHTML('beforeend', "<br><small class=\"text-muted\">" + tempObj.spreadsheetTitle + ", " + tempObj.poc + ", " + tempObj.no + "</small>");
+                            var tempObj1 = JSON.parse(row[3]);
+                            var tempKeys1 = Object.keys(tempObj1);
+                            node.insertAdjacentHTML('beforeend', "<br><small class=\"text-muted\">" + tempObj1.spreadsheetTitle + " > " + tempObj1[tempKeys1[0]] + " > " + tempObj1[tempKeys1[2]] + "</small>");
+                            var s1 = "<thead><tr>";
+                            var s2 = "<tbody><tr>";
+                            s1 += "<th class=\"text-uppercase\">" + tempKeys1[2] + "</th>" + "<th class=\"text-uppercase\">" + tempKeys1[3] + "</th>";
+                            s2 += "<td>" + tempObj1[tempKeys1[2]] + "</td>" + "<td>" + tempObj1[tempKeys1[3]] + "</td>";
                         }
                         /*
                         if (infoObj) {
