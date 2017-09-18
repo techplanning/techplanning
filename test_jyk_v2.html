@@ -537,8 +537,8 @@
                             //
                             var s1 = "<thead><tr>";
                             var s2 = "<tbody><tr>";
-                            s1 += "<th class=\"text-uppercase\">" + tempKeys1[2] + "</th>" + "<th class=\"text-uppercase\">" + tempKeys1[3] + "</th>";
-                            s2 += "<td>" + tempObj1[tempKeys1[2]] + "</td>" + "<td>" + tempObj1[tempKeys1[3]] + "</td>";
+                            s1 += "<th class=\"text-uppercase\">" + tempKeys1[2] + "</th>" + "<th class=\"text-uppercase\">" + tempKeys1.spreadsheetId + "</th>" + "<th class=\"text-uppercase\">" + tempKeys1.sheetId + "</th>";
+                            s2 += "<td>" + tempObj1[tempKeys1[2]] + "</td>" + "<td>" + tempKeys1.spreadsheetId + "</td>" + "<td>" + tempKeys1.sheetId + "</td>";
                             s1 += "</tr></thead>";
                             s2 += "</tr></tbody>";
                             node.insertAdjacentHTML('beforeend', "<br><table class=\"table table-sm table-secondary table-responsive\">" + s1 + s2 + "</table>");
@@ -549,8 +549,8 @@
                             //
                             var s1 = "<thead><tr>";
                             var s2 = "<tbody><tr>";
-                            s1 += "<th class=\"text-uppercase\">" + tempKeys2[2] + "</th>" + "<th class=\"text-uppercase\">" + tempKeys2[3] + "</th>";
-                            s2 += "<td>" + tempObj2[tempKeys2[2]] + "</td>" + "<td>" + tempObj2[tempKeys2[3]] + "</td>";
+                            s1 += "<th class=\"text-uppercase\">" + tempKeys2[2] + "</th>" + "<th class=\"text-uppercase\">" + tempKeys2.spreadsheetId + "</th>" + "<th class=\"text-uppercase\">" + tempKeys2.sheetId + "</th>";
+                            s2 += "<td>" + tempObj2[tempKeys2[2]] + "</td>" + "<td>" + tempKeys2.spreadsheetId + "</td>" + "<td>" + tempKeys2.sheetId + "</td>";
                             s1 += "</tr></thead>";
                             s2 += "</tr></tbody>";
                             node.insertAdjacentHTML('beforeend', "<br><table class=\"table table-sm table-secondary table-responsive\">" + s2 + "</table>");
