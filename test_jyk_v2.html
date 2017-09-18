@@ -508,6 +508,11 @@
                         var node = document.createElement("li");
                         node.className = "list-group-item list-group-item-danger";
                         node.innerHTML = "<span class=\"badge badge-warning\">" + row[0] + " 000" + row[1] + "</span> " + row[2];
+
+                        if (row[1] == 3) {
+                            var tempObj = JSON.parse(row[3]);
+                            node.insertAdjacentHTML('beforeend', "<br><small class=\"text-muted\">" + tempObj.spreadsheetTitle ", " + tempObj.poc + ", " + tempObj.no + "</small>");
+                        }
                         /*
                         if (infoObj) {
                             var s1 = "<thead><tr>";
@@ -529,7 +534,6 @@
                         }
                         */
                         document.getElementById("results").appendChild(node);
-
                     }
                 }
             } else {
