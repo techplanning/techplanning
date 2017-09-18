@@ -514,7 +514,8 @@
                         if (row[1] == 3) {
                             var tempObj1 = JSON.parse(row[3]);
                             var tempKeys1 = Object.keys(tempObj1);
-                            node.insertAdjacentHTML('beforeend', "<br><small class=\"text-muted\">" + tempObj1.spreadsheetTitle + " > " + tempObj1[tempKeys1[0]] + " > " + tempObj1[tempKeys1[2]] + "</small>");
+                            node.insertAdjacentHTML('beforeend', "<br><small class=\"text-muted\">" + tempObj1.spreadsheetTitle + " → " + tempObj1[tempKeys1[0]] + " → " + tempObj1[tempKeys1[2]] + "</small>");
+                            //
                             var s1 = "<thead><tr>";
                             var s2 = "<tbody><tr>";
                             s1 += "<th class=\"text-uppercase\">" + tempKeys1[2] + "</th>" + "<th class=\"text-uppercase\">" + tempKeys1[3] + "</th>";
