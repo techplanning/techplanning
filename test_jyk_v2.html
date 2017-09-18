@@ -106,6 +106,7 @@
                                 <button type="button" class="btn btn-secondary btn-block" id="clearResults-button">결과 지우기 (Test)</button>
                                 <!--<pre id="results"></pre>-->
                                 <ul class="list-group" id="results"></ul>
+                                <br>
                             </div>
                             <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
                                 <form>
@@ -522,7 +523,7 @@
                             s2 += "<td>" + tempObj1[tempKeys1[2]] + "</td>" + "<td>" + tempObj1[tempKeys1[3]] + "</td>";
                             s1 += "</tr></thead>";
                             s2 += "</tr></tbody>";
-                            node.insertAdjacentHTML('beforeend', "<br><table class=\"table table-sm table-dark table-bordered table-responsive\">" + s1 + s2 + "</table><br>");
+                            node.insertAdjacentHTML('beforeend', "<br><table class=\"table table-sm table-dark table-bordered table-responsive\">" + s1 + s2 + "</table>");
                         }
                         /*
                         if (infoObj) {
