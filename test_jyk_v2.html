@@ -314,6 +314,25 @@
         });
     }
 
+    /* testing draft ...
+    document.getElementById("+buttonUid+").onclick = handleDataUpdateClick;
+
+    function handleDataUpdateClick(event) {
+        var tempFormData = document.getElementById(formUid).value;
+        var loc = parseInt(tempObj1[tempKeys1[1]]) + 2;
+        gapi.client.sheets.spreadsheets.values.update({
+            spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw',
+            range: 'TEST - JYK!N' + String(loc),
+            valueInputOption: 'USER_ENTERED',
+            values: [
+                [tempFormData]
+            ]
+        }).then(function(response) {
+            console.log(response);
+        });
+    }
+    */
+
     /**************************************************************************
      **************************************************************************/
     // create temp array storage for mass dumping log data to google sheets.
@@ -529,8 +548,8 @@
                             var modalUid = "modal-" + row[1] + tempObj1[tempKeys1[0]] + tempObj1[tempKeys1[1]];
                             var formUid = "form-" + row[1] + tempObj1[tempKeys1[0]] + tempObj1[tempKeys1[1]];
                             var buttonUid = "button-" + row[1] + tempObj1[tempKeys1[0]] + tempObj1[tempKeys1[1]];
-                            node.insertAdjacentHTML('beforeend', "<div class=\"text-right\"><button type=\"button\" class=\"btn btn-primary btn-sm\" data-toggle=\"modal\" data-target=\"." + modalUid + "\">수정하기</button></div><div class=\"modal fade " + modalUid + "\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myLargeModalLabel\" aria-hidden=\"true\"><div class=\"modal-dialog modal-lg\"><div class=\"modal-content\"><div class=\"modal-header\"><h5 class=\"modal-title\"><span class=\"badge badge-pill badge-warning\">" + row[0] + " 000" + row[1] + "</span> " + row[2] + "</h5><button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button></div><div class=\"modal-body\"> <small class=\"text-muted\">" + tempObj1.spreadsheetTitle + " → " + tempObj1[tempKeys1[0]] + " → " + tempObj1[tempKeys1[1]] + "</small> <form><div class=\"form-group\"><label>로그정의서명</label><input class=\"form-control\" type=\"text\" placeholder=\"" + tempObj1[tempKeys1[2]] + "\" readonly></div> <div class=\"form-group\"><label>로그정의서 링크URL</label><input class=\"form-control is-invalid\" type=\"text\" id=\"" + formUid + "\" placeholder=\"" + tempObj1[tempKeys1[3]] + "\"><small class=\"invalid-feedback\">올바른 로그정의서 링크URL을 입력 해 주세요.</small></div></form> </div><div class=\"modal-footer\"><button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">취소</button><button type=\"button\" class=\"btn btn-primary\" id=\"" + buttonUid + "\">저장</button></div></div></div></div>  <script type='text/javascript'>document.getElementById("+buttonUid+").onclick = handleDataUpdateClick; function handleDataUpdateClick(event) {var tempFormData = document.getElementById("+formUid+").value; gapi.client.sheets.spreadsheets.values.update({spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw', range: 'TEST - JYK!M1', valueInputOption: 'USER_ENTERED', values: [[tempFormData]]}).then(function(response) {console.log(response);});}</"+"script>");
-                            
+                            node.insertAdjacentHTML('beforeend', "<div class=\"text-right\"><button type=\"button\" class=\"btn btn-primary btn-sm\" data-toggle=\"modal\" data-target=\"." + modalUid + "\">수정하기</button></div><div class=\"modal fade " + modalUid + "\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myLargeModalLabel\" aria-hidden=\"true\"><div class=\"modal-dialog modal-lg\"><div class=\"modal-content\"><div class=\"modal-header\"><h5 class=\"modal-title\"><span class=\"badge badge-pill badge-warning\">" + row[0] + " 000" + row[1] + "</span> " + row[2] + "</h5><button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button></div><div class=\"modal-body\"> <small class=\"text-muted\">" + tempObj1.spreadsheetTitle + " → " + tempObj1[tempKeys1[0]] + " → " + tempObj1[tempKeys1[1]] + "</small> <form><div class=\"form-group\"><label>로그정의서명</label><input class=\"form-control\" type=\"text\" placeholder=\"" + tempObj1[tempKeys1[2]] + "\" readonly></div> <div class=\"form-group\"><label>로그정의서 링크URL</label><input class=\"form-control is-invalid\" type=\"text\" id=\"" + formUid + "\" placeholder=\"" + tempObj1[tempKeys1[3]] + "\"><small class=\"invalid-feedback\">올바른 로그정의서 링크URL을 입력 해 주세요.</small></div></form> </div><div class=\"modal-footer\"><button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">취소</button><button type=\"button\" class=\"btn btn-primary\" id=\"" + buttonUid + "\">저장</button></div></div></div></div>  <script type='text/javascript'>document.getElementById(" + buttonUid + ").onclick = handleDataUpdateClick; function handleDataUpdateClick(event) {var tempFormData = document.getElementById(" + formUid + ").value; gapi.client.sheets.spreadsheets.values.update({spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw', range: 'TEST - JYK!M1', valueInputOption: 'USER_ENTERED', values: [[tempFormData]]}).then(function(response) {console.log(response);});}</" + "script>");
+
                         }
 
                         // 8 같은 정의서 URL을 공유하는 서로 다른 로그정의서명이 있습니다.
