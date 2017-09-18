@@ -510,7 +510,7 @@
 
                         var node = document.createElement("li");
                         node.className = "list-group-item list-group-item-danger";
-                        node.innerHTML = "<span class=\"badge badge-warning\">" + row[0] + " 000" + row[1] + "</span> " + row[2];
+                        node.innerHTML = "<span class=\"badge badge-warning\">" + row[0] + " 000" + row[1] + "</span> " + "<h5 class=\"mb-1\">" + row[2] + "</h5>";
 
                         if (row[1] == 3) {
                             var tempObj1 = JSON.parse(row[3]);
