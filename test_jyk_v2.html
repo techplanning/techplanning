@@ -554,28 +554,9 @@
                             s2 += "<td>" + tempObj2[tempKeys2[2]] + "</td>" + "<td>" + tempObj2[tempKeys2[4]] + "</td>" + "<td>" + tempObj2[tempKeys2[5]] + "</td>";
                             s1 += "</tr></thead>";
                             s2 += "</tr></tbody>";
-                            node.insertAdjacentHTML('beforeend', "<br><table class=\"table table-sm table-secondary table-responsive\">" + s2 + "</table>");
+                            node.insertAdjacentHTML('beforeend', "<br><table class=\"table table-sm table-secondary table-responsive\">" + s2 + "</table><div class=\"text-right\"><button type=\"button\" class=\"btn btn-primary btn-sm\">수정하기</button></div>");
                         }
-                        /*
-                        if (infoObj) {
-                            var s1 = "<thead><tr>";
-                            var s2 = "<tbody><tr>";
-                            for (var key in infoObj) {
-                                //create html table s
-                                s1 += "<th class=\"text-uppercase\">" + key + "</th>";
-                                s2 += "<td>" + infoObj[key] + "</td>";
-                            }
-                            if (targetInfoObj) {
-                                s2 += "</tr>";
-                                for (var key in targetInfoObj) {
-                                    s2 += "<td>" + targetInfoObj[key] + "</td>";
-                                }
-                            }
-                            s1 += "</tr></thead>";
-                            s2 += "</tr></tbody>";
-                            node.insertAdjacentHTML('beforeend', "<br><br><table class=\"table table-sm table-dark table-bordered table-responsive\">" + s1 + s2 + "</table>");
-                        }
-                        */
+
                         document.getElementById("results").appendChild(node);
                     }
                 }
