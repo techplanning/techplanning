@@ -512,7 +512,7 @@
                         node.className = "list-group-item list-group-item-danger";
                         node.innerHTML = "<span class=\"badge badge-pill badge-warning\">" + row[0] + " 000" + row[1] + "</span><h5>" + row[2] + "</h5>";
 
-                        // 로그정의서 링크URL이 잘못 기술되었습니다.
+                        // 3 로그정의서 링크URL이 잘못 기술되었습니다.
                         if (row[1] == 3) {
                             var tempObj1 = JSON.parse(row[3]);
                             var tempKeys1 = Object.keys(tempObj1);
@@ -527,8 +527,9 @@
                             node.insertAdjacentHTML('beforeend', "<br><table class=\"table table-sm table-secondary table-responsive\">" + s1 + s2 + "</table>");
                         }
 
-                        // 같은 정의서 URL을 공유하는 서로 다른 로그정의서명이 있습니다.
-                        if (row[1] == 8) {
+                        // 8 같은 정의서 URL을 공유하는 서로 다른 로그정의서명이 있습니다.
+                        // 9 동일한 POC에 중복된 정의서 링크가 있습니다.
+                        if (row[1] == 8 || row[1] == 9) {
                             var tempObj1 = JSON.parse(row[3]);
                             var tempObj2 = JSON.parse(row[4]);
                             var tempKeys1 = Object.keys(tempObj1);
