@@ -652,19 +652,19 @@
 
             // 빈 값 체크
             if (!info["로그정의서명"]) {
-                log(_DEBUG, "0001", "\"로그정의서명\"이 없습니다.", info);
+                log(_DEBUG, "0001", "로그정의서명이 없습니다.", info);
             } else if (!/^\[로그정의서\] .*$/.test(info["로그정의서명"])) {
-                log(_ERROR, "0005", "\"로그정의서명\"서식이 올바르지 않습니다.", info);
+                log(_ERROR, "0005", "로그정의서명 서식이 올바르지 않습니다.", info);
             }
 
             if (!info["로그정의서 링크URL"]) {
-                log(_DEBUG, "0002", "\"로그정의서 링크URL\"이 없습니다.", info);
+                log(_DEBUG, "0002", "로그정의서 링크URL이 없습니다.", info);
             } else {
                 if (!info["spreadsheetId"]) {
-                    log(_ERROR, "0003", "\"시트파일ID\"가 없습니다.", info);
+                    log(_ERROR, "0003", "로그정의서 링크URL이 잘못 기술되었습니다.", info);
                 } else {
                     if (!info["sheetId"]) {
-                        log(_ERROR, "0004", "\"로그정의서 링크URL\"이 파일에 대한 링크로, 시트에 대한 링크가 아닙니다.", info);
+                        log(_ERROR, "0004", "로그정의서 링크URL이 파일에 대한 링크로, 시트에 대한 링크가 아닙니다.", info);
                     }
                 }
             }
@@ -680,7 +680,7 @@
                     }
 
                     if (targetInfo["로그정의서명"] != info["로그정의서명"]) {
-                        log(_ERROR, "0008", "\"로그정의서명\"이 다른 중복된 정의서 링크가 있습니다.", info, targetInfo);
+                        log(_ERROR, "0008", "같은 정의서 URL을 공유하는 서로 다른 로그정의서명이 있습니다.", info, targetInfo);
                     }
 
                     if (info["sheetId"] && targetInfo["sheetId"] == info["sheetId"]) {
