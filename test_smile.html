@@ -381,7 +381,7 @@
 
         //log 호출시마다 추가
         var error_counter = 0;
-        var error_list_arr_info = [];
+        var error_list_arr_info_all = []; //전체 에러의 배열
 
         //타겟하여 시트에서 새로 불러온 값들을 저장할 배열
         var _target_defList = [];
@@ -480,13 +480,16 @@
         }
 
         var search_target_list = []; //타겟할 셀의 열
-        var search_target_list_poc = []; //타겟할 셀의 POC정보
         var search_target_list_no = []; //타겟할 셀의 NO정보
         var search_target_list_code = [];
         var search_target_list_result = [];
 
         //클릭하면 실행되어 이제까지 발생된 에러의 값을 저장한 배열을 변수로 받아 처리하는 함수
-        function init_search(index, info, target){
+        //'전체 채점'을 클릭하면 전체 에러 목록(error_list_arr_info)을 매개변수로 받아 채점
+        //'개별 채점'을 클릭하면 개별 에러를 매개변수로 받아 채점
+        function init_search(error_list_arr_info){
+            var search_target_list_poc = [];//타겟할 셀의 POC정보
+
            //error_list_arr_info에서 json obj에 접근 불가능하면 stringfy로 받은걸 json.parse로 변경
             var error_list_size = error_list_arr_info.length; //찾은 에러의 수
 
@@ -502,7 +505,7 @@
 
                 tg_no = temp['infoObj']['no'] + 2;
                 search_target_list_code.push(temp['code']); //타겟의 오류 코드 적재
-                search_target_list_poc.push(tg_no - 2);//타겟의 열 번호를 배열에 삽입(기존 코드와 통일하여 한 번에 처리하기 위해 -2)
+                search_target_list_no.push(tg_no - 2);//타겟의 열 번호를 배열에 삽입(기존 코드와 통일하여 한 번에 처리하기 위해 -2)
 
                 //poc가 MW면 sheetTitle[0] N:O, PC면 sheetTitle[1] M:N
                 if(temp['infoObj']['poc'] == 'MW'){ //오류나면 poc를 대문자로 치환
@@ -581,8 +584,6 @@
                 msg(_SYSTEM, "시트 처리 오류 - " + response.result.error.message, {spreadsheetTitle: [spreadsheetTitle]}, response);
             });
         }
-
-        var re_error_list = []; //새로 발견된 오류들을 저장하는 배열
         var check_result = []; //채점 결과를 저장하는 배열, 맞으면 1 틀리면 0
 
         //타겟으로 불러온 값들에 대한 검증
@@ -678,12 +679,322 @@
                 //채점 결과 저장 완료
             }
             //채점 결과를 히스토리에 업데이트 한 후 오류 리로드
-        }
-        function insert_history(){
+            }
+        //insert_target을 매개변수로 받아 해당 매개변수 안의 내용들을 히스토리에 업로드
 
+        //날짜 객체 선언
+        var insert_date_ = new Date();
+
+        //히스토리 시트 로드
+        //메뉴 1이 로드되면서 히스토리 배열이 생성됨
+        function load_history(){
+            var insert_history_time = insert_date_.getYear() + "-" + insert_date_.getMonth()+1 + "-" + insert_date_.getDate(); //삽입 시간(YYYY-MM-DD)
+
+            //스프레드시트에서 시트 정보를 불러온다
+            var params = {
+                // The spreadsheet to request.
+                spreadsheetId: '15_8jerhqEZNj3BJ4bzwkklH2K2W5pfcS3mUuwZ1AO2I',
+                range: 'history_sheet!A2:F'
+            };
+            var request = gapi.client.sheets.spreadsheets.values.get(params);
+            request.then(function(response) {
+                // TODO: Change code below to process the `response` object:
+                console.log(response.result);
+                //히스토리 시트 로드 완료
+
+                var cell_result = response.result.ValueRange; //A2셀의 값 객체
+                var today_data = [];
+                var time_lastest = cell_result.values[0][0]; //저장되어있던 가장 최근 시간
+
+                //오늘 히스토리가 있으면 오늘 히스토리를 불러오고 없다면 이전 날짜의 히스토리를 불러온다.
+                //오늘 조회한 히스토리 내용이 있으면 타겟을 오늘로 지정, 오늘 조회한 히스토리 내용이 없으면 타겟을 최근 조회 시간으로 지정.
+                var target_time;
+
+                if(insert_history_time == time_lastest){
+                    target_time = insert_history_time;
+                }else if(insert_history_time != time_lastest){
+                    target_time = time_lastest;
+                }else if(insert_history_time, time_lastest){
+                    console.log('[error]시간 정보가 다릅니다. : (처리대상 : ' +  insert_history_time + ') (비교대상 : ' + time_lastest + ")");
+                }
+
+                var finder = 0; //해당 날짜의 행이 나올 때까지 1씩 카운트 증가
+
+                for(i = 0; i < cell_result.values.length; i++){
+                    if(cell_result.values[i][0] != target_time){
+                        break;
+                    }
+                    finder++;
+                }
+                for(k = 0; k < finder; k++){
+                    today_data.push(cell_result.values[k]); //[['date', 'NO', 'flag', 'code', 'description'], ...]
+                }
+                if(today_data.length == 0){
+                    console.log('[error]히스토리 조회를 실패했습니다.');
+                }
+                return today_data;
+                //데이터 불러오기 완료
+            }, function(reason) {
+                console.error('error: ' + reason.result.error.message);
+            });
         }
-        function edit_history(){
-            
+
+        //새로운 오류가 발견되는 경우(=새로 불러온 경우) insert, 채점 결과 플래그를 변경하는 경우 edit
+        //히스토리 적재 temp에 저장된 내용을 핸들링
+        //호출 시점은 전체 검사가 끝난 후
+        function insert_history(insert_target){
+            //중복되는 것은 히스토리에 적재하고 중복되지 않는 것은 히스토리에 적재한다.
+
+            //히스토리 데이터를 불러옴
+            var compare_history = load_history();
+
+            //번호를 통해 히스토리 데이터를 (code, info, target)으로 정렬한다.
+            var index_history = compare_history[compare_history.length - 1][1]; //마지막 번호
+            var index_countee = 0; //에러의 수와 관련된 변수, 로그는 오류내용, info, target 순서대로 행으로 정렬되기 때문에 불러온 데이터의 length와 실제 오류의 갯수가 같지 않아 핸들링 하기 위해 선언.
+            var inner_counter = 0;
+            var today_history_idx = 1; //오늘 히스토리의 마지막 열
+            var compare_history_temp = {};
+            var sorted_history = []; //error_list_arr_info와 같은 형식 sorted_history = []{code: , infoObj: , targetObj: }
+
+            //compare_history_temp[index_countee][오류메세지, info, target]
+            for(i=0; i < compare_history.length; i++){
+                today_history_data++;
+                //플래그가 N인 경우만 저장
+                if(compare_history[i][2] == 'N'){
+                    if(compare_history[i][1] == index_countee + 1){ //type 문제 발생 가능할듯
+                        if(i != 0){
+                            compare_history_temp.code = compare_history[i][3];
+                            inner_counter = inner_counter+1;
+                        }else if(i == 0){
+                            if(inner_counter == 1){
+                                compare_history_temp.infoObj = compare_history[i][4];
+                                inner_counter = inner_counter+1;
+                            }else if(inner_counter == 2){
+                                compare_history_temp.targetObj = compare_history[i][4];
+                                inner_counter = 0;
+                            }
+                        }
+                    }else if(compare_history[i][1] != index_countee + 1){
+                        //이전까지 저장한 것을 배열에 JSON STRING으로 저장
+                        sorted_history.push(compare_history_temp.stringify());
+                        compare_history_temp = {};
+                        index_countee = compare_history[i][1];
+
+                        compare_history_temp.code = compare_history[i][4];
+                        inner_counter = inner_counter+1;
+                    }
+                }else if(compare_history[i][2] == 'Y'){
+                    //이 경우는 행 넘김
+                }
+            }
+
+            //오류 배열을 히스토리 데이터와 비교한다.
+            //기존 적재 오류 중 수정 후 플래그가 변경되지 않은 오류의 플래그 변경
+            //히스토리 데이터와 일치하는 오류가 있으면 배열에서 제거한다.
+            var del_sorted_history = sorted_history;
+            var target_edit_flag = []; //해결된 오류이나 채점을 하지 않아 변경된 히스토리를 저장
+            for(i = 0; i < error_list_arr_info_all.length; i++){
+                if(del_sorted_history.indexOf(error_list_arr_info_all[i]) != -1){
+                    del_sorted_history.splice(del_sorted_history.indexOf(error_list_arr_info_all[i]), 1);
+                }
+                if(sorted_history.indexOf(error_list_arr_info_all[i] == -1)){
+                    target_edit_flag.push(error_list_arr_info_all[i]);
+                }
+            }
+            //수정되지 않았던 플래그 수정
+            if(target_edit_flag.length != 0){
+                edit_history(target_edit_flag);
+            }
+
+            //배열에 살아남은 데이터만 맨 아래 행부터 추가한다.
+            var params = {
+                // The ID of the spreadsheet to update.
+                spreadsheetId: '15_8jerhqEZNj3BJ4bzwkklH2K2W5pfcS3mUuwZ1AO2I'
+            };
+            //행을 필요한 만큼 삽입
+            //오늘 날짜와 A2를 비교해서 분기
+            var insert_history_time = insert_date_.getYear() + "-" + insert_date_.getMonth()+1 + "-" + insert_date_.getDate();
+            var range;
+
+            //오늘 데이터를 불러온 경우(오늘 데이터의 맨 아래에 삽입)
+            if(insert_history_time == compare_history[0][0]){
+                var batchUpdateValuesRequestBody = {
+                    "requests": [
+                        {
+                            "insertDimension": {
+                                "range": {
+                                    "sheetId": 0,
+                                    "dimension": "ROWS",
+                                    "startIndex": today_history_idx + 1, //이전 일자의 첫번째, 리스트의 마지막 +1
+                                    "endIndex": today_history_idx + 1 + sorted_history.length
+                                    //startIndex의 위로 endIndex-startIndex만큼 열 추가
+                                },
+                                "inheritFromBefore": true
+                            }
+                        }
+                    ]
+                };
+            }
+            //어제 데이터를 불러온 경우(어제 데이터의 위에 삽입)
+            else if(insert_history_time != compare_history[0][0]){
+                var batchUpdateValuesRequestBody = {
+                    "requests": [
+                        {
+                            "insertDimension": {
+                                "range": {
+                                    "sheetId": 0,
+                                    "dimension": "ROWS",
+                                    "startIndex": 1, //2행부터 추가
+                                    "endIndex": sorted_history.length + 1
+                                },
+                                "inheritFromBefore": true
+                            }
+                        }
+                    ]
+                };
+            }
+
+            var request = gapi.client.sheets.spreadsheets.batchUpdate(params, batchUpdateValuesRequestBody);
+            request.then(function(response) {
+                console.log(response.result);
+            }, function(reason) {
+                console.error('error: ' + reason.result.error.message);
+            });
+
+            //행에 맞게 포맷 변경
+            var insert_arr = new array();//요청으로 보낼 배열
+            var from_num = compare_history[compare_history.length][1]; //불러온 데이터의 마지막 행의 분류 번호
+            var obj_counter = 0;
+
+            for(i = 0; i < today_history_idx -1; i++){
+                var sorted_history_obj = JSON.parse(sorted_history[i]);
+                var row_5;
+                insert_arr[i][2] = from_num + 1;
+
+                if(obj_counter == 0){
+                    row_5 = sorted_history_obj.code;
+                    obj_counter = 1;
+                }else if(obj_counter == 1){
+                    row_5 = sorted_history_obj.infoObj;
+                    if(sorted_history_obj.targetObj){
+                        obj_counter = 2;
+                    }else{
+                        obj_counter = 0;
+                    }
+                }else if(obj_counter == 2){
+                    row_5 = sorted_history_obj.targetObj;
+                    obj_counter = 0;
+                    from_num++;
+                }
+
+                insert_arr[i][1] = insert_history_time;
+                //insert_arr[i][2] = from_num + 1;
+                insert_arr[i][3] = 'N';
+                insert_arr[i][4] = sorted_history_obj.code;
+                insert_arr[i][5] = row_5;
+            }
+
+            //삽입된 행에 내용 삽입
+            var batchUpdateValuesRequestBody_insert = {
+                "valueInputOption": 'RAW',
+                "data": [
+                    {
+                        "range": 'history_sheet!A2:E4', //레인지 수정해야합니다. 밥먹고합시당 배고파서 집중이안됨
+                        "majorDimension": 'COLUMNS',
+                        "values": insert_arr
+                    }
+                ],
+                "includeValuesInResponse": true,
+                "responseValueRenderOption": 'FORMATTED_VALUE',
+                "responseDateTimeRenderOption": 'SERIAL_NUMBER',
+            };
+            var request_insert = gapi.client.sheets.spreadsheets.values.batchUpdate(params, batchUpdateValuesRequestBody_insert);
+            request_insert.then(function(response) {
+                console.log(response.result);
+            }, function(reason) {
+                console.error('error: ' + reason.result.error.message);
+            });
+            //삽입 완료
+        }
+        //채점 결과가 나올 때마다 로드
+        //{code : , infoObj :, targetObj :}를 string형태의 매개변수로 받아 실행, 플래그를 Y로 바꿔야 하는 것들을 매개변수로 받는다.
+        function edit_history(flaging_){
+            var flag_target = flaging;
+
+            var today_data = load_history(); //[['date', 'NO', 'flag', 'code', 'description'], ...]
+            //2행(1)부터 오늘의 마지막 행(today_data.length)까지
+            //이미 있는 데이터를 로드하는 경우가 생긴다.
+            var edit_row = [];
+            row_init = 1; //두번째 행, 카운트 기준은 구글독스 전체 행의 배열
+            var counter_help = 0;
+            var switch_flag = true;
+
+            //변경해야 할 셀 추출
+            //today_data와 ff가 같이 돌고 있음.... 수정해야해....
+            for(i=0; i < flag_target.length; i++){
+                row_init++;
+                var ff = JSON.parse(flag_target[i]);
+                if(counter_help == 0){
+                    if(today_data[i][3] == ff.code){
+
+                    }else if(today_data[i][3] != ff.code){
+                        switch_flag = false;
+                    }
+                    counter_help++;
+                }else if(counter_help == 1){
+                    if(today_data[i][4] == ff.infoObj){
+
+                    }else if(today_data[i][4] != ff.infoObj){
+                        switch_flag = false;
+                    }
+                    if(ff.targetObj){
+                        counter_help++;
+                    }else if(!ff.targetObj){
+                        counter_help = 0;
+                        if(switch_flag){
+                            edit_row.push('history_sheet!C' + (row_init) + ':C' + (row_init+1)); //형식 문제 생길수도 있을듯........
+                        }else if(!switch_flag){
+
+                        }
+                    }
+                }else if(counter_help == 2){
+                    if(today_data[i][4] == ff.targetObj){
+
+                    }else if(today_data[i][4] != ff.targetObj){
+                        switch_flag = false;
+                    }
+                    if(switch_flag){
+                        edit_row.push('history_sheet!C' + (row_init-1) + ':C' + (row_init+1));
+                    }else if(!switch_flag){
+
+                    }
+                    counter_help = 0;
+                }
+            }
+
+            //셀 변경 요청
+            var batchUpdateValuesRequestBody_edit = {
+                "valueInputOption": 'RAW',
+                "data": [
+                    {
+                        "range": edit_row,
+                        "majorDimension": 'COLUMNS',
+                        "values": [
+                            //이거 다 Y로 보내도록.....
+                        ],
+                    }
+                ],
+                "includeValuesInResponse": true,
+                "responseValueRenderOption": 'FORMATTED_VALUE',
+                "responseDateTimeRenderOption": 'SERIAL_NUMBER',
+            };
+            var request_edit = gapi.client.sheets.spreadsheets.values.batchUpdate(params, batchUpdateValuesRequestBody_edit);
+            request_edit.then(function(response) {
+                // TODO: Change code below to process the `response` object:
+                console.log(response.result);
+            }, function(reason) {
+                console.error('error: ' + reason.result.error.message);
+            });
         }
 
         //사용하지 않습니다.
@@ -725,7 +1036,7 @@
                     error_msg_appender(logMsg, code, "loading_error_box", logMsg_info, logMsg_target); //★★json으로 바로 보내게 수정
                     error_list_temp.logMsg_target = logMsg_info;
                 }
-                error_list_arr_info.push(JSON.stringify(error_list_temp));
+                error_list_arr_info_all.push(JSON.stringify(error_list_temp));
                 error_counter++;
             }
         }
