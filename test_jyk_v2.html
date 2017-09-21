@@ -335,10 +335,38 @@
 
     /**************************************************************************
      **************************************************************************/
+    function addSheet(targetSpreadSheetID, sheetName) {
+        gapi.client.sheets.spreadsheets.batchUpdate({
+            spreadsheetId: targetSpreadSheetID,
+            requests: [{
+                "addSheet": {
+                    "properties": {
+                        "title": sheetName,
+                        "gridProperties": {
+                            "rowCount": 20,
+                            "columnCount": 12
+                        },
+                        "tabColor": {
+                            "red": 1.0,
+                            "green": 0.3,
+                            "blue": 0.4
+                        }
+                    }
+                }
+            }],
+        }).then(function(response) {
+            console.log(response);
+        });
+    }
+
+    /**************************************************************************
+     **************************************************************************/
     // create temp array storage for mass dumping log data to google sheets.
     var logArray = [];
 
     function dumpLogData() {
+
+        addSheet('1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw', 'Hello');
         //this function will dump all the log data temporarily stored in logArray to google sheets.
         gapi.client.sheets.spreadsheets.values.append({
             spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw',
