@@ -380,12 +380,12 @@
     var logArray = [];
 
     function dumpLogData() {
-        var today = getTodayDate();
-        addSheet('1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw', today);
+        var sheetName = getTodayDate();
+        addSheet('1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw', sheetName);
         //this function will dump all the log data temporarily stored in logArray to google sheets.
         gapi.client.sheets.spreadsheets.values.append({
             spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw',
-            range: 'TEST - JYK!A1:E1',
+            range: sheetName + '!A1:E1',
             majorDimension: 'ROWS',
             valueInputOption: 'USER_ENTERED',
             insertDataOption: 'INSERT_ROWS',
