@@ -489,7 +489,6 @@
         msg(_PROC,"정의서 로딩 시작", spreadsheetId);
         var request = gapi.client.sheets.spreadsheets.get(params);
         request.then(function(response) {
-//            console.log(response.result);
             var spreadsheet = {};
 
             spreadsheet["sheet"] = [];
@@ -541,11 +540,14 @@
             }
             msg(_PROC,"정의서 로딩 완료", spreadsheet.spreadsheetTitle);
 
-            console.log(spreadsheet);
-//            appendPre(JSON.stringify(spreadsheet));
+//            console.log(spreadsheet);
         }, function(response) {
             msg(_SYSTEM,"정의서 로딩 오류", spreadsheetId, response.result.error.message);
 //            console.error('error: ' + response.result.error.message);
+            setTimeout(function(){
+                msg(_PROC,"정의서 로딩 재시도", spreadsheetId);
+                readSpreadsheet(inputSpreadsheetTitle, spreadsheetId);
+            }, 2000);
         });
     }
 
@@ -590,6 +592,10 @@
         }, function(response) {
             msg(_SYSTEM,"시트 처리 오류", {["spreadsheetTitle"] : spreadsheetTitle, ["sheetTitle"] : sheetTitle}, response.result.error.message);
 //            console.error('error: ' + response.result.error.message);
+            setTimeout(function(){
+                msg(_PROC,"시트 처리 재시도", spreadsheetTitle);
+                readDefinitionData(spreadsheetId, spreadsheetTitle, sheetTitle, sheetIndex, callback);
+            }, 2000);
         });
     }
 
