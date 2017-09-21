@@ -564,15 +564,15 @@
     }
     */
     function callResults() {
+        var openNode = document.createElement("li");
+        openNode.className = "list-group-item list-group-item-info";
+        openNode.innerHTML = dumpingSheetName + " 날짜의 검사 결과를 송출합니다.";
+        document.getElementById("log").appendChild(openNode);
+
         gapi.client.sheets.spreadsheets.values.get({
             spreadsheetId: dumpingSpreadSheetID,
             range: dumpingSheetName + '!A1:E',
         }).then(function(response) {
-            var node = document.createElement("li");
-            node.className = "list-group-item list-group-item-info";
-            node.innerHTML = dumpingSheetName + " 날짜의 검사 결과를 송출합니다.";
-            // 여기서부터 수정 ************************************************************
-
             var range = response.result;
             if (range.values.length > 0) {
                 for (i = 0; i < range.values.length; i++) {
@@ -580,7 +580,7 @@
                     // Print columns A and E, which correspond to indices 0 and 4.
                     //appendResults(row[0] + row[2]);
                     if (row[0] == "[ERROR]") {
-
+                        var node = document.createElement("li");
 
                         node.className = "list-group-item list-group-item-danger";
                         node.innerHTML = "<span class=\"badge badge-pill badge-warning\">" + row[0] + " 000" + row[1] + "</span><h5>" + row[2] + "</h5>";
