@@ -568,7 +568,6 @@
         openNode.className = "list-group-item list-group-item-info";
         openNode.innerHTML = dumpingSheetName + " 날짜의 검사 결과를 송출합니다.";
         document.getElementById("results").appendChild(openNode);
-        //document.getElementById("results").appendChild(node);
 
         gapi.client.sheets.spreadsheets.values.get({
             spreadsheetId: dumpingSpreadSheetID,
