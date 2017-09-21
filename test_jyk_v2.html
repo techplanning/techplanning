@@ -357,12 +357,31 @@
 
     /**************************************************************************
      **************************************************************************/
+    // get today's date.. returning date string in yyyymmdd form,
+    function getTodayDate() {
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; //January is 0!
+
+        var yyyy = today.getFullYear();
+        if (dd < 10) {
+            dd = '0' + dd;
+        }
+        if (mm < 10) {
+            mm = '0' + mm;
+        }
+        today = yyyy + mm + dd;
+        return today;
+    }
+
+    /**************************************************************************
+     **************************************************************************/
     // create temp array storage for mass dumping log data to google sheets.
     var logArray = [];
 
     function dumpLogData() {
-
-        addSheet('1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw', 'Hello');
+        var today = getTodayDate();
+        addSheet('1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw', today);
         //this function will dump all the log data temporarily stored in logArray to google sheets.
         gapi.client.sheets.spreadsheets.values.append({
             spreadsheetId: '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw',
