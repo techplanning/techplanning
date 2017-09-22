@@ -364,6 +364,9 @@
         https://developers.google.com/sheets/api/samples/sheet
      **************************************************************************/
     function addSheet(targetSpreadSheetID, sheetName) {
+        var r = (Math.floor(Math.random() * 10) * 0.1);
+        var g = (Math.floor(Math.random() * 10) * 0.1);
+        var b = (Math.floor(Math.random() * 10) * 0.1);
         gapi.client.sheets.spreadsheets.batchUpdate({
             spreadsheetId: targetSpreadSheetID,
             requests: [{
@@ -371,9 +374,9 @@
                     "properties": {
                         "title": sheetName,
                         "tabColor": {
-                            "red": 1.0,
-                            "green": 0.3,
-                            "blue": 0.4
+                            "red": r,
+                            "green": g,
+                            "blue": b
                         }
                     }
                 }
