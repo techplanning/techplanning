@@ -138,10 +138,16 @@
     var _spreadsheets = {};
     var _sheetMap = {};
     var _sheetMapWithPOC = {};
+    var _sheetIdMap = {};
     var _dic = {};
 
     function readDefinitionList() {
+        _defList = [];
+        _sheetMap = {};
+        _sheetMapWithPOC = {};
+
         var spreadsheetId = '18HiiJG-Utm6e-wXr2Ie_z_8TtlBwq3yPFLjf8v45F-Q';
+//        var spreadsheetId = '1n_NBuRJ0GQ-sjikdfKEYVOy8_BmLhlv1rffsr6h2QeY';
         var spreadsheetTitle = 'PageID_11번가 Log 2.0';
         var sheetTitle = ['모바일 v.2.3', 'PC v.2.1'];
 
@@ -257,11 +263,44 @@
             }
         });
 
+        var spreadsheetIds = Object.keys(_spreadsheets);
+
+        spreadsheetIds.forEach(function(key) {
+            var spreadsheet = _spreadsheets[key];
+            spreadsheet.sheet.forEach(function(sheet){
+                _sheetIdMap[spreadsheet.spreadsheetId + "|" + sheet.sheetId] = sheet;
+            });
+        });
+
+        spreadsheetIds.forEach(function(key) {
+            var spreadsheet = _spreadsheets[key];
+            spreadsheet.sheet.forEach(function(sheet){
+                if(sheet.sheetType == "DEF") {
+                    sheet["modules"] = [];
+                    if(sheet.sheetProperties["포함모듈 URL"]) {
+                        sheet.sheetProperties["포함모듈 URL"].forEach(function (moduleURL) {
+                            var regEx1 = /spreadsheets\/d\/([a-zA-Z0-9-_]+)/.exec(moduleURL);
+                            var regEx2 = /[#&]gid=([0-9]+)/.exec(moduleURL)
+                            if (regEx1 && regEx1.length > 0 && regEx2 && regEx2.length > 0) {
+                                var module = _sheetIdMap[regEx1[1] + "|" + regEx2[1]];
+                                if (module) {
+                                    sheet["modules"].push(module);
+                                }
+                            }
+                        });
+                    }
+                }
+                _sheetIdMap[spreadsheet.spreadsheetId + "|" + sheet.sheetId] = sheet;
+            });
+        });
+
+
         msg(_PROC,"로그 정의서 데이터 처리 완료");
 
         checkDefinition();
         prodcessDIC();
         setDICSheet();
+//        setDefSheet();
     }
 
     function checkDefinition() {
@@ -292,6 +331,12 @@
                         if(!findSheet) {
                             log(_ERROR,"0013","\"" + sheet.sheetTitle + "\"정의서 시트의 history sheet가 없습니다.", {spreadsheetTitle : ele.spreadsheetTitle});
                         }
+                    }
+
+                    if(sheet.sheetProperties["페이지 ID"] != undefined && sheet.sheetProperties["페이지 ID"] == "") {
+                        log(_ERROR,"0019","페이지 ID가 없습니다.", {spreadsheetTitle : ele.spreadsheetTitle, sheetTitle : sheet.sheetTitle});
+                    } else if(sheet.sheetProperties["module ID"] != undefined && sheet.sheetProperties["module ID"] == "") {
+                        log(_ERROR,"0020","module ID가 없습니다.", {spreadsheetTitle : ele.spreadsheetTitle, sheetTitle : sheet.sheetTitle});
                     }
                 }
             });
@@ -603,7 +648,7 @@
     function readDefinitionProperties(spreadsheetId, spreadsheetTitle, sheetTitle, sheetIndex, callback) {
         gapi.client.sheets.spreadsheets.values.get({
             spreadsheetId: [spreadsheetId],
-            range: sheetTitle + '!A3:E11',
+            range: sheetTitle + '!A3:E12',
         }).then(function(response) {
             var range = response.result;
             if (range.values.length > 0) {
@@ -612,13 +657,14 @@
                 var data = {};
                 for (r = 0; r < rowSize; r++) {
                     var colSize = range.values[r].length;
-                    if(range.values[r][0] == "POC 구분") {
+                    if(range.values[r][0] == "POC 구분" || range.values[r][0] == "포함모듈 URL") {
                         data[range.values[r][0]] = [];
                         for (c = 1; c < colSize; c++) {
                             data[range.values[r][0]][c - 1] = range.values[r][c];
                         }
                     } else {
-                        for (c = 0; c < colSize; c++) {
+                        data[range.values[r][0]] = "";
+                        for (c = 1; c < colSize; c++) {
                             data[range.values[r][0]] = range.values[r][c];
                         }
                     }
