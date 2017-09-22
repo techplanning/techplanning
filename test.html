@@ -300,7 +300,112 @@
         checkDefinition();
         prodcessDIC();
         setDICSheet();
-//        setDefSheet();
+        setDefSheet();
+    }
+
+    function setDefSheet() {
+        var params = {
+            spreadsheetId: '1u63QjJo53Xga7_aJ3S8bAGa6DznuLgR_v6MVgY0SDxE',
+            range: 'A2:ZZ',
+        };
+
+        var clearValuesRequestBody = {
+        };
+
+        var request = gapi.client.sheets.spreadsheets.values.clear(params, clearValuesRequestBody);
+        request.then(function(response) {
+            console.log(response.result);
+            printDef();
+        }, function(reason) {
+            msg(_SYSTEM, "시트 clear 오류", reason.result.error.message);
+        });
+    }
+
+    function printDef() {
+        msg(_PROC,"통합 로그정의서 생성 시작");
+
+        var params = {
+            spreadsheetId: '1u63QjJo53Xga7_aJ3S8bAGa6DznuLgR_v6MVgY0SDxE',
+            range: '통합 로그정의서!A2',
+            valueInputOption: 'USER_ENTERED',
+        };
+
+        var values = [];
+        var keys = Object.keys(_sheetIdMap);
+
+        keys.forEach(function(key) {
+            var ele = _sheetIdMap[key];
+            if(ele["sheetType"] == "DEF" && ele.sheetProperties["페이지 ID"] != undefined && ele.sheetProperties["페이지 ID"] != "") {
+                var page_id = ele.sheetProperties["페이지 ID"];
+
+                ele.sheetProperties["POC 구분"].forEach(function(poc) {
+                    var poc_clf = "";
+                    var os_name = "";
+                    if(poc == "MW") {
+                        poc_clf = "mw";
+                    } else if(poc == "APP(Android)") {
+                        poc_clf = "app";
+                        os_name = "Android";
+                    } else if(poc == "APP(iOS)") {
+                        poc_clf = "app";
+                        os_name = "iOS";
+                    } else if(poc == "PC") {
+                        poc_clf = "pc";
+                    } else {
+                        log(_ERROR,"0021","정의되지 않은 POC 구분입니다.", poc, key);
+                    }
+
+                    values = values.concat(makeActionBodyData(ele.sheetData, poc_clf, os_name, page_id));
+
+                    ele.modules.forEach(function(module) {
+                        values = values.concat(loadModuleAction(module, poc_clf, os_name, page_id));
+                    });
+                });
+            }
+        });
+
+        var valueRangeBody = {
+            "values": values
+        };
+
+        var request = gapi.client.sheets.spreadsheets.values.update(params, valueRangeBody);
+        request.then(function(response) {
+            console.log(response.result);
+        }, function(reason) {
+            msg(_SYSTEM, "통합 로그정의서 작성 오류", reason.result.error.message);
+        });
+
+        msg(_PROC,"통합 로그정의서 생성 완료");
+    }
+
+    function makeActionBodyData(sheetData, poc_clf, os_name, page_id) {
+        var result = [];
+        sheetData.forEach(function(action) {
+            var action_id = action["gesture"];
+            if(action["area"] != undefined && action["area"] != ""
+                && action["label"] != undefined && action["label"] != "") {
+                action_id = action_id.concat(".",action["area"],".",action["label"]);
+            }
+
+            var bodys = [];
+            action["body"].forEach(function(body){
+                bodys.push(body.id);
+            });
+
+            result.push([action["state"], poc_clf, os_name, page_id, action_id].concat(bodys));
+        });
+        return result;
+    }
+
+    function loadModuleAction(module, poc_clf, os_name, page_id) {
+        var result = [];
+        // 우선 모듈은 1단계만 가능하도록 (순환포함 감지가 필요해짐)
+//        module.modules.forEach(function(subModule) {
+//            result = result.concat(loadModuleAction(subModule, poc_clf, os_name, page_id));
+//        });
+        result = result.concat(makeActionBodyData(module.sheetData, poc_clf, os_name, page_id));
+
+        return result;
     }
 
     function checkDefinition() {
