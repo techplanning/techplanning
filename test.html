@@ -783,7 +783,7 @@
             msg(_SYSTEM,"정의서 속성 처리 오류", {["spreadsheetTitle"] : spreadsheetTitle, ["sheetTitle"] : sheetTitle}, response.result.error.message);
 //            appendPre('Error: ' + response.result.error.message);
             setTimeout(function(){
-                msg(_PROC,"정의서 속성 처리 재시도", {["spreadsheetTitle"] : spreadsheetTitle, ["sheetTitle"] : sheetTitle);
+                msg(_PROC,"정의서 속성 처리 재시도", {["spreadsheetTitle"] : spreadsheetTitle, ["sheetTitle"] : sheetTitle});
                 readDefinitionProperties(spreadsheetId, spreadsheetTitle, sheetTitle, sheetIndex, callback);
             }, 2000);
         });
