@@ -544,6 +544,33 @@
         });
     }
 
+    /***************************************************************************
+    ****************************************************************************/
+    function updateUrlData(formUID, targetSheet, targetRow) {
+        var newUrl = document.getElementById(formUID).value;
+        var targetRowNo = parseInt(targetRow) + 2;
+        var targetSheetName;
+        var targetColumn;
+        if (targetSheet == 'MW') {
+            targetSheetName = '모바일 v.2.3';
+            targetColumn = '!O' + targetRowNo.toString();
+        }
+        else if (targetSheet == 'PC') {
+            targetSheetName = 'PC v.2.1';
+            targetColumn = '!N' + targetRowNo.toString();
+        }
+
+        gapi.client.sheets.spreadsheets.values.update({
+            spreadsheetId: '1o2mfQ2GOxRcl43oyfH0eBcs35P5kis1wCgbZYjLilx0',
+            range: targetSheetName + targetColumn,
+            valueInputOption: 'USER_ENTERED',
+            values: [
+                [newUrl]
+            ]
+        }).then(function(response) {
+            console.log(response);
+        });
+    }
 
     /***************************************************************************
     ****************************************************************************/
@@ -586,8 +613,7 @@
                             var modalUid = "modal-" + row[1] + tempObj1[tempKeys1[0]] + tempObj1[tempKeys1[1]];
                             var formUid = "form-" + row[1] + tempObj1[tempKeys1[0]] + tempObj1[tempKeys1[1]];
                             var buttonUid = "button-" + row[1] + tempObj1[tempKeys1[0]] + tempObj1[tempKeys1[1]];
-                            node.insertAdjacentHTML('beforeend', "<div class=\"text-right\"><button type=\"button\" class=\"btn btn-primary btn-sm\" data-toggle=\"modal\" data-target=\"." + modalUid + "\">수정하기</button></div><div class=\"modal fade " + modalUid + "\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myLargeModalLabel\" aria-hidden=\"true\"><div class=\"modal-dialog modal-lg\"><div class=\"modal-content\"><div class=\"modal-header\"><h5 class=\"modal-title\"><span class=\"badge badge-pill badge-warning\">" + row[0] + " 000" + row[1] + "</span> " + row[2] + "</h5><button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button></div><div class=\"modal-body\"> <small class=\"text-muted\">" + tempObj1.spreadsheetTitle + " → " + tempObj1[tempKeys1[0]] + " → " + tempObj1[tempKeys1[1]] + "</small> <form><div class=\"form-group\"><label>로그정의서명</label><input class=\"form-control\" type=\"text\" placeholder=\"" + tempObj1[tempKeys1[2]] + "\" readonly></div> <div class=\"form-group\"><label>로그정의서 링크URL</label><input class=\"form-control is-invalid\" type=\"text\" id=\"" + formUid + "\" placeholder=\"" + tempObj1[tempKeys1[3]] + "\"><small class=\"invalid-feedback\">올바른 로그정의서 링크URL을 입력 해 주세요.</small></div></form> </div><div class=\"modal-footer\"><button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">취소</button><button type=\"button\" class=\"btn btn-primary\" id=\"" + buttonUid + "\">저장</button></div></div></div></div>");
-
+                            node.insertAdjacentHTML('beforeend', "<div class=\"text-right\"><button type=\"button\" class=\"btn btn-primary btn-sm\" data-toggle=\"modal\" data-target=\"." + modalUid + "\">수정하기</button></div><div class=\"modal fade " + modalUid + "\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myLargeModalLabel\" aria-hidden=\"true\"><div class=\"modal-dialog modal-lg\"><div class=\"modal-content\"><div class=\"modal-header\"><h5 class=\"modal-title\"><span class=\"badge badge-pill badge-warning\">" + row[0] + " 000" + row[1] + "</span> " + row[2] + "</h5><button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button></div><div class=\"modal-body\"> <small class=\"text-muted\">" + tempObj1.spreadsheetTitle + " → " + tempObj1[tempKeys1[0]] + " → " + tempObj1[tempKeys1[1]] + "</small> <form><div class=\"form-group\"><label>로그정의서명</label><input class=\"form-control\" type=\"text\" placeholder=\"" + tempObj1[tempKeys1[2]] + "\" readonly></div> <div class=\"form-group\"><label>로그정의서 링크URL</label><input class=\"form-control is-invalid\" type=\"text\" id=\"" + formUid + "\" placeholder=\"" + tempObj1[tempKeys1[3]] + "\"><small class=\"invalid-feedback\">올바른 로그정의서 링크URL을 입력 해 주세요.</small></div></form> </div><div class=\"modal-footer\"><button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">취소</button><button type=\"button\" class=\"btn btn-primary\" id=\"" + buttonUid + "\" onclick=\"updateUrlData(" + formUid + ", " + tempObj1[tempKeys1[0]] + ", " + tempObj1[tempKeys1[1]] + ")>저장</button></div></div></div></div>");
                         }
 
                         // 8 같은 정의서 URL을 공유하는 서로 다른 로그정의서명이 있습니다.
