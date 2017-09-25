@@ -388,13 +388,21 @@
             }
 
             var bodys = [];
-            action["body"].forEach(function(body, index){
-                if(!body) {
-                    log(_ERROR,"0022",index + "번째 body가 없습니다.", {"page_id" : page_id, "action" : action, "index" : index});
-                } else {
-                    bodys.push(body["id"]);
-                }
-            });
+            try {
+                action["body"].forEach(function (body, index) {
+                    if (!body) {
+                        log(_ERROR, "0022", index + "번째 body가 없습니다.", {
+                            "page_id": page_id,
+                            "action": action,
+                            "index": index
+                        });
+                    } else {
+                        bodys.push(body["id"]);
+                    }
+                });
+            } catch(e) {
+                log(_ERROR,"0023","body 데이터 오류", {"poc_clf" : poc_clf, "page_id" : page_id, "action" : action});
+            }
 
             result.push([action["state"], poc_clf, os_name, page_id, action_id].concat(bodys));
         });
