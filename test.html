@@ -390,9 +390,10 @@
             var bodys = [];
             action["body"].forEach(function(body, index){
                 if(!body) {
-                    log(_ERROR,"0022","body id가 없음", {"page_id" : page_id, "action" : action, "index" : index});
-				}
-                bodys.push(body["id"]);
+                    log(_ERROR,"0022",index + "번째 body가 없습니다.", {"page_id" : page_id, "action" : action, "index" : index});
+                } else {
+                    bodys.push(body["id"]);
+                }
             });
 
             result.push([action["state"], poc_clf, os_name, page_id, action_id].concat(bodys));
