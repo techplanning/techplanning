@@ -37,10 +37,6 @@
         margin-left: auto;
         margin-right: auto;
     }
-
-    .btn {
-        margin-bottom: 10px;
-    }
     </style>
     <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
         <div class="navbar-brand">로정처_v2</div>
@@ -105,13 +101,12 @@
                             </div>
                             <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
                                 <form class="form-inline">
-                                    <div class="form-group mx-sm-3">
-                                        <select id="sheetPicker" class="form-control">
-                                            <option>조회 날짜 선택...</option>
-                                        </select>
-                                    </div>
+                                    <select id="sheetPicker" class="form-control">
+                                        <option>조회 날짜 선택...</option>
+                                    </select>
                                     <button type="button" class="btn btn-primary" id="callResults-button">결과 불러오기</button>
                                 </form>
+                                <br>
                                 <ul class="list-group" id="results"></ul>
                                 <br>
                             </div>
