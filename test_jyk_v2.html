@@ -100,8 +100,13 @@
                     </div>
                     <div class="col-10">
                         <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed lacus auctor, euismod metus ac, viverra dolor. Phasellus dictum nec leo vitae sollicitudin. Donec consequat mattis lorem, sit amet egestas enim egestas sed. Ut eros ligula, cursus sit amet aliquet quis, posuere quis nulla. Vestibulum venenatis sagittis pharetra. Pellentesque vel aliquam orci. Ut augue neque, malesuada a vestibulum sed, aliquam vel tellus. Morbi vehicula lacus in iaculis pretium. Phasellus eu aliquet tortor. Morbi accumsan fringilla nisi vitae accumsan. Nunc condimentum nisi quis augue viverra commodo sit amet condimentum purus.</div>
+                            <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                                asdf
+                            </div>
                             <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+                                <select id="sheetPicker" class="form-control">
+                                    <option>조회 날짜 선택...</option>
+                                </select>
                                 <button type="button" class="btn btn-primary btn-block" id="callResults-button">결과 불러오기</button>
                                 <button type="button" class="btn btn-secondary btn-block" id="clearResults-button">결과 지우기 (Test)</button>
                                 <!--<pre id="results"></pre>-->
@@ -295,6 +300,7 @@
             'https://sheets.googleapis.com/$discovery/rest?version=v4';
         gapi.client.load(discoveryUrl).then(callResults);
         */
+        callListOfSheets();
         callResults();
     }
 
@@ -544,6 +550,22 @@
             }
         }
     }
+
+    /**************************************************************************
+     **************************************************************************/
+    //get list of sheets and make a dropdown
+    //https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/get
+    function callListOfSheets() {
+        gapi.client.sheets.spreadsheets.get({
+            spreadsheetId: dumpingSpreadSheetID,
+        }).then(function(response) {
+            //do something
+            var sheetsList = response.sheets;
+        }, function(response) {
+            //appendResults('Error: ' + response.result.error.message);
+        });
+    }
+
 
     /**************************************************************************
      **************************************************************************/
