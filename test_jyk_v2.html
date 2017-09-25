@@ -130,6 +130,10 @@
     </div>
     <!-- container -->
     <script type="text/javascript">
+
+    /**************************************************************************
+        GLOBAL VARIABLES
+    ***************************************************************************/
     // Client ID and API key from the Developer Console
     //var API_KEY = '';
     var CLIENT_ID = '696566559550-7rge69rqjpck7nup7dkfa0tt5huqusi0.apps.googleusercontent.com';
@@ -141,6 +145,7 @@
     // included, separated by spaces.
     var SCOPES = "https://www.googleapis.com/auth/spreadsheets";
 
+    // buttons
     var authorizeButton = document.getElementById('authorize-button');
     var signoutButton = document.getElementById('signout-button');
     var navButton1 = document.getElementById('nav-button1');
@@ -150,6 +155,10 @@
     var defListCheckButton = document.getElementById('definitionListCheck-button');
     var callResultsButton = document.getElementById('callResults-button');
     var dataUpdateButton = document.getElementById('dataUpdate-button');
+
+    //
+    var dumpingSpreadSheetID = '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw';
+    var dumpingSheetName = getTodayDate();
 
     /***************************************************************************
      *  On load, called to load the auth2 library and API client library.
@@ -211,23 +220,21 @@
         }
     }
 
+    
     /***************************************************************************
-     *  Sign in the user upon button click.
+        Handle input actions
     ****************************************************************************/
+    //Sign in the user upon button click.
     function handleAuthClick(event) {
         gapi.auth2.getAuthInstance().signIn();
     }
 
-    /***************************************************************************
-     *  Sign out the user upon button click.
-    ****************************************************************************/
+    //Sign out the user upon button click.
     function handleSignoutClick(event) {
         gapi.auth2.getAuthInstance().signOut();
         location.reload();
     }
 
-    /***************************************************************************
-    ****************************************************************************/
     function handleDefListCheckClick(event) {
         defListCheckButton.style.display = 'none';
         var discoveryUrl =
@@ -250,6 +257,7 @@
     }
 
     /***************************************************************************
+        append
     ****************************************************************************/
     function appendMsgList(message) {
         var node = document.createElement("li");
@@ -289,13 +297,6 @@
         today = yyyy + mm + dd;
         return today;
     }
-
-    /**************************************************************************
-        GLOBAL VARIABLES
-    ***************************************************************************/
-    var dumpingSpreadSheetID = '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw';
-    var dumpingSheetName = getTodayDate();
-
 
     /***************************************************************************
     ****************************************************************************/
@@ -546,27 +547,6 @@
 
     /***************************************************************************
     ****************************************************************************/
-    /*
-    function callResults() {
-        gapi.client.sheets.spreadsheets.values.get({
-            spreadsheetId: dumpingSpreadSheetID,
-            range: dumpingSheetName + '!A1:E',
-        }).then(function(response) {
-            var range = response.result;
-            if (range.values.length > 0) {
-                for (i = 0; i < range.values.length; i++) {
-                    var row = range.values[i];
-                    // Print columns A and E, which correspond to indices 0 and 4.
-                    appendResults(row[0] + row[2]);
-                }
-            } else {
-                appendResults('No data found.');
-            }
-        }, function(response) {
-            appendResults('Error: ' + response.result.error.message);
-        });
-    }
-    */
     function callResults() {
         var selectedSheetName = document.getElementById('sheetPicker').value;
 
@@ -584,8 +564,6 @@
             if (range.values.length > 0) {
                 for (i = 0; i < range.values.length; i++) {
                     var row = range.values[i];
-                    // Print columns A and E, which correspond to indices 0 and 4.
-                    //appendResults(row[0] + row[2]);
                     if (row[0] == "[ERROR]") {
                         node = document.createElement("li");
                         node.className = "list-group-item list-group-item-danger";
@@ -608,7 +586,7 @@
                             var modalUid = "modal-" + row[1] + tempObj1[tempKeys1[0]] + tempObj1[tempKeys1[1]];
                             var formUid = "form-" + row[1] + tempObj1[tempKeys1[0]] + tempObj1[tempKeys1[1]];
                             var buttonUid = "button-" + row[1] + tempObj1[tempKeys1[0]] + tempObj1[tempKeys1[1]];
-                            node.insertAdjacentHTML('beforeend', "<div class=\"text-right\"><button type=\"button\" class=\"btn btn-primary btn-sm\" data-toggle=\"modal\" data-target=\"." + modalUid + "\">수정하기</button></div><div class=\"modal fade " + modalUid + "\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myLargeModalLabel\" aria-hidden=\"true\"><div class=\"modal-dialog modal-lg\"><div class=\"modal-content\"><div class=\"modal-header\"><h5 class=\"modal-title\"><span class=\"badge badge-pill badge-warning\">" + row[0] + " 000" + row[1] + "</span> " + row[2] + "</h5><button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button></div><div class=\"modal-body\"> <small class=\"text-muted\">" + tempObj1.spreadsheetTitle + " → " + tempObj1[tempKeys1[0]] + " → " + tempObj1[tempKeys1[1]] + "</small> <form><div class=\"form-group\"><label>로그정의서명</label><input class=\"form-control\" type=\"text\" placeholder=\"" + tempObj1[tempKeys1[2]] + "\" readonly></div> <div class=\"form-group\"><label>로그정의서 링크URL</label><input class=\"form-control is-invalid\" type=\"text\" id=\"" + formUid + "\" placeholder=\"" + tempObj1[tempKeys1[3]] + "\"><small class=\"invalid-feedback\">올바른 로그정의서 링크URL을 입력 해 주세요.</small></div></form> </div><div class=\"modal-footer\"><button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">취소</button><button type=\"button\" class=\"btn btn-primary\" id=\"" + buttonUid + "\">저장</button></div></div></div></div>  <script type='text/javascript'>document.getElementById(" + buttonUid + ").onclick = handleDataUpdateClick; function handleDataUpdateClick(event) {var tempFormData = document.getElementById(" + formUid + ").value; gapi.client.sheets.spreadsheets.values.update({spreadsheetId: dumpingSpreadSheetID, range: dumpingSheetName + '!M1', valueInputOption: 'USER_ENTERED', values: [[tempFormData]]}).then(function(response) {console.log(response);});}</" + "script>");
+                            node.insertAdjacentHTML('beforeend', "<div class=\"text-right\"><button type=\"button\" class=\"btn btn-primary btn-sm\" data-toggle=\"modal\" data-target=\"." + modalUid + "\">수정하기</button></div><div class=\"modal fade " + modalUid + "\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myLargeModalLabel\" aria-hidden=\"true\"><div class=\"modal-dialog modal-lg\"><div class=\"modal-content\"><div class=\"modal-header\"><h5 class=\"modal-title\"><span class=\"badge badge-pill badge-warning\">" + row[0] + " 000" + row[1] + "</span> " + row[2] + "</h5><button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button></div><div class=\"modal-body\"> <small class=\"text-muted\">" + tempObj1.spreadsheetTitle + " → " + tempObj1[tempKeys1[0]] + " → " + tempObj1[tempKeys1[1]] + "</small> <form><div class=\"form-group\"><label>로그정의서명</label><input class=\"form-control\" type=\"text\" placeholder=\"" + tempObj1[tempKeys1[2]] + "\" readonly></div> <div class=\"form-group\"><label>로그정의서 링크URL</label><input class=\"form-control is-invalid\" type=\"text\" id=\"" + formUid + "\" placeholder=\"" + tempObj1[tempKeys1[3]] + "\"><small class=\"invalid-feedback\">올바른 로그정의서 링크URL을 입력 해 주세요.</small></div></form> </div><div class=\"modal-footer\"><button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">취소</button><button type=\"button\" class=\"btn btn-primary\" id=\"" + buttonUid + "\">저장</button></div></div></div></div>");
 
                         }
 
