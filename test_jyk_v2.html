@@ -552,12 +552,15 @@
     }
 
     /**************************************************************************
+        get list of sheets and make a dropdown
+        https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/get
      **************************************************************************/
-    //get list of sheets and make a dropdown
-    //https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/get
+    
     function callListOfSheets() {
         gapi.client.sheets.spreadsheets.get({
             spreadsheetId: dumpingSpreadSheetID,
+            range: [],
+            includeGridData: false,
         }).then(function(response) {
             //do something
             var range = response.result;
@@ -566,7 +569,7 @@
                     var row = range.values[i];
                 }
             }
-        }, function(response) {
+        }, function(reason) {
             //appendResults('Error: ' + response.result.error.message);
         });
     }
