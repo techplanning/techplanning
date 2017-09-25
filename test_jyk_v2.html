@@ -248,6 +248,7 @@
 
     function handleCallResultsClick(event) {
         //callResultsButton.style.display = 'none';
+        appendClear("results");
         var discoveryUrl =
             'https://sheets.googleapis.com/$discovery/rest?version=v4';
         gapi.client.load(discoveryUrl).then(callResults);
