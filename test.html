@@ -388,12 +388,9 @@
             }
 
             var bodys = [];
-            if(!action["body"]) {
-                log(_ERROR,"0022","body 필드가 없음", {"page_id" : page_id, "action" : action});
-			}
             action["body"].forEach(function(body, index){
-                if(!body["id"]) {
-                    log(_ERROR,"0023","body id가 없음", {"page_id" : page_id, "action" : action, "index" : index});
+                if(!body) {
+                    log(_ERROR,"0022","body id가 없음", {"page_id" : page_id, "action" : action, "index" : index});
 				}
                 bodys.push(body["id"]);
             });
