@@ -560,7 +560,12 @@
             spreadsheetId: dumpingSpreadSheetID,
         }).then(function(response) {
             //do something
-            var sheetsList = response.sheets;
+            var range = response.result;
+            if (range.values.length > 0) {
+                for (i = 0; i < range.values.length; i++) {
+                    var row = range.values[i];
+                }
+            }
         }, function(response) {
             //appendResults('Error: ' + response.result.error.message);
         });
