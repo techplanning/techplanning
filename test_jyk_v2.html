@@ -564,9 +564,9 @@
         }).then(function(response) {
             //do something
             var range = response.result;
-            if (range.values.length > 0) {
-                for (i = 0; i < range.values.length; i++) {
-                    var row = range.values[i];
+            if (range.sheets.length > 0) {
+                for (i = 0; i < range.sheets.length; i++) {
+                    var row = range.sheets[i];
                 }
             }
         }, function(reason) {
