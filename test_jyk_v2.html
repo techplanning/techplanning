@@ -567,6 +567,10 @@
             if (range.sheets.length > 0) {
                 for (i = 0; i < range.sheets.length; i++) {
                     var sheetName = range.sheets[i].properties.title;
+
+                    var node = document.createElement("option");
+                    node.innerHTML = sheetName;
+                    document.getElementById("sheetPicker").appendChild(node);
                 }
             }
         }, function(reason) {
