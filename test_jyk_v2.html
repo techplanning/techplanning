@@ -37,10 +37,6 @@
         margin-left: auto;
         margin-right: auto;
     }
-
-    .btn {
-        margin-bottom: 10px;
-    }
     </style>
     <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
         <div class="navbar-brand">로정처_v2</div>
@@ -104,12 +100,13 @@
                                 asdf
                             </div>
                             <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
-                                <select id="sheetPicker" class="form-control">
-                                    <option>조회 날짜 선택...</option>
-                                </select>
-                                <button type="button" class="btn btn-primary btn-block" id="callResults-button">결과 불러오기</button>
-                                <button type="button" class="btn btn-secondary btn-block" id="clearResults-button">결과 지우기 (Test)</button>
-                                <!--<pre id="results"></pre>-->
+                                <form class="form-inline">
+                                    <select id="sheetPicker" class="form-control">
+                                        <option>조회 날짜 선택...</option>
+                                    </select>
+                                    <button type="button" class="btn btn-primary" id="callResults-button">결과 불러오기</button>
+                                </form>
+                                <br>
                                 <ul class="list-group" id="results"></ul>
                                 <br>
                             </div>
@@ -158,7 +155,6 @@
     var navLoginMessage = document.getElementById('nav-login-message');
     var defListCheckButton = document.getElementById('definitionListCheck-button');
     var callResultsButton = document.getElementById('callResults-button');
-    var clearResultsButton = document.getElementById('clearResults-button');
     var dataUpdateButton = document.getElementById('dataUpdate-button');
 
     /***************************************************************************
@@ -195,7 +191,6 @@
             signoutButton.onclick = handleSignoutClick;
             defListCheckButton.onclick = handleDefListCheckClick;
             callResultsButton.onclick = handleCallResultsClick;
-            clearResultsButton.onclick = handleClearResultsClick;
             dataUpdateButton.onclick = handleDataUpdateClick;
         });
     }
@@ -248,13 +243,10 @@
 
     function handleCallResultsClick(event) {
         //callResultsButton.style.display = 'none';
+        appendClear("results");
         var discoveryUrl =
             'https://sheets.googleapis.com/$discovery/rest?version=v4';
         gapi.client.load(discoveryUrl).then(callResults);
-    }
-
-    function handleClearResultsClick(event) {
-        appendClear("results");
     }
 
     function handleDataUpdateClick(event) {
