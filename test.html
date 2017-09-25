@@ -392,6 +392,9 @@
                 log(_ERROR,"0022","body 필드가 없음", page_id, action);
 			}
             action["body"].forEach(function(body){
+                if(!body.id) {
+                    log(_ERROR,"0023","body id가 없음", page_id, action);
+				}
                 bodys.push(body.id);
             });
 
