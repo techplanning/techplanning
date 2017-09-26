@@ -571,7 +571,7 @@
             console.log(response.result);
             //히스토리 시트 로드 완료
 
-            var cell_result = response.result.ValueRange; //A2셀의 값 객체
+            var cell_result = response.result; //A2셀의 값 객체
             var time_lastest = cell_result.values[0][0]; //저장되어있던 가장 최근 시간
 
             //오늘 히스토리가 있으면 오늘 히스토리를 불러오고 없다면 이전 날짜의 히스토리를 불러온다.
