@@ -728,6 +728,10 @@
                                 data[r - 1] = {};
                                 data[r - 1]["poc"] = poc[s];
                                 data[r - 1]["no"] = r;
+                                var colSize = range.values[r].length;
+                                for (c = 0; c < colSize; c++) {
+                                    data[r - 1][range.values[0][c]] = range.values[r][c];
+                                }
                                 if (data[r - 1]["로그정의서 링크URL"]) {
                                     var regEx1 = /spreadsheets\/d\/([a-zA-Z0-9-_]+)/.exec(data[r - 1]["로그정의서 링크URL"]);
                                     if (regEx1 && regEx1.length > 0) {
