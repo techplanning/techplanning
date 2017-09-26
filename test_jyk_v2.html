@@ -123,7 +123,7 @@
                                 </form>
                             </div>
                             <div class="tab-pane fade" id="list-download" role="tabpanel" aria-labelledby="list-download-list">
-                                <button type="button" class="btn btn-primary" id="downloadFileTest-button">Method 1</button>
+                                <button type="button" class="btn btn-primary" id="downloadFile-button">Method 1</button>
                             </div>
                         </div>
                     </div>
@@ -158,7 +158,7 @@
     var defListCheckButton = document.getElementById('definitionListCheck-button');
     var callResultsButton = document.getElementById('callResults-button');
     var dataUpdateButton = document.getElementById('dataUpdate-button');
-    var downloadFileTestButton = document.getElementById('downloadFileTest-button');
+    var downloadFileButton = document.getElementById('downloadFile-button');
 
     //
     var dumpingSpreadSheetID = '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw';
@@ -206,7 +206,7 @@
             defListCheckButton.onclick = handleDefListCheckClick;
             callResultsButton.onclick = handleCallResultsClick;
             dataUpdateButton.onclick = handleDataUpdateClick;
-            downloadFileTestButton.onclick = handleDownloadFileClick;
+            downloadFileButton.onclick = handleDownloadFileClick;
         });
     }
 
@@ -269,7 +269,7 @@
     }
 
     function handleDownloadFileClick(event) {
-        downloadFileTest(dLinks);
+        downloadFile(dLinks);
     }
 
 
@@ -317,9 +317,18 @@
     }
 
     /***************************************************************************
-     ****************************************************************************/
-    
-    function downloadFileTest(urls) {
+    ****************************************************************************/
+    var fileDownloadList = [];
+
+    function makeFileDownloadList(SpreadSheetID) {
+        var link = 'https://docs.google.com/spreadsheets/d/' + SpreadSheetID + '/export?format=xlsx';
+
+        fileDownloadList.push(link);
+    }
+
+    /***************************************************************************
+    ****************************************************************************/
+    function downloadFile(urls) {
         var link = document.createElement('a');
 
         link.setAttribute('download', null);
@@ -350,25 +359,6 @@
             console.log(response);
         });
     }
-
-    /* testing draft ...
-    document.getElementById("+buttonUid+").onclick = handleDataUpdateClick;
-
-    function handleDataUpdateClick(event) {
-        var tempFormData = document.getElementById(formUid).value;
-        var loc = parseInt(tempObj1[tempKeys1[1]]) + 2;
-        gapi.client.sheets.spreadsheets.values.update({
-            spreadsheetId: dumpingSpreadSheetID,
-            range: dumpingSheetName + '!N' + String(loc),
-            valueInputOption: 'USER_ENTERED',
-            values: [
-                [tempFormData]
-            ]
-        }).then(function(response) {
-            console.log(response);
-        });
-    }
-    */
 
     /**************************************************************************
         https://developers.google.com/sheets/api/samples/sheet
@@ -745,6 +735,7 @@
                                     var regEx1 = /spreadsheets\/d\/([a-zA-Z0-9-_]+)/.exec(data[r - 1]["로그정의서 링크URL"]);
                                     if (regEx1 && regEx1.length > 0) {
                                         data[r - 1]["spreadsheetId"] = regEx1[1];
+                                        makeFileDownloadList(regEx1[1]);
                                     }
                                     // 기록된 로그정의서 링크 URL에서 sheetID 추출 후 data array에 보관
                                     var regEx2 = /[#&]gid=([0-9]+)/.exec(data[r - 1]["로그정의서 링크URL"]);
