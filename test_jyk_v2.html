@@ -90,6 +90,7 @@
                         <div class="list-group" id="list-tab" role="tablist">
                             <a class="list-group-item list-group-item-action active" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">결과</a>
                             <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">셀 업데이트</a>
+                            <a class="list-group-item list-group-item-action" id="list-download-list" data-toggle="list" href="#list-download" role="tab" aria-controls="download">다운로드</a>
                         </div>
                     </div>
                     <div class="col-10">
@@ -121,6 +122,9 @@
                                     </div>
                                 </form>
                             </div>
+                            <div class="tab-pane fade" id="list-download" role="tabpanel" aria-labelledby="list-download-list">
+                                <button type="button" class="btn btn-primary" id="downloadFileTest-button">Method 1</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -130,10 +134,9 @@
     </div>
     <!-- container -->
     <script type="text/javascript">
-
     /**************************************************************************
-        GLOBAL VARIABLES
-    ***************************************************************************/
+            GLOBAL VARIABLES
+        ***************************************************************************/
     // Client ID and API key from the Developer Console
     //var API_KEY = '';
     var CLIENT_ID = '696566559550-7rge69rqjpck7nup7dkfa0tt5huqusi0.apps.googleusercontent.com';
@@ -155,14 +158,22 @@
     var defListCheckButton = document.getElementById('definitionListCheck-button');
     var callResultsButton = document.getElementById('callResults-button');
     var dataUpdateButton = document.getElementById('dataUpdate-button');
+    var downloadFileTestButton = document.getElementById('downloadFileTest-button');
 
     //
     var dumpingSpreadSheetID = '1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw';
     var dumpingSheetName = getTodayDate();
 
+    //
+    var dLinks = [
+        'https://docs.google.com/spreadsheets/d/1o2mfQ2GOxRcl43oyfH0eBcs35P5kis1wCgbZYjLilx0/export?format=xlsx',
+        'https://docs.google.com/spreadsheets/d/1h6yN4EjXVZ6KHifM-d_JYp1xCEFvtYnhfkH08YGk4sU/export?format=xlsx',
+        'https://docs.google.com/spreadsheets/d/1WKtSplTA8OMBP3aqcsnUJYQB6YNs0T1JoauW3RntkBw/export?format=xlsx'
+    ];
+
     /***************************************************************************
      *  On load, called to load the auth2 library and API client library.
-    ****************************************************************************/
+     ****************************************************************************/
     function handleClientLoad() {
         gapi.load('client:auth2', initClient);
     }
@@ -170,7 +181,7 @@
     /***************************************************************************
      *  Initializes the API client library and sets up sign-in state
      *  listeners.
-    ****************************************************************************/
+     ****************************************************************************/
     function initClient() {
         gapi.client.init({
             //apiKey: API_KEY,
@@ -195,13 +206,14 @@
             defListCheckButton.onclick = handleDefListCheckClick;
             callResultsButton.onclick = handleCallResultsClick;
             dataUpdateButton.onclick = handleDataUpdateClick;
+            downloadFileTestButton.onclick = handleDownloadFileClick;
         });
     }
 
     /***************************************************************************
      *  Called when the signed in status changes, to update the UI
      *  appropriately. After a sign-in, the API is called.
-    ****************************************************************************/
+     ****************************************************************************/
     function updateSigninStatus(isSignedIn) {
         if (isSignedIn) {
             authorizeButton.style.display = 'none';
@@ -220,7 +232,7 @@
         }
     }
 
-    
+
     /***************************************************************************
         Handle input actions
     ****************************************************************************/
@@ -255,6 +267,12 @@
             'https://sheets.googleapis.com/$discovery/rest?version=v4';
         gapi.client.load(discoveryUrl).then(updateDataTest);
     }
+
+    function handleDownloadFileClick(event) {
+        downloadFileTest(dLinks);
+    }
+
+
 
     /***************************************************************************
         append
@@ -299,7 +317,26 @@
     }
 
     /***************************************************************************
-    ****************************************************************************/
+     ****************************************************************************/
+    
+    function downloadFileTest(urls) {
+        var link = document.createElement('a');
+
+        link.setAttribute('download', null);
+        link.style.display = 'none';
+
+        document.body.appendChild(link);
+
+        for (var i = 0; i < urls.length; i++) {
+            link.setAttribute('href', urls[i]);
+            link.click();
+        }
+
+        document.body.removeChild(link);
+    }
+
+    /***************************************************************************
+     ****************************************************************************/
     function updateDataTest() {
         var testName = document.getElementById('formData1').value;
         gapi.client.sheets.spreadsheets.values.update({
@@ -360,7 +397,7 @@
     }
 
     /***************************************************************************
-    ****************************************************************************/
+     ****************************************************************************/
     // create temp array storage for mass dumping log data to google sheets.
     var logArray = [];
 
@@ -383,7 +420,7 @@
     }
 
     /***************************************************************************
-    ****************************************************************************/
+     ****************************************************************************/
     var _PROC = 0,
         _NOTI = 1,
         _SYSTEM = 2;
@@ -406,7 +443,7 @@
     }
 
     /***************************************************************************
-    ****************************************************************************/
+     ****************************************************************************/
     var _ALL = 0,
         _TRACE = 1,
         _DEBUG = 2,
@@ -545,7 +582,7 @@
     }
 
     /***************************************************************************
-    ****************************************************************************/
+     ****************************************************************************/
     function updateUrlData(formUID, targetSheet, targetRow) {
         var newUrl = document.getElementById(formUID).value;
         var targetRowNo = parseInt(targetRow) + 2;
@@ -554,8 +591,7 @@
         if (targetSheet == 'MW') {
             targetSheetName = '모바일 v.2.3';
             targetColumn = '!O' + targetRowNo.toString();
-        }
-        else if (targetSheet == 'PC') {
+        } else if (targetSheet == 'PC') {
             targetSheetName = 'PC v.2.1';
             targetColumn = '!N' + targetRowNo.toString();
         }
@@ -573,7 +609,7 @@
     }
 
     /***************************************************************************
-    ****************************************************************************/
+     ****************************************************************************/
     function callResults() {
         var selectedSheetName = document.getElementById('sheetPicker').value;
 
@@ -661,7 +697,7 @@
     }
 
     /***************************************************************************
-    ****************************************************************************/
+     ****************************************************************************/
     var _defList = [];
     var _sheet = [];
     var _sheetMap = {};
@@ -739,7 +775,7 @@
     }
 
     /***************************************************************************
-    ****************************************************************************/
+     ****************************************************************************/
     function checkDefList(spreadsheetTitle) {
         msg(_PROC, "로그 정의서 내역 검증 시작", { spreadsheetTitle: [spreadsheetTitle] });
 
