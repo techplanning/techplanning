@@ -760,18 +760,18 @@
 
         var request = gapi.client.sheets.spreadsheets.get(params);
         request.then(function(response) {
-            //var spreadsheet = {};
+            var spreadsheet = {};
 
-            //spreadsheet["sheet"] = [];
-            //spreadsheet["spreadsheetId"] = spreadsheetId;
-            //spreadsheet["inputSpreadsheetTitle"] = inputSpreadsheetTitle;
-            //spreadsheet["spreadsheetTitle"] = response.result.properties.title;
+            spreadsheet["sheet"] = [];
+            spreadsheet["spreadsheetId"] = spreadsheetId;
+            spreadsheet["inputSpreadsheetTitle"] = inputSpreadsheetTitle;
+            spreadsheet["spreadsheetTitle"] = response.result.properties.title;
 
-            //_spreadsheets[spreadsheet["spreadsheetId"]] = spreadsheet;
+            _spreadsheets[spreadsheet["spreadsheetId"]] = spreadsheet;
 
             for (s = 0; s < response.result.sheets.length; s++) {
                 var sheet = {};
-                //var index = spreadsheet["sheet"].push(sheet) - 1;
+                var index = spreadsheet["sheet"].push(sheet) - 1;
                 sheet.sheetId = response.result.sheets[s].properties.sheetId.toString();;
                 sheet.sheetTitle = response.result.sheets[s].properties.title;
 
