@@ -550,6 +550,13 @@
         msg(_PROC,"히스토리 로드", {spreadsheetTitle : [spreadsheetTitle]});
         load_history();
     }
+    //1.히스토리 로드
+    //날짜 객체 선언
+    var insert_date_ = new Date();
+
+    //히스토리 시트 로드
+    //메뉴 1이 로드되면서 히스토리 배열이 생성됨
+    var compare_history = [];
     function load_history(){
         var insert_history_time = insert_date_.getYear() + "-" + insert_date_.getMonth()+1 + "-" + insert_date_.getDate(); //삽입 시간(YYYY-MM-DD)
 
