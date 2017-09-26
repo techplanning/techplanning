@@ -135,8 +135,8 @@
     <!-- container -->
     <script type="text/javascript">
     /**************************************************************************
-            GLOBAL VARIABLES
-        ***************************************************************************/
+                GLOBAL VARIABLES
+            ***************************************************************************/
     // Client ID and API key from the Developer Console
     //var API_KEY = '';
     var CLIENT_ID = '696566559550-7rge69rqjpck7nup7dkfa0tt5huqusi0.apps.googleusercontent.com';
@@ -269,7 +269,10 @@
     }
 
     function handleDownloadFileClick(event) {
-        downloadFile(dLinks);
+        var discoveryUrl =
+            'https://sheets.googleapis.com/$discovery/rest?version=v4';
+        gapi.client.load(discoveryUrl).then(extractSpreadSheetIDs);
+        //downloadFile(dLinks);
     }
 
 
@@ -317,17 +320,23 @@
     }
 
     /***************************************************************************
-    ****************************************************************************/
+     ****************************************************************************/
     var fileDownloadList = [];
 
-    function makeFileDownloadList(SpreadSheetID) {
+    function makeSpreadsheetDownloadList(SpreadSheetID) {
         var link = 'https://docs.google.com/spreadsheets/d/' + SpreadSheetID + '/export?format=xlsx';
 
         fileDownloadList.push(link);
     }
 
+    function makePresentationDownloadList(PresentationID) {
+        var link = 'https://docs.google.com/presentation/d/' + PresentationID + '/export/pptx';
+
+        fileDownloadList.push(link);
+    }
+
     /***************************************************************************
-    ****************************************************************************/
+     ****************************************************************************/
     function downloadFile(urls) {
         var link = document.createElement('a');
 
@@ -688,6 +697,132 @@
 
     /***************************************************************************
      ****************************************************************************/
+    //var _spreadSheetIdList = [];
+
+    function extractSpreadSheetIDs() {
+        var spreadsheetId = '18HiiJG-Utm6e-wXr2Ie_z_8TtlBwq3yPFLjf8v45F-Q';
+        var spreadsheetTitle = 'PageID_11번가 Log 2.0';
+        var sheetTitle = ['모바일 v.2.3', 'PC v.2.1'];
+        makeSpreadsheetDownloadList(spreadsheetId);
+
+        var params = {
+            spreadsheetId: [spreadsheetId],
+            ranges: [
+                sheetTitle[0] + '!N2:O',
+                sheetTitle[1] + '!M2:N'
+            ]
+        };
+
+        gapi.client.sheets.spreadsheets.values.batchGet(params).then(function(response) {
+            var valueRanges = response.result.valueRanges;
+            var sheetSize = valueRanges.length;
+            var poc = ['MW', 'PC'];
+            if (sheetSize == sheetTitle.length) {
+                for (s = 0; s < sheetSize; s++) {
+                    var range = valueRanges[s];
+                    if (range.values.length > 0) {
+                        var rowSize = range.values.length;
+                        var data = [];
+                        for (r = 1; r < rowSize; r++) {
+                            if (range.values[r]) {
+                                data[r - 1] = {};
+                                data[r - 1]["poc"] = poc[s];
+                                data[r - 1]["no"] = r;
+                                if (data[r - 1]["로그정의서 링크URL"]) {
+                                    var regEx1 = /spreadsheets\/d\/([a-zA-Z0-9-_]+)/.exec(data[r - 1]["로그정의서 링크URL"]);
+                                    if (regEx1 && regEx1.length > 0) {
+                                        data[r - 1]["spreadsheetId"] = regEx1[1];
+                                        makeSpreadsheetDownloadList(regEx1[1]);
+                                        readDefSheet(regEx1[1]);
+                                    }
+                                }
+                            }
+                        }
+                        //_spreadSheetIdList = _spreadSheetIdList.concat(data);
+                    } else {}
+                }
+            } else {}
+        }, function(response) {});
+    }
+
+    /***************************************************************************
+     ****************************************************************************/
+    function readDefSheet(spreadsheetId) {
+        var params = {
+            spreadsheetId: [spreadsheetId],
+            ranges: [],
+            includeGridData: false,
+        };
+
+        var request = gapi.client.sheets.spreadsheets.get(params);
+        request.then(function(response) {
+            //var spreadsheet = {};
+
+            //spreadsheet["sheet"] = [];
+            //spreadsheet["spreadsheetId"] = spreadsheetId;
+            //spreadsheet["inputSpreadsheetTitle"] = inputSpreadsheetTitle;
+            //spreadsheet["spreadsheetTitle"] = response.result.properties.title;
+
+            //_spreadsheets[spreadsheet["spreadsheetId"]] = spreadsheet;
+
+            for (s = 0; s < response.result.sheets.length; s++) {
+                var sheet = {};
+                //var index = spreadsheet["sheet"].push(sheet) - 1;
+                sheet.sheetId = response.result.sheets[s].properties.sheetId.toString();;
+                sheet.sheetTitle = response.result.sheets[s].properties.title;
+
+                if (sheet.sheetTitle == "연계로그 사전") {
+
+                } else if (/history$/.test(sheet.sheetTitle)) {
+
+                } else {
+                    // if MW/APP or PC
+                    extractPresentationIDs(spreadsheetId, sheet.sheetTitle);
+                }
+            }
+            console.log(spreadsheet);
+        }, function(response) {
+            console.error('error: ' + response.result.error.message);
+        });
+    }
+
+    /***************************************************************************
+     ****************************************************************************/
+    function extractPresentationIDs(spreadsheetId, sheetTitle) {
+        gapi.client.sheets.spreadsheets.values.get({
+            spreadsheetId: [spreadsheetId],
+            range: sheetTitle + '!A3:E12',
+        }).then(function(response) {
+            var range = response.result;
+            if (range.values.length > 0) {
+                //var data = {};
+                var rowSize = range.values.length;
+                for (r = 0; r < rowSize; r++) {
+                    var colSize = range.values[r].length;
+                    if (range.values[r][0] == "화면정의서 URL") {
+                        /*
+                        data[range.values[r][0]] = [];
+                        for (c = 1; c < colSize; c++) {
+                            data[range.values[r][0]][c - 1] = range.values[r][c];
+                        }
+                        */
+                        var regEx1 = /presentation\/d\/([a-zA-Z0-9-_]+)/.exec(range.values[r][1]);
+                        if (regEx1 && regEx1.length > 0) {
+                            makePresentationDownloadList(regEx1[1]);
+                        }
+                    }
+                }
+                //callback(spreadsheetId, sheetIndex, data);
+            } else {
+
+            }
+        }, function(response) {
+            appendPre('Error: ' + response.result.error.message);
+        });
+    }
+
+    /***************************************************************************
+     ****************************************************************************/
     var _defList = [];
     var _sheet = [];
     var _sheetMap = {};
@@ -735,7 +870,6 @@
                                     var regEx1 = /spreadsheets\/d\/([a-zA-Z0-9-_]+)/.exec(data[r - 1]["로그정의서 링크URL"]);
                                     if (regEx1 && regEx1.length > 0) {
                                         data[r - 1]["spreadsheetId"] = regEx1[1];
-                                        makeFileDownloadList(regEx1[1]);
                                     }
                                     // 기록된 로그정의서 링크 URL에서 sheetID 추출 후 data array에 보관
                                     var regEx2 = /[#&]gid=([0-9]+)/.exec(data[r - 1]["로그정의서 링크URL"]);
@@ -756,7 +890,7 @@
                 }
                 msg(_PROC, "스프레드시트 처리 완료", { spreadsheetTitle: [spreadsheetTitle], sheetTitle: [sheetTitle] });
                 checkDefList(spreadsheetTitle);
-                loadSheets();
+                //loadSheets();
             } else {
                 msg(_SYSTEM, "스프레드시트 처리 오류 - POC별 시트 로딩 실패.", { spreadsheetTitle: [spreadsheetTitle] }, response);
             }
