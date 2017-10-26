@@ -1,0 +1,823 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0044)http://help.11st.co.kr/11st/faq/FaqIndex.jsp -->
+<html lang="ko" class="fiexible_resize"><head><meta http-equiv="Content-Type" content="text/html; charset=EUC-KR"><script type="text/javascript" async="" src="./help_files/ec.js"></script><script type="text/javascript" async="" src="./help_files/analytics.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="./help_files/default.css"><!-- [접근성] default.css 변경 -->
+    <link rel="stylesheet" type="text/css" href="./help_files/cybercenter_v2.css"><!-- [접근성] cybercenter_v2.css 변경 -->
+    <title>자주묻는질문(FAQ) - 11번가</title>
+
+    <!-- topMenu : jquery 동시 사용으로 사파리/크롬에서 jQuery 사용 문제가 생겨 jquery 정의 순서를 prototype.js 이전으로 이동 -->
+    
+<script async="" src="./help_files/gtm.js"></script><script async="" src="./help_files/analytics.js"></script><script type="text/javascript">
+    /**
+     * 배너, Chatping 노출 여부 설정
+     * inc_header.js 위쪽에 선언
+     * 배너 노출시 변수 선언 안해도 됨
+     **/
+
+    //왼쪽 배너 노출 여부(default : 노출)
+    leftBanner = 'Y';
+
+    //오른쪽 날개 배너 노출 여부(default : 노출)
+    rightBanner = 'Y';
+
+    //Chatping 노출 여부
+    enableChatping = 'N';
+
+    var protocol = window.document.location.protocol;
+
+    //Header JS Include
+    document.write('<script type="text/javascript" src="//www.11st.co.kr/html/inc_header_extra_v6.js"><\/script>');
+</script><script type="text/javascript" src="./help_files/inc_header_extra_v6.js"></script><script id="headerUtilTemplate" type="text/x-handlebars-template" charset="UTF-8">	<div class="header_util" id="headerUtilArea" data-log-actionid-area="header_util">		<div class="inner">			<div class="header_utilmenu">				<ul>					{{#ifCond channel '===' 'DEAL'}}					<li><a href="http://www.11st.co.kr/html/main.html" class="home">11번가</a><span class="tx_bar"></span></li>					{{/ifCond}}					{{#ifCond channel '===' 'SHOP'}}					<li><a href="http://www.11st.co.kr/html/main.html" class="home">11번가</a><span class="tx_bar"></span></li>					{{/ifCond}}					<li data-log-actionid-label="appdown"><a href="http://www.11st.co.kr/contents/Contents.tmall?method=dispContents&spceid=2103" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="앱다운로드" class="appdown" target="_blank"><span class="ico"></span>앱다운로드</a><span class="tx_bar"></span></li>										<li class="direct" id="go11st_wrap" style="display:none;" data-log-actionid-label="shortcut">						<button type="button" class="btn_direct" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="바로가기ON/OFF">바로가기</button>						<div class="lay_nw_def direct_go_wrap" id="lay_direct">							<div class="lay_tit"><em id="gbox_text">바로가기 비접속중</em>입니다.</div>							<div class="lay_conts cfix">								<div class="direct_go" id="divDirectBenefit">									<dl>										<dt>바로가기로 방문하는 방법 </dt>										<dd>											<ul class="cfix">												<li><button type="button" class="btn_way" onclick="FooterComm.installDirectVisit('');">바로가기 설치하기</button></li>												<li><button type="button" class="btn_way" onclick="setHomePage();">시작페이지 설정하기</button></li>												<li><button type="button" class="btn_way" onclick="FooterComm.addFavorite();">즐겨찾기 추가하기</button></li>												<li><button type="button" class="btn_way" onclick="FooterComm.clip11stUrl();">URL 직접 입력하기</button></li>											</ul>										</dd>									</dl>									<div class="btn_sec"><a href="http://www.11st.co.kr/browsing/MallPlanDetail.tmall?method=getMallPlanDetail&planDisplayNumber=905236" class="btn_nw_gray">혜택 상세보기</a></div>								</div>							</div>							<button type="button" class="btn_laycls" onclick="jQuery('#lay_direct').toggle();"><span class="hide">레이어 닫기</span></button>						</div>					</li>				</ul>			</div>			<div class="header_user_etc">				<ul>					{{#if isLogin}}					<li data-log-actionid-label="loginout"><a id="gnbLogin" href="javascript:void(0);" onclick="logout('','{{loginReturnURL}}'); rakeLog.sendRakeLog(this);" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="로그아웃" data-log-body="{'state':'로그인'}">로그아웃</a><span class="tx_bar"></span></li>					<li><a id="gnbMember" href="{{_GNB_CONTEXT_PATH_}}/register/memInfoEditForm.tmall?method=getMemberInfo&protocol=https" onclick="goMemberInfoPages();return false;">회원정보</a><span class="tx_bar"></span></li>					{{else}}					<li data-log-actionid-label="loginout"><a id="gnbLogin" href="javascript:void(0);" onclick="login('UT0201','{{loginReturnURL}}'); rakeLog.sendRakeLog(this);" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="로그인" data-log-body="{'state':'로그아웃'}">로그인</a><span class="tx_bar"></span></li>					<li data-log-actionid-label="join"><a id="gnbMember" href="javascript:void(0);" onclick="join(''); rakeLog.sendRakeLog(this);" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="회원가입">회원가입</a><span class="tx_bar"></span></li>					{{/if}}					{{#ifCond channel '===' 'TOUR'}}					<li id="utMy11st"><a href="http://www.11st.co.kr/vertical/TourReservationSettleList.tmall?method=displayTourReservationSettleList" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="나의 여행11번가">나의 여행11번가</a><span class="tx_bar"></span></li>					{{else}}					<li class="have_sub" id="utMy11st" data-log-actionid-label="my11st"><a href="{{_MY11ST_URL_}}" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="나의11번가">나의11번가<span class="ico_arrow"></span><span class="frame"></span></a><span class="tx_bar"></span>						<ul class="user_sub_menu">							<li data-log-actionid-label="orderdlv_inquiry"><a href="{{_ORDER_HIS_URL_}}" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="주문배송조회">주문배송조회</a></li>							<li data-log-actionid-label="coupon"><a href="{{_GNB_CONTEXT_PATH_}}/loyalty/AuthCouponGiftDtls.tmall" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="쿠폰">쿠폰</a></li>							<li data-log-actionid-label="grade"><a href="{{_GNB_CONTEXT_PATH_}}/register/getGradeInfo.tmall?method=getGrade" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="구매등급 혜택">구매등급 혜택</a></li>							<li data-log-actionid-label="favorite_minimall"><a href="{{_GNB_CONTEXT_PATH_}}/minimall/MyMiniMallAction.tmall?method=getMyMiniMall" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="단골스토어">단골스토어</a></li>						</ul>					</li>					<li data-log-actionid-label="cart"><a href="{{_SHOPPINGCART_URL_}}" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="장바구니">장바구니</a><span class="tx_bar"></span></li>					{{/ifCond}}					<li data-log-actionid-label="customer_center"><a href="http://help.11st.co.kr" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="고객센터">고객센터</a><span class="tx_bar"></span></li>					<li class="have_sub" data-log-actionid-label="seller_office"><a href="{{_SOFFICE_URL_}}" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="셀러오피스">셀러오피스<span class="ico_arrow"></span><span class="frame"></span></a><span class="tx_bar"></span><!-- 마우스오버시 li에 클래스 on추가 -->						<ul class="user_sub_menu">							<li data-log-actionid-label="seller_ad"><a href="{{_SOFFICE_URL_}}/adcentre/AdvertMain.tmall" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="판매자광고센터">판매자광고센터</a></li>							<li data-log-actionid-label="brand_ad"><a href="{{_GNB_CONTEXT_PATH_}}/brandadcenter/Main.tmall" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="브랜드광고센터">브랜드광고센터</a></li>							<li data-log-actionid-label="sellerzone"><a href="{{_SELLER_URL_}}" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="셀러존">셀러존</a></li>							<li data-log-actionid-label="minimall_mngt"><a href="{{_SELLER_SHOP_DOMAIN_}}/minimall/AuthMiniMallAction.tmall?method=goRepMinimallMng" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="스토어관리">스토어관리</a></li>						</ul>					</li>					<li class="have_sub lang_v2" data-log-actionid-label="language"><a href="http://www.11st.co.kr/html/main.html" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="KOREA"><span class="flag flag_ko"></span> Korea<span class="ico_arrow"></span><span class="frame"></span></a>						<ul class="user_sub_menu">							<li><a href="http://global.11st.co.kr/?trlang=en" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="ENGLISH" data-log-body="{'language':'english'}"><span class="flag flag_en"></span> English</a></li>                            <li><a href="http://global.11st.co.kr/?trlang=zh" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="중국" data-log-body="{'language':'china'}"><span class="flag flag_ch"></span> China</a></li>							<li><a href="http://www.11street.my" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="말레이시아" data-log-body="{'language':'malaysia'}"><span class="flag flag_ma"></span> Malaysia</a></li>							<li><a href="http://www.elevenia.co.id/" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="인도네시아" data-log-body="{'language':'indonesia'}"><span class="flag flag_in"></span> Indonesia</a></li>							<li><a href="http://www.n11.com/" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="터키" data-log-body="{'language':'turkey'}"><span class="flag flag_tu"></span> Turkey</a></li>							<li><a href="http://www.11street.co.th/html/th/main.html" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="태국" data-log-body="{'language':'thailand'}"><span class="flag flag_th"></span> Thailand</a></li>						</ul>					</li>				</ul>			</div>				</div>	</div>	<hr></script><script id="headerStartTemplate" type="text/x-handlebars-template">	{{#ifCond templateType '===' 'main'}}	<div class="skip_nav">		<p><a href="#container">본문 바로가기</a></p>		</div>	<div id="wrap">	{{else}}	<div id="skipNavi">		<a href="#tSearch"><span>통합검색 바로가기</span></a>		<a href="#layBodyWrap"><span>본문 바로가기</span></a>	</div>	<div id="wrapBody">	{{/ifCond}}</script><script id="headerGlobalServiceTemplate" type="text/x-handlebars-template">	<div class="global_top_cntr" id="global_top_cntr" style="display:none;">		<div>			<p>Please select your preferred language. <em class="c_gbl"><a href="http://global.11st.co.kr/html/en/main.html"  onclick="StartPageManager.english(); return false;">English</a></em> or <em class="c_kor"><a href="http://www.11st.co.kr/html/main.html" onclick="StartPageManager.korean(); return false;">Korean</a></em></p>			<input type="button" value="close layer" onclick="StartPageManager.hide();">		</div>		<div class="choice_ko_en">For International Shipping service, click here <span>(<a href="http://global.11st.co.kr/en/commons/CommonAbout.tmall?method=getInternationalSS&tab=1">English</a>, <a href="http://www.11st.co.kr/html/browsing/worldDelivery/worldDeliveryMain.html">Korean</a>)</span></div>	</div>	<div class="global_deliv_top lang_ko" id="global_deliv_top" style="display:none;">		<div class="inner">			<h2><span><span>전세계배송 서비스</span></span></h2>			<ul>				<li class="glb_serv1"><a href="http://www.11st.co.kr/browsing/WorldDeliverySubAction.tmall?method=getWorldDeliveryInfo&viewFlag=info1"><span><span>전세계배송 이용 가이드</span></span></a></li>				<li class="glb_serv2"><a href="http://www.11st.co.kr/browsing/WorldDeliverySubAction.tmall?method=getWorldDeliveryInfo&viewFlag=info4"><span><span>해외배송비 안내</span></span></a></li>				<li class="glb_serv3"><a href="http://www.11st.co.kr/html/browsing/worldDelivery/worldDeliveryNatiRnk1Img.html"><span><span>국가별 판매랭킹</span></span></a></li>			</ul>			<label for="noView"><input type="checkbox" id="noView" onclick="StartPageManager.hideDlvInfoLayer(true);">더 이상 보이지 않기</label>			<button class="btn_close" onclick="StartPageManager.hideDlvInfoLayer(false);"><span>전세계배송 서비스 레이어 닫기</span></button>		</div>	</div>	<hr></script><script id="headerSearchTemplate" type="text/x-handlebars-template">{{#ifCond templateType '===' 'main'}}<header id="header" role="banner">{{else}}<div id="header" role="banner">{{/ifCond}}	<div class="header_sch_area">		<div class="inner">			{{#ifCond VIEW_BI '===' 'seasonBI'}}			<div class="season" style="background-image:url('{{BI_SEASON_IMG}}');"></div>			{{/ifCond}}			<div class="header_sch" data-log-actionid-area="header_menu" data-log-actionid-label="11st_logo">				<h1 class="hd"><a href="http://www.11st.co.kr" data-ga-event-category="PC_GNB" data-ga-event-action="상단영역_로고" data-ga-event-label="">11번가</a></h1>				<form name="GNBSearchForm" id="AKCFrm" autocomplete="off" method="get" action="http://search.11st.co.kr/SearchPrdAction.tmall" onSubmit="HeaderGnb.search(''); return false;" target="_top">					<input type="hidden" name="method" value="getTotalSearchSeller">					<input type="hidden" name="isGnb" value="Y">					<input type="hidden" name="prdType" value="">					<input type="hidden" name="category" value="">					<input type="hidden" name="cmd" value="">					<input type="hidden" name="pageSize">					<input type="hidden" name="lCtgrNo" value="">					<input type="hidden" name="mCtgrNo" value="">					<input type="hidden" name="sCtgrNo" value="">					<input type="hidden" name="dCtgrNo" value="">					<input type="hidden" name="fromACK" value="">					<input type="hidden" name="semanticFromGNB" value="">					<input type="hidden" name="gnbTag" value="TO">					<input type="hidden" name="schFrom" value="">					<input type="hidden" name="schFrom" value="">					<input type="hidden" name="ID" value="">					<input type="hidden" name="ctgrNo" value="">					<input type="hidden" name="srCtgrNo" value="">					<input type="hidden" name="keyword" value="">					<input type="hidden" name="adUrl" id="adUrl" value="">					<input type="hidden" name="adKwdTrcNo" id="adKwdTrcNo" value="">					<input type="hidden" name="adPrdNo" id="adPrdNo" value="">					<input type="hidden" name="targetTab" value="T">					{{#ifCond area '===' 'extra'}}					<input type="hidden" name="charset" value="getHtmlCharset()">					{{/ifCond}}					<fieldset id="tSearch">						<legend>통합검색</legend>						{{#ifCond area '===' 'extra'}}						<input type="text" class="header_inp_txt" title="11번가 통합검색" name="kwd" value="" id="AKCKwd" onFocus="clearAdUrl();" onKeyPress="if ( event.keyCode == 13) HeaderGnb.search('enter'); " style="ime-mode:active;">						{{else}}						<input type="text" class="header_inp_txt" title="11번가 통합검색" name="kwd" value="{{SRCH_KWD}}" id="AKCKwd" onfocus="clearAdUrl();searchManager.init(true);">						{{/ifCond}}						<div id="gnbTxtAd_divId" title="MA01I" data-log-actionid-area="searchbox"><button type="button" class="btn_search" id="gnbTxtAd" onclick="HeaderGnb.search('click'); return false;">검색</button></div>						{{#ifCond area '!=' 'extra'}}								<div id="auto_seachTopDiv" class="header_sch_autotree">							<button type="button" class="defbtn_sm dtype7" id="btnRecentKwd" style="display:none"><span>최근 검색어</span></button>							<iframe id="autoArea" src="/html/blank.html" frameborder="0" scrolling="no" title="검색 자동 완성 및 검색어 트리" style="height:0px; "></iframe>						</div>						{{/ifCond}}					</fieldset>				</form>			</div>			{{#ifCond templateType '===' 'main'}}			<div class="header_ad" id="gnbRBannerWrapper" data-log-actionid-area="gnb_banner">				{{#if imgUrl}}				<div class="header_ad_view" data-log-actionid-label="banner">					<a name="bcb_conts" href="{{imgLink}}" data-ga-event-category="PC_GNB" data-ga-event-action="기획전 배너" data-ga-event-label="기획전배너 클릭_1_{{altTxt}}"><img src="{{imgUrl}}" alt="{{altTxt}}"></a>				</div>				{{/if}}				{{#ifCond totalCount '>' 1}}				<div class="header_ad_btn" data-log-actionid-label="arrow">					<span class="count"><strong name="bcb_seq">{{index}}</strong> / {{totalCount}}</span>					<button type="button" class="btn btn_prev" data-ga-event-category="PC_GNB" data-ga-event-action="기획전 배너" data-ga-event-label="배너 좌/우 이동" data-log-body="{'direction':'left'}">이전 광고</button>					<button type="button" class="btn btn_next" data-ga-event-category="PC_GNB" data-ga-event-action="기획전 배너" data-ga-event-label="배너 좌/우 이동" data-log-body="{'direction':'right'}">다음 광고</button>				</div>				{{/ifCond}}			</div>			{{else}}			<div class="header_ad_sub" id="dsGnbBanner" data-log-actionid-area="gnb_banner"></div>			{{/ifCond}}			{{#ifCond area '!=' 'mini'}}			<ul class="nav_benefit" data-log-actionid-area="header_menu">				<li><a href="http://www.11st.co.kr/browsing/CouponPlace.tmall?method=getCouponZoneMain&addCtgrNo=950089" data-ga-event-category="PC_GNB" data-ga-event-action="상단영역_쿠폰존" data-ga-event-label="" data-log-actionid-label="coupon">쿠폰존</a></li>				<li><a href="http://www.11st.co.kr/browsing/NewPlusZonePlace.tmall?method=getEventPage&addCtgrNo=951965" data-ga-event-category="PC_GNB" data-ga-event-action="상단영역_이벤트/혜택존" data-ga-event-label="" data-log-actionid-label="event">이벤트/혜택존</a></li>				<li><a href="http://www.11st.co.kr/html/exhibition/productPlanningMain21.html" data-ga-event-category="PC_GNB" data-ga-event-action="상단영역_기획전" data-ga-event-label="" data-log-actionid-label="plan">기획전</a></li>				<li><a href="http://www.11st.co.kr/browsing/BestSeller.tmall?method=getBestSellerMain&xfrom=main^gnb" data-ga-event-category="PC_GNB" data-ga-event-action="상단영역_베스트100" data-ga-event-label="" data-log-actionid-label="best">베스트100</a></li>			</ul>			{{/ifCond}}		</div>	</div>{{#ifCond area '===' 'mini'}}</div><hr>{{/ifCond}}</script><script id="headerNavigationTemplate" type="text/x-handlebars-template">		{{#ifCond templateType '===' 'main'}}		<nav class="header_gnb" id="gnbNavArea">		{{else}}		<div class="header_gnb" id="gnbNavArea">		{{/ifCond}}			<div class="inner">				<h1 class="hide">대메뉴</h1>				<div class="gnb_l">					<div class="gnb_nav gnb_nav_category_v2" id="gnbCategoryArea">						<p name="gnbNavBtn" data-log-actionid-area="all_nav" data-log-actionid-label="all_category"><button id="gnbBtnAllNav" type="button" class="gnb_btn_all_v3" data-ga-event-category="PC_LNB 카테고리 탐색" data-ga-event-action="카테고리 전체" data-ga-event-label="카테고리 전체"><span class="in_btn">카테고리 전체</span></button></p>						<div class="ctgrlist_wrap">							<div class="gnb_nav_category_layer_v2" id="metaCategoryInner">							</div>						</div>					</div>										<ul class="gnb_nav gnb_nav_brand" id="gnbCornerArea">						 <li class="nowdely" data-log-actionid-area="header_gnb" data-log-actionid-label="now_dlv">							<a href="http://www.11st.co.kr/browsing/NowDlvAction.tmall?method=nowDlvMain" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_NOW배송" data-ga-event-label="" class="link" name="gnbNavBtn">NOW배송<span class="line"></span></a>						</li>						<li class="shocking" data-log-actionid-area="header_gnb" data-log-actionid-label="shockingdeal"> 												 	<a href="http://deal.11st.co.kr" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_쇼킹딜" data-ga-event-label="" class="link" name="gnbNavBtn">쇼킹딜<span class="line"></span></a>						</li>					</ul>				</div>						<div class="gnb_r">					<strong class="shop">#SHOP</strong>					<ul class="gnb_nav gnb_nav_theme" id="gnbThemeMenuArea" data-log-actionid-area="shop_tab" data-log-actionid-label="menu">						<li style="display:none;" id="seasonMenuArea"><a href="" class="link event" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_테마메뉴" data-ga-event-label=""><img style="display:none;" src="" alt=""></a></li>						<li><a href="http://www.11st.co.kr/browsing/MainThemeAction.tmall?method=departmentMain&ctgrNo=152797&isNewGnb=Y " class="link department" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_테마메뉴" data-ga-event-label="백화점" data-log-body="{'menu_name':'dept'}">백화점</a></li>						<li><a href="http://www.11st.co.kr/browsing/BrandHomeAction.tmall?method=getBrandTrendMain" class="link brand" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_테마메뉴" data-ga-event-label="브랜드" data-log-body="{'menu_name':'brand'}">브랜드</a></li>						<li><a href="http://www.11st.co.kr/browsing/MainThemeAction.tmall?method=getFashionMain&isNewGnb=Y " class="link fashion" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_테마메뉴" data-ga-event-label="패션" data-log-body="{'menu_name':'fashion'}">패션</a></li>						<li><a href="http://www.11st.co.kr/browsing/MainThemeAction.tmall?method=getBeautyMain&isNewGnb=Y " class="link beauty" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_테마메뉴" data-ga-event-label="뷰티" data-log-body="{'menu_name':'beauty'}">뷰티</a></li>						<li><a href="http://www.11st.co.kr/browsing/MainThemeAction.tmall?method=livingMain&ctgrNo=152711&isNewGnb=Y " class="link living" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_테마메뉴" data-ga-event-label="리빙" data-log-body="{'menu_name':'living'}">리빙</a></li>						<li><a href="http://www.11st.co.kr/browsing/MainThemeAction.tmall?method=leisureMain&ctgrNo=152712&isNewGnb=Y " class="link leisure" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_테마메뉴" data-ga-event-label="레저" data-log-body="{'menu_name':'leisure'}">레저</a></li>						<li><a href="http://www.11st.co.kr/browsing/MainThemeAction.tmall?method=digitalMain&ctgrNo=152713&isNewGnb=Y " class="link digital" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_테마메뉴" data-ga-event-label="디지털" data-log-body="{'menu_name':'digital'}">디지털</a></li>						<li><a href="http://www.11st.co.kr/browsing/MainThemeAction.tmall?method=martMain&ctgrNo=152714&isNewGnb=Y " class="link mart" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_테마메뉴" data-ga-event-label="마트" data-log-body="{'menu_name':'mart'}">마트</a></li>					</ul>					<div class="gnb_bar"></div>					<ul class="gnb_nav gnb_nav_vertical" data-log-actionid-area="vertical_tab" data-log-actionid-label="menu">						<li><a href="http://books.11st.co.kr" class="link book" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_버티컬" data-ga-event-label="도서" data-log-body="{'menu_name':'book'}">도서</a></li>						<li class="service_new"><a href="http://tour.11st.co.kr/html/vertical/tourMain.html" class="link trip" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_버티컬" data-ga-event-label="여행" data-log-body="{'menu_name':'travel'}">여행<span class="ico_new">NEW</span></a></li>						<li class="service_new"><a href="http://ticket.11st.co.kr/11st/Main.asp" class="link ticket" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_버티컬" data-ga-event-label="티켓" data-log-body="{'menu_name':'ticket'}">티켓<span class="ico_new">NEW</span></a></li>						<li class="service_new"><a href="http://www.11st.co.kr/lifeplus/LifePlusAction.tmall?method=getLifeplusMain" class="link lifeplus" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_버티컬" data-ga-event-label="홈&카서비스" data-log-body="{'menu_name':'home&carservice'}">홈&카서비스<span class="ico_new">NEW</span></a></li>					</ul>				</div>			</div>		{{#ifCond templateType '===' 'main'}}		</nav>		{{else}}		</div>		{{/ifCond}}	{{#ifCond area '!=' 'mini'}}		{{#ifCond templateType '===' 'main'}}	</header>		{{else}}	</div>		{{/ifCond}}	{{/ifCond}}	<div class="dimm" id="gnbMetaCategoryDimm"></div></script><script id="headerMetaCategoryTemplate" type="text/x-handlebars-template">	<section class="main_category_v2" id="lnbMenu">		<h1 class="hide">카테고리 메뉴</h1>		<ul>		{{#each this}}			<li class="{{AddInfoClassNm}}" data-log-actionid-area="lnb_nav" data-log-actionid-label="meta_category">				<a href="#" name="metaCtgr" data-ga-event-category="PC_LNB 카테고리 탐색" data-ga-event-action="메타카테고리" data-ga-event-label="{{CtgrNm}}">{{CtgrNm}}</a>				<div class="main_category_layer_v2" id="lnb_cate_layer{{metaIdx}}">					<strong class="tit_category">{{CtgrNm}}</strong>					<div class="box_category"></div>				</div>			</li>		{{/each}}		</ul>	</section></script><link type="text/css" rel="stylesheet" href="./help_files/default(1).css"><script type="text/javascript" src="./help_files/jquery-1.5.min.js" charset="euc-kr"></script><script type="text/javascript" src="./help_files/handlebars-v4.0.5.min.js" charset="euc-kr"></script><script type="text/javascript" src="./help_files/headerCommonJs.js" charset="euc-kr"></script><script type="text/javascript" charset="euc-kr" src="./help_files/reserveKeywordList.js"></script><script type="text/javascript" src="./help_files/inc_header_v7.js" charset="euc-kr"></script><script type="text/javascript" src="./help_files/json2.min.js" charset="euc-kr"></script>
+<script type="text/javascript">
+    //GNB 로드
+   HeaderExtra.initGNB();
+
+    jQuery.noConflict();
+    
+</script>		</head><body><div id="skipNavi">		<a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#tSearch"><span>통합검색 바로가기</span></a>		<a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#layBodyWrap"><span>본문 바로가기</span></a>	</div>	<div id="wrapBody">		<div class="header_util" id="headerUtilArea" data-log-actionid-area="header_util">		<div class="inner">			<div class="header_utilmenu">				<ul>															<li data-log-actionid-label="appdown"><a href="http://www.11st.co.kr/contents/Contents.tmall?method=dispContents&amp;spceid=2103" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="앱다운로드" class="appdown" target="_blank"><span class="ico"></span>앱다운로드</a><span class="tx_bar"></span></li>										<li class="direct" id="go11st_wrap" style="" data-log-actionid-label="shortcut">						<button type="button" class="btn_direct" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="바로가기ON/OFF">바로가기</button>						<div class="lay_nw_def direct_go_wrap" id="lay_direct">							<div class="lay_tit"><em id="gbox_text">바로가기 비접속중</em>입니다.</div>							<div class="lay_conts cfix">								<div class="direct_go" id="divDirectBenefit"><dl><dt>바로가기 접속 고객님의 특별한 혜택</dt><dd><ol><li>1. 쿠폰존 사용 혜택</li><li>2. 멤버십 등급별 제공되는 쿠폰 사용</li><li>3. 배송지연보상제 쿠폰 사용</li></ol><p class="m_benefit"><span class="ico"></span>모바일 App 접속시 특별한 혜택 적용</p></dd></dl>									<dl>										<dt>바로가기로 방문하는 방법 </dt>										<dd>											<ul class="cfix">												<li><button type="button" class="btn_way" onclick="FooterComm.installDirectVisit(&#39;&#39;);">바로가기 설치하기</button></li>												<li><button type="button" class="btn_way" onclick="setHomePage();">시작페이지 설정하기</button></li>												<li><button type="button" class="btn_way" onclick="FooterComm.addFavorite();">즐겨찾기 추가하기</button></li>												<li><button type="button" class="btn_way" onclick="FooterComm.clip11stUrl();">URL 직접 입력하기</button></li>											</ul>										</dd>									</dl>									<div class="btn_sec"><a href="http://www.11st.co.kr/browsing/MallPlanDetail.tmall?method=getMallPlanDetail&amp;planDisplayNumber=905236" class="btn_nw_gray">혜택 상세보기</a></div>								</div>							</div>							<button type="button" class="btn_laycls" onclick="jQuery(&#39;#lay_direct&#39;).toggle();"><span class="hide">레이어 닫기</span></button>						</div>					</li>				</ul>			</div>			<div class="header_user_etc">				<ul>										<li data-log-actionid-label="loginout"><a id="gnbLogin" href="javascript:void(0);" onclick="login(&#39;UT0201&#39;,&#39;&#39;); rakeLog.sendRakeLog(this);" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="로그인" data-log-body="{&#39;state&#39;:&#39;로그아웃&#39;}">로그인</a><span class="tx_bar"></span></li>					<li data-log-actionid-label="join"><a id="gnbMember" href="javascript:void(0);" onclick="join(&#39;&#39;); rakeLog.sendRakeLog(this);" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="회원가입">회원가입</a><span class="tx_bar"></span></li>															<li class="have_sub" id="utMy11st" data-log-actionid-label="my11st"><a href="http://buy.11st.co.kr/order/myTmall.tmall?method=getMyTmallMain" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="나의11번가">나의11번가<span class="ico_arrow"></span><span class="frame"></span></a><span class="tx_bar"></span>						<ul class="user_sub_menu">							<li data-log-actionid-label="orderdlv_inquiry"><a href="http://buy.11st.co.kr/order/OrderList.tmall" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="주문배송조회">주문배송조회</a></li>							<li data-log-actionid-label="coupon"><a href="http://www.11st.co.kr/loyalty/AuthCouponGiftDtls.tmall" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="쿠폰">쿠폰</a></li>							<li data-log-actionid-label="grade"><a href="http://www.11st.co.kr/register/getGradeInfo.tmall?method=getGrade" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="구매등급 혜택">구매등급 혜택</a></li>							<li data-log-actionid-label="favorite_minimall"><a href="http://www.11st.co.kr/minimall/MyMiniMallAction.tmall?method=getMyMiniMall" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="단골스토어">단골스토어</a></li>						</ul>					</li>					<li data-log-actionid-label="cart"><a href="http://buy.11st.co.kr/cart/CartAction.tmall?method=getCartList" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="장바구니">장바구니</a><span class="tx_bar"></span></li>										<li data-log-actionid-label="customer_center"><a href="http://help.11st.co.kr/" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="고객센터">고객센터</a><span class="tx_bar"></span></li>					<li class="have_sub" data-log-actionid-label="seller_office"><a href="http://soffice.11st.co.kr/" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="셀러오피스">셀러오피스<span class="ico_arrow"></span><span class="frame"></span></a><span class="tx_bar"></span><!-- 마우스오버시 li에 클래스 on추가 -->						<ul class="user_sub_menu">							<li data-log-actionid-label="seller_ad"><a href="http://soffice.11st.co.kr/adcentre/AdvertMain.tmall" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="판매자광고센터">판매자광고센터</a></li>							<li data-log-actionid-label="brand_ad"><a href="http://www.11st.co.kr/brandadcenter/Main.tmall" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="브랜드광고센터">브랜드광고센터</a></li>							<li data-log-actionid-label="sellerzone"><a href="http://seller.11st.co.kr/" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="셀러존">셀러존</a></li>							<li data-log-actionid-label="minimall_mngt"><a href="http://shop.11st.co.kr/minimall/AuthMiniMallAction.tmall?method=goRepMinimallMng" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="스토어관리">스토어관리</a></li>						</ul>					</li>					<li class="have_sub lang_v2" data-log-actionid-label="language"><a href="http://www.11st.co.kr/html/main.html" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="KOREA"><span class="flag flag_ko"></span> Korea<span class="ico_arrow"></span><span class="frame"></span></a>						<ul class="user_sub_menu">							<li><a href="http://global.11st.co.kr/?trlang=en" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="ENGLISH" data-log-body="{&#39;language&#39;:&#39;english&#39;}"><span class="flag flag_en"></span> English</a></li>                            <li><a href="http://global.11st.co.kr/?trlang=zh" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="중국" data-log-body="{&#39;language&#39;:&#39;china&#39;}"><span class="flag flag_ch"></span> China</a></li>							<li><a href="http://www.11street.my/" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="말레이시아" data-log-body="{&#39;language&#39;:&#39;malaysia&#39;}"><span class="flag flag_ma"></span> Malaysia</a></li>							<li><a href="http://www.elevenia.co.id/" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="인도네시아" data-log-body="{&#39;language&#39;:&#39;indonesia&#39;}"><span class="flag flag_in"></span> Indonesia</a></li>							<li><a href="http://www.n11.com/" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="터키" data-log-body="{&#39;language&#39;:&#39;turkey&#39;}"><span class="flag flag_tu"></span> Turkey</a></li>							<li><a href="http://www.11street.co.th/html/th/main.html" data-ga-event-category="PC_GNB" data-ga-event-action="상단유틸" data-ga-event-label="태국" data-log-body="{&#39;language&#39;:&#39;thailand&#39;}"><span class="flag flag_th"></span> Thailand</a></li>						</ul>					</li>				</ul>			</div>				</div>	</div>	<hr><div id="header" role="banner">	<div class="header_sch_area">		<div class="inner">						<div class="header_sch" data-log-actionid-area="header_menu" data-log-actionid-label="11st_logo">				<h1 class="hd"><a href="http://www.11st.co.kr/" data-ga-event-category="PC_GNB" data-ga-event-action="상단영역_로고" data-ga-event-label="">11번가</a></h1>				<form name="GNBSearchForm" id="AKCFrm" autocomplete="off" method="get" action="http://search.11st.co.kr/SearchPrdAction.tmall" onsubmit="HeaderGnb.search(&#39;&#39;); return false;" target="_top">					<input type="hidden" name="method" value="getTotalSearchSeller">					<input type="hidden" name="isGnb" value="Y">					<input type="hidden" name="prdType" value="">					<input type="hidden" name="category" value="">					<input type="hidden" name="cmd" value="">					<input type="hidden" name="pageSize">					<input type="hidden" name="lCtgrNo" value="">					<input type="hidden" name="mCtgrNo" value="">					<input type="hidden" name="sCtgrNo" value="">					<input type="hidden" name="dCtgrNo" value="">					<input type="hidden" name="fromACK" value="">					<input type="hidden" name="semanticFromGNB" value="">					<input type="hidden" name="gnbTag" value="TO">					<input type="hidden" name="schFrom" value="">					<input type="hidden" name="schFrom" value="">					<input type="hidden" name="ID" value="">					<input type="hidden" name="ctgrNo" value="">					<input type="hidden" name="srCtgrNo" value="">					<input type="hidden" name="keyword" value="">					<input type="hidden" name="adUrl" id="adUrl" value="http://www.11st.co.kr/product/SellerProductDetail.tmall?method=getSellerProductDetail&amp;prdNo=1572078381">					<input type="hidden" name="adKwdTrcNo" id="adKwdTrcNo" value="1201710194843184264">					<input type="hidden" name="adPrdNo" id="adPrdNo" value="1572078381">					<input type="hidden" name="targetTab" value="T">										<input type="hidden" name="charset" value="getHtmlCharset()">										<fieldset id="tSearch">						<legend>통합검색</legend>												<input type="text" class="header_inp_txt" title="11번가 통합검색" name="kwd" value="" id="AKCKwd" onfocus="clearAdUrl();" onkeypress="if ( event.keyCode == 13) HeaderGnb.search(&#39;enter&#39;); " style="ime-mode:active;">												<div id="gnbTxtAd_divId" title="MA01I1201710194843184264" data-log-actionid-area="searchbox"><button type="button" class="btn_search" id="gnbTxtAd" onclick="HeaderGnb.search(&#39;click&#39;); return false;">검색</button></div>											</fieldset>				</form>			</div>						<div class="header_ad_sub" id="dsGnbBanner" data-log-actionid-area="gnb_banner"></div>									<ul class="nav_benefit" data-log-actionid-area="header_menu">				<li><a href="http://www.11st.co.kr/browsing/CouponPlace.tmall?method=getCouponZoneMain&amp;addCtgrNo=950089" data-ga-event-category="PC_GNB" data-ga-event-action="상단영역_쿠폰존" data-ga-event-label="" data-log-actionid-label="coupon">쿠폰존</a></li>				<li><a href="http://www.11st.co.kr/browsing/NewPlusZonePlace.tmall?method=getEventPage&amp;addCtgrNo=951965" data-ga-event-category="PC_GNB" data-ga-event-action="상단영역_이벤트/혜택존" data-ga-event-label="" data-log-actionid-label="event">이벤트/혜택존</a></li>				<li><a href="http://www.11st.co.kr/html/exhibition/productPlanningMain21.html" data-ga-event-category="PC_GNB" data-ga-event-action="상단영역_기획전" data-ga-event-label="" data-log-actionid-label="plan">기획전</a></li>				<li><a href="http://www.11st.co.kr/browsing/BestSeller.tmall?method=getBestSellerMain&amp;xfrom=main^gnb" data-ga-event-category="PC_GNB" data-ga-event-action="상단영역_베스트100" data-ga-event-label="" data-log-actionid-label="best">베스트100</a></li>			</ul>					</div>	</div>				<div class="header_gnb" id="gnbNavArea">					<div class="inner">				<h1 class="hide">대메뉴</h1>				<div class="gnb_l">					<div class="gnb_nav gnb_nav_category_v2" id="gnbCategoryArea">						<p name="gnbNavBtn" data-log-actionid-area="all_nav" data-log-actionid-label="all_category"><button id="gnbBtnAllNav" type="button" class="gnb_btn_all_v3" data-ga-event-category="PC_LNB 카테고리 탐색" data-ga-event-action="카테고리 전체" data-ga-event-label="카테고리 전체"><span class="in_btn">카테고리 전체</span></button></p>						<div class="ctgrlist_wrap">							<div class="gnb_nav_category_layer_v2" id="metaCategoryInner">								<section class="main_category_v2" id="lnbMenu">		<h1 class="hide">카테고리 메뉴</h1>		<ul>					<li class="brand" data-log-actionid-area="lnb_nav" data-log-actionid-label="meta_category">				<a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#" name="metaCtgr" data-ga-event-category="PC_LNB 카테고리 탐색" data-ga-event-action="메타카테고리" data-ga-event-label="브랜드패션">브랜드패션</a>				<div class="main_category_layer_v2" id="lnb_cate_layer1">					<strong class="tit_category">브랜드패션</strong>					<div class="box_category"></div>				</div>			</li>					<li class="cloth" data-log-actionid-area="lnb_nav" data-log-actionid-label="meta_category">				<a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#" name="metaCtgr" data-ga-event-category="PC_LNB 카테고리 탐색" data-ga-event-action="메타카테고리" data-ga-event-label="의류/잡화">의류/잡화</a>				<div class="main_category_layer_v2" id="lnb_cate_layer2">					<strong class="tit_category">의류/잡화</strong>					<div class="box_category"></div>				</div>			</li>					<li class="beauty" data-log-actionid-area="lnb_nav" data-log-actionid-label="meta_category">				<a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#" name="metaCtgr" data-ga-event-category="PC_LNB 카테고리 탐색" data-ga-event-action="메타카테고리" data-ga-event-label="뷰티">뷰티</a>				<div class="main_category_layer_v2" id="lnb_cate_layer3">					<strong class="tit_category">뷰티</strong>					<div class="box_category"></div>				</div>			</li>					<li class="leisure" data-log-actionid-area="lnb_nav" data-log-actionid-label="meta_category">				<a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#" name="metaCtgr" data-ga-event-category="PC_LNB 카테고리 탐색" data-ga-event-action="메타카테고리" data-ga-event-label="레저/자동차">레저/자동차</a>				<div class="main_category_layer_v2" id="lnb_cate_layer4">					<strong class="tit_category">레저/자동차</strong>					<div class="box_category"></div>				</div>			</li>					<li class="food" data-log-actionid-area="lnb_nav" data-log-actionid-label="meta_category">				<a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#" name="metaCtgr" data-ga-event-category="PC_LNB 카테고리 탐색" data-ga-event-action="메타카테고리" data-ga-event-label="식품">식품</a>				<div class="main_category_layer_v2" id="lnb_cate_layer5">					<strong class="tit_category">식품</strong>					<div class="box_category"></div>				</div>			</li>					<li class="baby" data-log-actionid-area="lnb_nav" data-log-actionid-label="meta_category">				<a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#" name="metaCtgr" data-ga-event-category="PC_LNB 카테고리 탐색" data-ga-event-action="메타카테고리" data-ga-event-label="출산/육아">출산/육아</a>				<div class="main_category_layer_v2" id="lnb_cate_layer6">					<strong class="tit_category">출산/육아</strong>					<div class="box_category"></div>				</div>			</li>					<li class="life" data-log-actionid-area="lnb_nav" data-log-actionid-label="meta_category">				<a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#" name="metaCtgr" data-ga-event-category="PC_LNB 카테고리 탐색" data-ga-event-action="메타카테고리" data-ga-event-label="생활/건강">생활/건강</a>				<div class="main_category_layer_v2" id="lnb_cate_layer7">					<strong class="tit_category">생활/건강</strong>					<div class="box_category"></div>				</div>			</li>					<li class="interior" data-log-actionid-area="lnb_nav" data-log-actionid-label="meta_category">				<a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#" name="metaCtgr" data-ga-event-category="PC_LNB 카테고리 탐색" data-ga-event-action="메타카테고리" data-ga-event-label="가구/인테리어">가구/인테리어</a>				<div class="main_category_layer_v2" id="lnb_cate_layer8">					<strong class="tit_category">가구/인테리어</strong>					<div class="box_category"></div>				</div>			</li>					<li class="digital" data-log-actionid-area="lnb_nav" data-log-actionid-label="meta_category">				<a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#" name="metaCtgr" data-ga-event-category="PC_LNB 카테고리 탐색" data-ga-event-action="메타카테고리" data-ga-event-label="디지털/가전/컴퓨터">디지털/가전/컴퓨터</a>				<div class="main_category_layer_v2" id="lnb_cate_layer9">					<strong class="tit_category">디지털/가전/컴퓨터</strong>					<div class="box_category"></div>				</div>			</li>					<li class="book" data-log-actionid-area="lnb_nav" data-log-actionid-label="meta_category">				<a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#" name="metaCtgr" data-ga-event-category="PC_LNB 카테고리 탐색" data-ga-event-action="메타카테고리" data-ga-event-label="도서/취미/반려동물">도서/취미/반려동물</a>				<div class="main_category_layer_v2" id="lnb_cate_layer10">					<strong class="tit_category">도서/취미/반려동물</strong>					<div class="box_category"></div>				</div>			</li>					<li class="hobby" data-log-actionid-area="lnb_nav" data-log-actionid-label="meta_category">				<a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#" name="metaCtgr" data-ga-event-category="PC_LNB 카테고리 탐색" data-ga-event-action="메타카테고리" data-ga-event-label="여행/공연/e쿠폰">여행/공연/e쿠폰</a>				<div class="main_category_layer_v2" id="lnb_cate_layer11">					<strong class="tit_category">여행/공연/e쿠폰</strong>					<div class="box_category"></div>				</div>			</li>					<li class="foreign" data-log-actionid-area="lnb_nav" data-log-actionid-label="meta_category">				<a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#" name="metaCtgr" data-ga-event-category="PC_LNB 카테고리 탐색" data-ga-event-action="메타카테고리" data-ga-event-label="해외직구">해외직구</a>				<div class="main_category_layer_v2" id="lnb_cate_layer12">					<strong class="tit_category">해외직구</strong>					<div class="box_category"></div>				</div>			</li>					<li class="last recommand" data-log-actionid-area="lnb_nav" data-log-actionid-label="meta_category">				<a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#" name="metaCtgr" data-ga-event-category="PC_LNB 카테고리 탐색" data-ga-event-action="메타카테고리" data-ga-event-label="테마편집샵">테마편집샵</a>				<div class="main_recommand_layer" id="lnb_cate_layer13">					<strong class="tit_category">테마편집샵</strong>					<div class="set_recommand"></div>				</div>			</li>				</ul>	</section></div>						</div>					</div>										<ul class="gnb_nav gnb_nav_brand" id="gnbCornerArea">						 <li class="nowdely" data-log-actionid-area="header_gnb" data-log-actionid-label="now_dlv">							<a href="http://www.11st.co.kr/browsing/NowDlvAction.tmall?method=nowDlvMain" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_NOW배송" data-ga-event-label="" class="link" name="gnbNavBtn">NOW배송<span class="line"></span></a>						</li>						<li class="shocking" data-log-actionid-area="header_gnb" data-log-actionid-label="shockingdeal"> 												 	<a href="http://deal.11st.co.kr/" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_쇼킹딜" data-ga-event-label="" class="link" name="gnbNavBtn">쇼킹딜<span class="line"></span></a>						</li>					</ul>				</div>						<div class="gnb_r">					<strong class="shop">#SHOP</strong>					<ul class="gnb_nav gnb_nav_theme" id="gnbThemeMenuArea" data-log-actionid-area="shop_tab" data-log-actionid-label="menu">						<li style="display:none;" id="seasonMenuArea"><a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp" class="link event" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_테마메뉴" data-ga-event-label=""><img style="display:none;" src="http://help.11st.co.kr/11st/faq/FaqIndex.jsp" alt=""></a></li>						<li><a href="http://www.11st.co.kr/browsing/MainThemeAction.tmall?method=departmentMain&amp;ctgrNo=152797&amp;isNewGnb=Y" class="link department" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_테마메뉴" data-ga-event-label="백화점" data-log-body="{&#39;menu_name&#39;:&#39;dept&#39;}">백화점</a></li>						<li><a href="http://www.11st.co.kr/browsing/BrandHomeAction.tmall?method=getBrandTrendMain" class="link brand" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_테마메뉴" data-ga-event-label="브랜드" data-log-body="{&#39;menu_name&#39;:&#39;brand&#39;}">브랜드</a></li>						<li><a href="http://www.11st.co.kr/browsing/MainThemeAction.tmall?method=getFashionMain&amp;isNewGnb=Y" class="link fashion" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_테마메뉴" data-ga-event-label="패션" data-log-body="{&#39;menu_name&#39;:&#39;fashion&#39;}">패션</a></li>						<li><a href="http://www.11st.co.kr/browsing/MainThemeAction.tmall?method=getBeautyMain&amp;isNewGnb=Y" class="link beauty" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_테마메뉴" data-ga-event-label="뷰티" data-log-body="{&#39;menu_name&#39;:&#39;beauty&#39;}">뷰티</a></li>						<li><a href="http://www.11st.co.kr/browsing/MainThemeAction.tmall?method=livingMain&amp;ctgrNo=152711&amp;isNewGnb=Y" class="link living" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_테마메뉴" data-ga-event-label="리빙" data-log-body="{&#39;menu_name&#39;:&#39;living&#39;}">리빙</a></li>						<li><a href="http://www.11st.co.kr/browsing/MainThemeAction.tmall?method=leisureMain&amp;ctgrNo=152712&amp;isNewGnb=Y" class="link leisure" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_테마메뉴" data-ga-event-label="레저" data-log-body="{&#39;menu_name&#39;:&#39;leisure&#39;}">레저</a></li>						<li><a href="http://www.11st.co.kr/browsing/MainThemeAction.tmall?method=digitalMain&amp;ctgrNo=152713&amp;isNewGnb=Y" class="link digital" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_테마메뉴" data-ga-event-label="디지털" data-log-body="{&#39;menu_name&#39;:&#39;digital&#39;}">디지털</a></li>						<li><a href="http://www.11st.co.kr/browsing/MainThemeAction.tmall?method=martMain&amp;ctgrNo=152714&amp;isNewGnb=Y" class="link mart" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_테마메뉴" data-ga-event-label="마트" data-log-body="{&#39;menu_name&#39;:&#39;mart&#39;}">마트</a></li>					</ul>					<div class="gnb_bar"></div>					<ul class="gnb_nav gnb_nav_vertical" data-log-actionid-area="vertical_tab" data-log-actionid-label="menu">						<li><a href="http://books.11st.co.kr/" class="link book" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_버티컬" data-ga-event-label="도서" data-log-body="{&#39;menu_name&#39;:&#39;book&#39;}">도서</a></li>						<li class="service_new"><a href="http://tour.11st.co.kr/html/vertical/tourMain.html" class="link trip" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_버티컬" data-ga-event-label="여행" data-log-body="{&#39;menu_name&#39;:&#39;travel&#39;}">여행<span class="ico_new">NEW</span></a></li>						<li class="service_new"><a href="http://ticket.11st.co.kr/11st/Main.asp" class="link ticket" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_버티컬" data-ga-event-label="티켓" data-log-body="{&#39;menu_name&#39;:&#39;ticket&#39;}">티켓<span class="ico_new">NEW</span></a></li>						<li class="service_new"><a href="http://www.11st.co.kr/lifeplus/LifePlusAction.tmall?method=getLifeplusMain" class="link lifeplus" data-ga-event-category="PC_GNB" data-ga-event-action="GNB_버티컬" data-ga-event-label="홈&amp;카서비스" data-log-body="{&#39;menu_name&#39;:&#39;home&amp;carservice&#39;}">홈&amp;카서비스<span class="ico_new">NEW</span></a></li>					</ul>				</div>			</div>				</div>						</div>				<div class="dimm" id="gnbMetaCategoryDimm"></div><script type="text/javascript">setGnbLogInArea(true);</script><script type="text/javascript">setTimeout(HeaderExtra.setCcWingBanner, 1000);</script>
+    <!-- // topMenu -->
+
+    <script type="text/javascript" src="./help_files/prototype.js"></script>
+    <script type="text/javascript" src="./help_files/common.js"></script>
+    <script type="text/javascript" src="./help_files/faq.js"></script>
+    <script language="JavaScript" type="text/JavaScript">
+        var urlWebSslCtx = 'http://help.11st.co.kr/11st';
+        var urlWebCtx = 'http://help.11st.co.kr/11st';
+        Event.observe(window, "load", initialize, false);
+
+        function initialize()
+        {
+            // 설정된 페이지 이동 방식을 가져옴
+            var page = getConfigPage("configFaqViewContents");
+            // 툴팁 사용여부를 가져옴
+            var tooltip = getConfigPage("configFaqUseToolTip");
+
+            for(var i=1; i < 11; i++)
+            {
+                //hslee:자주 묻는 질문 TOP 10 style 변경.
+                try { $('topnFaqContents' + i).style.display = ''; } catch(e) {}
+                //hslee:새로 등록된 질문 TOP 10 style 변경.
+                try { $('newFaqContents' + i).style.display = ''; } catch(e) {}
+            }
+
+            //hslee:미리보기 display none
+            setTimeout(function()
+                       {
+                            for(var i=1; i < 11; i++)
+                            {
+                                try{$('topnFaqContents' + i).style.display = 'none';}catch(e) {}
+                                try{$('newFaqContents' + i).style.display = 'none'; }catch(e) {}
+                            }
+                       }, 1
+            );
+        }
+
+        function goBbs(searchGubun)
+        {
+            window.open("/11st/bbs/Bbs.jsp?searchGubun="+searchGubun);
+        }
+ 
+    </script>
+
+
+	<!-- layBodyWrap -->
+	<div id="layBodyWrap">
+		<!-- layBody -->
+		<div id="layBody">
+		<!-- 전체영역 -->
+            <div id="cscenterWrap">
+                <!-- Tab메뉴Wrap-->
+                
+
+
+
+
+<!-- Tab메뉴Wrap-->
+<div class="rtab">
+    <ul>
+        <li class="on"><a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#" class="m11"><span class="alttxt">11번가</span></a></li>
+        
+    </ul>
+</div>
+<!-- [접근성] <div class="marT10" ></div> 소스삭제 --><!--<div class="marT10" ></div>-->
+<!-- Tab메뉴 생성 End -->
+<!-- 페이지타이틀 및 상담신호등 -->
+<div class="cybercenterTop_v2">
+    <!-- [접근성] 11고객센터 로고 html 변경 -->
+    <h2 class="cybercenterLogo" onclick="javascript:document.location.href=&#39;http://help.11st.co.kr/11st/index.jsp&#39;">11번가 고객센터, CUSTOMER CENTER - 고객님과 함께하는 11번가 고객센터입니다.</h2>
+    <!-- //[접근성] 11고객센터 로고 html 변경 -->
+    <div class="counselSignal_v2">
+        <div class="signalTit">
+            <p class="titles">
+                <img src="./help_files/tit_signal.gif" alt="상담신호등">
+                <!-- [접근성] 버튼 href에 레이어팝업 id값을 넣어주세요 -->
+                <a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#signalInfoPop" onclick="jQuery(&#39;#signalInfoPop&#39;).show();return false;" class="link_tooltip"><img src="./help_files/ico_tooltip.gif" "="" alt="상담신호등이란?"></a>
+            </p>           
+            <div class="signalPop" id="signalInfoPop" style="display: none;">
+                <!-- [접근성]  <h3 class="popTit"> </h3> 로 수정 --><h3 class="popTit">상담신호등 안내</h3>                
+             	<div class="popInner">
+                    <p>
+                        고객님의 편리한 고객센터 이용을 위해 고객센터 문의량 및 통화량을 안내해드립니다.<br>
+                        (전화상담은 15분전 통화량을 기준으로 안내해 드립니다.)
+                    </p>					
+					<div class="cont_signal">
+						<p class="info_signal"><span class="img_signal"><img src="./help_files/signalinfo_good.gif" alt="GOOD"></span> 상담원 연결이 원활합니다.</p>
+						<p class="info_signal"><span class="img_signal"><img src="./help_files/signalinfo_wait.gif" alt="WAIT"></span>문의량이 증가하고 있어 상담원 연결이 지연될 수 있습니다.</p>
+						<p class="info_signal"><span class="img_signal"><img src="./help_files/signalinfo_busy.gif" alt="BUSY"></span>고객 문의가 많아 상담 연결까지 일정시간 소요되오니 메신저상담 혹은 FAQ를 이용하시기 바랍니다.</p>
+					</div>					
+					<!-- 2017-02-08 sion 마크업 수정 -->					
+					<ul>
+						<li>11번가 전화상담 서비스는 1년 365일 24시간 운영됩니다.</li>
+						<li>11* 상담서비스는 아래 시간 이용가능하십니다.<br><span class="red">평일 09:00 ~ 18:00</span></li>
+						<li>
+													   		
+							   	전화상담 연결이 지연될 경우 <a href="javascript:alert(&#39;11* 상담하기는 로그인 후 이용가능합니다.&#39;);">11* 상담하기</a>를 이용해주세요.<br>
+								<a href="javascript:alert(&#39;11* 상담하기는 로그인 후 이용가능합니다.&#39;);" class="img" title="새창열림"><img src="./help_files/btn_direct.gif" alt="11* 상담하기"></a>
+						   						
+						</li>
+					</ul>
+					<!-- // 2017-02-08 sion 마크업 추가 -->                   
+                </div>
+                <!-- [접근성] 닫기 버튼태그 위치 변경 --><a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#" class="closePop" onclick="jQuery(&#39;#signalInfoPop&#39;).hide();return false;"><img src="./help_files/btn_closePop01.gif" alt="닫기"></a>
+            </div>
+<script type="text/javascript">
+
+    function openSignalPop() {
+        jQuery('#signalInfoPop').show().addClass('active'); return false;
+    }
+    function signalPopAct() {
+        var signalSetTime2 = null;
+
+        jQuery('#openSignalInfoPop').click( function() {
+            if ( jQuery('#signalInfoPop').css('display') == 'none' ) {
+                clearTimeout(signalSetTime2);
+                jQuery('#signalInfoPop').show().addClass('active'); return false;
+            }
+        });
+        jQuery('#openSignalInfoPop').mouseover( function() {
+            if ( jQuery('#signalInfoPop').css('display') == 'none' ) {
+                signalSetTime2 = setTimeout(openSignalPop, 3000);
+            }
+        });
+        jQuery('#openSignalInfoPop').mouseout( function() { clearTimeout(signalSetTime2); });
+        jQuery('#closeSignalInfoPop').click( function() {
+            jQuery('#signalInfoPop').hide().removeClass('active'); return false;
+        });
+    }
+
+    function bodyClickCls02() {
+        jQuery('#signalInfoPop').mouseover(function() { jQuery(this).removeClass('active'); });
+        jQuery('#signalInfoPop').mouseout(function() { jQuery(this).addClass('active'); });
+        jQuery('body').click(function() {
+            if ( jQuery('#signalInfoPop').css('display') == 'block' ) {
+                if ( jQuery('#signalInfoPop').hasClass('active') ) { jQuery('#signalInfoPop').removeClass('active'); jQuery('#signalInfoPop').hide(); }
+            }
+        });
+    }
+
+signalPopAct();
+bodyClickCls02();
+
+</script>
+            <p class="timeInfo"><!-- [접근성] 신호등기준시간 텍스트로 변경 --><span>신호등기준시간</span> 11:00~11:15</p>
+        </div>
+        
+		<div class="signalLamp">
+			<div class="lampWrap messenger">
+				<p class="tit">11<span class="star">*</span>메신저상담</p>
+				<p class="lamps">
+				
+				<img src="./help_files/signal_good.gif" alt="GOOD">
+								 
+				</p>
+			</div>
+			<div class="lampWrap">
+				<p class="tit">전화상담</p>
+				<p class="lamps">
+					<iframe src="./help_files/getServeRate.html" frameborder="0" style="width:100%;height:100%;overflow:hidden;" scrolling="no" title="전화상담"></iframe>
+				</p>
+			</div>
+		</div>
+		<div class="signalInfo">
+			<img src="./help_files/signal_info.gif" alt="녹색등-GOOD, 주황등-WAIT, 빨간등-BUSY">
+		</div>
+         
+    </div>
+</div>
+<!-- [접근성] 태그삭제 <div class="shadow1pxdddcdc"></div> ---><!--<div class="shadow1pxdddcdc"></div>-->
+<!-- // end of 페이지타이틀 및 상담신호등 -->
+
+<script type="text/javascript">
+
+jQuery('#signalInfoPop').hide();
+
+</script>
+
+                <!-- Tab메뉴 생성 End -->
+
+                <!-- 레프트영역 -->
+                
+
+
+
+
+<script type="text/javascript">
+
+    function goWindowOpen(url, optionFlag, width, height, scrollbars)
+    {
+        var screenWidth = screen.width;
+        var screenHeight = screen.height;
+        var popWidth;
+        var popHeight;
+
+        if(optionFlag == "true")
+        {
+            popWidth = width;
+            popHeight = height;
+
+            if(scrollbars == null || scrollbars == "") scrollbars = "no";
+
+            window.open(url, "goWindowOpen",
+                "menubar=no, toolbar=no, location=no, status=no, scrollbars=" + scrollbars +
+                ", top=" + (screenHeight/2 - popHeight/2) + ", left=" + (screenWidth/2 - popWidth/2) +
+                ", width=" + popWidth + ", height=" + popHeight);
+        }
+        else
+        {
+            window.open(url);
+        }
+
+        return;
+    }
+
+    function openerGoStatUrl(item)
+    {
+        if(item == 'order')
+        {
+            goStatUrl('http://www.11st.co.kr/order/OrderList.tmall', 'HOA0201','');
+        }
+        else
+        {
+
+        }
+
+        return;
+    }
+</script>
+
+<!-- [접근성] faq전체보기 레이어 상단위로 위치 변경 -->
+<div class="faqWhole">
+    <!-- 카테고리 전체보기 -->
+    <a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#faqAllWrap" class="btnfaqAll" onclick="categoryWhole(1);return false;">전체보기</a>
+    <div id="faqAllWrap" class="faqAll_wrap">
+        <div class="faqTit">
+            <h3 class="title"><img src="./help_files/category_title_whole.gif" alt="FAQ 자주묻는질문"></h3>
+            <a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#categoryWraps" class="faqAll_close" onclick="categoryWhole(2);return false;">전체닫기</a>
+        </div>
+        <div class="faqMenu">
+            <!-- 탭 온 faq_tab01_on~faq_tab03_on -->
+            <!-- 구매관련 -->
+            <h4 class="faq_tab faq_tab01_on"><a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#categories_11">구매관련</a></h4>
+            <!--  리스트 온 faqList_selected -->
+            <div class="faqList faqList_selected" id="categories_11">
+                <!-- loop -->
+                <ul>
+<li class="cate_01"><h5 class="tit_menu">V센터</h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002994&#39;, &#39;NODE0000002922&#39;);">V센터</a></li></ul></li><li class="cate_01"><h5 class="tit_menu">11* 메신저 상담</h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002995&#39;, &#39;NODE0000002993&#39;);">11* 메신저 상담</a></li></ul></li><li class="cate_01"><h5 class="tit_menu">회원/정보관리</h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000006&#39;, &#39;NODE0000000005&#39;);">회원가입</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000017&#39;, &#39;NODE0000000005&#39;);">회원탈퇴</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000013&#39;, &#39;NODE0000000005&#39;);">회원정보 변경</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000010&#39;, &#39;NODE0000000005&#39;);">아이디/비밀번호</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002929&#39;, &#39;NODE0000000005&#39;);">OTP 서비스</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002268&#39;, &#39;NODE0000000005&#39;);">범용 공인인증서</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002280&#39;, &#39;NODE0000000005&#39;);">아이핀(I-PIN)</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000009&#39;, &#39;NODE0000000005&#39;);">개인정보도용</a></li></ul></li><li class="cate_01"><h5 class="tit_menu">주문/결제</h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000029&#39;, &#39;NODE0000000027&#39;);">주문 방법</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000030&#39;, &#39;NODE0000000027&#39;);">주문내역 확인</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000044&#39;, &#39;NODE0000000027&#39;);">카드결제</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000043&#39;, &#39;NODE0000000027&#39;);">실시간계좌이체</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000042&#39;, &#39;NODE0000000027&#39;);">무통장입금</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002307&#39;, &#39;NODE0000000027&#39;);">편의점결제</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000045&#39;, &#39;NODE0000000027&#39;);">휴대폰소액결제</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000001048&#39;, &#39;NODE0000000027&#39;);">모바일 티머니</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002754&#39;, &#39;NODE0000000027&#39;);">11Pay</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000003000&#39;, &#39;NODE0000000027&#39;);">PAYCO</a></li></ul></li><li class="cate_01"><h5 class="tit_menu">배송</h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002460&#39;, &#39;NODE0000000072&#39;);">배송지연 보상제</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000077&#39;, &#39;NODE0000000072&#39;);">배송기간/배송비</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000078&#39;, &#39;NODE0000000072&#39;);">배송 정보</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002416&#39;, &#39;NODE0000000072&#39;);">배송 오류</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000090&#39;, &#39;NODE0000000072&#39;);">수취확인</a></li></ul></li><li class="cate_01"><h5 class="tit_menu">취소/환불 </h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000051&#39;, &#39;NODE0000000049&#39;);">전체취소</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000052&#39;, &#39;NODE0000000049&#39;);">부분취소/재결제</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000066&#39;, &#39;NODE0000000049&#39;);">환불 기간</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000065&#39;, &#39;NODE0000000049&#39;);">환불내역 확인</a></li></ul></li></ul><ul><li class="cate_01"><h5 class="tit_menu">반품/교환/AS</h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000095&#39;, &#39;NODE0000000093&#39;);">반품 방법</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000901&#39;, &#39;NODE0000000093&#39;);">반품 사유/배송비</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000110&#39;, &#39;NODE0000000093&#39;);">교환 방법</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000899&#39;, &#39;NODE0000000093&#39;);">교환 사유/배송비</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000124&#39;, &#39;NODE0000000093&#39;);">AS</a></li></ul></li><li class="cate_01"><h5 class="tit_menu">영수증/증빙서류</h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000186&#39;, &#39;NODE0000000185&#39;);">영수증</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000191&#39;, &#39;NODE0000000185&#39;);">세금계산서</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000196&#39;, &#39;NODE0000000185&#39;);">카드매출전표</a></li></ul></li><li class="cate_01"><h5 class="tit_menu">나의 11번가 </h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002277&#39;, &#39;NODE0000000127&#39;);">11번가 바로가기</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000141&#39;, &#39;NODE0000000127&#39;);">쿠폰</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000128&#39;, &#39;NODE0000000127&#39;);">캐시</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000135&#39;, &#39;NODE0000000127&#39;);">포인트</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000151&#39;, &#39;NODE0000000127&#39;);">OK캐쉬백</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002392&#39;, &#39;NODE0000000127&#39;);">마일리지</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002420&#39;, &#39;NODE0000000127&#39;);">제휴서비스</a></li></ul></li><li class="cate_01"><h5 class="tit_menu">구매 등급</h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000181&#39;, &#39;NODE0000000180&#39;);">구매 등급</a></li></ul></li><li class="cate_01"><h5 class="tit_menu">상품/이벤트 </h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000165&#39;, &#39;NODE0000000156&#39;);">상품 문의</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000157&#39;, &#39;NODE0000000156&#39;);">상품리뷰</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002410&#39;, &#39;NODE0000000156&#39;);">소셜리뷰/댓글</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000169&#39;, &#39;NODE0000000156&#39;);">이벤트</a></li></ul></li><li class="cate_01"><h5 class="tit_menu">예약상품</h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002978&#39;, &#39;NODE0000002294&#39;);">e쿠폰/상품권</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002979&#39;, &#39;NODE0000002294&#39;);">여행/숙박/항공</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002295&#39;, &#39;NODE0000002294&#39;);">여행11번가</a></li></ul></li></ul><ul><li class="cate_01"><h5 class="tit_menu">전세계배송</h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002581&#39;, &#39;NODE0000002578&#39;);">주문/결제/배송</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002582&#39;, &#39;NODE0000002578&#39;);">취소/반품/교환</a></li></ul></li><li class="cate_01"><h5 class="tit_menu">해외직구</h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000240&#39;, &#39;NODE0000000237&#39;);">해외배송</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000238&#39;, &#39;NODE0000000237&#39;);">주문/결제</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002417&#39;, &#39;NODE0000000237&#39;);">취소/환불</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000242&#39;, &#39;NODE0000000237&#39;);">반품/교환/AS</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000246&#39;, &#39;NODE0000000237&#39;);">기타</a></li></ul></li><li class="cate_01"><h5 class="tit_menu">비즈11번가</h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002988&#39;, &#39;NODE0000002987&#39;);">비즈11번가</a></li></ul></li><li class="cate_01"><h5 class="tit_menu">티켓11번가</h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002683&#39;, &#39;NODE0000002682&#39;);">주문/결제/배송</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002684&#39;, &#39;NODE0000002682&#39;);">취소/반품/교환</a></li></ul></li><li class="cate_01"><h5 class="tit_menu">기타</h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000257&#39;, &#39;NODE0000002570&#39;);">기타 이용문의</a></li></ul></li><li class="cate_01"><h5 class="tit_menu">안전구매가이드</h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002331&#39;, &#39;NODE0000002330&#39;);">안전구매방법</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002332&#39;, &#39;NODE0000002330&#39;);">개인정보</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002334&#39;, &#39;NODE0000002330&#39;);">이용규칙위반</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002335&#39;, &#39;NODE0000002330&#39;);">위조품 보상제</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002390&#39;, &#39;NODE0000002330&#39;);">문서 다운로드</a></li></ul></li>
+
+                </ul>
+                <!-- //loop -->
+            </div>
+            <!-- 판매관련 -->
+            <h4 class="faq_tab faq_tab02"><a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#categories_12">판매관련</a></h4>
+            <div class="faqList" id="categories_12">
+                <ul>
+<li class="cate_01"><h5 class="tit_menu">회원/정보 </h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000267&#39;, &#39;NODE0000000266&#39;);">개인셀러 가입</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002644&#39;, &#39;NODE0000000266&#39;);">사업자셀러 가입</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002645&#39;, &#39;NODE0000000266&#39;);">글로벌셀러 가입</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000274&#39;, &#39;NODE0000000266&#39;);">정보변경/양수양도/전환</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002646&#39;, &#39;NODE0000000266&#39;);">판매자 탈퇴</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002647&#39;, &#39;NODE0000000266&#39;);">아이디/비밀번호</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002648&#39;, &#39;NODE0000000266&#39;);">셀러 캐시/포인트/쿠폰</a></li></ul></li><li class="cate_01"><h5 class="tit_menu">상품 </h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000296&#39;, &#39;NODE0000000295&#39;);">상품등록 방법</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002649&#39;, &#39;NODE0000000295&#39;);">상품등록 오류</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000305&#39;, &#39;NODE0000000295&#39;);">상품정보 변경</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002651&#39;, &#39;NODE0000000295&#39;);">상품QnA</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002652&#39;, &#39;NODE0000000295&#39;);">상품평가/리뷰</a></li></ul></li><li class="cate_01"><h5 class="tit_menu">발송</h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000288&#39;, &#39;NODE0000000287&#39;);">발송처리</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002653&#39;, &#39;NODE0000000287&#39;);">발송정보 변경</a></li></ul></li><li class="cate_01"><h5 class="tit_menu">취소/반품/교환 </h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000312&#39;, &#39;NODE0000000311&#39;);">취소 승인/거부</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000316&#39;, &#39;NODE0000000311&#39;);">반품 승인/거부</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000320&#39;, &#39;NODE0000000311&#39;);">교환 승인/거부</a></li></ul></li><li class="cate_01"><h5 class="tit_menu">정산 </h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000343&#39;, &#39;NODE0000000342&#39;);">정산절차</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000346&#39;, &#39;NODE0000000342&#39;);">정산내역</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002450&#39;, &#39;NODE0000000342&#39;);">부가세 관련</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002655&#39;, &#39;NODE0000000342&#39;);">세금계산서 관련</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002656&#39;, &#39;NODE0000000342&#39;);">공제증빙 관련</a></li></ul></li><li class="cate_01"><h5 class="tit_menu">판매등급/스토어(미니몰)</h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002657&#39;, &#39;NODE0000002642&#39;);">판매등급</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002674&#39;, &#39;NODE0000002642&#39;);">스토어 관리</a></li></ul></li></ul><ul><li class="cate_01"><h5 class="tit_menu">셀러광고</h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000325&#39;, &#39;NODE0000000324&#39;);">리스팅광고</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002475&#39;, &#39;NODE0000000324&#39;);">전시입찰광고</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002658&#39;, &#39;NODE0000000324&#39;);">HOT클릭 광고</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002659&#39;, &#39;NODE0000000324&#39;);">스페셜 광고</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002301&#39;, &#39;NODE0000000324&#39;);">광고관리</a></li></ul></li><li class="cate_01"><h5 class="tit_menu">프로모션 </h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000335&#39;, &#39;NODE0000000334&#39;);">단골고객쿠폰</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002306&#39;, &#39;NODE0000000334&#39;);">셀러이벤트</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002660&#39;, &#39;NODE0000000334&#39;);">셀러기획전</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002661&#39;, &#39;NODE0000000334&#39;);">11번가 프로모션 신청</a></li></ul></li><li class="cate_01"><h5 class="tit_menu">전세계배송</h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002583&#39;, &#39;NODE0000002579&#39;);">상품등록</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002584&#39;, &#39;NODE0000002579&#39;);">상품발송</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002585&#39;, &#39;NODE0000002579&#39;);">취소/반품/교환</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002586&#39;, &#39;NODE0000002579&#39;);">정산/증빙서류</a></li></ul></li><li class="cate_01"><h5 class="tit_menu">기타</h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000000408&#39;, &#39;NODE0000000407&#39;);">기타 이용문의</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002981&#39;, &#39;NODE0000000407&#39;);">지역/여행상품</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002717&#39;, &#39;NODE0000000407&#39;);">11번가Pay</a></li></ul></li><li class="cate_01"><h5 class="tit_menu">신규판매자가이드</h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002732&#39;, &#39;NODE0000002731&#39;);">상품관리</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002733&#39;, &#39;NODE0000002731&#39;);">주문관리</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002734&#39;, &#39;NODE0000002731&#39;);">정산관리</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002735&#39;, &#39;NODE0000002731&#39;);">프로모션관리</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002736&#39;, &#39;NODE0000002731&#39;);">통계정보</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002737&#39;, &#39;NODE0000002731&#39;);">회원정보</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002738&#39;, &#39;NODE0000002731&#39;);">광고센터</a></li></ul></li><li class="cate_01"><h5 class="tit_menu">안전판매가이드</h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002355&#39;, &#39;NODE0000002354&#39;);">이용규칙위반</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002356&#39;, &#39;NODE0000002354&#39;);">판매불가상품</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002357&#39;, &#39;NODE0000002354&#39;);">표시광고</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002358&#39;, &#39;NODE0000002354&#39;);">지적재산권침해</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002391&#39;, &#39;NODE0000002354&#39;);">거래사실증명서 다운로드</a></li></ul></li></ul><ul><li class="cate_01"><h5 class="tit_menu">셀러존</h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002742&#39;, &#39;NODE0000002741&#39;);">교육</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002744&#39;, &#39;NODE0000002741&#39;);">셀러존 시설</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002743&#39;, &#39;NODE0000002741&#39;);">컨설팅</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002985&#39;, &#39;NODE0000002741&#39;);">모바일 셀러존</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002745&#39;, &#39;NODE0000002741&#39;);">기타</a></li></ul></li>
+
+                </ul>
+            </div>
+            <!-- 스마트폰 -->
+            <h4 class="faq_tab faq_tab03"><a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#categories_13">스마트폰</a></h4>
+            <!-- [접근성] 전제보기레이어  <div></div>추가 ul태그의 class와 id 값을 옮겨옴 -->
+            <div class="faqList" id="categories_13">
+                <ul>
+<li class="cate_01"><h5 class="tit_menu">모바일 애플리케이션</h5><ul><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002558&#39;, &#39;NODE0000002551&#39;);">접속/검색</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002559&#39;, &#39;NODE0000002551&#39;);">주문/결제</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002561&#39;, &#39;NODE0000002551&#39;);">배송</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002562&#39;, &#39;NODE0000002551&#39;);">취소/반품/교환</a></li><li class="cate_02"><a onclick="clickParentNode(&#39;NODE0000002560&#39;, &#39;NODE0000002551&#39;);">나의 11번가</a></li></ul></li>
+
+                </ul>
+            </div>
+        </div>
+        <a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#categoryWraps" class="faqAll_btmclose" onclick="categoryWhole(2);return false;">닫기</a>
+    </div>
+</div>
+<!-- 레프트메뉴 영역 -->
+<div id="leftContainer">
+        <!-- [접근성] FAQ 자주묻는 질문 변경 -->
+        <div class="faq_wrap">
+            <h3 class="tit_faq"><img src="./help_files/category_title.gif" alt="FAQ 자주묻는질문"></h3>
+            <div class="faq_list">
+                <!-- 구매관련 -->
+                <!-- 탭 온 class="faq_tab01" ~ class="faq_tab01" -->
+                <h4 class="faq_tab01_on"><a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#categories_01">구매관련</a></h4>
+                <!-- 리스트 온 faqList_selected" -->
+                <div class="faqList faqList_selected" id="categories_01">
+                    <!-- 선택시 cate_01_selected 클래스 추가 -->
+                    <ul>
+<li class="cate_01"><a id="aNODE0000002922" href="javascript:clickParentNode(&#39;NODE0000002922&#39;);">V센터</a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002994&#39;, &#39;NODE0000002922&#39;);">V센터</a></li></ul></li><li class="cate_01"><a id="aNODE0000002993" href="javascript:clickParentNode(&#39;NODE0000002993&#39;);">11* 메신저 상담</a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002995&#39;, &#39;NODE0000002993&#39;);">11* 메신저 상담</a></li></ul></li><li class="cate_01"><a id="aNODE0000000005" href="javascript:clickParentNode(&#39;NODE0000000005&#39;);">회원/정보관리</a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000006&#39;, &#39;NODE0000000005&#39;);">회원가입</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000017&#39;, &#39;NODE0000000005&#39;);">회원탈퇴</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000013&#39;, &#39;NODE0000000005&#39;);">회원정보 변경</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000010&#39;, &#39;NODE0000000005&#39;);">아이디/비밀번호</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002929&#39;, &#39;NODE0000000005&#39;);">OTP 서비스</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002268&#39;, &#39;NODE0000000005&#39;);">범용 공인인증서</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002280&#39;, &#39;NODE0000000005&#39;);">아이핀(I-PIN)</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000009&#39;, &#39;NODE0000000005&#39;);">개인정보도용</a></li></ul></li><li class="cate_01"><a id="aNODE0000000027" href="javascript:clickParentNode(&#39;NODE0000000027&#39;);">주문/결제</a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000029&#39;, &#39;NODE0000000027&#39;);">주문 방법</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000030&#39;, &#39;NODE0000000027&#39;);">주문내역 확인</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000044&#39;, &#39;NODE0000000027&#39;);">카드결제</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000043&#39;, &#39;NODE0000000027&#39;);">실시간계좌이체</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000042&#39;, &#39;NODE0000000027&#39;);">무통장입금</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002307&#39;, &#39;NODE0000000027&#39;);">편의점결제</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000045&#39;, &#39;NODE0000000027&#39;);">휴대폰소액결제</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000001048&#39;, &#39;NODE0000000027&#39;);">모바일 티머니</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002754&#39;, &#39;NODE0000000027&#39;);">11Pay</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000003000&#39;, &#39;NODE0000000027&#39;);">PAYCO</a></li></ul></li><li class="cate_01"><a id="aNODE0000000072" href="javascript:clickParentNode(&#39;NODE0000000072&#39;);">배송</a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002460&#39;, &#39;NODE0000000072&#39;);">배송지연 보상제</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000077&#39;, &#39;NODE0000000072&#39;);">배송기간/배송비</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000078&#39;, &#39;NODE0000000072&#39;);">배송 정보</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002416&#39;, &#39;NODE0000000072&#39;);">배송 오류</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000090&#39;, &#39;NODE0000000072&#39;);">수취확인</a></li></ul></li><li class="cate_01"><a id="aNODE0000000049" href="javascript:clickParentNode(&#39;NODE0000000049&#39;);">취소/환불 </a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000051&#39;, &#39;NODE0000000049&#39;);">전체취소</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000052&#39;, &#39;NODE0000000049&#39;);">부분취소/재결제</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000066&#39;, &#39;NODE0000000049&#39;);">환불 기간</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000065&#39;, &#39;NODE0000000049&#39;);">환불내역 확인</a></li></ul></li><li class="cate_01"><a id="aNODE0000000093" href="javascript:clickParentNode(&#39;NODE0000000093&#39;);">반품/교환/AS</a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000095&#39;, &#39;NODE0000000093&#39;);">반품 방법</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000901&#39;, &#39;NODE0000000093&#39;);">반품 사유/배송비</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000110&#39;, &#39;NODE0000000093&#39;);">교환 방법</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000899&#39;, &#39;NODE0000000093&#39;);">교환 사유/배송비</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000124&#39;, &#39;NODE0000000093&#39;);">AS</a></li></ul></li><li class="cate_01"><a id="aNODE0000000185" href="javascript:clickParentNode(&#39;NODE0000000185&#39;);">영수증/증빙서류</a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000186&#39;, &#39;NODE0000000185&#39;);">영수증</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000191&#39;, &#39;NODE0000000185&#39;);">세금계산서</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000196&#39;, &#39;NODE0000000185&#39;);">카드매출전표</a></li></ul></li><li class="cate_01"><a id="aNODE0000000127" href="javascript:clickParentNode(&#39;NODE0000000127&#39;);">나의 11번가 </a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002277&#39;, &#39;NODE0000000127&#39;);">11번가 바로가기</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000141&#39;, &#39;NODE0000000127&#39;);">쿠폰</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000128&#39;, &#39;NODE0000000127&#39;);">캐시</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000135&#39;, &#39;NODE0000000127&#39;);">포인트</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000151&#39;, &#39;NODE0000000127&#39;);">OK캐쉬백</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002392&#39;, &#39;NODE0000000127&#39;);">마일리지</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002420&#39;, &#39;NODE0000000127&#39;);">제휴서비스</a></li></ul></li><li class="cate_01"><a id="aNODE0000000180" href="javascript:clickParentNode(&#39;NODE0000000180&#39;);">구매 등급</a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000181&#39;, &#39;NODE0000000180&#39;);">구매 등급</a></li></ul></li><li class="cate_01"><a id="aNODE0000000156" href="javascript:clickParentNode(&#39;NODE0000000156&#39;);">상품/이벤트 </a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000165&#39;, &#39;NODE0000000156&#39;);">상품 문의</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000157&#39;, &#39;NODE0000000156&#39;);">상품리뷰</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002410&#39;, &#39;NODE0000000156&#39;);">소셜리뷰/댓글</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000169&#39;, &#39;NODE0000000156&#39;);">이벤트</a></li></ul></li><li class="cate_01"><a id="aNODE0000002294" href="javascript:clickParentNode(&#39;NODE0000002294&#39;);">예약상품</a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002978&#39;, &#39;NODE0000002294&#39;);">e쿠폰/상품권</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002979&#39;, &#39;NODE0000002294&#39;);">여행/숙박/항공</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002295&#39;, &#39;NODE0000002294&#39;);">여행11번가</a></li></ul></li><li class="cate_01"><a id="aNODE0000002578" href="javascript:clickParentNode(&#39;NODE0000002578&#39;);">전세계배송</a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002581&#39;, &#39;NODE0000002578&#39;);">주문/결제/배송</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002582&#39;, &#39;NODE0000002578&#39;);">취소/반품/교환</a></li></ul></li><li class="cate_01"><a id="aNODE0000000237" href="javascript:clickParentNode(&#39;NODE0000000237&#39;);">해외직구</a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000240&#39;, &#39;NODE0000000237&#39;);">해외배송</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000238&#39;, &#39;NODE0000000237&#39;);">주문/결제</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002417&#39;, &#39;NODE0000000237&#39;);">취소/환불</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000242&#39;, &#39;NODE0000000237&#39;);">반품/교환/AS</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000246&#39;, &#39;NODE0000000237&#39;);">기타</a></li></ul></li><li class="cate_01"><a id="aNODE0000002987" href="javascript:clickParentNode(&#39;NODE0000002987&#39;);">비즈11번가</a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002988&#39;, &#39;NODE0000002987&#39;);">비즈11번가</a></li></ul></li><li class="cate_01"><a id="aNODE0000002682" href="javascript:clickParentNode(&#39;NODE0000002682&#39;);">티켓11번가</a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002683&#39;, &#39;NODE0000002682&#39;);">주문/결제/배송</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002684&#39;, &#39;NODE0000002682&#39;);">취소/반품/교환</a></li></ul></li><li class="cate_01"><a id="aNODE0000002570" href="javascript:clickParentNode(&#39;NODE0000002570&#39;);">기타</a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000257&#39;, &#39;NODE0000002570&#39;);">기타 이용문의</a></li></ul></li><li class="cate_01"><a id="aNODE0000002330" href="javascript:clickParentNode(&#39;NODE0000002330&#39;);">안전구매가이드</a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002331&#39;, &#39;NODE0000002330&#39;);">안전구매방법</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002332&#39;, &#39;NODE0000002330&#39;);">개인정보</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002334&#39;, &#39;NODE0000002330&#39;);">이용규칙위반</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002335&#39;, &#39;NODE0000002330&#39;);">위조품 보상제</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002390&#39;, &#39;NODE0000002330&#39;);">문서 다운로드</a></li></ul></li>
+
+                    </ul>
+                </div>
+                <!-- 판매관련 -->
+                <h4 class="faq_tab02"><a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#categories_02"><img src="./help_files/btn_cateTab_02.gif" alt="판매관련"></a></h4>
+                <div class="faqList" id="categories_02">
+                    <ul>
+<li class="cate_01"><a id="aNODE0000000266" href="javascript:clickParentNode(&#39;NODE0000000266&#39;);">회원/정보 </a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000267&#39;, &#39;NODE0000000266&#39;);">개인셀러 가입</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002644&#39;, &#39;NODE0000000266&#39;);">사업자셀러 가입</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002645&#39;, &#39;NODE0000000266&#39;);">글로벌셀러 가입</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000274&#39;, &#39;NODE0000000266&#39;);">정보변경/양수양도/전환</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002646&#39;, &#39;NODE0000000266&#39;);">판매자 탈퇴</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002647&#39;, &#39;NODE0000000266&#39;);">아이디/비밀번호</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002648&#39;, &#39;NODE0000000266&#39;);">셀러 캐시/포인트/쿠폰</a></li></ul></li><li class="cate_01"><a id="aNODE0000000295" href="javascript:clickParentNode(&#39;NODE0000000295&#39;);">상품 </a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000296&#39;, &#39;NODE0000000295&#39;);">상품등록 방법</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002649&#39;, &#39;NODE0000000295&#39;);">상품등록 오류</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000305&#39;, &#39;NODE0000000295&#39;);">상품정보 변경</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002651&#39;, &#39;NODE0000000295&#39;);">상품QnA</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002652&#39;, &#39;NODE0000000295&#39;);">상품평가/리뷰</a></li></ul></li><li class="cate_01"><a id="aNODE0000000287" href="javascript:clickParentNode(&#39;NODE0000000287&#39;);">발송</a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000288&#39;, &#39;NODE0000000287&#39;);">발송처리</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002653&#39;, &#39;NODE0000000287&#39;);">발송정보 변경</a></li></ul></li><li class="cate_01"><a id="aNODE0000000311" href="javascript:clickParentNode(&#39;NODE0000000311&#39;);">취소/반품/교환 </a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000312&#39;, &#39;NODE0000000311&#39;);">취소 승인/거부</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000316&#39;, &#39;NODE0000000311&#39;);">반품 승인/거부</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000320&#39;, &#39;NODE0000000311&#39;);">교환 승인/거부</a></li></ul></li><li class="cate_01"><a id="aNODE0000000342" href="javascript:clickParentNode(&#39;NODE0000000342&#39;);">정산 </a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000343&#39;, &#39;NODE0000000342&#39;);">정산절차</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000346&#39;, &#39;NODE0000000342&#39;);">정산내역</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002450&#39;, &#39;NODE0000000342&#39;);">부가세 관련</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002655&#39;, &#39;NODE0000000342&#39;);">세금계산서 관련</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002656&#39;, &#39;NODE0000000342&#39;);">공제증빙 관련</a></li></ul></li><li class="cate_01"><a id="aNODE0000002642" href="javascript:clickParentNode(&#39;NODE0000002642&#39;);">판매등급/스토어(미니몰)</a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002657&#39;, &#39;NODE0000002642&#39;);">판매등급</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002674&#39;, &#39;NODE0000002642&#39;);">스토어 관리</a></li></ul></li><li class="cate_01"><a id="aNODE0000000324" href="javascript:clickParentNode(&#39;NODE0000000324&#39;);">셀러광고</a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000325&#39;, &#39;NODE0000000324&#39;);">리스팅광고</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002475&#39;, &#39;NODE0000000324&#39;);">전시입찰광고</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002658&#39;, &#39;NODE0000000324&#39;);">HOT클릭 광고</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002659&#39;, &#39;NODE0000000324&#39;);">스페셜 광고</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002301&#39;, &#39;NODE0000000324&#39;);">광고관리</a></li></ul></li><li class="cate_01"><a id="aNODE0000000334" href="javascript:clickParentNode(&#39;NODE0000000334&#39;);">프로모션 </a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000335&#39;, &#39;NODE0000000334&#39;);">단골고객쿠폰</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002306&#39;, &#39;NODE0000000334&#39;);">셀러이벤트</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002660&#39;, &#39;NODE0000000334&#39;);">셀러기획전</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002661&#39;, &#39;NODE0000000334&#39;);">11번가 프로모션 신청</a></li></ul></li><li class="cate_01"><a id="aNODE0000002579" href="javascript:clickParentNode(&#39;NODE0000002579&#39;);">전세계배송</a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002583&#39;, &#39;NODE0000002579&#39;);">상품등록</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002584&#39;, &#39;NODE0000002579&#39;);">상품발송</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002585&#39;, &#39;NODE0000002579&#39;);">취소/반품/교환</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002586&#39;, &#39;NODE0000002579&#39;);">정산/증빙서류</a></li></ul></li><li class="cate_01"><a id="aNODE0000000407" href="javascript:clickParentNode(&#39;NODE0000000407&#39;);">기타</a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000000408&#39;, &#39;NODE0000000407&#39;);">기타 이용문의</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002981&#39;, &#39;NODE0000000407&#39;);">지역/여행상품</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002717&#39;, &#39;NODE0000000407&#39;);">11번가Pay</a></li></ul></li><li class="cate_01"><a id="aNODE0000002731" href="javascript:clickParentNode(&#39;NODE0000002731&#39;);">신규판매자가이드</a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002732&#39;, &#39;NODE0000002731&#39;);">상품관리</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002733&#39;, &#39;NODE0000002731&#39;);">주문관리</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002734&#39;, &#39;NODE0000002731&#39;);">정산관리</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002735&#39;, &#39;NODE0000002731&#39;);">프로모션관리</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002736&#39;, &#39;NODE0000002731&#39;);">통계정보</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002737&#39;, &#39;NODE0000002731&#39;);">회원정보</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002738&#39;, &#39;NODE0000002731&#39;);">광고센터</a></li></ul></li><li class="cate_01"><a id="aNODE0000002354" href="javascript:clickParentNode(&#39;NODE0000002354&#39;);">안전판매가이드</a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002355&#39;, &#39;NODE0000002354&#39;);">이용규칙위반</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002356&#39;, &#39;NODE0000002354&#39;);">판매불가상품</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002357&#39;, &#39;NODE0000002354&#39;);">표시광고</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002358&#39;, &#39;NODE0000002354&#39;);">지적재산권침해</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002391&#39;, &#39;NODE0000002354&#39;);">거래사실증명서 다운로드</a></li></ul></li><li class="cate_01"><a id="aNODE0000002741" href="javascript:clickParentNode(&#39;NODE0000002741&#39;);">셀러존</a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002742&#39;, &#39;NODE0000002741&#39;);">교육</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002744&#39;, &#39;NODE0000002741&#39;);">셀러존 시설</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002743&#39;, &#39;NODE0000002741&#39;);">컨설팅</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002985&#39;, &#39;NODE0000002741&#39;);">모바일 셀러존</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002745&#39;, &#39;NODE0000002741&#39;);">기타</a></li></ul></li>
+
+                    </ul>
+                </div>
+                <!-- 스마트폰 -->
+                <h4 class="faq_tab03"><a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#categories_03"><img src="./help_files/btn_cateTab_03.gif" alt="스마트폰"></a></h4>
+                <div class="faqList" id="categories_03">
+                    <ul>
+<li class="cate_01"><a id="aNODE0000002551" href="javascript:clickParentNode(&#39;NODE0000002551&#39;);">모바일 애플리케이션</a><ul><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002558&#39;, &#39;NODE0000002551&#39;);">접속/검색</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002559&#39;, &#39;NODE0000002551&#39;);">주문/결제</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002561&#39;, &#39;NODE0000002551&#39;);">배송</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002562&#39;, &#39;NODE0000002551&#39;);">취소/반품/교환</a></li><li class="cate_02"><a href="javascript:clickParentNode(&#39;NODE0000002560&#39;, &#39;NODE0000002551&#39;);">나의 11번가</a></li></ul></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script>
+            function categoryWhole(vNum) {
+                if (vNum == 1) {
+                    jQuery('.faq_wrap').hide();
+                    jQuery('.btnfaqAll').hide();
+                    jQuery('.faqAll_wrap').show();
+                    jQuery('.faqAll_close').focus();
+
+                } else {
+                    jQuery('.faq_wrap').show();
+                    jQuery('.btnfaqAll').show();
+                    jQuery('.faqAll_wrap').hide();
+                    jQuery('.btnfaqAll').focus();
+                }
+            }
+
+            leftMenuAct();
+            function leftMenuAct()
+            {
+                jQuery('.faqMenu h4 a').click(function()
+                {
+                    //전체매뉴
+                    jQuery('.faqMenu .faq_tab01_on').attr('class','faq_tab faq_tab01');
+                    jQuery('.faqMenu .faq_tab02_on').attr('class','faq_tab faq_tab02');
+                    jQuery('.faqMenu .faq_tab03_on').attr('class','faq_tab faq_tab03');
+                    jQuery('.faqMenu').children('div').attr('class','faqList');
+
+                    var divName = jQuery(this).attr('href');
+                    jQuery(divName).addClass('faqList faqList_selected');
+
+                    var itemClass = jQuery(this).parent('h4').attr('class');
+                    itemClass = itemClass + '_on';
+                    jQuery(this).parent('h4').attr('class',itemClass);
+
+                    return false;
+                });
+
+                jQuery('.faq_list h4 a').click(function()
+                {
+                    //left menu
+                    jQuery('.faq_list .faq_tab01_on').attr('class','faq_tab faq_tab01');
+                    jQuery('.faq_list .faq_tab02_on').attr('class','faq_tab faq_tab02');
+                    jQuery('.faq_list .faq_tab03_on').attr('class','faq_tab faq_tab03');
+                    jQuery('.faq_list').children('div').attr('class','faqList');
+
+                    var divName2 = jQuery(this).attr('href');
+                    jQuery(divName2).addClass('faqList faqList_selected');
+
+                    var itemClass2 = jQuery(this).parent('h4').attr('class');
+                    itemClass2 = itemClass2 + '_on';
+                    jQuery(this).parent('h4').attr('class',itemClass2);
+
+                    return false;
+                });
+
+                jQuery('.faqList .cate_01 a').click(function()
+                {
+                    jQuery('.faq_list .faqList .cate_01').removeClass('cate_01_selected');
+                    jQuery(this).parent('li').addClass('cate_01_selected');
+                });
+            }
+        </script>
+        <!-- //[접근성] FAQ 자주묻는 질문 변경 -->
+    <!-- lnb -->
+	<div class="counselWrap_v2">
+	
+   		<a href="javascript:alert(&#39;11* 상담하기는 로그인 후 이용가능합니다.&#39;);" class="link_chat_cs"><span class="frame_g">11* 문의하기(1:1 메신저상담)</span></a>
+   		
+		<a href="javascript:goStatUrl(&#39;https://help.11st.co.kr:443/11st/mail/MailQuestion.jsp&#39;, &#39;HOA0101&#39;,&#39;&#39;);" class="link_share_cs"><span class="frame_g">비회원(판매자) E-mail 상담</span></a>
+		<a href="javascript:goWindowOpen(&#39;http://remote.11st.co.kr&#39;, &#39;true&#39;, 900, 630);" class="link_share_cs"><span class="frame_g">화면공유상담</span></a>
+		<a href="javascript:goStatUrl(&#39;http://help.11st.co.kr/11st/chat/Counselmessenger.jsp&#39;, &#39;HOA0103&#39;,&#39;&#39;);" class="link_share_cs"><span class="frame_g">판매자 메신저 상담</span></a>
+	</div>	
+	<div class="lnbWrap_v2">
+		<h3 class="myInfoTit">나의 정보 확인하기</h3><!-- 2017-02-08 sion 이미지 삭제 텍스트수정 -->
+		<ul class="lnbUl">
+            <li class="first"><a href="javascript:goStatUrl(&#39;http://www.11st.co.kr/order/OrderList.tmall&#39;, &#39;HOA0201&#39;,&#39;&#39;);">주문상품배송조회</a></li>
+            <li><a href="javascript:goStatUrl(&#39;http://www.11st.co.kr/vertical/TourReservationSettleList.tmall?method=displayTourReservationSettleList&#39;, &#39;HOA0204&#39;,&#39;&#39;);">예약/결제조회(웨딩, 여행)</a></li>
+            <li><a href="javascript:goStatUrl(&#39;http://www.11st.co.kr/custCenter/myQnAEmail.tmall?method=getMyEmailForm&#39;, &#39;HOA0102&#39;,&#39;&#39;);">E-MAIL 상담내역</a></li>
+            <li><a href="javascript:goStatUrl(&#39;http://www.11st.co.kr/mobileCC/mobileQuestionListNew.tmall?method=mobileCCQuestionForm&#39;, &#39;&#39;,&#39;&#39;);">댓글상담내역</a></li>
+        
+            <li><a href="javascript:goStatUrl(&#39;http://www.11st.co.kr/Login.page?returnURL=%2Forder%2FmyTmall.tmall%3Fmethod%3DgetMyTmallMain&#39;, &#39;HOA0203&#39;,&#39;&#39;);">비회원주문배송조회</a></li>
+        
+        </ul>
+	</div>
+
+	<div class="leftBanner_v2">
+		<!-- 2017-02-08 sion 메뉴 순서 변경 이미지 수정 -->
+		<a href="javascript:goStatUrl(&#39;https://help.11st.co.kr:443/11st/mail/MailOpinionProposal.jsp&#39;, &#39;HOA0105&#39;,&#39;&#39;);"><img src="./help_files/linkCSsuggest.gif" alt="의견제안하기"></a>
+		<a href="javascript:goWindowOpen(&#39;http://help.11st.co.kr/11st/common/popArs.jsp?index=2&#39;, &#39;true&#39;, 582, 520);" title="새창열림"><img src="./help_files/linkCSchirology.gif" alt="수화상담센터 1599-5893"></a>
+		<a href="javascript:goWindowOpen(&#39;http://help.11st.co.kr/11st/common/popArs.jsp?index=1&#39;, &#39;true&#39;, 582, 520);"><img src="./help_files/linkCSuserguide.gif" alt="고객센터 이용안내(ARS 안내)"></a>
+		<!-- 2015-01-30 명의도용신고하기 추가 -->
+		<a href="javascript:goStatUrl(&#39;http://www.11st.co.kr/register/illegalMemCancel.tmall?method=getIgMemCancelStep01&#39;, &#39;&#39;,&#39;&#39;);"><img src="./help_files/linkCSreport.gif" alt="명의도용신고하기"></a>
+		<!-- // 2017-02-08 sion 메뉴 순서 변경 이미지 수정 -->
+	</div>
+	
+	<div class="leftBanner_v2">
+		<a href="javascript:goWindowOpen(&#39;http://www.11st.co.kr/safety/SafetyMain.tmall&#39;, &#39;false&#39;, 0, 0);" title="안전거래 센터 새창"><img src="./help_files/leftBan_01.gif" alt="안전거래 센터"></a>
+		<a href="javascript:goWindowOpen(&#39;http://seller.11st.co.kr/tpost/FrontTPostAction.tmall&#39;, &#39;false&#39;, 0, 0);" title="판매자서비스 센터 새창"><img src="./help_files/leftBan_02.gif" alt="판매자서비스 센터"></a>		
+	</div>
+	<!-- [2016-08-23 KSM] 배너추가 -->
+	<div class="leftBanner_v2">
+		<a href="http://crossborder.kca.go.kr/main.do" target="_blank" title="새창"><img src="./help_files/consumer_01.jpg" alt="해외직구 소비자피해 예방과 해결 "></a>
+	</div>
+</div>
+<!-- // end of 레프트메뉴 영역 -->
+                <!-- //레프트영역 -->
+
+                <!-- 콘텐츠영역 -->
+                <div id="contentContainer">
+                    <!-- 공통검색영역 -->
+                    
+
+
+
+<script language="javascript" src="./help_files/textScroll.js"></script>
+<script language="javascript" src="./help_files/common.js"></script>
+<script language="javascript">
+    var autoKeywordParam =
+    {
+        url : urlWebCtx + "/faq/SearchProcess.jsp",
+        // Command 명령어, 실행할 서비스
+        command : "search.searchAutoKeyword",
+        // 추천 단어 갯수..
+        searchResultCount : 10,
+        // 도메인 아이디는 반드시 넘겨주어야 한다.
+        domainId : "NODE0000000001",
+        // 볼륨정보를 환경설정값에서 직접 읽어들여서 넘겨주면 좋다.
+        // 없으면 도메인 아이디를 기준으로 다시 읽어들이지만 값을 함께 넘겨줄 것을 추천한다.
+        volume : "v01",
+        // 검색어
+        question : "",
+        flag : 2
+    };
+
+    function goSearchEE(inForm)
+    {
+        //hslee:검색창 click이벤트 후 진행. dispSample 속성을 생성해줌.
+        $('question').click();
+
+        var strQuestion = inForm.question.value;
+
+        if (strQuestion == "" || !$("question").getAttribute("dispSample"))
+        {
+            alert("검색할 질문을 입력해주세요.");
+            inForm.question.focus();
+            return;
+        }
+
+        if( strQuestion.length > 256 )
+        {
+            alert("검색할 질문은 256자를 초과할 수 없습니다.");
+            inForm.question.focus();
+            return;
+        }
+
+        //hslee:검색어 특수문자 처리.
+        var searchMsg = trim($F('question'));
+        var originalStrCnt = searchMsg.length;
+        searchMsg = trim(searchMsg.replace(eval("/href|onClick|onMouseOver|onMouseOut|onMouseUp|onMouseDown|onChange|ondblclick|onkeypress|onkeyup|script|>|<|\\\\|\"|'|;|#|&/gi"), ""));
+        var skipStrCnt = searchMsg.length;
+
+        if(originalStrCnt != skipStrCnt || searchMsg.length == 0)
+        {
+            alert("검색에 적용되지 않는 특수문자가 포함되어 있습니다.\n해당 문자는 자동으로 제거 처리 됩니다.");
+            $('question').value = searchMsg;
+            return;
+        }
+
+        inForm.action = urlWebCtx + "/faq/RarList.jsp";
+        inForm.submit();
+    }
+
+    //hslee:suggestKeyword.js 삭제로 인한 검색창 엔터키 기능을 위한 함수 추가. searchEnterKeyDownEvent
+    function searchEnterKeyDownEvent(event)
+    {
+        if(event.keyCode == 13)
+        {
+            goSearchEE($('rarForm'));
+        }
+    }
+
+    function initText(event)
+    {
+        var ele = Event.element(event).id;
+        if (!$(ele).getAttribute("dispSample"))
+        {
+            //hslee:처리 추가. 검색 항목에 이전 페이지의 검색 목록정보 갱신여부 점검.
+            if("검색 후 문의가 해결되지 않으면 1:1 상담을 이용하세요." == "검색 후 문의가 해결되지 않으면 1:1 상담을 이용하세요.")
+            {
+                $(ele).value = "";
+                $(ele).setAttribute("dispSample", "false");
+            }
+            else
+            {
+                $(ele).setAttribute("dispSample", "true");
+            }
+        }
+    }
+
+    //hslee:Top 5 키워드 클릭 함수. faq.js 삭제로 인한 함수 추가.
+    function searchFaq(searchKeyword)
+    {
+        $('question').click();
+        $('question').value = searchKeyword;
+        goSearchEE($('rarForm'));
+    }
+
+    function initializeByRarform()
+    {
+        $("question").value = "검색 후 문의가 해결되지 않으면 1:1 상담을 이용하세요.";
+        // 검색창 초기화 이벤트 정의
+        Event.observe("question", "click", initText.bindAsEventListener("question"));
+        Event.observe("question", "keydown", searchEnterKeyDownEvent.bindAsEventListener("question"));
+    }
+
+    Event.observe(window, "load", initializeByRarform, false); 
+</script>
+    <!-- faq 검색 -->
+	<div class="faqSearch">
+	    <!-- [접근성] <fieldset></fieldset> 추가 -->
+	    <fieldset>
+	        <!-- [접근성] <legend class="faqSearchTit"><label for="faqSearch"></label></legend>로 변경 -->
+	        <legend class="faqSearchTit"><label for="faqSearch"><img src="./help_files/faqSearchTit.gif" alt="FAQ 검색"></label></legend>
+	        <div class="searchWrap">
+	            <form id="rarForm" name="rarForm" method="get" onsubmit="javascript:return false;">
+	                <p class="srchInfo"><img src="./help_files/txt_searchInfo.gif" alt="검색을 이용하시면 보다 빠르게 원하시는 답변을 얻으실 수 있습니다."></p>
+	                <p class="searchs">
+	                    <input type="text" class="inputSearTxt" id="question" name="question" title="검색어 입력">
+	                    <input type="image" src="./help_files/btn_searchSubmit.gif" alt="검색" class="submit" onclick="javascript:goSearchEE($(&#39;rarForm&#39;));">
+	                </p>
+	                <!-- [접근성] top5 코딩 변경 -->
+             		<div class="top5">
+						<h3 class="tit_top5"><img src="./help_files/ico_srchTop5.gif" alt="top5"></h3>
+						<ol>
+								<li><a href="javascript:searchFaq(&#39;수취확인&#39;);" class="words">수취확인</a> | </li><li><a href="javascript:searchFaq(&#39;자동 수취확인&#39;);" class="words">자동 수취확인</a> | </li><li><a href="javascript:searchFaq(&#39;CU 반품&#39;);" class="words">CU 반품</a> | </li><li><a href="javascript:searchFaq(&#39;11Pay&#39;);" class="words">11Pay</a> | </li><li><a href="javascript:searchFaq(&#39;PAYCO&#39;);" class="words">PAYCO</a></li>
+						</ol>
+					</div>	                 
+	            </form>
+	        </div>
+	    </fieldset>
+	    <div class="counselBtns_v2">
+	   	
+	   		<a href="javascript:alert(&#39;11* 상담하기는 로그인 후 이용가능합니다.&#39;);" class="link_chat_cs"><span class="frame_g">11* 상담하기(1:1 메신저 상담)</span></a>
+	   
+	 		 
+		</div> 
+	    <div class="bgShadow"></div>
+	</div>                  
+	<!-- // end of faq 검색 -->
+                    <!-- //공통검색영역 -->
+
+                    <!-- quick FAQ -->
+                    
+
+
+
+<div class="quickFAQ">
+    <!-- [접근성] <h3 class="quickFAQTit"></h3>로 소스 변경 -->
+    <h3 class="quickFAQTit"><img src="./help_files/quickFAQTit.gif" alt="Quick FAQ, FAQ 주요 키워드입니다."></h3>
+    <table class="faqBox" summary="항목과 설명으로 이루어진 세로 표">
+        <caption>Quick FAQ 주요키워드</caption>
+<thead><tr><th class="first" scope="col"><p>회원/정보관리</p></th><th scope="col"><p>주문/결제</p></th><th scope="col"><p>배송</p></th><th scope="col"><p>취소/환불</p></th><th scope="col"><p>반품/교환/AS</p></th><th scope="col"><p>나의11번가</p></th><th scope="col"><p>기타</p></th></tr></thead><tbody><tr><td class="first"><div><p><a href="javascript:searchFaq(&#39;본인인증&#39;);">본인인증</a></p><p><a href="javascript:searchFaq(&#39;otp&#39;);">otp</a></p><p><a href="javascript:searchFaq(&#39;개인정보&#39;);">개인정보</a></p><p><a href="javascript:searchFaq(&#39;탈퇴&#39;);">탈퇴</a></p><p style="margin-bottom: 0px;"><a href="javascript:searchFaq(&#39;인증&#39;);">인증</a></p></div></td><td><div><p><a href="javascript:searchFaq(&#39;11Pay&#39;);">11Pay</a></p><p><a href="javascript:searchFaq(&#39;PAYCO&#39;);">PAYCO</a></p><p><a href="javascript:searchFaq(&#39;결제&#39;);">결제</a></p><p><a href="javascript:searchFaq(&#39;주문내역&#39;);">주문내역</a></p><p style="margin-bottom: 0px;"><a href="javascript:searchFaq(&#39;카드&#39;);">카드</a></p></div></td><td><div><p><a href="javascript:searchFaq(&#39;수취확인&#39;);">수취확인</a></p><p><a href="javascript:searchFaq(&#39;자동 수취확인&#39;);">자동 수취확인</a></p><p><a href="javascript:searchFaq(&#39;CU 픽업&#39;);">CU 픽업</a></p><p><a href="javascript:searchFaq(&#39;배송지연&#39;);">배송지연</a></p><p style="margin-bottom: 0px;"><a href="javascript:searchFaq(&#39;배송&#39;);">배송</a></p></div></td><td><div><p><a href="javascript:searchFaq(&#39;환불&#39;);">환불</a></p><p><a href="javascript:searchFaq(&#39;취소&#39;);">취소</a></p><p><a href="javascript:searchFaq(&#39;주문취소&#39;);">주문취소</a></p><p><a href="javascript:searchFaq(&#39;환불계좌&#39;);">환불계좌</a></p><p style="margin-bottom: 0px;"><a href="javascript:searchFaq(&#39;환불기간&#39;);">환불기간</a></p></div></td><td><div><p><a href="javascript:searchFaq(&#39;CU 반품&#39;);">CU 반품</a></p><p><a href="javascript:searchFaq(&#39;반품&#39;);">반품</a></p><p><a href="javascript:searchFaq(&#39;교환&#39;);">교환</a></p><p><a href="javascript:searchFaq(&#39;반품신청&#39;);">반품신청</a></p><p style="margin-bottom: 0px;"><a href="javascript:searchFaq(&#39;반품보류&#39;);">반품보류</a></p></div></td><td><div><p><a href="javascript:searchFaq(&#39;구매 등급&#39;);">구매 등급</a></p><p><a href="javascript:searchFaq(&#39;등급 혜택&#39;);">등급 혜택</a></p><p><a href="javascript:searchFaq(&#39;OK캐쉬백&#39;);">OK캐쉬백</a></p><p><a href="javascript:searchFaq(&#39;OK캐쉬백 통합&#39;);">OK캐쉬백 통합</a></p><p style="margin-bottom: 0px;"><a href="javascript:searchFaq(&#39;마일리지&#39;);">마일리지</a></p></div></td><td><div><p><a href="javascript:searchFaq(&#39;티켓11번가&#39;);">티켓11번가</a></p><p><a href="javascript:searchFaq(&#39;11*상담메신저&#39;);">11*상담메신저</a></p><p><a href="javascript:searchFaq(&#39;11*&#39;);">11*</a></p><p><a href="javascript:searchFaq(&#39;영수증&#39;);">영수증</a></p><p style="margin-bottom: 0px;"><a href="javascript:searchFaq(&#39;세금계산서&#39;);">세금계산서</a></p></div></td></tr></tbody>
+
+    </table>
+    <script type="text/javascript">jQuery('.faqBox tr td div p:last-child').css({'margin-bottom':'0'});</script>
+</div>
+                    <!-- // end of quick FAQ -->
+
+                    <!-- buy process -->
+                    <div class="buyProcess">
+                        <!-- [접근성] <h3 class="processTit"></h3>로 변경 -->
+                        <h3 class="processTit"><img src="./help_files/buyProcessTit.gif" alt="11번가 구매과정"></h3>
+                        <!-- [접근성] 링크에 title="새창열림" 추가 -->
+                        <ol class="processWrap">
+                            <li class="first"><a href="javascript:goWindowOpen(&#39;FaqMiniPopup.jsp?descKey=11ST_WAIT_PAYMENT_NODE&#39;, &#39;true&#39;, 690, 230, &#39;no&#39;);"><img src="./help_files/buyProcess_01.gif" alt="입금대기중 - 주문취소, 결제변경, 배송지 변경이 가능합니다."></a></li>
+                            <li><a href="javascript:goWindowOpen(&#39;FaqMiniPopup.jsp?descKey=11ST_COMPLETE_PAYMENT_NODE&#39;, &#39;true&#39;, 690, 230, &#39;no&#39;);"><img src="./help_files/buyProcess_02.gif" alt="결제완료 - 신용카드결제, 무통장입금이 실시간으로 확인 가능합니다."></a></li>
+                            <li><a href="javascript:goWindowOpen(&#39;FaqMiniPopup.jsp?descKey=11ST_PREPARE_SHIPPING_NODE&#39;, &#39;true&#39;, 690, 230, &#39;no&#39;);"><img src="./help_files/buyProcess_03.gif" alt="배송준비중 - 배송 일정은 판매자에게 연락주세요."></a></li>
+                            <li><a href="javascript:goWindowOpen(&#39;FaqMiniPopup.jsp?descKey=11ST_PROGRESS_SHIPPING_NODE&#39;, &#39;true&#39;, 690, 230, &#39;no&#39;);"><img src="./help_files/buyProcess_04.gif" alt="배송중 - 배송평균일이 3일 이내인 판매자의 상품에는 평균배송일이 기재되어 있습니다."></a></li>
+                            <li><a href="javascript:goWindowOpen(&#39;FaqMiniPopup.jsp?descKey=11ST_FIX_ORDER_NODE&#39;, &#39;true&#39;, 690, 230, &#39;no&#39;);"><img src="./help_files/buyProcess_05.gif" alt="구매확정 - 구매확정하시면 포인트 적립혜택을 받으실 수 있습니다."></a></li>
+                            <li><a href="javascript:goWindowOpen(&#39;FaqMiniPopup.jsp?descKey=11ST_WRITE_COMMENT_ORDER_NODE&#39;, &#39;true&#39;, 690, 230, &#39;no&#39;);"><img src="./help_files/buyProcess_06.gif" alt="구매후기쓰기 - 증빙서류 출력은 구매확정 이후 가능합니다."></a></li>
+                        </ol>
+
+                    </div>
+                    <!-- // end of buy process -->
+
+                    <!-- 자주묻는질문 / 공지사항 -->
+                    <div class="boardZone">
+                        <div class="top10">
+                            <!-- [접근성] <h3 class="boardZoneTit"></h3>로 변경 -->
+                            <h3 class="boardZoneTit"><img src="./help_files/top10Tit.gif" alt="자주 묻는 질문 TOP 10"></h3>
+                            <ol class="boardList">
+<li class="num01"> <a href="javascript:clickTopn(&#39;NODE0000000066&#39;, &#39;NODE0000000049&#39;, &#39;KNOW0000000041&#39;);">[구매] 주문을 취소했는데, 언제 환불되나요?</a></li><li class="num02"> <a href="javascript:clickTopn(&#39;NODE0000000066&#39;, &#39;NODE0000000049&#39;, &#39;KNOW0000000884&#39;);">[구매] 상품을 반품했는데, 언제 환불되나요?</a></li><li class="num03"> <a href="javascript:clickTopn(&#39;NODE0000002460&#39;, &#39;NODE0000000072&#39;, &#39;KNOW0000002203&#39;);">[구매] 배송지연 보상제가 무엇인가요?</a></li><li class="num04"> <a href="javascript:clickTopn(&#39;NODE0000000065&#39;, &#39;NODE0000000049&#39;, &#39;KNOW0000002027&#39;);">[구매] 환불은 어떻게 처리되나요?</a></li><li class="num05"> <a href="javascript:clickTopn(&#39;NODE0000000196&#39;, &#39;NODE0000000185&#39;, &#39;KNOW0000001308&#39;);">[구매] 신용카드 매출전표를 발급받고 싶어요.</a></li><li class="num06"> <a href="javascript:clickTopn(&#39;NODE0000000191&#39;, &#39;NODE0000000185&#39;, &#39;KNOW0000000995&#39;);">[구매] 세금계산서를 발급받고 싶어요.</a></li><li class="num07"> <a href="javascript:clickTopn(&#39;NODE0000002390&#39;, &#39;NODE0000002330&#39;, &#39;KNOW0000005238&#39;);">[구매] 개인정보 수집 및 이용동의서 양식을 ...</a></li><li class="num08"> <a href="javascript:clickTopn(&#39;NODE0000002658&#39;, &#39;NODE0000000324&#39;, &#39;KNOW0000008925&#39;);">[판매] [HOT클릭] "HOT클릭 일일허용예...</a></li><li class="num09"> <a href="javascript:clickTopn(&#39;NODE0000002658&#39;, &#39;NODE0000000324&#39;, &#39;KNOW0000008924&#39;);">[판매] [HOT클릭] "보유잔액 부족으로 H...</a></li><li class="num10"> <a href="javascript:clickTopn(&#39;NODE0000000095&#39;, &#39;NODE0000000093&#39;, &#39;KNOW0000008798&#39;);">[구매] CU 락커&amp;편의점 반품신청 건을 취소...</a></li>
+
+                            </ol>
+                        </div>
+                        <div class="notices">
+                            <!-- <iframe src="" frameborder="0" title="공지사항"></iframe> -->
+                            <!-- [접근성] <h3 class="boardZoneTit"></h3>로 변경 -->
+                            <h3 class="boardZoneTit"><img src="./help_files/noticeTit_01.gif" alt="공지사항"></h3>
+                            <iframe src="./help_files/NtceList.html" frameborder="0" title="공지사항" style="height:268px;width:100%; overflow:hidden; border-top:1px solid #d7d7d7;"></iframe>
+                            <p class="btn_more"><a href="javascript:goBbs(&#39;&#39;);"><img src="./help_files/btn_noticeMore.gif" alt="공지사항 더보기"></a></p>
+                        </div>
+                    </div>
+                    <!-- // end of 자주묻는질문 / 공지사항 -->
+
+                    <!-- [2013-10-24 jsshin] modify -->
+                    <!-- 서비스 가이드 -->
+                    <!--                        
+                        <div class="serviceGuide">
+                            <h2 class="guideTit"><img src="../img/cybercenter_new/svcGuideTit.gif" alt="11번가 서비스 가이드"></h2>
+                            <a href="javascript:goStatUrl('http://www.11st.co.kr/register/getGradeInfo.tmall?method=getGrade', 'HOE0101', '');"><img src="../img/cybercenter_new/svcGuide_v3_1.gif" alt="고객 등급제 - 고객 등급제 관련 설명"></a>
+                            <a href="javascript:goStatUrl('http://www.11st.co.kr/browsing/MembershipBenefitPlace.tmall?method=getCompensationBenefit&addCtgrNo=939798&naviTab=3&subTab=1', 'HOE0103', '');"><img src="../img/cybercenter_new/svcGuide_v3_2.gif" alt="최저가 보상제 - 최저가로 쇼핑하자!"></a>
+                            <a href="javascript:goStatUrl('http://www.11st.co.kr/club/ClubMomDadAction.tmall', 'HOE0104', '');"><img src="../img/cybercenter_new/svcGuide_v3_3.gif" alt="맘앤대디 클럽 - 육아관련 정보와 실속있는 혜택"></a>
+                        </div>
+                    -->
+                    <!-- //[2013-10-24 jsshin] modify -->
+                    <!-- // end of 서비스 가이드 -->
+                    
+					<!-- 서비스 가이드 -->
+					<!-- 2015-01-30 서비스 가이드 소스 변경 : 맘앤대디 삭제 -->
+					<div class="service_banner">
+						<h2 class="tit"><span>11번가 서비스 가이드</span></h2>
+						<a class="cs_grade" href="javascript:goStatUrl(&#39;http://www.11st.co.kr/register/getGradeInfo.tmall?method=getGrade&#39;, &#39;HOE0101&#39;, &#39;&#39;);"><span>고객 등급제 - 고객 등급제 관련 설명</span></a>
+						<a class="lowest_reward" href="javascript:goStatUrl(&#39;http://www.11st.co.kr/browsing/MembershipBenefitPlace.tmall?method=getCompensationBenefit&amp;addCtgrNo=939798&amp;naviTab=3&amp;subTab=1&#39;, &#39;HOE0103&#39;, &#39;&#39;);"><span>최저가 보상제 - 최저가로 쇼핑하자!</span></a>
+					</div>
+
+                    <!-- 즉문즉답 CS 우수셀러 -->
+                    <div class="csBestSeller">
+                        <iframe src="./help_files/helpDispProduct.html" frameborder="0" scrolling="no" title="즉문즉답 CS 우수셀러"></iframe>
+                    </div>
+                    <!-- // end of 즉문즉답 CS 우수셀러 -->
+
+                </div>
+                <!-- // end of 콘텐츠영역 -->
+            </div>
+            <!-- // end of 전체영역 -->
+
+
+
+        <!-- //컨텐츠 영역 끝 -->
+        </div>
+        <!-- //layBody -->
+
+    <div class="wing_banner" id="wingBanner" data-log-actionid-area="wing_banner"><!-- 2017-02-17 cyn  스크롤 이벤트 발생시 .wing_fixed 넣어주세요 -->	<!-- 최근 본 상품 -->	<div class="wing_prd_wrap" id="wingRecentWrap" style="">		<div class="hwrap">			<!-- 2017-02-22 cyn 타이틀 영역 마크업 수정 -->			<strong class="tit">				<a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#" id="wingRecentCount"><span class="tx">최근 본 상품</span><span class="count">6</span><span class="ico"></span></a>			</strong>			<!-- //2017-02-22 cyn 타이틀 영역 마크업 수정 -->		</div>		<div class="wing_prd_list" id="windRecentPrdList">		<ul id="wingRecentPrd_1" style="" data-log-actionid-label="recent_product"><li class="wing_prd" id="934901081"><a href="http://www.11st.co.kr/product/SellerProductDetail.tmall?method=getSellerProductDetail&amp;prdNo=934901081" target="_blank" data-log-body="{&#39;content_name&#39;:&#39;이니스프리 BEST 10% SALE&#39;}"><span class="wing_prd_img"><img src="./help_files/934901081_L300.jpg" alt="이니스프리 BEST 10% SALE" onerror="skp11.common.blankImage(this, 60);"></span><span class="wing_prd_info"><span class="p_name">이니스프리 BEST 10% SALE</span><span class="p_price"><strong>19,800</strong>원~</span></span></a><button type="button" class="wing_btn_delete" prdno="934901081">목록에서 상품 삭제</button></li><li class="wing_prd" id="1360715627"><a href="http://www.11st.co.kr/product/SellerProductDetail.tmall?method=getSellerProductDetail&amp;prdNo=1360715627" target="_blank" data-log-body="{&#39;content_name&#39;:&#39;[아크네스튜디오/앤아더스토리&#39;}"><span class="wing_prd_img"><img src="./help_files/1360715627_L300.jpg" alt="[아크네스튜디오/앤아더스토리" onerror="skp11.common.blankImage(this, 60);"></span><span class="wing_prd_info"><span class="p_name">[아크네스튜디오/앤아더스토리</span><span class="p_price"><strong>102,000</strong>원~</span></span></a><button type="button" class="wing_btn_delete" prdno="1360715627">목록에서 상품 삭제</button></li></ul><ul id="wingRecentPrd_2" style="display:none;" data-log-actionid-label="recent_product"></ul><ul id="wingRecentPrd_3" style="display:none;" data-log-actionid-label="recent_product"></ul></div>		<div class="wing_paging"><!-- 2017-02-17 cyn 상품이 두 개 이하 존재할 경우 페이징 비노출 -->			<div class="wing_btn" data-log-actionid-label="arrow">				<button type="button" class="wing_btn_prev" id="wb_btn_recentPrd_prev" data-log-body="{&#39;arrow&#39;:&#39;left&#39;}">이전 상품 리스트</button>				<button type="button" class="wing_btn_next" id="wb_btn_recentPrd_next" data-log-body="{&#39;arrow&#39;:&#39;right&#39;}">다음 상품 리스트</button>			</div>		</div>		<!-- 최근 본 상품 레이어 -->		<div class="wing_prd_layer"><!-- 2017-02-17 cyn 레이어 오픈시 .on 넣어주세요 -->			<ul id="wingRecentPrdListLayer"></ul>			<button type="button" class="wing_btn_close">최근 본 상품목록 닫기</button>			<span class="wing_layer_tail"></span>		</div>		<!-- //최근 본 상품 레이어 -->	</div>	<!-- 최근 본 상품 -->	<!-- 추천 상품 -->	<div id="wingRecmPrd" class="wing_prd_wrap wing_prd_wrap2" style="">		<div class="hwrap">			<strong class="tit">추천상품</strong>		</div>		<div class="wing_prd_list" id="recommendPrdList">					<ul data-log-actionid-label="recommend_product">				<li class="wing_prd">					<a href="http://www.11st.co.kr/product/SellerProductDetail.tmall?method=getSellerProductDetail&amp;prdNo=1766782448" title="새창열기" target="_blank" data-log-body="{&#39;content_name&#39;:&#39;천연 알로에베라 수딩젤300ml+&#39;, &#39;content_type&#39;:&#39;PRODUCT&#39;}">						<span class="wing_prd_img"><img src="./help_files/1766782448_L300.jpg" alt="천연 알로에베라 수딩젤300ml+" onerror="skp11.common.blankImage(this, 60);"></span>						<span class="wing_prd_info">							<span class="p_name">천연 알로에베라 수딩젤300ml+</span>							<span class="p_price"><strong>1,500</strong>원</span>						</span>					</a>				</li>			</ul></div>		<div class="ad_nwlay">			<button type="button" class="ad_link" id="wingHelpPopBtn">광고<span class="ico"></span></button>			<div class="help_pop" style="display:none;" id="wingHelpPop">				<p>11번가 판매자의 추천상품으로 추천상품 광고 아이템을 구매한 상품입니다.</p>				<button type="button" class="btn_close" id="wingHelpPopCloseBtn">레이어 닫기</button>			</div>		</div>	</div>	<!-- 추천 상품 -->	<div class="wing_vis_area" id="dsLeftWingBannerMiddle" data-log-actionid-label="banner"><a href="http://ds.11st.co.kr/click/11st/11st_main/main@2017_main_right?ads_id=43907&amp;creative_id=35508&amp;click_id=34032&amp;noCache=1508465971460" target="_blank" data-log-body="{&#39;content_name&#39;:&#39;SKT행사&#39;, &#39;content_type&#39;:&#39;BANNER&#39;}"><img src="./help_files/6c88b6ce683cee5684f7410b85a5f88b.jpg" width="70" height="145" alt="SKT행사" border="0"></a></div>	<div class="btn_top" data-log-actionid-label="top">		<a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp#"><!-- 2017-02-17 main페이지 #wrap으로 이동, 서브페이지 #wrapBody로 이동-->			<img src="./help_files/img_top.gif" alt="페이지 상단으로 이동">		</a>	</div></div></div>
+    <!-- //layBodyWrap -->
+
+    <!-- footer_include -->
+    
+<script type="text/javascript">
+    document.write('<script type="text/javascript"  src="//www.11st.co.kr/js/include/inc_footer_extra_v6.js"><\/script>');
+</script><script type="text/javascript" src="./help_files/inc_footer_extra_v6.js"></script><script type="text/javascript" src="./help_files/footerCommonJs.js" charset="euc-kr"></script><script type="text/javascript" src="./help_files/inc_footer.js" charset="euc-kr"></script><form name="FooterSearchForm" action="http://search.11st.co.kr/SearchPrdAction.tmall"><input type="hidden" name="method" value="getTotalSearchSeller"><input type="hidden" name="targetTab" value="T"><input type="hidden" name="isGnb" value="Y"><input type="hidden" name="category"><input type="hidden" name="cmd"><input type="hidden" name="pageSize"><input type="hidden" name="semanticFromGNB" value=""><div class="footer_search2" data-log-actionid-area="bottomsearchbox"><fieldset class="total_search"><legend><label for="bottomKwd">하단 통합 검색</label></legend><h4>통합검색</h4><input name="kwd" type="text" class="text" value="" id="bottomKwd" data-log-actionid-label="keyword" "="" onkeypress="if(event.keyCode == 13) {rakeLog.sendRakeLog(this,&#39;click&#39;);goFooterSearch(&#39;MAINSFO0101&#39;); return false;}" style="ime-mode:active;"><input type="button" value="검색" data-log-actionid-label="keyword" onclick="rakeLog.sendRakeLog(this);ga(&#39;send&#39;,&#39;event&#39;, &#39;통합검색(전체상품)&#39;, &#39;하단검색창&#39;, &#39;&#39;);goFooterSearch(&#39;MAINSFO0101&#39;);" class="search"></fieldset></div></form><div id="myHistoryArea" class="my_history2_wrap" style="display:none"></div><div id="newFooterAdArea" class="ftr_banner_wrap" style="display:none"></div><div id="footerWrap3" class="footer_wrap3 no_toolbar">	<div class="f_menu">	    <ul class="menu_conts clfix" data-log-actionid-area="footer" data-log-actionid-label="btn">		    <li><a href="http://www.11st.co.kr/commons/CommonAbout.tmall?method=corp1_1" onclick="popupFromFooter(this.href,&#39;FOOTER_POP&#39;);doCommonStat(&#39;MAINSFO0201&#39;); rakeLog.sendRakeLog(this); return false;" target="_blank" title="새창 열림" data-log-body="{&#39;btn_name&#39;:&#39;회사소개&#39;}"><span>회사소개</span></a></li>		    <li><a href="http://www.11st.co.kr/annc/AnncMainPreview.tmall?method=getProvision&amp;anncCd=01" onclick="popupFromFooter(this.href,&#39;FOOTER_POP&#39;);doCommonStat(&#39;MAINSFO0202&#39;); rakeLog.sendRakeLog(this); return false;" target="_blank" title="새창 열림" data-log-body="{&#39;btn_name&#39;:&#39;이용약관&#39;}"><span>이용약관</span></a></li>		    <li><a href="http://www.11st.co.kr/annc/AnncMainPreview.tmall?method=getProvision&amp;anncCd=06" onclick="popupFromFooter(this.href,&#39;FOOTER_POP&#39;);doCommonStat(&#39;MAINSFO0203&#39;); rakeLog.sendRakeLog(this); return false;" target="_blank" title="새창 열림" data-log-body="{&#39;btn_name&#39;:&#39;전자금융거래약관&#39;}"><span>전자금융거래약관</span></a></li>		    <li><a href="http://www.11st.co.kr/annc/AnncMainPreview.tmall?method=getProvision&amp;anncCd=03" onclick="popupFromFooter(this.href,&#39;FOOTER_POP&#39;);doCommonStat(&#39;MAINSFO0204&#39;); rakeLog.sendRakeLog(this); return false;" target="_blank" title="새창 열림" data-log-body="{&#39;btn_name&#39;:&#39;개인정보처리방침&#39;}"><strong>개인정보처리방침</strong></a></li>		    <li><a href="http://www.11st.co.kr/commons/CommonAbout.tmall?method=corp1_2" onclick="popupFromFooter(this.href,&#39;FOOTER_POP&#39;);doCommonStat(&#39;MAINSFO0205&#39;); rakeLog.sendRakeLog(this); return false;" target="_blank" title="새창 열림" data-log-body="{&#39;btn_name&#39;:&#39;입점문의&#39;}"><span>입점문의</span></a></li>		    <li><a href="http://seller.11st.co.kr/" onclick="popupFromFooter(this.href,&#39;FOOTER_POP&#39;);doCommonStat(&#39;MAINSFO0206&#39;); rakeLog.sendRakeLog(this); return false;" target="_blank" title="새창 열림" data-log-body="{&#39;btn_name&#39;:&#39;셀러존&#39;}"><span>셀러존</span></a></li>		    <li><a href="http://www.11st.co.kr/brandadcenter/Main.tmall" onclick="popupFromFooter(this.href,&#39;FOOTER_POP&#39;);doCommonStat(&#39;MAINSFO0207&#39;); rakeLog.sendRakeLog(this); return false;" target="_blank" title="새창 열림" data-log-body="{&#39;btn_name&#39;:&#39;브랜드광고센터&#39;}"><span>브랜드광고센터</span></a></li>		    <li><a href="http://www.11st.co.kr/safety/SafetyMain.tmall" onclick="popupFromFooter(this.href,&#39;FOOTER_POP&#39;);doCommonStat(&#39;MAINSFO0208&#39;); rakeLog.sendRakeLog(this); return false;" target="_blank" title="새창 열림" data-log-body="{&#39;btn_name&#39;:&#39;안전거래센터&#39;}"><span>안전거래센터</span></a></li>		    <li><a href="http://openapi.11st.co.kr/openapi/OpenApiIndex.tmall" onclick="popupFromFooter(this.href,&#39;FOOTER_POP&#39;);doCommonStat(&#39;MAINSFO0210&#39;); rakeLog.sendRakeLog(this); return false;" target="_blank" title="새창 열림" data-log-body="{&#39;btn_name&#39;:&#39;Open API&#39;}"><span>Open API</span></a></li>		    <li><a href="http://www.11st.co.kr/commons/CommonAbout.tmall?method=serviceMap" onclick="popupFromFooter(this.href,&#39;FOOTER_POP&#39;);doCommonStat(&#39;MAINSFO0211&#39;); rakeLog.sendRakeLog(this); return false;" target="_blank" title="새창 열림" data-log-body="{&#39;btn_name&#39;:&#39;서비스맵&#39;}"><span>서비스맵</span></a></li>	    </ul>	</div>	<div class="f_info">	    <div class="add_sk">          <dl>              <dt>SK플래닛(주)</dt>              <dd>(13487) 경기도 성남시 분당구 판교로 264 (삼평동)</dd>              <dd>대표이사 : 서성원 <span class="pd">사업자등록번호 : 104-86-36968</span><a href="http://www.ftc.go.kr/info/bizinfo/communicationView.jsp?apv_perm_no=2014378021930200030&amp;area1=&amp;area2=&amp;currpage=1&amp;searchKey=04&amp;searchVal=1048636968&amp;stdate=&amp;enddate=" onclick="popupFromFooter(this.href,&#39;FOOTER_POP&#39;);doCommonStat(&#39;MAINSFO0302&#39;);return false;" target="_blank" title="새 창" class="btn_small arr">사업자정보확인<span class="ico"></span></a></dd>              <dd>통신판매업신고 : 2014-경기성남-0036</dd>              <dd>Tel: 1599-0110 <span class="pd">Fax: 02-849-4962</span></dd>          </dl>          <span class="logo"></span>	    </div>	    <div class="add_center">          <dl>              <dt>고객센터</dt>              <dd>(08378) 서울특별시 구로구 디지털로 306 (구로동)</dd>              <dd>Tel : 1599-0110 <a href="http://help.11st.co.kr/11st/faq/FaqIndex.jsp" onclick="doCommonStat(&#39;MAINSFO0301&#39;);" target="_blank" class="btn_f_arr">전화전클릭</a></dd>              <dd>Fax : 02-849-4962</dd>              <dd>E-mail : <a href="http://help.11st.co.kr/11st/mail/MailQuestion.jsp" onclick="popupFromFooter(this.href,&#39;FOOTER_POP&#39;);return false;">customerservice@11st.co.kr</a></dd>          </dl>	    </div>	    <div class="add_ele">         <dl>              <dt>전자금융거래분쟁담당</dt>              <dd>Tel : 1599-0110</dd>              <dd>Fax : 02-849-4962</dd>              <dd>E-mail : <a href="http://help.11st.co.kr/11st/mail/MailQuestion.jsp" onclick="popupFromFooter(this.href,&#39;FOOTER_POP&#39;);return false;">customerservice@11st.co.kr</a></dd>          </dl>	    </div>	    <div class="info_conts">	        <div class="fr">	            <button type="button" class="btn_small" onclick="FooterComm.prdImgToggle.init(this);doCommonStat(&#39;MAINSFO0501&#39;);">이미지 정지</button>	            <div class="fam_wrap">		            <button type="button" onclick="familyLink();doCommonStat(&#39;MAINSFO0601&#39;)">Family Site<span class="ico"></span></button>		            <ul id="familyLink_sub" style="display:none">			            <li><a href="http://www.sktelecom.com/" onclick="popupFromFooter(this.href,&#39;FOOTER_POP&#39;);return false;" target="_blank" title="새창 열림">SK Telecom</a></li>			            <li><a href="http://www.skplanet.com/" onclick="popupFromFooter(this.href,&#39;FOOTER_POP&#39;);return false;" target="_blank" title="새창 열림">SK Planet</a></li>			            <li><a href="http://www.sksports.net/index.asp" onclick="popupFromFooter(this.href,&#39;FOOTER_POP&#39;);return false;" target="_blank" title="새창 열림">SK스포츠단</a></li>			            <li><a href="http://www.skbroadband.com/" onclick="popupFromFooter(this.href,&#39;FOOTER_POP&#39;);return false;" target="_blank" title="새창 열림">SK브로드밴드</a></li>			            <li><a href="http://www.nate.com/" onclick="popupFromFooter(this.href,&#39;FOOTER_POP&#39;);return false;" target="_blank" title="새창 열림">NATE</a></li>		            </ul>	            </div>	        </div>	        <div class="btnwrap">		        <a href="http://www.11st.co.kr/browsing/MembershipBenefitPlace.tmall?method=getCompensationBenefit&amp;addCtgrNo=952005" onclick="popupFromFooter(this.href,&#39;FOOTER_POP&#39;);doCommonStat(&#39;MAINSFO0401&#39;);return false;" target="_blank" title="새창 열림" class="btn_small">최저가110%보상제</a>		        <a href="http://www.11st.co.kr/browsing/MembershipBenefitPlace.tmall?method=getCompensationBenefit&amp;addCtgrNo=952020&amp;tabIdx=2" onclick="popupFromFooter(this.href,&#39;FOOTER_POP&#39;);doCommonStat(&#39;MAINSFO0402&#39;);return false;" target="_blank" title="새창 열림" class="btn_small">위조품110%보상제</a>		        <a href="http://www.11st.co.kr/browsing/MembershipBenefitPlace.tmall?method=getCompensationBenefit&amp;addCtgrNo=952021&amp;tabIdx=3" onclick="popupFromFooter(this.href,&#39;FOOTER_POP&#39;);doCommonStat(&#39;MAINSFO0403&#39;);return false;" target="_blank" title="새창 열림" class="btn_small">고객실수 보상서비스</a>		        <a href="http://help.11st.co.kr/" onclick="popupFromFooter(this.href,&#39;FOOTER_POP&#39;);doCommonStat(&#39;MAINSFO0404&#39;);return false;" target="_blank" title="새창 열림" class="btn_small">24시간 콜센터</a>	        </div>		    <p class="txt">SK플래닛(주)는 통신판매중개자로서 오픈마켓 11번가의 거래당사자가 아니며, 입점판매자가 등록한 상품정보 및 거래에 대해 SK플래닛(주)는 일체 책임을 지지 않습니다.</p>		    <p class="copy">Copyright SK planet. All rights reserved.</p>	    </div></div></div><script type="text/javascript" src="./help_files/inc_footer_data.js" charset="euc-kr"></script><div id="_obj_starter_"></div><script type="text/javascript">setTimeout("setGnbData(true)", 1000);</script>
+<!-- 구글 애널리틱스 공통스크립트 삽입 -->
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-68494772-1', 'auto');
+	ga('create', 'UA-68494772-8', {'name': '11st'});
+
+</script>
+
+<!-- Google Tag Manager -->
+<noscript>&lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-P3PMQD" height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+<script>
+	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','GA_dataLayer','GTM-P3PMQD');
+</script>
+<!-- End Google Tag Manager -->
+
+
+
+
+
+
+    <!-- //footer_include -->
+
+    
+<div id="codeTreeLayer" style="display:none">
+<table width="250" height="100" border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+    <td width="7"><img src="./help_files/00_layersetting_l_top.gif"></td>
+    <td background="./help_files/00_layersetting_top_bg.gif"></td>
+    <td width="7"><img src="./help_files/00_layersetting_r_top.gif"></td>
+  </tr>
+  <tr>
+    <td rowspan="2" background="./help_files/00_layersetting_l_bg.gif"></td>
+    <td class="layer_bg">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody><tr>
+          <td height="28" style="text-align:left;">
+                    선택하세요.
+          </td>
+          <td style="text-align:right; ">
+            <a href="javascript:;" onclick="$(&#39;codeTreeLayer&#39;).hide();"><img src="./help_files/00_layersetting_close.gif" width="11" height="10" style="cursor:pointer"></a>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+    <td rowspan="2" background="./help_files/00_layersetting_r_bg.gif"></td>
+  </tr>
+  <tr>
+    <td bgcolor="#9cd351">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td width="5"><img src="./help_files/00_layerfaq_l_top.gif"></td>
+          <td bgcolor="#f4f4f4"></td>
+          <td width="5"><img src="./help_files/00_layerfaq_r_top.gif"></td>
+        </tr>
+        <tr>
+          <td rowspan="2" bgcolor="#f4f4f4"></td>
+          <td height="0" valign="top" bgcolor="#f4f4f4">
+          </td>
+          <td rowspan="2" bgcolor="#f4f4f4"></td>
+        </tr>
+        <tr>
+          <td valign="top" bgcolor="#FFFFFF">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+              <tbody><tr>
+                <td width="8"><img src="./help_files/02_tab_l_top.gif"></td>
+                <td background="./help_files/02_tab_top_bg.gif"></td>
+                <td width="8"><img src="./help_files/02_tab_r_top.gif"></td>
+              </tr>
+              <tr>
+                <td background="./help_files/02_tab_l_bg.gif">&nbsp;</td>
+                <td valign="top">
+                  <table width="100%" border="0" cellspacing="5" cellpadding="0">
+                    <tbody><tr>
+                        <td>
+                            <div id="codeTreeControl" style="width:250px; height:300px; overflow:auto"></div>&nbsp;
+                        </td>
+                    </tr>
+                  </tbody></table>
+                </td>
+                <td background="./help_files/02_tab_r_bg.gif">&nbsp;</td>
+              </tr>
+              <tr>
+                <td><img src="./help_files/02_tab_l_bottom.gif"></td>
+                <td background="./help_files/02_tab_bottom_bg.gif"></td>
+                <td><img src="./help_files/02_tab_r_bottom.gif"></td>
+              </tr>
+            </tbody></table>
+          </td>
+        </tr>
+        <tr>
+          <td width="5"><img src="./help_files/00_layerfaq_l_bottom.gif"></td>
+          <td bgcolor="#f4f4f4"></td>
+          <td width="5"><img src="./help_files/00_layerfaq_r_bottom.gif"></td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td width="7"><img src="./help_files/00_layersetting_l_bottom.gif"></td>
+    <td background="./help_files/00_layersetting_bottom_bg.gif"></td>
+    <td width="7"><img src="./help_files/00_layersetting_r_bottom.gif"></td>
+  </tr>
+</tbody></table>
+</div>
+
+    <form id="listForm" name="listForm" method="get" action="http://help.11st.co.kr/11st/faq/FaqList.jsp">
+        <input type="hidden" id="pageNo" name="pageNo" value="1">
+        <input type="hidden" id="parentNodeId" name="parentNodeId" value="">
+        <input type="hidden" id="leftNodeId1st" name="leftNodeId1st">
+        <input type="hidden" id="nodeId" name="nodeId" value="">
+        <input type="hidden" id="kbId" name="kbId">
+        <input type="hidden" id="surveyType" name="surveyType" value="FAQAF">
+        <input type="hidden" id="targetNo" name="targetNo">
+        <input type="hidden" id="rowsPerPage" name="rowsPerPage" value="15">
+    </form>
+
+</div></body></html>

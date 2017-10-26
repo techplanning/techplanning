@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0146)http://www.11st.co.kr/front/ntce/NtceList.tmall?method=getCustNtceList&type=cust&numberPerPage=10&searchStartDt=&searchSite=stDispY&searchGubun=nt -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+
+<title>공지사항</title>
+<link rel="stylesheet" type="text/css" href="./base.css">
+<link rel="stylesheet" type="text/css" href="./cybercenter(1).css">
+
+
+
+
+
+
+<script type="text/javascript">
+
+	// Global Var
+	var _IMG_PATH_  = "http://www.11st.co.kr";
+	var _UPLOAD_IMG_PATH_  = "http://image.11st.co.kr";
+	var _SSL_UPLOAD_IMG_PATH_ = "https://www.11st.co.kr/is";
+	var _ACTION_CONTEXT_  = "";
+	var _FILE_UPLOAD_PATH_ = "http://image.11st.co.kr";
+	var _GNB_CONTEXT_PATH_ = "http://www.11st.co.kr";
+	var _ACTION_CONTEXT_URL_ = "http://www.11st.co.kr";
+	var _SSL_ACTION_CONTEXT_URL_ = "https://www.11st.co.kr";
+	var _SSL_IMG_PATH_ = "https://www.11st.co.kr";
+	var _GLOBAL_CONTEXT_PATH_ = "http://globalshopping.11st.co.kr";
+	var _BEAUTY_CONTEXT_PATH_ = "http://beauty.11st.co.kr";
+	var _SOHO_CONTEXT_PATH_ = "http://soho.11st.co.kr";
+	var _JS_PATH_ = "http://www.11st.co.kr";
+
+	var _GNB_LOGIN_URL_ = "https://login.11st.co.kr/login/Login.tmall";
+	var _GNB_LOGOUT_URL_ = "https://login.11st.co.kr/login/Logout.tmall";
+	var _PRODUCT_DETAIL_URL_ = "http://www.11st.co.kr/product/SellerProductDetail.tmall?method=getSellerProductDetail&prdNo=";
+
+	var _ENJOY_SEARCH_VAR_ = "NONE";
+	var _ENJOY_SEARCH_KEY_YN_ = "N";
+
+	var _SELLER_SHOP_DOMAIN_ = "http://shop.11st.co.kr";
+
+	// 변경 권고
+	var _CSS_URL_			= "http://c.011st.com";
+	var _SSL_CSS_URL_		= "https://www.11st.co.kr";
+	var _IMG_URL_			= "http://s.011st.com";
+	var _SSL_IMG_URL_		= "https://www.11st.co.kr";
+	var _UPLOAD_URL_		= "http://i.011st.com";
+	var _SSL_UPLOAD_URL_	= "https://www.11st.co.kr/is";
+
+	var _LOGIN_TARGET_URL_ 	= "https://login.11st.co.kr";
+
+	// TZONE Var
+	var _TZONE_URL_			= "http://skt.11st.co.kr";
+	var _TZONE_URL_HOME_	= "http://skt.11st.co.kr/html/tzone/tZoneMain.html";
+	var _SELLER_URL_		= "http://seller.11st.co.kr";
+	var _SOFFICE_URL_		= "http://soffice.11st.co.kr";
+	var _DS_URL_			= "http://ds.11st.co.kr";
+	var _MY11ST_URL_		= "http://buy.11st.co.kr/order/myTmall.tmall?method=getMyTmallMain";
+	var _SHOPPINGCART_URL_ 	= "http://buy.11st.co.kr/cart/CartAction.tmall?method=getCartList";
+	var _MYSELL_URL_ 		= "http://soffice.11st.co.kr";
+	var _CATEGORY_ACTION_URL_ = "http://www.11st.co.kr/browsing/Category.tmall";
+	var _NEW_CATEGORY_ACTION_URL_ = "http://www.11st.co.kr/browsing/DisplayCategory.tmall";
+	var _SEARCH_ACTION_URL_ = "http://search.11st.co.kr/SearchPrdAction.tmall";
+
+	// TOWN 11st
+	var _TOWN11ST_URL_ 		= "http://town.11st.co.kr";
+	var _TOWN_PRODUCT_DETAIL_URL_ = "http://town.11st.co.kr/town/TownProductDetail.tmall?method=getTownProductDetail&prdNo=";
+	var _TOWN_SHOP_URL_ 	= "http://town.11st.co.kr/town/TownShopDetail.tmall?method=getTownShopDetail&shopNo=";
+	var _TOWN_DOMAIN_ 		= "http://town.11st.co.kr";
+	var _TOWN_SOFFICE_URL_ 	= "http://town.soffice.11st.co.kr";
+
+
+	// Order 11st
+	var _ORDER_IMG_PATH_ 	= "http://buy.11st.co.kr";
+	var _ORDER_URL_ 	 	= "http://buy.11st.co.kr";
+	var _ORDER_DOMAIN_ 	 	= "http://buy.11st.co.kr";
+	var _SSL_ORDER_URL_  	= "https://buy.11st.co.kr";
+	var _SSL_ORDER_IMG_PATH_ = "https://www.11st.co.kr";
+	var _ORDER_HIS_URL_		= "http://buy.11st.co.kr/order/OrderList.tmall";
+
+	// ShockingDeal 11st (쇼킹딜)
+	var _SHOCKING_DEAL_URL_ = "http://deal.11st.co.kr";
+	
+	var _SRCH_PARAM_DELIMITER_ = "@;";
+	
+	// 제외 제휴사
+	var _EXCEPT_XSITE_LIST_ = "|1000014299|1000107070|1000138417|1000111850|1000336402|1000436475|1000601391|1000951353|1001023201|1001023200|1001023199|1001023198|1001023197|1001023196|1001021054|";		
+
+</script>
+
+
+
+
+<script type="text/javascript" src="./common.login.js" charset="euc-kr"></script>
+
+
+<script language="JavaScript" type="text/JavaScript">
+<!--
+	function OnView(ntceNo, searchSite, searchGubun) {
+
+		var formObj = document.mainFrm;
+
+		formObj.ntceNo.value = ntceNo;
+		formObj.searchSite.value = searchSite;
+
+		//if(searchGubun !='04'){
+			//searchGubun = 'nt';
+		//}
+
+		formObj.searchGubun.value = searchGubun;
+		document.mainFrm.target="_top";
+	    document.mainFrm.action = "http://help.11st.co.kr/11st/bbs/Bbs.jsp";
+	    document.mainFrm.submit();
+	}
+
+
+	function getNtceInfo(ntceNo,gubun,searchSite){
+
+		var url = "http://www.11st.co.kr/front/ntce/NtceInfo.tmall?method=getNtceView&searchSite=stDispY&ntceNo="+ntceNo+"&gubun="+gubun;
+
+	    var viewWin = window.open( url, "__viewWin__", "width=785, height=575, location=NO, directories=NO, status=NO, menubar=NO, scrollbars=NO, toolbar=NO" );
+	}
+//-->
+</script>
+</head>
+
+<body leftmargin="0" topmargin="0">
+
+<!--폼 시작-->
+<form name="mainFrm" method="post">
+<!--Hidden Parameter Start-->
+<input type="hidden" name="ntceNo" value="">
+<input type="hidden" name="searchSite" value="">
+<input type="hidden" name="searchGubun" value="">
+<!--Hidden Parameter End-->
+</form>
+
+<ul class="notice_list_v2">
+
+		<li><a href="javascript:getNtceInfo(&#39;201709260024&#39;,&#39;04&#39;,&#39;stDispY&#39;)" title="[당첨자 공지] 일리윤_나래Bar 2차 당첨자 공지">[당첨자 공지] 일리윤_나래Bar 2차 당첨자 공지</a></li>
+
+		<li><a href="javascript:getNtceInfo(&#39;859769&#39;,&#39;01&#39;,&#39;stDispY&#39;)" title="[공지] 구매이용약관, 판매이용약관 개정 공지의 건(2..">[공지] 구매이용약관, 판매이용약관 개정 공지의 건(2..</a></li>
+
+		<li><a href="javascript:getNtceInfo(&#39;201709150009&#39;,&#39;04&#39;,&#39;stDispY&#39;)" title="[당첨자 공지] MBC보그맘 애장품 경매 이벤트 당첨자 ..">[당첨자 공지] MBC보그맘 애장품 경매 이벤트 당첨자 ..</a></li>
+
+		<li><a href="javascript:getNtceInfo(&#39;201709070007&#39;,&#39;04&#39;,&#39;stDispY&#39;)" title="2017년 9월 &lt;갓띵연휴 이벤트&gt; 경품 당첨자 발표">2017년 9월 &lt;갓띵연휴 이벤트&gt; 경품 당첨자 발표</a></li>
+
+		<li><a href="javascript:getNtceInfo(&#39;859759&#39;,&#39;01&#39;,&#39;stDispY&#39;)" title="구매자의 요청에 따른 세금계산서 발행 협조요청 (추..">구매자의 요청에 따른 세금계산서 발행 협조요청 (추..</a></li>
+
+		<li><a href="javascript:getNtceInfo(&#39;201708300036&#39;,&#39;04&#39;,&#39;stDispY&#39;)" title="VIP CLUB 도서이벤트 &lt;연애가 끝났다&gt; 당첨자 발표">VIP CLUB 도서이벤트 &lt;연애가 끝났다&gt; 당첨자 발표</a></li>
+
+		<li><a href="javascript:getNtceInfo(&#39;201708300035&#39;,&#39;04&#39;,&#39;stDispY&#39;)" title="VIP CLUB 도서이벤트 &lt;알 수도 있는 사람&gt; 당첨자 발..">VIP CLUB 도서이벤트 &lt;알 수도 있는 사람&gt; 당첨자 발..</a></li>
+
+		<li><a href="javascript:getNtceInfo(&#39;201708300034&#39;,&#39;04&#39;,&#39;stDispY&#39;)" title="VIP CLUB 도서이벤트 &lt;눈 쇼&gt; 당첨자 발표">VIP CLUB 도서이벤트 &lt;눈 쇼&gt; 당첨자 발표</a></li>
+
+		<li><a href="javascript:getNtceInfo(&#39;201708300033&#39;,&#39;04&#39;,&#39;stDispY&#39;)" title="VIP CLUB 도서이벤트 &lt;리더를 위한 관계수업&gt; 당첨자 ..">VIP CLUB 도서이벤트 &lt;리더를 위한 관계수업&gt; 당첨자 ..</a></li>
+
+		<li><a href="javascript:getNtceInfo(&#39;201708300032&#39;,&#39;04&#39;,&#39;stDispY&#39;)" title="VIP CLUB 도서이벤트 &lt;큰비&gt; 당첨자 발표">VIP CLUB 도서이벤트 &lt;큰비&gt; 당첨자 발표</a></li>
+
+</ul>
+
+
+
+
+
+</body></html>
