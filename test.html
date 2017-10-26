@@ -668,7 +668,8 @@
 
                 msg(_PROC,"시트", sheet.sheetTitle);
 
-                if(sheet.sheetTitle == "연계로그 사전") {
+                if(sheet.sheetTitle == "참조") {
+                } else if(sheet.sheetTitle == "연계로그 사전") {
                     sheet["sheetType"] = "DIC";
                     sheet["sheetData"] = {};
                     msg(_PROC,"시트 처리 시작", {[response.result.properties.title] : sheet.sheetTitle});
