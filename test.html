@@ -140,16 +140,18 @@
     var _sheetMapWithPOC = {};
     var _sheetIdMap = {};
     var _dic = {};
+    var _actionBodyList = [];
 
     function readDefinitionList() {
         _defList = [];
         _sheetMap = {};
         _sheetMapWithPOC = {};
+        _actionBodyList = [];
 
         var spreadsheetId = '18HiiJG-Utm6e-wXr2Ie_z_8TtlBwq3yPFLjf8v45F-Q';
 //        var spreadsheetId = '1n_NBuRJ0GQ-sjikdfKEYVOy8_BmLhlv1rffsr6h2QeY';
         var spreadsheetTitle = 'PageID_11번가 Log 2.0';
-        var sheetTitle = ['모바일 v.2.3', 'PC v.2.2'];
+        var sheetTitle = ['모바일 v.2.3', 'PC v.2.1'];
 
         msg(_PROC,"시트 처리 시작", {spreadsheetTitle : [spreadsheetTitle], sheetTitle : [sheetTitle]});
 
@@ -364,9 +366,13 @@
             }
         });
 
+        _actionBodyList = values;
+
         var valueRangeBody = {
-            "values": values
+            "values": _actionBodyList
         };
+
+        //checkActionBodyList();
 
         var request = gapi.client.sheets.spreadsheets.values.update(params, valueRangeBody);
         request.then(function(response) {
@@ -376,6 +382,18 @@
         });
 
         msg(_PROC,"통합 로그정의서 생성 완료");
+    }
+
+    function checkActionBodyList() {
+        actionBodyMap = {};
+        _actionBodyList.forEach(function(item){
+            var key = item[1].concat("|",item[2],"|",item[3],"|",item[4])
+            if(actionBodyMap[key]) {
+                log(_ERROR,"0024","중복된 액션 정의가 있습니다.", key);
+            } else {
+                actionBodyMap[key] = {};
+            }
+        });
     }
 
     function makeActionBodyData(sheetData, poc_clf, os_name, page_id) {
@@ -404,7 +422,10 @@
                 log(_ERROR,"0023","body 데이터 오류", {"poc_clf" : poc_clf, "page_id" : page_id, "action" : action});
             }
 
-            result.push([action["state"], poc_clf, os_name, page_id, action_id].concat(bodys));
+            var body = {"body" : bodys};
+            var insertQuery = "union all select '"+action["state"]+"' as state, '"+poc_clf+"' as poc_clf, '"+os_name+"' as os_name, '"+page_id+"' as page_id, '"+action_id+"' as action_id, '"+JSON.stringify(body)+"' as body";
+
+            result.push([insertQuery, action["state"], poc_clf, os_name, page_id, action_id, JSON.stringify(body)].concat(bodys));
         });
         return result;
     }
