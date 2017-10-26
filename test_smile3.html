@@ -2,111 +2,102 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>로그정의서 처리기</title>
 </head>
 <body>
-<h2>TEST</h2>
-<button onclick="makeApiCall()">클릭</button>
-<script>
-    function makeApiCall() {
-        var params = {
-            // The ID of the spreadsheet to update.
-            spreadsheetId: '15_8jerhqEZNj3BJ4bzwkklH2K2W5pfcS3mUuwZ1AO2I'
-        };
-        var data_params1 = ['2017-09-12', 'N', '오류001'];
-        var data_params2 = ['2017-09-12', 'Y', '오류002'];
-        var data_params3 = ['2017-09-12', 'N', '오류003'];
+    <div>
+        <pre id="result_title">결과</pre>
+        <pre id="result"></pre>
+    </div>
 
-        var batchUpdateValuesRequestBody = {
-            "requests": [
-                {
-                    "insertDimension": {
-                        "range": {
-                            "sheetId": 0,
-                            "dimension": "ROWS",
-                            "startIndex": 1,
-                            "endIndex": 4
-                            //2부터 2개의 빈 행 삽입
-                            //1부터 시작해서 3과 4가 생긴다고 보면 됨
-                        },
-                        "inheritFromBefore": false
-                    }
-                }
-            ]
-        };
-        var batchUpdateValuesRequestBody2 = {
-            "valueInputOption": 'RAW',
-            "data": [
-                {
-                    "range": 'history_sheet!A2:E4',
-                    "majorDimension": 'COLUMNS',
-                    "values": [
-                        data_params1, data_params2, data_params3
-                    ],
-                }
-            ],
-            "includeValuesInResponse": true,
-            "responseValueRenderOption": 'FORMATTED_VALUE',
-            "responseDateTimeRenderOption": 'SERIAL_NUMBER',
-        };
+    <button id="authorize-button" style="display: none;">Authorize</button>
+    <button id="signout-button" style="display: none;">Sign Out</button>
 
-        var request = gapi.client.sheets.spreadsheets.batchUpdate(params, batchUpdateValuesRequestBody);
-        request.then(function(response) {
-            // TODO: Change code below to process the `response` object:
-            console.log(response.result);
-        }, function(reason) {
-            console.error('error: ' + reason.result.error.message);
-        });
-        var request2 = gapi.client.sheets.spreadsheets.values.batchUpdate(params, batchUpdateValuesRequestBody2);
-        request2.then(function(response) {
-            // TODO: Change code below to process the `response` object:
-            console.log(response.result);
-        }, function(reason) {
-            console.error('error: ' + reason.result.error.message);
-        });
-    }
-
-    function initClient() {
-        var CLIENT_ID = '696566559550-7rge69rqjpck7nup7dkfa0tt5huqusi0.apps.googleusercontent.com';  // TODO: Update placeholder with desired client ID.
-
-        // TODO: Authorize using one of the following scopes:
-        //   'https://www.googleapis.com/auth/drive'
-        //   'https://www.googleapis.com/auth/drive.file'
-        //   'https://www.googleapis.com/auth/spreadsheets'
-        var SCOPE = 'https://www.googleapis.com/auth/spreadsheets';
-
-        gapi.client.init({
-            'clientId': CLIENT_ID,
-            'scope': SCOPE,
-            'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
-        }).then(function() {
-            gapi.auth2.getAuthInstance().isSignedIn.listen(updateSignInStatus);
-            updateSignInStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-        });
-    }
-
-    function handleClientLoad() {
-        gapi.load('client:auth2', initClient);
-    }
-
-    function updateSignInStatus(isSignedIn) {
-        if (isSignedIn) {
+    <script type="text/javascript">
+        // Client ID and API key from the Developer Console
+        var CLIENT_ID = '696566559550-7rge69rqjpck7nup7dkfa0tt5huqusi0.apps.googleusercontent.com';
+        // Array of API discovery doc URLs for APIs used by the quickstart
+        var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/sheets/v4/rest"];
+        // Authorization scopes required by the API; multiple scopes can be
+        // included, separated by spaces.
+        var SCOPES = "https://www.googleapis.com/auth/spreadsheets";
+        var authorizeButton = document.getElementById('authorize-button');
+        var signoutButton = document.getElementById('signout-button');
+        /**
+         *  On load, called to load the auth2 library and API client library.
+         */
+        function handleClientLoad() {
+            gapi.load('client:auth2', initClient);
         }
-    }
-
-    function handleSignInClick(event) {
-        gapi.auth2.getAuthInstance().signIn();
-    }
-
-    function handleSignOutClick(event) {
-        gapi.auth2.getAuthInstance().signOut();
-    }
-</script>
-<script async defer src="https://apis.google.com/js/api.js"
-        onload="this.onload=function(){};handleClientLoad()"
-        onreadystatechange="if (this.readyState === 'complete') this.onload()">
-</script>
-<button id="signin-button" onclick="handleSignInClick()">Sign in</button>
-    <button id="signout-button" onclick="handleSignOutClick()">Sign out</button>
+        /**
+         *  Initializes the API client library and sets up sign-in state
+         *  listeners.
+         */
+        function initClient() {
+            gapi.client.init({
+                discoveryDocs: DISCOVERY_DOCS,
+                clientId: CLIENT_ID,
+                scope: SCOPES
+            }).then(function () {
+                // Listen for sign-in state changes.
+                gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+                // Handle the initial sign-in state.
+                updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+                authorizeButton.onclick = handleAuthClick;
+                signoutButton.onclick = handleSignoutClick;
+            });
+        }
+        /**
+         *  Called when the signed in status changes, to update the UI
+         *  appropriately. After a sign-in, the API is called.
+         */
+        function updateSigninStatus(isSignedIn) {
+            if (isSignedIn) {
+                authorizeButton.style.display = 'none';
+                signoutButton.style.display = 'block';
+                loadSheetsApi();
+            } else {
+                authorizeButton.style.display = 'block';
+                signoutButton.style.display = 'none';
+            }
+        }
+        /**
+         *  Sign in the user upon button click.
+         */
+        function handleAuthClick(event) {
+            gapi.auth2.getAuthInstance().signIn();
+        }
+        /**
+         *  Sign out the user upon button click.
+         */
+        function handleSignoutClick(event) {
+            gapi.auth2.getAuthInstance().signOut();
+        }
+        /**
+         * Append a pre element to the body containing the given message
+         * as its text node. Used to display the results of the API call.
+         *
+         * @param {string} message Text to be placed in pre element.
+         */
+        function appendPre(message) {
+            var pre = document.getElementById('log');
+            var textContent = document.createTextNode(message + '\n');
+            pre.appendChild(textContent);
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+        /**
+         * Load Sheets API client library.
+         */
+        function loadSheetsApi() {
+            var discoveryUrl =
+                'https://sheets.googleapis.com/$discovery/rest?version=v4';
+            gapi.client.load(discoveryUrl).then(readDefinitionList);
+        }
+    </script>
+    <!-- 로그인 처리 -->
+    <script async defer src="https://apis.google.com/js/api.js"
+            onload="this.onload=function(){};handleClientLoad()"
+            onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
 </body>
 </html>
