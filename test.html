@@ -106,10 +106,12 @@
         gapi.client.load(discoveryUrl).then(readDefinitionList);
     }
 
+    // 로그레벨
     var _ALL = 0, _TRACE = 1, _DEBUG = 2, _INFO = 3, _WARN = 4, _ERROR = 5, _FATAL = 6, _OFF = 7;
     var _logLevelNm = ["[ALL]","[TRACE]","[DEBUG]","[INFO]","[WARN]","[ERROR]","[FATAL]","[OFF]"];
     var _logLevel = _WARN;
 
+    // 로그 메시지
     function log(logLevel, code, message, infoObj, targetInfoObj) {
         if(logLevel >= _logLevel) {
             logMsg = _logLevelNm[logLevel] + " " + code + " - " + message;
@@ -142,6 +144,7 @@
     var _dic = {};
     var _actionBodyList = [];
 
+    // page_id 리스트 시트 읽기
     function readDefinitionList() {
         _defList = [];
         _sheetMap = {};
@@ -244,6 +247,7 @@
         }
     }
 
+    // 로컬스토리지 로딩 시 인덱스 등 재 생성
     function processDefinition() {
         msg(_PROC,"로그 정의서 데이터 처리 시작");
 
@@ -301,8 +305,8 @@
 
         checkDefinition();
         prodcessDIC();
-        setDICSheet();
-        setDefSheet();
+        setDICSheet(); // 연계로그 사전 생성
+        setDefSheet(); // 통합 정답지
     }
 
     function setDefSheet() {
@@ -640,7 +644,7 @@
                         log(_ERROR, "0009", "동일 POC에 중복된 정의서 링크가 있습니다.", info, targetPOCSheet);
                     } else {
                         _sheetMapWithPOC["["+info["poc"]+"]" + info["spreadsheetId"]] = info;
-                        log(_INFO, "0006", "중복된 정의서 링크가 있습니다.", info, targetInfo);
+                        log(_INFO, "0006", "page_id 정의서 저장.", info, targetInfo);
                     }
 
                     if(targetInfo["로그정의서명"] != info["로그정의서명"]) {
@@ -684,7 +688,7 @@
             for(s = 0; s < response.result.sheets.length; s++) {
                 var sheet = {};
                 var index = spreadsheet["sheet"].push(sheet) - 1;
-                sheet.sheetId = response.result.sheets[s].properties.sheetId.toString();;
+                sheet.sheetId = response.result.sheets[s].properties.sheetId.toString();
                 sheet.sheetTitle = response.result.sheets[s].properties.title;
 
                 msg(_PROC,"시트", sheet.sheetTitle);
