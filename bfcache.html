@@ -14,9 +14,6 @@
 
 <script>
     window.addEventListener('pageshow', function(event) {
-        if (event.persisted) {
-            alert("From back / forward cache.");
-        }
     alert('pageshow');
     console.log('pageshow:');
     console.log(event);
